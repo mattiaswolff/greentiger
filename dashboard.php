@@ -40,7 +40,7 @@
 								$.each(json, function(key, value) {
 									strTasks += '<li><span><a href="http://ec2-46-51-156-7.eu-west-1.compute.amazonaws.com/">'; 
                                     for(var prop in value.info) {
-                                        strTasks += value.info.prop + '</a></span>';
+                                        strTasks += value.info[prop] + '</a></span>';
                                         break;
 								    }
 									if (value.likes != null ) { strTasks += '<span class="meta"><span class="no-of-likes">' + value.likes.length + '</span>'} else { strTasks += '<span class="no-of-likes">0</span>' };
