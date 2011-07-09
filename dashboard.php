@@ -36,19 +36,20 @@
 							},
 							function(json) {
 								var i = 0;
-								var strTasks = '<ul>';
+								var strTasks = [];
+                                strTasks.push('<ul>');
 								$.each(json, function(key, value) {
-									strTasks += '<li><span><a href="http://ec2-46-51-156-7.eu-west-1.compute.amazonaws.com/">'; 
+									strTasks.push('<li><span><a href="http://ec2-46-51-156-7.eu-west-1.compute.amazonaws.com/">'); 
                                     for(var prop in value.info) {
-                                        strTasks += value.info[prop] + '</a></span>';
+                                        strTasks.push(value.info[prop] + '</a></span>');
                                         break;
 								    }
-									if (value.likes != null ) { strTasks += '<span class="meta"><span class="no-of-likes">' + value.likes.length + '</span>'} else { strTasks += '<span class="no-of-likes">0</span>' };
-									if (value.comments != null ) { strTasks += '<span class="no-of-comments">' + value.comments.length + '</span>'} else { strTasks += '<span class="no-of-comments">0</span>' };
-									strTasks +='</span></li>'; 
+									if (value.likes != null ) { strTasks.push('<span class="meta"><span class="no-of-likes">' + value.likes.length + '</span>');} else { strTasks.push('<span class="no-of-likes">0</span>') };
+									if (value.comments != null ) { strTasks.push('<span class="no-of-comments">' + value.comments.length + '</span>');} else { strTasks.push('<span class="no-of-comments">0</span>') };
+									strTasks.push('</span></li>'); 
 								});
-								strTasks +='</ul>';
-								$('#' + key +' .task').append(strTasks);
+								strTasks.push('</ul>');
+								$('#' + key +' .task').append(strTasks.join(''));
 							});
 						});
 				});
