@@ -5,7 +5,7 @@
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<title>Project Copperfield</title>
+	<title>Project Copperfield - test</title>
 	
 	<link rel="stylesheet" type="text/css" href="/css/main.css" />
 	<script type="text/javascript" src="/js/jquery.js"></script>
