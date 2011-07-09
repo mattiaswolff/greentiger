@@ -1,0 +1,35 @@
+Definitions
+../api/definitions
+GET				none								all definitions
+POST			name, [title, type, required]*n		none
+../api/definitions/[id]
+GET				none								complete definition
+PUT				name, [title, type, required]*n		none
+DELETE			none								none
+
+Enities
+../api/entities
+GET				none								all entities
+POST			info								none
+../api/entities/[id]
+GET				none								complete entity
+PUT				info								none
+DELETE			none								none
+
+Users
+../api/users
+GET				none								all entities
+POST			info								none
+../api/users/[id]
+GET				none								complete entity
+PUT				info								none
+DELETE			none								none
+
+Organizations
+../api/organizations
+GET				none								all oganizations
+POST			info								none
+../api/organizations/[id]
+GET				none								complete organization
+PUT				info								none
+DELETE			none								none
