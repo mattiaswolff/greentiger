@@ -9,7 +9,7 @@
 
 <body id="home">
 
-				<form name="register" action="./scripts/registerUser.php" method="post">
+				<form name="register" action="../api/user.php" method="post">
    		 			Email: <input type="text" name="userId" maxlength="30" />
     					Password: <input type="password" name="pass1" />
     					Password Again: <input type="password" name="pass2" />
