@@ -1,8 +1,8 @@
 <?php
-echo "test2";
+
 require "../classes/rest.php";
 require "../classes/definition.php";
-echo "test2";
+
 $data = RestUtils::processRequest();  
 
 switch($data->getMethod()) 
@@ -30,6 +30,10 @@ switch($data->getMethod())
             $serializer = new XML_Serializer($options);  
             RestUtils::sendResponse(200, $serializer->serialize($array), 'application/xml');  
         }  
+        break;
+    case 'post':  
+        echo 'test';
+          
         break;
 }
 ?>
