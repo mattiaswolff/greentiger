@@ -18,7 +18,8 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $array = (array)$this;
-        $db->users->insert($array); 
+        echo var_dump($array);
+        //$db->users->insert($array); 
     }
     
     //Accessors
