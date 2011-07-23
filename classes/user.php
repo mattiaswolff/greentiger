@@ -8,9 +8,9 @@ class User {
   
     //Constructor
     public function __construct(){
-        $this->email = '';  
-        $this->name = '';  
-        $this->definitions = '';    
+        $this->email = 'test';  
+        $this->name = 'test';  
+        $this->definitions = 'test';    
     }
     
     //Destructor
