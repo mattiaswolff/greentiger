@@ -16,7 +16,7 @@ class User {
             $arrResults = $db->users->findOne($array);
             $this->email = $arrResults['email']; 
             $this->name = $arrResults['name'];
-            $this->definitions = $arrResults['definitions'];
+            $this->definitions = '';
         }
         else {
             $this->email = '';

@@ -18,8 +18,7 @@ switch($data->getMethod()) {
             $options = array  
             (  
                 'indent' => '     ',  
-                'addDecl' => false,  
-                'rootName' => $fc->getAction(),  
+                'addDecl' => false,
                 XML_SERIALIZER_OPTION_RETURN_RESULT => true  
             );  
             $serializer = new XML_Serializer($options);  
