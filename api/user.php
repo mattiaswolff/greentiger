@@ -7,9 +7,7 @@ $data = RestUtils::processRequest();
 switch($data->getMethod()) {  
     // this is a request for all users, not one in particular  
     case 'get':  
-        $definition = new Definition();
-        $definition->setName = "TestName";
-        $definition->setDescription = "TestDesc";
+        $array = new User($_GET['email']);
         if($data->getHttpAccept == 'json') {
             RestUtils::sendResponse(200, json_encode($array), 'application/json');  
         }
