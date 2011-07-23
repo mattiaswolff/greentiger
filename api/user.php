@@ -1,5 +1,4 @@
 <?php
-
 require "../classes/rest.php";
 require "../classes/definition.php";
 
@@ -30,8 +29,8 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $user = new User();
-        $user->setEmail = $_POST('email');
-        $user->setName = $_POST('name');
+        $user->setEmail($_POST('email'));
+        $user->setName($_POST('name'));
         break;
 }
 ?>
