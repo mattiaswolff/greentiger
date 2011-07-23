@@ -13,7 +13,10 @@ class User {
             $m = new Mongo();
             $db = $m->projectcopperfield;
             $array = array("email" => $email);
-            echo var_dump($db->users->findOne($array));
+            $arrResults = $db->users->findOne($array);
+            $this->email = $arrResults['email']; 
+            $this->name = $arrResults['name'];
+            $this->definitions = $arrResults['definitions'];
         }
         else {
             $this->email = '';

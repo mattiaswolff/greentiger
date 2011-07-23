@@ -7,12 +7,13 @@ $data = RestUtils::processRequest();
 switch($data->getMethod()) {  
     // this is a request for all users, not one in particular  
     case 'get':  
-        $array = new User($_GET['email']);
-        if($data->getHttpAccept == 'json') {
-            RestUtils::sendResponse(200, json_encode($array), 'application/json');  
+        $user = new User($_GET['email']);
+        echo 'test:';
+        if($data->getHttpAccept() == 'json') {
+            RestUtils::sendResponse(200, json_encode($user), 'application/json');  
         }
     
-        else if ($data->getHttpAccept == 'xml') {
+        else if ($data->getHttpAccept() == 'xml') {
             // using the XML_SERIALIZER Pear Package  
             $options = array  
             (  
