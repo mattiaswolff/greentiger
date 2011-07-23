@@ -8,9 +8,8 @@ switch($data->getMethod()) {
     // this is a request for all users, not one in particular  
     case 'get':  
         $user = new User($_GET['email']);
-        echo 'test:';
         if($data->getHttpAccept() == 'json') {
-            RestUtils::sendResponse(200, json_encode($user), 'application/json');  
+            RestUtils::sendResponse(200, json_encode((array)$user), 'application/json');  
         }
     
         else if ($data->getHttpAccept() == 'xml') {
