@@ -19,6 +19,7 @@ class User {
         $db = $m->projectcopperfield;
         $array = (array)serialize($this);
         $db->users->insert($array); 
+        echo var_dump($array);
     }
     
     //Accessors
