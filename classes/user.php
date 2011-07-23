@@ -18,7 +18,8 @@ class User {
     public function __destruct(){
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $array = array("email" => $this->email, "name" => $this->name);
+        $array = get_object_vars($this);
+        //$array = array("email" => $this->email, "name" => $this->name);
         echo var_dump($array);
         $db->users->insert($array); 
     }
