@@ -14,11 +14,11 @@ class User {
     }
     
     //Destructor
-    //public function __destruct(){
-    //    $m = new Mongo();
-    //  $db = $m->projectcopperfield;
-    //  $db->users->insert($this); 
-    //}
+    public function __destruct(){
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $db->users->insert($this); 
+    }
     
     //Accessors
     public function getEmail() {
