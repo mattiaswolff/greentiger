@@ -13,8 +13,8 @@ class User {
         $this->definitions = array();    
     }
     
-    //Deconstructor
-    public function __deconstruct(){
+    //Destructor
+    public function __destruct(){
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $db->users->insert($this); 
