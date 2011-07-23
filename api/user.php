@@ -29,7 +29,7 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $user = new User();
-        echo var_dump($_POST);
+        echo $_POST('email');
         $user->setEmail('test');
         //$user->setName($_POST('name'));
         echo 'good!';
