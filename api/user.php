@@ -1,6 +1,6 @@
 <?php
 require "../classes/rest.php";
-require "../classes/definition.php";
+require "../classes/user.php";
 
 $data = RestUtils::processRequest();  
 
@@ -28,10 +28,7 @@ switch($data->getMethod()) {
         }  
         break;
     case 'post':
-        echo 'test';
-        die();
         $user = new User();
-        echo 'test';
         $user->setEmail($_POST('email'));
         $user->setName($_POST('name'));
         break;
