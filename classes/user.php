@@ -7,18 +7,18 @@ class User {
     private $definitions;
   
     //Constructor
-    public function __construct(){
-        $this->email = '';  
-        $this->name = '';  
-        $this->definitions = array();    
-    }
+    //public function __construct(){
+    //    $this->email = '';  
+    //    $this->name = '';  
+    //    $this->definitions = array();    
+    //}
     
     //Destructor
-    public function __destruct(){
-        $m = new Mongo();
-        $db = $m->projectcopperfield;
-        $db->users->insert($this); 
-    }
+    //public function __destruct(){
+    //    $m = new Mongo();
+    //    $db = $m->projectcopperfield;
+    //    $db->users->insert($this); 
+    //}
     
     //Accessors
     public function getEmail() {
