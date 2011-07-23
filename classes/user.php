@@ -10,7 +10,7 @@ class User {
     public function __construct(){
         $this->email = '';  
         $this->name = '';  
-        $this->definitions '';    
+        $this->definitions = '';    
     }
     
     //Destructor
