@@ -30,8 +30,6 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $array = get_object_vars($this);
-        //$array = array("email" => $this->email, "name" => $this->name);
-        echo var_dump($array);
         $db->users->insert($array); 
     }
     
