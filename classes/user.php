@@ -8,13 +8,10 @@ class User {
   
     //Constructor
     
-    public function __construct($email){
-        $m = new Mongo();
-        $db = $m->projectcopperfield;
-        $results = array("email" => $email);
-        $this->email = $results['email'];  
-        $this->name = $results['name'];  
-        //$this->definitions = '';    
+    public function __construct(){
+        $this->email = '';
+        $this->name = '';
+        $this->definitions = '';
     }
     
     //Destructor
