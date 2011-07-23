@@ -17,7 +17,7 @@ class User {
     public function __destruct(){
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        //$db->users->insert($this); 
+        $db->users->insert((array)$this); 
     }
     
     //Accessors
