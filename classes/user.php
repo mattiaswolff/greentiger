@@ -7,11 +7,6 @@ class User {
     private $definitions;
   
     //Constructor
-    public function __construct(){
-        $this->email = '';  
-        $this->name = '';  
-        $this->definitions = '';    
-    }
     
     public function __construct($email){
         $m = new Mongo();
