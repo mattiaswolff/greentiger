@@ -17,7 +17,7 @@ class User {
     public function __destruct(){
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $array = serialize($this);
+        $array = (array)serialize($this);
         $db->users->insert($array); 
     }
     
