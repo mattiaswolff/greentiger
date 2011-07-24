@@ -7,7 +7,6 @@ $data = RestUtils::processRequest();
 switch($data->getMethod()) {  
     // this is a request for all users, not one in particular  
     case 'get':  
-        echo var_dump($data);
         if (isset($_GET['email'])) {
             $objUser = new User($_GET['email']);
             $arrUser = $objUser->toArray();
@@ -19,6 +18,7 @@ switch($data->getMethod()) {
         }
         break;
     case 'post':
+        echo var_dump($data);
         $user = new User();
         $user->setEmail($_POST["email"]);
         $user->setName($_POST["name"]);
