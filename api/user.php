@@ -7,10 +7,10 @@ $data = RestUtils::processRequest();
 switch($data->getMethod()) {  
     // this is a request for all users, not one in particular  
     case 'get':  
-        $user = new User($_GET['email']);
-        //write function to turn object into array. toArray in object using get_object_vars...
+        $objUser = new User($_GET['email']);
+        $arrUser = $objUser->toArray();
         if($data->getHttpAccept() == 'json') {
-            RestUtils::sendResponse(200, json_encode((array)$user), 'application/json');  
+            RestUtils::sendResponse(200, json_encode($arrUser), 'application/json');  
         }
         //check xml fuctionality
         else if ($data->getHttpAccept() == 'xml') {

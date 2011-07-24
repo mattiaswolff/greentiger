@@ -26,18 +26,6 @@ class User {
     }
     
     //Destructor -- Move save procedure out of destructur (not needed when get)
-    public function save() {
-        $m = new Mongo();
-        $db = $m->projectcopperfield;
-        $array = get_object_vars($this);
-        $result = $db->command(array('findAndModify' => 'users', 
-        'query' => array('email' => $this->email),
-        'update' => $array,
-        'new' => true,   
-        'upsert' => true,
-        'fields' => array( 'email' => 1 )));
-        $this->email = $result['value']['email'];
-    }
     
     //Accessors
     public function getEmail() {
@@ -57,6 +45,24 @@ class User {
     }
     public function setDefinitions($definitions) {
         $this->definitions = $definitions;
+    }
+    
+    public function save() {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $array = get_object_vars($this);
+        $result = $db->command(array('findAndModify' => 'users', 
+        'query' => array('email' => $this->email),
+        'update' => $array,
+        'new' => true,   
+        'upsert' => true,
+        'fields' => array( 'email' => 1 )));
+        $this->email = $result['value']['email'];
+    }
+    
+    public function toArray() {
+        $array = get_object_vars($this);
+        return $array;
     }
 }
 ?>
