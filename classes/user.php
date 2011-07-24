@@ -33,7 +33,7 @@ class User {
     }
     public function setEmail($email) {
         if (preg_match('^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$', $email)) {
-            $this->email = $email;
+            $this->email = (string)$email;
         }
         else {
             $this->email = 'error3 or so';
@@ -43,7 +43,7 @@ class User {
         return $this->name;
     }
     public function setName($name) {
-            $this->name = $name;
+            $this->name = (string)$name;
     }
     public function getDefinitions() {
         return $this->definitions;
