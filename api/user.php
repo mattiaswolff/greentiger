@@ -8,7 +8,8 @@ switch($data->getMethod()) {
     // this is a request for all users, not one in particular  
     case 'get':
         echo var_dump($data);
-        echo $data->getData()['email'];
+        echo var_dump($data->getData());
+        echo var_dump($data->getData());
         if (isset($_GET['email'])) {
             $objUser = new User($_GET['email']);
             $arrUser = $objUser->toArray();
