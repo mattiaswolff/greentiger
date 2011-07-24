@@ -77,7 +77,7 @@ class User {
 	        $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
         }
         else {
-            $objResults = $db->users->find("email" => $email)->limit($intLimit)->skip($intSkip);
+            $objResults = $db->users->find(array("email" => $email))->limit($intLimit)->skip($intSkip);
         }
         $arrResults['total'] = $db->users->find()->count();
         $arrResults['page'] = $intPage;
