@@ -32,18 +32,23 @@ class User {
         return $this->email;
     }
     public function setEmail($email) {
-        if (preg_match('\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b', $email)) {
+        if (preg_match('/\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/', $email)) {
             $this->email = $email;
         }
         else {
-            $this->email = 'error2';
+            $this->email = 'error3 or so';
         }
     }
     public function getName() {
         return $this->name;
     }
     public function setName($name) {
-        $this->name = $name;
+        if (preg_match('/\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/', $name)) {
+            $this->name = $name;
+        }
+        else {
+            $this->name = 'error3 or so';
+        }
     }
     public function getDefinitions() {
         return $this->definitions;
