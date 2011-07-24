@@ -65,7 +65,7 @@ class User {
         $this->email = $result['value']['email'];
     }
     
-    public function toÀrray() {
+    public function toArray() {
         $array = get_object_vars($this);
         return $array;
     }
@@ -75,7 +75,7 @@ class User {
         $db = $m->projectcopperfield;
 	    $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
 	    $intLimit = $intObjectsPerPage;
-	    $arrResults = $db->users->find()->limit($limit)->skip($skip);
+	    $arrResults = $db->users->find()->limit($intLimit)->skip($intSkip);
 	    return $arrResults; 
     }
 }
