@@ -6,7 +6,9 @@ $data = RestUtils::processRequest();
 
 switch($data->getMethod()) {  
     // this is a request for all users, not one in particular  
-    case 'get':  
+    case 'get':
+        echo var_dump($data);
+        echo $data->getData['email'];
         if (isset($_GET['email'])) {
             $objUser = new User($_GET['email']);
             $arrUser = $objUser->toArray();
@@ -18,6 +20,7 @@ switch($data->getMethod()) {
         }
         break;
     case 'post':
+        
         $user = new User();
         $user->setEmail($_POST["email"]);
         $user->setName($_POST["name"]);
@@ -30,6 +33,7 @@ switch($data->getMethod()) {
     case 'delete':
         echo 'delete';
         echo var_dump($data);
+        
         break;
 }
 ?>
