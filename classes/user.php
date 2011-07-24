@@ -84,5 +84,13 @@ class User {
         }
 	    return $arrResults; 
     }
+    
+    function delete($strEmail) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
+	    $arrQuery = array("email" => $strEmail);
+	    $db->users->remove($arrQuery);
+    }
 }
 ?>

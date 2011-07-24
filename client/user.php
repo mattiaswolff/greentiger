@@ -8,7 +8,7 @@
 </head>
 
 <body id="home">
-                
+                test
                 Post
 				<form name="register" action="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php" method="post">
    		 			    Email: <input type="text" name="email" maxlength="30" />
