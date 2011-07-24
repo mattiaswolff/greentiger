@@ -2,7 +2,6 @@
 
 class User {
     //Properties
-    private $_id;
     private $email;
     private $name;
     private $definitions;
@@ -31,23 +30,16 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $array = get_object_vars($this);
-        $db->users->insert($array);
-        $result = $db->command(array('findAndModify' => 'tasks', 
-        'query' => array('_id' => new MongoId($this->_id)),
+        $result = $db->command(array('findAndModify' => 'users', 
+        'query' => array('email' => new MongoId($this->email)),
         'update' => $array,
         'new' => true,   
         'upsert' => true,
         'fields' => array( '_id' => 1 )));
-        $this->_id = $result['value']['_id'];
+        $this->email = $result['value']['email'];
     }
     
     //Accessors
-    public function getId() {
-        return $this->_id;
-    }
-    public function setId($_id) {
-        $this->_id = $_id;
-    }
     public function getEmail() {
         return $this->email;
     }
