@@ -18,7 +18,7 @@ class RestUtils
             case 'put':  
                 // basically, we read a string from PHP's special input location,  
                 // and then parse it out into an array via parse_str... per the PHP docs:  
-                // Parses str  as if it were the query string passed via a URL and sets  
+                // Parses str as if it were the query string passed via a URL and sets  
                 // variables in the current scope.  
                 parse_str(file_get_contents('php://input'), $put_vars);  
                 $data = $put_vars;  
@@ -36,14 +36,13 @@ class RestUtils
         return $return_obj;  
     }    
   
-    public static function sendResponse($status = 200, $body = '', $content_type = 'text/html') 
-    {  
+    public static function sendResponse($status = 200, $arrObject = '', $strContentType = 'text/html') {  
         $status_header = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);  
         // set the status  
         header($status_header);  
         // set the content type  
-        header('Content-type: ' . $content_type);  
-  
+        header('Content-type: application/' . $strContentType);  
+        $body = RestUtils::getReplayBody($arrObject, $strContentType)
         // pages with body are easy  
         if($body != '')  
         {    
@@ -91,7 +90,23 @@ class RestUtils
             exit;  
         }  
     }  
-  
+    public static function getReplayBody($arrObject, $strContentType) {
+        if ($strContentType == 'json') {
+            $body = json_encode($arrObject);
+        else if ($strContentType == 'xml') {
+            $options = array  
+            (  
+                'indent' => '     ',  
+                'addDecl' => false,
+                XML_SERIALIZER_OPTION_RETURN_RESULT => true  
+            );  
+            $serializer = new XML_Serializer($options);
+            $body = $serializer->serialize($arrObject);
+        else {
+            $body = '';
+        }
+        return $body;
+    }
     public static function getStatusCodeMessage($status)  
     {  
         // these could be stored in a .ini file and loaded  
@@ -142,7 +157,7 @@ class RestUtils
         );  
   
         return (isset($codes[$status])) ? $codes[$status] : '';  
-    }  
+    }
 }  
   
 class RestRequest  
