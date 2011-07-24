@@ -18,7 +18,6 @@ switch($data->getMethod()) {
         }
         break;
     case 'post':
-        echo var_dump($data);
         $user = new User();
         $user->setEmail($_POST["email"]);
         $user->setName($_POST["name"]);
@@ -27,6 +26,13 @@ switch($data->getMethod()) {
         break;
     case 'put':
         echo var_dump($data);
+        break;
+    case 'delete':
+        echo 'delete';
+        echo var_dump($data);
+        if (isset($data->getData()['email'])) {
+            echo 'deleted';
+        }
         break;
 }
 ?>
