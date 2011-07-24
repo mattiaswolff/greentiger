@@ -36,14 +36,14 @@ class User {
             $this->email = (string)$email;
         }
         else {
-            $this->email = 'error3 or so';
+            $this->email = 'error';
         }
     }
     public function getName() {
         return $this->name;
     }
     public function setName($name) {
-            $this->name = (string)$name;
+            $this->name = $name;
     }
     public function getDefinitions() {
         return $this->definitions;
@@ -65,9 +65,18 @@ class User {
         $this->email = $result['value']['email'];
     }
     
-    public function toArray() {
+    public function toÀrray() {
         $array = get_object_vars($this);
         return $array;
+    }
+    
+    function get($intObjectsPerPage = 10, $intPage = 1) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+	    $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
+	    $intLimit = $intObjectsPerPage;
+	    $arrResults = $db->users->find()->limit($limit)->skip($skip);
+	    return $arrResults; 
     }
 }
 ?>

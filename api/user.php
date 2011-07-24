@@ -7,9 +7,15 @@ $data = RestUtils::processRequest();
 switch($data->getMethod()) {  
     // this is a request for all users, not one in particular  
     case 'get':  
-        $objUser = new User($_GET['email']);
-        $arrUser = $objUser->toArray();
-        RestUtils::sendResponse(200, $arrUser, 'json');
+        if isset($_GET['email']) {
+            $objUser = new User($_GET['email']);
+            $arrUser = $objUser->toArray();
+            RestUtils::sendResponse(200, $arrUser, 'json');
+        }
+        else {
+            $arrResults = User::get();
+            RestUtils::sendResponse(200, $arrResults, 'json');
+        }
         break;
     case 'post':
         $user = new User();
