@@ -8,10 +8,11 @@ switch($data->getMethod()) {
     // this is a request for all users, not one in particular  
     case 'get':  
         $user = new User($_GET['email']);
+        //write function to turn object into array. toArray in object using get_object_vars...
         if($data->getHttpAccept() == 'json') {
             RestUtils::sendResponse(200, json_encode((array)$user), 'application/json');  
         }
-    
+        //check xml fuctionality
         else if ($data->getHttpAccept() == 'xml') {
             // using the XML_SERIALIZER Pear Package  
             $options = array  

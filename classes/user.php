@@ -25,11 +25,12 @@ class User {
         }
     }
     
-    //Destructor
+    //Destructor -- Move save procedure out of destructur (not needed when get)
     public function __destruct(){
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $array = get_object_vars($this);
+        echo var_dump($array);
         $db->users->insert($array); 
     }
     
