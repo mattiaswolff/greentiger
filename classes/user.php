@@ -32,12 +32,11 @@ class User {
         return $this->email;
     }
     public function setEmail($email) {
-        $strRegex = "\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b";
-        if (preg_match($strRegex, $email)) {
+        if (preg_match('\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b', $email)) {
             $this->email = $email;
         }
         else {
-            $this->email = 'error';
+            $this->email = 'error2';
         }
     }
     public function getName() {
