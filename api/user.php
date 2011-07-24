@@ -9,7 +9,7 @@ switch($data->getMethod()) {
     case 'get':
         echo var_dump($data);
         echo var_dump($data->getRequestVars());
-        echo $data->getRequestVars()['email'];
+        echo $data->getRequestVars();
         if (isset($_GET['email'])) {
             $objUser = new User($_GET['email']);
             $arrUser = $objUser->toArray();
