@@ -32,7 +32,7 @@ class User {
         return $this->email;
     }
     public function setEmail($email) {
-        $this->email = $email;
+        $this->email = (string)$email;
     }
     public function getName() {
         return $this->name;
