@@ -32,7 +32,12 @@ class User {
         return $this->email;
     }
     public function setEmail($email) {
-        $this->email = (string)$email;
+        if preg_match("\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b", $email) > 0 {
+            $this->email = $email;
+        }
+        else {
+            $this->email = 'error';
+        }
     }
     public function getName() {
         return $this->name;
