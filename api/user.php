@@ -7,12 +7,9 @@ $data = RestUtils::processRequest();
 switch($data->getMethod()) {  
     // this is a request for all users, not one in particular  
     case 'get':
-        echo var_dump($data);
-        echo var_dump($data->getRequestVars());
         $arrRequestVars = $data->getRequestVars();
-        echo $arrRequestVars['email']; 
-        if (isset($_GET['email'])) {
-            $objUser = new User($_GET['email']);
+        if (isset($arrRequestVars['email'])) {
+            $objUser = new User($arrRequestVars['email']);
             $arrUser = $objUser->toArray();
             RestUtils::sendResponse(200, $arrUser, 'json');
         }
@@ -22,20 +19,18 @@ switch($data->getMethod()) {
         }
         break;
     case 'post':
-        
+        $arrRequestVars = $data->getRequestVars();
         $user = new User();
-        $user->setEmail($_POST["email"]);
-        $user->setName($_POST["name"]);
+        $user->setEmail($arrRequestVars["email"]);
+        $user->setName($arrRequestVars["name"]);
         $user->save();
         RestUtils::sendResponse(200, (array)$user->getEmail(), 'json');
         break;
     case 'put':
-        echo var_dump($data);
+        $arrRequestVars = $data->getRequestVars();
         break;
     case 'delete':
-        echo 'delete';
-        echo var_dump($data);
-        
+        $arrRequestVars = $data->getRequestVars();
         break;
 }
 ?>
