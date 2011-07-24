@@ -22,7 +22,7 @@ switch($data->getMethod()) {
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'json');
         }
         else {
-            echo 'error';
+            RestUtils::sendResponse(405);
         }
         break;
     case 'put':
@@ -33,7 +33,7 @@ switch($data->getMethod()) {
             RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'json');
         }
         else {
-            echo 'error';
+            RestUtils::sendResponse(405);
         }
         break;
     case 'delete':
@@ -43,7 +43,7 @@ switch($data->getMethod()) {
             RestUtils::sendResponse(200, $arrRequestVars['email'], 'json');
         }
         else {
-            echo 'error';
+            RestUtils::sendResponse(405);
         }
         break;
 }
