@@ -75,7 +75,7 @@ class User {
         $db = $m->projectcopperfield;
 	    $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
 	    $intLimit = $intObjectsPerPage;
-	    $objResults = $db->users->findOne();//->limit($intLimit)->skip($intSkip);
+	    $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
         echo 'test';
         foreach ($objResults as $var) {
             $arrResults[] = $var;
