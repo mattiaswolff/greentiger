@@ -42,6 +42,7 @@ switch($data->getMethod()) {
         break;
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
+        echo var_dump($arrRequestVars);
         if (isset($arrRequestVars['email'])) {
             User::delete($arrRequestVars['email']);
             RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'json');
