@@ -61,7 +61,7 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         if ($email != null) {
-            $objResults = $db->users->find(array("email" => $email))->limit($intLimit)->skip($intSkip);
+            $objResults = $db->users->find(array("email" => $email));
         }
         else {
             $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
