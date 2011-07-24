@@ -8,7 +8,8 @@ switch($data->getMethod()) {
 
     case 'get':
         $arrRequestVars = $data->getRequestVars();
-        $arrResults = User::get(10, 1, $arrRequestVars['email']);
+        if isset($arrRequestVars['email']) ? $strEmail = $arrRequestVars['email'] : $strEmail = null;
+        $arrResults = User::get(10, 1, $strEmail);
         RestUtils::sendResponse(200, $arrResults, 'json');
         break;
     case 'post':
