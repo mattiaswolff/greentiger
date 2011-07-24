@@ -91,6 +91,7 @@ class RestUtils
     public static function getReplayBody($arrObject, $strContentType) {
         if ($strContentType == 'json') {
             $body = json_encode($arrObject);
+        }
         else if ($strContentType == 'xml') {
             $options = array  
             (  
@@ -100,6 +101,7 @@ class RestUtils
             );  
             $serializer = new XML_Serializer($options);
             $body = $serializer->serialize($arrObject);
+        }
         else {
             $body = '';
         }
