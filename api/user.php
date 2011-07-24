@@ -20,6 +20,7 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
+        echo var_dump($arrRequestVars);
         $user = new User();
         $user->setEmail($arrRequestVars["email"]);
         $user->setName($arrRequestVars["name"]);
