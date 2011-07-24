@@ -75,7 +75,7 @@ class User {
         $db = $m->projectcopperfield;
 	    $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
 	    $intLimit = $intObjectsPerPage;
-	    $arrResults = $db->users->find()->limit($intLimit)->skip($intSkip);
+	    $arrResults = $db->users->find();//->limit($intLimit)->skip($intSkip);
 	    return $arrResults; 
     }
 }
