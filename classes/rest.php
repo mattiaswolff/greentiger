@@ -42,10 +42,8 @@ class RestUtils
         header($status_header);  
         // set the content type  
         header('Content-type: application/' . $strContentType);  
-        $body = RestUtils::getReplayBody($arrObject, $strContentType)
-        // pages with body are easy  
-        if($body != '')  
-        {    
+        $body = RestUtils::getReplayBody($arrObject, $strContentType);
+        if($body != '') {    
             echo $body;  
             exit;  
         }    
