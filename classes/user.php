@@ -2,6 +2,7 @@
 
 class User {
     //Properties
+    private $_id;
     private $email;
     private $name;
     private $definitions;
