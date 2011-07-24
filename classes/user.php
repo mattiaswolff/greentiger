@@ -76,8 +76,10 @@ class User {
 	    $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
 	    $intLimit = $intObjectsPerPage;
 	    $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
+        $arrResults['page'] = $intPage;
+        $arrResults['pagesize'] = $intPage;
         foreach ($objResults as $var) {
-            $arrResults[] = $var;
+            $arrResults['users'][] = $var;
         }
 	    return $arrResults; 
     }
