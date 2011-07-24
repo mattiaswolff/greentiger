@@ -16,7 +16,7 @@ class User {
             $arrResults = $db->users->findOne($array);
             $this->email = $arrResults['email']; 
             $this->name = $arrResults['name'];
-            $this->definitions = '';
+            $this->definitions = $arrResults['definitions'];
         }
         else {
             $this->email = '';
@@ -24,8 +24,6 @@ class User {
             $this->definitions = '';
         }
     }
-    
-    //Destructor -- Move save procedure out of destructur (not needed when get)
     
     //Accessors
     public function getEmail() {
@@ -78,7 +76,7 @@ class User {
 	    $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
         $arrResults['total'] = $db->users->find()->count();
         $arrResults['page'] = $intPage;
-        $arrResults['pagesize2'] = $intPage;
+        $arrResults['pagesize'] = $intPage;
         foreach ($objResults as $var) {
             $arrResults['users'][] = $var;
         }
