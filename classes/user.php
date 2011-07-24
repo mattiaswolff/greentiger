@@ -31,11 +31,11 @@ class User {
         $db = $m->projectcopperfield;
         $array = get_object_vars($this);
         $result = $db->command(array('findAndModify' => 'users', 
-        'query' => array('email' => new MongoId($this->email)),
+        'query' => array('email' => $this->email),
         'update' => $array,
         'new' => true,   
         'upsert' => true,
-        'fields' => array( '_id' => 1 )));
+        'fields' => array( 'email' => 1 )));
         $this->email = $result['value']['email'];
     }
     
