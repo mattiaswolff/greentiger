@@ -29,6 +29,7 @@ switch($data->getMethod()) {
         $user = new User();
         $user->setEmail($_POST["email"]);
         $user->setName($_POST["name"]);
+        $user->save();
         break;
 }
 ?>
