@@ -42,6 +42,12 @@ class User {
     }
     
     //Accessors
+    public function getId() {
+        return $this->_id;
+    }
+    public function setId($_id) {
+        $this->_id = $_id;
+    }
     public function getEmail() {
         return $this->email;
     }
