@@ -33,7 +33,7 @@ switch($data->getMethod()) {
         if (isset($arrRequestVars['email'])) {
             $objUser = new User($arrRequestVars['email']);
             foreach ($arrRequestVars as $key => $var) {
-                $objUser[$key] = $var;
+                $objUser->$key = $var;
             }
             $objUser->save();
             RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'json');
