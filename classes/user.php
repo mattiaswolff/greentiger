@@ -73,7 +73,7 @@ class User {
         $db = $m->projectcopperfield;
 	    $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
 	    $intLimit = $intObjectsPerPage;
-        if ($email != null) {
+        if ($email = null) {
 	        $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
         }
         else {
