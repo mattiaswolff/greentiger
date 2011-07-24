@@ -30,6 +30,7 @@ switch($data->getMethod()) {
         $user->setEmail($_POST["email"]);
         $user->setName($_POST["name"]);
         $user->save();
+        RestUtils::sendResponse(200, json_encode((array)$user['_id']), 'application/json');
         break;
 }
 ?>
