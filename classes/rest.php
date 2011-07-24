@@ -20,9 +20,7 @@ class RestUtils
                 $data = $arrVars;  
                 break;
             case 'delete':
-                parse_str(file_get_contents('php://input'), $arrVars);  
-                echo var_dump($arrVars);
-                $data = $arrVars;  
+                $data = $_GET;  
                 break;
         }  
   
