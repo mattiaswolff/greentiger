@@ -16,14 +16,11 @@ class RestUtils
                 $data = $_POST;  
                 break;
             case 'put':  
-                // basically, we read a string from PHP's special input location,  
-                // and then parse it out into an array via parse_str... per the PHP docs:  
-                // Parses str as if it were the query string passed via a URL and sets  
-                // variables in the current scope.  
                 parse_str(file_get_contents('php://input'), $arrVars);  
                 $data = $arrVars;  
                 break;
-            case 'delete':    
+            case 'delete':
+                echo 'deleteeverythinh';
                 parse_str(file_get_contents('php://input'), $arrVars);  
                 $data = $arrVars;  
                 break;
