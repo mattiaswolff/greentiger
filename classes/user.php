@@ -71,17 +71,17 @@ class User {
     function get($intObjectsPerPage = 10, $intPage = 1, $email = null) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-	    $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
-	    $intLimit = $intObjectsPerPage;
-        if ($email = null) {
-	        $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
+        if ($email != null) {
+            $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
+            $intLimit = $intObjectsPerPage;
+	        $objResults = $db->users->find(array("email" => $email))->limit($intLimit)->skip($intSkip);
         }
         else {
-            $objResults = $db->users->find(array("email" => $email))->limit($intLimit)->skip($intSkip);
+            $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
         }
         $arrResults['total'] = $db->users->find()->count();
         $arrResults['page'] = $intPage;
-        $arrResults['pagesize'] = $intPage;
+        $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $var) {
             $arrResults['users'][] = $var;
         }
