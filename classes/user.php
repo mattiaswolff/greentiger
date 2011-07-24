@@ -78,7 +78,7 @@ class User {
 	    $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
         $arrResults['total'] = $db->users->find()->count();
         $arrResults['page'] = $intPage;
-        $arrResults['pagesize'] = $intPage;
+        $arrResults['pagesize2'] = $intPage;
         foreach ($objResults as $var) {
             $arrResults['users'][] = $var;
         }
