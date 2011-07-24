@@ -30,9 +30,6 @@ switch($data->getMethod()) {
     case 'delete':
         echo 'delete';
         echo var_dump($data);
-        if (isset($data->getData()['email'])) {
-            echo 'deleted';
-        }
         break;
 }
 ?>
