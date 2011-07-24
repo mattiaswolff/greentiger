@@ -30,7 +30,14 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $array = get_object_vars($this);
-        $db->users->insert($array); 
+        $db->users->insert($array);
+        $result = $db->command(array('findAndModify' => 'tasks', 
+        'query' => array('_id' => new MongoId($this->_id)),
+        'update' => $array,
+        'new' => true,   
+        'upsert' => true,
+        'fields' => array( '_id' => 1 )));
+        $this->_id = $result['value']['_id'];
     }
     
     //Accessors
