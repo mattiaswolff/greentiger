@@ -5,7 +5,7 @@ require "../classes/user.php";
 $data = RestUtils::processRequest();  
 
 switch($data->getMethod()) {  
-    // this is a request for all users, not one in particular  
+
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['email'])) {
@@ -20,11 +20,16 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
-        $user = new User();
-        $user->setEmail($arrRequestVars["email"]);
-        $user->setName($arrRequestVars["name"]);
-        $user->save();
-        RestUtils::sendResponse(200, (array)$user->getEmail(), 'json');
+        if (isset($arrRequestVars['email'])) {
+            $user = new User();
+            $user->setEmail($arrRequestVars["email"]);
+            $user->setName($arrRequestVars["name"]);
+            $user->save();
+            RestUtils::sendResponse(200, (array)$user->getEmail(), 'json');
+        }
+        else {
+            echo 'error';
+        }
         break;
     case 'put':
         $arrRequestVars = $data->getRequestVars();
@@ -41,6 +46,7 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['email'])) {
             User::delete($arrRequestVars['email']);
+            RestUtils::sendResponse(200, $arrRequestVars['email'], 'json');
         }
         else {
             echo 'error';
