@@ -1,34 +1,60 @@
 <?php
 require "../classes/rest.php";
-require "../classes/definition.php";
+require "../classes/defintion.php";
 
 $data = RestUtils::processRequest();  
 
-switch($data->getMethod()) 
-{  
-    // this is a request for all users, not one in particular  
-    case 'get':  
-        $definition = new Definition();
-        $definition->setName = "TestName";
-        $definition->setDescription = "TestDesc";
-        if($data->getHttpAccept == 'json')  
-        {
-            RestUtils::sendResponse(200, json_encode($array), 'application/json');  
+switch($data->getMethod()) {  
+    case 'get':
+        $arrRequestVars = $data->getRequestVars();
+        if (isset($arrRequestVars['definitionId'])) {
+            $arrId = $arrRequestVars['definitionId'];
         }
-    
-        else if ($data->getHttpAccept == 'xml')  
-        {
-            // using the XML_SERIALIZER Pear Package  
-            $options = array  
-            (  
-                'indent' => '     ',  
-                'addDecl' => false,  
-                'rootName' => $fc->getAction(),  
-                XML_SERIALIZER_OPTION_RETURN_RESULT => true  
-            );  
-            $serializer = new XML_Serializer($options);  
-            RestUtils::sendResponse(200, $serializer->serialize($array), 'application/xml');  
-        }  
+        else {
+            $arrResults = User::get($data->getRequestVars($arrRequestVars['userId']));
+            $arrId = $arrResults['definitions'];
+        }
+        $arrResults = Definitions::get(10, 1, $arrId);
+        RestUtils::sendResponse(200, $arrResults, 'application/json');
+        break;
+    case 'post':
+        $arrRequestVars = $data->getRequestVars();
+        if (isset($arrRequestVars['userId'])) {
+            $objDefinition = new Definition();
+            $objDefinition->setId('test');
+            $objDefinition->setName($arrRequestVars["name"]);
+            $objDefinition->setDescription($arrRequestVars["description"]);
+            $objDefinition->upsert();
+            RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
+        }
+        else {
+            RestUtils::sendResponse(400);
+        }
+        break;
+    case 'put':
+        $arrRequestVars = $data->getRequestVars();
+        if (isset($arrRequestVars['email'])) {
+            $arrResults = User::get(10, 1, $strEmail);
+            $objUser = new User();
+            $objUser->setName((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
+            $objUser->setEmail((isset($arrRequestVars['email']) ? $arrRequestVars['email'] : $arrResults['email']);
+            $objUser->setDefinitions((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
+            $objUser->upsert();
+            RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'application/json');
+        }
+        else {
+            RestUtils::sendResponse(400);
+        }
+        break;
+    case 'delete':
+        $arrRequestVars = $data->getRequestVars();
+        if (isset($arrRequestVars['email'])) {
+            $intStatus = User::delete($arrRequestVars['email']);
+            RestUtils::sendResponse($intStatus, $arrRequestVars['email'], 'application/json');
+        }
+        else {
+            RestUtils::sendResponse(400);
+        }
         break;
 }
 ?>

@@ -38,6 +38,7 @@ class User {
         $this->definitions = $definitions;
     }
     
+    //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $email = null) {
         $m = new Mongo();
         $db = $m->projectcopperfield;

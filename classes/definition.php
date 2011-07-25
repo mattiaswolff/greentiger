@@ -3,6 +3,7 @@
 class Definition {
 
   //Properties
+  private $_id;
   private $name;
   private $description;
   private $createdDate;
@@ -17,6 +18,12 @@ class Definition {
     }
     
   //Accessors
+  public function getId() {
+    return $this->_id;
+    }
+  public function setId($id) {
+    $this->_id = (string)$id;
+    }
   public function getName() {
     return $this->name;
     }
@@ -63,18 +70,18 @@ class Definition {
         $db = $m->projectcopperfield;
         $array = get_object_vars($this);
         $result = $db->command(array('findAndModify' => 'definitions', 
-        'query' => array('definitionId' => $this->definitionId),
+        'query' => array('_id' => $this->_id),
         'update' => $array,
         'new' => true,   
         'upsert' => true,
-        'fields' => array( 'definitionId' => 1 )));
-        $this->definitionId = $result['value']['definitionId'];
+        'fields' => array( '_id' => 1 )));
+        $this->_id = $result['value']['_id'];
     }
     
-    function delete($arrDefinitionId) {
+    function delete($arrId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $arrQuery = array("email" => array("$in" => $arrDefinitionId));
+        $arrQuery = array("_id" => array("$in" => $arrId));
         $arrOptions = array("safe" => true);
         $arrResults = $db->users->remove($arrQuery, $arrOptions);
         $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
