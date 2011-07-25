@@ -82,7 +82,7 @@ class User {
         $db = $m->projectcopperfield;
 	    $arrQuery = array("email" => $strEmail);
 	    $bolSuccess = $db->users->remove($arrQuery);
-        $intStatus = ($bolSuccess ? 200 : 400);
+        $intStatus = ($bolSuccess ? 201 : 400);
         return $intStatus; 
     }
 }
