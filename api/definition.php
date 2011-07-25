@@ -27,7 +27,7 @@ switch($data->getMethod()) {
             $objDefinition->setDescription($arrRequestVars["description"]);
             $objDefinition->upsert();
             $objUser = new User($arrRequestVars['userId']);
-            $arrDefinitions = $objUser->getDefinitions;
+            $arrDefinitions = $objUser->getDefinitions();
             $arrDefinitions[] = $objDefinition->getId();
             $objUser->setDefinitions($arrDefinitions);
             $objUser->upsert();
