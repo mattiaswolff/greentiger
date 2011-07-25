@@ -75,13 +75,13 @@ class RestUtils
 <html>
     <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>' . $status . ' ' . RestUtils::getStatusCodeMessage($status) . '</title>
+		<title>'test'</title>
 	</head>
 	<body>
-		<h1>' . RestUtils::getStatusCodeMessage($status) . '</h1>
-		<p>' . $message . '</p>
+		<h1>'test'</h1>
+		<p>'test'</p>
 		<hr />
-		<address>' . $signature . '</address>
+		<address>'test'</address>
 	</body>
 </html>';
             
