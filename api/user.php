@@ -8,6 +8,7 @@ switch($data->getMethod()) {
 
     case 'get':
         $arrRequestVars = $data->getRequestVars();
+        echo var_dump($arrRequestVars);
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : null);
         $arrResults = User::get(10, 1, $strUserId);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
