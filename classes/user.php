@@ -80,10 +80,10 @@ class User {
         $this->email = $result['value']['_id'];
     }
     
-    function delete($strEmail) {
+    function delete($strUserId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $arrQuery = array("email" => $strEmail);
+        $arrQuery = array("_id" => $strUserId);
         $arrOptions = array("safe" => true);
 	    $arrResults = $db->users->remove($arrQuery, $arrOptions);
         $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
