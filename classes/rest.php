@@ -41,7 +41,7 @@ class RestUtils
         // set the status
         header($strStatusHeader);
         // set the content type  
-        header('Content-type: application/' . $strContentType);
+        header('Content-type: ' $strContentType);
         $body = RestUtils::getReplayBody($arrObject, $strContentType);
         if($body != '') {    
             echo $body;  
