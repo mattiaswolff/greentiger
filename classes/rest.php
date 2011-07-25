@@ -37,7 +37,9 @@ class RestUtils
   
     public static function sendResponse($status = 200, $arrObject = '', $strContentType = 'text/html') {  
         
-        $status_header = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);  
+        $status_header = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);
+        echo 'test';
+        die();
         // set the status  
         header($status_header);  
         // set the content type  
@@ -143,8 +145,6 @@ class RestUtils
         );  
         
         return (isset($codes[$status])) ? $codes[$status] : '';
-        echo 'test';
-        die();
     }
 }  
   
