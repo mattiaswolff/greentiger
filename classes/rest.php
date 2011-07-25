@@ -13,7 +13,8 @@ class RestUtils
                 $data = $_GET;     
                 break;  
             case 'post':  
-                $data = $_POST;  
+                $data = $_POST;
+                $data[] = $_GET;
                 break;
             case 'put':  
                 parse_str(file_get_contents('php://input'), $arrVars);  
