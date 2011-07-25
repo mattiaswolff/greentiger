@@ -36,8 +36,7 @@ class RestUtils
     }    
   
     public static function sendResponse($status = 200, $arrObject = '', $strContentType = 'text/html') {  
-        echo 'test';
-        die();
+        
         $status_header = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);  
         // set the status  
         header($status_header);  
@@ -97,11 +96,8 @@ class RestUtils
         }
         return $body;
     }
-    public static function getStatusCodeMessage($status)  
-    {  
-        // these could be stored in a .ini file and loaded  
-        // via parse_ini_file()... however, this will suffice  
-        // for an example  
+    
+    public static function getStatusCodeMessage($status) {
         $codes = Array(  
             100 => 'Continue',  
             101 => 'Switching Protocols',  
@@ -145,7 +141,8 @@ class RestUtils
             504 => 'Gateway Timeout',  
             505 => 'HTTP Version Not Supported'  
         );  
-  
+        echo 'test';
+        die();
         return (isset($codes[$status])) ? $codes[$status] : '';  
     }
 }  
