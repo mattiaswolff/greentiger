@@ -46,7 +46,7 @@ class User {
             $objResults = $db->users->find(array("email" => $email));
         }
         else {
-            $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
+            $intSkip = ($intObjectsPerPage * ($intPage - 1));
             $intLimit = $intObjectsPerPage;
             $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
         }
