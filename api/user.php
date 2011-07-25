@@ -31,6 +31,8 @@ switch($data->getMethod()) {
             $arrResults = User::get(10, 1, $strEmail);
             $objUser = new User();
             $objUser->setName((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
+            $objUser->setEmail((isset($arrRequestVars['email']) ? $arrRequestVars['email'] : $arrResults['email']);
+            $objUser->setDefinitions((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'application/json');
         }
