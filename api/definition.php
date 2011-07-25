@@ -26,6 +26,10 @@ switch($data->getMethod()) {
             $objDefinition->setName($arrRequestVars["name"]);
             $objDefinition->setDescription($arrRequestVars["description"]);
             $objDefinition->upsert();
+            $objUser = new User($arrRequestVars['userId']);
+            $arrDefinitions = $objUser->getDefinitions;
+            $arrDefinitions[] = $objDefinition->_id;
+            $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objDefinition->getId(), 'application/json');
         }
         else {
