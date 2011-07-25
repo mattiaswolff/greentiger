@@ -48,7 +48,7 @@ class User {
         else {
             $intSkip = 0;
             $intLimit = $intObjectsPerPage;
-            $objResults = $db->users->find()->limit($intLimit)->skip($intSkip);
+            $objResults = $db->users->find()->skip($intSkip)->limit($intLimit);
         }
         $arrResults['total'] = $db->users->find()->count();
         $arrResults['page'] = $intPage;
