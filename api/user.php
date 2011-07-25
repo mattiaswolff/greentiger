@@ -19,7 +19,7 @@ switch($data->getMethod()) {
             $user->setId($arrRequestVars["userId"]);
             $user->setEmail($arrRequestVars["email"]);
             $user->setName($arrRequestVars["name"]);
-            $user->save();
+            $user->upsert();
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
         }
         else {
