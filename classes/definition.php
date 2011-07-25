@@ -80,5 +80,11 @@ class Definition {
         $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
         return $intStatus; 
     }
+    
+    //Other functions
+    public function toArray() {
+        $array = get_object_vars($this);
+        return $array;
+    }
 }
 ?>
