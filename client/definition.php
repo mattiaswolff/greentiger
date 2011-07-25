@@ -8,7 +8,7 @@
 </head>
 
 <body id="home">
-                test
+                test2
                 Post
 				<form name="register" action="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?userId=matwo065" method="post">
    		 			    Name: <input type="text" name="name" maxlength="30" />
