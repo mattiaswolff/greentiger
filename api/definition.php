@@ -11,7 +11,7 @@ switch($data->getMethod()) {
         if (isset($arrRequestVars['definitionId'])) {
             $arrId = $arrRequestVars['definitionId'];
         }
-        else {
+        else if (isset($arrRequestVars['userId'])) {
             $arrResults = User::get($data->getRequestVars($arrRequestVars['userId']));
             $arrId = $arrResults['definitions'];
         }
