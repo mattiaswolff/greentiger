@@ -2,6 +2,7 @@
 
 class User {
     //Properties
+    private $_id;
     private $email;
     private $name;
     private $definitions;
@@ -14,6 +15,13 @@ class User {
     }
     
     //Accessors
+    
+    public function getId() {
+        return $this->_id;
+    }
+    public function setId($id) {
+            $this->_id = (string)$id;
+    }
     public function getEmail() {
         return $this->email;
     }
@@ -66,12 +74,12 @@ class User {
         $db = $m->projectcopperfield;
         $array = get_object_vars($this);
         $result = $db->command(array('findAndModify' => 'users', 
-        'query' => array('email' => $this->email),
+        'query' => array('_id' => $this->_id),
         'update' => $array,
         'new' => true,   
         'upsert' => true,
-        'fields' => array( 'email' => 1 )));
-        $this->email = $result['value']['email'];
+        'fields' => array( '_id' => 1 )));
+        $this->email = $result['value']['_id'];
     }
     
     function delete($strEmail) {

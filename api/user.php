@@ -14,8 +14,9 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['email'])) {
+        if (isset($arrRequestVars['userId'])) {
             $user = new User();
+            $user->setId($arrRequestVars["userId"]);
             $user->setEmail($arrRequestVars["email"]);
             $user->setName($arrRequestVars["name"]);
             $user->save();
