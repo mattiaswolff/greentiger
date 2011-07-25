@@ -20,6 +20,8 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
+        echo "test";
+            die();
         if (isset($arrRequestVars['userId'])) {
             $objDefinition = new Definition();
             $objDefinition->setId('test');
