@@ -82,7 +82,7 @@ class User {
         $db = $m->projectcopperfield;
 	    $arrQuery = array("email" => $strEmail);
 	    $test = $db->users->remove($arrQuery);
-        echo $test;
+        echo var_dump($test);
     }
 }
 ?>
