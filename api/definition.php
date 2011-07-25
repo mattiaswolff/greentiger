@@ -1,6 +1,6 @@
 <?php
 require "../classes/rest.php";
-require "../classes/defintion.php";
+require "../classes/definition.php";
 require "../classes/user.php";
 
 $data = RestUtils::processRequest();  
