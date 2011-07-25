@@ -82,10 +82,8 @@ class User {
         $db = $m->projectcopperfield;
 	    $arrQuery = array("email" => $strEmail);
         $arrOptions = array("safe" => true);
-	    $bolSuccess = $db->users->remove($arrQuery, $arrOptions);
-        echo var_dump($bolSuccess);
-        die();
-        $intStatus = ($bolSuccess ? 201 : 400);
+	    $arrResults = $db->users->remove($arrQuery, $arrOptions);
+        $intStatus = ($arrResults['n'] == 1 ? 201 : 400);
         return $intStatus; 
     }
 }
