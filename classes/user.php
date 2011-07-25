@@ -81,7 +81,8 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
 	    $arrQuery = array("email" => $strEmail);
-	    $db->users->remove($arrQuery);
+	    $test = $db->users->remove($arrQuery);
+        echo $test;
     }
 }
 ?>
