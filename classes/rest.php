@@ -41,6 +41,8 @@ class RestUtils
         header($status_header);  
         // set the content type  
         header('Content-type: application/' . $strContentType);  
+        echo 'test';
+        die();
         $body = RestUtils::getReplayBody($arrObject, $strContentType);
         if($body != '') {    
             echo $body;  
@@ -48,8 +50,7 @@ class RestUtils
         }    
         else  
         {    
-            echo 'test';
-            die();
+           
             $message = '';   
             switch($status)  
             {  
