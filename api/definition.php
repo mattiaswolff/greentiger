@@ -20,14 +20,10 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
-        echo "test";
-            die();
         if (isset($arrRequestVars['userId'])) {
             $objDefinition = new Definition();
             $objDefinition->setId('test');
             $objDefinition->setName($arrRequestVars["name"]);
-            echo "test";
-            die();
             $objDefinition->setDescription($arrRequestVars["description"]);
             $objDefinition->upsert();
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
