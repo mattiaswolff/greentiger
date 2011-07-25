@@ -10,7 +10,7 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         $strEmail = (isset($arrRequestVars['email']) ? $arrRequestVars['email'] : null);
         $arrResults = User::get(10, 1, $strEmail);
-        RestUtils::sendResponse(200, $arrResults, 'json');
+        RestUtils::sendResponse(200, $arrResults, 'application/json');
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
@@ -19,7 +19,7 @@ switch($data->getMethod()) {
             $user->setEmail($arrRequestVars["email"]);
             $user->setName($arrRequestVars["name"]);
             $user->save();
-            RestUtils::sendResponse(200, (array)$user->getEmail(), 'json');
+            RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
         }
         else {
             RestUtils::sendResponse(400);
@@ -30,7 +30,7 @@ switch($data->getMethod()) {
         if (isset($arrRequestVars['email'])) {
             $objUser = new User($arrRequestVars['email']);
             $objUser->save();
-            RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'json');
+            RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'application/json');
         }
         else {
             RestUtils::sendResponse(400);
@@ -40,7 +40,7 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['email'])) {
             User::delete($arrRequestVars['email']);
-            RestUtils::sendResponse(200, $arrRequestVars['email'], 'json');
+            RestUtils::sendResponse(200, $arrRequestVars['email'], 'application/json');
         }
         else {
             RestUtils::sendResponse(400);
