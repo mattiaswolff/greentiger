@@ -36,13 +36,13 @@ class RestUtils
     }    
   
     public static function sendResponse($status = 200, $arrObject = '', $strContentType = 'text/html') {  
+        echo 'test';
+        die();
         $status_header = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);  
         // set the status  
         header($status_header);  
         // set the content type  
         header('Content-type: application/' . $strContentType);  
-        echo 'test';
-        die();
         $body = RestUtils::getReplayBody($arrObject, $strContentType);
         if($body != '') {    
             echo $body;  
