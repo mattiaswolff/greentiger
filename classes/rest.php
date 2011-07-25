@@ -14,7 +14,9 @@ class RestUtils
                 break;  
             case 'post':  
                 $data = $_POST;
-                $data[] = $_GET;
+                foreach ($_GET as $var){
+                    $data[] = $var;
+                }
                 echo var_dump($data);
                 break;
             case 'put':  
