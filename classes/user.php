@@ -81,8 +81,8 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
 	    $arrQuery = array("email" => $strEmail);
-	    $test = $db->users->remove($arrQuery);
-        echo var_dump($test);
+	    $bolSuccess = $db->users->remove($arrQuery);
+        if $bolSuccess ? echo 'yes' : 'no';
     }
 }
 ?>
