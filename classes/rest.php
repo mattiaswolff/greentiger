@@ -17,7 +17,6 @@ class RestUtils
                 foreach ($_GET as $key => $var){
                     $data[$key] = $var;
                 }
-                echo var_dump($data);
                 break;
             case 'put':  
                 parse_str(file_get_contents('php://input'), $arrVars);  
