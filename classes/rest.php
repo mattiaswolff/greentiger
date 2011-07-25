@@ -40,12 +40,8 @@ class RestUtils
         $strStatusHeader = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);
         // set the status
         header($strStatusHeader);
-        echo 'test';
-        die();
         // set the content type  
-        header('Content-type: application/' . $strContentType);  
-        echo 'test';
-        die();
+        header('Content-type: application/' . $strContentType);
         $body = RestUtils::getReplayBody($arrObject, $strContentType);
         if($body != '') {    
             echo $body;  
