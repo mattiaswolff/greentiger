@@ -24,6 +24,8 @@ switch($data->getMethod()) {
             $objDefinition = new Definition();
             $objDefinition->setId('test');
             $objDefinition->setName($arrRequestVars["name"]);
+            echo "test";
+            die();
             $objDefinition->setDescription($arrRequestVars["description"]);
             $objDefinition->upsert();
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
