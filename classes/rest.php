@@ -37,13 +37,11 @@ class RestUtils
   
     public static function sendResponse($status = 200, $arrObject = '', $strContentType = 'text/html') {  
         
-        $status_header = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);
-        // set the status  
-        echo $status_header;
-        die();
-        header($status_header);
+        $strStatusHeader = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);
+        // set the status
+        header($strStatusHeader);
         echo 'test';
-        
+        die();
         // set the content type  
         header('Content-type: application/' . $strContentType);  
         echo 'test';
