@@ -28,8 +28,10 @@ switch($data->getMethod()) {
     case 'put':
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['email'])) {
-            $objUser = new User($arrRequestVars['email']);
-            $objUser->save();
+            $arrResults = User::get(10, 1, $strEmail);
+            $objUser = new User();
+            $objUser->setName((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
+            $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'application/json');
         }
         else {

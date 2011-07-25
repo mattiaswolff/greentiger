@@ -7,11 +7,10 @@ class User {
     private $definitions;
   
     //Constructor
-    
     public function __construct(){
         $this->email = '';
         $this->name = '';
-        $this->definitions = '';
+        $this->definitions = array();
     }
     
     //Accessors
@@ -30,31 +29,13 @@ class User {
         return $this->name;
     }
     public function setName($name) {
-            $this->name = $name;
+            $this->name = (string)$name;
     }
     public function getDefinitions() {
         return $this->definitions;
     }
     public function setDefinitions($definitions) {
         $this->definitions = $definitions;
-    }
-    
-    public function save() {
-        $m = new Mongo();
-        $db = $m->projectcopperfield;
-        $array = get_object_vars($this);
-        $result = $db->command(array('findAndModify' => 'users', 
-        'query' => array('email' => $this->email),
-        'update' => $array,
-        'new' => true,   
-        'upsert' => true,
-        'fields' => array( 'email' => 1 )));
-        $this->email = $result['value']['email'];
-    }
-    
-    public function toArray() {
-        $array = get_object_vars($this);
-        return $array;
     }
     
     function get($intObjectsPerPage = 10, $intPage = 1, $email = null) {
@@ -74,17 +55,35 @@ class User {
         foreach ($objResults as $var) {
             $arrResults['users'][] = $var;
         }
-	    return $arrResults; 
+        return $arrResults; 
+    }
+    
+    public function upsert() {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $array = get_object_vars($this);
+        $result = $db->command(array('findAndModify' => 'users', 
+        'query' => array('email' => $this->email),
+        'update' => $array,
+        'new' => true,   
+        'upsert' => true,
+        'fields' => array( 'email' => 1 )));
+        $this->email = $result['value']['email'];
     }
     
     function delete($strEmail) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-	    $arrQuery = array("email" => $strEmail);
+        $arrQuery = array("email" => $strEmail);
         $arrOptions = array("safe" => true);
 	    $arrResults = $db->users->remove($arrQuery, $arrOptions);
-        $intStatus = ($arrResults['n'] == 1 ? 201 : 400);
+        $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
         return $intStatus; 
+    }
+    
+    public function toArray() {
+        $array = get_object_vars($this);
+        return $array;
     }
 }
 ?>
