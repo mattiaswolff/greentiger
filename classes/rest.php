@@ -39,8 +39,10 @@ class RestUtils
         
         $status_header = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);
         // set the status  
+        echo $status_header;
         header($status_header);
-        
+        echo 'test';
+        die();
         // set the content type  
         header('Content-type: application/' . $strContentType);  
         echo 'test';
