@@ -15,7 +15,7 @@ switch($data->getMethod()) {
             $arrResults = User::get($data->getRequestVars($arrRequestVars['userId']));
             $arrId = $arrResults['definitions'];
         }
-        $arrResults = Definitions::get(10, 1, $arrId);
+        $arrResults = Definition::get(10, 1, $arrId);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
         break;
     case 'post':
