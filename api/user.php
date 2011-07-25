@@ -43,7 +43,7 @@ switch($data->getMethod()) {
             RestUtils::sendResponse(200, $arrRequestVars['email'], 'json');
         }
         else {
-            RestUtils::sendResponse(400, '', 'test');
+            RestUtils::sendResponse(405, '', 'test');
         }
         break;
 }
