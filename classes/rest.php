@@ -141,9 +141,10 @@ class RestUtils
             504 => 'Gateway Timeout',  
             505 => 'HTTP Version Not Supported'  
         );  
+        
+        return (isset($codes[$status])) ? $codes[$status] : '';
         echo 'test';
         die();
-        return (isset($codes[$status])) ? $codes[$status] : '';  
     }
 }  
   
