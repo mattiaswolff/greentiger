@@ -22,7 +22,7 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['userId'])) {
             $objDefinition = new Definition();
-            $objDefinition->setId('test');
+            $objDefinition->setId($arrRequestVars["name"]);
             $objDefinition->setName($arrRequestVars["name"]);
             $objDefinition->setDescription($arrRequestVars["description"]);
             $objDefinition->upsert();
