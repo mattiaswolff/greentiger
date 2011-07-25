@@ -48,6 +48,8 @@ class RestUtils
         }    
         else  
         {    
+            echo 'test';
+            die();
             $message = '';   
             switch($status)  
             {  
