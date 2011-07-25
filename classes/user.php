@@ -83,7 +83,7 @@ class User {
 	    $arrQuery = array("email" => $strEmail);
 	    $bolSuccess = $db->users->remove($arrQuery);
         $intStatus = ($bolSuccess ? 200 : 400);
-        echo $intStatus; 
+        return $intStatus; 
     }
 }
 ?>
