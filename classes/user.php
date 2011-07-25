@@ -47,14 +47,13 @@ class User {
     }
     
     //Get, Upsert and Delete functions
-    function get($intObjectsPerPage = 10, $intPage = 1, $userId = null) {
+    function get($intObjectsPerPage = 10, $intPage = 1, $strUserId = null) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        if ($email != null) {
-            $objResults = $db->users->find(array("_id" => $userId));
+        if ($strUserId != null) {
+            $objResults = $db->users->find(array("_id" => $strUserId));
         }
         else {
-            echo "test2";
             $intSkip = 0;
             $intLimit = $intObjectsPerPage;
             $objResults = $db->users->find()->skip($intSkip)->limit($intLimit);
