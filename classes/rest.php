@@ -71,16 +71,17 @@ class RestUtils
             $signature = ($_SERVER['SERVER_SIGNATURE'] == '') ? $_SERVER['SERVER_SOFTWARE'] . ' Server at ' . $_SERVER['SERVER_NAME'] . ' Port ' . $_SERVER['SERVER_PORT'] : $_SERVER['SERVER_SIGNATURE'];  
   
             // this should be templatized in a real-world solution  
-            $body = '<!DOCTYPE HTML PUBLIC>
+            $body = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
     <head>
-		<title>test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>' . $status . ' ' . RestUtils::getStatusCodeMessage($status) . '</title>
 	</head>
 	<body>
-		<h1>test</h1>
-		<p>test</p>
+		<h1>' . RestUtils::getStatusCodeMessage($status) . '</h1>
+		<p>' . $message . '</p>
 		<hr />
-		<address>test</address>
+		<address>' . $signature . '</address>
 	</body>
 </html>';
             
