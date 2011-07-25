@@ -8,8 +8,8 @@ class User {
   
     //Constructor
     
-    public function __construct($email){
-        $this->email = $email;
+    public function __construct(){
+        $this->email = '';
         $this->name = '';
         $this->definitions = '';
     }
