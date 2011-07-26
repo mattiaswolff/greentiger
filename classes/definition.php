@@ -12,7 +12,7 @@ class Definition {
   
     //Constructor
     public function __construct($objId = null){  
-        if ($strObjectId != null) {
+        if ($objId != null) {
             $m = new Mongo();
             $db = $m->projectcopperfield;
             $arrResults = $db->definitions->findOne(array("_id" => $objId));
