@@ -50,8 +50,8 @@ class Definition {
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
         if ($arrDefinitionId != null) {
-            $objResults = $db->defintitions->find(array("definitionId" => array('$in' => $arrDefinitionId)))->limit($intLimit)->skip($intSkip);
-            $arrResults['total'] = $db->users->find(array("definitionId" => array('$in' => $arrDefinitionId)))->count();
+            $objResults = $db->definitions->find(array("definitionId" => array('$in' => $arrDefinitionId)))->limit($intLimit)->skip($intSkip);
+            $arrResults['total'] = $db->definitions->find(array("definitionId" => array('$in' => $arrDefinitionId)))->count();
         }
         else {
             $objResults = $db->defintitions->find()->limit($intLimit)->skip($intSkip);
