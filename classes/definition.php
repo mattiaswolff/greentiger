@@ -63,7 +63,7 @@ class Definition {
         $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
-        echo var_dump($objResults);
+        $objResults->rewind();
         foreach ($objResults as $key => $var) {
             $arrResults['total'] = $arrResults['total'] + 1;
             $objId = new MongoId($var['_id']);
