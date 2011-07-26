@@ -81,6 +81,7 @@ class Definition {
     public function upsert() {
         $m = new Mongo();
         $db = $m->projectcopperfield;
+        $this->updatedDate = new MongoDate();
         $array = get_object_vars($this);
         $result = $db->command(array('findAndModify' => 'tasks', 
         'query' => array('_id' => $this->_id),
