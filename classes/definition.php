@@ -27,7 +27,7 @@ class Definition {
     public function getUpdatedDate() { return $this->updatedDate; } 
     public function getContent() { return $this->content; } 
     public function getTasks() { return $this->tasks; } 
-    public function setId($x) { $this->_id = $x; } 
+    public function setId() { $this->_id = new MongoId(); } 
     public function setName($x) { $this->name = $x; } 
     public function setDescription($x) { $this->description = $x; } 
     public function setUpdatedDate($x) { $this->updatedDate = $x; }     

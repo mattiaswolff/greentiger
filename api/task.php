@@ -32,7 +32,7 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['definitionId'])) {
             $objTask = new Task();
-            $objTask->setId(new MongoId());
+            $objTask->setId();
             $objTask->setCreatedBy("CreateFunction");
             $objTask->setKeywords($arrRequestVars["keywords"]);
             $objTask->setAttachments("attachment");

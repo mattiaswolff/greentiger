@@ -42,7 +42,7 @@ class Task {
     public function getTags() { return $this->tags; } 
     public function getDefinition() { return $this->definition; } 
     public function getContent() { return $this->content; } 
-    public function setId($x) { $this->_id = $x; } 
+    public function setId() { $this->_id = new MongoId(); } 
     public function setCreatedBy($x) { $this->createdBy = $x; } 
     public function setUpdatedDate($x) { $this->updatedDate = $x; } 
     public function setKeywords($x) { $this->keywords = $x; } 
