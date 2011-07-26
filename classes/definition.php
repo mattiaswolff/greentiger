@@ -59,9 +59,9 @@ class Definition {
         $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $key => $var) {
             $arrResults['total'] = $arrResults['total'] + 1;
-            $arrResults['definitions'][] = $var;
             $objId = new MongoId($var['_id']);
-            $arrResults['definitions'][$key]['createdDate'] = $objId->getTimestamp();
+            $var[] = $objId->getTimestamp();
+            $arrResults['definitions'][] = $var;
         }
         return $arrResults; 
     }
