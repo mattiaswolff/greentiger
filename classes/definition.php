@@ -58,11 +58,11 @@ class Definition {
         $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
-        foreach ($objResults as $var) {
+        foreach ($objResults as $key => $var) {
             $arrResults['total'] = $arrResults['total'] + 1;
             $arrResults['definitions'][] = $var;
+            $arrResults['definitions'][$key]['createdDate'] = MongoId::getTimestamp($var['definitions']['_id']);
         }
-        $arrResults['definitions']['createdDate'] = MongoId::getTimestamp($arrResults['definitions']['_id']);
         return $arrResults; 
     }
     
