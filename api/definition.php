@@ -12,7 +12,7 @@ switch($data->getMethod()) {
             $arrId = $arrRequestVars['definitionId'];
         }
         else if (isset($arrRequestVars['userId'])) {
-            $arrResults = User::get($data->getRequestVars($arrRequestVars['userId']));
+            $arrResults = User::get(1000, 1, $data->getRequestVars($arrRequestVars['userId']));
             $arrId = $arrResults['definitions'];
         }
         $arrResults = Definition::get(10, 1, $arrId);
