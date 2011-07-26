@@ -42,7 +42,7 @@ class Definition {
         $intLimit = $intObjectsPerPage;
         if ($arrObjectId != null) {
             echo var_dump($arrObjectId);
-            $objResults = $db->definitions->find(array("_id" => array('$in' => $arrObjectId[0])))->limit($intLimit)->skip($intSkip);
+            $objResults = $db->definitions->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
         }
         else {
             $objResults = $db->definitions->find()->limit($intLimit)->skip($intSkip);
