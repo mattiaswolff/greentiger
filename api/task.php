@@ -13,7 +13,8 @@ switch($data->getMethod()) {
             $arrId[] = $arrRequestVars['taskId'];
         }
         else if (isset($arrRequestVars['definitionId'])) {
-            $arrResults = Definition::get(1000, 1, new MongoId($arrRequestVars['definitionId']));
+            $objId[] = new MongoId($arrRequestVars['definitionId']);
+            $arrResults = Definition::get(1000, 1, $objId);
             $arrId = $arrResults['definitions'][0]['tasks'];
         }
         else if (isset($arrRequestVars['userId'])) {
