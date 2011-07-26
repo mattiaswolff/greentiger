@@ -10,14 +10,27 @@ class Definition {
   private $content;
   private $tasks;
   
-  //Constructor
-  public function __construct(){  
-    $this->_id = '';
-    $this->name = '';  
-    $this->description = '';  
-    $this->content = array();
-    $this->tasks = array();
-    $this->updatedDate = '';
+    //Constructor
+    public function __construct($objId = null){  
+        if ($strObjectId != null) {
+            $m = new Mongo();
+            $db = $m->projectcopperfield;
+            $arrResults = $db->definitions->findOne(array("_id" => $objId));
+            $this->_id = $arrResults['_id'];
+            $this->name = $arrResults['name'];
+            $this->description = $arrResults['email'];
+            $this->updatedDate = $arrResults['updatedDate'];
+            $this->content = $arrResults['content'];
+            $this->tasks = $arrResults['tasks'];
+        }
+        else {
+            $this->_id = '';
+            $this->name = '';  
+            $this->description = '';  
+            $this->content = array();
+            $this->tasks = array();
+            $this->updatedDate = '';
+        }
     }
     
     //Accessors
