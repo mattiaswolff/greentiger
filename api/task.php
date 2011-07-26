@@ -14,13 +14,13 @@ switch($data->getMethod()) {
         }
         else if (isset($arrRequestVars['definitionId'])) {
             $arrResults = Definition::get(1000, 1, $arrRequestVars['definitionId']);
-            $arrId[] = $arrResults['definitions'][0]['tasks'];
+            $arrId = $arrResults['definitions'][0]['tasks'];
         }
         else if (isset($arrRequestVars['userId'])) {
             $arrResults = User::get(1000, 1, $arrRequestVars['userId']);
-            $arrId[] = $arrResults['users'][0]['definitions'];
+            $arrId = $arrResults['users'][0]['definitions'];
             $arrResults = Definition::get(1000, 1, $arrId);
-            $arrId[] = $arrResults['definitions'][0]['tasks'];
+            $arrId = $arrResults['definitions'][0]['tasks'];
         }
         else {
             $arrId = null;
