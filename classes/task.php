@@ -31,7 +31,7 @@ class Task {
     }
     
     //Accessors
-    public function getId() { return $this->_id; } 
+    public function getId() { return (string)$this->_id; } 
     public function getCreatedBy() { return $this->createdBy; } 
     public function getUpdatedDate() { return $this->updatedDate; } 
     public function getKeywords() { return $this->keywords; } 
