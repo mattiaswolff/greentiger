@@ -6,7 +6,6 @@ class Definition {
   private $_id;
   private $name;
   private $description;
-  private $createdDate;
   private $updatedDate;
   private $content;
   
