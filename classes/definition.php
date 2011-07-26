@@ -20,31 +20,19 @@ class Definition {
     $this->updatedDate = '';
     }
     
-  //Accessors
-  public function getId() {
-    return $this->_id;
-    }
-  public function setId($id) {
-    $this->_id = (string)$id;
-    }
-  public function getName() {
-    return $this->name;
-    }
-  public function setName($name) {
-    $this->name = (string)$name;
-    }
-  public function getDescription() {
-    return $this->description;
-    }
-  public function setDescription($description) {
-    $this->description = (string)$description;
-    }
-  public function getContent() {
-    return $this->name;
-    }
-  public function setContent($content) {
-    $this->content = $content;
-    }
+    //Accessors
+    public function getId() { return $this->_id; } 
+    public function getName() { return $this->name; } 
+    public function getDescription() { return $this->description; } 
+    public function getUpdatedDate() { return $this->updatedDate; } 
+    public function getContent() { return $this->content; } 
+    public function getTasks() { return $this->tasks; } 
+    public function setId($x) { $this->_id = $x; } 
+    public function setName($x) { $this->name = $x; } 
+    public function setDescription($x) { $this->description = $x; } 
+    public function setUpdatedDate($x) { $this->updatedDate = $x; }     
+    public function setContent($x) { $this->content = $x; } 
+    public function setTasks($x) { $this->tasks = $x; } 
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
