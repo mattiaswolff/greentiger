@@ -54,7 +54,7 @@ class Definition {
             $arrResults['total'] = $db->definitions->find(array("_id" => array('$in' => $arrDefinitionId)))->count();
         }
         else {
-            $objResults = $db->defintitions->find()->limit($intLimit)->skip($intSkip);
+            $objResults = $db->definitions->find()->limit($intLimit)->skip($intSkip);
             $arrResults['total'] = $db->users->find()->count();
         }
         $arrResults['page'] = $intPage;

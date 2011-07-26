@@ -9,7 +9,7 @@ switch($data->getMethod()) {
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['definitionId'])) {
-            $arrId = $arrRequestVars['definitionId'];
+            $arrId[] = $arrRequestVars['definitionId'];
         }
         else if (isset($arrRequestVars['userId'])) {
             $arrResults = User::get(1000, 1, $arrRequestVars['userId']);
