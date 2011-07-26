@@ -62,6 +62,7 @@ class Definition {
             $arrResults['total'] = $arrResults['total'] + 1;
             $arrResults['definitions'][] = $var;
         }
+        $arrResults['definitions']['createdDate'] = MongoId::getTimestamp($arrResults['definitions']['_id']);
         return $arrResults; 
     }
     
