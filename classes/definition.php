@@ -55,10 +55,11 @@ class Definition {
         else {
             $objResults = $db->definitions->find()->limit($intLimit)->skip($intSkip);
         }
-        $arrResults['total'] = count($objResults);
+        $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $var) {
+            $arrResults['total'] = $arrResults['total'] + 1;
             $arrResults['definitions'][] = $var;
         }
         return $arrResults; 
