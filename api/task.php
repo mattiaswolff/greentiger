@@ -46,7 +46,7 @@ switch($data->getMethod()) {
             $objDefinition = new Definition(new MongoId($arrRequestVars["definitionId"]));
             $arrTasks = $objDefinition->getTasks();
             $arrTasks[] = $objTask->getId();
-            $objDefinition->setDefinitions($arrTasks);
+            $objDefinition->setTasks($arrTasks);
             $objDefinition->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
         }
