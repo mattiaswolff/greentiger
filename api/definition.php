@@ -14,7 +14,7 @@ switch($data->getMethod()) {
         else if (isset($arrRequestVars['userId'])) {
             $arrResults = User::get(1000, 1, $arrRequestVars['userId']);
             echo var_dump($arrResults); 
-            $arrId = $arrResults['definitions'];
+            $arrId = $arrResults['users'][0]['definitions';
         }
         $arrResults = Definition::get(10, 1, $arrId);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
