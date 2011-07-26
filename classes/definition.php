@@ -12,9 +12,12 @@ class Definition {
   
   //Constructor
   public function __construct(){  
+    $this->_id = '';
     $this->name = '';  
     $this->description = '';  
-    $this->content = array();    
+    $this->content = array();
+    $this->tasks = array();
+    $this->updatedDate = '';
     }
     
   //Accessors
@@ -71,6 +74,7 @@ class Definition {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $array = get_object_vars($this);
+        $this->updatedDate = new MongoDate();
         $result = $db->command(array('findAndModify' => 'definitions', 
         'query' => array('_id' => $this->_id),
         'update' => $array,
