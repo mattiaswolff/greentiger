@@ -51,16 +51,15 @@ class Definition {
         $intLimit = $intObjectsPerPage;
         if ($arrDefinitionId != null) {
             $objResults = $db->definitions->find(array("_id" => array('$in' => $arrDefinitionId)))->limit($intLimit)->skip($intSkip);
-            $arrResults['total'] = $db->definitions->find(array("_id" => array('$in' => $arrDefinitionId)))->count();
         }
         else {
             $objResults = $db->definitions->find()->limit($intLimit)->skip($intSkip);
-            $arrResults['total'] = $db->users->find()->count();
         }
+        $arrResults['total'] = count($objResults);
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $var) {
-            $arrResults['users'][] = $var;
+            $arrResults['definitions'][] = $var;
         }
         return $arrResults; 
     }
