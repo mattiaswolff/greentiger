@@ -21,7 +21,7 @@ class Definition {
     }
     
     //Accessors
-    public function getId() { return (string)$this->_id; } 
+    public function getId() { return $this->_id; } 
     public function getName() { return $this->name; } 
     public function getDescription() { return $this->description; } 
     public function getUpdatedDate() { return $this->updatedDate; } 
