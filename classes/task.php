@@ -1,6 +1,6 @@
 <?php
 
-class Definition {
+class Task {
 
   //Properties
     private $_id;
