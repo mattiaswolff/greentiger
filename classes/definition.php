@@ -63,8 +63,8 @@ class Definition {
         $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
-        $objResults->rewind();
         foreach ($objResults as $key => $var) {
+            echo "test";
             $arrResults['total'] = $arrResults['total'] + 1;
             $objId = new MongoId($var['_id']);
             $var['createdDate'] = $objId->getTimestamp();
