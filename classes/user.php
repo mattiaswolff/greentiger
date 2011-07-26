@@ -69,10 +69,11 @@ class User {
             $intLimit = $intObjectsPerPage;
             $objResults = $db->users->find()->skip($intSkip)->limit($intLimit);
         }
-        $arrResults['total'] = $db->users->find()->count();
+        $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $var) {
+            $arrResults['total'] = $arrResults['total'] + 1;
             $arrResults['users'][] = $var;
         }
         return $arrResults; 
