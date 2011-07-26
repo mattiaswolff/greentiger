@@ -82,7 +82,7 @@ class Definition {
     function delete($arrId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $arrQuery = array("_id" => array("$in" => $arrId));
+        $arrQuery = array("_id" => array('$in' => $arrId));
         $arrOptions = array("safe" => true);
         $arrResults = $db->users->remove($arrQuery, $arrOptions);
         $intStatus = ($arrResults['n'] == 1 ? 200 : 400);

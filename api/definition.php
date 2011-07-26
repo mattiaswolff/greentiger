@@ -57,9 +57,9 @@ switch($data->getMethod()) {
         break;
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
-        echo var_dump($arrRequestVars);
         if (isset($arrRequestVars['definitionId'])) {
-            $intStatus = Definition::delete($arrRequestVars['definitionId']);
+            $arrDefinitionId[] = $arrRequestVars['definitionId']:
+            $intStatus = Definition::delete($arrDefinitionId);
             RestUtils::sendResponse($intStatus, $arrRequestVars['definitionId'], 'application/json');
         }
         else {
