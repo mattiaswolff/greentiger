@@ -54,6 +54,7 @@ class Definition {
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
         if ($arrObjectId != null) {
+            echo var_dump($arrObjectId);
             $objResults = $db->definitions->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
         }
         else {
@@ -62,6 +63,7 @@ class Definition {
         $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
+        echo var_dump($objResults);
         foreach ($objResults as $key => $var) {
             $arrResults['total'] = $arrResults['total'] + 1;
             $objId = new MongoId($var['_id']);
