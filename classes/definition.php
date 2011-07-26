@@ -60,7 +60,7 @@ class Definition {
         foreach ($objResults as $key => $var) {
             $arrResults['total'] = $arrResults['total'] + 1;
             $objId = new MongoId($var['_id']);
-            $var[] = $objId->getTimestamp();
+            $var['createdDate'] = $objId->getTimestamp();
             $arrResults['definitions'][] = $var;
         }
         return $arrResults; 
