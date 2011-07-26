@@ -41,7 +41,6 @@ class Definition {
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
         if ($arrObjectId != null) {
-            echo var_dump($arrObjectId);
             $objResults = $db->definitions->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
         }
         else {
