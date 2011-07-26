@@ -16,7 +16,7 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['userId'])) {
             $user = new User();
-            $user->setId($arrRequestVars["userId"]);
+            $user->setId(new MongoId());
             $user->setEmail($arrRequestVars["email"]);
             $user->setName($arrRequestVars["name"]);
             $user->upsert();
