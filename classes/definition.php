@@ -49,7 +49,7 @@ class Definition {
         $db = $m->projectcopperfield;
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
-        if ($strDefinitionId != null) {
+        if ($arrDefinitionId != null) {
             $objResults = $db->defintitions->find(array("definitionId" => array("$in" => $strDefinitionId)))->limit($intLimit)->skip($intSkip);
             $arrResults['total'] = $db->users->find(array("definitionId" => array("$in" => $strDefinitionId)))->count();
         }
