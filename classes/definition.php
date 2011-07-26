@@ -8,6 +8,7 @@ class Definition {
   private $description;
   private $updatedDate;
   private $content;
+  private $tasks;
   
   //Constructor
   public function __construct(){  
@@ -43,13 +44,13 @@ class Definition {
     }
     
     //Get, Upsert and Delete functions
-    function get($intObjectsPerPage = 10, $intPage = 1, $arrDefinitionId = null) {
+    function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
         if ($arrDefinitionId != null) {
-            $objResults = $db->definitions->find(array("_id" => array('$in' => $arrDefinitionId)))->limit($intLimit)->skip($intSkip);
+            $objResults = $db->definitions->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
         }
         else {
             $objResults = $db->definitions->find()->limit($intLimit)->skip($intSkip);
@@ -79,12 +80,12 @@ class Definition {
         $this->_id = $result['value']['_id'];
     }
     
-    function delete($arrId) {
+    function delete($arrObjectId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $arrQuery = array("_id" => array('$in' => $arrId));
+        $arrQuery = array("_id" => array('$in' => $arrObjectId));
         $arrOptions = array("safe" => true);
-        $arrResults = $db->users->remove($arrQuery, $arrOptions);
+        $arrResults = $db->tasks->remove($arrQuery, $arrOptions);
         $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
         return $intStatus; 
     }

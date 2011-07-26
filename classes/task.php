@@ -1,135 +1,110 @@
 <?php
-/*------------------------------------------------------------------------------
-** File:        task.php
-** Description: Handles the task 
-** Version:     1.0
-** Author:      Mattias Wolff
-** Email:       mattias dot wolff at gmail dot com
-** Homepage:    www.brenorbrophy.com 
-*/
 
-class Task {
-  public $createdBy;
-  public $createdDate;
-  public $keywords 	= array();
-  public $definition;
-  public $attachments 	= array();
+class Definition {
+
+  //Properties
+    private $_id;
+    private $createdBy;
+    private $updatedDate;
+    private $keywords;
+    private $attachments;
+    private $comments;
+    private $likes;
+    private $ratings;
+    private $tags;
+    private $definition;
+    private $content;
   
-  public $comments 	= array();
-  public $likes 	= array();
-  public $dislikes 	= array();
-  public $rating	= array();
-  public $tags		= array();
-  
-  public $info		= array();
-
-  public function upsert () {
-    //set static info
-    $this->createdDate 	= new MongoDate();
-	$this->createdBy 	= 'v';
-	
-	//set keywords    
-	foreach (split(" ", strtolower($this->createdBy)) as $var) {
-		$this->keywords[] = $var;
-	}
-	foreach ($this->info as $field) {
-		foreach (split(" ", strtolower($field)) as $var) {
-			$this->keywords[] = $var;
-		}
-	}
+    //Constructor
+    public function __construct(){  
+        $this->_id = '';  
+        $this->createdBy = '';  
+        $this->updatedDate = '';
+        $this->keywords = array();  
+        $this->attachments = array();  
+        $this->comments = array();
+        $this->likes = array();  
+        $this->ratings = array();  
+        $this->tags = array();
+        $this->definition = '';  
+        $this->content = array();
+    }
     
-    require ($_SERVER["DOCUMENT_ROOT"] . "/scripts/connectMongoDb.php");
+    //Accessors
+    public function getId() { return $this->_id; } 
+    public function getCreatedBy() { return $this->createdBy; } 
+    public function getUpdatedDate() { return $this->updatedDate; } 
+    public function getKeywords() { return $this->keywords; } 
+    public function getAttachments() { return $this->attachments; } 
+    public function getComments() { return $this->comments; } 
+    public function getLikes() { return $this->likes; } 
+    public function getRatings() { return $this->ratings; } 
+    public function getTags() { return $this->tags; } 
+    public function getDefinition() { return $this->definition; } 
+    public function getContent() { return $this->content; } 
+    public function setId($x) { $this->_id = $x; } 
+    public function setCreatedBy($x) { $this->createdBy = $x; } 
+    public function setUpdatedDate($x) { $this->updatedDate = $x; } 
+    public function setKeywords($x) { $this->keywords = $x; } 
+    public function setAttachments($x) { $this->attachments = $x; } 
+    public function setComments($x) { $this->comments = $x; } 
+    public function setLikes($x) { $this->likes = $x; } 
+    public function setRatings($x) { $this->ratings = $x; } 
+    public function setTags($x) { $this->tags = $x; } 
+    public function setDefinition($x) { $this->definition = $x; } 
+    public function setContent($x) { $this->content = $x; }
+
+    //Get, Upsert and Delete functions
+    function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
+        $intLimit = $intObjectsPerPage;
+        if ($arrDefinitionId != null) {
+            $objResults = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
+        }
+        else {
+            $objResults = $db->tasks->find()->limit($intLimit)->skip($intSkip);
+        }
+        $arrResults['total'] = 0;
+        $arrResults['page'] = $intPage;
+        $arrResults['pagesize'] = $intObjectsPerPage;
+        foreach ($objResults as $key => $var) {
+            $arrResults['total'] = $arrResults['total'] + 1;
+            $objId = new MongoId($var['_id']);
+            $var['createdDate'] = $objId->getTimestamp();
+            $arrResults['tasks'][] = $var;
+        }
+        return $arrResults; 
+    }
     
-    $result = $db->command(array('findAndModify' => 'tasks', 
-	'query' => array('_id' => new MongoId($this->_id)),
-    'update' => array('createdBy' => $this->createdBy, 'createdDate' => $this->createdDate, 'keywords' => $this->keywords, 'definition' => $this->definition, 'attachments' => $this->attachments, 'comments' => $this->comments, 'likes'=> $this->likes, 'dislikes'=> $this->dislikes, 'rating'=> $this->rating, 'tags' => $this->tags, 'info'=> $this->info),
-    'new' => true,   
-    'upsert' => true,
-    'fields' => array( '_id' => 1 )));
-    $this->_id = $result['value']['_id'];
-  }
-
-	public function likeTask ($id, $email) {
-    	
-	//add user to like
-	$query = array('_id' => new MongoId($id));
-	$value = array('$addToSet' => array('likes' => $email));
-
-	//update like arrat
-    require ($_SERVER["DOCUMENT_ROOT"] . "/scripts/connectMongoDb.php");
+    public function upsert() {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $array = get_object_vars($this);
+        $result = $db->command(array('findAndModify' => 'tasks', 
+        'query' => array('_id' => $this->_id),
+        'update' => $array,
+        'new' => true,   
+        'upsert' => true,
+        'fields' => array( '_id' => 1 )));
+        $this->_id = $result['value']['_id'];
+    }
     
-    $db->tasks->update($query, $value);
-  }
-
-	public function commentTask ($id, $email, $comment) {
+    function delete($arrObjectId) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $arrQuery = array("_id" => array('$in' => $arrObjectId));
+        $arrOptions = array("safe" => true);
+        $arrResults = $db->tasks->remove($arrQuery, $arrOptions);
+        $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
+        return $intStatus; 
+    }
     
-    require ($_SERVER["DOCUMENT_ROOT"] . "/scripts/connectMongoDb.php");
-    	
-	$query = array('_id' => new MongoId($id));
-	$value = array('$push' => array('comments' => array(new MongoDate(), $email, $comment)));
-    	
-    $db->tasks->update($query, $value);
-  }
-
-	public function get ($id) {
-
-    require ($_SERVER["DOCUMENT_ROOT"] . "/scripts/connectMongoDb.php");
-	
-	$query = array('_id' => new MongoId($id));
-    $results = $db->tasks->findOne($query);
-
-    $this->_id = new MongoId($id);
-    $this->createdBy = $results['createdBy'];
-    $this->createdDate = $results['createdDate'];
-    $this->keywords = $results['keywords'];
-    $this->definition = $results['definition'];
-    $this->attachments = $results['attachments'];
-	$this->comments = $results['comments'];
-    $this->likes = $results['likes'];
-    $this->dislikes = $results['dislikes'];
-    $this->rating = $results['rating'];
-	$this->tags = $results['tags'];
-	$this->info = $results['info'];
-  }
+    //Other functions
+    public function toArray() {
+        $array = get_object_vars($this);
+        return $array;
+    }
 }
-
-function getTask($str, $docs_per_page, $page, $email) { 
-	  	
-	require ($_SERVER["DOCUMENT_ROOT"] . "/scripts/connectMongoDb.php");
-	
-	$skip = (int)($docs_per_page * ($page - 1));
-	$limit = $docs_per_page;
-
-	if ($str == "search...") {
-		$query = array('user' => strtolower($email));
-	}
-	elseif ($str == "favourite") {
-
-		$query = array('email' => $email);
-		$value = array('favouriteTasks' => 1);
-		$results = $db->user->find($query, $value)->limit($limit)->skip($skip); 
-		foreach ($results as $result) {
-			foreach ($result['favouriteTasks'] as $res){
-				$id = new MongoId($res['_id']);
-			}
-		}			
-		$query = array('_id' => array('$in' => array($id)), 'user' => strtolower($email));
-	}
-	else {
-		$query = array('keywords' => strtolower($str), 'user' => strtolower($email));
-	}
-	
-	$results = $db->tasks->find($query)->limit($limit)->skip($skip);
-	
-	return $results; 
-}
-
-function deleteTask ($id) {
-    
-    require ($_SERVER["DOCUMENT_ROOT"] . "/scripts/connectMongoDb.php");
-
-	$query = array('_id' => new MongoId($id));
-	
-	$db->tasks->remove($query);
-  }
 ?>
