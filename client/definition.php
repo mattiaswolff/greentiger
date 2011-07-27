@@ -41,12 +41,18 @@
       $("#results").text(str);
     }
     
+    $('form').submit(function() {
+  console.log($(this).serializeArray());
+  return false;
+});
+    
 	</script>
 
 </head>
 
 <body id="home">
     <section id="section">
+        <form>
         <article>
             Name: 
             <input type="text" name="name" />
@@ -67,7 +73,8 @@
 				<option value="dropdown">Drop Down</option>
 			</select>
         </article>
-        
+            <input type="submit"/>
+        </form>
     </section>
         <span onclick="addFormRow()">Add form row</span>
         
