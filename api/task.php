@@ -43,11 +43,11 @@ switch($data->getMethod()) {
             $objTask->setDefinition($arrRequestVars["definitionId"]);
             $objTask->setContent($arrRequestVars["content"]);
             $objTask->upsert();
-            $objId[] = new MongoId($arrRequestVars['definitionId']);
-            $objDefinition = new Definition($objId);
-            $arrTasks = $objDefinition->getTasks();
-            $arrTasks[] = $objTask->getId();
-            $objDefinition->setTasks($arrTasks);
+            $objId[] = new MongoId($arrRequestVars['userId']);
+            $objUser = new User($objId);
+            $arrDefinitions = $objDefinition->getDefinitions();
+            $arrDefinitions[$arrRequestVars['definitionId']]['tasks'][] = $objTask->getId();
+            $objDefinition->setDefinitions($arrDefinitions);
             $objDefinition->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
         }
