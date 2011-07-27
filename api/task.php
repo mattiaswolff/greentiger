@@ -61,7 +61,8 @@ switch($data->getMethod()) {
         if (isset($arrRequestVars['email'])) {
             $arrResults = User::get(10, 1, $strEmail);
             $objUser = new User();
-            //$objUser->setName((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
+            $strName = (isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name'])
+            $objUser->setName($strName);
             //$objUser->setEmail((isset($arrRequestVars['email']) ? $arrRequestVars['email'] : $arrResults['email']);
             //$objUser->setDefinitions((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
             $objUser->upsert();

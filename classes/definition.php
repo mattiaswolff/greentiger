@@ -41,11 +41,11 @@ class Definition {
     public function getContent() { return $this->content; } 
     public function getTasks() { return $this->tasks; } 
     public function setId() { $this->_id = new MongoId(); } 
-    public function setName($x) { $this->name = $x; } 
-    public function setDescription($x) { $this->description = $x; } 
-    public function setUpdatedDate($x) { $this->updatedDate = $x; }     
-    public function setContent($x) { $this->content = $x; } 
-    public function setTasks($x) { $this->tasks = $x; } 
+    public function setName($x = null) {if ($x != null) {$this->name = $x; }} 
+    public function setDescription($x = null) {if ($x != null) { $this->description = $x; } 
+    public function setUpdatedDate($x = null) {if ($x != null) { $this->updatedDate = $x; }     
+    public function setContent($x = null) {if ($x != null) { $this->content = $x; } 
+    public function setTasks($x = null) {if ($x != null) { $this->tasks = $x; } 
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
