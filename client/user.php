@@ -33,7 +33,7 @@
 
 <body id="home">
 				<form>
-   		 			    UserId: <input id="userId" type="text" name="userId" value="" readonly="readonly"/><br/>
+   		 			    UserId: <input id="userId" type="text" name="userId" value=""<?php echo (isset($_GET['userId']) ? 'readonly="readonly"' : '') ?> /><br/>
                         Name: <input id="name" type="text" name="name" value="" /><br/>
                         Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
 				</form>
