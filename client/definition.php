@@ -32,6 +32,11 @@
     }
     
     function showValues() {
+    var values = {};
+    $.each($('#section').serializeArray(), function(i, field) {
+        values[field.name] = field.value;
+    });
+    alert(values);
       var str = $("section").serialize();
       $("#results").text(str);
     }
