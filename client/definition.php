@@ -49,11 +49,11 @@
     <section id="section">
         <article>
             Name: 
-            <input type="text" />
+            <input type="text" name="name" />
             Description: 
             <input type="text" />
             Type: 
-            <select class="field" name="array[<?php echo $key; ?>][type]">
+            <select class="field" name="type">
     		    <option value="text">Text</option>
 				<option value="textarea">Textarea</option>
 				<option value="email">Email</option>
