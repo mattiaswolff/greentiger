@@ -26,36 +26,14 @@ class User {
     }
     
     //Accessors
-    
-    public function getId() {
-        return $this->_id;
-    }
-    public function setId($id) {
-            $this->_id = (string)$id;
-    }
-    public function getEmail() {
-        return $this->email;
-    }
-    public function setEmail($email) {
-        if (preg_match("/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/", $email)) {
-            $this->email = (string)$email;
-        }
-        else {
-            $this->email = 'error';
-        }
-    }
-    public function getName() {
-        return $this->name;
-    }
-    public function setName($name) {
-            $this->name = (string)$name;
-    }
-    public function getDefinitions() {
-        return $this->definitions;
-    }
-    public function setDefinitions($definitions) {
-        $this->definitions = $definitions;
-    }
+    public function getId() { return $this->_id; } 
+    public function getEmail() { return $this->email; } 
+    public function getName() { return $this->name; } 
+    public function getDefinitions() { return $this->definitions; } 
+    public function setId($x) { $this->_id = $x; } 
+    public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
+    public function setName($x) {if ($x != null) { $this->name = $x; }} 
+    public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {

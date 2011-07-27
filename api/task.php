@@ -58,15 +58,19 @@ switch($data->getMethod()) {
         break;
     case 'put':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['email'])) {
-            $arrResults = User::get(10, 1, $strEmail);
-            $objUser = new User();
-            $strName = (isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name'])
-            $objUser->setName($strName);
-            //$objUser->setEmail((isset($arrRequestVars['email']) ? $arrRequestVars['email'] : $arrResults['email']);
-            //$objUser->setDefinitions((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
-            $objUser->upsert();
-            RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'application/json');
+        if (isset($arrRequestVars['taskId'])) {
+            $objTask = new Task(new MongoId($arrRequestVars['taskId']));
+            $objTask->setCreatedBy("CreateFunction");
+            $objTask->setKeywords($arrRequestVars["keywords"]);
+            $objTask->setAttachments("attachment");
+            $objTask->setComments($arrRequestVars["comments"]);
+            $objTask->setLikes($arrRequestVars["likes"]);
+            $objTask->setRatings($arrRequestVars["ratings"]);
+            $objTask->setTags($arrRequestVars["tags"]);
+            $objTask->setDefinition($arrRequestVars["definitionId"]);
+            $objTask->setContent($arrRequestVars["content"]);
+            $objTask->upsert();
+            RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
         }
         else {
             RestUtils::sendResponse(400);

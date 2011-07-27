@@ -28,14 +28,13 @@ switch($data->getMethod()) {
         break;
     case 'put':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['email'])) {
-            $arrResults = User::get(10, 1, $strEmail);
-            $objUser = new User();
-            //$objUser->setName((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
-            //$objUser->setEmail((isset($arrRequestVars['email']) ? $arrRequestVars['email'] : $arrResults['email']);
-            //$objUser->setDefinitions((isset($arrRequestVars['name']) ? $arrRequestVars['name'] : $arrResults['name']);
+        if (isset($arrRequestVars['userId'])) {
+            $objUser = new User($arrRequestVars['userId']);
+            $objUser->setEmail($arrRequestVars["email"]);
+            $objUser->setName($arrRequestVars["name"]);
+            $objUser->setDefinitions($arrRequestVars["name"]);
             $objUser->upsert();
-            RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'application/json');
+            RestUtils::sendResponse(200, (array)$objUser->getId(), 'application/json');
         }
         else {
             RestUtils::sendResponse(400);
