@@ -43,7 +43,7 @@ switch($data->getMethod()) {
     case 'put':
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['definitionId'])) {
-            $objUser = new Definition(new MongodId($arrRequestVars['definitionId']));
+            $objUser = new Definition(new MongoId($arrRequestVars['definitionId']));
             $objUser->setName($arrRequestVars['name']);
             $objUser->setDescription($arrRequestVars['description']);
             $objUser->upsert();
