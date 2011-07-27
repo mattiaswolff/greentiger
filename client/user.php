@@ -21,8 +21,8 @@
             });
             console.log(objFormValues);
             $.ajax({
-                type: "POST",
-                url: <?php echo '"http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?userId=' . $_GET["userId"] . '"'?>,
+                type: "PUT",
+                url: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php",
                 dataType: 'json',
                 data: objFormValues,
                 success: function(msg) {
