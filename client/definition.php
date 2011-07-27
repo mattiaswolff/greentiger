@@ -81,12 +81,6 @@
         <span onclick="showValues()">Show Values</span>
         
         <span id="results"></span>
-    
-				<form name="register" action="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?userId=matwo065" method="post">
-   		 			    Name: <input type="text" name="name" maxlength="30" />
-    					Desc: <input type="text" name="description" />
-    					<input type="submit" value="Register" />
-				</form>
                 
                 <span onclick="send()">Send</span>
 
