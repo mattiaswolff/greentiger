@@ -19,7 +19,7 @@
             $.each($('form').serializeArray(), function(key,value) {
                 objFormValues[value.name] = value.value;
             }
-            consol.log(objFormValues);
+            console.log(objFormValues);
             $.ajax({
                 type: "POST",
                 url: <?php echo '"http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?userId=' . $_GET["userId"] . '"'?>,
