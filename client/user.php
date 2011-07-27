@@ -8,7 +8,7 @@
     <script type="text/javascript">	
         $(document).ready(function(){
     	    $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", { userId: <?php echo '"'. $_GET['userId'] .'"' ?> }, function(json) {
-                alert("Name: " + json.users[0].name);
+                $("name").val(json.users[0].name);
             });
 	    });
     </script>
@@ -18,9 +18,9 @@
                 test
                 Post
 				<form name="register" action="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php" method="post">
-   		 			    UserId: <input type="text" name="userId" />
-                        Email: <input type="text" name="email" maxlength="30" />
-    					Name: <input type="text" name="name" />
+   		 			    UserId: <input id="userId" type="text" name="userId" />
+                        Email: <input id="email" type="text" name="email" maxlength="30" />
+    					Name: <input id="name" type="text" name="name" />
     					<input type="submit" value="Register" />
 				</form>
                 
