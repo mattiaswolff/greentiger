@@ -42,8 +42,7 @@ class Definition {
     public function getTasks() { return $this->tasks; } 
     public function setId() { $this->_id = new MongoId(); } 
     public function setName($x = null) {if ($x != null) {$this->name = $x; }} 
-    public function setDescription($x = null) {if ($x != null) { $this->description = $x; } 
-    public function setUpdatedDate($x = null) {if ($x != null) { $this->updatedDate = $x; }     
+    public function setDescription($x = null) {if ($x != null) { $this->description = $x; }     
     public function setContent($x = null) {if ($x != null) { $this->content = $x; } 
     public function setTasks($x = null) {if ($x != null) { $this->tasks = $x; } 
     
