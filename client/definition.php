@@ -30,6 +30,12 @@
 		newrow.innerHTML = 'Name: <input type="text" /> Description: <input type="text" /> Type: <select class="field"><option value="text">Text</option><option value="textarea">Textarea</option><option value="email">Email</option><option value="checkbox">Checkbox</option><option value="radio">Radio button</option><option value="date">Date</option><option value="range">Range</option><option value="url">URL</option><option value="number">Number</option><option value="time">Time</option><option value="dropdown">Drop Down</option></select>';
 		document.getElementById("section").appendChild(newrow);
     }
+    
+    function showValues() {
+      var str = $("section").serialize();
+      $("#results").text(str);
+    }
+    
 	</script>
 
 </head>
@@ -59,6 +65,10 @@
         
     </section>
         <span onclick="addFormRow()">Add form row</span>
+        
+        <span onclick="showValues()">Show Values</span>
+        
+        <span id="results"></span>
     
 				<form name="register" action="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?userId=matwo065" method="post">
    		 			    Name: <input type="text" name="name" maxlength="30" />
