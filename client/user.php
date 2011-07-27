@@ -7,11 +7,6 @@
     <script type="text/javascript">	
         $(document).ready(function(){
             alert(getParameterByName("userId"));
-    	    $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", { userId: <?php echo '"'. $_GET['userId'] .'"' ?> }, function(json) {
-                $("#name").val(json.users[0].name);
-                $("#email").val(json.users[0].email);
-                $("#userId").val(json.users[0]._id);
-            });
 	    });
         
         function getParameterByName(name) {
