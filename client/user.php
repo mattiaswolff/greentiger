@@ -13,14 +13,32 @@
                 $("#userId").val(json.users[0]._id);
             });
 	    });
+        
+        function submitForm() {
+            var objFormValues = {};
+            $.each($('form').serializeArray(), function(key,value) {
+                objFormValues[value.name] = value.value;
+            }
+            consol.log(objFormValues);
+            $.ajax({
+                type: "POST",
+                url: <?php echo '"http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?userId=' . $_GET["userId"] . '"'?>,
+                dataType: 'json',
+                data: objFormValues,
+                success: function(msg) {
+                    alert( "Data Saved: " + msg );
+                }
+            });
+        }
     </script>
 </head>
 
 <body id="home">
 				<form>
-   		 			    UserId: <input id="userId" type="text" name="userId" />
-                        Name: <input id="name" type="text" name="name" />
-                        Email: <input id="email" type="text" name="email" maxlength="30" />
+   		 			    UserId: <input id="userId" type="text" name="userId" value="" /><br/>
+                        Name: <input id="name" type="text" name="name" value="" /><br/>
+                        Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
 				</form>
+                <span onClick="submitForm()">Submit</span>
 </body>
 </html>      
