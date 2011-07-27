@@ -14,7 +14,8 @@
         success: function(msg){
             alert( "Data Saved: " + msg );
         }
-    });
+        });
+    }
 	</script>
 
 </head>
