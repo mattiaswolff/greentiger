@@ -12,7 +12,7 @@ class User {
         if ($strUserId != null) {
             $m = new Mongo();
             $db = $m->projectcopperfield;
-            $arrResults = $db->users->findOne(array("_id" => $strUserId));
+            $arrResults = $db->users->findOne(array('_id' => $strUserId));
             $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
             $this->email = $arrResults['email'];

@@ -43,8 +43,7 @@ switch($data->getMethod()) {
             $objTask->setDefinition($arrRequestVars["definitionId"]);
             $objTask->setContent($arrRequestVars["content"]);
             $objTask->upsert();
-            $objId = new MongoId($arrRequestVars['userId']);
-            $objUser = new User($objId);
+            $objUser = new User($arrRequestVars['userId']);
             $arrDefinitions = $objUser->getDefinitions();
             echo var_dump($arrDefinitions);
             $arrDefinitions[$arrRequestVars['definitionId']]['tasks'][] = $objTask->getId();
