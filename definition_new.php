@@ -26,8 +26,6 @@
 			extraSpace : 20
 		});
 	});
-		
-		
 		function addFormRow(){
 				var newrow = document.createElement('tr');
 				var counter = document.getElementsByTagName('tr').length - 1;
