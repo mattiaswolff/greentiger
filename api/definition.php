@@ -43,11 +43,11 @@ switch($data->getMethod()) {
     case 'put':
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['definitionId'])) {
-            $objUser = new Definition(new MongoId($arrRequestVars['definitionId']));
-            $objUser->setName($arrRequestVars['name']);
-            $objUser->setDescription($arrRequestVars['description']);
-            $objUser->upsert();
-            RestUtils::sendResponse(200, (array)$objUser->getEmail(), 'application/json');
+            $objDefinition = new Definition(new MongoId($arrRequestVars['definitionId']));
+            $objDefinition->setName($arrRequestVars['name']);
+            $objDefinition->setDescription($arrRequestVars['description']);
+            $objDefinition->upsert();
+            RestUtils::sendResponse(200, (array)$objDefinition->getId(), 'application/json');
         }
         else {
             RestUtils::sendResponse(400);
