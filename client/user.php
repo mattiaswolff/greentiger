@@ -19,7 +19,7 @@
                 objFormValues[value.name] = value.value;
             });
             $.ajax({
-                type: <?php echo (isset($_GET['userId']) ? "PUT" : "POST") ?>,
+                type: <?php echo (isset($_GET['userId']) ? '"PUT"' : '"POST"') ?>,
                 url: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php",
                 dataType: 'json',
                 data: objFormValues,
