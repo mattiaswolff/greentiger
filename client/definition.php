@@ -55,7 +55,7 @@
         <form>
         <article>
             Name: 
-            <input type="text" name="name" />
+            <input type="text" name="name" value="testar" />
             Description: 
             <input type="text" />
             Type: 
