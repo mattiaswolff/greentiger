@@ -47,8 +47,8 @@ switch($data->getMethod()) {
             $objUser = new User($objId);
             $arrDefinitions = $objUser->getDefinitions();
             $arrDefinitions[$arrRequestVars['definitionId']]['tasks'][] = $objTask->getId();
-            $objDefinition->setDefinitions($arrDefinitions);
-            $objDefinition->upsert();
+            $objUser->setDefinitions($arrDefinitions);
+            $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
         }
         else {
