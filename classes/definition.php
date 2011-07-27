@@ -2,13 +2,13 @@
 
 class Definition {
 
-  //Properties
-  private $_id;
-  private $name;
-  private $description;
-  private $updatedDate;
-  private $content;
-  private $tasks;
+    //Properties
+    private $_id;
+    private $name;
+    private $description;
+    private $updatedDate;
+    private $content;
+    private $tasks;
   
     //Constructor
     public function __construct($objId = null){  
@@ -42,9 +42,9 @@ class Definition {
     public function getTasks() { return $this->tasks; } 
     public function setId() { $this->_id = new MongoId(); } 
     public function setName($x = null) {if ($x != null) {$this->name = $x; }} 
-    public function setDescription($x = null) {if ($x != null) { $this->description = $x; }     
-    public function setContent($x = null) {if ($x != null) { $this->content = $x; } 
-    public function setTasks($x = null) {if ($x != null) { $this->tasks = $x; } 
+    public function setDescription($x = null) {if ($x != null) { $this->description = $x; }}     
+    public function setContent($x = null) {if ($x != null) { $this->content = $x; }} 
+    public function setTasks($x = null) {if ($x != null) { $this->tasks = $x; }} 
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
