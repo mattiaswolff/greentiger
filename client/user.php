@@ -18,7 +18,7 @@
             var objFormValues = {};
             $.each($('form').serializeArray(), function(key,value) {
                 objFormValues[value.name] = value.value;
-            }
+            });
             console.log(objFormValues);
             $.ajax({
                 type: "POST",
