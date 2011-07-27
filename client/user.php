@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html>
-//test
 <head>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -34,7 +33,7 @@
 
 <body id="home">
 				<form>
-   		 			    UserId: <input id="userId" type="text" name="userId" value="" /><br/>
+   		 			    UserId: <input id="userId" type="text" name="userId" value="" readonly="readonly"/><br/>
                         Name: <input id="name" type="text" name="name" value="" /><br/>
                         Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
 				</form>
