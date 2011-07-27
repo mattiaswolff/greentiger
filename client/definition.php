@@ -28,7 +28,7 @@
     					<input type="submit" value="Register" />
 				</form>
                 
-                <span onclick="Send()">Send</span>
+                <span onclick="send()">Send</span>
 
 </body>
 </html>      
