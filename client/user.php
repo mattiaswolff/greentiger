@@ -19,14 +19,13 @@
             $.each($('form').serializeArray(), function(key,value) {
                 objFormValues[value.name] = value.value;
             });
-            console.log(objFormValues);
             $.ajax({
                 type: "PUT",
                 url: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php",
                 dataType: 'json',
                 data: objFormValues,
                 success: function(msg) {
-                    alert( "Data Saved: " + msg );
+                    alert( "Data Saved!");
                 }
             });
         }
