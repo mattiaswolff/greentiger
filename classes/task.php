@@ -16,18 +16,36 @@ class Task {
     private $content;
   
     //Constructor
-    public function __construct(){  
-        $this->_id = '';  
-        $this->createdBy = '';  
-        $this->updatedDate = '';
-        $this->keywords = array();  
-        $this->attachments = array();  
-        $this->comments = array();
-        $this->likes = array();  
-        $this->ratings = array();  
-        $this->tags = array();
-        $this->definition = '';  
-        $this->content = array();
+    public function __construct($objId = null){
+        if ($objId != null) {
+            $m = new Mongo();
+            $db = $m->projectcopperfield;
+            $arrResults = $db->tasks->findOne(array("_id" => $objId));
+            $this->_id = $arrResults['_id'];  
+            $this->createdBy = $arrResults['createdBy'];  
+            $this->updatedDate = $arrResults['updatedDate'];
+            $this->keywords = $arrResults['keywords'];  
+            $this->attachments = $arrResults['attachments'];  
+            $this->comments = $arrResults['comments'];
+            $this->likes = $arrResults['likes'];  
+            $this->ratings = $arrResults['ratings'];  
+            $this->tags = $arrResults['tags'];
+            $this->definition = $arrResults['definition'];  
+            $this->content = $arrResults['content'];
+        }
+        else {
+            $this->_id = '';  
+            $this->createdBy = '';  
+            $this->updatedDate = '';
+            $this->keywords = array();  
+            $this->attachments = array();  
+            $this->comments = array();
+            $this->likes = array();  
+            $this->ratings = array();  
+            $this->tags = array();
+            $this->definition = '';  
+            $this->content = array();
+        }
     }
     
     //Accessors
@@ -43,16 +61,16 @@ class Task {
     public function getDefinition() { return $this->definition; } 
     public function getContent() { return $this->content; } 
     public function setId() { $this->_id = new MongoId(); } 
-    public function setCreatedBy($x) { $this->createdBy = $x; } 
-    public function setUpdatedDate($x) { $this->updatedDate = $x; } 
-    public function setKeywords($x) { $this->keywords = $x; } 
-    public function setAttachments($x) { $this->attachments = $x; } 
-    public function setComments($x) { $this->comments = $x; } 
-    public function setLikes($x) { $this->likes = $x; } 
-    public function setRatings($x) { $this->ratings = $x; } 
-    public function setTags($x) { $this->tags = $x; } 
-    public function setDefinition($x) { $this->definition = $x; } 
-    public function setContent($x) { $this->content = $x; }
+    public function setCreatedBy($x) {if ($x != null) { $this->createdBy = $x; }} 
+    public function setUpdatedDate($x) {if ($x != null) { $this->updatedDate = $x; }} 
+    public function setKeywords($x) {if ($x != null) { $this->keywords = $x; }} 
+    public function setAttachments($x) {if ($x != null) { $this->attachments = $x; }} 
+    public function setComments($x) {if ($x != null) { $this->comments = $x; }} 
+    public function setLikes($x) {if ($x != null) { $this->likes = $x; }} 
+    public function setRatings($x) {if ($x != null) { $this->ratings = $x; }} 
+    public function setTags($x) {if ($x != null) { $this->tags = $x; }} 
+    public function setDefinition($x) {if ($x != null) { $this->definition = $x; }} 
+    public function setContent($x) {if ($x != null) { $this->content = $x; }}
 
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
