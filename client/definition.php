@@ -55,11 +55,11 @@
         <form>
         <article>
             Name: 
-            <input type="text" name="name" value="testar" />
+            <input type="text" name="array[0][name]" value="" />
             Description: 
-            <input type="text" />
+            <input type="text" name="array[0][description]" value="" />
             Type: 
-            <select class="field" name="type">
+            <select class="field" name="array[0][type]">
     		    <option value="text">Text</option>
 				<option value="textarea">Textarea</option>
 				<option value="email">Email</option>
