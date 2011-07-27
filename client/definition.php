@@ -11,16 +11,6 @@
     	$('td.delete > a').click(function(event){
 			$(this).parent().parent().remove();
 		});
-		$('textarea').autoResize({
-				onResize : function() {
-				$(this).css({opacity:0.8});
-			},
-			animateCallback : function() {
-				$(this).css({opacity:1});
-			},
-			animateDuration : 100,
-			extraSpace : 20
-		});
 	});
     
     function send(){
