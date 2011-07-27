@@ -16,7 +16,7 @@
     function send(){
 		$.ajax({
         type: "POST",
-        url: <?php echo '"http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?userId=' . $_GET["userId"] . '"'?>'"',
+        url: <?php echo '"http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?userId=' . $_GET["userId"] . '"'?>,
         dataType: 'json',
         data: {'name': 'testdesc', 'description': 'testdescription', 'content' : { '0' : {'name' : 'testName', 'description' : 'TestDescr', 'type' : 'text'}}},
         success: function(msg){
