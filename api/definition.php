@@ -28,12 +28,11 @@ switch($data->getMethod()) {
             $objDefinition->setId();
             $objDefinition->setName($arrRequestVars["name"]);
             $objDefinition->setDescription($arrRequestVars["description"]);
-            $objDefinition->setTasks($arrRequestVars['tasks']);
             $objDefinition->setContent($arrRequestVars['content']);
             $objDefinition->upsert();
             $objUser = new User($arrRequestVars['userId']);
             $arrDefinitions = $objUser->getDefinitions();
-            $arrDefinitions[] = $objDefinition->getId();
+            $arrDefinitions[$objDefinition->getId()]['name'] = $objDefinition->getName();
             $objUser->setDefinitions($arrDefinitions);
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objDefinition->getId(), 'application/json');
@@ -48,7 +47,6 @@ switch($data->getMethod()) {
             $objDefinition = new Definition(new MongoId($arrRequestVars['definitionId']));
             $objDefinition->setName($arrRequestVars['name']);
             $objDefinition->setDescription($arrRequestVars['description']);
-            $objDefinition->setTasks($arrRequestVars['tasks']);
             $objDefinition->setContent($arrRequestVars['content']);
             $objDefinition->upsert();
             RestUtils::sendResponse(200, (array)$objDefinition->getId(), 'application/json');
