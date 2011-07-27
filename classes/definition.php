@@ -18,7 +18,7 @@ class Definition {
             $arrResults = $db->definitions->findOne(array("_id" => $objId));
             $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
-            $this->description = $arrResults['email'];
+            $this->description = $arrResults['description'];
             $this->updatedDate = $arrResults['updatedDate'];
             $this->content = $arrResults['content'];
             $this->tasks = $arrResults['tasks'];
