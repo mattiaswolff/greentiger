@@ -7,7 +7,7 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript">	
         $(document).ready(function(){
-    	    $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", { name: <?php echo '"'. $_GET['userId'] .'"' ?> }, function(json) {
+    	    $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", { userId: <?php echo '"'. $_GET['userId'] .'"' ?> }, function(json) {
                 alert("Name: " + json.users[0].name);
             });
 	    });
