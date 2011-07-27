@@ -10,7 +10,7 @@
 		$.ajax({
         type: "POST",
         url: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?userId=matwo065",
-        data: 'name=John&description:2pm',
+        data: 'name=John&description:pm',
         success: function(msg){
             alert( "Data Saved: " + msg );
         }
