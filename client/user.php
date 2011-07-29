@@ -4,6 +4,7 @@
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type="text/javascript">	
         $(document).ready(function(){
             var strUserId = getParameterByName("userId"); 
@@ -20,9 +21,6 @@
                 });
             }
 	    });
-        
-
-        
         
         function submitDefinitions() {
             var objFormValues = {};
