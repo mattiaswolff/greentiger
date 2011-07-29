@@ -73,12 +73,11 @@
 				<option value="dropdown">Drop Down</option>
 			</select>
         </article>
-            <input type="submit"/>
         </form>
     </section>
         <span onclick="addFormRow()">Add form row</span>
         
-        <span onclick="showValues()">Show Values</span>
+        <span onClick=<?php echo (!isset($_GET['userId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php', 'PUT')" . '"' ); ?>>Save</span>
         
         <span id="results"></span>
                 
