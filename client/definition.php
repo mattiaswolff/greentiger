@@ -29,7 +29,7 @@
     function addFormRow(){
     	var newrow = document.createElement('article');
 		newrow.innerHTML = 'Name: <input type="text" name="cname" value="" /> Description: <input type="text" name="cdescription" value="" /> Type: <select name="ctype"><option value="text">Text</option><option value="textarea">Textarea</option><option value="email">Email</option><option value="checkbox">Checkbox</option><option value="radio">Radio button</option><option value="date">Date</option><option value="range">Range</option><option value="url">URL</option><option value="number">Number</option><option value="time">Time</option><option value="dropdown">Drop Down</option></select>';
-		document.getElementById("section").appendChild(newrow);
+		document.getElementById("form").appendChild(newrow);
     }
     
     function showValues() {
