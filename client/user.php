@@ -52,7 +52,7 @@
                         Name: <input id="name" type="text" name="name" value="" /><br/>
                         Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
 				</form>
-                <span onClick='submitForm("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", "PUT")'>Save user</span>
+                <span onClick=<?php echo (isset($_GET['userId'] ? '"' . 'submitForm("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", "PUT")' . '"' : '"' . 'submitForm("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", "POST")' . '"') ?>>Save user</span>
     </section>
     <section>
         Definitions
