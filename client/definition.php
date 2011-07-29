@@ -4,6 +4,7 @@
 <head>
     
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript">	
     $(document).ready(function(){
@@ -77,7 +78,7 @@
     </section>
         <span onclick="addFormRow()">Add form row</span>
         
-        <span onClick=<?php echo (!isset($_GET['userId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php', 'PUT')" . '"' ); ?>>Save</span>
+        <span onClick=<?php echo (!isset($_GET['userId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php?user=matwo065', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php', 'PUT')" . '"' ); ?>>Save</span>
         
         <span id="results"></span>
                 
