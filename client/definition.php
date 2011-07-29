@@ -28,9 +28,9 @@
         });
     }
     
-    function addFormRow(){
-    	var newrow = document.createElement('article');
-		newrow.innerHTML = 'Name: <input type="text" name="content[0].name" value="" /> Description: <input type="text" name="content[0].description" value="" /> Type: <select name="content[0].type"><option value="text">Text</option><option value="textarea">Textarea</option><option value="email">Email</option><option value="checkbox">Checkbox</option><option value="radio">Radio button</option><option value="date">Date</option><option value="range">Range</option><option value="url">URL</option><option value="number">Number</option><option value="time">Time</option><option value="dropdown">Drop Down</option></select>';
+    function addFormRow(){ 
+        var counter = document.getElementsByClassName('formrow').length - 1;
+		newrow.innerHTML = '<div class="formRow">Name: <input type="text" name="content[' + counter + '].name" value="" /> Description: <input type="text" name="content[' + counter + '].description" value="" /> Type: <select name="content[' + counter + '].type"><option value="text">Text</option><option value="textarea">Textarea</option><option value="email">Email</option><option value="checkbox">Checkbox</option><option value="radio">Radio button</option><option value="date">Date</option><option value="range">Range</option><option value="url">URL</option><option value="number">Number</option><option value="time">Time</option><option value="dropdown">Drop Down</option></select></div>';
 		document.getElementById("section").appendChild(newrow);
     }
     

@@ -1,13 +1,10 @@
 function submitFormJSON(strURL, strType) {
-            var objFormValues = {};
-            $.each($('form').serializeArray(), function(key,value) {
-                objFormValues[value.name] = value.value;
-            });
+            var strJSON = JSON.stringify($('form').toObject("All"));
             $.ajax({
                 type: strType,
                 url: strURL,
                 dataType: 'json',
-                data: objFormValues,
+                data: strJSON,
                 success: function(msg) {
                     alert( "Data Saved!");
                 }
