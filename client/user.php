@@ -47,6 +47,22 @@
                 }
             });
         }
+        function submitDefinitions() {
+            var objFormValues = {};
+            $.each($('form').serializeArray(), function(key,value) {
+                objFormValues['userId'] = "matwo065"
+                objFormValues['definitions'][value.name] = value.value;
+            });
+            $.ajax({
+                type: "PUT",
+                url: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php",
+                dataType: 'json',
+                data: objFormValues,
+                success: function(msg) {
+                    alert( "Data Saved!");
+                }
+            });
+        }
     </script>
 </head>
 
@@ -64,7 +80,7 @@
         Definitions
     			<form id="definitions">
 				</form>
-                <span onClick="submitForm()">Save definitions</span>
+                <span onClick="submitDefinitions()">Save definitions</span>
     </section>            
 </body>
 </html>
