@@ -21,32 +21,9 @@
             }
 	    });
         
-        function getParameterByName(name) {
-            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-            var regexS = "[\\?&]" + name + "=([^&#]*)";
-            var regex = new RegExp(regexS);
-            var results = regex.exec(window.location.href);
-            if(results == null)
-                return "";
-            else
-            return decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
+
         
-        function submitForm() {
-            var objFormValues = {};
-            $.each($('form').serializeArray(), function(key,value) {
-                objFormValues[value.name] = value.value;
-            });
-            $.ajax({
-                type: <?php echo (isset($_GET['userId']) ? '"PUT"' : '"POST"') ?>,
-                url: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php",
-                dataType: 'json',
-                data: objFormValues,
-                success: function(msg) {
-                    alert( "Data Saved!");
-                }
-            });
-        }
+        
         function submitDefinitions() {
             var objFormValues = {};
             objFormValues.userId = "matwo065";
@@ -75,7 +52,7 @@
                         Name: <input id="name" type="text" name="name" value="" /><br/>
                         Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
 				</form>
-                <span onClick="submitForm()">Save user</span>
+                <span onClick='submitForm("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", "PUT")'>Save user</span>
     </section>
     <section>
         Definitions
