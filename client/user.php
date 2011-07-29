@@ -50,7 +50,7 @@
         function submitDefinitions() {
             var objFormValues = {};
             $.each($('form').serializeArray(), function(key,value) {
-                objFormValues['userId'] = "matwo065"
+                objFormValues['userId'] = "matwo065";
                 objFormValues['definitions'][value.name] = value.value;
             });
             $.ajax({
