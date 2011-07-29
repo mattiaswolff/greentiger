@@ -11,6 +11,9 @@
                     $("#name").val(json.users[0].name);
                     $("#email").val(json.users[0].email);
                     $("#userId").val(json.users[0]._id);
+                    $.each(json.users[0].definitions, function(key, value) {
+                        alert (value.name);
+                    });
                 });
             }
 	    });
@@ -45,11 +48,23 @@
 </head>
 
 <body id="home">
+    <section>
+        User
 				<form>
    		 			    UserId: <input id="userId" type="text" name="userId" value=""<?php echo (isset($_GET['userId']) ? 'readonly="readonly"' : '') ?> /><br/>
                         Name: <input id="name" type="text" name="name" value="" /><br/>
                         Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
 				</form>
                 <span onClick="submitForm()">Submit</span>
+    </section>
+    <section>
+        Definitions
+    			<form>
+   		 			    <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?definitionId=">DefinitionName</a> <input type="radio" name="state" value="private" /> <input type="radio" name="state" value="public" /><br/>
+                        Name: <input id="name" type="text" name="name" value="" /><br/>
+                        Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
+				</form>
+                <span onClick="submitForm()">Submit</span>
+    </section>            
 </body>
-</html>      
+</html>
