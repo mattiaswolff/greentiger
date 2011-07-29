@@ -1,4 +1,4 @@
-(function submitFormJSON(strURL, strType) {
+function submitFormJSON(strURL, strType) {
             var objFormValues = {};
             $.each($('form').serializeArray(), function(key,value) {
                 objFormValues[value.name] = value.value;
@@ -22,4 +22,4 @@
                 return "";
             else
             return decodeURIComponent(results[1].replace(/\+/g, " "));
-        })
+        }
