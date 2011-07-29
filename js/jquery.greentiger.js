@@ -1,10 +1,10 @@
 function submitFormJSON(strURL, strType) {
-            var strJSON = JSON.stringify($('form').toObject("All"));
+            var objJSON = $('form').toObject("All");
             $.ajax({
                 type: strType,
                 url: strURL,
                 dataType: 'json',
-                data: strJSON,
+                data: objJSON,
                 success: function(msg) {
                     alert( "Data Saved!");
                 }
