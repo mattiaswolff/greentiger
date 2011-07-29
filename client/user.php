@@ -6,8 +6,8 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript">	
         $(document).ready(function(){
-            var userId = getParameterByName("userId"); 
-            if (getParameterByName("userId") != "" ) {
+            var strUserId = getParameterByName("userId"); 
+            if (userId != "" ) {
                 $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", { userId: <?php echo (isset($_GET['userId']) ? '"'. $_GET['userId'] .'"' : '""' ) ?> }, function(json) {
                     $("#name").val(json.users[0].name);
                     $("#email").val(json.users[0].email);
