@@ -54,26 +54,10 @@
 <body id="home">
     <section id="section">
         <form>
-        <article>
-            Name: 
-            <input type="text" name="array[0][name]" value="" />
+        Name: 
+            <input type="text" name="name" value="" />
             Description: 
-            <input type="text" name="array[0][description]" value="" />
-            Type: 
-            <select class="field" name="array[0][type]">
-    		    <option value="text">Text</option>
-				<option value="textarea">Textarea</option>
-				<option value="email">Email</option>
-				<option value="checkbox">Checkbox</option>
-				<option value="radio">Radio button</option>
-				<option value="date">Date</option>
-				<option value="range">Range</option>
-				<option value="url">URL</option>
-				<option value="number">Number</option>
-				<option value="time">Time</option>
-				<option value="dropdown">Drop Down</option>
-			</select>
-        </article>
+            <input type="text" name="description" value="" />
         </form>
     </section>
         <span onclick="addFormRow()">Add form row</span>
