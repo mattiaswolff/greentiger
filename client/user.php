@@ -49,7 +49,8 @@
         }
         function submitDefinitions() {
             var objFormValues = {};
-            objFormValues['userId'] = "matwo065";
+            objFormValues.userId = "matwo065";
+            objFormValues.definitions = {};
             $.each($('#definitions').serializeArray(), function(key,value) {
                 objFormValues['definitions'][value.name] = value.value;
             });
