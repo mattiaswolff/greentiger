@@ -1,5 +1,9 @@
-function submitFormJSON(strURL, strType) {
+function submitFormJSON(strURL, strType, arrQueryParameters) {
             var objJSON = $('form').toObject("All");
+            strUrl = strUrl + "?";
+            $.each(arrQueryParameters, function(key, value) {
+                strUrl = strUrl + key + "=" + value + "&";
+            });
             $.ajax({
                 type: strType,
                 url: strURL,
