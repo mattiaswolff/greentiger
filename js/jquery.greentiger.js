@@ -6,7 +6,7 @@ function submitFormJSON(strUrl, strType) {
             });
             $.ajax({
                 type: strType,
-                url: strURL,
+                url: strUrl,
                 dataType: 'json',
                 data: objJSON,
                 success: function(msg) {
