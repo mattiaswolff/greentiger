@@ -13,8 +13,8 @@
             var strUserId = getParameterByName("userId"); 
             if (getParameterByName("definitionId") != "" ) {
                 $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php", { definitionId: <?php echo (isset($_GET['definitionId']) ? '"'. $_GET['definitionId'] .'"' : '""' ) ?> }, function(json) {
-                    $("#name").val(json.users[0].name);
-                    $("#email").val(json.users[0].email);
+                    $("#name").val(json.definitions[0].name);
+                    $("#email").val(json.definitions[0].email);
                     $.each(json.definitions[0].definitions, function(key, value) {
                         var newrow = document.createElement('article');
                         var counter = document.getElementsByClassName('formRow').length;
