@@ -1,7 +1,7 @@
-function submitFormJSON(strURL, strType, arrQueryParameters) {
+function submitFormJSON(strURL, strType) {
             var objJSON = $('form').toObject("All");
             strUrl = strUrl + "?";
-            $.each(arrQueryParameters, function(key, value) {
+            $.each(getUrlVars(), function(key, value) {
                 strUrl = strUrl + key + "=" + value + "&";
             });
             $.ajax({
@@ -23,4 +23,17 @@ function submitFormJSON(strURL, strType, arrQueryParameters) {
                 return "";
             else
             return decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        // Read a page's GET URL variables and return them as an associative array.
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
         }
