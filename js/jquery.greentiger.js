@@ -3,7 +3,7 @@ function submitFormJSON(strUrl, strType) {
             var strUrl = strUrl + "?";
             var objQueryParameters = getUrlVars();
             $.each(objQueryParameters, function(key, value) {
-                strUrl = strUrl + key + "=" + value + "&";
+                strUrl = strUrl + value + "=" + value['definitionId'] + "&";
             });
             $.ajax({
                 type: strType,
