@@ -39,7 +39,13 @@ switch($data->getMethod()) {
             RestUtils::sendResponse(200, (array)$objDefinition->getId(), 'application/json');
         }
         else {
-            RestUtils::sendResponse(400);
+            $objDefinition = new Definition();
+            $objDefinition->setId();
+            $objDefinition->setName($arrRequestVars["name"]);
+            $objDefinition->setDescription($arrRequestVars["description"]);
+            $objDefinition->setContent($arrRequestVars['content']);
+            $objDefinition->upsert();
+            RestUtils::sendResponse(200, (array)$objDefinition->getId(), 'application/json');
         }
         break;
     case 'put':
