@@ -2,8 +2,8 @@
 require "../classes/rest.php";
 require "../classes/definition.php";
 require "../classes/user.php";
-
-    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
+?>
+<script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
@@ -15,7 +15,7 @@ require "../classes/user.php";
 		document.getElementById("section").appendChild(newrow);
     }  
 	</script>
-
+<?php
 
 $data = RestUtils::processRequest();  
 $arrRequestVars = $data->getRequestVars();
