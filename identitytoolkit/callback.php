@@ -17,7 +17,7 @@ require "../classes/user.php";
                 data: objJSON,
                 success: function(msg) {
                     alert( "Data Saved!");
-                });
+                }
         });
     }
 	</script>
