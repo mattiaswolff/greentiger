@@ -1,4 +1,88 @@
 <?php
+class gitConfig {
+  private $config;
+
+  private function loadConfigFile() {
+    global $gitConfig;
+    $gitConfig = array(
+        // The API key in the Google API console.
+        'apiKey' => 'AIzaSyDmeRvH3KgT5sqzp7j2k1b6592VRtWVTJw',
+        // The default URL after the user is logged in.
+  'homeUrl' => '',
+  // The user signup page.
+  'signupUrl' => '',
+  // Scan the these absolute directories when finding the implementations e.g. account service and
+  // session manager. The multiple directories should be separated by a ,
+  'externalClassPaths' => '',
+  // The class name that implements the gitAccountService interface. You can also set the
+  // implementation instance by leaving it empty and invoking the setter method in the gitContext
+  // class. NOTE: The class name should be the same as the file name without the '.php' suffix.
+  'accountService' => 'AccountServiceImpl',
+  // The class name that implements the gitSessionManager interface. Same as the account service,
+  // there is a setter method in the gitContext class. NOTE: the class name should be the same as
+  // the file name without the '.php' suffix.
+  'sessionManager' => 'SessionManagerImpl',
+);
+    foreach($gitConfig as $key => $value) {
+      $this->config[$key] = $value;
+    }
+  }
+  
+  public function __construct($loadConfigFile = false) {
+   $this->config = array();
+    if ($loadConfigFile) {
+      $this->loadConfigFile();
+    }
+  }
+
+  private function get($key) {
+    if (isset($this->config[$key])) {
+      return $this->config[$key];
+    } else {
+      return NULL;
+    }
+  }
+
+  private function set($key, $value) {
+    $this->config[$key] = $value;
+  }
+
+  public function setHomeUrl($value) {
+    return $this->set('homeUrl', $value);
+  }
+
+  public function getHomeUrl() {
+    return $this->get('homeUrl');
+  }
+
+  public function setSignupUrl($value) {
+    return $this->set('signupUrl', $value);
+  }
+
+  public function getSignupUrl() {
+    return $this->get('signupUrl');
+  }
+
+  public function setApiKey($value) {
+    return $this->set('apiKey', $value);
+  }
+
+  public function getApiKey() {
+    return $this->get('apiKey');
+  }
+
+  public function getExtensionClassPaths() {
+    return $this->get('externalClassPaths');
+  }
+
+  public function getAccountServiceName() {
+    return $this->get('accountService');
+  }
+
+  public function getSessionManagerName() {
+    return $this->get('sessionManager');
+  }
+}
 
 class gitContext {
   private static $dasherDomainChecker = false;
@@ -82,12 +166,12 @@ class gitContext {
     self::$config = $config;
   }
 
-  /*public static function getConfig() {
+  public static function getConfig() {
     if (empty(self::$config)) {
       self::$config = new gitConfig(true);
     }
     return self::$config;
-  }*/
+  }
 
   public static function getApiClient() {
     if (empty(self::$apiClient)) {
