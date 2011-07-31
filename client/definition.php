@@ -12,7 +12,7 @@
         $(document).ready(function(){
             var strUserId = getParameterByName("userId"); 
             if (getParameterByName("definitionId") != "" ) {
-                $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php", { definitionId: <?php echo (isset($_GET['definitionId']) ? '"'. $_GET['definitionId'] .'"' : '""' ) ?> }, function(json) {
+                $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions", { definitionId: <?php echo (isset($_GET['definitionId']) ? '"'. $_GET['definitionId'] .'"' : '""' ) ?> }, function(json) {
                     $("#name").val(json.definitions[0].name);
                     $("#description").val(json.definitions[0].description);
                     $.each(json.definitions[0].content, function(key, value) {
@@ -46,7 +46,13 @@
         </form>
     </section>
         <span onclick="addFormRow()">Add form row</span></br>
-        <span onClick=<?php echo (!isset($_GET['definitionId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php', 'PUT')" . '"' ); ?>>Save</span>
-
+        <?php if (!isset($_GET['definitionId']) {
+            echo '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions', 'POST')" . '"';
+        }
+        else {
+            echo '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" . $_GET['definitionId'] . "', 'PUT')" . '"';
+        }
+        <br/>
+        <span onClick=<?php echo (!isset($_GET['definitionId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php', 'PUT')" . '"' ); ?>>OldSave</span>
 </body>
 </html>
