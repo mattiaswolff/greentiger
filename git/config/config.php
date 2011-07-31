@@ -12,7 +12,7 @@ $gitConfig = array(
   'signupUrl' => 'http://jinhuidu.bej.corp.google.com/phpclient/index.php?route=account/create',
   // Scan the these absolute directories when finding the implementations e.g. account service and
   // session manager. The multiple directories should be separated by a ,
-  'externalClassPaths' => '/home/dujinhui/phpclient/google3/experimental/users/dujinhui/opencart/impl',
+  'externalClassPaths' => '/var/www/html/greentiger',
   // The class name that implements the gitAccountService interface. You can also set the
   // implementation instance by leaving it empty and invoking the setter method in the gitContext
   // class. NOTE: The class name should be the same as the file name without the '.php' suffix.
