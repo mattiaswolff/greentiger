@@ -38,7 +38,7 @@
         Task
 				<form id ="definitions"></form>
     <?php if (!isset($_GET['taskId'])) {
-            echo '<span onClick="' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" . $_GET['definitionId'] . "', 'POST')" . '">Save</span>';
+            echo '<span onClick="' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" . $_GET['definitionId'] . "/tasks', 'POST')" . '">Save</span>';
         }
         else {
             echo '<span onClick="' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" . $_GET['definitionId'] . "/tasks/" . $_GET['taskId'] . "', 'PUT')" . '">Save</span>';
