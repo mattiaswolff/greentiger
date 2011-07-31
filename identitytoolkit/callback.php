@@ -11,9 +11,9 @@ require "../classes/user.php";
     function postJSON(strUrl, strJson){ 
         var objJSON = jQuery.parseJSON(strJson);
         $.ajax({
-                type: 'POST',
+                type: "POST",
                 url: strUrl,
-                dataType: 'json',
+                dataType: "json",
                 data: objJSON,
                 success: function(msg) {
                     alert( "Data Saved!");
