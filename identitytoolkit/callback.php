@@ -16,7 +16,7 @@ switch($data->getMethod()) {
                 dataType: "json",
                 data: objJSON
                 }
-            });'        
+            });';        
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
@@ -28,7 +28,7 @@ switch($data->getMethod()) {
                 dataType: "json",
                 data: objJSON
                 }
-            });'        
+            });';        
         break;
 }
 ?>
