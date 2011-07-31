@@ -24,5 +24,5 @@ require "../classes/user.php";
 
 $data = RestUtils::processRequest();  
 $arrRequestVars = $data->getRequestVars();
-echo '<script type="text/javascript">postJSON(' . "'" . JSON_encode($arrRequestVars) . "'" . ');</script>'
+echo '<script type="text/javascript">postJSON("https://www.googleapis.com/identitytoolkit/v1/relyingparty/verifyAssertion?key=AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",' . "'" . JSON_encode($arrRequestVars) . "'" . ');</script>'
 ?>
