@@ -30,7 +30,7 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['definitionId'])) {
+        if (isset($arrRequestVars['definitionId']) and isset($arrRequestVars['userId'])) {
             $objTask = new Task();
             $objTask->setId();
             $objTask->setCreatedBy("CreateFunction");
