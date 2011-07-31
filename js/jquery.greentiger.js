@@ -10,6 +10,19 @@ function submitFormJSON(strUrl, strType) {
                 }
             });
         }
+        
+        function getHtmlTaskRow(name, description, type, counter) {
+            var strHtml = '<div class="formRow">';
+            strHtml = strHtml + name + "<br/>" + description + "<br/>";
+            switch (type) {
+                case "text":
+                    strHtml = strHtml + '<input type="text" value="" name="content[' + inputname + '].' + name + '" />'; 
+                    break;
+            }
+            strHtml = strHtml + '</div>';
+            return strHtml;
+        }
+        
         function getParameterByName(name) {
             name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
             var regexS = "[\\?&]" + name + "=([^&#]*)";
