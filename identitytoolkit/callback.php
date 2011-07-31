@@ -19,5 +19,5 @@ require "../classes/user.php";
 
 $data = RestUtils::processRequest();  
 $arrRequestVars = $data->getRequestVars();
-echo '<script type="text/javascript">var obj = jQuery.parseJSON({"openid_ns":"hej"});alert("test" + obj.openid_mode)</script>';
+echo '<script type="text/javascript">var obj = jQuery.parseJSON('{"openid_ns":"hej"}');alert("test" + obj.openid_ns)</script>';
 ?>
