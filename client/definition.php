@@ -51,7 +51,7 @@
         }
         else {
             echo '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" . $_GET['definitionId'] . "', 'PUT')" . '"';
-        }
+        } ?>
         <br/>
         <span onClick=<?php echo (!isset($_GET['definitionId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definition.php', 'PUT')" . '"' ); ?>>OldSave</span>
 </body>
