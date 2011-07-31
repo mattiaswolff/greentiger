@@ -444,7 +444,7 @@ class gitCallbackHandler {
             echo "<html>\n<head>\n</head>\n<body>Error: Your email is not owned by the site you have logged in. We can not connect your account.\n</body>\n</html>";
         } 
         else {
-            echo "test";
+            echo var_dump($assertion);
             /*$request = new gitCallbackRequest($this->email, $this->purpose, $assertion);
             $response = new gitCallbackResponse();
             $action = new gitCallbackAction();
