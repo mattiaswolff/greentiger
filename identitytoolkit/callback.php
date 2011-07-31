@@ -6,7 +6,7 @@ require "../classes/user.php";
 $data = RestUtils::processRequest();  
 $arrRequestVars = $data->getRequestVars();
 
-echo var_dump($arrRequestVars);
+echo $arrRequestVars;
 echo '<script type="text/javascript">alert("test")</script>';
 echo '<script type="text/javascript">
             var objJSON = {"requestUri": "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/index.php", "postBody": $arrRequestVars}
