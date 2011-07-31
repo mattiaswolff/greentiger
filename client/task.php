@@ -35,18 +35,15 @@
 
 <body id="home">
     <section>
-        User
-				<form>
-   		 			    UserId: <input id="userId" type="text" name="userId" value=""<?php echo (isset($_GET['userId']) ? 'readonly="readonly"' : '') ?> /><br/>
-                        Name: <input id="name" type="text" name="name" value="" /><br/>
-                        Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
-				</form>
-                <span onClick=<?php echo (!isset($_GET['userId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" . $_GET['userId'] ."', 'PUT')" . '"' ); ?>>Save user</span>
-    <section>
-        Definitions12
-    			<form id="definitions">
-				</form>
-                <span onClick="submitDefinitions()">Save definitions</span>
-    </section>            
+        Task
+				<form id ="definitions"></form>
+    <?php if (!isset($_GET['taskId'])) {
+            echo '<span onClick="' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions" . $_GET['definitionId'] . "', 'POST')" . '">Save</span>';
+        }
+        else {
+            echo '<span onClick="' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" . $_GET['definitionId'] . "/tasks/" . $_GET['taskId'] . "', 'PUT')" . '">Save</span>';
+        } ?>
+    </section>
+    
 </body>
 </html>
