@@ -18,7 +18,8 @@ require "../classes/user.php";
                 success: function(msg) {
                     alert( "Data Saved!");
                 });
-    }  
+        });
+    }
 	</script>
 <?php
 
