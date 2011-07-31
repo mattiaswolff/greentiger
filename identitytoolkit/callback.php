@@ -19,5 +19,5 @@ require "../classes/user.php";
 
 $data = RestUtils::processRequest();  
 $arrRequestVars = $data->getRequestVars();
-echo '<script type="text/javascript">var obj = jQuery.parseJSON(' . JSON_encode($arrRequestVars) . ');alert("test" + obj.openid_ns)</script>';
+echo '<script type="text/javascript">var obj = jQuery.parseJSON({"openid_ns":"http:\/\/specs.openid.net\/auth\/2.0"});alert("test" + obj.openid_mode)</script>';
 ?>
