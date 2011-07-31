@@ -82,12 +82,12 @@ class gitContext {
     self::$config = $config;
   }
 
-  public static function getConfig() {
+  /*public static function getConfig() {
     if (empty(self::$config)) {
       self::$config = new gitConfig(true);
     }
     return self::$config;
-  }
+  }*/
 
   public static function getApiClient() {
     if (empty(self::$apiClient)) {
