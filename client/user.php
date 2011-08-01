@@ -12,7 +12,7 @@
             var strAccessToken = '';
             var strUserId = getParameterByName("userId"); 
             $.each(location.hash.substring(1).split('&'), function (key, value) { 
-                if (value.split('=')[0] = 'access_token') { 
+                if (value.split('=')[0] == 'access_token') { 
                     strAccessToken = value.split('=')[1];  
                 } 
             });
