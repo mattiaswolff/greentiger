@@ -31,17 +31,13 @@ class AccountService implements gitAccountService{
    * @param string $password the user input password
    */
   function checkPassword($email, $password) {
-  	$config = $this->registry->get('config');
-  	$db = $this->registry->get('db');
-  	$sql = "SELECT * FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $db->escape(strtolower($email)) . "' AND status = '1";
-		if (!$config->get('config_customer_approval')) {
-			$sql .=  "' AND approved = '1'";
-		}
-		$customer_query = $db->query($sql);
-		if ($customer_query->num_rows) {
-			$isFederated = $customer_query->row['type'];
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+	    $arrResults = $db->users->findOne(array("email" => $email));
+		if (count($arrResults)) {
+			$isFederated = '1';
 			if (!$isFederated) {
-				return $db->escape(md5($password)) ==  $customer_query->row['password'];
+				return md5($password) ==  $arrResults['password'];
 			} else {
 				return TRUE;
 			}
