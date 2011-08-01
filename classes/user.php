@@ -120,8 +120,8 @@ class User {
         $intSec = $date->getTimestamp();
         $booReturn = FALSE;
         foreach ($arrResults['accessTokens'] as $key => $value) {
-            echo $value['createdDate'];
-            echo $date->setTimestamp($value['createdDate']);
+            $mongodate = $value['createdDate'];
+            echo $mongodate->setTimestamp();
             if ($value['createdDate'] < ($intSec + 120)) {
                 $arrAccessTokens[] = $value;
                 if ($value['token'] == $strAccessToken) {
