@@ -59,6 +59,6 @@
 				</form>
                 <span onClick="submitDefinitions()">Save definitions</span>
     </section>        
-    <?php echo var_dump($_SESSION); ?>
+    <?php session_start(); echo var_dump($_SESSION); ?>
 </body>
 </html>
