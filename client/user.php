@@ -9,9 +9,14 @@
     <script type="text/javascript" src="../js/form2object.js"></script>
     <script type="text/javascript">	
         $(document).ready(function(){
+            var accessToken = '';
             var strUserId = getParameterByName("userId"); 
+            if (accessToken == '') {
+                var uri="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/callback.php";
+                window.location.href = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/test.php?clientId=4e36a30fcdb4bf1d69000002&redirectUri=" + encodeURI(uri) + "&responseType=token";
+            }
             if (getParameterByName("userId") != "" ) {
-                $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php", { userId: <?php echo (isset($_GET['userId']) ? '"'. $_GET['userId'] .'"' : '""' ) ?> }, function(json) {
+                $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/", { userId: <?php echo (isset($_GET['userId']) ? '"'. $_GET['userId'] .'"' : '""' ) ?> }, function(json) {
                     $("#name").val(json.users[0].name);
                     $("#email").val(json.users[0].email);
                     $("#userId").val(json.users[0]._id);
