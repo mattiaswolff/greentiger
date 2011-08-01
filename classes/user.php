@@ -98,6 +98,7 @@ class User {
     function validateConsumer($strClientId, $strRedirectUri) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
+        echo $strRedirectUri;
         $arrResults = $db->users->findOne(array("redirect_uri" => $strRedirectUri));
         echo var_dump($arrResults);
         if ($arrResults != null) {
