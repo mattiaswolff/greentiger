@@ -9,6 +9,7 @@ if (isset($_SESSION['userId'])) {
     $objUser->setAccessTokens($arrAccessToken);
     echo var_dump($objUser);
     $objUser->upsert();
+    die();
     $strAccessToken = md5("userid:" . $_SESSION['userId'] . "accesstoken:" . $arrNewAccessToken[0]); 
     header('Location: ' . $_SESSION['redirectUri'] . '#access_token=' . $strAccessToken . '&token_type=example&expires_in=4301');
 }
