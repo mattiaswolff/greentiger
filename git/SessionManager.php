@@ -3,18 +3,23 @@
  * A simple implementation for the SessionManager.
  */
 class SessionManager implements gitSessionManager {
+  private $config;
+  private $accountService;
+
+  public function __construct(gitConfig $config, gitAccountService $accountService) {
+    $this->config = $config;
+    $this->accountService = $accountService;
+  }
+
   /**
    * Gets the logged in account in the current session.
    * @return mixed the logged in account or NULL if there is no account logged in.
    */
   public function getSessionAccount() {
-    /*$customer = $this->registry->get('customer');
-      if ($customer->isLogged()) {
-  		$ret = new gitAccount($customer->getEmail(), $customer->getAccountType());
-  		$ret->setLocalId($customer->getId());
-  	  return $ret;
-  	}*/
-  	return NULL;
+    if (isset($this->config->sessionUserKey) && isset($_SESSION[$this->config->sessionUserKey])) {
+      return $this->accountService->getAccountByEmail($_SESSION[$this->config->sessionUserKey]);
+    }
+    return NULL;
   }
 
   /**
@@ -23,11 +28,7 @@ class SessionManager implements gitSessionManager {
    * @param mixed $account the account which should be logged in.
    */
   public function setSessionAccount($account) {
-  	if (empty($account)) {
-  		unset($_SESSION['userId']);
-  	} else {
-  	  $_SESSION['userId'] = $account->getLocalId();
-  	}
+    $_SESSION[$this->config->sessionUserKey] = $account->getEmail();
   }
 
   /**
@@ -35,10 +36,10 @@ class SessionManager implements gitSessionManager {
    * @return mixed the IDP assertion
    */
   public function getAssertion() {
-  	if (isset($_SESSION['idpAssertion'])) {
-  	  return gitAssertion::fromString($_SESSION['idpAssertion']);
-  	}
-  	return NULL;
+    if (isset($this->config->idpAssertionKey) && isset($_SESSION[$this->config->idpAssertionKey])) {
+      return gitAssertion::fromString($_SESSION[$this->config->idpAssertionKey]);
+    }
+    return NULL;
   }
 
   /**
@@ -47,6 +48,6 @@ class SessionManager implements gitSessionManager {
    * @param mixed $assertion the data to be saved.
    */
   public function setAssertion($assertion) {
-  	$_SESSION['idpAssertion'] = (string)$assertion;
+    $_SESSION[$this->config->idpAssertionKey] = (string)$assertion;
   }
 }
