@@ -58,7 +58,7 @@ class gitContext {
     if (!self::$sessionManager) {
       $className = self::getConfig()->getSessionManagerName();
       if (self::loadExternal($className)) {
-        self::$sessionManager = new $className;
+        self::$sessionManager = new $className(self::getConfig());
       }
     }
     return self::$sessionManager;
