@@ -8,7 +8,8 @@ class User {
     private $definitions;
     private $client_id;
     private $redirect_uri;
-  
+    private $accessTokens;
+    
     //Constructor
     public function __construct($strUserId = null){
         if ($strUserId != null) {
@@ -21,11 +22,13 @@ class User {
             $this->definitions = $arrResults['definitions'];
             $this->client_id = $arrResults['client_id'];
             $this->redirect_uri = $arrResults['redirect_uri'];
+            $this->accessTokens = $arrResults['accessTokens'];
         }
         else {
             $this->email = '';
             $this->name = '';
             $this->definitions = array();
+            $this->accessTokens = array();
             $this->client_id = '';
             $this->redirect_uri = '';
         }
@@ -36,12 +39,14 @@ class User {
     public function getEmail() { return $this->email; } 
     public function getName() { return $this->name; } 
     public function getDefinitions() { return $this->definitions; }
+    public function getAccessTokens() { return $this->accessTokens; }
     public function getClientId() { return $this->client_id; }
     public function getRedirectUri() { return $this->redirect_uri; }
     public function setId($x) { $this->_id = $x; } 
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }} 
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
+    public function setAccessTokens($x) {if ($x != null) { $this->definitions = $x; }}
     public function setClientId() {if (!isset($this->client_id)) {$this->client_id = new MongoId(); }}
     public function setRedirectUri($x) {if ($x != null) { $this->redirect_uri = $x; }}
     
