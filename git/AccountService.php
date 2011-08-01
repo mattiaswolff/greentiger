@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__) . '../git/data/gitAccountService.php');
+require_once(dirname(__FILE__) . '/data/gitAccountService.php');
 
 /**
  * The account related operations that the relying party site needs to implement.
