@@ -9,12 +9,11 @@ switch($data->getMethod()) {
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         $objUser = new User($arrRequestVars['userId']);
-        echo var_dump($arrRequestVars);
         if ($objUser->validateAccessToken($arrRequestVars['access_token'])) {
             RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
         }
         else {
-            RestUtils::sendResponse(400, "error", 'application/json');
+            RestUtils::sendResponse(400, array("error" => "Access token no longer valid"), 'application/json');
         }
         break;
     case 'post':
