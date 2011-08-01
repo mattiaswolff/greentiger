@@ -7,13 +7,6 @@
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
-<script type="text/javascript">
-  google.load("identitytoolkit", "1.0", {packages: ["ac"]});
-</script>
     <script type="text/javascript">	
         $(document).ready(function(){
             var strUserId = getParameterByName("userId"); 
@@ -30,33 +23,7 @@
                 });
             }
 	    });
-        
-        function submitDefinitions() {
-            var objFormValues = {};
-            objFormValues.userId = "matwo065";
-            objFormValues.definitions = {};
-            $.each($('#definitions').serializeArray(), function(key,value) {
-                objFormValues['definitions'][value.name] = value.value;
-            });
-            $.ajax({
-                type: "PUT",
-                url: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php",
-                dataType: 'json',
-                data: objFormValues,
-                success: function(msg) {
-                    alert( "Data Saved!");
-                }
-            });
-        }
     </script>
-    <script type="text/javascript">
-        var userData = {
-        email: <?php echo "'" .  $_SESSION['email'] . "'"; ?>, // required
-    displayName: <?php echo "'" . $_SESSION['userId'] . "'"; ?>, // optional
-    photoUrl: 'https://si0.twimg.com/profile_images/106626042/twitter.jpg', // optional
-  };
-  window.google.identitytoolkit.updateSavedAccount(userData);
-</script>
 </head>
 
 <body id="home">
