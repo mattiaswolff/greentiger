@@ -130,12 +130,5 @@ class User {
         $this->upsert();
         return $booReturn;
     }
-        if ($arrResults != null) {
-            return TRUE;
-        }
-        else {
-            return FALSE;
-        }
-    }
 }
 ?>
