@@ -6,6 +6,8 @@ class User {
     private $email;
     private $name;
     private $definitions;
+    private $client_id;
+    private $redirect_uri;
   
     //Constructor
     public function __construct($strUserId = null){
@@ -17,11 +19,15 @@ class User {
             $this->name = $arrResults['name'];
             $this->email = $arrResults['email'];
             $this->definitions = $arrResults['definitions'];
+            $this->client_id = $arrResults['client_id'];
+            $this->redirect_uri = $arrResults['redirect_uri'];
         }
         else {
             $this->email = '';
             $this->name = '';
             $this->definitions = array();
+            $this->client_id = '';
+            $this->redirect_uri = '';
         }
     }
     
@@ -29,11 +35,15 @@ class User {
     public function getId() { return $this->_id; } 
     public function getEmail() { return $this->email; } 
     public function getName() { return $this->name; } 
-    public function getDefinitions() { return $this->definitions; } 
+    public function getDefinitions() { return $this->definitions; }
+    public function getClientId() { return $this->client_id; }
+    public function getRedirectUri() { return $this->redirect_uri; }
     public function setId($x) { $this->_id = $x; } 
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }} 
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
+    public function setClientId($x) {if ($x != null) { $this->client_id = $x; }}
+    public function setRedirectUri($x) {if ($x != null) { $this->redirect_uri = $x; }}
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
