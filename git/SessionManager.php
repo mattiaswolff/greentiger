@@ -31,7 +31,6 @@ class SessionManager implements gitSessionManager {
         session_start();
         $_SESSION['email'] = $account->getEmail();
         $_SESSION['userId'] = $account->getLocalId();
-        
   }
 
   /**

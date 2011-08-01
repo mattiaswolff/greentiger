@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	
+	<?php session_start(); ?>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
@@ -51,8 +51,8 @@
     </script>
     <script type="text/javascript">
         var userData = {
-        email: 'mattias.wolff@gmail.com', // required
-    displayName: 'matwo065', // optional
+        email: <?php echo $_SESSION['email']; ?>, // required
+    displayName: <?php echo $_SESSION['userId']; ?>, // optional
     photoUrl: 'https://si0.twimg.com/profile_images/106626042/twitter.jpg', // optional
   };
   window.google.identitytoolkit.updateSavedAccount(userData);
@@ -74,6 +74,6 @@
 				</form>
                 <span onClick="submitDefinitions()">Save definitions</span>
     </section>        
-    <?php session_start(); echo var_dump($_SESSION); ?>
+    <?php echo var_dump($_SESSION); ?>
 </body>
 </html>
