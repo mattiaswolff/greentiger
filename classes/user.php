@@ -120,14 +120,14 @@ class User {
         $intSec = $date->getTimestamp();
         $booReturn = FALSE;
         foreach ($arrResults['accessTokens'] as $key => $value) {
-            if ($value['createdDate']['sec'] < ($intSec + 120)) {
+            echo $value['createdDate'];
+            if ($value['createdDate'] < ($intSec + 120)) {
                 $arrAccessTokens[] = $value;
                 if ($value['token'] == $strAccessToken) {
                     $booReturn = TRUE;
                 }
             }
         }
-        //test
         $this->setAccessTokens($arrAccessTokens);
         $this->upsert();
         return $booReturn;
