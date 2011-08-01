@@ -23,9 +23,14 @@
             if (strUserId != '' ) {
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId;
                 $.getJSON(strUrl, { access_token : strAccessToken}, function(json) {
-                    $("#name").val(json.users[0].name);
-                    $("#email").val(json.users[0].email);
-                    $("#userId").val(json.users[0]._id);
+                    if (json.error) {
+                        var uri="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/user.php";
+                        window.location.href = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/test.php?clientId=4e36a30fcdb4bf1d69000002&redirectUri=" + encodeURI(uri) + "&responseType=token";
+                    }
+                    $("#name").val(json.name);
+                    $("#email").val(json.email);
+                    $("#userId").val(json._id);
+                    $("#redirect_uri").val(json.redirect_uri);
                     $.each(json.users[0].definitions, function(key, value) {
                         var strNewRow = document.createElement('div');
                         strNewRow.innerHTML = '<a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php?definitionId=' + key + '">' + value.name + '</a> <input name="state" type="radio" value="private" /> <input name="state" type="radio" value="public" />';
