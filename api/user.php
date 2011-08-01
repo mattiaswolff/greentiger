@@ -8,9 +8,13 @@ switch($data->getMethod()) {
 
     case 'get':
         $arrRequestVars = $data->getRequestVars();
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : null);
-        $arrResults = User::get(10, 1, $strUserId);
-        RestUtils::sendResponse(200, $arrResults, 'application/json');
+        $arrResults = User::get(10, 1, $arrRequestVars['userId']);
+        $objUser = new User($arrRequestVars['userId']);
+        if ($objUser->validateAccessToken($arrRequestVars['access_token'])) {
+            RestUtils::sendResponse(200, var_dump($objUser), 'application/json');
+        else {
+            RestUtils::sendResponse(200, $arrResults, 'application/json');
+        }
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();

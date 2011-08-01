@@ -110,6 +110,32 @@ class User {
         else {
             return FALSE;
         }
+    
+    function validateAccessToken($strAccessToken) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $arrResults = $db->users->findOne(array("_id" => $this->_id));
+        $date = new DateTime();
+        $intSec = $date->getTimestamp();
+        $booReturn = FALSE;
+        foreach ($arrResults['accessTokens'] as $key => $value) {
+            if ($value['createdDate']['sec'] < ($intSec + 120)) {
+                $arrAccessTokens[] = $value;
+                if ($value['token'] == $strAccessToken) {
+                    $booReturn = TRUE;
+                }
+            }
+        }
+        $this->setAccessTokens($arrAccessTokens);
+        $this->upsert();
+        return $booReturn;
+    }
+        if ($arrResults != null) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
     }
 }
 ?>
