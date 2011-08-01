@@ -50,10 +50,10 @@
         }
     </script>
     <script type="text/javascript">
-  var userData = {
-    email: 'name@idp.com', // required
-    displayName: 'User Name', // optional
-    photoUrl: 'http://yourwebsite.com/img/user.png', // optional
+        var userData = {
+        email: 'mattias.wolff@gmail.com', // required
+    displayName: 'matwo065', // optional
+    photoUrl: 'https://si0.twimg.com/profile_images/106626042/twitter.jpg', // optional
   };
   window.google.identitytoolkit.updateSavedAccount(userData);
 </script>
