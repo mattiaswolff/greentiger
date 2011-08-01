@@ -98,7 +98,8 @@ class User {
     function validateConsumer($strClientId, $strRedirectUri) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        echo "encode: " . urlencode($strRedirectUri);
+        echo "edencode: " . urldecode(urlencode($strRedirectUri));
+        echo " encode: " . urlencode($strRedirectUri);
         echo " decode: " . urldecode($strRedirectUri);
          echo " regu: " . $strRedirectUri;
  
