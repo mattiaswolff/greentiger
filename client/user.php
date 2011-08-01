@@ -58,6 +58,7 @@
     			<form id="definitions">
 				</form>
                 <span onClick="submitDefinitions()">Save definitions</span>
-    </section>            
+    </section>        
+    echo var_dump($_SESSION);
 </body>
 </html>
