@@ -135,7 +135,6 @@ class User {
         }
         $this->setAccessTokens($arrAccessTokens);
         $this->upsert();
-        echo
         return $booReturn;
     }
 }
