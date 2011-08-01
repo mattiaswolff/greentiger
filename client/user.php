@@ -36,7 +36,7 @@
                         strNewRow.innerHTML = '<a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php?definitionId=' + key + '">' + value.name + '</a> <input name="state" type="radio" value="private" /> <input name="state" type="radio" value="public" />';
                         document.getElementById("definitions").appendChild(strNewRow);
                     });
-                });
+                }).error(alert("test"));
             }
 	    });
     </script>
