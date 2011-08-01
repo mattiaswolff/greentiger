@@ -46,7 +46,7 @@ switch($data->getMethod()) {
 
     case 'get':
         $arrRequestVars = $data->getRequestVars();
-        if (User::validateConsumer($arrRequestVars['clientId'], $arrRequestVars['redirectUri'])) {
+        if (User::validateConsumer($arrRequestVars['clientId'], $arrRequestVars['redirectUri']) && isset($arrRequestVars['responseType'])) {
             session_start();
             $_SESSION['redirectUri'] = (isset($arrRequestVars['redirectUri']) ? $arrRequestVars['redirectUri'] : null);
             $_SESSION['clientId'] = (isset($arrRequestVars['clientId']) ? $arrRequestVars['clientId'] : null);
@@ -69,7 +69,7 @@ switch($data->getMethod()) {
         break;
 }
 ?>
-
+An application is requesting access to your Green Tiger account. Please allow by pressing using the sign in button below.
 <div id="navbar"></div>
 
 </body>
