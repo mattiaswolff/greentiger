@@ -120,7 +120,6 @@ class User {
         $date = new DateTime();
         $intSec = $date->getTimestamp();
         $booReturn = FALSE;
-        if
         $arrAccessTokens = array();
         foreach ($arrResults['accessTokens'] as $key => $value) {
             $objMongoDate = $value['createdDate'];
