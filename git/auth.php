@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['userId'])) {
     $objUser = new User($_SESSION['userId']);
     $arrAccessTokens = $objUser->getAccessTokens(); 
-    $arrNewAccessToken = array("token" => rand(8,12), "createdDate" => new MongoDate());
+    $arrNewAccessToken = array("token" => mt_rand(), "createdDate" => new MongoDate());
     $arrAccessTokens[] = $arrNewAccessToken;
     $objUser->setAccessTokens($arrAccessTokens);
     $objUser->upsert();
