@@ -9,6 +9,7 @@ switch($data->getMethod()) {
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         $objUser = new User($arrRequestVars['userId']);
+        echo var_dump($objUser); 
         if ($objUser->validateAccessToken($arrRequestVars['access_token'])) {
             RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
         }
