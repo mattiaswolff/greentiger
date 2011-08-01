@@ -65,6 +65,7 @@ switch($data->getMethod()) {
 }
 ?>
 
-<div id="navbar"></div>         
+<div id="navbar"></div>
+echo var_dump($_SESSION);
 </body>
 </html>
