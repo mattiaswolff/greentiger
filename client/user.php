@@ -42,6 +42,14 @@
             });
         }
     </script>
+    <script type="text/javascript">
+  var userData = {
+    email: 'name@idp.com', // required
+    displayName: 'User Name', // optional
+    photoUrl: 'http://yourwebsite.com/img/user.png', // optional
+  };
+  window.google.identitytoolkit.updateSavedAccount(userData);
+</script>
 </head>
 
 <body id="home">
