@@ -19,8 +19,7 @@ switch($data->getMethod()) {
             $user->setId($arrRequestVars["userId"]);
             $user->setEmail($arrRequestVars["email"]);
             $user->setName($arrRequestVars["name"]);
-            $strClientId = new MongoId();
-            $user->setClientId((string)$strClientId);
+            $user->setClientId();
             $user->setRedirectUri($arrRequestVars["redirectUri"]);
             $user->upsert();
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
@@ -36,6 +35,7 @@ switch($data->getMethod()) {
             $objUser->setEmail($arrRequestVars["email"]);
             $objUser->setName($arrRequestVars["name"]);
             $objUser->setDefinitions($arrRequestVars["definitions"]);
+            $objUser->setClientId();
             $objUser->setRedirectUri($arrRequestVars["redirectUri"]);
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objUser->getId(), 'application/json');
