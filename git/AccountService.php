@@ -19,7 +19,7 @@ class AccountService implements gitAccountService{
 		if (count($arrResults)) {
 		    $ret = new gitAccount($arrResults['email'], '1');
 		    $ret->setLocalId($arrResults['_id']);
-		    $ret->setDisplayName($arrResults['name']);
+		    //$ret->setLocal($arrResults['name']);
 		}
 		return $ret;
   }
