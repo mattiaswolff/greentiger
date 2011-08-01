@@ -17,14 +17,9 @@ class AccountService implements gitAccountService{
         $db = $m->projectcopperfield;
 	    $arrResults = $db->users->findOne(array("email" => $email));
 		if (count($arrResults)) {
-			if ($arrResults['type'] == 1) {
-				$type = gitAccount::FEDERATED;
-			} else {
-				$type = gitAccount::LEGACY;
-			}
-		$ret = new gitAccount($arrResults['email'], '1');
-		$ret->setLocalId($arrResults['_id']);
-		$ret->setDisplayName($arrResults['name']);
+		    $ret = new gitAccount($arrResults['email'], '1');
+		    $ret->setLocalId($arrResults['_id']);
+		    $ret->setDisplayName($arrResults['name']);
 		}
 		return $ret;
   }
