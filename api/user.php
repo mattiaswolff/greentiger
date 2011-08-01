@@ -6,11 +6,11 @@ $data = RestUtils::processRequest();
 
 switch($data->getMethod()) {  
 
-    case 'get':
+    case 'get'://test
         $arrRequestVars = $data->getRequestVars();
         $objUser = new User($arrRequestVars['userId']);
         if ($objUser->validateAccessToken($arrRequestVars['access_token'])) {
-            RestUtils::sendResponse(200, var_dump($objUser), 'application/json');
+            RestUtils::sendResponse(200, "test", 'application/json');
         }
         else {
             RestUtils::sendResponse(400, "error", 'application/json');
