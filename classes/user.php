@@ -129,6 +129,7 @@ class User {
                 }
             }
         }
+        echo var_dump($arrAccessTokens);
         $this->setAccessTokens($arrAccessTokens);
         $this->upsert();
         return $booReturn;
