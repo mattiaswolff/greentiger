@@ -5,12 +5,6 @@ require_once(dirname(__FILE__) . '/data/gitAccountService.php');
  * The account related operations that the relying party site needs to implement.
  */
 class AccountService implements gitAccountService{
-    private $registry;
-
-  public function __construct($registry) {
-    $this->registry = $registry;
-  }
-
   /**
    * Given the email returns the account or NULL if the account doesn't exist.
    *
@@ -28,7 +22,7 @@ class AccountService implements gitAccountService{
 			} else {
 				$type = gitAccount::LEGACY;
 			}
-		$ret = new gitAccount($arrResults['email'], $type);
+		$ret = new gitAccount($arrResults['email'], '1');
 		$ret->setLocalId($arrResults['_id']);
 		$ret->setDisplayName($arrResults['name']);
 		}
