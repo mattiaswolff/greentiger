@@ -94,5 +94,17 @@ class User {
         $array = get_object_vars($this);
         return $array;
     }
+    
+    function validateConsumer($strClientId, $strRedirectUri) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $arrResults = $db->users->findOne(array("client_id" => new MongoId($strClientId),"redirect_uri" => $strRedirectUri));
+        if ($arrResults != null) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
 }
 ?>

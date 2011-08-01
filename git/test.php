@@ -46,12 +46,18 @@ switch($data->getMethod()) {
 
     case 'get':
         $arrRequestVars = $data->getRequestVars();
-        session_start();
-        $_SESSION['redirectUri'] = (isset($arrRequestVars['redirectUri']) ? $arrRequestVars['redirectUri'] : null);
-        $_SESSION['clientId'] = (isset($arrRequestVars['clientId']) ? $arrRequestVars['clientId'] : null);
-        $_SESSION['scope'] = (isset($arrRequestVars['scope']) ? $arrRequestVars['scope'] : null);
-        $_SESSION['responseType'] = (isset($arrRequestVars['responseType']) ? $arrRequestVars['responseType'] : null);
-        $_SESSION['state'] = (isset($arrRequestVars['state']) ? $arrRequestVars['state'] : null);
+        
+        if (User::validateConsumer($arrRequestVars['clientId'], $arrRequestVars['redirectUri'])) {
+            session_start();
+            $_SESSION['redirectUri'] = (isset($arrRequestVars['redirectUri']) ? $arrRequestVars['redirectUri'] : null);
+            $_SESSION['clientId'] = (isset($arrRequestVars['clientId']) ? $arrRequestVars['clientId'] : null);
+            $_SESSION['scope'] = (isset($arrRequestVars['scope']) ? $arrRequestVars['scope'] : null);
+            $_SESSION['responseType'] = (isset($arrRequestVars['responseType']) ? $arrRequestVars['responseType'] : null);
+            $_SESSION['state'] = (isset($arrRequestVars['state']) ? $arrRequestVars['state'] : null);
+        }
+        else {
+            RestUtils::sendResponse(400);
+        }
         break;
     case 'post':
             RestUtils::sendResponse(400);
