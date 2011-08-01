@@ -6,7 +6,7 @@ if (isset($_SESSION['userId'])) {
     $arrAccessTokens = $objUser->getAccessTokens(); 
     $arrNewAccessToken = array("token" => rand(8,12), "createdDate" => new MongoDate());
     $arrAccessTokens[] = $arrNewAccessToken;
-    $objUser->setAccessTokens($arrAccessToken);
+    $objUser->setAccessTokens($arrAccessTokens);
     echo var_dump($objUser);
     $objUser->upsert();
     die();
