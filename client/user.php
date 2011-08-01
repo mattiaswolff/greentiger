@@ -51,8 +51,8 @@
     </script>
     <script type="text/javascript">
         var userData = {
-        email: <?php echo $_SESSION['email']; ?>, // required
-    displayName: <?php echo $_SESSION['userId']; ?>, // optional
+        email: <?php echo "'" .  $_SESSION['email'] . "'"; ?>, // required
+    displayName: <?php echo "'" . $_SESSION['userId'] . "'"; ?>, // optional
     photoUrl: 'https://si0.twimg.com/profile_images/106626042/twitter.jpg', // optional
   };
   window.google.identitytoolkit.updateSavedAccount(userData);
