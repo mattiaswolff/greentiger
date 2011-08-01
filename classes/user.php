@@ -99,7 +99,6 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $arrResults = $db->users->findOne(array("client_id" => new MongoId($strClientId), "redirect_uri" => $strRedirectUri));
-        echo var_dump($arrResults);
         if ($arrResults != null) {
             return TRUE;
         }
