@@ -18,20 +18,19 @@ class AccountService implements gitAccountService{
    * @return mixed the account object or NULL if not exist.
    */
   function getAccountByEmail($email){
-      $ret = NULL;
-  	$db = $this->registry->get('db');
-	  $customer_query = $db->query("SELECT * FROM "
-	      . DB_PREFIX ."customer WHERE LOWER(email) = '"
-	      . $db->escape(strtolower($email)) . "' AND status = '1'");
-		if ($customer_query->num_rows) {
-			if ($customer_query->row['type'] == 1) {
+        $ret = NULL;
+  	    $m = new Mongo();
+        $db = $m->projectcopperfield;
+	    $arrResults = $db->users->findOne(array("email" => $email));
+		if (count($arrResults)) {
+			if ($arrResults['type'] == 1) {
 				$type = gitAccount::FEDERATED;
 			} else {
 				$type = gitAccount::LEGACY;
 			}
-			$ret = new gitAccount($customer_query->row['email'], $type);
-			$ret->setLocalId($customer_query->row['customer_id']);
-			$ret->setDisplayName($customer_query->row['firstname']);
+		$ret = new gitAccount($arrResults['email'], $type);
+		$ret->setLocalId($arrResults['_id']);
+		$ret->setDisplayName($arrResults['name']);
 		}
 		return $ret;
   }
