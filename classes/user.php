@@ -124,7 +124,9 @@ class User {
             $objMongoDate = $value['createdDate'];
             if (($objMongoDate->sec + 120) > $intSec) {
                 echo "mongo: " . $objMongoDate->sec . " nu: " . ($intSec + 120);
+                echo " value: " . $value['token'];
                 $arrAccessTokens[] = $value;
+                
                 if ($value['token'] == $strAccessToken) {
                     $booReturn = TRUE;
                 }
