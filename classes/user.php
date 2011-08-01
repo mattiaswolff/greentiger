@@ -1,5 +1,4 @@
 <?php
-
 class User {
     //Properties
     private $_id;
@@ -110,6 +109,7 @@ class User {
         else {
             return FALSE;
         }
+    }
     
     function validateAccessToken($strAccessToken) {
         $m = new Mongo();
