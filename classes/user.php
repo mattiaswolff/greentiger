@@ -114,7 +114,7 @@ class User {
     function validateAccessToken($strAccessToken) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $arrResults = $db->users->findOne(array("_id" => $this->_id;
+        $arrResults = $db->users->findOne(array("_id" => $this->_id));
         date_default_timezone_set('Europe/London');
         $date = new DateTime();
         $intSec = $date->getTimestamp();
