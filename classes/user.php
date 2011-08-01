@@ -121,7 +121,7 @@ class User {
         $booReturn = FALSE;
         foreach ($arrResults['accessTokens'] as $key => $value) {
             $objMongoDate = $value['createdDate'];
-            if ($objMongoDate->sec < ($intSec + 120)) {
+            if (($objMongoDate->sec + 120) > $intSec) {
                 echo "mongo: " . $objMongoDate->sec . " nu: " . ($intSec + 120);
                 $arrAccessTokens[] = $value;
                 if ($value['token'] == $strAccessToken) {
