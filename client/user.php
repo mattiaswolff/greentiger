@@ -9,7 +9,7 @@
     <script type="text/javascript" src="../js/form2object.js"></script>
     <script type="text/javascript">	
         $(document).ready(function(){
-            var accessToken = '';
+            var accessToken = getParameterByName("access_token");
             var strUserId = getParameterByName("userId"); 
             if (accessToken == '') {
                var uri="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/user.php";
