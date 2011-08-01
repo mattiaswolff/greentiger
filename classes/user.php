@@ -119,6 +119,7 @@ class User {
         $date = new DateTime();
         $intSec = $date->getTimestamp();
         $booReturn = FALSE;
+        $arrAccessTokens = array();
         foreach ($arrResults['accessTokens'] as $key => $value) {
             $objMongoDate = $value['createdDate'];
             if (($objMongoDate->sec + 120) > $intSec) {
