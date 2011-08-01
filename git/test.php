@@ -63,9 +63,10 @@ switch($data->getMethod()) {
             RestUtils::sendResponse(400);
         break;
 }
+echo var_dump($_SESSION);
 ?>
 
 <div id="navbar"></div>
-echo var_dump($_SESSION);
+
 </body>
 </html>
