@@ -47,7 +47,7 @@ switch($data->getMethod()) {
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         echo var_dump($arrRequestVars);
-        if (User::validateConsumer($arrRequestVars['clientId'], urldecode($arrRequestVars['redirectUri']))) {
+        if (User::validateConsumer($arrRequestVars['clientId'], $arrRequestVars['redirectUri'])) {
             session_start();
             $_SESSION['redirectUri'] = (isset($arrRequestVars['redirectUri']) ? $arrRequestVars['redirectUri'] : null);
             $_SESSION['clientId'] = (isset($arrRequestVars['clientId']) ? $arrRequestVars['clientId'] : null);
