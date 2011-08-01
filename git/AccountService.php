@@ -53,10 +53,6 @@ class AccountService implements gitAccountService{
    * @return bool true if the operation succeeds.
    */
   function toFederated($email){
-  	$db = $this->registry->get('db');
-    $query = $db->query("UPDATE " . DB_PREFIX 
-        . "customer SET type = 1 WHERE email = '"
-        . $db->escape($email) . "'");
     return TRUE;
   }
 }
