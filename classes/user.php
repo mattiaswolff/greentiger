@@ -47,7 +47,7 @@ class User {
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
     public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
     public function setClientId() {if (!isset($this->client_id)) {$this->client_id = new MongoId(); }}
-    public function setRedirectUri($x) {if ($x != null) { $this->redirect_uri = $x; }}
+    public function setRedirectUri($x) {if ($x != null) { $arrParsedUrl = parse_url($strRedirectUri); $this->redirect_uri = $arrParsedUrl['host']; }}
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
@@ -102,7 +102,8 @@ class User {
     function validateConsumer($strClientId, $strRedirectUri) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $arrResults = $db->users->findOne(array("client_id" => new MongoId($strClientId), "redirect_uri" => $strRedirectUri));
+        $arrParsedUrl = parse_url($strRedirectUri);
+        $arrResults = $db->users->findOne(array("client_id" => new MongoId($strClientId), "redirect_uri" => $arrParsedUrl['host']));
         if ($arrResults != null) {
             return TRUE;
         }
@@ -119,6 +120,7 @@ class User {
         $date = new DateTime();
         $intSec = $date->getTimestamp();
         $booReturn = FALSE;
+        if
         $arrAccessTokens = array();
         foreach ($arrResults['accessTokens'] as $key => $value) {
             $objMongoDate = $value['createdDate'];
