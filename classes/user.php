@@ -103,7 +103,6 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $arrParsedUrl = parse_url($strRedirectUri);
-        echo $arrParsedUrl['host'];
         $arrResults = $db->users->findOne(array("client_id" => new MongoId($strClientId), "redirect_uri" => $arrParsedUrl['host']));
         if ($arrResults != null) {
             return TRUE;
