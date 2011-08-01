@@ -130,6 +130,7 @@ class User {
                 }
             }
         }
+        echo var_dump($arrAccessTokens);
         $this->setAccessTokens($arrAccessTokens);
         echo var_dump($this);
         $this->upsert();
