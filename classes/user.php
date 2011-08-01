@@ -45,7 +45,7 @@ class User {
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }} 
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
-    public function setAccessTokens($x) {if (!isnull($x)) { $this->accessTokens = $x; }}
+    public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
     public function setClientId() {if (!isset($this->client_id)) {$this->client_id = new MongoId(); }}
     public function setRedirectUri($x) {if ($x != null) { $this->redirect_uri = $x; }}
     
