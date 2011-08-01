@@ -36,6 +36,35 @@ $(function() {
 </script>
 </head>
 <body>
+<?php
+require "../classes/rest.php";
+require "../classes/user.php";
+
+$data = RestUtils::processRequest();  
+
+switch($data->getMethod()) {  
+
+    case 'get':
+        $arrRequestVars = $data->getRequestVars();
+        session_start();
+        $_SESSION['redirectUri'] = (isset($arrRequestVars['redirectUri']) ? $arrRequestVars['redirectUri'] : null);
+        $_SESSION['clientId'] = (isset($arrRequestVars['clientId']) ? $arrRequestVars['clientId'] : null);
+        $_SESSION['scope'] = (isset($arrRequestVars['scope']) ? $arrRequestVars['scope'] : null);
+        $_SESSION['responseType'] = (isset($arrRequestVars['responseType']) ? $arrRequestVars['responseType'] : null);
+        $_SESSION['state'] = (isset($arrRequestVars['state']) ? $arrRequestVars['state'] : null);
+        break;
+    case 'post':
+            RestUtils::sendResponse(400);
+        break;
+    case 'put':
+            RestUtils::sendResponse(400);
+        break;
+    case 'delete':
+            RestUtils::sendResponse(400);
+        break;
+}
+?>
+
 <div id="navbar"></div>         
 </body>
 </html>
