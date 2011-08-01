@@ -28,6 +28,7 @@ class SessionManager implements gitSessionManager {
    * @param mixed $account the account which should be logged in.
    */
   public function setSessionAccount($account) {
+      session_start();
     $_SESSION[$this->config->sessionUserKey] = $account->getEmail();
   }
 
