@@ -46,7 +46,6 @@ switch($data->getMethod()) {
 
     case 'get':
         $arrRequestVars = $data->getRequestVars();
-        echo var_dump($arrRequestVars);
         if (User::validateConsumer($arrRequestVars['clientId'], $arrRequestVars['redirectUri'])) {
             session_start();
             $_SESSION['redirectUri'] = (isset($arrRequestVars['redirectUri']) ? $arrRequestVars['redirectUri'] : null);
@@ -69,7 +68,6 @@ switch($data->getMethod()) {
             RestUtils::sendResponse(400);
         break;
 }
-echo var_dump($_SESSION);
 ?>
 
 <div id="navbar"></div>
