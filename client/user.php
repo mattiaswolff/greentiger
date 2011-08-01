@@ -1,4 +1,30 @@
-         $("#email").val(json.users[0].email);
+<!DOCTYPE HTML>
+<html>
+<head>
+	<?php session_start(); ?>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
+    <script type="text/javascript" src="../js/jquery.toObject.js"></script>
+    <script type="text/javascript" src="../js/form2object.js"></script>
+    <script type="text/javascript">	
+        $(document).ready(function(){
+            var strAccessToken = '';
+            var strUserId = getParameterByName("userId"); 
+            $.each(location.hash.substring(1).split('&'), function (key, value) { 
+                if (value.split('=')[0] == 'access_token') { 
+                    strAccessToken = value.split('=')[1];  
+                } 
+            });
+            if (strAccessToken == '') {
+                var uri="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/user.php";
+                window.location.href = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/test.php?clientId=4e36a30fcdb4bf1d69000002&redirectUri=" + encodeURI(uri) + "&responseType=token";
+            }
+            if (strUserId != '' ) {
+                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId;
+                $.getJSON(strUrl, function(json) {
+                    $("#name").val(json.users[0].name);
+                    $("#email").val(json.users[0].email);
                     $("#userId").val(json.users[0]._id);
                     $.each(json.users[0].definitions, function(key, value) {
                         var strNewRow = document.createElement('div');
