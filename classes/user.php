@@ -124,16 +124,18 @@ class User {
             $objMongoDate = $value['createdDate'];
             if (($objMongoDate->sec + 120) > $intSec) {
                 echo "mongo: " . $objMongoDate->sec . " nu: " . ($intSec + 120);
-                echo " value: " . $value['token'];
+                echo " value: " . $value['token'] . " acess : " . $strAccessToken;
                 $arrAccessTokens[] = $value;
-                
+                //test
                 if ($value['token'] == $strAccessToken) {
+                    echo "test";
                     $booReturn = TRUE;
                 }
             }
         }
         $this->setAccessTokens($arrAccessTokens);
         $this->upsert();
+        echo
         return $booReturn;
     }
 }
