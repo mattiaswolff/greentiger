@@ -69,4 +69,7 @@ class gitConfig {
   public function getSessionManagerName() {
     return $this->get('sessionManager');
   }
+  public function getIdpAssertionKey() {
+    return $this->get('idpAssertionKey');
+  }
 }
