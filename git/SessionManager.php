@@ -39,7 +39,8 @@ class SessionManager implements gitSessionManager {
    */
   public function getAssertion() {
     session_start();
-    if (isset($this->config->getIdpAssertionKey()) && isset($_SESSION[$this->config->getIdpAssertionKey()])) {
+    $idpAssertionKey = $this->config->getIdpAssertionKey();
+    if (isset($idpAssertionKey) && isset($_SESSION[$idpAssertionKey])) {
       return gitAssertion::fromString($_SESSION[$this->config->idpAssertionKey]);
     }
     return NULL;
@@ -52,6 +53,7 @@ class SessionManager implements gitSessionManager {
    */
   public function setAssertion($assertion) {
     session_start();
-    $_SESSION[$this->config->getIdpAssertionKey()] = (string)$assertion;
+    $idpAssertionKey = $this->config->getIdpAssertionKey();
+    $_SESSION[$idpAssertionKey] = (string)$assertion;
   }
 }
