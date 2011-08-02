@@ -27,9 +27,9 @@ require_once(dirname(__FILE__) . '/SessionManager.php');
     <section>
         User
 				<form>
-   		 			    UserId: <input id="userId" type="text" name="userId" value="" /><br/>
-                        Name: <input type="text" name="email" value="<?php echo $idpAssertion->getVerifiedEmail(); ?>" /><br/>
-                        Email: <input type="text" name="name" maxlength="30" value="<?php echo $idpAssertion->getFirstName() . ' ' . $idpAssertion->getLastName(); ?>" /><br/>
+   		 			    Name: <input type="text" name="name" maxlength="30" value="<?php echo $idpAssertion->getFirstName() . ' ' . $idpAssertion->getLastName(); ?>" /><br/>
+                        Email: <input type="text" name="email" value="<?php echo $idpAssertion->getVerifiedEmail(); ?>" /><br/>
+                        UserId: <input id="userId" type="text" name="userId" value="" /><br/>
 				</form>
                 <span onClick="submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')">Save user</span>
     <section>
