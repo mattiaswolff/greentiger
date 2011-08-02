@@ -8,7 +8,7 @@ if (isset($_SESSION['userId'])) {
     $arrAccessTokens[] = $arrNewAccessToken;
     $objUser->setAccessTokens($arrAccessTokens);
     $objUser->upsert();
-    header('Location: ' . $_SESSION['redirectUri'] . '#access_token=' . $arrNewAccessToken['token'] . '&token_type=example&expires_in=4301');
+    header('Location: ' . $_SESSION['redirectUri'] . '#access_token=' . $arrNewAccessToken['token'] . "|" . $objUser->getId() . '&token_type=example&expires_in=4301');
 }
 else {
     header('Location: ' . $_SESSION['redirectUri'] . '#error=access_denied');
