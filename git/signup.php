@@ -43,7 +43,7 @@ class ContextLoader{
 }
 ?>
     <?php 
-        gitContext::load();
+        ContextLoader::load();
         $sessionManager = gitContext::getSessionManager();
         $idpAssertion = $sessionManager->getAssertion();
         echo var_dump($idpAssertion);
