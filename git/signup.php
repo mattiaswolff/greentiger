@@ -22,7 +22,9 @@
     <section>
     <?php 
         session_start(); 
-        echo var_dump($_SESSION);    
+        echo ($_SESSION['']);
+        echo ($_SESSION['']['email']);
+        
     ?> 
 </body>
 </html>
