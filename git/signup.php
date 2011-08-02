@@ -20,15 +20,35 @@
 				</form>
                 <span onClick="submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')">Save user</span>
     <section>
+    <?php
+require_once(dirname(__FILE__) . '/handler/gitLoginHandler.php');
+require_once(dirname(__FILE__) . '/util/gitConfig.php');
+require_once(dirname(__FILE__) . '/util/gitApiClient.php');
+require_once(dirname(__FILE__) . '/util/gitContext.php');
+require_once(dirname(__FILE__) . '/AccountService.php');
+require_once(dirname(__FILE__) . '/SessionManager.php');
+
+class ContextLoader{
+    public static function load() {
+    $config = new gitConfig();
+    $config->setApiKey('AIzaSyBwylS6nmQZCKvan4qpnbpndgPFNjwHzxk');
+    $config->setHomeUrl('http://www.openidsamplestore.com/basic/index.php?route=account/account');
+    $config->setSignupUrl('http://www.openidsamplestore.com/basic/index.php?route=account/create');
+    $config->sessionUserKey = 'customer_id';
+    $config->idpAssertionKey = 'idpAssertion';
+    gitContext::setConfig($config);
+    gitContext::setAccountService(new AccountService());
+    gitContext::setSessionManager(new SessionManager());
+    }
+}
+?>
     <?php 
-        require_once('session/gitSessionManager.php');
-        require_once('SessionManager.php');
-        
-        session_start(); 
-        echo ($_SESSION['']);
-        echo ($_SESSION['']['email']);
-        $assertion = SessionManager::getAssertion();
-        echo var_dump($assertion);
+        gitContext::load();
+        $sessionManager = gitContext::getSessionManager();
+        $idpAssertion = $sessionManager->getAssertion();
+        echo var_dump($idpAssertion);
     ?> 
 </body>
 </html>
+
+
