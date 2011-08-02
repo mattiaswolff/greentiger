@@ -29,7 +29,18 @@ class RestUtils
                 $data = $_GET;  
                 break;
         }  
-  
+        
+        if (isset($data['accessToken']) {
+            $arrAccessToken = explode("|", $data['access_token']);
+            $data['access_token'] = $arrAccessToken[0];
+        }
+        
+        if(isset($data['userId'])) {
+            if ($data['userId'] = 'me') {
+                $data['userId'] = $arrAccessToken[1];
+            }
+        }
+        
         $return_obj->setMethod($request_method);
         $return_obj->setRequestVars($data);  
   
