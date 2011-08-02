@@ -38,7 +38,7 @@ class ContextLoader{
     $config->idpAssertionKey = 'idpAssertion';
     gitContext::setConfig($config);
     gitContext::setAccountService(new AccountService());
-    gitContext::setSessionManager(new SessionManager());
+    gitContext::setSessionManager(new SessionManager($config));
     
     }
 }
