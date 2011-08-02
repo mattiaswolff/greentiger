@@ -21,4 +21,5 @@ $gitConfig = array(
   // there is a setter method in the gitContext class. NOTE: the class name should be the same as
   // the file name without the '.php' suffix.
   'sessionManager' => 'SessionManager',
+  'idpAssertionKey' => 'sessionkey'
 );
