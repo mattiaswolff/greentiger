@@ -30,7 +30,7 @@ class RestUtils
                 break;
         }  
         
-        if (isset($data['accessToken']) {
+        if (isset($data['accessToken'])) {
             $arrAccessToken = explode("|", $data['access_token']);
             $data['access_token'] = $arrAccessToken[0];
         }
