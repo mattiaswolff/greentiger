@@ -33,6 +33,8 @@ require_once(dirname(__FILE__) . '/SessionManager.php');
         $sessionManager = gitContext::getSessionManager();
         $idpAssertion = $sessionManager->getAssertion();
         echo var_dump($idpAssertion);
+        session_start();
+        echo var_dump($_SESSION);
     ?> 
 </body>
 </html>
