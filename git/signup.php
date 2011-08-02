@@ -28,7 +28,7 @@ require_once(dirname(__FILE__) . '/SessionManager.php');
         User
 				<form>
    		 			    UserId: <input id="userId" type="text" name="userId" value="" /><br/>
-                        Name: <input id="name" type="text" name="name" value="<?php echo $idpAssertion['verifiedEmail'] ?>" /><br/>
+                        Name: <input id="name" type="text" name="name" value="<?php echo $idpAssertion->getVerifiedEmail(); ?>" /><br/>
                         Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
 				</form>
                 <span onClick="submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')">Save user</span>
