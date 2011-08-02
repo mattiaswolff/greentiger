@@ -21,10 +21,12 @@
                 <span onClick="submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')">Save user</span>
     <section>
     <?php 
+        require_once('SessionManager.php');
         session_start(); 
         echo ($_SESSION['']);
         echo ($_SESSION['']['email']);
-        
+        $assertion = SessionManager::getAssertion();
+        echo var_dump($assertion);
     ?> 
 </body>
 </html>
