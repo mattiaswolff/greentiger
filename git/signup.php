@@ -11,15 +11,6 @@
 </head>
 
 <body id="home">
-    <section>
-        User
-				<form>
-   		 			    UserId: <input id="userId" type="text" name="userId" value="" /><br/>
-                        Name: <input id="name" type="text" name="name" value="" /><br/>
-                        Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
-				</form>
-                <span onClick="submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')">Save user</span>
-    <section>
     <?php
 require_once(dirname(__FILE__) . '/handler/gitLoginHandler.php');
 require_once(dirname(__FILE__) . '/util/gitConfig.php');
@@ -32,10 +23,17 @@ require_once(dirname(__FILE__) . '/SessionManager.php');
     <?php 
         $sessionManager = gitContext::getSessionManager();
         $idpAssertion = $sessionManager->getAssertion();
-        echo var_dump($idpAssertion);
-        session_start();
-        echo var_dump($_SESSION);
-    ?> 
+    ?>
+    <section>
+        User
+				<form>
+   		 			    UserId: <input id="userId" type="text" name="userId" value="" /><br/>
+                        Name: <input id="name" type="text" name="name" value="<?php $idpAssertion['verifiedEmail'] ?>" /><br/>
+                        Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
+				</form>
+                <span onClick="submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')">Save user</span>
+    <section>
+    
 </body>
 </html>
 
