@@ -47,7 +47,7 @@ class User {
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
     public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
     public function setClientId() {if (!isset($this->client_id)) {$this->client_id = new MongoId(); }}
-    public function setRedirectUri($x) {if ($x != null) { $arrParsedUrl = parse_url($strRedirectUri); $this->redirect_uri = $arrParsedUrl['host']; }}
+    public function setRedirectUri($x) {if ($x != null) { $arrParsedUrl = parse_url($x); $this->redirect_uri = $arrParsedUrl['host']; }}
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
