@@ -28,26 +28,9 @@ require_once(dirname(__FILE__) . '/util/gitContext.php');
 require_once(dirname(__FILE__) . '/AccountService.php');
 require_once(dirname(__FILE__) . '/SessionManager.php');
 
-class ContextLoader{
-    public static function load() {
-    $config = new gitConfig();
-    $config->setApiKey('AIzaSyBwylS6nmQZCKvan4qpnbpndgPFNjwHzxk');
-    $config->setHomeUrl('http://www.openidsamplestore.com/basic/index.php?route=account/account');
-    $config->setSignupUrl('http://www.openidsamplestore.com/basic/index.php?route=account/create');
-    $config->sessionUserKey = 'customer_id';
-    $config->idpAssertionKey = 'idpAssertion';
-    gitContext::setConfig($config);
-    gitContext::setAccountService(new AccountService());
-    gitContext::setSessionManager(new SessionManager($config));
-    
-    }
-}
 ?>
     <?php 
-        ContextLoader::load();
-        $config = gitContext::getConfig();
-        echo var_dump($config);
-        $sessionManager = gitContext::getSessionManager($config);
+        $sessionManager = gitContext::getSessionManager();
         $idpAssertion = $sessionManager->getAssertion();
         echo var_dump($idpAssertion);
     ?> 
