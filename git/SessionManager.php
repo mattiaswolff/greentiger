@@ -50,6 +50,7 @@ class SessionManager implements gitSessionManager {
    * @param mixed $assertion the data to be saved.
    */
   public function setAssertion($assertion) {
+    session_start();
     $_SESSION[$this->config->idpAssertionKey] = (string)$assertion;
   }
 }
