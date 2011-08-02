@@ -38,6 +38,9 @@ class SessionManager implements gitSessionManager {
    * @return mixed the IDP assertion
    */
   public function getAssertion() {
+    session_start();
+    echo $this->config->idpAssertionKey;
+    echo $_SESSION[$this->config->idpAssertionKey];
     if (isset($this->config->idpAssertionKey) && isset($_SESSION[$this->config->idpAssertionKey])) {
       return gitAssertion::fromString($_SESSION[$this->config->idpAssertionKey]);
     }
