@@ -39,6 +39,7 @@ class SessionManager implements gitSessionManager {
    */
   public function getAssertion() {
     session_start();
+    echo var_dump($this->config);
     echo $this->config->idpAssertionKey;
     echo $_SESSION[$this->config->idpAssertionKey];
     if (isset($this->config->idpAssertionKey) && isset($_SESSION[$this->config->idpAssertionKey])) {
