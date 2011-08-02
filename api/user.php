@@ -41,7 +41,7 @@ switch($data->getMethod()) {
             $objUser->setName($arrRequestVars["name"]);
             $objUser->setDefinitions($arrRequestVars["definitions"]);
             $objUser->setClientId();
-            $objUser->setRedirectUri($arrRequestVars["redirectUri"]);
+            $objUser->setRedirectUri($arrRequestVars["redirect_uri"]);
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objUser->getId(), 'application/json');
         }
