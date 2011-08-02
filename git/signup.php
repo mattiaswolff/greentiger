@@ -22,6 +22,7 @@
     <section>
     <?php 
         require_once('SessionManager.php');
+        require_once('session/gitSessionManager.php');
         session_start(); 
         echo ($_SESSION['']);
         echo ($_SESSION['']['email']);
