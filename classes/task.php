@@ -88,7 +88,7 @@ class Task {
                 }
             }
         }
-        if ($arrObjectId != null) {
+        elseif ($arrObjectId != null) {
             $objResults = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
         }
         else {
