@@ -53,8 +53,19 @@
 </head>
 
 <body id="home">
-Dashboard
-    <section id="definitions">
-    </section>
+    <div id = "container">
+        <nav>
+            <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
+        </nav>
+        <section id="top">
+            LOGO
+        </section>
+        <aside>
+        </aside>
+        <section id="createTask">
+        </section>
+        <section id="definitions">
+        </section>
+    </div>
 </body>
 </html>
