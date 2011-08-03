@@ -82,7 +82,7 @@ class Task {
             foreach($arrObjectId as $key => $var) {
                 echo var_dump($var);
                 echo $key;
-                $objResults = $db->tasks->findOne(array("_id" => array('$in' => $var), "definition" => $key));
+                $objResults = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key));
                 echo var_dump($objResults);
             }
         }
