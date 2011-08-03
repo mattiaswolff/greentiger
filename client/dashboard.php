@@ -43,7 +43,7 @@
                         var d = new Date(value1.updatedDate);
                         strHtml += '<div><span>' + d.getMonth() + '-' + d.getDate() + '</span>';
                         $.each(value1.content, function (key2, value2) {
-                            strHtml += '<span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task?taskId=' + value1._id + '">' + value2 + '</a></span>';
+                            strHtml += '<span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?taskId=' + value1._id + '">' + value2 + '</a></span>';
                             return false;
                         });
                         strHtml = strHtml + '<span>' + value1.comments.length + '</span><span>' + value1.likes.length + '</span></div>';
