@@ -47,7 +47,7 @@ class User {
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
     public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
     public function setClientId() {if (!isset($this->client_id) || ((string)$this->client_id == '')) {$this->client_id = (string)new MongoId(); }}
-    public function setRedirectUri($x) {if ($x != null) { $this->redirect_uri = $x; }}
+    public function setRedirectUri($x) {if ($x != null) { $arrParsedUrl = parse_url($x); $strParsedUrl = $arrParsedUrl['schema'] . $arrParsedUrl['host']; $this->redirect_uri = $strParsedUrl; }}
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
@@ -103,7 +103,8 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $arrParsedUrl = parse_url($strRedirectUri);
-        $arrResults = $db->users->findOne(array("client_id" => new MongoId($strClientId), "redirect_uri" => $arrParsedUrl['host']));
+        $strParsedUrl = $arrParsedUrl['schema'] . $arrParsedUrl['host'];
+        $arrResults = $db->users->findOne(array("client_id" => new MongoId($strClientId), "redirect_uri" => $strParsedUrl));
         if ($arrResults != null) {
             return TRUE;
         }
