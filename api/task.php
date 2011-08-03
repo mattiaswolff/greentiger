@@ -60,8 +60,6 @@ switch($data->getMethod()) {
                     break;
                 }
             }
-            echo var_dump($arrDefinitions);
-            die();
             $objUser->setDefinitions($arrDefinitions);
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
