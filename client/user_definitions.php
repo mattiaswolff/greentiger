@@ -31,9 +31,10 @@
                 });
                 //.error(function() { var uri="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/user.php"; window.location.href = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/test.php?clientId=4e36a30fcdb4bf1d69000002&redirectUri=" + encodeURI(uri) + "&responseType=token"; });
             }
-            var strSubmitUrl = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId;
-            $('#submit').click(submitFormJSON(strSubmitUrl, 'PUT'));
+            var strSubmitUrl = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId;    
 	    });
+        
+        $('#submit').click(submitFormJSON(strSubmitUrl, 'PUT'));
     </script>
 </head>
 
