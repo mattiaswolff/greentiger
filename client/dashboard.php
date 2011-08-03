@@ -25,7 +25,7 @@
                         var counter = document.getElementsByClassName('dasboard_definition').length;
                         newrow.className = 'dasboard_definition';
                         newrow.id = value._id.$id;
-                        newrow.innerHTML = '<span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?definitionId=' + value._id.$id + '">';// + value.name + '</a></span><br/><span>' + value.description + '</span></br><span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?userId=' + strUserId + '&definitionId=' + value._id.$id + '">Add task</a></span>';
+                        newrow.innerHTML = '<span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?definitionId=' + value._id.$id + '">' + value.name + '</a></span><br/>';//<span>' + value.description + '</span></br><span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?userId=' + strUserId + '&definitionId=' + value._id.$id + '">Add task</a></span>';
 		                document.getElementById("definitions").appendChild(newrow);
                     });
             });
