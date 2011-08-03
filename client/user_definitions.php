@@ -7,8 +7,8 @@
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
     <script type="text/javascript">	
-        var strUserId = "<?php echo $_GET['userId'] ?>";
-        $(document).ready(function(strUserId){
+        strUserId = "<?php echo $_GET['userId'] ?>";
+        $(document).ready(function(){
             var strAccessToken = '';
             $.each(location.hash.substring(1).split('&'), function (key, value) { 
                 if (value.split('=')[0] == 'access_token') { 
