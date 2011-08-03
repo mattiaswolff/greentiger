@@ -29,16 +29,13 @@
 		                document.getElementById("definitions").appendChild(newrow);
                     });
             });
-            var strUrlUser = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId + '/tasks?limit=5&offset=1group=definition';
-            $.getJSON(strUrlUser, { access_token : strAccessToken}, function(json) {
-                    $.each(json.definitions, function(key, value) {
-                        var newrow = document.createElement('article');
-                        var counter = document.getElementsByClassName('dasboard_definition').length;
-                        newrow.className = 'dasboard_definition';
-                        newrow.id = value.id;
-                        newrow.innerHTML = '<h1>' + value.name + '</h1><h2>' + value.description + '</h2>';
-    	                document.getElementById("definitions").appendChild(newrow);
-                    });
+            var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks?group=definition";
+            $.getJSON(strUrl, function(json) {
+                $.each(json.results, function(key, value) {
+                    var strNewRow = document.createElement('div');
+                    strNewRow.innerHTML = '<a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php?definitionId=' + key + '">' + value.name + '</a> <input name="state" type="radio" value="private" /> <input name="state" type="radio" value="public" />';
+                    document.getElementById("definitions").appendChild(strNewRow);
+                });
             });
         });
     
