@@ -92,7 +92,6 @@ class Task {
         $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
-        echo var_dump($objResults);
         foreach ($objResults as $key => $var) {
             echo var_dump($key);
             foreach($var as $key1 => $var1) {
