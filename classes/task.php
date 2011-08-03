@@ -83,7 +83,9 @@ class Task {
                 echo var_dump($var);
                 echo $key;
                 $objResults = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key));
-                echo var_dump($objResults);
+                foreach ($objResults as $var) {
+                    echo var_dump($var);
+                }
             }
         }
         if ($arrObjectId != null) {
