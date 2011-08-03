@@ -20,7 +20,7 @@ class User {
             $this->email = $arrResults['email'];
             $this->definitions = $arrResults['definitions'];
             $this->client_id = $arrResults['client_id'];
-            $this->redirect_uri = 'http://' . $arrResults['redirect_uri'];
+            $this->redirect_uri = $arrResults['redirect_uri'];
             $this->accessTokens = $arrResults['accessTokens'];
         }
         else {
@@ -104,7 +104,6 @@ class User {
         $db = $m->projectcopperfield;
         $arrParsedUrl = parse_url($strRedirectUri);
         $strParsedUrl = $arrParsedUrl['scheme'] . '://' . $arrParsedUrl['host'];
-        echo $strParsedUrl; 
         $arrResults = $db->users->findOne(array("client_id" => $strClientId, "redirect_uri" => $strParsedUrl));
         if ($arrResults != null) {
             return TRUE;
