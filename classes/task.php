@@ -81,7 +81,7 @@ class Task {
         if (!isset($arrObjectId[0])) {
             foreach($arrObjectId as $key => $var) {
                 echo 'hej';
-                $objResults[$key] = $db->tasks->find(array("_id" => array('$in' => $var), "definitionId" => new MongoId($key)))->limit($intLimit)->skip($intSkip);
+                $objResults[$key] = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => new MongoId($key)))->limit($intLimit)->skip($intSkip);
             }
         }
         if ($arrObjectId != null) {
