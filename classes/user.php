@@ -20,7 +20,7 @@ class User {
             $this->email = $arrResults['email'];
             $this->definitions = $arrResults['definitions'];
             $this->client_id = $arrResults['client_id'];
-            $this->redirect_uri = 'http://' + $arrResults['redirect_uri'];
+            $this->redirect_uri = 'http://' . $arrResults['redirect_uri'];
             $this->accessTokens = $arrResults['accessTokens'];
         }
         else {
@@ -40,7 +40,7 @@ class User {
     public function getDefinitions() { return $this->definitions; }
     public function getAccessTokens() { return $this->accessTokens; }
     public function getClientId() { return $this->client_id; }
-    public function getRedirectUri() { $strReturn = 'http://' + $this->redirect_uri; return $strReturn; }
+    public function getRedirectUri() { $strReturn = 'http://' . $this->redirect_uri; return $strReturn; }
     public function setId($x) { $this->_id = $x; } 
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }} 
