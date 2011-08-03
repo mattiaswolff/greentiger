@@ -1,4 +1,5 @@
 <?php
+//test12
 class User {
     //Properties
     private $_id;
@@ -121,7 +122,7 @@ class User {
         $arrAccessTokens = array();
         foreach ($this->getAccessTokens() as $key => $value) {
             $objMongoDate = $value['createdDate'];
-            if (($objMongoDate->sec + 500) > $intSec) {
+            if (($objMongoDate->sec + 5000) > $intSec) {
                 $arrAccessTokens[] = $value;
                 if ($value['token'] == $strAccessToken) {
                     $booReturn = TRUE;
