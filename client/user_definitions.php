@@ -43,7 +43,7 @@
         User
 			<form id ="definitions">
             </form>
-            <span id="submit" onClick="submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/ . $_GET['userId'], 'PUT')">Save user</span>
+            <span id="submit">Save user</span>
     <section>
 </body>
 </html>
