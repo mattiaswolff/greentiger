@@ -33,12 +33,12 @@
             $.getJSON(strUrl, function(json) {
                 $.each(json.results, function(key, value) {
                     $.each(value, function(key1, value1) {
-                        var newrow = document.createElement('div');
+                        var objNewRow = document.createElement('div');
                         var counter = document.getElementsByClassName('dasboard_definition').length;
-                        newrow.className = 'dasboard_definition_task';
-                        newrow.id = value1._id;
-                        strNewRow.innerHTML = value1._id.content[0];
-                        document.getElementById(key).appendChild(strNewRow);
+                        objNewRow.className = 'dasboard_definition_task';
+                        objNewRow.id = value1._id;
+                        objNewRow.innerHTML = value1._id.content[0];
+                        document.getElementById(key).appendChild(objNewRow);
                     });
                 });
             });
