@@ -80,14 +80,14 @@ class Task {
         $intLimit = $intObjectsPerPage;
         if (!isset($arrObjectId[0])) {
             foreach($arrObjectId as $key => $var) {
-                $objResults[$key][] = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key))->limit($intLimit)->skip($intSkip);
+                $objResults[$key] = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key))->limit($intLimit)->skip($intSkip);
             }
         }
         elseif ($arrObjectId != null) {
-            $objResults[] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
+            $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
         }
         else {
-            $objResults[] = $db->tasks->find()->limit($intLimit)->skip($intSkip);
+            $objResults[0] = $db->tasks->find()->limit($intLimit)->skip($intSkip);
         }
         $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
