@@ -95,6 +95,7 @@ class Task {
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $key => $var) {
+            echo $var;
             $arrResults['total'] = $arrResults['total'] + 1;
             $objId = new MongoId($var['_id']);
             $var['createdDate'] = $objId->getTimestamp();
