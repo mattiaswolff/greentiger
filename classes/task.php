@@ -82,7 +82,7 @@ class Task {
             foreach($arrObjectId as $key => $var) {
                 echo var_dump($var);
                 echo $key;
-                $objResults = $db->tasks->find(array("definition" => $key))->limit($intLimit)->skip($intSkip);
+                $objResults = $db->tasks->findOne(array("definition" => $key))->limit($intLimit)->skip($intSkip);
                 echo var_dump($objResults);
             }
         }
