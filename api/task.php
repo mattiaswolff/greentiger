@@ -8,6 +8,7 @@ $data = RestUtils::processRequest();
 switch($data->getMethod()) {  
     case 'get':
         $arrRequestVars = $data->getRequestVars();
+        $strGroup = (isset($arrRequestVars['group']) ? $arrRequestVars['group'] : '';
         $arrId = array();
         if (isset($arrRequestVars['taskId'])) {
             $arrId[] = $arrRequestVars['taskId'];
@@ -21,10 +22,10 @@ switch($data->getMethod()) {
             $objUser = new User($arrRequestVars['userId']);
             $arrDefinitions = $objUser->getDefinitions();
             foreach ($arrDefinitions as $key => $var) {
-                if (!isset($arrRequestVars['group']) && isset($var['tasks'])) {
+                if ($strGroup == '' && isset($var['tasks'])) {
                     $arrId = array_merge($arrId, $var['tasks']);    
                 }
-                elseif ($arrRequestVars['group'] == 'definition' && isset($var['tasks'])) {
+                elseif ($strGroup == 'definition' && isset($var['tasks'])) {
                     $arrId[$var['_id']] = $var['tasks']; 
                 }
             }
