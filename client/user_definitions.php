@@ -39,14 +39,7 @@
     
     <section>
         User
-			<form>
-                General<br/>
-   		 	    UserId: <input id="userId" type="text" name="userId" value="" readonly="readonly"/><br/>
-                Name: <input id="name" type="text" name="name" value="" /><br/>
-                Email: <input id="email" type="email" name="email" maxlength="30" value="" /><br/>
-                Developer<br/>
-                Redirect Uri: <input id="redirect_uri" type="url" name="redirect_uri" maxlength="200" value="" /><br/>
-			    Your developer id is: <input id="client_id" type="text" name="client_id" maxlength="200" value="" readonly="readonly" /><br/>
+			<form id ="definitions">
             </form>
             <span onClick="submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/ . $_GET['userId'] .", 'PUT')">Save user</span>
     <section>
