@@ -8,9 +8,9 @@
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
     <script type="text/javascript">	
-        $(document).ready(function(){
+        var strUserId = getParameterByName("userId");
+        $(document).ready(function(strUserId){
             var strAccessToken = '';
-            var strUserId = getParameterByName("userId"); 
             $.each(location.hash.substring(1).split('&'), function (key, value) { 
                 if (value.split('=')[0] == 'access_token') { 
                     strAccessToken = value.split('=')[1];  
