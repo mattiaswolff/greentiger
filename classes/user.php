@@ -20,7 +20,7 @@ class User {
             $this->email = $arrResults['email'];
             $this->definitions = $arrResults['definitions'];
             $this->client_id = $arrResults['client_id'];
-            $this->redirect_uri = $arrResults['redirect_uri'];
+            $this->redirect_uri = 'http://' + $arrResults['redirect_uri'];
             $this->accessTokens = $arrResults['accessTokens'];
         }
         else {
