@@ -3,7 +3,7 @@ require "../classes/rest.php";
 require "../classes/definition.php";
 require "../classes/user.php";
 require "../classes/task.php";
-//test
+//test231
 $data = RestUtils::processRequest();  
 switch($data->getMethod()) {  
     case 'get':
@@ -52,9 +52,10 @@ switch($data->getMethod()) {
             $objTask->setDefinition($arrRequestVars["definitionId"]);
             $objTask->setContent($arrRequestVars["content"]);
             $objTask->upsert();
+            //test
             $objUser = new User($arrRequestVars['userId']);
             $arrDefinitions = $objUser->getDefinitions();
-            $arrDefinitions[$arrRequestVars['definitionId']]['tasks'][] = (string)$objTask->getId();
+            $arrDefinitions[$arrRequestVars['definitionId']]['tasks'][] = $objTask->getId();
             $objUser->setDefinitions($arrDefinitions);
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
