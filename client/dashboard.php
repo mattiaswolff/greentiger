@@ -42,7 +42,7 @@
                         strHtml = '';
                         strHtml += '<div><span>' + value1.updatedDate.sec + '</span>';
                         $.each(value1.content, function (key2, value2) {
-                            strHtml += '<span>' + value2.content + '</span>';
+                            strHtml += '<span>' + value2 + '</span>';
                             return false;
                         });
                         strHtml = strHtml + '<span>' + value1.comments.length + '</span><span>' + value1.likes.length + '</span></div>';
