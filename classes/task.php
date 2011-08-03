@@ -93,16 +93,17 @@ class Task {
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $key => $var) {
-            echo "hej";
-            echo var_dump($key);
+            
             foreach($var as $key1 => $var1) {
                 echo var_dump($var1);
                 $arrResults['total'] = $arrResults['total'] + 1;
                 $objId = new MongoId($var1['_id']);
                 $var1['createdDate'] = $objId->getTimestamp();
                 $var1['_id'] = (string)$var1['_id'];
-                $arrResults['results'] = $var1;
+                $arrResult[] = $var1;
             }
+            
+            $arrResults['results'][$key] = $arrResult;
         }
         return $arrResults; 
     }
