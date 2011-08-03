@@ -81,7 +81,7 @@ class Task {
         if (!isset($arrObjectId[0])) {
             foreach($arrObjectId as $key => $var) {
                 echo var_dump($var);
-                $objResults = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key))->limit($intLimit)->skip($intSkip);
+                $objResults = $db->tasks->find(array("_id" => array('$in' => $var)))->limit($intLimit)->skip($intSkip);
                 echo var_dump($objResults);
             }
         }
