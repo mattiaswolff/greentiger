@@ -32,9 +32,14 @@
             var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks?group=definition";
             $.getJSON(strUrl, function(json) {
                 $.each(json.results, function(key, value) {
-                    var strNewRow = document.createElement('div');
-                    strNewRow.innerHTML = '<a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php?definitionId=' + key + '">' + value.name + '</a> <input name="state" type="radio" value="private" /> <input name="state" type="radio" value="public" />';
-                    document.getElementById("definitions").appendChild(strNewRow);
+                    $.each(value, function(key1, value1) {
+                        var newrow = document.createElement('div');
+                        var counter = document.getElementsByClassName('dasboard_definition').length;
+                        newrow.className = 'dasboard_definition_task';
+                        newrow.id = value1._id;
+                        strNewRow.innerHTML = value1._id.content[0];
+                        document.getElementById(key).appendChild(strNewRow);
+                    });
                 });
             });
         });
