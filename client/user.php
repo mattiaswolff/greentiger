@@ -31,6 +31,7 @@
                     $("#email").val(json.email);
                     $("#userId").val(json._id);
                     $("#redirect_uri").val(json.redirect_uri);
+                    $("#client_id").val(json.client_id);
                     $.each(json.definitions, function(key, value) {
                         var strNewRow = document.createElement('div');
                         strNewRow.innerHTML = '<a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php?definitionId=' + key + '">' + value.name + '</a> <input name="state" type="radio" value="private" /> <input name="state" type="radio" value="public" />';
@@ -44,15 +45,19 @@
 </head>
 
 <body id="home">
+    
     <section>
         User
-				<form>
-   		 			    UserId: <input id="userId" type="text" name="userId" value=""<?php echo (isset($_GET['userId']) ? 'readonly="readonly"' : '') ?> /><br/>
-                        Name: <input id="name" type="text" name="name" value="" /><br/>
-                        Email: <input id="email" type="text" name="email" maxlength="30" value="" /><br/>
-                        Redirect Uri: <input id="redirect_uri" type="text" name="redirect_uri" maxlength="200" value="" /><br/>
-				</form>
-                <span onClick=<?php echo (!isset($_GET['userId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" . $_GET['userId'] ."', 'PUT')" . '"' ); ?>>Save user</span>
+			<form>
+                General<br/>
+   		 	    UserId: <input id="userId" type="text" name="userId" value="" readonly="readonly"/><br/>
+                Name: <input id="name" type="text" name="name" value="" /><br/>
+                Email: <input id="email" type="email" name="email" maxlength="30" value="" /><br/>
+                Developer<br/>
+                Redirect Uri: <input id="redirect_uri" type="url" name="redirect_uri" maxlength="200" value="" /><br/>
+			    Your developer id is: <input id="client_id" type="text" name="client_id" maxlength="200" value="" readonly="readonly" /><br/>
+            </form>
+            <span onClick=<?php echo (!isset($_GET['userId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" . $_GET['userId'] ."', 'PUT')" . '"' ); ?>>Save user</span>
     <section>
 </body>
 </html>
