@@ -21,10 +21,10 @@ switch($data->getMethod()) {
             $objUser = new User($arrRequestVars['userId']);
             $arrDefinitions = $objUser->getDefinitions();
             foreach ($arrDefinitions as $key => $var) {
-                if (!isset($arrRequestVars['group'])) {
+                if (!isset($arrRequestVars['group']) && isset($var['tasks'])) {
                     $arrId = array_merge($arrId, $var['tasks']);    
                 }
-                elseif ($arrRequestVars['group'] == 'definition') {
+                elseif ($arrRequestVars['group'] == 'definition' && isset($var['tasks'])) {
                     $arrId[$var['_id']] = $var['tasks']; 
                 }
             }
