@@ -1,15 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <?php session_start(); ?>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
     <script type="text/javascript">	
-        var strUserId = getParameterByName("userId");
-        $(document).ready(function(strUserId){
+        $(document).ready(function(){
+            var strUserId = "<?php $_GET['userId'] ?>";
             var strAccessToken = '';
             $.each(location.hash.substring(1).split('&'), function (key, value) { 
                 if (value.split('=')[0] == 'access_token') { 
