@@ -37,8 +37,9 @@
                         var counter = document.getElementsByClassName('dasboard_definition').length;
                         objNewRow.className = 'dasboard_definition_task';
                         objNewRow.id = value1._id;
+                        strHtml = '';
                         $.each(value1.content, function(key2, value2) {
-                            strHtml = key2 + ': ' + value2 + '<br/>';
+                            strHtml = strHtml + key2 + ': ' + value2 + '<br/>';
                         });
                         objNewRow.innerHTML = strHtml;
                         document.getElementById(key).appendChild(objNewRow);
