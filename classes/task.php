@@ -78,6 +78,11 @@ class Task {
         $db = $m->projectcopperfield;
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
+        if (!isset($arrObjectId[0])) {
+            foreach($arrObjectId as $key => $var) {
+                $objResults[$key] = $db->tasks->find(array("_id" => array('$in' => $var), "definitionId" => new MongoId($key)))->limit($intLimit)->skip($intSkip);
+            }
+        }
         if ($arrObjectId != null) {
             $objResults = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
         }
