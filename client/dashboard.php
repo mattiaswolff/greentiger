@@ -37,7 +37,7 @@
                         var counter = document.getElementsByClassName('dasboard_definition').length;
                         objNewRow.className = 'dasboard_definition_task';
                         objNewRow.id = value1._id;
-                        objNewRow.innerHTML = value1._id.content[0];
+                        objNewRow.innerHTML = value1.content[0];
                         document.getElementById(key).appendChild(objNewRow);
                     });
                 });
