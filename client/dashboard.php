@@ -24,7 +24,7 @@
                         var newrow = document.createElement('article');
                         var counter = document.getElementsByClassName('dasboard_definition').length;
                         newrow.className = 'dasboard_definition';
-                        newrow.id = value.id;
+                        newrow.id = value._id;
                         newrow.innerHTML = '<h1>' + value.name + '</h1><h2>' + value.description + '</h2>';
 		                document.getElementById("definitions").appendChild(newrow);
                     });
