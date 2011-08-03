@@ -84,21 +84,23 @@ class Task {
             }
         }
         elseif ($arrObjectId != null) {
-            $objResults = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
+            $objResults[] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->limit($intLimit)->skip($intSkip);
         }
         else {
-            $objResults = $db->tasks->find()->limit($intLimit)->skip($intSkip);
+            $objResults[] = $db->tasks->find()->limit($intLimit)->skip($intSkip);
         }
         $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
         echo var_dump($objResults);
         foreach ($objResults as $key => $var) {
-            $arrResults['total'] = $arrResults['total'] + 1;
-            $objId = new MongoId($var['_id']);
-            $var['createdDate'] = $objId->getTimestamp();
-            $var['_id'] = (string)$var['_id'];
-            $arrResults['results'] = $var;
+            foreach($var as $key1 => $var1) {
+                $arrResults['total'] = $arrResults['total'] + 1;
+                $objId = new MongoId($var1['_id']);
+                $var['createdDate'] = $objId->getTimestamp();
+                $var['_id'] = (string)$var1['_id'];
+                $arrResults['results'] = $var1;
+            }
         }
         return $arrResults; 
     }
