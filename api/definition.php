@@ -32,7 +32,7 @@ switch($data->getMethod()) {
             $objDefinition->upsert();
             $objUser = new User($arrRequestVars['userId']);
             $arrDefinitions = $objUser->getDefinitions();
-            $arrDefinition['id'] = (string)$objDefinition->getId();;
+            $arrDefinition['_id'] = $objDefinition->getId();;
             $arrDefinition['name'] = $objDefinition->getName();
             $arrDefinition['description'] = $objDefinition->getDescription();
             $arrDefinitions[] = $arrDefinition;
