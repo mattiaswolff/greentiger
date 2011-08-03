@@ -95,6 +95,7 @@ class Task {
         echo var_dump($objResults);
         foreach ($objResults as $key => $var) {
             foreach($var as $key1 => $var1) {
+                echo var_dump($var1);
                 $arrResults['total'] = $arrResults['total'] + 1;
                 $objId = new MongoId($var1['_id']);
                 $var['createdDate'] = $objId->getTimestamp();
