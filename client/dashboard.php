@@ -24,9 +24,20 @@
                         var newrow = document.createElement('article');
                         var counter = document.getElementsByClassName('dasboard_definition').length;
                         newrow.className = 'dasboard_definition';
-                        newrow.id = value.name;
+                        newrow.id = value.id;
                         newrow.innerHTML = '<h1>' + value.name + '</h1><h2>' + value.description + '</h2>';
 		                document.getElementById("definitions").appendChild(newrow);
+                    });
+            });
+            var strUrlUser = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId + '/tasks?limit=5&offset=1group=definition';
+            $.getJSON(strUrlUser, { access_token : strAccessToken}, function(json) {
+                    $.each(json.definitions, function(key, value) {
+                        var newrow = document.createElement('article');
+                        var counter = document.getElementsByClassName('dasboard_definition').length;
+                        newrow.className = 'dasboard_definition';
+                        newrow.id = value.id;
+                        newrow.innerHTML = '<h1>' + value.name + '</h1><h2>' + value.description + '</h2>';
+    	                document.getElementById("definitions").appendChild(newrow);
                     });
             });
         });
@@ -38,7 +49,6 @@
 <body id="home">
 Dashboard
     <section id="definitions">
-    
     </section>
 </body>
 </html>

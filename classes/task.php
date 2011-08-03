@@ -92,7 +92,7 @@ class Task {
             $objId = new MongoId($var['_id']);
             $var['createdDate'] = $objId->getTimestamp();
             $var['_id'] = (string)$var['_id'];
-            $arrResults['tasks'][] = $var;
+            $arrResults['results'] = $var;
         }
         return $arrResults; 
     }

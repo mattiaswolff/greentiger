@@ -11,20 +11,27 @@ switch($data->getMethod()) {
         if (isset($arrRequestVars['taskId'])) {
             $arrId[] = $arrRequestVars['taskId'];
         }
-        else if (isset($arrRequestVars['definitionId'])) {
-            $objId[] = new MongoId($arrRequestVars['definitionId']);
-            $arrResults = Definition::get(1000, 1, $objId);
-            $arrId = $arrResults['definitions'][0]['tasks'];
+        else if (isset($arrRequestVars['definitionId']) && isset($arrRequestVars['userId'])) {
+            $objUser = new User($arrRequestVars['userId']);
+            $arrDefinitions = $objUser->getDefinitions();
+            $arrId = $arrDefinitions[$arrRequestVars['definitionId']]['tasks'];
         }
         else if (isset($arrRequestVars['userId'])) {
-            $arrResults = User::get(1000, 1, $arrRequestVars['userId']);
-            $arrId = $arrResults['users'][0]['definitions'];
-            $arrResults = Definition::get(1000, 1, $arrId);
-            $arrId = $arrResults['definitions'][0]['tasks'];
+            $objUser = new User($arrRequestVars['userId']);
+            $arrDefinitions = $objUser->getDefinitions();
+            foreach ($arrDefinitions as $key => $var) {
+                if (!isset($arrRequestVars['group'])) {
+                    $arrId = array_merge($arrId, $var['tasks']);    
+                }
+                elseif ($arrRequestVars['group'] == 'definition') {
+                    $arrId[$var['_id']] = $var['tasks']; 
+                }
+            }
         }
         else {
             $arrId = null;
         }
+        echo var_dump($arrId);
         $arrResults = Task::get(10, 1, $arrId);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
         break;
@@ -45,7 +52,7 @@ switch($data->getMethod()) {
             $objTask->upsert();
             $objUser = new User($arrRequestVars['userId']);
             $arrDefinitions = $objUser->getDefinitions();
-            $arrDefinitions[$arrRequestVars['definitionId']]['tasks'][] = $objTask->getId();
+            $arrDefinitions[$arrRequestVars['definitionId']]['tasks'][] = (string)$objTask->getId();
             $objUser->setDefinitions($arrDefinitions);
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
