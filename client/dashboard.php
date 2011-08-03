@@ -40,7 +40,8 @@
                         objNewRow.className = 'dasboard_definition_task';
                         objNewRow.id = value1._id;
                         strHtml = '';
-                        strHtml += '<div><span>' + value1.updatedDate.sec + '</span>';
+                        var d = new Date(value1.updatedDate.sec * 1000);
+                        strHtml += '<div><span>' + d.getMonth() + '-' + d.getDate() + '</span>';
                         $.each(value1.content, function (key2, value2) {
                             strHtml += '<span>' + value2 + '</span>';
                             return false;
