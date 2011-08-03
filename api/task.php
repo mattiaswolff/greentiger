@@ -8,7 +8,7 @@ $data = RestUtils::processRequest();
 switch($data->getMethod()) {  
     case 'get':
         $arrRequestVars = $data->getRequestVars();
-        $strGroup = (isset($arrRequestVars['group']) ? $arrRequestVars['group'] : '';
+        $strGroup = (isset($arrRequestVars['group']) ? $arrRequestVars['group'] : '');
         $arrId = array();
         if (isset($arrRequestVars['taskId'])) {
             $arrId[] = $arrRequestVars['taskId'];
