@@ -23,9 +23,9 @@
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId;
                 $.getJSON(strUrl, { access_token : strAccessToken}, function(json) {
                     $.each(json.definitions, function(key, value) {
-                        var counter = document.getElementsByClassName('formRow').length;
+                        var counter = document.getElementsByClassName('definitionRow').length;
                         var strNewRow = document.createElement('div');
-                        strNewRow.innerHTML = '<div class="definitionRow"><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php?definitionId=' + value.id + '">' + value.name + '</a> <input name="definitions[' counter '].state" type="radio" value="private" /> <input name="definitions[' counter '].state" type="radio" value="public" /></div>';
+                        strNewRow.innerHTML = '<div class="definitionRow"><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/user.php?definitionId=' + value.id + '">' + value.name + '</a> <input name="definitions[' + counter + '].state" type="radio" value="private" /> <input name="definitions[' + counter + '].state" type="radio" value="public" /></div>';
                         document.getElementById("definitions").appendChild(strNewRow);
                     });
                 });
