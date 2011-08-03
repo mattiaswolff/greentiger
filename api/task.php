@@ -55,7 +55,12 @@ switch($data->getMethod()) {
             //test
             $objUser = new User($arrRequestVars['userId']);
             $arrDefinitions = $objUser->getDefinitions();
-            $arrDefinitions[$arrRequestVars['definitionId']]['tasks'][] = $objTask->getId();
+            foreach ($arrDefinitions as $key => $var) {
+                if (in_array(array("id" => new MongoId($arrRequestVars['definitionId'])), $arrDefinitions[$key])) {
+                    $arrDefinitions[$key]['tasks'][] = $objTask->getId();
+                    break;
+                }
+            }
             $objUser->setDefinitions($arrDefinitions);
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
