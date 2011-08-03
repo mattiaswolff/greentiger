@@ -1,31 +1,4 @@
-<!DOCTYPE HTML>
-<html>
-
-<head>
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
-    <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery.toObject.js"></script>
-    <script type="text/javascript" src="../js/form2object.js"></script>
-	<script type="text/javascript">
-        strUserId = "<?php echo $_GET['userId']; ?>"
-        
-        $.each(location.hash.substring(1).split('&'), function (key, value) { 
-            if (value.split('=')[0] == 'access_token') { 
-                strAccessToken = value.split('=')[1];  
-            } 
-        });
-        
-        $(document).ready(function(){
-            var strUrlUser = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId;
-            $.getJSON(strUrlUser, { access_token : strAccessToken}, function(json) {
-                    $.each(json.definitions, function(key, value) {
-                        var newrow = document.createElement('article');
-                        var counter = document.getElementsByClassName('dasboard_definition').length;
-                        newrow.className = 'dasboard_definition';
-                        newrow.id = value._id.$id;
-                        newrow.innerHTML = '<span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?definitionId=' + value._id.$id + '">' + value.name + '</a></span><br/><span>' + value.description + '</span></br><span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?userId=' + strUserId + '&definitionId=' + value._id.$id + '">Add task</a></span>';
+reentiger/client/definition.php?definitionId=' + value._id.$id + '">' + value.name + '</a></span><br/><span>' + value.description + '</span></br><span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?userId=' + strUserId + '&definitionId=' + value._id.$id + '">Add task</a></span>';
 		                document.getElementById("definitions").appendChild(newrow);
                     });
             });
@@ -65,6 +38,15 @@
         <section id="createTask">
         </section>
         <section id="definitions">
+            <article>
+                FooDefinition
+                <div><span>Updated</span><span>Title</span><span>C</span><span>L</span></div>
+                <div><span>2011-08-03</span><span>Support</span><span>10</span><span>3</span></div>
+                <div><span>2011-08-03</span><span>Why is it like this?</span><span>8</span><span>2</span></div>
+                <div><span>2011-08-03</span><span>I don't know</span><span>0</span><span>8</span></div>
+                <div><span>2011-08-02</span><span>Run run run into the forrest</span><span>7</span><span>1</span></div>
+                <div><span>2011-08-01</span><span>Where the wild roses grow</span><span>5</span><span>5</span></div>
+            </article>
         </section>
     </div>
 </body>
