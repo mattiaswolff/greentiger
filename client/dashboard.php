@@ -25,7 +25,7 @@
                         var counter = document.getElementsByClassName('dasboard_definition').length;
                         newrow.className = 'dasboard_definition';
                         newrow.id = value._id.$id;
-                        newrow.innerHTML = '<span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?definitionId=' + value._id.$id + '">' + value.name + '</a></span><br/><span>' + value.description + '</span></br><span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?userId=' + strUserId + '&definitionId=' + value._id.$id + '">Add task</a></span>';
+                        newrow.innerHTML = '<span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?definitionId=' + value._id.$id + '">' + value.name + '</a></span><br/>';
 		                document.getElementById("definitions").appendChild(newrow);
                     });
             });
@@ -40,9 +40,7 @@
                         objNewRow.className = 'dasboard_definition_task';
                         objNewRow.id = value1._id;
                         strHtml = '';
-                        $.each(value1.content, function(key2, value2) {
-                            strHtml = strHtml + key2 + ': ' + value2 + '<br/>';
-                        });
+                        strHtml = '<div><span>' + value1.updatedDate + '</span><span>' + value1.content.get(0) + '</span><span>' + value1.comments.length + '</span><span>' + value1.likes.length + '</span></div>';
                         objNewRow.innerHTML = strHtml;
                         document.getElementById(key).appendChild(objNewRow);
                     });
