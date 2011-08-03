@@ -40,14 +40,14 @@ class User {
     public function getDefinitions() { return $this->definitions; }
     public function getAccessTokens() { return $this->accessTokens; }
     public function getClientId() { return $this->client_id; }
-    public function getRedirectUri() { $strReturn = 'http://' . $this->redirect_uri; return $strReturn; }
+    public function getRedirectUri() { return $this->redirect_uri; }
     public function setId($x) { $this->_id = $x; } 
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }} 
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
     public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
     public function setClientId() {if (!isset($this->client_id) || ((string)$this->client_id == '')) {$this->client_id = (string)new MongoId(); }}
-    public function setRedirectUri($x) {if ($x != null) { $arrParsedUrl = parse_url($x); $this->redirect_uri = $arrParsedUrl['host']; }}
+    public function setRedirectUri($x) {if ($x != null) { $this->redirect_uri = $x; }}
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
