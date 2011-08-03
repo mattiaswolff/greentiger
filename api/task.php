@@ -55,8 +55,6 @@ switch($data->getMethod()) {
             $objTask->upsert();
             $arrDefinitions = $objUser->getDefinitions();
             foreach ($arrDefinitions as $key => $var) {
-                echo $var['_id'] + '<br/>';
-                echo new MongoId($arrRequestVars['definitionId']);
                 if ($var['_id'] == new MongoId($arrRequestVars['definitionId'])) {
                     $arrDefinitions[$key]['tasks'][] = $objTask->getId();
                     break;
