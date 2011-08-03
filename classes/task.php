@@ -99,12 +99,11 @@ class Task {
                 echo var_dump($var1);
                 $arrResults['total'] = $arrResults['total'] + 1;
                 $objId = new MongoId($var1['_id']);
-                //$var['createdDate'] = $objId->getTimestamp();
-                //$var['_id'] = (string)$var1['_id'];
-                //$arrResults['results'] = $var1;
+                $var1['createdDate'] = $objId->getTimestamp();
+                $var1['_id'] = (string)$var1['_id'];
+                $arrResults['results'] = $var1;
             }
         }
-        die();
         return $arrResults; 
     }
     
