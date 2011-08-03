@@ -44,7 +44,7 @@
                         $.each(value1.content, function (key2, value2) {
                             strHtml += '<span>' + value2.content + '</span>';
                             return false;
-                        }
+                        });
                         strHtml = strHtml + '<span>' + value1.comments.length + '</span><span>' + value1.likes.length + '</span></div>';
                         objNewRow.innerHTML = strHtml;
                         document.getElementById(key).appendChild(objNewRow);
