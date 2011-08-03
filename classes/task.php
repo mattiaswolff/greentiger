@@ -80,12 +80,7 @@ class Task {
         $intLimit = $intObjectsPerPage;
         if (!isset($arrObjectId[0])) {
             foreach($arrObjectId as $key => $var) {
-                echo var_dump($var);
-                echo $key;
-                $objResults[$key] = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key))->limit($intLimit)->skip($intSkip);
-                foreach ($objResults as $var) {
-                    echo var_dump($var);
-                }
+                $objResults[$key][] = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key))->limit($intLimit)->skip($intSkip);
             }
         }
         elseif ($arrObjectId != null) {
@@ -97,8 +92,8 @@ class Task {
         $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
+        echo var_dump($objResults);
         foreach ($objResults as $key => $var) {
-            echo $var;
             $arrResults['total'] = $arrResults['total'] + 1;
             $objId = new MongoId($var['_id']);
             $var['createdDate'] = $objId->getTimestamp();
