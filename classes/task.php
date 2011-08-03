@@ -95,14 +95,14 @@ class Task {
         foreach ($objResults as $key => $var) {
             echo "hej";
             echo var_dump($key);
-            //foreach($var as $key1 => $var1) {
-                //echo var_dump($var1);
+            foreach($var as $key1 => $var1) {
+                echo var_dump($var1);
                 //$arrResults['total'] = $arrResults['total'] + 1;
                 //$objId = new MongoId($var1['_id']);
                 //$var['createdDate'] = $objId->getTimestamp();
                 //$var['_id'] = (string)$var1['_id'];
                 //$arrResults['results'] = $var1;
-            //}
+            }
         }
         die();
         return $arrResults; 
