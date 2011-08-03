@@ -26,7 +26,7 @@ switch($data->getMethod()) {
                     $arrId = array_merge($arrId, $var['tasks']);    
                 }
                 elseif ($strGroup == 'definition' && isset($var['tasks'])) {
-                    $arrId[$key] = $var['tasks']; 
+                    $arrId[$var['_id']] = $var['tasks']; 
                 }
             }
         }
