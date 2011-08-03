@@ -41,6 +41,7 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['definitionId']) and isset($arrRequestVars['userId'])) {
             $objTask = new Task();
+            $objUser = new User($arrRequestVars['userId']);
             $objTask->setId();
             $objTask->setCreatedBy("CreateFunction");
             $objTask->setKeywords($arrRequestVars["keywords"]);
@@ -52,8 +53,6 @@ switch($data->getMethod()) {
             $objTask->setDefinition($arrRequestVars["definitionId"]);
             $objTask->setContent($arrRequestVars["content"]);
             $objTask->upsert();
-            //test
-            $objUser = new User($arrRequestVars['userId']);
             $arrDefinitions = $objUser->getDefinitions();
             foreach ($arrDefinitions as $key => $var) {
                 if (in_array(array("id" => new MongoId($arrRequestVars['definitionId'])), $arrDefinitions[$key])) {
@@ -61,6 +60,8 @@ switch($data->getMethod()) {
                     break;
                 }
             }
+            echo var_dump($arrDefinitions);
+            die();
             $objUser->setDefinitions($arrDefinitions);
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
