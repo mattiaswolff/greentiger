@@ -40,7 +40,7 @@
                         objNewRow.className = 'dasboard_definition_task';
                         objNewRow.id = value1._id;
                         strHtml = '';
-                        strHtml = '<div><span>' + value1.updatedDate + '</span><span>' + value1.content.get(0) + '</span><span>' + value1.comments.length + '</span><span>' + value1.likes.length + '</span></div>';
+                        strHtml = '<div><span>' + value1.updatedDate + '</span><span>' + value1.content + '</span><span>' + value1.comments.length + '</span><span>' + value1.likes.length + '</span></div>';
                         objNewRow.innerHTML = strHtml;
                         document.getElementById(key).appendChild(objNewRow);
                     });
