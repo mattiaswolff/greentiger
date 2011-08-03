@@ -16,7 +16,7 @@ function submitFormJSON(strUrl, strType) {
             strHtml = strHtml + name + "<br/>" + description + "<br/>";
             switch (type) {
                 case "text":
-                    strHtml = strHtml + '<input type="text" value="" name="content.[' + name + ']" />'; 
+                    strHtml = strHtml + '<input type="text" value="" name="content[' + name + ']" />'; 
                     break;
             }
             strHtml = strHtml + '</div>';
