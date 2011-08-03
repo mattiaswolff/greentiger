@@ -80,8 +80,8 @@ class Task {
         $intLimit = $intObjectsPerPage;
         if (!isset($arrObjectId[0])) {
             foreach($arrObjectId as $key => $var) {
-                echo 'hej';
-                $objResults[$key] = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => new MongoId($key)))->limit($intLimit)->skip($intSkip);
+                echo var_dump($var);
+                $objResults[$key] = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key))->limit($intLimit)->skip($intSkip);
             }
         }
         if ($arrObjectId != null) {
