@@ -33,7 +33,9 @@
                 
 	    });
         var strSubmitUrl = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId;
-        $('#submit').click(submitFormJSON(strSubmitUrl, 'PUT'));
+        $('#submit').click(funtion() {
+            submitFormJSON(strSubmitUrl, 'PUT');
+        });
     </script>
 </head>
 
