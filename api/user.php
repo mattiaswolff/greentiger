@@ -13,7 +13,7 @@ switch($data->getMethod()) {
         $strAccessTokenUserId = (isset($arrRequestVars['accessTokenUserId']) ? $arrRequestVars['accessTokenUserId'] : '');
         $strAccessToken = (isset($arrRequestVars['access_token']) ? $arrRequestVars['access_token'] : '');
         
-        if ($strUserId != '') {
+        if ($strUserId == '') {
             RestUtils::sendResponse(400, array("error" => "No user Id given."), 'application/json');
             die();
         }
