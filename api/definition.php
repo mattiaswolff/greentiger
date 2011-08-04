@@ -7,12 +7,17 @@ $data = RestUtils::processRequest();
 
 switch($data->getMethod()) {  
     case 'get':
+        
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['definitionId'])) {
-            $arrId[] = new MongoId($arrRequestVars['definitionId']);
+        
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        
+        if ($strDefinitionId != '') {
+            $arrId[] = new MongoId($strDefinitionId);
         }
-        else if (isset($arrRequestVars['userId'])) {
-            $arrResults = User::get(1000, 1, $arrRequestVars['userId']);
+        else if ($strUserId != '') {
+            $arrResults = User::get(1000, 1, $strUserId);
             $arrId = $arrResults['users'][0]['definitions'];
         }
         else {
@@ -23,14 +28,18 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['userId'])) {
+
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        
+        if ($strUserId != '') {
             $objDefinition = new Definition();
             $objDefinition->setId();
             $objDefinition->setName($arrRequestVars["name"]);
             $objDefinition->setDescription($arrRequestVars["description"]);
             $objDefinition->setContent($arrRequestVars['content']);
             $objDefinition->upsert();
-            $objUser = new User($arrRequestVars['userId']);
+            $objUser = new User($strUserId);
             $arrDefinitions = $objUser->getDefinitions();
             $arrDefinition['_id'] = $objDefinition->getId();;
             $arrDefinition['name'] = $objDefinition->getName();
@@ -52,8 +61,12 @@ switch($data->getMethod()) {
         break;
     case 'put':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['definitionId'])) {
-            $objDefinition = new Definition(new MongoId($arrRequestVars['definitionId']));
+        
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        
+        if ($strDefinitionId != '') {
+            $objDefinition = new Definition(new MongoId($strDefinitionId));
             $objDefinition->setName($arrRequestVars['name']);
             $objDefinition->setDescription($arrRequestVars['description']);
             $objDefinition->setContent($arrRequestVars['content']);
@@ -66,10 +79,14 @@ switch($data->getMethod()) {
         break;
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['definitionId'])) {
-            $arrDefinitionId[] = $arrRequestVars['definitionId'];
+        
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        
+        if ($strDefinitionId != '') {
+            $arrDefinitionId[] = $strDefinitionId;
             $intStatus = Definition::delete($arrDefinitionId);
-            RestUtils::sendResponse($intStatus, $arrRequestVars['definitionId'], 'application/json');
+            RestUtils::sendResponse($intStatus, $intStatus, 'application/json');
         }
         else {
             RestUtils::sendResponse(400);

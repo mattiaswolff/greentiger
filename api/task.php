@@ -8,18 +8,24 @@ $data = RestUtils::processRequest();
 switch($data->getMethod()) {  
     case 'get':
         $arrRequestVars = $data->getRequestVars();
+        
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '';
+        
         $strGroup = (isset($arrRequestVars['group']) ? $arrRequestVars['group'] : '');
+        
         $arrId = array();
-        if (isset($arrRequestVars['taskId'])) {
+        if ($strTaskId != '') {
             $arrId[] = $arrRequestVars['taskId'];
         }
-        else if (isset($arrRequestVars['definitionId']) && isset($arrRequestVars['userId'])) {
-            $objUser = new User($arrRequestVars['userId']);
+        else if (($strDefinitionId != '') && ($strUserId != '')) {
+            $objUser = new User($strUserId);
             $arrDefinitions = $objUser->getDefinitions();
-            $arrId = $arrDefinitions[$arrRequestVars['definitionId']]['tasks'];
+            $arrId = $arrDefinitions[$strDefinitionId]['tasks'];
         }
-        else if (isset($arrRequestVars['userId'])) {
-            $objUser = new User($arrRequestVars['userId']);
+        else if (($strUserId != '')) {
+            $objUser = new User($strUserId);
             $arrDefinitions = $objUser->getDefinitions();
             foreach ($arrDefinitions as $key => $var) {
                 if ($strGroup == '' && isset($var['tasks'])) {
@@ -38,13 +44,17 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['definitionId']) and isset($arrRequestVars['userId'])) {
+        
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        
+        if (($strDefinitionId != '') && ($strUserId != '')) {
             $objTask = new Task();
-            $objUser = new User($arrRequestVars['userId']);
+            $objUser = new User($strUserId); //check if user object is returned sucessfully
             $objTask->setId();
             $objTask->setCreatedBy("CreateFunction");
-            $objTask->setKeywords($arrRequestVars["keywords"]);
-            $objTask->setAttachments("attachment");
+            //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled internally
+            //$objTask->setAttachments("attachment"); not implemented
             $objTask->setComments($arrRequestVars["comments"]);
             $objTask->setLikes($arrRequestVars["likes"]);
             $objTask->setRatings($arrRequestVars["ratings"]);
@@ -54,7 +64,7 @@ switch($data->getMethod()) {
             $objTask->upsert();
             $arrDefinitions = $objUser->getDefinitions();
             foreach ($arrDefinitions as $key => $var) {
-                if ($var['_id'] == new MongoId($arrRequestVars['definitionId'])) {
+                if ($var['_id'] == new MongoId($strDefinitionId)) {
                     $arrDefinitions[$key]['tasks'][] = $objTask->getId();
                     break;
                 }
@@ -69,16 +79,21 @@ switch($data->getMethod()) {
         break;
     case 'put':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['taskId'])) {
+        
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '';
+        
+        if ($strTaskId != '') {
             $objTask = new Task(new MongoId($arrRequestVars['taskId']));
-            $objTask->setCreatedBy("CreateFunction");
-            $objTask->setKeywords($arrRequestVars["keywords"]);
-            $objTask->setAttachments("attachment");
+            //$objTask->setCreatedBy("CreateFunction"); should not be updated
+            //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled automat..
+            //$objTask->setAttachments("attachment"); not implemented
             $objTask->setComments($arrRequestVars["comments"]);
             $objTask->setLikes($arrRequestVars["likes"]);
             $objTask->setRatings($arrRequestVars["ratings"]);
             $objTask->setTags($arrRequestVars["tags"]);
-            $objTask->setDefinition($arrRequestVars["definitionId"]);
+            //$objTask->setDefinition($arrRequestVars["definitionId"]); should not be updated
             $objTask->setContent($arrRequestVars["content"]);
             $objTask->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
@@ -89,10 +104,13 @@ switch($data->getMethod()) {
         break;
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['taskId'])) {
-            $arrObjectId[] = $arrRequestVars['taskId'];
-            $intStatus = Definition::delete($arrObjectId);
-            RestUtils::sendResponse($intStatus, $arrRequestVars['taskId'], 'application/json');
+        
+        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '';
+        
+        if ($strTaskId != '') {
+            $arrObjectId[] = $strTaskId;
+            $intStatus = Task::delete($arrObjectId);
+            RestUtils::sendResponse($intStatus, $intStatus, 'application/json');
         }
         else {
             RestUtils::sendResponse(400);

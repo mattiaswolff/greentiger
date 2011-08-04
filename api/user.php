@@ -8,14 +8,38 @@ switch($data->getMethod()) {
 
     case 'get':
         $arrRequestVars = $data->getRequestVars();
-        $objUser = new User($arrRequestVars['userId']);
-        $objAccessTokenUser = new User($arrRequestVars['accessTokenUserId']);
-        if ($objAccessTokenUser->validateAccessToken($arrRequestVars['access_token'])) {
+        
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        $strAccessTokenUserId = (isset($arrRequestVars['accessTokenUserId']) ? $arrRequestVars['accessTokenUserId'] : '';
+        $strAccessToken = (isset($arrRequestVars['access_token']) ? $arrRequestVars['access_token'] : '';
+        
+        if ($strUserId != '') {
+            RestUtils::sendResponse(400, array("error" => "No user Id given."), 'application/json');
+            die();
+        }
+        
+        if ($strAccessToken != '' && $strAccessTokenUserId != '') {
+            $objAccessTokenUser = new User($strAccessTokenUserId);
+            if (($objAccessTokenUser->validateAccessToken($strAccessToken)) && ($strAccessTokenUserId == $strUserId)) {
+                $strAuthorizationLevel = 'private';
+            }
+            else {
+                $strAuthorizationLevel = 'public';
+            }
+        }
+        else {
+            $strAuthorizationLevel = 'public';
+        }
+        
+        $objUser = new User($strUserId, $strAuthorizationLevel);
+        
+        if (isset($objUser)) {
             RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
         }
         else {
-            RestUtils::sendResponse(400, array("error" => "Access token no longer valid"), 'application/json');
+            RestUtils::sendResponse(400, array("error" => "User Id not existing."), 'application/json');
         }
+        
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
