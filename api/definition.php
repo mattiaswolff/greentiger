@@ -10,8 +10,8 @@ switch($data->getMethod()) {
         
         $arrRequestVars = $data->getRequestVars();
         
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         
         if ($strDefinitionId != '') {
             $arrId[] = new MongoId($strDefinitionId);
@@ -29,8 +29,8 @@ switch($data->getMethod()) {
     case 'post':
         $arrRequestVars = $data->getRequestVars();
 
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         
         if ($strUserId != '') {
             $objDefinition = new Definition();
@@ -62,8 +62,8 @@ switch($data->getMethod()) {
     case 'put':
         $arrRequestVars = $data->getRequestVars();
         
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         
         if ($strDefinitionId != '') {
             $objDefinition = new Definition(new MongoId($strDefinitionId));
@@ -80,8 +80,8 @@ switch($data->getMethod()) {
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
         
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         
         if ($strDefinitionId != '') {
             $arrDefinitionId[] = $strDefinitionId;

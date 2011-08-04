@@ -9,9 +9,9 @@ switch($data->getMethod()) {
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
-        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '';
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '');
         
         $strGroup = (isset($arrRequestVars['group']) ? $arrRequestVars['group'] : '');
         
@@ -45,8 +45,8 @@ switch($data->getMethod()) {
     case 'post':
         $arrRequestVars = $data->getRequestVars();
         
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         
         if (($strDefinitionId != '') && ($strUserId != '')) {
             $objTask = new Task();
@@ -79,10 +79,10 @@ switch($data->getMethod()) {
         break;
     case 'put':
         $arrRequestVars = $data->getRequestVars();
-        
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '';
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
-        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '';
+    
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '');
         
         if ($strTaskId != '') {
             $objTask = new Task(new MongoId($arrRequestVars['taskId']));
@@ -105,7 +105,7 @@ switch($data->getMethod()) {
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
         
-        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '';
+        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '');
         
         if ($strTaskId != '') {
             $arrObjectId[] = $strTaskId;
