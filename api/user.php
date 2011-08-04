@@ -9,9 +9,9 @@ switch($data->getMethod()) {
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '';
-        $strAccessTokenUserId = (isset($arrRequestVars['accessTokenUserId']) ? $arrRequestVars['accessTokenUserId'] : '';
-        $strAccessToken = (isset($arrRequestVars['access_token']) ? $arrRequestVars['access_token'] : '';
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $strAccessTokenUserId = (isset($arrRequestVars['accessTokenUserId']) ? $arrRequestVars['accessTokenUserId'] : '');
+        $strAccessToken = (isset($arrRequestVars['access_token']) ? $arrRequestVars['access_token'] : '');
         
         if ($strUserId != '') {
             RestUtils::sendResponse(400, array("error" => "No user Id given."), 'application/json');
