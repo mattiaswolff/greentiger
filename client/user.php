@@ -16,10 +16,6 @@
                     strAccessToken = value.split('=')[1];  
                 } 
             });
-            if (strAccessToken == '') {
-                var uri="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/user.php";
-                window.location.href = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/test.php?clientId=4e36a30fcdb4bf1d69000002&redirectUri=" + encodeURI(uri) + "&responseType=token";
-            }
             if (strUserId != '' ) {
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId;
                 $.getJSON(strUrl, { access_token : strAccessToken}, function(json) {
