@@ -32,8 +32,8 @@ class RestUtils
         
         if (isset($data['access_token'])) {
             $arrAccessToken = explode("|", $data['access_token']);
-            $data['access_token'] = $arrAccessToken[0];
-            $data['accessTokenUserId'] = $arrAccessToken[1];
+            //$data['access_token'] = $arrAccessToken[0];
+            //$data['accessTokenUserId'] = $arrAccessToken[1];
         }
         
         if(isset($data['userId'])) {
