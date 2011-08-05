@@ -11,7 +11,7 @@ class User {
     private $accessTokens;
     
     //Constructor
-    public function __construct($strUserId = null, $strAuthorizationLevel = 'public'){
+    public function __construct($strUserId = null){
         if ($strUserId != null) {
             $m = new Mongo();
             $db = $m->projectcopperfield;
@@ -20,10 +20,9 @@ class User {
             $this->name = $arrResults['name'];
             $this->email = $arrResults['email'];
             $this->definitions = $arrResults['definitions'];
-            if ($strAuthorizationLevel == 'private') {
-                $this->client_id = $arrResults['client_id'];
-                $this->redirect_uri = $arrResults['redirect_uri'];
-                $this->accessTokens = $arrResults['accessTokens'];
+            $this->client_id = $arrResults['client_id'];
+            $this->redirect_uri = $arrResults['redirect_uri'];
+            $this->accessTokens = $arrResults['accessTokens'];
             }
         }
         else {

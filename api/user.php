@@ -10,34 +10,18 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
-        $strAccessTokenUserId = (isset($arrRequestVars['accessTokenUserId']) ? $arrRequestVars['accessTokenUserId'] : '');
-        $strAccessToken = (isset($arrRequestVars['access_token']) ? $arrRequestVars['access_token'] : '');
         
-        if ($strUserId == '') {
-            RestUtils::sendResponse(400, array("error" => "No user Id given."), 'application/json');
-            die();
-        }
-        
-        if ($strAccessToken != '' && $strAccessTokenUserId != '') {
-            $objAccessTokenUser = new User($strAccessTokenUserId);
-            if (($objAccessTokenUser->validateAccessToken($strAccessToken)) && ($strAccessTokenUserId == $strUserId)) {
-                $strAuthorizationLevel = 'private';
+        if ($strUserId != '') {
+            $objUser = new User($strUserId);
+            if isset($objUser) {
+                RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
             }
             else {
-                $strAuthorizationLevel = 'public';
+                RestUtils::sendResponse(400, array("error" => "User with id " . $strUserId . "not found."), 'application/json');
             }
         }
         else {
-            $strAuthorizationLevel = 'public';
-        }
-        
-        $objUser = new User($strUserId, $strAuthorizationLevel);
-        
-        if (isset($objUser)) {
-            RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
-        }
-        else {
-            RestUtils::sendResponse(400, array("error" => "User Id not existing."), 'application/json');
+            RestUtils::sendResponse(400, array("error" => "No user Id given."), 'application/json');
         }
         
         break;
