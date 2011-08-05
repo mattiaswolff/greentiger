@@ -23,7 +23,6 @@ class User {
             $this->client_id = $arrResults['client_id'];
             $this->redirect_uri = $arrResults['redirect_uri'];
             $this->accessTokens = $arrResults['accessTokens'];
-            }
         }
         else {
             $this->email = '';
