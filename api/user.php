@@ -13,7 +13,7 @@ switch($data->getMethod()) {
         
         if ($strUserId != '') {
             $objUser = new User($strUserId);
-            if isset($objUser) {
+            if (isset($objUser)) {
                 RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
             }
             else {
