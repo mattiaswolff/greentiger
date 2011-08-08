@@ -23,8 +23,8 @@
             $.getJSON(strUrlUser, function(json) {
                     $.each(json.definitions, function(key, value) {
                         var counter = $('.definitions > article').length;
-                        var strHtml = '<article id="' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
-		                var strHtml2 = '<span class="button" title="' + value._id.$id + '">' + value.name + '</span>';
+                        var strHtml = '<article id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
+		                var strHtml2 = '<span class="button" id="' + value._id.$id + '">' + value.name + '</span>';
                         $('.definitions').append(strHtml);
                         $('.createTask').append(strHtml2); 
                     });
@@ -45,13 +45,13 @@
                             return false;
                         });
                         strHtml = strHtml + '<td>' + value1.comments.length + '</td><td>' + value1.likes.length + '</td></tr>';
-                        $('#' + key + ' tbody').append(strHtml);
+                        $('#dashboard_' + key + ' tbody').append(strHtml);
                     });
                 });
             });
             
             $(".createTask").delegate(".button", "click", function(){
-                            alert($(this).title);
+                            alert($(this).id);
                         });
         });
     
