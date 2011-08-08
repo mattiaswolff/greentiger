@@ -1,14 +1,13 @@
-body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif;background-color: white; clear:both; margin: 0px; padding: 0px;}
+body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: white; clear:both; margin: 0px; padding: 0px;}
 .top {background-color: #000; color: white;  padding: 5px; vertical-align: bottom;}
 .container {width: 1000px;  margin:0 auto;  }
 .pageNav {display: inline;}
 .login {display: block; float: right;}
 .userInfo {float: left; display: inline-block; background-color: white; width: 250px; min-height: 450px; }
 .main {float: right; width: 750px;}
-.userName {display: block; background: white; padding: 25px 0px; margin-top: 10px;}
+.userName {display: block; background: white; padding: 25px 0px; margin-top: 10px; font-size: 32px; }
 .userNav {display: block; background: #DEE1E5;  border: solid 1px #ccc; padding: 5px; color: #4D90FE;}
 .footer {clear: both; background-color: yellow; margin-top: 10px;}
-
 .createTask {border: solid 1px #ccc; margin: 20px 0px; background-color: #f4f4f4; padding: 5px;}
 .definitions { margin: 10px;}
 article {width: 355px; background-color: #f4f4f4; border: solid 1px #DEE1E5;}
