@@ -35,6 +35,22 @@
             $.getJSON(strUrl, function(json) {
                 $.each(json.results, function(key, value) {
                     $.each(value, function(key1, value1) {
+                        strHtml = '';
+                        var d = new Date(value1.updatedDate);
+                        strHtml += '<tr><td>' + d.getMonth() + '-' + d.getDate() + '</td>';
+                        $.each(value1.content, function (key2, value2) {
+                            strHtml += '<td><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?taskId=' + value1._id + '">' + value2 + '</a></td>';
+                            return false;
+                        });
+                        strHtml = strHtml + '<td>' + value1.comments.length + '</td><td>' + value1.likes.length + '</td></tr>';
+                        $('#' + key + ' tbody').appendChild(strHtml);
+                    });
+                });
+            });
+            
+            $.getJSON(strUrl, function(json) {
+                $.each(json.results, function(key, value) {
+                    $.each(value, function(key1, value1) {
                         var objNewRow = document.createElement('div');
                         var counter = document.getElementsByClassName('dasboard_definition').length;
                         objNewRow.className = 'dasboard_definition_task';
