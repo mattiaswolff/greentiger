@@ -8,9 +8,9 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .userName {display: block; background: white; padding: 25px 0; margin-top: 10px; font-size: 32px; }
 .userNav {display: block;     color: #4D90FE; border-bottom: solid 2px #4D90FF; text-decoration: none; font-size: 16px;}
 .footer {clear: both; background-color: #FFFFCC; margin-top: 10px; min-height: 300px; border: solid 1px #ccc;}
-.createTask {border: solid 1px #CCC; margin: 0 0 20px 0; background-color: #f4f4f4; padding: 5px;}
+.createTask {border: solid 1px #CCC;  background-color: #f4f4f4; padding: 5px;}
 .definitions { }
-article {width: 365px; background-color: #f4f4f4; border: solid 1px #DEE1E5;}
+article {width: 365px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 250px; margin-top: 20px;}
 .left {float: left}
 .right {float: right}
 .user {border: solid 1px #CCC; max-width: 230px; max-height: 230px; margin: 20px 0;}
