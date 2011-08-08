@@ -26,7 +26,7 @@
                         var strHtml = '<article id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
 		                var strHtml2 = '<span class="button" id="' + value._id.$id + '">' + value.name + '</span>';
                         $('.definitions').append(strHtml);
-                        $('.createTask').append(strHtml2); 
+                        $('.createTask > div').append(strHtml2); 
                     });
             $('article:nth-child(odd)').addClass('left');
             $('article:nth-child(even)').addClass('right');
@@ -51,9 +51,19 @@
             });
             
             $(".createTask").delegate(".button", "click", function(){
-                
-                            alert($(this).attr('id'));
-                        });
+                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
+                $.getJSON(strUrlUser, function(json) {
+                    $.each(json.content, function(key, value) {
+                        var counter = $('.definitions > article').length;
+                        var strHtml = '<article id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
+    	                var strHtml2 = '<span class="button" id="' + value._id.$id + '">' + value.name + '</span>';
+                        $('.definitions').append(strHtml);
+                        $('.createTask > div').append(strHtml2); 
+                    });
+                $('article:nth-child(odd)').addClass('left');
+                $('article:nth-child(even)').addClass('right');
+                });    
+            });
         });
     
         
@@ -86,7 +96,9 @@
             </section>
             <div class="content">
                 <section class="createTask">
-                    Create...
+                    <div>Create...</div>
+                    <form class="invisible">
+                    </form>
                 </section>
                 <section class="definitions">
                     <article class="left">
