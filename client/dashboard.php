@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
+    <script rel="stylesheet" type="text/css" src="../css/main.js"></script>
 	<script type="text/javascript">
         strUserId = "<?php echo $_GET['userId']; ?>"
         
@@ -64,9 +65,8 @@
             <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
         </nav>
         <section id="top">
-            LOGO
         </section>
-        <aside>
+        <aside id="userInfo">
         </aside>
         <section id="createTask">
         </section>
