@@ -60,20 +60,20 @@
 </head>
 
 <body id="home">
-    <div id = "container">
-        <section id ="top">
-            <nav>
+    <div class = "container">
+        <section class ="top">
+            <nav class="nav">
                 <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
             </nav>
-            <section id="login">
+            <section class="login">
                 Login
             </section>
         </section>
-        <aside id="userInfo">
+        <aside class="userInfo">
         </aside>
-        <section id="createTask">
+        <section class="createTask">
         </section>
-        <section id="definitions">
+        <section class="definitions">
             <article>
                 FooDefinition
                 <div><span>Updated</span><span>Title</span><span>C</span><span>L</span></div>

@@ -1,1 +1,5 @@
 body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif;background-color: #F0F0F0; clear:both;}
+.top {background-color: #000; color: white; height: 30px; padding: 0 10px; vertical-align: bottom;}
+.container {margin: 0 120px auto;}
+.nav {display: inline;}
+.login {display: block; float: right;}
