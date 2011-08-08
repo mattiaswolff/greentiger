@@ -8,7 +8,7 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
-    <link rel="stylesheet" type="text/css" src="../css/main.css"></link>
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
 	<script type="text/javascript">
         strUserId = "<?php echo $_GET['userId']; ?>"
         
