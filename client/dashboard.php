@@ -45,7 +45,6 @@
                         strHtml = strHtml + '<td>' + value1.comments.length + '</td><td>' + value1.likes.length + '</td></tr>';
                         $('#' + key + ' tbody').append(strHtml);
                     });
-                    $('span.total').append(value.total);
                 });
             });
         });
