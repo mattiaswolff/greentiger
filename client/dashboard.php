@@ -62,7 +62,7 @@
 <body id="home">
     <div class = "container">
         <section class ="top">
-            <nav class="nav">
+            <nav class="pageNav">
                 <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
             </nav>
             <section class="login">
@@ -74,6 +74,12 @@
         </aside>
         <section class="main">
             Main
+            <section class="userName">
+                UserName
+            </section>
+            <nav class="userNav">
+                <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
+            </nav>
             <section class="createTask">
                 CreateTask
             </section>
@@ -89,6 +95,9 @@
                 </article>
             </section>
         </section>
+        <footer class="footer">
+            footer
+        </footer>
     </div>
 </body>
 </html>
