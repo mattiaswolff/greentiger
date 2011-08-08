@@ -22,11 +22,9 @@
             var strUrlUser = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId;
             $.getJSON(strUrlUser, function(json) {
                     $.each(json.definitions, function(key, value) {
-                        var newrow = document.createElement('article');
                         var counter = $('.definitions > article').length;
-                        newrow.id = value._id.$id;
-                        newrow.innerHTML = '<span class="header">FooDefinition (<span class="total">105</span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a>';
-		                document.getElementByClassTag("definitions").appendChild(newrow);
+                        var strHtml = '<article id="' + value._id.$id +'<span class="header">FooDefinition (<span class="total">105</span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
+		                $("definitions").append("<span> - 2nd!</span>");
                     });
             $('article:nth-child(odd)').addClass('left');
             $('article:nth-child(even)').addClass('right');
