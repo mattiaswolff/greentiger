@@ -91,11 +91,11 @@
                     <div>Create...</div>
                     <form class="invisible">
                         <div>
-                            <span class="header">This is the title</span>
+                            <span class="header">Title</span>
                             <input type="text" />
                         </div>
                         <div>
-                            <span class="description">This is the title</span>
+                            <span class="description">Description</span>
                             <input type="text" />
                         </div>
                     </form>
