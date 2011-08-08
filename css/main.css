@@ -5,12 +5,13 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif;background-co
 .login {display: block; float: right;}
 .userInfo {float: left; display: inline-block; background-color: white; width: 250px; min-height: 450px; }
 .main {float: right; width: 750px;}
-.userName {display: block; background: white; padding: 25px 0px;}
+.userName {display: block; background: white; padding: 25px 0px; margin-top: 10px;}
 .userNav {display: block; background: #DEE1E5;  border: solid 1px #ccc; padding: 5px; color: #4D90FE;}
 .footer {clear: both; background-color: yellow; margin-top: 10px;}
 
-.createTask {border: solid 2px; margin: 10px;}
+.createTask {border: solid 1px #ccc; margin: 20px 0px; background-color: #f4f4f4; padding: 5px;}
 .definitions { margin: 10px;}
 article {width: 355px; background-color: #f4f4f4; border: solid 1px #DEE1E5;}
 article.left {float: left}
 article.right {float: right}
+img.user {border: solid 1px #CCC; max-width: 230px; max-height: 230px; margin: 20px 0px;}
