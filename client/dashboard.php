@@ -52,7 +52,7 @@
             
             $(".createTask").delegate(".button", "click", function(){
                 console.log(this);
-                            alert($(this));
+                            alert($(this.id));
                         });
         });
     
