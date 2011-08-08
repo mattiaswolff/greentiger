@@ -73,7 +73,9 @@
             User Info
         </aside>
         <section class="main">
+            Main
             <section class="createTask">
+                CreateTask
             </section>
             <section class="definitions">
                 <article>
