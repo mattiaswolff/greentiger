@@ -37,7 +37,7 @@
                     $.each(value, function(key1, value1) {
                         strHtml = '';
                         var d = new Date(value1.updatedDate);
-                        strHtml += '<tr><td>' + d.getMonth() + '-' + d.getDate() + '</td>';
+                        strHtml += '<tr><td>' + d.getYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + '</td>';
                         $.each(value1.content, function (key2, value2) {
                             strHtml += '<td><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?taskId=' + value1._id + '">' + value2 + '</a></td>';
                             return false;
