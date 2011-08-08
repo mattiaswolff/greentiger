@@ -80,11 +80,8 @@
         </aside>
         <div class="main">
             <section class="userName">
-                UserName
+                Mattias Wolff
             </section>
-            <nav class="userNav">
-                <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
-            </nav>
             <div class="content">
                 <section class="createTask">
                     CreateTask
