@@ -49,12 +49,11 @@
                     });
                 });
             });
-        
-            $('.button').click(function() {
-            alert('test');
-        });
         });
     
+        $(".createTask").delegate(".button", "click", function(){
+            alert('test');
+        });
 	</script>
 
 </head>
