@@ -20,3 +20,4 @@ table {padding: 0; text-align: left;}
 td {padding: 0 3px; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 th {padding: 0 3px;}
 .button {background: #4D90FE; padding: 3px; margin: 5px; color: white; border: solid 1px #556677;}
+input, textarea{margin-left:6px; margin-right: 4px; margin-bottom: 4px;font: 17px arial,sans-serif;border-bottom: 1px solid #999;border-top: 1px solid #CCC; border-left: 1px solid #BBB;border-right: 1px solid #BBB;}
