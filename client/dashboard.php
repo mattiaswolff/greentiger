@@ -65,6 +65,9 @@
             <nav>
                 <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
             </nav>
+            <section id="login">
+                Login
+            </section>
         </section>
         <aside id="userInfo">
         </aside>
