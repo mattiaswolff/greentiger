@@ -106,6 +106,7 @@
                                 <tr><td>2001-01-01</td><td>This is a tasdfest</td><td>8</td><td>7</td></tr>
                             </tbody>
                         </table>
+                        <a href="">View all</a>
                     </article>
                     <article class="right">
                         <span class="title">FooDefinition</span>
