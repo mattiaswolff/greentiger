@@ -88,22 +88,22 @@
                 </section>
                 <section class="definitions">
                     <article class="left">
-                        FooDefinition
-                        <div><span>Updated</span><span>Title</span><span>C</span><span>L</span></div>
-                        <div><span>2011-08-03</span><span>Support</span><span>10</span><span>3</span></div>
-                        <div><span>2011-08-03</span><span>Why is it like this?</span><span>8</span><span>2</span></div>
-                        <div><span>2011-08-03</span><span>I don't know</span><span>0</span><span>8</span></div>
-                        <div><span>2011-08-02</span><span>Run run run into the forrest</span><span>7</span><span>1</span></div>
-                        <div><span>2011-08-01</span><span>Where the wild roses grow</span><span>5</span><span>5</span></div>
+                        <span class="title">FooDefinition</span>
+                        <div class="header row"><span class="col_date">Updated</span><span class="col_content">Title</span><span class="col_comments">C</span><span class="col_likes">L</span></div>
+                        <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">Support</span><span class="col_comments">10</span><span class="col_likes">3</span></div>
+                        <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">Why is it like this?</span><span class="col_comments">8</span><span class="col_likes">2</span></div>
+                        <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">I don't know</span><span class="col_comments">0</span><span class="col_likes">8</span ></div>
+                        <div class="row"><span class="col_date">2011-08-02</span><span class="col_content">Run run run into the forrest</span><span class="col_comments">7</span><span class="col_likes">1</span></div>
+                        <div class="row"><span class="col_date">2011-08-01</span><span class="col_content">Where the wild roses grow</span><span class="col_comments">5</span><span class="col_likes">5</span></div>
                     </article>
                     <article class="right">
-                        FooDefinition2
-                        <div><span>Updated</span><span>Title</span><span>C</span><span>L</span></div>
-                        <div><span>2011-08-03</span><span>Support</span><span>10</span><span>3</span></div>
-                        <div><span>2011-08-03</span><span>Why is it like this?</span><span>8</span><span>2</span></div>
-                        <div><span>2011-08-03</span><span>I don't know</span><span>0</span><span>8</span></div>
-                        <div><span>2011-08-02</span><span>Run run run into the forrest</span><span>7</span><span>1</span></div>
-                        <div><span>2011-08-01</span><span>Where the wild roses grow</span><span>5</span><span>5</span></div>
+                        <span class="title">FooDefinition</span>
+                        <div class="header row"><span class="col_date">Updated</span><span class="col_content">Title</span><span class="col_comments">C</span><span class="col_likes">L</span></div>
+                        <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">Support</span><span class="col_comments">10</span><span class="col_likes">3</span></div>
+                        <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">Why is it like this?</span><span class="col_comments">8</span><span class="col_likes">2</span></div>
+                        <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">I don't know</span><span class="col_comments">0</span><span class="col_likes">8</span ></div>
+                        <div class="row"><span class="col_date">2011-08-02</span><span class="col_content">Run run run into the forrest</span><span class="col_comments">7</span><span class="col_likes">1</span></div>
+                        <div class="row"><span class="col_date">2011-08-01</span><span class="col_content">Where the wild roses grow</span><span class="col_comments">5</span><span class="col_likes">5</span></div>
                     </article>
                 </section>
             </div>
