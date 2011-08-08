@@ -88,7 +88,7 @@
                 </section>
                 <section class="definitions">
                     <article class="left">
-                        FooDefinition
+                        <span class="header">FooDefinition (<span class="total">105</span>)</span>
                         <table>
                             <thead>
                                 <tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr>

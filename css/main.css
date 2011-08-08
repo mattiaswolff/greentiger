@@ -15,3 +15,7 @@ article {width: 365px; background-color: #f4f4f4; border: solid 1px #DEE1E5;}
 .right {float: right}
 .user {border: solid 1px #CCC; max-width: 230px; max-height: 230px; margin: 20px 0;}
 a {text-decoration: none; color: #4D90FE; font-weight: bold;}
+
+table {padding: 0; text-align: left;}
+td {padding: 0 3px; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+th {padding: 0 3px;}
