@@ -1,17 +1,17 @@
-body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: white; clear:both; margin: 0px; padding: 0px;}
+body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: white; clear:both; margin: 0; padding: 0;}
 .top {background-color: #000; color: white;  padding: 5px; vertical-align: bottom;}
 .container {width: 1000px;  margin:0 auto;  }
 .pageNav {display: inline;}
 .login {display: block; float: right;}
-.userInfo {float: left; display: inline-block; background-color: white; width: 250px; min-height: 450px; }
+.userInfo {float: left; background-color: white; width: 250px; min-height: 450px; }
 .main {float: right; width: 750px;}
-.userName {display: block; background: white; padding: 25px 0px; margin-top: 10px; font-size: 32px; }
+.userName {display: block; background: white; padding: 25px 0; margin-top: 10px; font-size: 32px; }
 .userNav {display: block;     color: #4D90FE; border-bottom: solid 2px #4D90FF; text-decoration: none; font-size: 16px;}
-.footer {clear: both; background-color: yellow; margin-top: 10px;}
-.createTask {border: solid 1px #CCC; margin: 20px 0px; background-color: #f4f4f4; padding: 5px;}
+.footer {clear: both; background-color: #FFFFCC; margin-top: 10px; min-height: 300px; border: solid 1px #ccc;}
+.createTask {border: solid 1px #CCC; margin: 0 0 20px 0; background-color: #f4f4f4; padding: 5px;}
 .definitions { }
 article {width: 365px; background-color: #f4f4f4; border: solid 1px #DEE1E5;}
-article.left {float: left}
-article.right {float: right}
-img.user {border: solid 1px #CCC; max-width: 230px; max-height: 230px; margin: 20px 0px;}
+.left {float: left}
+.right {float: right}
+.user {border: solid 1px #CCC; max-width: 230px; max-height: 230px; margin: 20px 0;}
 a {text-decoration: none; color: #4D90FE; font-weight: bold;}
