@@ -24,7 +24,7 @@
                     $.each(json.definitions, function(key, value) {
                         var counter = $('.definitions > article').length;
                         var strHtml = '<article id="' + value._id.$id +'"><span class="header">FooDefinition (<span class="total">105</span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
-		                $("definitions").append(strHtml);
+		                $('.definitions').append(strHtml);
                     });
             $('article:nth-child(odd)').addClass('left');
             $('article:nth-child(even)').addClass('right');
