@@ -27,6 +27,9 @@
 		                var strHtml2 = '<span class="button">' + value.name + '</span>';
                         $('.definitions').append(strHtml);
                         $('.createTask').append(strHtml2);
+                        $(".createTask").delegate(".button", "click", function(){
+                            alert('test');
+                        }); 
                     });
             $('article:nth-child(odd)').addClass('left');
             $('article:nth-child(even)').addClass('right');
@@ -51,9 +54,7 @@
             });
         });
     
-        $(".createTask").delegate(".button", "click", function(){
-            alert('test');
-        });
+        
 	</script>
 
 </head>
