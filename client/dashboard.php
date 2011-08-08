@@ -26,10 +26,7 @@
                         var strHtml = '<article id="' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
 		                var strHtml2 = '<span class="button">' + value.name + '</span>';
                         $('.definitions').append(strHtml);
-                        $('.createTask').append(strHtml2);
-                        $(".createTask").delegate(".button", "click", function(){
-                            alert('test');
-                        }); 
+                        $('.createTask').append(strHtml2); 
                     });
             $('article:nth-child(odd)').addClass('left');
             $('article:nth-child(even)').addClass('right');
@@ -52,6 +49,10 @@
                     });
                 });
             });
+            
+            $(".createTask").delegate(".button", "click", function(){
+                            alert('test');
+                        });
         });
     
         
