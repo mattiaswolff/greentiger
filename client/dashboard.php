@@ -49,10 +49,10 @@
                     });
                 });
             });
-        });
         
-        $('.button').click(function() {
+            $('.button').click(function() {
             alert('test');
+        });
         });
     
 	</script>
