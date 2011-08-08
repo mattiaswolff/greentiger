@@ -70,19 +70,22 @@
             </section>
         </section>
         <aside class="userInfo">
+            User Info
         </aside>
-        <section class="createTask">
-        </section>
-        <section class="definitions">
-            <article>
-                FooDefinition
-                <div><span>Updated</span><span>Title</span><span>C</span><span>L</span></div>
-                <div><span>2011-08-03</span><span>Support</span><span>10</span><span>3</span></div>
-                <div><span>2011-08-03</span><span>Why is it like this?</span><span>8</span><span>2</span></div>
-                <div><span>2011-08-03</span><span>I don't know</span><span>0</span><span>8</span></div>
-                <div><span>2011-08-02</span><span>Run run run into the forrest</span><span>7</span><span>1</span></div>
-                <div><span>2011-08-01</span><span>Where the wild roses grow</span><span>5</span><span>5</span></div>
-            </article>
+        <section class="main">
+            <section class="createTask">
+            </section>
+            <section class="definitions">
+                <article>
+                    FooDefinition
+                    <div><span>Updated</span><span>Title</span><span>C</span><span>L</span></div>
+                    <div><span>2011-08-03</span><span>Support</span><span>10</span><span>3</span></div>
+                    <div><span>2011-08-03</span><span>Why is it like this?</span><span>8</span><span>2</span></div>
+                    <div><span>2011-08-03</span><span>I don't know</span><span>0</span><span>8</span></div>
+                    <div><span>2011-08-02</span><span>Run run run into the forrest</span><span>7</span><span>1</span></div>
+                    <div><span>2011-08-01</span><span>Where the wild roses grow</span><span>5</span><span>5</span></div>
+                </article>
+            </section>
         </section>
     </div>
 </body>
