@@ -90,6 +90,14 @@
                 <section class="createTask">
                     <div>Create...</div>
                     <form class="invisible">
+                        <div>
+                            <span class="header">This is the title</span>
+                            <input type="text" />
+                        </div>
+                        <div>
+                            <span class="description">This is the title</span>
+                            <input type="text" />
+                        </div>
                     </form>
                 </section>
                 <section class="definitions">
