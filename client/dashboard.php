@@ -51,7 +51,7 @@
             });
             
             $(".createTask").delegate(".button", "click", function(){
-                            alert($this.name);
+                            alert($(this).text);
                         });
         });
     
