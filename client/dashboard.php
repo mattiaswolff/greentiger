@@ -61,10 +61,10 @@
 
 <body id="home">
     <div id = "container">
-        <nav>
-            <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
-        </nav>
-        <section id="top">
+        <section id ="top">
+            <nav>
+                <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
+            </nav>
         </section>
         <aside id="userInfo">
         </aside>
