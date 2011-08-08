@@ -11,4 +11,6 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif;background-co
 
 .createTask {border: solid 2px; margin: 10px;}
 .definitions { margin: 10px;}
-article {float: left; width: 360px; background: red;}
+article {width: 360px; background: #e8e8e8;}
+article.left {float: left}
+article.right {float: right}
