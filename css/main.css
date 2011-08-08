@@ -8,14 +8,14 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .userName {display: block; background: white; padding: 25px 0; margin-top: 10px; font-size: 32px; }
 .userNav {display: block;     color: #4D90FE; border-bottom: solid 2px #4D90FF; text-decoration: none; font-size: 16px;}
 .footer {clear: both; background-color: #FFFFCC; margin-top: 10px; min-height: 300px; border: solid 1px #ccc;}
-.createTask {border: solid 1px #CCC;  background-color: #f4f4f4; padding: 5px;}
+.createTask {border: solid 1px #CCC;  background-color: #f4f4f4; padding: 10px 5px;}
 .definitions { }
 article {width: 365px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 250px; margin-top: 20px;}
 .left {float: left}
 .right {float: right}
 .user {border: solid 1px #CCC; max-width: 230px; max-height: 230px; margin: 20px 0;}
 a {text-decoration: none; color: #4D90FE; font-weight: bold;}
-
 table {padding: 0; text-align: left;}
 td {padding: 0 3px; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 th {padding: 0 3px;}
+.button {background: #4D90FE; padding: 3px; margin: 5px; color: white; border: solid 1px #556677;}
