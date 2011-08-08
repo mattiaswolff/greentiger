@@ -39,6 +39,7 @@ switch($data->getMethod()) {
         else {
             $arrId = null;
         }
+        echo var_dump($arrId);
         $arrResults = Task::get(10, 1, $arrId);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
         break;
