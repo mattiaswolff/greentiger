@@ -88,7 +88,7 @@
             </section>
             <div class="content">
                 <section class="createTask">
-                    <div>Create...</div>
+                    <div></div>
                     <form class="invisible">
                         <div>
                             <span class="header">Title</span><br/>
