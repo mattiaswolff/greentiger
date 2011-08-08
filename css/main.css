@@ -1,16 +1,16 @@
-body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif;background-color: #F0F0F0; clear:both;}
-.top {background-color: #000; color: white; height: 30px; padding: 0 10px; vertical-align: bottom;}
-.container {width: 1000px;  margin:0 auto;  background: #988;}
+body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif;background-color: white; clear:both; margin: 0px; padding: 0px;}
+.top {background-color: #000; color: white;  padding: 5px; vertical-align: bottom;}
+.container {width: 1000px;  margin:0 auto;  }
 .pageNav {display: inline;}
 .login {display: block; float: right;}
-.userInfo {float: left; display: inline-block; background-color: red; width: 250px;}
+.userInfo {float: left; display: inline-block; background-color: white; width: 250px; min-height: 450px; }
 .main {float: right; width: 750px;}
-.userName {display: block; background: green; height: 60px;}
-.userNav {display: block; background: whitesmoke; height: 30px;}
+.userName {display: block; background: white; padding: 25px 0px;}
+.userNav {display: block; background: #DEE1E5;  border: solid 1px #ccc; padding: 5px; color: #4D90FE;}
 .footer {clear: both; background-color: yellow; margin-top: 10px;}
 
 .createTask {border: solid 2px; margin: 10px;}
 .definitions { margin: 10px;}
-article {width: 360px; background: #e8e8e8;}
+article {width: 355px; background-color: #f4f4f4; border: solid 1px #DEE1E5;}
 article.left {float: left}
 article.right {float: right}
