@@ -60,7 +60,6 @@
 </head>
 
 <body id="home">
-    <div class = "container">
         <div class ="top">
             <nav class="pageNav">
                 <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
@@ -69,6 +68,7 @@
                 Login
             </section>
         </div>
+    <div class = "container">
         <aside class="userInfo">
             User Info
         </aside>
