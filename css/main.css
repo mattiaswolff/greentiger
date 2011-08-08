@@ -1,3 +1,4 @@
+div,section,header,aside,article,footer,nav,input,textarea{display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
 body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: white; clear:both; margin: 0; padding: 0;}
 .top {background-color: #000; color: white;  padding: 5px; vertical-align: bottom;}
 .container {width: 1000px;  margin:0 auto;  }
