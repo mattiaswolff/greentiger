@@ -43,28 +43,7 @@
                             return false;
                         });
                         strHtml = strHtml + '<td>' + value1.comments.length + '</td><td>' + value1.likes.length + '</td></tr>';
-                        $('#' + key + ' tbody').appendChild(strHtml);
-                    });
-                });
-            });
-            
-            $.getJSON(strUrl, function(json) {
-                $.each(json.results, function(key, value) {
-                    $.each(value, function(key1, value1) {
-                        var objNewRow = document.createElement('div');
-                        var counter = document.getElementsByClassName('dasboard_definition').length;
-                        objNewRow.className = 'dasboard_definition_task';
-                        objNewRow.id = value1._id;
-                        strHtml = '';
-                        var d = new Date(value1.updatedDate);
-                        strHtml += '<div><span>' + d.getMonth() + '-' + d.getDate() + '</span>';
-                        $.each(value1.content, function (key2, value2) {
-                            strHtml += '<span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?taskId=' + value1._id + '">' + value2 + '</a></span>';
-                            return false;
-                        });
-                        strHtml = strHtml + '<span>' + value1.comments.length + '</span><span>' + value1.likes.length + '</span></div>';
-                        objNewRow.innerHTML = strHtml;
-                        document.getElementById(key).appendChild(objNewRow);
+                        $('#' + key + ' tbody').append(strHtml);
                     });
                 });
             });
