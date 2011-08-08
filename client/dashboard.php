@@ -12,23 +12,24 @@
 	<script type="text/javascript">
         strUserId = "<?php echo $_GET['userId']; ?>"
         
-        $.each(location.hash.substring(1).split('&'), function (key, value) { 
+        /*$.each(location.hash.substring(1).split('&'), function (key, value) { 
             if (value.split('=')[0] == 'access_token') { 
                 strAccessToken = value.split('=')[1];  
             } 
-        });
+        });*/
         
         $(document).ready(function(){
             var strUrlUser = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId;
-            $.getJSON(strUrlUser, { access_token : strAccessToken}, function(json) {
+            $.getJSON(strUrlUser, function(json) {
                     $.each(json.definitions, function(key, value) {
                         var newrow = document.createElement('article');
-                        var counter = document.getElementsByClassName('dasboard_definition').length;
-                        newrow.className = 'dasboard_definition';
+                        var counter = $('.definitions > article').length;
                         newrow.id = value._id.$id;
-                        newrow.innerHTML = '<span><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?definitionId=' + value._id.$id + '">' + value.name + '</a></span><br/>';
-		                document.getElementById("definitions").appendChild(newrow);
+                        newrow.innerHTML = '<span class="header">FooDefinition (<span class="total">105</span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a>';
+		                document.getElementByClassTag("definitions").appendChild(newrow);
                     });
+            $('article:nth-child(odd)').addClass('left');
+            $('article:nth-child(even)').addClass('right');
             });
             
             var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks?group=definition";
