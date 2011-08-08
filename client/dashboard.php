@@ -90,6 +90,9 @@
                 <section class="createTask">
                     <div></div>
                     <form class="invisible">
+                        <div class="description">
+                            This is a description of this definition. Just a short text how to use it and when and any other information of interest.
+                        </div>
                         <div>
                             <span class="header">Title</span><br/>
                             <input type="text" />
