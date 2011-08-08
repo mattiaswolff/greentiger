@@ -52,7 +52,7 @@
             
             $(".createTask").delegate(".button", "click", function(){
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
-                $.getJSON(strUrlUser, function(json) {
+                $.getJSON(strUrl, function(json) {
                     alert();
                 });    
             });
