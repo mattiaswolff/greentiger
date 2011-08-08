@@ -106,12 +106,6 @@
                                 <tr><td>2001-01-01</td><td>This is a tasdfest</td><td>8</td><td>7</td></tr>
                             </tbody>
                         </table>
-                        <div class="header row"><span class="col_date">Updated</span><span class="col_content">Title</span><span class="col_comments">C</span><span class="col_likes">L</span></div>
-                        <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">Support</span><span class="col_comments">10</span><span class="col_likes">3</span></div>
-                        <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">Why is it like this?</span><span class="col_comments">8</span><span class="col_likes">2</span></div>
-                        <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">I don't know</span><span class="col_comments">0</span><span class="col_likes">8</span ></div>
-                        <div class="row"><span class="col_date">2011-08-02</span><span class="col_content">Run run run into the forrest</span><span class="col_comments">7</span><span class="col_likes">1</span></div>
-                        <div class="row"><span class="col_date">2011-08-01</span><span class="col_content">Where the wild roses grow</span><span class="col_comments">5</span><span class="col_likes">5</span></div>
                     </article>
                     <article class="right">
                         <span class="title">FooDefinition</span>
