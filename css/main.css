@@ -6,5 +6,9 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif;background-co
 .userInfo {float: left; display: inline-block; background-color: red; width: 250px;}
 .main {float: right; width: 750px;}
 .userName {display: block; background: green; height: 60px;}
-.userNav {display: block; background: aliceblue; height: 30px;}
-.footer {clear: both; background-color: yellow;}
+.userNav {display: block; background: whitesmoke; height: 30px;}
+.footer {clear: both; background-color: yellow; margin-top: 10px;}
+
+.createTask {border: solid 2px; margin: 10px;}
+.definitions { margin: 10px;}
+article {float: left; width: 360px; background: red;}
