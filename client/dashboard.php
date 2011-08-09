@@ -70,13 +70,10 @@
                 });    
             });
             $('form.task').submit(function() {
-                alert('Handler for .submit() called.');
-                return false;
-            });
-            /*$("form.task").delegate(".button", "click", function(){
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
                 submitFormJSON('form.task' ,strUrl, 'POST');
-            });*/
+                return false;
+            });
         });
         
 	</script>
@@ -114,7 +111,7 @@
                         </div>
                         <section>
                         </section>
-                        <input type="submit" class="button green">Save</span>
+                        <input type="submit" class="button blue">Save</span>
                     </form>
                 </section>
                 <section class="definitions">
