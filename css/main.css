@@ -24,7 +24,7 @@ input, textarea, select{margin:0;font: 17px arial,sans-serif;border-bottom: 1px 
 input[type="submit"] {width: initial; min-width:100px;margin-top:15px;min-width: 100px;margin: 15px 0 0 384px;}
 
 form {margin: 10px -6px -11px; background: #FFC; border: solid 1px #ccc; padding: 20px;}
-section.createTask .description { padding: 5px; border: solid 1px #ccc; background: #f4f4f4; width: 461px;}
+section.createTask .description { padding: 5px; border: solid 1px #ccc; background: #f4f4f4; width: 461px; margin-bottom: 10px;}
 .clear{clear: both;}
 .invisible{display: none}
 form.task div.header {  padding: 3px; }
