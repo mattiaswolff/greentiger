@@ -43,3 +43,13 @@ input:focus:invalid {
 input:focus:valid {
   background: green;
 }
+
+.overlay
+{
+   background-color: #000;
+   opacity: .7;
+   filter: alpha(opacity=70);
+   margin: 0 auto;
+   width: 800px; height: 300px;
+   z-index: 10;
+}
