@@ -21,7 +21,7 @@ td {padding: 0 3px; max-width: 90px; white-space: nowrap; overflow: hidden; text
 th {padding: 0 3px;}
 
 input, textarea, select{margin:0;font: 17px arial,sans-serif;border-bottom: 1px solid #999;border-top: 1px solid #CCC; border-left: 1px solid #BBB;border-right: 1px solid #BBB; padding: 5px; -webkit-border-radius: 2px; width: 100%;}
-input[type="submit"] {width: initial; min-width:100px;margin-top:15px;}
+input[type="submit"] {width: initial; min-width:100px;margin-top:15px;min-width: 100px;margin: 15px 0 0 384px;}
 
 form {margin: 10px -6px -11px; background: #FFC; border: solid 1px #ccc; padding: 20px;}
 section.createTask .description { padding: 5px; border: solid 1px #ccc; background: #f4f4f4;}
