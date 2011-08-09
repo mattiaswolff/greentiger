@@ -38,9 +38,9 @@ function submitFormJSON(strSelector, strUrl, strType) {
                     $.each(config.split(";"), function (key1, value1) {
                         strHtml += '<option value="' + value1 + '">' + value1 + '</option>';
                     });
-                    strHtml += '</textarea>';
+                    strHtml += '</select>';
                     break;
-                case "checkbox": case "radiobutton":
+                case "checkbox": case "radio":
                     $.each(config.split(";"), function (key1, value1) {
                         strHtml += value1 + ': <input type="' + type + '" value="' + value1 + '" name="' + name + '" />';
                     });
