@@ -41,12 +41,12 @@ function submitFormJSON(strSelector, strUrl, strType) {
                     strHtml += '</select>';
                     break;
                 case "checkbox": case "radio":
-                    strHtml += '<ul class="horizontal">'
+                    //strHtml += '<ul class="horizontal">'
                     $.each(config.split(";"), function (key1, value1) {
-                        //<input type="' + type + '" value="' + value1 + '" name="' + name + '" />
-                        strHtml += '<li class="horizontal">' + value1 + '</li>';
+                        
+                        strHtml += '<div class="horizontal"><input type="' + type + '" value="' + value1 + '" name="' + name + '" />' + value1 + '</div>';
                     });
-                    strHtml += '</ul>'
+                    //strHtml += '</ul>'
                     break;
                 case "number": case "range":
                     var arrConfig = config.split(";");
