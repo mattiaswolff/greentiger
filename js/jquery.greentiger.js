@@ -44,7 +44,7 @@ function submitFormJSON(strSelector, strUrl, strType) {
                     //strHtml += '<ul class="horizontal">'
                     $.each(config.split(";"), function (key1, value1) {
                         
-                        strHtml += '<div class="horizontal"><input type="' + type + '" value="' + value1 + '" name="' + name + '" />' + value1 + '</div>';
+                        strHtml += '<div class="horizontal"><input id="' + value1 + '" type="' + type + '" value="' + value1 + '" name="' + name + '" /><label for="' +value1 + '">' + value1 + '</label></div>';
                     });
                     //strHtml += '</ul>'
                     break;
