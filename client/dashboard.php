@@ -119,7 +119,7 @@
                         </div>
                         <section>
                         </section>
-                        <input type="submit" name="Post" />
+                        <input class="button green" type="submit" name="Post" />
                     </form>
                 </section>
                 <section class="definitions">
