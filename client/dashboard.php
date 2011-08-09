@@ -51,7 +51,6 @@
             });
             
             $("section.createTask > div").delegate(".button", "click", function(){
-                $('form.task > span.button').addClass('invisible');
                 $('form.task').addClass('invisible');
                 $('form.task section').empty();
                 $('form.task div.description').empty();
@@ -67,12 +66,11 @@
                     });
                     $('section.createTask > span.button').attr('id', json.results[0]._id);
                     $('form.task').removeClass('invisible');
-                    $('section.createTask > span.button').removeClass('invisible');
                 });    
             });
         });
         
-        $("section.createTask").delegate("span.button", "click", function(){
+        $("form.task").delegate(".button", "click", function(){
             var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
             submitFormJSON('form.task' ,strUrl, 'POST');
         });
@@ -113,8 +111,8 @@
                         </div>
                         <section>
                         </section>
+                        <span class="button">Save</span>
                     </form>
-                    <span class="button invisible">Save</span>
                 </section>
                 <section class="definitions">
                     <article class="definition left">
