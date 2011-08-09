@@ -57,7 +57,7 @@
                     var strHtml = '';
                     $.each(json.results[0].content, function(key, value) {
                         strHtml += '<article><div class="header"><span class="header">' + value.name +'</span> (<span class="link">?</span>)</div><div class="input">';
-                        strHtml += getHtmlTaskInput('content.' + value.name, value.type, '', value.required, value.config);
+                        strHtml += getHtmlTaskInput('content.' + key, value.type, '', value.required, value.config);
                         strHtml += '</div><div class="description invisible clear"><span class="description">' + value.description + '</span></div></article>';
                         strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
                     });
