@@ -69,16 +69,12 @@
                     $('form.task').removeClass('invisible');
                 });    
             });
-            
-            $("form.task > .green").click(function () {
-                $("form.task > input[type=submit]").click();
-                $('form.task').submit(function() {
-                    // cancels the form submission
-                    event.preventDefault();
-                    // do whatever you want here
-                    var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
-                    submitFormJSON('form.task' ,strUrl, 'POST');
-                });
+            $('form.task').submit(function() {
+                // cancels the form submission
+                event.preventDefault();
+                // do whatever you want here
+                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
+                submitFormJSON('form.task' ,strUrl, 'POST');
             });
         
             $("section.createTask > div .red").click(function () {
@@ -123,8 +119,7 @@
                         </div>
                         <section>
                         </section>
-                        <input type="submit" invisible/>
-                        <span class="button green">Post</span>
+                        <input type="submit" name="Post" />
                     </form>
                 </section>
                 <section class="definitions">
