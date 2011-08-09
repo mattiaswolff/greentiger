@@ -23,10 +23,10 @@ function submitFormJSON(strSelector, strUrl, strType) {
             return strHtml;
         }
         
-       /* function getHtmlTaskInput(name, type, value, requiered, config) {
-            
+        function getHtmlTaskInput(name, type, value, requiered, config) {
+            var strHtml = '';
             switch (type) {
-                var strHtml = '';
+                
                 case "text": case "email": case "url": case "date":
                     strHtml = '<input type="' + type + '" value="' + value + '" name="' + name + '" />'; 
                     break;
@@ -51,7 +51,7 @@ function submitFormJSON(strSelector, strUrl, strType) {
                     break;
             }
             return strHtml;
-        }*/
+        }
         
         function getParameterByName(name) {
             name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
