@@ -52,10 +52,10 @@
             
             $("section.createTask > div").delegate(".button", "click", function(){
                 $('form.task').addClass('invisible');
-                $('form.task section').empty();
-                $('form.task div.description').empty();
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
                 $.getJSON(strUrl, function(json) {
+                    $('form.task section').empty();
+                    $('form.task div.description').empty();
                     $('form.task div.description').append(json.results[0].description);
                     $.each(json.results[0].content, function(key, value) {
                         var strHtml = '<article><div class="header left"><span class="header">' + value.name +'</span> (<span class="link">?</span>)</div><div class="input">';
