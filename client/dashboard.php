@@ -54,16 +54,17 @@
                 $('form.task').addClass('invisible');
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
                 $.getJSON(strUrl, function(json) {
-                    $('form.task section').empty();
-                    $('form.task div.description').empty();
-                    $('form.task div.description').append(json.results[0].description);
+                    var strHtml = '';
                     $.each(json.results[0].content, function(key, value) {
-                        var strHtml = '<article><div class="header left"><span class="header">' + value.name +'</span> (<span class="link">?</span>)</div><div class="input">';
+                        strHtml += '<article><div class="header left"><span class="header">' + value.name +'</span> (<span class="link">?</span>)</div><div class="input">';
                         strHtml += getHtmlTaskInput('content.' + value.name, value.type, '', value.required, value.config);
                         strHtml += '</div><div class="description invisible clear"><span class="description">' + value.description + '</span></div></article>';
                         strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
-                        $('form.task section').append(strHtml);
                     });
+                    $('form.task section').empty();
+                    $('form.task div.description').empty();
+                    $('form.task div.description').append(json.results[0].description);
+                    $('form.task section').append(strHtml);
                     $('form.task > .button').attr('id', json.results[0]._id);
                     $('form.task').removeClass('invisible');
                 });    
