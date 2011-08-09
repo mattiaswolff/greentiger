@@ -36,3 +36,10 @@ form.task article {margin: 0 0 10px 0;}
 .button.rounded{border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;}
 .button.search {margin-left:-3px;border-left: none;}
 .button.margin {margin-left: 20px;}
+
+input:focus:invalid {
+  background: red;
+}
+input:valid {
+  background-color: green;
+}
