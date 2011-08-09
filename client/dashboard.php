@@ -64,7 +64,7 @@
                         strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
                         $('form.task section').append(strHtml);
                     });
-                    $('section.createTask > span.button').attr('id', json.results[0]._id);
+                    $('form.task > .button').attr('id', json.results[0]._id);
                     $('form.task').removeClass('invisible');
                 });    
             });
