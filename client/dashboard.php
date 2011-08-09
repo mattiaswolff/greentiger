@@ -23,13 +23,13 @@
             $.getJSON(strUrlUser, function(json) {
                     $.each(json.definitions, function(key, value) {
                         var counter = $('.definitions > article').length;
-                        var strHtml = '<article id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
+                        var strHtml = '<article class="definition" id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
 		                var strHtml2 = '<span class="button" id="' + value._id.$id + '">' + value.name + '</span>';
                         $('.definitions').append(strHtml);
                         $('.createTask > div').append(strHtml2); 
                     });
-            $('article:nth-child(odd)').addClass('left');
-            $('article:nth-child(even)').addClass('right');
+            $('article.definition:nth-child(odd)').addClass('left');
+            $('article.definition:nth-child(even)').addClass('right');
             });
             
             var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks?group=definition";
