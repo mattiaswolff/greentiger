@@ -59,6 +59,7 @@
                         strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
                         $('form.task section').append(strHtml);
                     });
+                    $('form.task').removeClass('invisible');
                 });    
             });
         });
@@ -94,21 +95,10 @@
             <div class="content">
                 <section class="createTask">
                     <div></div>
-                    <form class="task">
+                    <form class="task invisible">
                         <div class="description">
-                            This is a description of this definition. Just a short text how to use it and when and any other information of interest.
                         </div>
                         <section>
-                            <article>
-                                <div class="header left"><span class="header">Title</span> (<span class="link">?</span>)</div>
-                                <div class="input"><input type="text" /></div>
-                                <div class="description invisible clear"><span class="description">This is a description</span></div>
-                            </article>
-                            <article>
-                                <div class="header left"><span class="header">Title</span> (<span class="link">?</span>)</div>
-                                <div class="input"><input type="text" /></div>
-                                <div class="description invisible clear"><span class="description">This is a description</span></div>
-                            </article>
                         </section>
                     </form>
                     <span class="button">Save</span>
