@@ -77,7 +77,7 @@
                 submitFormJSON('form.task' ,strUrl, 'POST');
             });
         
-            $("section.createTask > div .red").click(function () {
+            $("form.task > .red").click(function () {
                 $('form.task').addClass('invisible');
             });
         });
