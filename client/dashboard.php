@@ -105,7 +105,7 @@
             </section>
             <div class="content">
                 <section class="createTask">
-                    <div><ul class="horizontal"></ul><span class="button red right">X</span></div>
+                    <div><span class="button red right">X</span><ul class="horizontal"></ul></div>
                     <form class="task invisible">
                         <div class="description">
                         </div>
