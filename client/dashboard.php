@@ -111,7 +111,7 @@
                         </div>
                         <section>
                         </section>
-                        <input type="submit" class="button blue" />
+                        <input type="submit" class="button green" />
                     </form>
                 </section>
                 <section class="definitions">
