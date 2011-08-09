@@ -113,11 +113,12 @@
             </section>
             <div class="content">
                 <section class="createTask">
-                    <div><ul class="horizontal"><li class="horizontal right"><span class="button red">X</span></li></ul></div>
+                    <div><ul class="horizontal"><li class="horizontal right"></li></ul></div>
                     <form class="task invisible">
-                        <div class="description">
+                        <div class="description left">
                         </div>
-                        <section>
+                        <span class="button red right">X</span>
+                        <section class="clear">
                         </section>
                         <input class="button green" type="submit" name="Post" value="Post" />
                     </form>
