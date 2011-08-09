@@ -53,7 +53,11 @@
             $(".createTask").delegate(".button", "click", function(){
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
                 $.getJSON(strUrl, function(json) {
-                    alert();
+                    $.each(json.content, function (key, var) {
+                        var strHtml = '<article><div class="header left"><span class="header">' + var.title +'</span> (<span class="link">?</span>)</div><div class="input"><input name="' + var.name +'" /></div><div class="description invisible clear"><span class="description">' + var.description + '</span></div></article>';
+                        strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
+                        $('form.task section').append(strHtml);
+                    });
                 });    
             });
         });
