@@ -61,7 +61,7 @@ class Definition {
             $objId = new MongoId($var['_id']);
             $var['createdDate'] = $objId->getTimestamp();
             $var['_id'] = (string)$var['_id'];
-            $arrResults['definitions'][] = $var;
+            $arrResults['results'][] = $var;
         }
         return $arrResults; 
     }
