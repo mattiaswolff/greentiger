@@ -89,15 +89,15 @@
             <div class="content">
                 <section class="createTask">
                     <div></div>
-                    <form class="invisible">
+                    <form class="task">
                         <div class="description">
                             This is a description of this definition. Just a short text how to use it and when and any other information of interest.
                         </div>
                         <section>
                             <article>
-                                <div class="header left"><span class="header">Title</span> <span class="button">Description</span></div>
+                                <div class="header left"><span class="header">Title</span> <span class="link">(description)</span></div>
                                 <div class="input left"><input type="text" /></div>
-                                <div class="description invisible"><span class="description">This is a description</span></div>
+                                <div class="description invisible clear"><span class="description">This is a description</span></div>
                             </article>
                             <article>
                                 <div class="header"><span class="header">Title</span></div>
