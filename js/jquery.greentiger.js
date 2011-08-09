@@ -27,7 +27,7 @@ function submitFormJSON(strSelector, strUrl, strType) {
             var strHtml = '';
             switch (type) {
                 
-                case "text": case "email": case "url": case "date": case: "time":
+                case "text": case "email": case "url": case "date": case "time":
                     strHtml = '<input type="' + type + '" value="' + value + '" name="' + name + '" />'; 
                     break;
                 case "textarea":
