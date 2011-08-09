@@ -98,7 +98,7 @@
                             <input type="text" />
                         </div>
                         <div>
-                            <span class="description">Description</span><br/>
+                            <span class="header">Description</span><br/>
                             <input type="text" />
                         </div>
                     </form>
