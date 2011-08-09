@@ -11,7 +11,7 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .footer {clear: both; background-color: #FFFFCC; margin-top: 10px; min-height: 300px; border: solid 1px #ccc;}
 .createTask {border: solid 1px #CCC;  background-color: #f4f4f4; padding: 10px 5px;}
 .definitions { }
-article {width: 365px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 250px; margin-top: 20px;}
+.definition {width: 365px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 250px; margin-top: 20px;}
 .left {float: left}
 .right {float: right}
 .user {border: solid 1px #CCC; max-width: 230px; max-height: 230px; margin: 20px 0;}

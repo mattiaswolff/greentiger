@@ -109,7 +109,7 @@
                     <span class="button">Save</span>
                 </section>
                 <section class="definitions">
-                    <article class="left">
+                    <article class="definition left">
                         <span class="header">FooDefinition (<span class="total">105</span>)</span>
                         <table>
                             <thead>
@@ -130,7 +130,7 @@
                         </table>
                         <a href="">View all</a>
                     </article>
-                    <article class="right">
+                    <article class="definition right">
                         <span class="title">FooDefinition</span>
                         <div class="header row"><span class="col_date">Updated</span><span class="col_content">Title</span><span class="col_comments">C</span><span class="col_likes">L</span></div>
                         <div class="row"><span class="col_date">2011-08-03</span><span class="col_content">Support</span><span class="col_comments">10</span><span class="col_likes">3</span></div>
