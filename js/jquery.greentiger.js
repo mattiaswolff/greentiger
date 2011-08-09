@@ -42,7 +42,7 @@ function submitFormJSON(strSelector, strUrl, strType) {
                     break;
                 case "checkbox": case "radiobutton":
                     $.each(config.split(";"), function (key1, value1) {
-                        strHtml += name ': <input type="' + type + '" value="' + value + '" name="' + name + '" />';
+                        strHtml += name + ': <input type="' + type + '" value="' + value + '" name="' + name + '" />';
                     });
                     break;
                 case "number": case "range":
