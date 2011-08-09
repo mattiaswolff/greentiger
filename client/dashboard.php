@@ -111,7 +111,7 @@
                         </div>
                         <section>
                         </section>
-                        <input type="submit" class="button blue">Save</span>
+                        <input type="submit" class="button blue" />
                     </form>
                 </section>
                 <section class="definitions">
