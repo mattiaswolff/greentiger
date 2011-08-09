@@ -96,13 +96,13 @@
                         <section>
                             <article>
                                 <div class="header left"><span class="header">Title</span> <span class="link">(description)</span></div>
-                                <div class="input left"><input type="text" /></div>
+                                <div class="input"><input type="text" /></div>
                                 <div class="description invisible clear"><span class="description">This is a description</span></div>
                             </article>
                             <article>
-                                <div class="header"><span class="header">Title</span></div>
-                                <div class="description invisible"><span class="description">This is a description</span></div>
+                                <div class="header left"><span class="header">Title</span> <span class="link">(description)</span></div>
                                 <div class="input"><input type="text" /></div>
+                                <div class="description invisible clear"><span class="description">This is a description</span></div>
                             </article>
                         </section>
                     </form>
