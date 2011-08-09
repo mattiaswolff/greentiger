@@ -68,13 +68,11 @@
                     $('form.task').removeClass('invisible');
                 });    
             });
+            $("form.task").delegate(".button", "click", function(){
+                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
+                submitFormJSON('form.task' ,strUrl, 'POST');
+            });
         });
-        
-        $("form.task").delegate(".button", "click", function(){
-            var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
-            submitFormJSON('form.task' ,strUrl, 'POST');
-        });
-    
         
 	</script>
 
