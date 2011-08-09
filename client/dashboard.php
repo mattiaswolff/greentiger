@@ -52,6 +52,7 @@
             
             $(".createTask").delegate(".button", "click", function(){
                 $('form.task').addClass('invisible');
+                $('form.task > span.button').addClass('invisible');
                 $('form.task section').empty();
                 $('form.task div.description').empty();
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
@@ -63,6 +64,7 @@
                         $('form.task section').append(strHtml);
                     });
                     $('form.task').removeClass('invisible');
+                    $('form.task > span.button').removeClass('invisible');
                 });    
             });
         });
@@ -104,7 +106,7 @@
                         <section>
                         </section>
                     </form>
-                    <span class="button">Save</span>
+                    <span class="button invisible">Save</span>
                 </section>
                 <section class="definitions">
                     <article class="definition left">
