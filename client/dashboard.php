@@ -93,14 +93,18 @@
                         <div class="description">
                             This is a description of this definition. Just a short text how to use it and when and any other information of interest.
                         </div>
-                        <div>
-                            <span class="header">Title</span><br/>
-                            <input type="text" />
-                        </div>
-                        <div>
-                            <span class="header">Description</span><br/>
-                            <input type="text" />
-                        </div>
+                        <section>
+                            <article>
+                                <div class="header"><span class="header">Title</span></div>
+                                <div class="description"><span class="description">This is a description</span></div>
+                                <div class="input"><input type="text" /></div>
+                            </article>
+                            <article>
+                                <div class="header"><span class="header">Title</span></div>
+                                <div class="description"><span class="description">This is a description</span></div>
+                                <div class="input"><input type="text" /></div>
+                            </article>
+                        </section>
                     </form>
                     <span class="button">Save</span>
                 </section>
