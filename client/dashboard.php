@@ -64,7 +64,7 @@
                         $('form.task section').append(strHtml);
                     });
                     $('form.task').removeClass('invisible');
-                    $('form.task > span.button').removeClass('invisible');
+                    $('section.createTask > span.button').removeClass('invisible');
                 });    
             });
         });
