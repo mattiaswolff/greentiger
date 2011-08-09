@@ -43,7 +43,7 @@ function submitFormJSON(strSelector, strUrl, strType) {
                 case "checkbox": case "radio":
                     strHtml += '<ul class="horizontal">'
                     $.each(config.split(";"), function (key1, value1) {
-                        strHtml += '<li><input type="' + type + '" value="' + value1 + '" name="' + name + '" /><br/>' + value1 + '</li>';
+                        strHtml += '<li class="horizontal"><input type="' + type + '" value="' + value1 + '" name="' + name + '" /><br/>' + value1 + '</li>';
                     });
                     strHtml += '</ul>'
                     break;
