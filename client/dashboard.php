@@ -77,7 +77,7 @@
         
             $("section.createTask > div .red").click(function () {
                 $('form.task').addClass('invisible');
-            });//test
+            });
         });
         
         
@@ -117,7 +117,7 @@
                         </div>
                         <section>
                         </section>
-                        <input type="submit" class="button green" />
+                        <span class="button green">Post</span>
                     </form>
                 </section>
                 <section class="definitions">
