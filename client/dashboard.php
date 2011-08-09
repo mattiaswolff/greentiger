@@ -70,11 +70,12 @@
                 });    
             });
             
-            $('form.task > .green').click(function() {
-                $('form > input[type=submit]').click()
+            $('form.task').submit(function() {
+                // cancels the form submission
+                event.preventDefault();
+                // do whatever you want here
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
                 submitFormJSON('form.task' ,strUrl, 'POST');
-                return false;
             });
         
             $("section.createTask > div .red").click(function () {
