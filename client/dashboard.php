@@ -60,7 +60,7 @@
                     $('form.task div.description').append(json.results[0].description);
                     $.each(json.results[0].content, function(key, value) {
                         var strHtml = '<article><div class="header left"><span class="header">' + value.name +'</span> (<span class="link">?</span>)</div><div class="input">';
-                        strHtml += getHtmlTaskInput('content.', value.type, '', value.required, value.config);
+                        strHtml += getHtmlTaskInput('content.' + value.name, value.type, '', value.required, value.config);
                         strHtml += '</div><div class="description invisible clear"><span class="description">' + value.description + '</span></div></article>';
                         strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
                         $('form.task section').append(strHtml);
