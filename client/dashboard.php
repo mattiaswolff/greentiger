@@ -71,6 +71,7 @@
             });
             
             $("form.task > .green").click(function () {
+                $("form.task > input[type=submit]").click();
                 $('form.task').submit(function() {
                     // cancels the form submission
                     event.preventDefault();
