@@ -48,5 +48,5 @@ input:focus:valid {
 ul.horizontal {list-style: none;  margin: 0; padding: 0;}
 li.horizontal {display: inline;}
 
-input[type="radio"], input[type="checkbox"]{margin: 0;width: 0}
+input[type="radio"], input[type="checkbox"]{margin: 0;min-width: 0}
 .form-field {vertical-align: middle; width: 60px; float: left; padding: 0; margin: 0;}
