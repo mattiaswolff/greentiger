@@ -51,6 +51,8 @@
             });
             
             $(".createTask").delegate(".button", "click", function(){
+                $('form.task section').empty();
+                $('form.task div.description').empty();
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
                 $.getJSON(strUrl, function(json) {
                     $('form.task div.description').append(json.results[0].description);
