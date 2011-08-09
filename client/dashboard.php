@@ -76,6 +76,10 @@
             });
         });
         
+        $("section.createTask > div .red").click(function () {
+            $('form.task').addClass('invisible');
+        });
+        
 	</script>
 
 </head>
