@@ -24,9 +24,9 @@
                     $.each(json.definitions, function(key, value) {
                         var counter = $('.definitions > article').length;
                         var strHtml = '<article class="definition" id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
-		                var strHtml2 = '<span class="button blue" id="' + value._id.$id + '">' + value.name + '</span>';
+		                var strHtml2 = '<ul><span class="button blue" id="' + value._id.$id + '">' + value.name + '</span></ul>';
                         $('.definitions').append(strHtml);
-                        $('.createTask > div').append(strHtml2); 
+                        $('section.createTask > div > li').append(strHtml2); 
                     });
             $('article.definition:nth-child(odd)').addClass('left');
             $('article.definition:nth-child(even)').addClass('right');
@@ -104,7 +104,7 @@
             </section>
             <div class="content">
                 <section class="createTask">
-                    <div></div>
+                    <div><ul></ul></div>
                     <form class="task invisible">
                         <div class="description">
                         </div>
