@@ -34,7 +34,7 @@ function submitFormJSON(strSelector, strUrl, strType) {
                     strHtml = '<textarea name="' + name + '" />' + value + '</textarea>';
                     break;
                 case "dropdown":
-                    strHtml = '<select name="' + name + '" />';
+                    strHtml = '<select name="' + name + '">';
                     $.each(config.split(";"), function (key1, value1) {
                         strHtml += '<option value="' + value1 + '">' + value1 + '</option>';
                     });
