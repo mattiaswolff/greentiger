@@ -110,7 +110,7 @@
                         </div>
                         <section>
                         </section>
-                        <span class="button green">Save</span>
+                        <input type="submit" class="button green">Save</span>
                     </form>
                 </section>
                 <section class="definitions">
