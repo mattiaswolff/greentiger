@@ -74,11 +74,13 @@
                 submitFormJSON('form.task' ,strUrl, 'POST');
                 return false;
             });
+        
+            $("section.createTask > div .red").click(function () {
+                $('form.task').addClass('invisible');
+            });//test
         });
         
-        $("section.createTask > div .red").click(function () {
-            $('form.task').addClass('invisible');
-        });//test
+        
         
 	</script>
 
