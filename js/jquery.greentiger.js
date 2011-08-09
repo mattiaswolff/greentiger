@@ -27,7 +27,7 @@ function submitFormJSON(strSelector, strUrl, strType) {
             var strHtml = '';
             switch (type) {
                 
-                case "text": case "email": case "url": case "date":
+                case "text": case "email": case "url": case "date": case: "time":
                     strHtml = '<input type="' + type + '" value="' + value + '" name="' + name + '" />'; 
                     break;
                 case "textarea":
@@ -43,7 +43,6 @@ function submitFormJSON(strSelector, strUrl, strType) {
                 case "checkbox": case "radio":
                     //strHtml += '<ul class="horizontal">'
                     $.each(config.split(";"), function (key1, value1) {
-                        
                         strHtml += '<div class="form-field"><input id="' + value1 + '" type="' + type + '" value="' + value1 + '" name="' + name + '" /><label for="' +value1 + '">' + value1 + '</label></div>';
                     });
                     //strHtml += '</ul>'
