@@ -50,7 +50,7 @@
                 });
             });
             
-            $(".createTask").delegate(".button", "click", function(){
+            $("section.createTask > div").delegate(".button", "click", function(){
                 $('form.task > span.button').addClass('invisible');
                 $('form.task').addClass('invisible');
                 $('form.task section').empty();
@@ -59,13 +59,19 @@
                 $.getJSON(strUrl, function(json) {
                     $('form.task div.description').append(json.results[0].description);
                     $.each(json.results[0].content, function(key, value) {
-                        var strHtml = '<article><div class="header left"><span class="header">' + value.name +'</span> (<span class="link">?</span>)</div><div class="input"><input name="' + value.name +'" /></div><div class="description invisible clear"><span class="description">' + value.description + '</span></div></article>';
+                        var strHtml = '<article><div class="header left"><span class="header">' + value.name +'</span> (<span class="link">?</span>)</div><div class="input"><input name="' + value.name +'" value="" /></div><div class="description invisible clear"><span class="description">' + value.description + '</span></div></article>';
                         strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
                         $('form.task section').append(strHtml);
                     });
+                    $('section.createTask > span.button').attr('id', json.results[0]._id);
                     $('form.task').removeClass('invisible');
                     $('section.createTask > span.button').removeClass('invisible');
                 });    
+            });
+            
+            $("section.createTask").delegate("span.button", "click", function(){
+                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
+                submitFormJSON(strUrl, 'POST');
             });
         });
     
