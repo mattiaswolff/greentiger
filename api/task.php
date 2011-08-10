@@ -1,37 +1,4 @@
-<?php
-require "../classes/rest.php";
-require "../classes/definition.php";
-require "../classes/user.php";
-require "../classes/task.php";
-//test231
-$data = RestUtils::processRequest();  
-switch($data->getMethod()) {  
-    case 'get':
-        $arrRequestVars = $data->getRequestVars();
-        
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
-        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '');
-        
-        $strGroup = (isset($arrRequestVars['group']) ? $arrRequestVars['group'] : '');
-        
-        $arrId = array();
-        if ($strTaskId != '') {
-            $arrId[] = $arrRequestVars['taskId'];
-        }
-        else if (($strDefinitionId != '') && ($strUserId != '')) {
-            $objUser = new User($strUserId);
-            $arrDefinitions = $objUser->getDefinitions();
-            $arrId = $arrDefinitions[$strDefinitionId]['tasks'];
-        }
-        else if (($strUserId != '')) {
-            $objUser = new User($strUserId);
-            $arrDefinitions = $objUser->getDefinitions();
-            foreach ($arrDefinitions as $key => $var) {
-                if ($strGroup == '' && isset($var['tasks'])) {
-                    $arrId = array_merge($arrId, $var['tasks']);    
-                }
-                elseif ($strGroup == 'definition' && isset($var['tasks'])) {
+ isset($var['tasks'])) {
                     $arrId[(string)$var['_id']] = $var['tasks']; 
                 }
             }
@@ -82,7 +49,7 @@ switch($data->getMethod()) {
     
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
-        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '');
+        $strTaskId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
         
         if ($strTaskId != '') {
             $objTask = new Task(new MongoId($arrRequestVars['taskId']));
