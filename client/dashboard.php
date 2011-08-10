@@ -123,13 +123,13 @@
                         <input class="button green" type="submit" name="Post" value="Post" />
                     </form>
                 </section>
-                <section class="definitions">
+                <section class="definitions invisible">
                 </section>
                 <section class="taskFlow">
                     <article>
-                        <span class="button blue">Type</span> / 2011-04-13 / Created by Mattias Wolff
-                        Content....
-                        Edit / Comment / Like
+                        <div><span class="button blue">Type</span> / 2011-04-13 / Created by Mattias Wolff</div>
+                        <div>Content....</div>
+                        <div>Edit / Comment / Like</div>
                     </article>
                 </section>
             </div>
