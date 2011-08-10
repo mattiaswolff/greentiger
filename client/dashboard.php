@@ -59,7 +59,7 @@
                     $.each(value.content, function (key1, value1) {
                         strHtml += '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
                     });
-                    strHtml += '</div><div class="actions"><span class="link" id="' + value._id + '">edit</span> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) <span class="link" id="' + value._id + '">delete</span></div>';
+                    strHtml += '</div><div class="actions"><span class="link" id="' + value._id + '">edit</span> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) <span class="delete link" id="' + value._id + '">delete</span></div>';
                     $('section.taskFlow').append(strHtml);
                 });
             });
@@ -94,6 +94,16 @@
         
             $("form.task > .red").click(function () {
                 $('form.task').addClass('invisible');
+            });
+            
+            $(".delete").click(function () {
+                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this).attr('id');
+                $.ajax({
+                    type: "DELETE",
+                    url: strUrl,
+                    success: function(msg){
+                    alert("test ");
+                });
             });
         });
         
