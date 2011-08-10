@@ -108,7 +108,7 @@ switch($data->getMethod()) {
         $strTaskId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
         
         if ($strTaskId != '') {
-            $arrObjectId[] = $strTaskId;
+            $arrObjectId[] = new MongoId($strTaskId);
             $intStatus = Task::delete($arrObjectId);
             RestUtils::sendResponse($intStatus, $intStatus, 'application/json');
         }
