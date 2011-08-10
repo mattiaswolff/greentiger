@@ -96,7 +96,7 @@
                 $('form.task').addClass('invisible');
             });
             
-            $(".delete").click(function () {
+            $(".taskFlow").delegate(".delete", "click", function(){
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this).attr('id');
                 $.ajax({
                     type: "DELETE",
