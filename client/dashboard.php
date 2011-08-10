@@ -55,7 +55,7 @@
             $.getJSON(strUrl, function(json) {
                 $.each(json.results, function(key, value) {
                     strHtml = '';
-                    var d = new Date(value1.updatedDate);
+                    var d = new Date(value.updatedDate);
                     strHtml += '<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">';
                     $.each(value1.content, function (key1, value1) {
                         strHtml += '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
