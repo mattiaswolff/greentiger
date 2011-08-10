@@ -142,67 +142,6 @@
                 <section class="definitions invisible">
                 </section>
                 <section class="taskFlow">
-                    <article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
-                            <div class="content"><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
-                            <div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="left"><span class="button blue">Type</span></div>
-                        <div class="story">
-                            <div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
-                            <div class="content"><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
-                            <div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>
-                        </div>
-                    </article>
-                                        <article>
-                        <div class="left"><span class="button blue">Type</span></div>
-                        <div class="story">
-                            <div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
-                            <div class="content"><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
-                            <div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>
-                        </div>
-                    </article>
-                                        <article>
-                        <div class="left"><span class="button blue">Type</span></div>
-                        <div class="story">
-                            <div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
-                            <div class="content"><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
-                            <div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>
-                        </div>
-                    </article>
-                                        <article>
-                        <div class="left"><span class="button blue">Type</span></div>
-                        <div class="story">
-                            <div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
-                            <div class="content"><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
-                            <div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>
-                        </div>
-                    </article>
-                                        <article>
-                        <div class="left"><span class="button blue">Type</span></div>
-                        <div class="story">
-                            <div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
-                            <div class="content"><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
-                            <div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>
-                        </div>
-                    </article>
-                                        <article>
-                        <div class="left"><span class="button blue">Type</span></div>
-                        <div class="story">
-                            <div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
-                            <div class="content"><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
-                            <div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>
-                        </div>
-                    </article>
-                                        <article>
-                        <div class="left"><span class="button blue">Type</span></div>
-                        <div class="story">
-                            <div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
-                            <div class="content"><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
-                            <div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>
-                        </div>
-                    </article>
                 </section>
             </div>
         </div>
