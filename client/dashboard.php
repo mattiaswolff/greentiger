@@ -81,7 +81,7 @@
                     $('form.task div.description').empty();
                     $('form.task div.description').append(json.results[0].description);
                     $('form.task section').append(strHtml);
-                    $('form.task > .button').attr('id', json.results[0]._id);
+                    $('form.task').attr('id', json.results[0]._id);
                     $('form.task').removeClass('invisible');
                 });    
             });
@@ -89,6 +89,7 @@
                 // cancels the form submission
                 event.preventDefault();
                 // do whatever you want here
+                $.each($(this).elements
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
                 submitFormJSON('form.task' ,strUrl, 'POST');
             });
