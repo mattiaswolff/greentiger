@@ -125,6 +125,13 @@
                 </section>
                 <section class="definitions">
                 </section>
+                <section class="taskFlow">
+                    <article>
+                        <span class="button blue">Type</span> / 2011-04-13 / Created by Mattias Wolff
+                        Content....
+                        Edit / Comment / Like
+                    </article>
+                </section>
             </div>
         </div>
     </div>
