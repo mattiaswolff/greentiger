@@ -128,10 +128,10 @@ class Task {
         $arrOptions = array("safe" => true);
         $arrResults = $db->tasks->remove($arrQuery, $arrOptions);
         $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
-        $arrQuery = array("definitions.tasks._id" => array('$in' => $arrObjectId));
+        $arrQuery = array("definitions.tasks" => array('$in' => $arrObjectId));
         $arrResults = $db->users->findOne($arrQuery, $arrOptions);
         echo $intStatus; 
-        echo var_dump($arrResults);
+        echo var_dump($arrObjectId);
         return $intStatus; 
     }
     
