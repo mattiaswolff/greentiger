@@ -61,7 +61,7 @@
                         strHtml += '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
                         return false;
                     });
-                    strHtml = '</div><div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>';
+                    strHtml += '</div><div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>';
                     $('section.taskFlow').append(strHtml);
                 });
             });
