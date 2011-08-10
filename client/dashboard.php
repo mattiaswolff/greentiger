@@ -97,12 +97,15 @@
             });
             
             $(".taskFlow").delegate(".delete", "click", function(){
+                var strId = $(this).attr('id');
+                strId2 = $(this).attr('id');
+                this2 = this;
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this).attr('id');
                 $.ajax({
                     type: "DELETE",
                     url: strUrl,
                     success: function(msg){
-                        $(this).remove();
+                        $(this2).remove();
                     }
                 });
             });
