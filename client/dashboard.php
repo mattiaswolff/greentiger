@@ -59,7 +59,6 @@
                     strHtml += '<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">';
                     $.each(value.content, function (key1, value1) {
                         strHtml += '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
-                        return false;
                     });
                     strHtml += '</div><div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>';
                     $('section.taskFlow').append(strHtml);
