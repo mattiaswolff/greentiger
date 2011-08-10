@@ -127,9 +127,10 @@
                 </section>
                 <section class="taskFlow">
                     <article>
-                        <div><span class="button blue">Type</span> / 2011-04-13 / Created by Mattias Wolff</div>
-                        <div>Content....</div>
-                        <div>Edit / Comment / Like</div>
+                        <div><span class="button blue">Type</span></div>
+                        <div>2011-04-13 / Created by Mattias Wolff</div>
+                        <div><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
+                        <div><span class="link">Edit</span> / <span class="link">Comment</span> / <span class="link">Like</span></div>
                     </article>
                 </section>
             </div>
