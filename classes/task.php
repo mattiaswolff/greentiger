@@ -128,9 +128,6 @@ class Task {
         $arrOptions = array("safe" => true);
         $arrResults = $db->tasks->remove($arrQuery, $arrOptions);
         $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
-        $arrQuery = array("definitions.tasks" => array('$in' => $arrObjectId));
-        $arrResults = $db->users->findOne($arrQuery, $arrOptions);
-        $walls->update(array('uname'=>$uname),array('$pull'=>array('posts'=>array('id'=>$id))));
         return $intStatus; 
     }
     
