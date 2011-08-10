@@ -105,7 +105,7 @@ switch($data->getMethod()) {
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
         
-        $strTaskId = (isset($arrRequestVars['taskrId']) ? $arrRequestVars['taskId'] : '');
+        $strTaskId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
         
         if ($strTaskId != '') {
             $arrObjectId[] = $strTaskId;
