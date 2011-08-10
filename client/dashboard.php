@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    //testigen
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
