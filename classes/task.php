@@ -131,7 +131,7 @@ class Task {
         $arrQuery = array("definitions.tasks" => array('$in' => $arrObjectId));
         $arrResults = $db->users->findOne($arrQuery, $arrOptions);
         echo $intStatus; 
-        echo var_dump($arrObjectId);
+        echo var_dump($arrResults);
         return $intStatus; 
     }
     
