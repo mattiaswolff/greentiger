@@ -54,7 +54,8 @@ li.horizontal {display: inline; margin: 3px;}
 .form-field {vertical-align: text-bottom; width: 60px; display: inline-block; padding: 0; margin: 0;}
 
 .taskFlow {width: 525px;}
-.taskFlow > article {margin: 10px 0; padding: 10px 0; border-bottom: solid 1px #ccc}
+.taskFlow > article {margin: 15px 0; padding: 0 0 15px; border-bottom: solid 1px #ccc}
 .story {display: table-cell; }
-.link {color: #4D90FE; font-weight: bold;}
+.link {color: #114488; cursor: pointer;}
 .title {font-weight: bold;}
+.taskFlow .content {background: #f4f4f4; border: solid 1px #ccc; padding: 3px; margin: 5px 0;}
