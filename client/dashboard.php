@@ -53,7 +53,7 @@
             strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks";
             
             $.getJSON(strUrl, function(json) {
-                $.each(json.results, function(key, value) {
+                $.each(json.results[0], function(key, value) {
                     strHtml = '';
                     var d = new Date(value.updatedDate);
                     strHtml += '<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">';
