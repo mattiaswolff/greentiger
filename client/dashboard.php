@@ -59,7 +59,7 @@
                     $.each(value.content, function (key1, value1) {
                         strHtml += '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
                     });
-                    strHtml += '</div><div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>';
+                    strHtml += '</div><div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">like</span> (3) <span class="link">delete</span></div>';
                     $('section.taskFlow').append(strHtml);
                 });
             });

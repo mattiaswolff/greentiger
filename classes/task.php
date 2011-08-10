@@ -130,8 +130,7 @@ class Task {
         $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
         $arrQuery = array("definitions.tasks" => array('$in' => $arrObjectId));
         $arrResults = $db->users->findOne($arrQuery, $arrOptions);
-        echo $intStatus; 
-        echo var_dump($arrResults);
+        $walls->update(array('uname'=>$uname),array('$pull'=>array('posts'=>array('id'=>$id))));
         return $intStatus; 
     }
     
