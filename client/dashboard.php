@@ -102,7 +102,7 @@
                     type: "DELETE",
                     url: strUrl,
                     success: function(msg){
-                        alert("test ");
+                        $(this).remove();
                     }
                 });
             });
