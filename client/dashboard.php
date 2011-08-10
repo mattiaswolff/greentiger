@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    //test
+    //testigen
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -57,7 +57,7 @@
                     strHtml = '';
                     var d = new Date(value.updatedDate);
                     strHtml += '<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">';
-                    $.each(value1.content, function (key1, value1) {
+                    $.each(value.content, function (key1, value1) {
                         strHtml += '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
                         return false;
                     });
