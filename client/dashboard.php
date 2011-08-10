@@ -102,7 +102,8 @@
                     type: "DELETE",
                     url: strUrl,
                     success: function(msg){
-                    alert("test ");
+                        alert("test ");
+                    }
                 });
             });
         });
