@@ -50,6 +50,22 @@
                 });
             });
             
+            strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks";
+            
+            $.getJSON(strUrl, function(json) {
+                $.each(json.results, function(key, value) {
+                    strHtml = '';
+                    var d = new Date(value1.updatedDate);
+                    strHtml += '<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">';
+                    $.each(value1.content, function (key1, value1) {
+                        strHtml += '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
+                        return false;
+                    });
+                    strHtml = '</div><div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>';
+                    $('section.taskFlow').append(strHtml);
+                });
+            });
+            
             $("section.createTask > div").delegate(".blue", "click", function(){
                 //$('form.task').addClass('invisible');
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
@@ -126,10 +142,7 @@
                 <section class="definitions invisible">
                 </section>
                 <section class="taskFlow">
-                    <article>
-                        <div class="left"><span class="button blue">Type</span></div>
-                        <div class="story">
-                            <div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
+                    <article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">Mattias Wolff</span></div>
                             <div class="content"><span class="title">Title:</span> My Title / <span class="title">Title:</span> This is my description.. / <span class="title">Title:</span> This is the next content.</div>
                             <div class="actions"><span class="link">edit</span> <span class="link">comment</span> (10) <span class="link">Like</span> (3)</div>
                         </div>
