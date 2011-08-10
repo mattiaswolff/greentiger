@@ -105,7 +105,7 @@
                     type: "DELETE",
                     url: strUrl,
                     success: function(msg){
-                        $(this2).remove();
+                        $('#' + strId2 + '.delete').remove();
                     }
                 });
             });
