@@ -46,6 +46,7 @@ input:focus:invalid {
   background: red;
 }
 
+
 input:focus:valid {
   background: green;
 }
