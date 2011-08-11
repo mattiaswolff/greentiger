@@ -121,7 +121,7 @@
                     
                     $.getJSON(strUrlTask, function(json) {
                         var strHtml = '';
-                        $.each(json.results[0].content, function(key, value) {
+                        $.each(json.results[0][0].content, function(key, value) {
                             $(this2).parents('.story').children('.content').children('article').children('.input').children('input[name|="content.' + key + '"]').attr('value', value);
                         });
                     }); 
