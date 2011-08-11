@@ -115,7 +115,7 @@
                 var json1 = json;
                 $.getJSON(getUrlApi("definitions/" + json.results[0][0].definition), function(json) {
                     var arrHtml = new Array();
-                    arrHtml.push('<form class="task">');
+                    arrHtml.push('<form class="task" method="PUT">');
                     $.each(json.results[0].content, function(key, value) {
                         arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
                     });
@@ -159,7 +159,7 @@
             <div class="content">
                 <section class="createTask">
                     <div><ul class="horizontal"><li class="horizontal right"></li></ul></div>
-                    <form class="task invisible">
+                    <form class="task invisible" method="POST">
                         <div class="description left"></div>
                         <span class="button red right delete">X</span>
                         <section class="clear"></section>
