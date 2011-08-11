@@ -70,10 +70,7 @@
                 $.getJSON(strUrl, function(json) {
                     var strHtml = '';
                     $.each(json.results[0].content, function(key, value) {
-                        strHtml += '<article><div class="header"><span class="header">' + value.name +'</span> (<span class="link">?</span>)</div><div class="input">';
-                        strHtml += getHtmlTaskInput('content.' + value.name, value.type, '', value.required, value.config);
-                        strHtml += '</div><div class="description invisible clear"><span class="description">' + value.description + '</span></div></article>';
-                        strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
+                        getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
                     });
                     $('form.task section').empty();
                     $('form.task div.description').empty();
@@ -103,11 +100,14 @@
                 var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this).attr('id');
                 $.ajax({
                     type: "DELETE",
-                    url: strUrl,
-                    success: function(msg){
-                        $('#' + strId2 + '.delete').remove();
-                    }
+                    url: strUrl
                 });
+            });
+            
+            $(".taskFlow").delegate(".edit", "click", function(){
+                strId = $(this).attr('id');
+                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this).attr('id');
+                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
             });
         });
         
