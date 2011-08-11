@@ -50,23 +50,7 @@
             });
         });*/
         
-        /*
-        Purpose: Add tasks to task flow.
-        Created: 2011-08-11 (Mattias Wolff)
-        Updated: -
-        */
-        $.getJSON(getUrlApi("users/" + strUserId + "/tasks"), function(json) {
-            $.each(json.results[0], function(key, value) {
-                var arrHtml = new Array();
-                var d = new Date(value.updatedDate);
-                arrHtml.push('<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">');
-                $.each(value.content, function (key1, value1) {
-                    arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
-                });
-                arrHtml.push('</div><div class="actions"><span class="link edit" id="' + value._id + '">edit</span> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) <span class="delete link" id="' + value._id + '">delete</span></div>');
-                $('section.taskFlow').append(arrHtml.join(""));
-            });
-        });
+        getTaskFlow(strUserId);
         
         /*
         Purpose: Add definition form to create task area.
@@ -84,6 +68,7 @@
                 $('form.task div.description').append(json.results[0].description);
                 $('form.task section').append(arrHtml.join(""));
                 $('form.task').attr('id', json.results[0]._id);
+                $('form.task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
                 $('form.task').removeClass('invisible');
             });    
         });
@@ -93,15 +78,16 @@
         Created: 2011-08-11 (Mattias Wolff)
         Updated: -
         */
-        $('form.task').submit(function() {
-            if(event.preventDefault) { // cancels the form submission 
-                event.preventDefault();
-                }
+        $("body").delegate("form.task", "submit", function(event) {
+            if (event.preventDefault()) {
+                event.preventDefault();// cancels the form submission
+            }
             else {
                 event.returnValue = false;
             }
             
-            submitFormJSON('form.task' ,getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks", 'POST'));
+            submitFormJSON(this ,$(this).attr('url'), $(this).attr('method'), false);
+            getTaskFlow (strUserId);
         });
         
         /*
@@ -121,8 +107,10 @@
         $(".taskFlow").delegate(".delete", "click", function(){
             $.ajax({
                 type: "DELETE",
+                async: false,
                 url: getUrlApi("tasks/" + $(this).attr('id'))
             });
+            getTaskFlow (strUserId);
         });
         
         /*
@@ -136,11 +124,11 @@
                 var json1 = json;
                 $.getJSON(getUrlApi("definitions/" + json.results[0][0].definition), function(json) {
                     var arrHtml = new Array();
-                    arrHtml.push('<form class="task">');
+                    arrHtml.push('<form class="task" method="PUT" url="' + getUrlApi("tasks/") + $(this1).attr("id") +'">');
                     $.each(json.results[0].content, function(key, value) {
                         arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
                     });
-                    arrHtml.push('<input class="button green" type="submit" name="Post" value="Post" /></form>');
+                    arrHtml.push('<input class="button green" type="submit" name="PUT" value="Post" /></form>');
                     $(this1).parents('.story').children('.content').empty();
                     $(this1).parents('.story').children('.content').append(arrHtml.join(""));
                     $.each(json1.results[0][0].content, function(key, value) {
@@ -180,11 +168,11 @@
             <div class="content">
                 <section class="createTask">
                     <div><ul class="horizontal"><li class="horizontal right"></li></ul></div>
-                    <form class="task invisible">
+                    <form class="task invisible" method="POST">
                         <div class="description left"></div>
                         <span class="button red right delete">X</span>
                         <section class="clear"></section>
-                        <input class="button green" type="submit" name="Post" value="Post" />
+                        <input class="button green" type="submit" name="POST" value="Post" />
                     </form>
                 </section>
                 <section class="taskFlow" />
