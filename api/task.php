@@ -17,7 +17,7 @@ switch($data->getMethod()) {
         
         $arrId = array();
         if ($strTaskId != '') {
-            $arrId[] = $strTaskId;
+            $arrId[] = new MongoId($strTaskId);
         }
         else if (($strDefinitionId != '') && ($strUserId != '')) {
             $objUser = new User($strUserId);
