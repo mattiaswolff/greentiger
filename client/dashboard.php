@@ -49,88 +49,100 @@
                 });
             });
         });*/
-            
-            strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks";
-            
-            $.getJSON(strUrl, function(json) {
-                $.each(json.results[0], function(key, value) {
-                    strHtml = '';
-                    var d = new Date(value.updatedDate);
-                    strHtml += '<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">';
-                    $.each(value.content, function (key1, value1) {
-                        strHtml += '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
-                    });
-                    strHtml += '</div><div class="actions"><span class="link edit" id="' + value._id + '">edit</span> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) <span class="delete link" id="' + value._id + '">delete</span></div>';
-                    $('section.taskFlow').append(strHtml);
-                });
-            });
-            //test
-            $("section.createTask > div").delegate(".blue", "click", function(){
-                //$('form.task').addClass('invisible');
-                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + $(this).attr('id');
-                $.getJSON(strUrl, function(json) {
-                    var strHtml = '';
-                    $.each(json.results[0].content, function(key, value) {
-                        strHtml += getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
-                    });
-                    $('form.task section').empty();
-                    $('form.task div.description').empty();
-                    $('form.task div.description').append(json.results[0].description);
-                    $('form.task section').append(strHtml);
-                    $('form.task').attr('id', json.results[0]._id);
-                    $('form.task').removeClass('invisible');
-                });    
-            });
-            $('form.task').submit(function() {
-                // cancels the form submission
-                event.preventDefault();
-                // do whatever you want here
-            
-                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId +'/definitions/' + $(this).attr('id') + '/tasks';
-                submitFormJSON('form.task' ,strUrl, 'POST');
-            });
         
-            $("form.task > .red").click(function () {
-                $('form.task').addClass('invisible');
-            });
-            
-            $(".taskFlow").delegate(".delete", "click", function(){
-                var strId = $(this).attr('id');
-                strId2 = $(this).attr('id');
-                this2 = this;
-                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this).attr('id');
-                $.ajax({
-                    type: "DELETE",
-                    url: strUrl
+        /*
+        Purpose: Add tasks to task flow.
+        Created: 2011-08-11 (Mattias Wolff)
+        Updated: -
+        */
+        $.getJSON(getUrlApi("users/" + strUserId + "/tasks");, function(json) {
+            $.each(json.results[0], function(key, value) {
+                var arrHtml = array();
+                var d = new Date(value.updatedDate);
+                arrHtml[] = '<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">';
+                $.each(value.content, function (key1, value1) {
+                    arrHtml[] = '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
                 });
+                arrHtml[] = '</div><div class="actions"><span class="link edit" id="' + value._id + '">edit</span> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) <span class="delete link" id="' + value._id + '">delete</span></div>';
+                $('section.taskFlow').append(arrHtml.join(""));
             });
-            
-            $(".taskFlow").delegate(".edit", "click", function(){
-                strId = $(this).attr('id');
-                this2 = this;
-                var strUrlTask = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this).attr('id');
-                
-                $.getJSON(strUrlTask, function(json) {
-                    var strUrlDefinition = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + json.results[0][0].definition;
-                    json2 = json;
-                    $.getJSON(strUrlDefinition, function(json) {
-                        var strHtml = '<form class="task">';
-                        $.each(json.results[0].content, function(key, value) {
-                            strHtml += getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
-                        });
-                        strHtml += '<input class="button green" type="submit" name="Post" value="Post" /></form>';
-                        $(this2).parents('.story').children('.content').empty();
-                        $(this2).parents('.story').children('.content').append(strHtml);
-                        $.each(json2.results[0][0].content, function(key, value) {
-                            $(this2).parents('.story').children('.content').children('form').children('article').children('.input').children('input[name|="content.' + key + '"]').attr('value', value);
-                        });
+        });
+        
+        /*
+        Purpose: Add definition form to create task area.
+        Created: 2011-08-11 (Mattias Wolff)
+        Updated: -
+        */
+        $("section.createTask > div").delegate(".blue", "click", function(){
+            $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
+                var arrHtml = array();
+                $.each(json.results[0].content, function(key, value) {
+                    arrHtml[] = getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
+                });
+                $('form.task section').empty();
+                $('form.task div.description').empty();
+                $('form.task div.description').append(json.results[0].description);
+                $('form.task section').append(arrHtml.join(""));
+                $('form.task').attr('id', json.results[0]._id);
+                $('form.task').removeClass('invisible');
+            });    
+        });
+        
+        /*
+        Purpose: Submit form by JSON
+        Created: 2011-08-11 (Mattias Wolff)
+        Updated: -
+        */
+        $('form.task').submit(function() {
+            event.preventDefault(); // cancels the form submission
+            submitFormJSON('form.task' ,getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks", 'POST');
+        });
+        
+        /*
+        Purpose: Remove open definition form from create task area.
+        Created: 2011-08-11 (Mattias Wolff)
+        Updated: -
+        */
+        $(".createTask").delegate(".delete", "click", function(){
+            $('form.task').addClass('invisible');
+        });
+        
+        /*
+        Purpose: Delete tasks (from task flow)
+        Created: 2011-08-11 (Mattias Wolff)
+        Updated: -
+        */
+        $(".taskFlow").delegate(".delete", "click", function(){
+            $.ajax({
+                type: "DELETE",
+                url: getUrlApi("tasks/" + $(this).attr('id'))
+            });
+        });
+        
+        /*
+        Purpose: Edit tasks (from task flow)
+        Created: 2011-08-11 (Mattias Wolff)
+        Updated: -
+        */    
+        $(".taskFlow").delegate(".edit", "click", function(){
+            var this1 = this;
+            $.getJSON(getUrlApi("tasks/" + $(this).attr('id')), function(json) {
+                var json1 = json;
+                $.getJSON(getUrlApi("definitions/" + json.results[0][0].definition), function(json) {
+                    var arrHtml[] = '<form class="task">';
+                    $.each(json.results[0].content, function(key, value) {
+                        arrHtml[] = getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
+                    });
+                    arrHtml[] = '<input class="button green" type="submit" name="Post" value="Post" /></form>';
+                    $(this1).parents('.story').children('.content').empty();
+                    $(this1).parents('.story').children('.content').append(arrHtml.join(""));
+                    $.each(json1.results[0][0].content, function(key, value) {
+                        $(this1).parents('.story').children('.content').children('form').children('article').children('.input').children('input[name|="content.' + key + '"]').attr('value', value);
                     });
                 });
             });
         });
-        
-        
-        
+    });        
 	</script>
 
 </head>
@@ -162,18 +174,13 @@
                 <section class="createTask">
                     <div><ul class="horizontal"><li class="horizontal right"></li></ul></div>
                     <form class="task invisible">
-                        <div class="description left">
-                        </div>
-                        <span class="button red right">X</span>
-                        <section class="clear">
-                        </section>
+                        <div class="description left" />
+                        <span class="button red right delete">X</span>
+                        <section class="clear" />
                         <input class="button green" type="submit" name="Post" value="Post" />
                     </form>
                 </section>
-                <section class="definitions invisible">
-                </section>
-                <section class="taskFlow">
-                </section>
+                <section class="taskFlow" />
             </div>
         </div>
     </div>
