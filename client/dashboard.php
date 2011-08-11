@@ -114,6 +114,7 @@
                         strHtml += getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
                     });
                 });
+                
                 $(this).parents('.story').children('.content').empty();
                 $(this).parents('.story').children('.content').append(strHtml);
             });
