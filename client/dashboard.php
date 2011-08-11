@@ -116,6 +116,15 @@
                     });
                     $(this2).parents('.story').children('.content').empty();
                     $(this2).parents('.story').children('.content').append(strHtml);
+                    
+                    var strUrlTask = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this2).attr('id');
+                    
+                    $.getJSON(strUrlTask, function(json) {
+                        var strHtml = '';
+                        $.each(json.results[0].content, function(key, value) {
+                            $(this2).parents('.story').children('.content').children('article').children('.input').children('input[name|="content.' + key + '"]').attr('value', value);
+                        });
+                    }); 
                 });
             });
         });
