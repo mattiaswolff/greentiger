@@ -115,7 +115,7 @@
                 var json1 = json;
                 $.getJSON(getUrlApi("definitions/" + json.results[0][0].definition), function(json) {
                     var arrHtml = new Array();
-                    arrHtml.push('<form class="task" method="PUT" url="' + getUrlApi("/tasks/") + $(this1).attr("id") +'">');
+                    arrHtml.push('<form class="task" method="PUT" url="' + getUrlApi("tasks/") + $(this1).attr("id") +'">');
                     $.each(json.results[0].content, function(key, value) {
                         arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
                     });
