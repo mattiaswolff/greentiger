@@ -29,14 +29,14 @@ function getTaskFlow (strUserId) {
     });
 }
 
-function submitFormJSON(strSelector, strUrl, strType) {
+function submitFormJSON(strSelector, strUrl, strType, strAsync) {
             var objJSON = $(strSelector).toObject("All");
             $.ajax({
                 type: strType,
                 url: strUrl,
                 dataType: 'json',
                 data: objJSON,
-                async: false,
+                async: strAsync,
                 success: function(msg) {
                     alert( "Data Saved!");
                 }
