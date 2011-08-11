@@ -17,6 +17,7 @@ switch($data->getMethod()) {
         
         $arrId = array();
         if ($strTaskId != '') {
+            echo $strTaskId;
             $arrId[] = $arrRequestVars['taskId'];
         }
         else if (($strDefinitionId != '') && ($strUserId != '')) {
