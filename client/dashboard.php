@@ -77,7 +77,7 @@
         Created: 2011-08-11 (Mattias Wolff)
         Updated: -
         */
-        $('form.task').submit(function() {
+        $("body").delegate("form.task", "submit", function() {
             event.preventDefault(); // cancels the form submission
             submitFormJSON('form.task' ,getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks"), 'POST', false);
             getTaskFlow (strUserId);
