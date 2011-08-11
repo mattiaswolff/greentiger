@@ -55,7 +55,7 @@
         Created: 2011-08-11 (Mattias Wolff)
         Updated: -
         */
-        $.getJSON(getUrlApi("users/" + strUserId + "/tasks");, function(json) {
+        $.getJSON(getUrlApi("users/" + strUserId + "/tasks"), function(json) {
             $.each(json.results[0], function(key, value) {
                 var arrHtml = array();
                 var d = new Date(value.updatedDate);
