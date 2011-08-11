@@ -68,7 +68,7 @@
                 $('form.task div.description').append(json.results[0].description);
                 $('form.task section').append(arrHtml.join(""));
                 $('form.task').attr('id', json.results[0]._id);
-                $('form.task').attr('url', getUrlApi("users/" + strUserId + "/defintions/" + json.results[0]._id + "/tasks"));
+                $('form.task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
                 $('form.task').removeClass('invisible');
             });    
         });
