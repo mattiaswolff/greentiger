@@ -114,8 +114,8 @@
                     $.each(json.results[0].content, function(key, value) {
                         strHtml += getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
                     });
-                    $(this).parents('.story').children('.content').empty();
-                    $(this).parents('.story').children('.content').append(strHtml);
+                    $(this2).parents('.story').children('.content').empty();
+                    $(this2).parents('.story').children('.content').append(strHtml);
                 });
             });
         });
