@@ -59,11 +59,11 @@
             $.each(json.results[0], function(key, value) {
                 var arrHtml = array();
                 var d = new Date(value.updatedDate);
-                arrHtml[] = '<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">';
+                arrHtml.push('<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">');
                 $.each(value.content, function (key1, value1) {
-                    arrHtml[] = '<span class="title">'+ key1 +':</span> '+ value1 +' / ';
+                    arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
                 });
-                arrHtml[] = '</div><div class="actions"><span class="link edit" id="' + value._id + '">edit</span> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) <span class="delete link" id="' + value._id + '">delete</span></div>';
+                arrHtml.push('</div><div class="actions"><span class="link edit" id="' + value._id + '">edit</span> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) <span class="delete link" id="' + value._id + '">delete</span></div>');
                 $('section.taskFlow').append(arrHtml.join(""));
             });
         });
@@ -77,7 +77,7 @@
             $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
                 var arrHtml = array();
                 $.each(json.results[0].content, function(key, value) {
-                    arrHtml[] = getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
+                    arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
                 });
                 $('form.task section').empty();
                 $('form.task div.description').empty();
@@ -129,11 +129,12 @@
             $.getJSON(getUrlApi("tasks/" + $(this).attr('id')), function(json) {
                 var json1 = json;
                 $.getJSON(getUrlApi("definitions/" + json.results[0][0].definition), function(json) {
-                    var arrHtml[] = '<form class="task">';
+                    var arrHtml = array();
+                    arrHtml.push('<form class="task">');
                     $.each(json.results[0].content, function(key, value) {
-                        arrHtml[] = getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
+                        arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
                     });
-                    arrHtml[] = '<input class="button green" type="submit" name="Post" value="Post" /></form>';
+                    arrHtml.push('<input class="button green" type="submit" name="Post" value="Post" /></form>');
                     $(this1).parents('.story').children('.content').empty();
                     $(this1).parents('.story').children('.content').append(arrHtml.join(""));
                     $.each(json1.results[0][0].content, function(key, value) {
