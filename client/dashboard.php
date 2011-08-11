@@ -110,20 +110,21 @@
                 var strUrlTask = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this).attr('id');
                 var strUrlDefinition = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/4e403283cdb4bf053f000000";
                 $.getJSON(strUrlDefinition, function(json) {
-                    var strHtml = '';
+                    var strHtml = '<form class="task">'';
                     $.each(json.results[0].content, function(key, value) {
                         strHtml += getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
                     });
+                    strHtml += '<input class="button green" type="submit" name="Post" value="Post" /></form>';
                     $(this2).parents('.story').children('.content').empty();
                     $(this2).parents('.story').children('.content').append(strHtml);
                     
                     var strUrlTask = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this2).attr('id');
                     
                     $.getJSON(strUrlTask, function(json) {
-                        var strHtml = '';
                         $.each(json.results[0][0].content, function(key, value) {
                             $(this2).parents('.story').children('.content').children('article').children('.input').children('input[name|="content.' + key + '"]').attr('value', value);
                         });
+                        
                     }); 
                 });
             });
