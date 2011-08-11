@@ -21,8 +21,10 @@ td {padding: 0 3px; max-width: 90px; white-space: nowrap; overflow: hidden; text
 th {padding: 0 3px;}
 
 input, textarea, select{margin:0;font: 17px arial,sans-serif;border-bottom: 1px solid #999;border-top: 1px solid #CCC; border-left: 1px solid #BBB;border-right: 1px solid #BBB; padding: 5px; -webkit-border-radius: 2px; width: 100%;}
-input[type="submit"] {width: initial; min-width:100px;margin-top:15px;width: 100px;margin: 15px 0 0 384px;}
+input[type="submit"] {width: initial; min-width:100px;width: 100px;}
 input[type="radio"], input[type="checkbox"]{margin: 0;width: 1; border:0}
+.taskFlow input[type="submit"] {margin: 15px 0 0 356px;}
+.createTask input[type="submit"] {margin: 15px 0 0 384px;}
 
 .createTask form {margin: 10px -6px -11px; background: #FFC; border: solid 1px #ccc; padding: 20px;}
 section.createTask .description { padding: 5px; border: solid 1px #ccc; background: #f4f4f4; width: 461px; margin-bottom: 10px;}
@@ -59,4 +61,4 @@ li.horizontal {display: inline; margin: 3px;}
 .story {display: table-cell; width: 466px;}
 .link {color: #114488; cursor: pointer;}
 .title {font-weight: bold;}
-.taskFlow .content {background: #f4f4f4; border: solid 1px #ccc; padding: 3px; margin: 5px 0;}
+.taskFlow .content {background: #f4f4f4; border: solid 1px #ccc; padding: 3px; margin: 5px 0; width: 465px;}
