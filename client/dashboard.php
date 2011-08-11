@@ -119,7 +119,7 @@
                     $.each(json.results[0].content, function(key, value) {
                         arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
                     });
-                    arrHtml.push('<input class="button green" type="submit" name="Post" value="Post" /></form>');
+                    arrHtml.push('<input class="button green" type="submit" name="PUT" value="Post" /></form>');
                     $(this1).parents('.story').children('.content').empty();
                     $(this1).parents('.story').children('.content').append(arrHtml.join(""));
                     $.each(json1.results[0][0].content, function(key, value) {
@@ -159,11 +159,11 @@
             <div class="content">
                 <section class="createTask">
                     <div><ul class="horizontal"><li class="horizontal right"></li></ul></div>
-                    <form class="task invisible" method="POST">
+                    <form class="task invisible">
                         <div class="description left"></div>
                         <span class="button red right delete">X</span>
                         <section class="clear"></section>
-                        <input class="button green" type="submit" name="Post" value="Post" />
+                        <input class="button green" type="submit" name="POST" value="Post" />
                     </form>
                 </section>
                 <section class="taskFlow" />
