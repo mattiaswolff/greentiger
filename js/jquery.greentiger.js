@@ -36,6 +36,7 @@ function submitFormJSON(strSelector, strUrl, strType) {
                 url: strUrl,
                 dataType: 'json',
                 data: objJSON,
+                async: false,
                 success: function(msg) {
                     alert( "Data Saved!");
                 }
