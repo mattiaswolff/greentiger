@@ -175,9 +175,9 @@
                 <section class="createTask">
                     <div><ul class="horizontal"><li class="horizontal right"></li></ul></div>
                     <form class="task invisible">
-                        <div class="description left" />
+                        <div class="description left"></div>
                         <span class="button red right delete">X</span>
-                        <section class="clear" />
+                        <section class="clear"></section>
                         <input class="button green" type="submit" name="Post" value="Post" />
                     </form>
                 </section>
