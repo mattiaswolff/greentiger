@@ -79,7 +79,7 @@
         */
         $("body").delegate("form.task", "submit", function() {
             event.preventDefault(); // cancels the form submission
-            submitFormJSON('form.task' ,getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks"), 'POST', false);
+            submitFormJSON('form.task' ,getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks"), $(this).attr('method'), false);
             getTaskFlow (strUserId);
         });
         
