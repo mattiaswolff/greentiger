@@ -70,7 +70,7 @@
                 $.getJSON(strUrl, function(json) {
                     var strHtml = '';
                     $.each(json.results[0].content, function(key, value) {
-                        strHtml = getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
+                        strHtml += getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
                     });
                     $('form.task section').empty();
                     $('form.task div.description').empty();
