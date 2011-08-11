@@ -8,7 +8,7 @@
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
-	<script type="text/javascript">
+    <script type="text/javascript">
         strUserId = "<?php echo $_GET['userId']; ?>"
         
         /*$.each(location.hash.substring(1).split('&'), function (key, value) { 
@@ -17,37 +17,38 @@
             } 
         });*/
         
+        //Create dashboard boxes (NOT IN USE) and Create titles.
         $(document).ready(function(){
-            var strUrlUser = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId;
-            $.getJSON(strUrlUser, function(json) {
-                    $.each(json.definitions, function(key, value) {
-                        var counter = $('.definitions > article').length;
-                        var strHtml = '<article class="definition" id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
-		                var strHtml2 = '<li class="horizontal"><span class="button blue" id="' + value._id.$id + '">' + value.name + '</span></li>';
-                        $('.definitions').append(strHtml);
-                        $('section.createTask > div > ul').append(strHtml2); 
-                    });
-            $('article.definition:nth-child(odd)').addClass('left');
-            $('article.definition:nth-child(even)').addClass('right');
+        var strUrlUser = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId;
+        $.getJSON(strUrlUser, function(json) {
+            $.each(json.definitions, function(key, value) {
+                //var counter = $('.definitions > article').length;
+                //var strHtml = '<article class="definition" id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
+		        var strHtml2 = '<li class="horizontal"><span class="button blue" id="' + value._id.$id + '">' + value.name + '</span></li>';
+                //$('.definitions').append(strHtml);
+                $('section.createTask > div > ul').append(strHtml2); 
             });
+            //$('article.definition:nth-child(odd)').addClass('left');
+            //$('article.definition:nth-child(even)').addClass('right');
+        });
             
-            var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks?group=definition";
-            
-            $.getJSON(strUrl, function(json) {
-                $.each(json.results, function(key, value) {
-                    $.each(value, function(key1, value1) {
-                        strHtml = '';
-                        var d = new Date(value1.updatedDate);
-                        strHtml += '<tr><td>' + d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + '</td>';
-                        $.each(value1.content, function (key2, value2) {
-                            strHtml += '<td><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?taskId=' + value1._id + '">' + value2 + '</a></td>';
-                            return false;
-                        });
-                        strHtml = strHtml + '<td>' + value1.comments.length + '</td><td>' + value1.likes.length + '</td></tr>';
-                        $('#dashboard_' + key + ' tbody').append(strHtml);
+        //Add tasks to dashboard boxes (NOT IN USE)
+        /*var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks?group=definition";
+        $.getJSON(strUrl, function(json) {
+            $.each(json.results, function(key, value) {
+                $.each(value, function(key1, value1) {
+                    strHtml = '';
+                    var d = new Date(value1.updatedDate);
+                    strHtml += '<tr><td>' + d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + '</td>';
+                    $.each(value1.content, function (key2, value2) {
+                        strHtml += '<td><a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/task.php?taskId=' + value1._id + '">' + value2 + '</a></td>';
+                        return false;
                     });
+                    strHtml = strHtml + '<td>' + value1.comments.length + '</td><td>' + value1.likes.length + '</td></tr>';
+                    $('#dashboard_' + key + ' tbody').append(strHtml);
                 });
             });
+        });*/
             
             strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/tasks";
             
