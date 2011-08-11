@@ -122,7 +122,7 @@
                     
                     $.getJSON(strUrlTask, function(json) {
                         $.each(json.results[0][0].content, function(key, value) {
-                            $(this2).parents('.story').children('.content').children('article').children('.input').children('input[name|="content.' + key + '"]').attr('value', value);
+                            $(this2).parents('.story').children('.content').children('article').children('form').children('.input').children('input[name|="content.' + key + '"]').attr('value', value);
                         });
                         
                     }); 
