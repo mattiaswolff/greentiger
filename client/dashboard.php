@@ -111,6 +111,7 @@
                 
                 $.getJSON(strUrlTask, function(json) {
                     var strUrlDefinition = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/" + json.results[0][0].definition;
+                    json2 = json;
                     $.getJSON(strUrlDefinition, function(json) {
                         var strHtml = '<form class="task">';
                         $.each(json.results[0].content, function(key, value) {
@@ -119,9 +120,9 @@
                         strHtml += '<input class="button green" type="submit" name="Post" value="Post" /></form>';
                         $(this2).parents('.story').children('.content').empty();
                         $(this2).parents('.story').children('.content').append(strHtml);
-                    });
-                    $.each(json.results[0][0].content, function(key, value) {
-                        $(this2).parents('.story').children('.content').children('form').children('article').children('.input').children('input[name|="content.' + key + '"]').attr('value', value);
+                        $.each(json2.results[0][0].content, function(key, value) {
+                            $(this2).parents('.story').children('.content').children('form').children('article').children('.input').children('input[name|="content.' + key + '"]').attr('value', value);
+                        });
                     });
                 });
             });
