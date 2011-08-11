@@ -78,7 +78,6 @@ class Task {
         $db = $m->projectcopperfield;
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
-        echo var_dump($arrObjectId);
         if (!isset($arrObjectId[0])) {
             foreach($arrObjectId as $key => $var) {
                 $objResults[$key] = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
@@ -87,6 +86,7 @@ class Task {
         elseif ($arrObjectId != null) {
             $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
         }
+        //test
         else {
             $objResults[0] = $db->tasks->find()->limit($intLimit)->skip($intSkip);
         }
