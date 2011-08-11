@@ -95,7 +95,7 @@
         */
         $('form.task').submit(function() {
             event.preventDefault(); // cancels the form submission
-            submitFormJSON('form.task' ,getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks"), 'POST'));
+            submitFormJSON('form.task' ,getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks"), 'POST');
             var test;
         });
         
