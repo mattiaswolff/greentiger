@@ -79,7 +79,7 @@
         */
         $("body").delegate("form.task", "submit", function() {
             event.preventDefault(); // cancels the form submission
-            submitFormJSON('form.task' ,getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks"), $(this).attr('method'), false);
+            submitFormJSON('form.task' ,$(this).attr('url'), $(this).attr('method'), false);
             getTaskFlow (strUserId);
         });
         
@@ -115,7 +115,7 @@
                 var json1 = json;
                 $.getJSON(getUrlApi("definitions/" + json.results[0][0].definition), function(json) {
                     var arrHtml = new Array();
-                    arrHtml.push('<form class="task" method="PUT">');
+                    arrHtml.push('<form class="task" method="PUT" url="' + getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks") +'">');
                     $.each(json.results[0].content, function(key, value) {
                         arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
                     });
