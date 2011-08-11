@@ -79,7 +79,7 @@
         */
         $("body").delegate("form.task", "submit", function() {
             event.preventDefault(); // cancels the form submission
-            submitFormJSON('form.task' ,$(this).attr('url'), $(this).attr('method'), false);
+            submitFormJSON(this ,$(this).attr('url'), $(this).attr('method'), false);
             getTaskFlow (strUserId);
         });
         
