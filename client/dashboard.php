@@ -50,23 +50,7 @@
             });
         });*/
         
-        /*
-        Purpose: Add tasks to task flow.
-        Created: 2011-08-11 (Mattias Wolff)
-        Updated: -
-        */
-        $.getJSON(getUrlApi("users/" + strUserId + "/tasks"), function(json) {
-            $.each(json.results[0], function(key, value) {
-                var arrHtml = new Array();
-                var d = new Date(value.updatedDate);
-                arrHtml.push('<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">');
-                $.each(value.content, function (key1, value1) {
-                    arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
-                });
-                arrHtml.push('</div><div class="actions"><span class="link edit" id="' + value._id + '">edit</span> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) <span class="delete link" id="' + value._id + '">delete</span></div>');
-                $('section.taskFlow').append(arrHtml.join(""));
-            });
-        });
+        getTaskFlow(strUserId);
         
         /*
         Purpose: Add definition form to create task area.
@@ -96,7 +80,7 @@
         $('form.task').submit(function() {
             event.preventDefault(); // cancels the form submission
             submitFormJSON('form.task' ,getUrlApi("users/" + strUserId + "/definitions/" + $(this).attr('id') + "/tasks"), 'POST');
-            var test;
+            getTaskFlow (strUserId);
         });
         
         /*
