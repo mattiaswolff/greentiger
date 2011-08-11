@@ -57,7 +57,7 @@
         */
         $.getJSON(getUrlApi("users/" + strUserId + "/tasks"), function(json) {
             $.each(json.results[0], function(key, value) {
-                var arrHtml = array();
+                var arrHtml = new Array();
                 var d = new Date(value.updatedDate);
                 arrHtml.push('<article><div class="left"><span class="button blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <span class="link">' + value.createdBy + '</span></div><div class="content">');
                 $.each(value.content, function (key1, value1) {
@@ -75,7 +75,7 @@
         */
         $("section.createTask > div").delegate(".blue", "click", function(){
             $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
-                var arrHtml = array();
+                var arrHtml = new Array();
                 $.each(json.results[0].content, function(key, value) {
                     arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
                 });
@@ -129,7 +129,7 @@
             $.getJSON(getUrlApi("tasks/" + $(this).attr('id')), function(json) {
                 var json1 = json;
                 $.getJSON(getUrlApi("definitions/" + json.results[0][0].definition), function(json) {
-                    var arrHtml = array();
+                    var arrHtml = new Array();
                     arrHtml.push('<form class="task">');
                     $.each(json.results[0].content, function(key, value) {
                         arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
