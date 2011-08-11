@@ -106,6 +106,7 @@
             
             $(".taskFlow").delegate(".edit", "click", function(){
                 strId = $(this).attr('id');
+                this2 = this;
                 var strUrlTask = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/tasks/" + $(this).attr('id');
                 var strUrlDefinition = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/4e403283cdb4bf053f000000";
                 $.getJSON(strUrlDefinition, function(json) {
@@ -113,10 +114,9 @@
                     $.each(json.results[0].content, function(key, value) {
                         strHtml += getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required)
                     });
+                    $(this).parents('.story').children('.content').empty();
+                    $(this).parents('.story').children('.content').append(strHtml);
                 });
-                
-                $(this).parents('.story').children('.content').empty();
-                $(this).parents('.story').children('.content').append(strHtml);
             });
         });
         
