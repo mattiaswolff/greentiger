@@ -101,8 +101,10 @@
         $(".taskFlow").delegate(".delete", "click", function(){
             $.ajax({
                 type: "DELETE",
+                async: false,
                 url: getUrlApi("tasks/" + $(this).attr('id'))
             });
+            getTaskFlow (strUserId);
         });
         
         /*
