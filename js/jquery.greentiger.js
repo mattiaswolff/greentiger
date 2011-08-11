@@ -11,15 +11,11 @@ function submitFormJSON(strSelector, strUrl, strType) {
             });
         }
         
-        function getHtmlTaskRow(name, description, type, counter) {
-            var strHtml = '<div class="formRow">';
-            strHtml = strHtml + name + "<br/>" + description + "<br/>";
-            switch (type) {
-                case "text":
-                    strHtml = strHtml + '<input type="text" value="" name="content.' + name + '" />'; 
-                    break;
-            }
-            strHtml = strHtml + '</div>';
+        function getHtmlTaskRow(name, description, type, config, required) {
+            var strHtml = '<article><div class="header"><span class="header">' + name +'</span> (<span class="link">?</span>)</div><div class="input">';
+            strHtml += getHtmlTaskInput('content.' + name, type, '', required, config);
+            strHtml += '</div><div class="description invisible clear"><span class="description">' + description + '</span></div></article>';
+            strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
             return strHtml;
         }
         
