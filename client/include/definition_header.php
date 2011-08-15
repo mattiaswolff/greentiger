@@ -20,5 +20,9 @@
     	        var strHtml = '<article><div class="formRow">Name: <input type="text" name="content[' + counter + '].name" value="" /> Description: <input type="text" name="content[' + counter + '].description" value="" /> Type: <select name="content[' + counter + '].type"><option value="text">Text</option><option value="textarea">Textarea</option><option value="email">Email</option><option value="checkbox">Checkbox</option><option value="radio">Radio button</option><option value="date">Date</option><option value="range">Range</option><option value="url">URL</option><option value="number">Number</option><option value="time">Time</option><option value="dropdown">Drop Down</option></select> Config: <input type="text" name="content[' + counter + '].config" value="" /></div></article>';
 		        $("form").append(strHtml);
             });
+            
+            $(".content").delegate("#save", "click", function(){
+                submitFormJSON("form", "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions/", "POST");
+            });
         });
 </script>
