@@ -1,8 +1,9 @@
 <script type="text/javascript">
         $(document).ready(function(){
-            var strUserId = getParameterByName("userId"); 
+            strUserId = getParameterByName("userId"); 
+            strDefinitionId = getParameterByName("definitionId");
             if (getParameterByName("definitionId") != "" ) {
-                $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions", { definitionId: <?php echo (isset($_GET['definitionId']) ? '"'. $_GET['definitionId'] .'"' : '""' ) ?> }, function(json) {
+                $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions", { definitionId: strDefinitionId }, function(json) {
                     $("#name").val(json.definitions[0].name);
                     $("#description").val(json.definitions[0].description);
                     $.each(json.definitions[0].content, function(key, value) {
