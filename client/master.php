@@ -11,12 +11,15 @@
         strUserId = getParameterByName("userId");
         
         $(document).ready(function(){
-            
-            $.getJSON(getUrlApi("users/" + strUserId), function(json) {
-                jsonUser = json;
-                $('.userName').append(json.name); 
+            $.ajax({  
+                url: getUrlApi("users/" + strUserId),  
+                dataType: 'json',  
+                async: false,  
+                success: function(json){  
+                    jsonUser = json;
+                    $('.userName').append(json.name);
+                }  
             });
-            
         });  
 	</script>
     <?php echo $page_header; ?>
