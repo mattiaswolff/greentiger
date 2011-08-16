@@ -1,5 +1,5 @@
 <script type="text/javascript">
-        strUserId = "<?php echo $_GET['userId']; ?>"
+        strUserId = getParameterByName("userId");
         
         /*$.each(location.hash.substring(1).split('&'), function (key, value) { 
             if (value.split('=')[0] == 'access_token') { 
