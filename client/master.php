@@ -36,6 +36,9 @@
             <div class="content">
                 <?php echo $page_content; ?>
             </div>
+            <aside>
+                Test
+            </aside>
         </div>
     </div>
 </body>
