@@ -12,7 +12,7 @@
         
         $(document).ready(function(){
             
-            $.getJSON(getUrlApi("users/" + strUserId, function(json) {
+            $.getJSON(getUrlApi("users/" + strUserId), function(json) {
                 $('.userName').append(json.name); 
             });
             
