@@ -13,7 +13,7 @@
 <body id="home">
         <div class ="top">
             <nav class="pageNav">
-                <a href="">home</a> | <a href="">definitions</a> | <a href="">tasks</a>
+                <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php">home</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php">definitions</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/group.php">groups</a>
             </nav>
             <section class="login">
                 Login
