@@ -7,6 +7,17 @@
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <script type="text/javascript">
+        strUserId = getParameterByName("userId");
+        
+        $(document).ready(function(){
+            
+            $.getJSON(getUrlApi("users/" + strUserId, function(json) {
+                $('.userName').append(json.name); 
+            });
+            
+        });  
+	</script>
     <?php echo $page_header; ?>
 </head>
 
@@ -31,7 +42,6 @@
         </aside>
         <div class="main">
             <section class="userName">
-                Mattias Wolff
             </section>
             <div class="content">
                 <?php echo $page_content; ?>
