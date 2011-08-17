@@ -6,6 +6,10 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <script type="text/javascript">
         strUserId = getParameterByName("userId");
@@ -36,6 +40,7 @@
                 tryFederatedFirst: true,
                 useCachedUserStatus: false
             });
+            
             $("#navbar").accountChooser();
         });  
 	</script>
@@ -47,9 +52,7 @@
             <nav class="pageNav">
                 <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php">home</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php">definitions</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/group.php">groups</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php">profile</a>
             </nav>
-            <section id="navbar">
-                Login
-            </section>
+            <section id="navbar">Login</section>
         </div>
         <div class = "container">
             <aside class="userInfo">
