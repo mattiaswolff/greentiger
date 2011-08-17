@@ -20,6 +20,23 @@
                     $('.userName').append(json.name);
                 }  
             });
+            
+            window.google.identitytoolkit.setConfig({
+                developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
+                companyName: "GreenTiger",
+                callbackUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/callback.php",
+                realm: "",
+                userStatusUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/userstatus.php",
+                loginUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/login.php",
+                signupUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/signup.php",
+                homeUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/git/index.php",
+                logoutUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/signout.php",
+                language: "en",
+                idps: ["Gmail", "Yahoo", "AOL"],
+                tryFederatedFirst: true,
+                useCachedUserStatus: false
+            });
+            $("#navbar").accountChooser();
         });  
 	</script>
     <?php echo $page_header; ?>
@@ -30,29 +47,26 @@
             <nav class="pageNav">
                 <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php">home</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php">definitions</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/group.php">groups</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php">profile</a>
             </nav>
-            <section class="login">
+            <section id="navbar">
                 Login
             </section>
         </div>
-    <div class = "container">
-        <aside class="userInfo">
-            <img class="user" src="http://v1.fein.de/fein-multimaster/media/images/fein-multimaster/fein_company_logo.jpg" alt="Företaget" title="Företaget" border="0" />
-            <div class="description">This is a description of this user. We dont know that much about them yet though.</div>
-            <div class="links">
-                <ul>
-                    <li><a href="http://www.dif.se">www.dif.se</a>
-                </ul>
-            </div>
-        </aside>
+        <div class = "container">
+            <aside class="userInfo">
+                <img class="user" src="http://v1.fein.de/fein-multimaster/media/images/fein-multimaster/fein_company_logo.jpg" alt="Företaget" title="Företaget" border="0" />
+                <div class="description">This is a description of this user. We dont know that much about them yet though.</div>
+                <div class="links">
+                    <ul>
+                        <li><a href="http://www.dif.se">www.dif.se</a>
+                    </ul>
+                </div>
+            </aside>
         <div class="main">
-            <section class="userName">
-            </section>
+            <section class="userName"></section>
             <div class="content">
                 <?php echo $page_content; ?>
             </div>
-            <aside>
-                Test
-            </aside>
+            <aside>Test</aside>
         </div>
     </div>
 </body>

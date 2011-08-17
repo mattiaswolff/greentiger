@@ -12,14 +12,14 @@
 
 <body id="home">
     <?php
-require_once(dirname(__FILE__) . '/handler/gitLoginHandler.php');
-require_once(dirname(__FILE__) . '/util/gitConfig.php');
-require_once(dirname(__FILE__) . '/util/gitApiClient.php');
-require_once(dirname(__FILE__) . '/util/gitContext.php');
-require_once(dirname(__FILE__) . '/AccountService.php');
-require_once(dirname(__FILE__) . '/SessionManager.php');
-
-?>
+        require_once(dirname(__FILE__) . '/handler/gitLoginHandler.php');
+        require_once(dirname(__FILE__) . '/util/gitConfig.php');
+        require_once(dirname(__FILE__) . '/util/gitApiClient.php');
+        require_once(dirname(__FILE__) . '/util/gitContext.php');
+        require_once(dirname(__FILE__) . '/AccountService.php');
+        require_once(dirname(__FILE__) . '/SessionManager.php');
+    ?>
+    
     <?php 
         $sessionManager = gitContext::getSessionManager();
         $idpAssertion = $sessionManager->getAssertion();
@@ -33,8 +33,5 @@ require_once(dirname(__FILE__) . '/SessionManager.php');
 				</form>
                 <span onClick="submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')">Save user</span>
     <section>
-    
 </body>
 </html>
-
-
