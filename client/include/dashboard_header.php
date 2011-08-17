@@ -53,7 +53,7 @@
         Updated: -
         */
         $("section.createTask > div").delegate(".blue", "click", function(){
-            $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
+            $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), {access_token: strAccessToken}, function(json) {
                 var arrHtml = new Array();
                 $.each(json.results[0].content, function(key, value) {
                     arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
@@ -115,9 +115,9 @@
         */    
         $(".taskFlow").delegate(".edit", "click", function(){
             var this1 = this;
-            $.getJSON(getUrlApi("tasks/" + $(this).attr('id')), function(json) {
+            $.getJSON(getUrlApi("tasks/" + $(this).attr('id')), {access_token: strAccessToken}, function(json) {
                 var json1 = json;
-                $.getJSON(getUrlApi("definitions/" + json.results[0][0].definition), function(json) {
+                $.getJSON(getUrlApi("definitions/" + json.results[0][0].definition), {access_token: strAccessToken}, function(json) {
                     var arrHtml = new Array();
                     arrHtml.push('<form class="task" method="PUT" url="' + getUrlApi("tasks/") + $(this1).attr("id") +'">');
                     $.each(json.results[0].content, function(key, value) {
