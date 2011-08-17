@@ -15,7 +15,7 @@
         
         //Create dashboard boxes (NOT IN USE) and Create titles.
         $(document).ready(function(){
-        $.getJSON(getUrlApi('users/' + strUserId), access_token: strAccessToken ,function(json) {
+        $.getJSON(getUrlApi('users/' + strUserId), {access_token: strAccessToken},function(json) {
             $.each(json.definitions, function(key, value) {
                 //var counter = $('.definitions > article').length;
                 //var strHtml = '<article class="definition" id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
