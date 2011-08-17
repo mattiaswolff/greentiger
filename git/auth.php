@@ -8,10 +8,9 @@ if (isset($_SESSION['userId'])) {
     $arrAccessTokens[] = $arrNewAccessToken;
     $objUser->setAccessTokens($arrAccessTokens);
     $objUser->upsert();
-    echo var_dump($_SESSION);
+    $strRedirectUri = (isset($_SESSION['redirectUri']) ? $_SESSION['redirectUri'] : "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php");  
     die();
-    //header('Location: ' . $_SESSION['redirectUri'] . '#access_token=' . $arrNewAccessToken['token'] . "|" . $objUser->getId() . '&token_type=example&expires_in=4301');
-    header('Location: http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php');
+    header('Location: ' . $_SESSION['redirectUri'] . '#access_token=' . $arrNewAccessToken['token'] . "|" . $objUser->getId() . '&token_type=example&expires_in=4301');
 }
 else {
     header('Location: ' . $_SESSION['redirectUri'] . '#error=access_denied');

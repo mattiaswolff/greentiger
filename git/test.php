@@ -71,6 +71,5 @@ switch($data->getMethod()) {
 ?>
 An application is requesting access to your Green Tiger account. Please allow by pressing using the sign in button below.
 <div id="navbar"></div>
-
 </body>
 </html>
