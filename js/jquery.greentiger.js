@@ -13,8 +13,8 @@ Purpose: Add tasks to task flow.
 Created: 2011-08-11 (Mattias Wolff)
 Updated: -
 */
-function getTaskFlow (strUserId) {
-    $.getJSON(getUrlApi("users/" + strUserId + "/tasks"), function(json) {
+function getTaskFlow (strUserId, strAccessToken) {
+    $.getJSON(getUrlApi("users/" + strUserId + "/tasks"), {access_token: strAccessToken}, function(json) {
         var arrHtml = new Array();
         $.each(json.results[0], function(key, value) {    
             var d = new Date(value.updatedDate);

@@ -1,5 +1,6 @@
 <script type="text/javascript">
         strUserId = getParameterByName("userId");
+        strAccessToken = "";
         if (strUserId == 'me') {
             $.each(location.hash.substring(1).split('&'), function (key, value) { 
                 if (value.split('=')[0] == 'access_token') { 
@@ -45,7 +46,7 @@
             });
         });*/
         
-        getTaskFlow(strUserId);
+        getTaskFlow(strUserId, strAccessToken);
         
         /*
         Purpose: Add definition form to create task area.
@@ -82,7 +83,7 @@
             }
             
             submitFormJSON(this ,$(this).attr('url'), $(this).attr('method'), false);
-            getTaskFlow (strUserId);
+            getTaskFlow (strUserId, strAccessToken);
         });
         
         /*
