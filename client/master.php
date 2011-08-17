@@ -34,7 +34,7 @@
                 userStatusUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/userstatus.php",
                 loginUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/login.php",
                 signupUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/signup.php",
-                homeUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/git/index.php",
+                homeUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/client/dashboard.php",
                 logoutUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/signout.php",
                 language: "en",
                 idps: ["Gmail", "Yahoo", "AOL"],
