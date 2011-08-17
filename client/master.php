@@ -14,6 +14,14 @@
     <script type="text/javascript">google.load("identitytoolkit", "1.0", {packages: ["ac"]});</script>
     <script type="text/javascript">
         strUserId = getParameterByName("userId");
+        strAccessToken = "";
+        if (strUserId == 'me') {
+            $.each(location.hash.substring(1).split('&'), function (key, value) { 
+                if (value.split('=')[0] == 'access_token') { 
+                    strAccessToken = value.split('=')[1];  
+                }
+            });
+        }
         
         $(document).ready(function(){
             $.ajax({  
