@@ -7,7 +7,7 @@ $gitConfig = array(
   // The API key in the Google API console.
   'apiKey' => 'AIzaSyDmeRvH3KgT5sqzp7j2k1b6592VRtWVTJw',
   // The default URL after the user is logged in.
-  'homeUrl' => 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/master.php',
+  'homeUrl' => 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php',
   // The user signup page.
   'signupUrl' => 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/signup.php',
   // Scan the these absolute directories when finding the implementations e.g. account service and
