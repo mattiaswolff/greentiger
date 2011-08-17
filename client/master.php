@@ -11,6 +11,7 @@
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <script type="text/javascript">google.load("identitytoolkit", "1.0", {packages: ["ac"]});</script>
     <script type="text/javascript">
         strUserId = getParameterByName("userId");
         
