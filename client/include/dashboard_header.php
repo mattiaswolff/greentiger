@@ -1,6 +1,12 @@
 <script type="text/javascript">
         strUserId = getParameterByName("userId");
-        
+        if (strUserId == 'me') {
+            $.each(location.hash.substring(1).split('&'), function (key, value) { 
+                if (value.split('=')[0] == 'access_token') { 
+                    strAccessToken = value.split('=')[1];  
+                }
+            });
+        }
         /*$.each(location.hash.substring(1).split('&'), function (key, value) { 
             if (value.split('=')[0] == 'access_token') { 
                 strAccessToken = value.split('=')[1];  
@@ -9,8 +15,7 @@
         
         //Create dashboard boxes (NOT IN USE) and Create titles.
         $(document).ready(function(){
-        var strUrlUser = 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/' + strUserId;
-        $.getJSON(strUrlUser, function(json) {
+        $.getJSON(getUrlApi('users/' + strUserId), access_token: strAccessToken ,function(json) {
             $.each(json.definitions, function(key, value) {
                 //var counter = $('.definitions > article').length;
                 //var strHtml = '<article class="definition" id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
