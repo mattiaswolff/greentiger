@@ -48,7 +48,7 @@ form .button {float: right; margin-top: 10px; margin-left: 10px;}
 input.search {float: left; width: 428px;}
 .button.search {width: auto; padding: 7px;}
 
-.search {margin: 20px 0px;}
+div.search {margin: 20px 0px;}
 
 input:focus:invalid {
   background: red;
