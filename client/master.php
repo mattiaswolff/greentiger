@@ -26,7 +26,7 @@
         $(document).ready(function(){
             if ((window.sessionStorage.getItem("userId") === null) && !(strAccessToken == '')) {
                 $.ajax({  
-                    url: getUrlApi("users/" + strUserId),  
+                    url: getUrlApi("users/me"),  
                     dataType: 'json',  
                     async: false,
                     data: {access_token: strAccessToken},
@@ -38,6 +38,19 @@
                     }
                 });
             }
+            $.ajax({  
+                    url: getUrlApi("users/" + strUserId),  
+                    dataType: 'json',  
+                    async: false,
+                    data: {access_token: strAccessToken},
+                    success: function(json){  
+                        jsonUser = json;
+                        window.sessionStorage.setItem("userId", json._id);
+                        window.sessionStorage.setItem("userName", json.name);
+                        window.sessionStorage.setItem("access_token", strAccessToken);
+                    }
+            });
+            
             $('.userName').append(window.sessionStorage.getItem("userName"));
             
             window.google.identitytoolkit.setConfig({
