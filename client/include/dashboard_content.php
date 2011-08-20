@@ -4,7 +4,7 @@
         <div class="description left"></div>
         <span class="button red right delete">X</span>
         <section class="clear"></section>
-        <input class="button green" type="submit" name="POST" value="Post" />
+        <div class="buttons"><input class="button green" type="submit" name="POST" value="Post" /><div>
     </form>
 </section>
 <section class="taskFlow" />
