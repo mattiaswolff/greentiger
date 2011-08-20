@@ -5,4 +5,3 @@
 </form>
 
 <span class="button blue" id="addRow">Add form row</span></br>
-<span class="button green" id="save">Save</span>

@@ -14,6 +14,9 @@
                     });
                 });
             }
+            
+            $('form').append('<input class="button green" type="submit" name="POST" value="Post" />');
+            $('form').attr('url', getUrlApi("/users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
         
             $(".content").delegate("#addRow", "click", function(){
                 var counter = $('formRow').length;
