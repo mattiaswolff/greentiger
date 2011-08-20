@@ -46,6 +46,9 @@ form.task > section {}
 .button.margin {margin-left: 20px;}
 form .button {float: right; margin-top: 10px; margin-left: 10px;}
 
+
+.search {margin: 20px 0px;}
+
 input:focus:invalid {
   background: red;
 }
