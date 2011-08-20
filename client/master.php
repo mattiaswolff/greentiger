@@ -91,7 +91,7 @@
         <div class = "container">
             <aside class="userInfo">
                 <img class="user" src="http://v1.fein.de/fein-multimaster/media/images/fein-multimaster/fein_company_logo.jpg" alt="Företaget" title="Företaget" border="0" />
-                <div class="description">This is a description of this user. We dont know that much about them yet though.</div>
+                <div class="description"></div>
             </aside>
         <div class="main">
             <section class="userName"></section>
