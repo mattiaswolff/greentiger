@@ -74,10 +74,10 @@
             else {
                 $(".top > nav").removeClass("invisible");
                 $("#navbar").append("Logged in as " + window.sessionStorage.getItem("userId"));
-                $(".top > nav > #a_home").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php' + window.sessionStorage.getItem("userId"));
-                $(".top > nav > #a_definition").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php' + window.sessionStorage.getItem("userId"));
-                $(".top > nav > #a_group").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/group.php' + window.sessionStorage.getItem("userId"));
-                $(".top > nav > #a_profile").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php' + window.sessionStorage.getItem("userId"));
+                $(".top > nav > #a_home").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=' + window.sessionStorage.getItem("userId"));
+                $(".top > nav > #a_definition").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?userId=' + window.sessionStorage.getItem("userId"));
+                $(".top > nav > #a_group").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/group.php?userId=' + window.sessionStorage.getItem("userId"));
+                $(".top > nav > #a_profile").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php?userId=' + window.sessionStorage.getItem("userId"));
             }
         });  
 	</script>
