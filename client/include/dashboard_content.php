@@ -7,4 +7,7 @@
         <div class="clear"></div>
     </form>
 </section>
+<div class="search">
+    <input type="text" name="search" /><span class"button search">Search</span>
+</div>
 <section class="taskFlow" />
