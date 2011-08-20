@@ -12,7 +12,7 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .userName {display: block; background: white; padding: 25px 0; margin-top: 10px; font-size: 32px; }
 .userNav {display: block;     color: #4D90FE; border-bottom: solid 2px #4D90FF; text-decoration: none; font-size: 16px;}
 .footer {clear: both; background-color: #FFFFCC; margin-top: 10px; min-height: 300px; border: solid 1px #ccc;}
-.createTask {border: solid 1px #CCC;  background-color: #f4f4f4; padding: 10px 5px; width: 525px;}
+.createTask {border: solid 1px #CCC;  background-color: #f4f4f4; padding: 5px 5px; width: 525px;}
 .definitions { width: 525px;}
 .definition {width: 250px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 200px; margin-top: 20px;}
 .left {float: left; padding-top: 8px; width: 60px;}
@@ -35,7 +35,7 @@ form.task div.header {  padding: 3px; }
 form.task article {margin: 10px 0 0 0;}
 form.task > section {}
 
-.button{cursor:pointer;border-bottom: 1px solid #999;border-top: 1px solid #CCC;border-left: 1px solid #BBB;border-right: 1px solid #BBB;padding: 5px; font-size: 13px; -webkit-border-radius: 0px; min-width: 85px; display: inline-block; text-align: center; margin: 0.9px;}
+.button{cursor:pointer;border-bottom: 1px solid #999;border-top: 1px solid #CCC;border-left: 1px solid #BBB;border-right: 1px solid #BBB;padding: 5px; font-size: 13px; -webkit-border-radius: 0px; min-width: 80px; display: inline-block; text-align: center; margin: 0.9px;}
 .button.shiny{text-shadow:0 -1px 0 rgba(0,0,0,0.33);box-shadow:inset 0 1px 0 rgba(255,255,255,0.75),0 1px 0 rgba(255,255,255,0.75);-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.75),0 1px 0 rgba(255,255,255,0.75);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.75),0 1px 0 rgba(255,255,255,0.75);background-image:-moz-linear-gradient(center top,rgba(255,255,255,0.66),rgba(255,255,255,0.45),rgba(255,255,255,0.2),rgba(255,255,255,0.001));background-image:-webkit-gradient(linear,center top,center bottom,from(rgba(255,255,255,0.66)),to(rgba(255,255,255,0.001)),color-stop(50%,rgba(255,255,255,0.45)),color-stop(50%,rgba(255,255,255,0.2)))}
 .button.grey{color:#000;background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F9F9F9),to(#E3E3E3));}
 .button.blue{color:#fff;background: #4D90FE; border: solid 1px #556677;}
@@ -47,7 +47,7 @@ form.task > section {}
 form .button {float: right; margin-top: 10px; margin-left: 10px;}
 input.search {float: left; width: 425px; -webkit-border-radius: 0px;}
 .button.search {width: auto; padding: 7px;}
-
+li > .button {margin: 5px 0;}
 div.search {margin: 20px 0px;}
 
 input:focus:invalid {
@@ -59,7 +59,7 @@ input:focus:valid {
   background: green;
 }
 ul.horizontal {list-style: none;  margin: 0; padding: 0; }
-li.horizontal {display: inline; margin: 2px;}
+li.horizontal {display: inline; margin: 0 5px;}
 .form-field {vertical-align: text-bottom; width: 60px; display: inline-block; padding: 0; margin: 0;}
 
 .taskFlow {width: 525px;}
