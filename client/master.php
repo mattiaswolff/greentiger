@@ -73,6 +73,7 @@
             }
             else {
                 $(".top > nav").removeClass("invisible");
+                $("#navbar").append("Logged in as " + window.sessionStorage.getItem("userId"));
             }
         });  
 	</script>
