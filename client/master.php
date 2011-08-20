@@ -55,8 +55,12 @@
                 tryFederatedFirst: true,
                 useCachedUserStatus: false
             });
-            
-            $("#navbar").accountChooser();
+            if (window.sessionStorage.getItem("userId") === null) {
+                $("#navbar").accountChooser();
+            }
+            else {
+                $(".top > nav").removeClass("invisible");
+            }
         });  
 	</script>
     <?php echo $page_header; ?>
@@ -64,7 +68,7 @@
 
 <body id="home">
         <div class ="top">
-            <nav class="pageNav">
+            <nav class="pageNav invisible">
                 <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php">home</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php">definitions</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/group.php">groups</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php">profile</a>
             </nav>
             <section id="navbar"></section>
