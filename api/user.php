@@ -10,7 +10,7 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
-        
+        echo "uid" . $strUserId; 
         if ($strUserId != '') {
             $objUser = new User($strUserId);
             if (isset($objUser)) {
