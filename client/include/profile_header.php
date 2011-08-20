@@ -3,6 +3,6 @@
         $(document).ready(function(){
             $('form').append(getHtmlTaskRow('userId', 'description', 'text', '', true));
             $('form').append(getHtmlTaskRow('name', 'description', 'text', '', true));
-            $('form').append(getHtmlTaskRow('description', 'description', 'text', '', true));
+            $('form').append(getHtmlTaskRow('textarea', 'description', 'text', '', true));
         });
 	</script>
