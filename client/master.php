@@ -44,14 +44,10 @@
                     async: false,
                     data: {access_token: strAccessToken},
                     success: function(json){  
-                        jsonUser = json;
-                        window.sessionStorage.setItem("userId", json._id);
-                        window.sessionStorage.setItem("userName", json.name);
-                        window.sessionStorage.setItem("access_token", strAccessToken);
+                        $('.userName').append(json.name);
                     }
             });
             
-            $('.userName').append(window.sessionStorage.getItem("userName"));
             
             window.google.identitytoolkit.setConfig({
                 developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
