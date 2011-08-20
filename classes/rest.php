@@ -37,7 +37,7 @@ class RestUtils
         }
         
         if(isset($data['userId'])) {
-            if ($data['userId'] == 'me') {
+            if (($data['userId'] == 'me') && isset($arrAccessToken[1]) {
                 $data['userId'] = $arrAccessToken[1];
             }
         }
