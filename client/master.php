@@ -74,6 +74,10 @@
             else {
                 $(".top > nav").removeClass("invisible");
                 $("#navbar").append("Logged in as " + window.sessionStorage.getItem("userId"));
+                $(".top > nav > #a_home").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php' + window.sessionStorage.getItem("userId"));
+                $(".top > nav > #a_definition").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php' + window.sessionStorage.getItem("userId"));
+                $(".top > nav > #a_group").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/group.php' + window.sessionStorage.getItem("userId"));
+                $(".top > nav > #a_profile").attr('href', 'http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php' + window.sessionStorage.getItem("userId"));
             }
         });  
 	</script>
@@ -83,7 +87,7 @@
 <body id="home">
         <div class ="top">
             <nav class="pageNav invisible">
-                <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php">home</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php">definitions</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/group.php">groups</a> | <a href="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php">profile</a>
+                <a id="a_home">home</a> | <a id="a_definition">definitions</a> | <a id="a_group">groups</a> | <a id="a_profile">profile</a>
             </nav>
             <section id="navbar"></section>
         </div>
