@@ -35,10 +35,9 @@
                         window.sessionStorage.setItem("userId", json._id);
                         window.sessionStorage.setItem("userName", json.name);
                     }
-                }
+                });
             }
             $('.userName').append(window.sessionStorage.getItem("userName"));
-            });
             
             window.google.identitytoolkit.setConfig({
                 developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
