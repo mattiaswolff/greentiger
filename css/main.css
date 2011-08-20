@@ -42,10 +42,10 @@ form.task > section {}
 .button.red{color:#fff;background: #FE624D; border: solid 1px #882211;}
 .button.green{color:#fff;background: #338811; border: solid 1px #226600;}
 .button.rounded{border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;}
-.button.search {margin-left:-3px;border-left: none;}
+.button.search {margin-left: -0.9px;border-left: none;}
 .button.margin {margin-left: 20px;}
 form .button {float: right; margin-top: 10px; margin-left: 10px;}
-input.search {float: left; width: 428px;}
+input.search {float: left; width: 425px; -webkit-border-radius: 0px;}
 .button.search {width: auto; padding: 7px;}
 
 div.search {margin: 20px 0px;}
