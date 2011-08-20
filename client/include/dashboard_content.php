@@ -3,7 +3,7 @@
     <form class="task invisible" method="POST">
         <div class="description left"></div>
         <section class="clear"></section>
-        <div class="buttons"><span class="button red right delete">Close</span><input class="button green" type="submit" name="POST" value="Post" /><div>
+        <div class="buttons"><input class="button green" type="submit" name="POST" value="Post" /><span class="button red right delete">Close</span><div>
     </form>
 </section>
 <section class="taskFlow" />
