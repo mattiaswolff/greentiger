@@ -28,7 +28,7 @@
                 url: getUrlApi("users/" + strUserId),  
                 dataType: 'json',  
                 async: false,
-                data: {access_code: strAccessToken},
+                data: {access_token: strAccessToken},
                 success: function(json){  
                     jsonUser = json;
                     $('.userName').append(json.name);
