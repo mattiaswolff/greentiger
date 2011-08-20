@@ -15,8 +15,8 @@
                 });
             }
             
-            $('form').append('<input class="button green" type="submit" name="POST" value="Post" />');
-            $('form').append('<span class="button blue" id="addRow">Add form row</span>');
+            $('form .buttons').append('<input class="button green" type="submit" name="POST" value="Post" />');
+            $('form .buttons').append('<span class="button blue" id="addRow">Add form row</span>');
             $('form').attr('url', getUrlApi("/users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
         
             $(".content").delegate("#addRow", "click", function(){
