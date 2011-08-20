@@ -14,7 +14,7 @@
                     });
                 });
             }
-            
+            $('form').append('<span class="button blue" id="addRow">Add form row</span>');
             $('form').append('<input class="button green" type="submit" name="POST" value="Post" />');
             $('form').attr('url', getUrlApi("/users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
         
