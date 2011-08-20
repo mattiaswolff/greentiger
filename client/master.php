@@ -24,7 +24,8 @@
         }
         
         $(document).ready(function(){
-            if (window.sessionStorage.getItem("userId") === null) {
+            if ((window.sessionStorage.getItem("userId") === null) && (!(strAccessToken == '') || !(window.sessionStorage.getItem("access_token") === null)) {
+                
                 $.ajax({  
                     url: getUrlApi("users/" + strUserId),  
                     dataType: 'json',  
@@ -34,6 +35,7 @@
                         jsonUser = json;
                         window.sessionStorage.setItem("userId", json._id);
                         window.sessionStorage.setItem("userName", json.name);
+                        window.sessionStorage.setItem("access_token", json.access_token);
                     }
                 });
             }
