@@ -24,7 +24,7 @@
         }
         
         $(document).ready(function(){
-            if (null == window.localStorage.getItem("name")) {
+            if (null == window.localStorage.getItem("userId")) {
                 $.ajax({  
                     url: getUrlApi("users/" + strUserId),  
                     dataType: 'json',  
