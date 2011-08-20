@@ -24,8 +24,7 @@
         }
         
         $(document).ready(function(){
-            if ((window.sessionStorage.getItem("userId") === null) && (!(strAccessToken == '') || !(window.sessionStorage.getItem("access_token") === null)) {
-                
+            if ((window.sessionStorage.getItem("userId") === null) && !(strAccessToken == '')) {
                 $.ajax({  
                     url: getUrlApi("users/" + strUserId),  
                     dataType: 'json',  
