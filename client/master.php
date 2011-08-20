@@ -32,6 +32,7 @@
                 success: function(json){  
                     jsonUser = json;
                     $('.userName').append(json.name);
+                    window.sessionStorage.setItem("userId", json._id);
                 }  
             });
             
