@@ -27,7 +27,8 @@
             $.ajax({  
                 url: getUrlApi("users/" + strUserId),  
                 dataType: 'json',  
-                async: false,  
+                async: false,
+                data: {access_code: strAccessToken},
                 success: function(json){  
                     jsonUser = json;
                     $('.userName').append(json.name);
