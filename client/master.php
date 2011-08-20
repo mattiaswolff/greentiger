@@ -36,6 +36,7 @@
                         window.sessionStorage.setItem("userName", json.name);
                     }
                 }
+            }
             $('.userName').append(window.sessionStorage.getItem("userName"));
             });
             
