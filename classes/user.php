@@ -20,7 +20,7 @@ class User {
             $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
             $this->email = $arrResults['email'];
-            $this->description = $arrResults['descriptions'];
+            $this->description = $arrResults['description'];
             $this->definitions = $arrResults['definitions'];
             $this->client_id = $arrResults['client_id'];
             $this->redirect_uri = $arrResults['redirect_uri'];
