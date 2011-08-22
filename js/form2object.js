@@ -272,7 +272,6 @@
 
 		return null;
 	}
-
 	function getSelectedOptionValue(selectNode)
 	{
 		var multiple = selectNode.multiple;

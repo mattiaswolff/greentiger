@@ -41,5 +41,4 @@
 				break;
 		}
 	}
-
 })(jQuery);
