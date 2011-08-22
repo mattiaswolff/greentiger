@@ -19,7 +19,7 @@
             
             $('form .buttons').append('<input class="button green" type="submit" name="POST" value="Post" />');
             $('form .buttons').append('<span class="button blue" id="addRow">Add form row</span>');
-            $('form').attr('url', getUrlApi("/users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
+            $('form').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
             $('form').attr('method', 'POST');
             
             $(".content").delegate("#addRow", "click", function(){
