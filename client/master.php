@@ -2,10 +2,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
-    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
+    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <script type="text/javascript">google.load("identitytoolkit", "1.0", {packages: ["ac"]});</script>
     <script type="text/javascript">
