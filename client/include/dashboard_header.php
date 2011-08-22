@@ -57,7 +57,7 @@
             $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), {access_token: strAccessToken}, function(json) {
                 var arrHtml = new Array();
                 $.each(json.results[0].content, function(key, value) {
-                    arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
+                    arrHtml.push(getHtmlTaskRow("content." + value.name, value.description, value.type, value.config, value.required));
                 });
                 $('form.task section').empty();
                 $('form.task div.description').empty();
