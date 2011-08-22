@@ -3,7 +3,7 @@
         $(document).ready(function(){
             $('form .fields').append(getHtmlTaskRow('id', 'id', 'description', 'text', '', true));
             $('form .fields').append(getHtmlTaskRow('name', 'name', 'description', 'text', '', true));
-            $('form .fields').append(getHtmlTaskRow('description' 'description', 'description', 'textarea', '', true));
+            $('form .fields').append(getHtmlTaskRow('description', 'description', 'description', 'textarea', '', true));
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
             $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
