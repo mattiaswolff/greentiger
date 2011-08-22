@@ -2,8 +2,8 @@
         $(document).ready(function(){
             strUserId = getParameterByName("userId"); 
             strDefinitionId = getParameterByName("definitionId");
-            $('form .fields').append(getHtmlTaskRow('name', 'description', 'text', '', true));
-            $('form .fields').append(getHtmlTaskRow('description', 'description', 'textarea', '', true));
+            $('form .fields').append(getHtmlTaskRow('name', 'name', 'description', 'text', '', true));
+            $('form .fields').append(getHtmlTaskRow('description', 'description', 'description', 'textarea', '', true));
             if (getParameterByName("definitionId") != "" ) {
                 $.getJSON("http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/definitions", { definitionId: strDefinitionId }, function(json) {
                     $("#name").val(json.definitions[0].name);
