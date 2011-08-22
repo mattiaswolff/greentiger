@@ -45,6 +45,7 @@ switch($data->getMethod()) {
             $objUser = new User($arrRequestVars['userId']);
             $objUser->setEmail($arrRequestVars["email"]);
             $objUser->setName($arrRequestVars["name"]);
+            $objUser->setDescription($arrRequestVars["description"]);
             $objUser->setDefinitions($arrRequestVars["definitions"]);
             $objUser->setClientId();
             $objUser->setRedirectUri($arrRequestVars["redirect_uri"]);

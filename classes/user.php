@@ -5,6 +5,7 @@ class User {
     private $_id;
     private $email;
     private $name;
+    private $description;
     private $definitions;
     private $client_id;
     private $redirect_uri;
@@ -19,6 +20,7 @@ class User {
             $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
             $this->email = $arrResults['email'];
+            $this->descriptions = $arrResults['descriptions'];
             $this->definitions = $arrResults['definitions'];
             $this->client_id = $arrResults['client_id'];
             $this->redirect_uri = $arrResults['redirect_uri'];
@@ -27,6 +29,7 @@ class User {
         else {
             $this->email = '';
             $this->name = '';
+            $this->description = '';
             $this->definitions = array();
             $this->accessTokens = array();
             $this->client_id = '';
@@ -37,14 +40,16 @@ class User {
     //Accessors
     public function getId() { return $this->_id; } 
     public function getEmail() { return $this->email; } 
-    public function getName() { return $this->name; } 
+    public function getName() { return $this->name; }
+    public function getDescription() { return $this->description; }
     public function getDefinitions() { return $this->definitions; }
     public function getAccessTokens() { return $this->accessTokens; }
     public function getClientId() { return $this->client_id; }
     public function getRedirectUri() { return $this->redirect_uri; }
     public function setId($x) { $this->_id = $x; } 
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
-    public function setName($x) {if ($x != null) { $this->name = $x; }} 
+    public function setName($x) {if ($x != null) { $this->name = $x; }}
+    public function setDescription($x) {if ($x != null) { $this->description = $x; }}
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
     public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
     public function setClientId() {if (!isset($this->client_id) || ((string)$this->client_id == '')) {$this->client_id = (string)new MongoId(); }}
