@@ -28,7 +28,7 @@
             });
             
             $(".content").delegate("input[name=Post]", "click", function(){
-                submitFormJSON("form", "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/definitions", "POST");
+                submitFormJSON("form", "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/definitions", "POST", false);
             });
         });
 </script>
