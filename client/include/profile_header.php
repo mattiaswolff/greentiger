@@ -9,6 +9,7 @@
             $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
             $('form .buttons').append('<input class="button green" type="submit" name="PUT" value="Post" />');
             $('form').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")));
+            $('form').attr('method', 'PUT');
         
             $("body").delegate("form", "submit", function(event) {
                 if (event.preventDefault()) {
