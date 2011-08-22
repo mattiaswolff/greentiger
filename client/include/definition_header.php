@@ -27,7 +27,7 @@
 		        $("form .fields").append(strHtml);
             });
             
-            $(".content").delegate("#save", "click", function(){
+            $(".content").delegate("input[name=Post]", "click", function(){
                 submitFormJSON("form", "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId + "/definitions", "POST");
             });
         });
