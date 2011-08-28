@@ -5,12 +5,12 @@
     require_once('../git//util/gitContext.php');
     require_once('../git//AccountService.php');
     require_once('../git//SessionManager.php');
-    
     $sessionManager = gitContext::getSessionManager();
     $idpAssertion = $sessionManager->getAssertion();
 ?>
 <script type="text/javascript">
 $(document).ready(function(){
-        $('input[name="name"]').attr('value', '<?php echo $idpAssertion->getVerifiedEmail(); ?>');
+        $('input[name="name"]').attr('value', '<?php echo $idpAssertion->getName(); ?>');
+        $('input[name="email"]').attr('value', '<?php echo $idpAssertion->getVerifiedEmail(); ?>');
     });        
 </script>
