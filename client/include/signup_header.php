@@ -1,4 +1,3 @@
-<script type="text/javascript">
 <?php
     require_once('../git/handler/gitLoginHandler.php');
     require_once('../git//util/gitConfig.php');
@@ -10,6 +9,7 @@
     $sessionManager = gitContext::getSessionManager();
     $idpAssertion = $sessionManager->getAssertion();
 ?>
+<script type="text/javascript">
 $(document).ready(function(){
         $('input[name="name"]').attr('value', '<?php echo $idpAssertion->getVerifiedEmail(); ?>');
     });        
