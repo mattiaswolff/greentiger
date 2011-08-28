@@ -4,7 +4,7 @@ Created: 2011-08-11 (Mattias Wolff)
 Updated: -
 */
 function getUrlApi(strUrlExtension) {
-    var arrUrl = ["http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/", strUrlExtension];
+    var arrUrl = ["http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/api/", strUrlExtension];
     return  arrUrl.join("");
 }
 
