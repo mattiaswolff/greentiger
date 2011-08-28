@@ -1,5 +1,5 @@
 <section>
-    <form class="task invisible" method="POST">
+    <form class="task" method="POST">
         Name: <input type="text" name="name" maxlength="30" value="<?php echo $idpAssertion->getFirstName() . ' ' . $idpAssertion->getLastName(); ?>" /><br/>
         Email: <input type="text" name="email" value="<?php echo $idpAssertion->getVerifiedEmail(); ?>" /><br/>
         UserId: <input id="userId" type="text" name="userId" value="" /><br/>
