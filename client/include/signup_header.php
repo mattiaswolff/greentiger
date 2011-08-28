@@ -10,7 +10,7 @@
 ?>
 <script type="text/javascript">
 $(document).ready(function(){
-        $('input[name="name"]').attr('value', '<?php echo $idpAssertion->getName(); ?>');
+        $('input[name="name"]').attr('value', '<?php echo $idpAssertion->getFirstName(); ?>');
         $('input[name="email"]').attr('value', '<?php echo $idpAssertion->getVerifiedEmail(); ?>');
     });        
 </script>
