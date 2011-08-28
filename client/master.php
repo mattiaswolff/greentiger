@@ -77,7 +77,7 @@
             }
         });  
 	</script>
-    <?php echo $page_header; ?>
+    <?php include $page_header; ?>
 </head>
 
 <body id="home">
@@ -95,7 +95,7 @@
         <div class="main">
             <section class="userName"></section>
             <div class="content">
-                <?php echo $page_content; ?>
+                <?php include $page_content; ?>
             </div>
             <aside>Test</aside>
         </div>
