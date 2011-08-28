@@ -9,7 +9,7 @@ $gitConfig = array(
   // The default URL after the user is logged in.
   'homeUrl' => 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/auth.php',
   // The user signup page.
-  'signupUrl' => 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/signup.php',
+  'signupUrl' => 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/signup.php',
   // Scan the these absolute directories when finding the implementations e.g. account service and
   // session manager. The multiple directories should be separated by a ,
   'externalClassPaths' => '/var/www/html/greentiger/git',
