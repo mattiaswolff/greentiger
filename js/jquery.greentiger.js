@@ -47,7 +47,6 @@ function submitFormJSON(strSelector, strUrl, strType, strAsync) {
             var strHtml = '<article><div class="header"><span class="header">' + title +'</span> (<span class="link">?</span>)</div><div class="input">';
             strHtml += getHtmlTaskInput(name, type, '', required, config);
             strHtml += '</div><div class="description invisible clear"><span class="description">' + description + '</span></div></article>';
-            strHtml += '<div class="description invisible clear"><span class="description">This is a description</span></div></article>';
             return strHtml;
         }
         
