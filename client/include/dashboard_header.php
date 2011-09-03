@@ -122,7 +122,7 @@
                     var arrHtml = new Array();
                     arrHtml.push('<form class="task" method="PUT" url="' + getUrlApi("tasks/") + $(this1).attr("id") +'"><div class="fields">');
                     $.each(json.results[0].content, function(key, value) {
-                        arrHtml.push(getHtmlTaskRow(value.name, value.description, value.type, value.config, value.required));
+                        arrHtml.push(getHtmlTaskRow(value.name, value.name, value.description, value.type, value.config, value.required));
                     });
                     arrHtml.push('</div><div class="buttons"><input class="button green" type="submit" name="PUT" value="Post" /></div><div class="clear"></div></form>');
                     $(this1).parents('.story').children('.content').empty();
