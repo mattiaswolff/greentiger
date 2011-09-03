@@ -19,6 +19,7 @@
                     event.returnValue = false;
                 }
                 submitFormJSON(this, $(this).attr('url'), $(this).attr('method'), false);
+                window.sessionStorage.setItem("userDescription", $('textarea[name|="description"]').val());
             });
         });
         
