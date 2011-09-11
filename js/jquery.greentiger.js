@@ -45,7 +45,7 @@ function submitFormJSON(strSelector, strUrl, strType, strAsync) {
         
         function getHtmlTaskRow(title, name, description, type, value, config, required) {
             var strHtml = '<article><div class="header"><span class="header">' + title +'</span> (<span class="link">?</span>)</div><div class="input">';
-            strHtml += getHtmlTaskInput(name, type, value, required, config);
+            strHtml += getHtmlTaskInput(name, type, value, config, required);
             strHtml += '</div><div class="description invisible clear"><span class="description">' + description + '</span></div></article>';
             return strHtml;
         }
