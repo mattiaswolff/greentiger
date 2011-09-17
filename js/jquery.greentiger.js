@@ -26,7 +26,8 @@ function getTaskFlow (strUserId, strAccessToken) {
             $.each(value.comments, function (key1, value1) {
                 arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
             });
-            arrHtml.push('</div></article>');
+            
+            arrHtml.push('<input type="text" name="comment" /></div></article>');
         });
         $('section.taskFlow').empty();
         $('section.taskFlow').append(arrHtml.join(""));
