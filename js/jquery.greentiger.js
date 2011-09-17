@@ -27,7 +27,7 @@ function getTaskFlow (strUserId, strAccessToken) {
                 arrHtml.push(value1.name + ' ' + value1.comment);
             });
             
-            arrHtml.push('<form class="task" method="PUT" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input type="text" name="comments[0].userId" value="' + window.sessionStorage.getItem("userId") + '" /><input type="text" name="comment[0].text" value="" /><input type="submit"/></form></div></article>');
+            arrHtml.push('<form class="task" method="PUT" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input type="text" name="comment[0].text" value="" /><input type="submit"/></form></div></article>');
         });
         $('section.taskFlow').empty();
         $('section.taskFlow').append(arrHtml.join(""));
