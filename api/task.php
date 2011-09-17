@@ -42,9 +42,9 @@ switch($data->getMethod()) {
         $arrResults = Task::get(10, 1, $arrId);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
         break;
+    
     case 'post':
-        $arrRequestVars = $data->getRequestVars();
-        
+        $arrRequestVars = $data->getRequestVars();    
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         

@@ -65,7 +65,7 @@ class Task {
     public function setUpdatedDate($x) {if ($x != null) { $this->updatedDate = $x; }} 
     public function setKeywords($x) {if ($x != null) { $this->keywords = $x; }} 
     public function setAttachments($x) {if ($x != null) { $this->attachments = $x; }} 
-    public function setComments($x) {if ($x != null) { $this->comments = $x; }} 
+    public function setComments($x) {if ($x != null) { $this->comments[] = $x; }} 
     public function setLikes($x) {if ($x != null) { $this->likes = $x; }} 
     public function setRatings($x) {if ($x != null) { $this->ratings = $x; }} 
     public function setTags($x) {if ($x != null) { $this->tags = $x; }} 
