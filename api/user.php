@@ -40,15 +40,26 @@ switch($data->getMethod()) {
         }
         break;
     case 'put':
+        
+        $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
+        
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['userId'])) {
             $objUser = new User($arrRequestVars['userId']);
+            if ($strPart == '') {
             $objUser->setEmail($arrRequestVars["email"]);
             $objUser->setName($arrRequestVars["name"]);
             $objUser->setDescription($arrRequestVars["description"]);
             $objUser->setDefinitions($arrRequestVars["definitions"]);
             $objUser->setClientId();
             $objUser->setRedirectUri($arrRequestVars["redirect_uri"]);
+            }
+            if ($strPart == 'image') {  
+                $m = new Mongo();
+                $db = $m->projectcopperfield;
+                $grid = $db->getGridFS();
+                $grid->storeFile($_FILES["file"]["name"], array("date" => new MongoDate()));
+            }
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objUser->getId(), 'application/json');
         }
