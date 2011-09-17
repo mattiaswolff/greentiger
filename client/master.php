@@ -80,6 +80,7 @@
         
         $("#navbar").delegate(".red", "click", function(){
                 sessionStorage.clear();
+                window.location.reload();
         });
         });  
 	</script>
