@@ -22,7 +22,7 @@ function getTaskFlow (strUserId, strAccessToken) {
             $.each(value.content, function (key1, value1) {
                 arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
             });
-            arrHtml.push('</div><div class="actions"> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) </div><div class="comments">');
+            arrHtml.push('</div><div class="actions"></div><div class="comments">');
             $.each(value.comments, function (key1, value1) {
                 arrHtml.push('<div class="comment"><div>' + value1.userId + '</div><div>' + value1.text + '</div></div>');
             });
