@@ -65,6 +65,7 @@
                 tryFederatedFirst: true,
                 useCachedUserStatus: false
             });
+            
             if (window.sessionStorage.getItem("userId") === null) {
                 $("#navbar").accountChooser();
             }
@@ -76,6 +77,10 @@
                 $(".top > nav > #a_group").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/group.php?userId=' + window.sessionStorage.getItem("userId"));
                 $(".top > nav > #a_profile").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php?userId=' + window.sessionStorage.getItem("userId"));
             }
+        
+        $("#navbar").delegate(".red", "click", function(){
+                sessionStorage.clear();
+        });
         });  
 	</script>
     <?php include $page_header; ?>
