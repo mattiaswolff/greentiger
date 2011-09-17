@@ -58,7 +58,9 @@ switch($data->getMethod()) {
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
                 $grid = $db->getGridFS();
-                $grid->storeFile($_FILES["file"]["name"], array("date" => new MongoDate()));
+                $storedfile = $grid->storeFile($_FILES["file"]["name"], array("date" => new MongoDate()));
+                echo $storedfile;
+                die();
             }
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objUser->getId(), 'application/json');
