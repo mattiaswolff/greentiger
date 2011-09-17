@@ -12,7 +12,7 @@
             $('#userInfo').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")));
             $('#userImage').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")+ "?part=image"));
             $('form').attr('method', 'PUT');
-        
+            $('#userImage').attr('method', 'POST');
             $("body").delegate("#userInfo", "submit", function(event) {
                 if (event.preventDefault()) {
                     event.preventDefault();// cancels the form submission
@@ -26,7 +26,4 @@
                 window.location.reload();
             });
         });
-        
-        
-        
 	</script>
