@@ -21,7 +21,7 @@
                 }
                 submitFormJSON(this, $(this).attr('url'), $(this).attr('method'), false);
                 window.sessionStorage.setItem("userDescription", $('textarea[name|="description"]').val());
-                window.sessionStorage.setItem("userName", $('text[name|="name"]').val());
+                window.sessionStorage.setItem("userName", $('input[name|="name"]').val());
             });
         });
         
