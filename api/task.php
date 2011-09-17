@@ -83,27 +83,27 @@ switch($data->getMethod()) {
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         $strTaskId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
-        $strPartId = (isset($arrRequestVars['partId']) ? $arrRequestVars['partId'] : '');
+        $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         
         if ($strTaskId != '') {
             $objTask = new Task(new MongoId($arrRequestVars['taskId']));
             //$objTask->setCreatedBy("CreateFunction"); should not be updated
             //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled automat..
             //$objTask->setAttachments("attachment"); not implemented
-            if (($strTaskId == '') or ($strTaskId == 'comments')) {
+            if (($strPart == '') or ($strPart == 'comments')) {
                 $objTask->setComments($arrRequestVars["comments"]);
             }
-            if (($strTaskId == '') or ($strTaskId == 'likes')) {
+            if (($strPart == '') or ($strPart == 'likes')) {
                 $objTask->setLikes($arrRequestVars["likes"]);
             }
-            if (($strTaskId == '') or ($strTaskId == 'ratings')) {
+            if (($strPart == '') or ($strPart == 'ratings')) {
                 $objTask->setRatings($arrRequestVars["ratings"]);
             }
-            if (($strTaskId == '') or ($strTaskId == 'tags')) {
+            if (($strPart == '') or ($strPart == 'tags')) {
                 $objTask->setTags($arrRequestVars["tags"]);
             }
             //$objTask->setDefinition($arrRequestVars["definitionId"]); should not be updated
-            if (($strTaskId == '') or ($strTaskId == 'content')) {
+            if (($strPart == '') or ($strPart == 'content')) {
                 $objTask->setContent($arrRequestVars["content"]);
             }
             $objTask->upsert();
