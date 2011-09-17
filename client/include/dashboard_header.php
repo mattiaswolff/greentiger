@@ -84,6 +84,7 @@
             
             submitFormJSON(this ,$(this).attr('url'), $(this).attr('method'), false);
             getTaskFlow (strUserId, strAccessToken);
+            $('form.task').addClass('invisible');
         });
         
         /*
