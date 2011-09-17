@@ -68,3 +68,7 @@ li.horizontal {display: inline; margin: 0 5px;}
 .link {color: #114488; cursor: pointer;}
 .title {font-weight: bold;}
 .taskFlow .content {background: #f4f4f4; border: solid 1px #ccc; padding: 3px; margin: 5px 0; width: 465px;}
+
+.comments {border: 1px solid #ccc; padding: 3px; background: #9DC3FF;}
+.comments .comment {margin: 0 0 3px 0; border-bottom: 1px solid #ccc; padding: 0 0 3px 0;}
+.comments input[type="text"] {font: 13px arial;}
