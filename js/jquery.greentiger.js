@@ -24,10 +24,10 @@ function getTaskFlow (strUserId, strAccessToken) {
             });
             arrHtml.push('</div><div class="actions"> <span class="link" id="' + value._id + '">comment</span> (10) <span class="link" id="' + value._id + '">like</span> (3) </div><div class="comments">');
             $.each(value.comments, function (key1, value1) {
-                arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
+                arrHtml.push('comment:' + value1);
             });
             
-            arrHtml.push('<form class="task" method="POST" url="'+ getUrlApi("tasks/" + value._id + "/comments")+'"><input type="text" name="comment" /><input class="invisible" type="submit"/></form></div></article>');
+            arrHtml.push('<form class="task" method="POST" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input type="text" name="comments.comment" /><input class="invisible" type="submit"/></form></div></article>');
         });
         $('section.taskFlow').empty();
         $('section.taskFlow').append(arrHtml.join(""));

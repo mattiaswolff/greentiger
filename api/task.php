@@ -3,7 +3,7 @@ require "../classes/rest.php";
 require "../classes/definition.php";
 require "../classes/user.php";
 require "../classes/task.php";
-//test231
+
 $data = RestUtils::processRequest();  
 switch($data->getMethod()) {  
     case 'get':
@@ -83,18 +83,29 @@ switch($data->getMethod()) {
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         $strTaskId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
+        $strPartId = (isset($arrRequestVars['partId']) ? $arrRequestVars['partId'] : '');
         
         if ($strTaskId != '') {
             $objTask = new Task(new MongoId($arrRequestVars['taskId']));
             //$objTask->setCreatedBy("CreateFunction"); should not be updated
             //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled automat..
             //$objTask->setAttachments("attachment"); not implemented
-            $objTask->setComments($arrRequestVars["comments"]);
-            $objTask->setLikes($arrRequestVars["likes"]);
-            $objTask->setRatings($arrRequestVars["ratings"]);
-            $objTask->setTags($arrRequestVars["tags"]);
+            if (($strTaskId == '') or ($strTaskId == 'comments')) {
+                $objTask->setComments($arrRequestVars["comments"]);
+            }
+            if (($strTaskId == '') or ($strTaskId == 'likes')) {
+                $objTask->setLikes($arrRequestVars["likes"]);
+            }
+            if (($strTaskId == '') or ($strTaskId == 'ratings')) {
+                $objTask->setRatings($arrRequestVars["ratings"]);
+            }
+            if (($strTaskId == '') or ($strTaskId == 'tags')) {
+                $objTask->setTags($arrRequestVars["tags"]);
+            }
             //$objTask->setDefinition($arrRequestVars["definitionId"]); should not be updated
-            $objTask->setContent($arrRequestVars["content"]);
+            if (($strTaskId == '') or ($strTaskId == 'content')) {
+                $objTask->setContent($arrRequestVars["content"]);
+            }
             $objTask->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');
         }
