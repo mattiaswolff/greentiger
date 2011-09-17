@@ -70,7 +70,7 @@
             }
             else {
                 $(".top > nav").removeClass("invisible");
-                $("#navbar").append("Logged in as " + window.sessionStorage.getItem("userId"));
+                $("#navbar").append("Logged in as " + window.sessionStorage.getItem("userId") + "<span class='button red'>Log Out</span>");
                 $(".top > nav > #a_home").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=' + window.sessionStorage.getItem("userId"));
                 $(".top > nav > #a_definition").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?userId=' + window.sessionStorage.getItem("userId"));
                 $(".top > nav > #a_group").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/group.php?userId=' + window.sessionStorage.getItem("userId"));
