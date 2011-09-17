@@ -29,8 +29,7 @@ class RestUtils
                 $data = $_GET;  
                 break;
         }  
-        RestUtils::sendResponse(400);
-        die();
+
         if (isset($data['access_token'])) {
             $arrAccessToken = explode("|", $data['access_token']);
             //$data['access_token'] = $arrAccessToken[0];
