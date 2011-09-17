@@ -7,7 +7,7 @@
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
                         $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
-                        $('text[name|="id"]').attr("disabled", true);
+                        $('input[name|="id"]').attr("disabled", true);
             $('form .buttons').append('<input class="button green" type="submit" name="PUT" value="Post" />');
             $('form').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")));
             $('form').attr('method', 'PUT');
