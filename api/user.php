@@ -25,6 +25,7 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
+                $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         if (isset($arrRequestVars['userId'])) {
             $user = new User();
             $user->setId($arrRequestVars["userId"]);
@@ -32,6 +33,14 @@ switch($data->getMethod()) {
             $user->setName($arrRequestVars["name"]);
             $user->setClientId();
             $user->setRedirectUri($arrRequestVars["redirectUri"]);
+            if ($strPart == 'image') {  
+                $m = new Mongo();
+                $db = $m->projectcopperfield;
+                $grid = $db->getGridFS();
+                $storedfile = $grid->storeFile($_FILES["file"]["name"], array("date" => new MongoDate()));
+                echo $storedfile;
+                die();
+            }
             $user->upsert();
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
         }
@@ -40,8 +49,6 @@ switch($data->getMethod()) {
         }
         break;
     case 'put':
-        
-        $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['userId'])) {
@@ -53,14 +60,6 @@ switch($data->getMethod()) {
             $objUser->setDefinitions($arrRequestVars["definitions"]);
             $objUser->setClientId();
             $objUser->setRedirectUri($arrRequestVars["redirect_uri"]);
-            }
-            if ($strPart == 'image') {  
-                $m = new Mongo();
-                $db = $m->projectcopperfield;
-                $grid = $db->getGridFS();
-                $storedfile = $grid->storeFile($_FILES["file"]["name"], array("date" => new MongoDate()));
-                echo $storedfile;
-                die();
             }
             $objUser->upsert();
             RestUtils::sendResponse(200, (array)$objUser->getId(), 'application/json');
