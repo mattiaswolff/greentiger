@@ -3,7 +3,7 @@
     <div class="buttons"></div>
     <div class="clear"></div>
 </form>
-<form id="userImage" method="put" enctype="multipart/form-data">
+<form id="userImage" method="PUT" enctype="multipart/form-data">
     <label for="file">Filename:</label>
     <input type="file" name="file" id="file" /> 
     <br />
