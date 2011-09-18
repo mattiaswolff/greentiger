@@ -17,8 +17,7 @@ class gitLoginHandler {
   }
 
   public function execute() {
-      echo "test";
-      die();
+      
     if (empty($this->action)) {
       $this->handleLogin();
     } else {
@@ -27,6 +26,8 @@ class gitLoginHandler {
   }
 
   private function handleLogin() {
+    echo "test";
+      die();
     $action = new gitLoginAction();
     $request = new gitLoginRequest($this->email, $this->password);
     $response = new gitLoginResponse();
