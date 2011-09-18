@@ -1,5 +1,5 @@
 <section>
-    <form>
+    <form method="POST">
         Email: <input type="email" name="email" value=""/>
         UserId: <input id="userId" type="text" name="userId" value="" />
         Name: <input type="text" name="name" maxlength="30" value=""/>
