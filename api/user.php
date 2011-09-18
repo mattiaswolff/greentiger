@@ -45,10 +45,17 @@ switch($data->getMethod()) {
                 die();
             }
             $user->upsert();
-            if ($password1 != '') {  
+            if ($password1 != '') {
+                $array = array("password" => $password, "userId" => $user->getId()); 
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
-                $db->passwords->insert("password" => $password1, "userId" => $user->getId());
+                $result = $db->command(array('findAndModify' => 'passwords', 
+                'query' => array('userId' => $user->getID()),
+                'update' => $array,
+                'new' => true,   
+                'upsert' => true,
+                'fields' => array( '_id' => 1 )));
+                $this->email = $result['value']['_id'];
             }
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
         }
