@@ -17,7 +17,7 @@ $(function() {
     realm: "",
     userStatusUrl: "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/userstatus.php",
     loginUrl: "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/login.php",
-    signupUrl: "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/signup.php",
+    signupUrl: "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/signup.php",
     homeUrl: "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/client/test.php",
     logoutUrl: "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/signout.php",
     language: "en",
