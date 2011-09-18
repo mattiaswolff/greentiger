@@ -107,7 +107,7 @@
                 async: false,
                 url: getUrlApi("tasks/" + $(this).attr('id'))
             });
-            getTaskFlow (strUserId, strAccessCode, true);
+            getTaskFlow (strUserId, strAccessToken, true);
         });
         
         /*
@@ -117,7 +117,7 @@
         */
         $(window).scroll(function(){
         if  ($(window).scrollTop() == $(document).height() - $(window).height()){
-           getTaskFlow (strUserId, strAccessCode, false);
+           getTaskFlow (strUserId, strAccessToken, false);
         }
 });
         /*
