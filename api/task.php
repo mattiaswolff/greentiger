@@ -51,8 +51,9 @@ switch($data->getMethod()) {
         if (($strDefinitionId != '') && ($strUserId != '')) {
             $objTask = new Task();
             $objUser = new User($strUserId); //check if user object is returned sucessfully
+            $arrUser = array("userId" => $strUserId, "userName" => $objUser => getName()); 
             $objTask->setId();
-            $objTask->setCreatedBy("CreateFunction");
+            $objTask->setCreatedBy($arrUser);
             //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled internally
             //$objTask->setAttachments("attachment"); not implemented
             $objTask->setComments($arrRequestVars["comments"]);
