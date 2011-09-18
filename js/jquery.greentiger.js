@@ -50,8 +50,9 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
         });
         if (boolEmpty) {
             $('section.taskFlow').empty();
-        $('section.taskFlow').append(arrHtml.join(""));
         }
+        $('section.taskFlow').append(arrHtml.join(""));
+        
     }});
 }
 
