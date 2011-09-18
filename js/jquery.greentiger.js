@@ -25,7 +25,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
     else {
         intOffset = $("section.taskFlow article").length / 10 + 1;
     }
-    $.getJSON(getUrlApi("users/" + strUserId + "/tasks"), {access_token: strAccessToken, offset: intOffset}, function(json) {
+    $.getJSON(getUrlApi("users/" + strUserId + "/tasks"), {access_token: strAccessToken, offset: intOffset}, async: false, function(json) {
         var arrHtml = new Array();
         $.each(json.results[0], function(key, value) {    
             var d = new Date(value.updatedDate);
