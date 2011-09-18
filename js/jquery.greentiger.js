@@ -13,6 +13,11 @@ function getUrlClient(strUrlExtension) {
     return  arrUrl.join("");
 }
 
+function getUrlGit(strUrlExtension) {
+    var arrUrl = ["http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/", strUrlExtension];
+    return  arrUrl.join("");
+}
+
 /*
 Purpose: Add tasks to task flow.
 Created: 2011-08-11 (Mattias Wolff)
