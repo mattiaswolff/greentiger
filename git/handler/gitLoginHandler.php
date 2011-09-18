@@ -26,8 +26,7 @@ class gitLoginHandler {
   }
 
   private function handleLogin() {
-    echo "test";
-      die();
+    
     $action = new gitLoginAction();
     $request = new gitLoginRequest($this->email, $this->password);
     $response = new gitLoginResponse();
@@ -43,6 +42,8 @@ class gitLoginHandler {
   }
 
   private function handleAction() {
+    echo "test";
+      die();
     if ($this->action == 'useVerifiedEmail') {
       $json = array();
       if (empty($this->email) || !gitUtil::isValidEmail($this->email)) {
