@@ -25,7 +25,7 @@ class gitUtil {
     'nl.rogers.com', 'demobroadband.com', 'xtra.co.nz', 'verizon.net',
     // Hotmail
     'hotmail.com', 'hotmail.co.uk', 'hotmail.fr',
-    'hotmail.it', 'live.com', 'msn.com');
+    'hotmail.it', 'live.com', 'msn.com', 'medius.se');
 
   public static function getCurrentUrl() {
     $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
