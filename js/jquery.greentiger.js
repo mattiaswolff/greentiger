@@ -8,6 +8,11 @@ function getUrlApi(strUrlExtension) {
     return  arrUrl.join("");
 }
 
+function getUrlClient(strUrlExtension) {
+    var arrUrl = ["http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/", strUrlExtension];
+    return  arrUrl.join("");
+}
+
 /*
 Purpose: Add tasks to task flow.
 Created: 2011-08-11 (Mattias Wolff)
@@ -18,7 +23,7 @@ function getTaskFlow (strUserId, strAccessToken) {
         var arrHtml = new Array();
         $.each(json.results[0], function(key, value) {    
             var d = new Date(value.updatedDate);
-            arrHtml.push('<article><div class="left"><span class="blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <a href ="test">' + value.createdBy.userName + '</a> <span class="link edit" id="' + value._id + '">edit</span> <span class="delete link" id="' + value._id + '">delete</span></div><div class="content">');
+            arrHtml.push('<article><div class="left"><span class="blue">Type</span></div><div class="story"><div class="header">2011-04-13 Created by <a href ="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) + '">' + value.createdBy.userName + '</a> <span class="link edit" id="' + value._id + '">edit</span> <span class="delete link" id="' + value._id + '">delete</span></div><div class="content">');
             $.each(value.content, function (key1, value1) {
                 arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
             });
