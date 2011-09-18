@@ -55,7 +55,6 @@ switch($data->getMethod()) {
                 'new' => true,   
                 'upsert' => true,
                 'fields' => array( '_id' => 1 )));
-                $this->email = $result['value']['_id'];
             }
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
         }
