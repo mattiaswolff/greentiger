@@ -93,7 +93,7 @@ switch($data->getMethod()) {
             if (($strPart == '') or ($strPart == 'comments')) {
                 $objUser = new User($arrRequestVars["comments"]["userId"]);
                 $arrComment = array("text" => $arrRequestVars["comments"]["text"],"userId" => $arrRequestVars["comments"]["userId"], "userName" =>
-                $objUser->getName());
+                $objUser->getName(), "date" => date("c"));
                 $objTask->setComments($arrComment);
             }
             if (($strPart == '') or ($strPart == 'likes')) {
