@@ -111,6 +111,16 @@
         });
         
         /*
+        Purpose: Load additional content when scrolling down
+        Created: 2011-09-19 (Mattias Wolff)
+        Updated: -
+        */
+        $(window).scroll(function(){
+        if  ($(window).scrollTop() == $(document).height() - $(window).height()){
+           alert ("test!");
+        }
+});
+        /*
         Purpose: Edit tasks (from task flow)
         Created: 2011-08-11 (Mattias Wolff)
         Updated: -
