@@ -52,7 +52,7 @@
             
             window.google.identitytoolkit.setConfig({
                 developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
-                companyName: "GreenTiger",
+                companyName: "Project Copperfield",
                 callbackUrl: "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/callback.php",
                 realm: "",
                 userStatusUrl: "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/userstatus.php",
