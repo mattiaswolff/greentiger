@@ -10,7 +10,7 @@ class gitUtil {
 
   private static $FEDERATED_DOMAINS = array(
     // Gmail
-    'gmail.com', 'googlemail.com', 'medius.se',
+    'gmail.com', 'googlemail.com',
     // Aol
     'aol.com', 'aim.com', 'netscape.net', 'cs.com',
     'ygm.com', 'games.com', 'love.com', 'wow.com',
