@@ -45,8 +45,8 @@ switch($data->getMethod()) {
                 die();
             }
             $user->upsert();
-            if ($password1 != '') {
-                $array = array("password" => $password, "userId" => $user->getId()); 
+            if ($strPassword1 != '') {
+                $array = array("password" => $strPassword1, "userId" => $user->getId()); 
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
                 $result = $db->command(array('findAndModify' => 'passwords', 
