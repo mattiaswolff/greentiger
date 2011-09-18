@@ -25,7 +25,13 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
     else {
         intOffset = $("section.taskFlow article").length / 10 + 1;
     }
-    $.getJSON(getUrlApi("users/" + strUserId + "/tasks"), {access_token: strAccessToken, offset: intOffset}, async: false, function(json) {
+    $.ajax({
+                type: "GET",
+                data: {access_token: strAccessToken, offset: intOffset},
+                dataType: "json",
+                async: false,
+                url: getUrlApi("users/" + strUserId + "/tasks"),
+                success: function(json) {
         var arrHtml = new Array();
         $.each(json.results[0], function(key, value) {    
             var d = new Date(value.updatedDate);
@@ -44,9 +50,9 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
         });
         if (boolEmpty) {
             $('section.taskFlow').empty();
-        }
         $('section.taskFlow').append(arrHtml.join(""));
-    });
+        }
+    }});
 }
 
 function submitFormJSON(strSelector, strUrl, strType, strAsync) {
