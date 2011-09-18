@@ -7,7 +7,7 @@ $arrRequestVars = $data->getRequestVars();
 $strEmail = $arrRequestVars["email"];
 $m = new Mongo();
 $db = $m->projectcopperfield;
-$arrResults = $db->users->findOne(array("email" => $strEmail);
+$arrResults = $db->users->findOne(array("email" => $strEmail));
 if ($arrResults != null) {
     $array = array("registered" => true);
 }
