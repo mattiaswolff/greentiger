@@ -14,5 +14,6 @@ if ($arrResults != null) {
 else {
     $array = array("registered" => false);
 }
+$array = array("registered" => false);
 RestUtils::sendResponse(200, $array, 'application/json');
 ?>
