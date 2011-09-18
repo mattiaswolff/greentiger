@@ -91,7 +91,7 @@ switch($data->getMethod()) {
             //$objTask->setCreatedBy("CreateFunction"); should not be updated
             //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled automat..
             //$objTask->setAttachments("attachment"); not implemented
-            if (($strPart == '') or ($strPart == 'comments')) {
+            if ($strPart == 'comments') {
                 $objUser = new User($arrRequestVars["comments"]["userId"]);
                 $arrComment = array("text" => $arrRequestVars["comments"]["text"],"userId" => $arrRequestVars["comments"]["userId"], "userName" =>
                 $objUser->getName(), "date" => date("c"));
