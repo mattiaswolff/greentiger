@@ -116,7 +116,7 @@
         Updated: -
         */
         $(window).scroll(function(){
-        if  ($(window).scrollTop() == $(document).height() - $(window).height() - Math.round($(window).height()/4)){
+        if  ($(window).scrollTop() >= $(document).height() - $(window).height() - Math.round($(window).height()/4)){
            getTaskFlow (strUserId, strAccessToken, false);
         }
 });
