@@ -21,11 +21,14 @@ switch($data->getMethod()) {
         else {
             RestUtils::sendResponse(400, array("error" => "No user Id given."), 'application/json');
         }
-        
         break;
+        
     case 'post':
         $arrRequestVars = $data->getRequestVars();
-                $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
+        $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
+        $strPassword1 = (isset($arrRequestVars['password1']) ? $arrRequestVars['password1'] : '');
+        $strPassword2 = (isset($arrRequestVars['password2']) ? $arrRequestVars['password2'] : '');
+        
         if (isset($arrRequestVars['userId'])) {
             $user = new User();
             $user->setId($arrRequestVars["userId"]);
@@ -42,12 +45,18 @@ switch($data->getMethod()) {
                 die();
             }
             $user->upsert();
+            if ($password1 != '') {  
+                $m = new Mongo();
+                $db = $m->projectcopperfield;
+                $db->passwords->insert("password" => $password1, "userId" => $user->getId());
+            }
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
         }
         else {
             RestUtils::sendResponse(400);
         }
         break;
+        
     case 'put':
         
         $arrRequestVars = $data->getRequestVars();
@@ -68,6 +77,7 @@ switch($data->getMethod()) {
             RestUtils::sendResponse(400);
         }
         break;
+    
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['userId'])) {
