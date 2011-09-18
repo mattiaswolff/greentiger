@@ -46,7 +46,7 @@
             });
         });*/
         
-        getTaskFlow(strUserId, strAccessToken);
+        getTaskFlow(strUserId, strAccessToken, true);
         
         /*
         Purpose: Add definition form to create task area.
@@ -83,7 +83,7 @@
             }
             
             submitFormJSON(this ,$(this).attr('url'), $(this).attr('method'), false);
-            getTaskFlow (strUserId, strAccessToken);
+            getTaskFlow (strUserId, strAccessToken, true);
             $('form.task').addClass('invisible');
         });
         
@@ -107,7 +107,7 @@
                 async: false,
                 url: getUrlApi("tasks/" + $(this).attr('id'))
             });
-            getTaskFlow (strUserId);
+            getTaskFlow (strUserId, strAccessCode, true);
         });
         
         /*
@@ -117,7 +117,7 @@
         */
         $(window).scroll(function(){
         if  ($(window).scrollTop() == $(document).height() - $(window).height()){
-           alert ("test!");
+           getTaskFlow (strUserId, strAccessCode, false);
         }
 });
         /*
