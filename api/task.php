@@ -12,6 +12,7 @@ switch($data->getMethod()) {
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         $strTaskId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
+        $intOffset = (isset($arrRequestVars['offset']) ? $arrRequestVars['offset'] : 1);
         
         $strGroup = (isset($arrRequestVars['group']) ? $arrRequestVars['group'] : '');
         
@@ -39,7 +40,7 @@ switch($data->getMethod()) {
         else {
             $arrId = null;
         }
-        $arrResults = Task::get(10, 1, $arrId);
+        $arrResults = Task::get(10, $intOffset, $arrId);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
         break;
     
