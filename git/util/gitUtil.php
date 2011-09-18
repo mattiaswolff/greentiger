@@ -10,7 +10,7 @@ class gitUtil {
 
   private static $FEDERATED_DOMAINS = array(
     // Gmail
-    'gmail.com', 'googlemail.com',
+    'gmail.com', 'googlemail.com', 'medius.se',
     // Aol
     'aol.com', 'aim.com', 'netscape.net', 'cs.com',
     'ygm.com', 'games.com', 'love.com', 'wow.com',
@@ -22,10 +22,10 @@ class gitUtil {
     'flash.net', 'nvbell.net', 'pacbell.net', 'prodigy.net',
     'sbcglobal.net', 'snet.net', 'swbell.net', 'wans.net',
     'btinternet.com', 'btopenworld.com', 'talk21.com', 'rogers.com',
-    'nl.rogers.com', 'demobroadband.com', 'xtra.co.nz', 'verizon.net',
+    'nl.rogers.com', 'demobroadband.com', 'xtra.co.nz', 'verizon.net', 
     // Hotmail
     'hotmail.com', 'hotmail.co.uk', 'hotmail.fr',
-    'hotmail.it', 'live.com', 'msn.com', 'medius.se');
+    'hotmail.it', 'live.com', 'msn.com');
 
   public static function getCurrentUrl() {
     $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
