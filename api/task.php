@@ -91,7 +91,10 @@ switch($data->getMethod()) {
             //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled automat..
             //$objTask->setAttachments("attachment"); not implemented
             if (($strPart == '') or ($strPart == 'comments')) {
-                $objTask->setComments($arrRequestVars["comments"]);
+                $objUser = new User($arrRequestVars["comments"]["userId"]);
+                $arrComment = array("text" => $arrRequestVars["comments"]["text"],"userId" => $arrRequestVars["comments"]["userId"], "userName" =>
+                $objUser->getName();)
+                $objTask->setComments($arrComment);
             }
             if (($strPart == '') or ($strPart == 'likes')) {
                 $objTask->setLikes($arrRequestVars["likes"]);
