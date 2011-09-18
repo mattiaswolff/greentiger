@@ -74,7 +74,7 @@
         Created: 2011-08-11 (Mattias Wolff)
         Updated: -
         */
-        $("body").delegate("form.task", "submit", function(event) {
+        $("body").delegate("form", "submit", function(event) {
             if (event.preventDefault()) {
                 event.preventDefault();// cancels the form submission
             }
