@@ -39,7 +39,7 @@ class EasyRpService {
     $request['requestUri'] = $continueUrl;
     $request['postBody'] = $response;
     $result = EasyRpService::post($request);
-    echo "<br/> Result:" . $result['displayName'];
+    echo "<br/> Result:" . $result['verifiedEmail'];
     if (!empty($result['result'])) {
         return $result['result'];
     }
