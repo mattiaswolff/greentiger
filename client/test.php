@@ -23,8 +23,7 @@ $(function() {
     language: "en",
     idps: ["Gmail", "Yahoo", "AOL"],
     tryFederatedFirst: true,
-    useCachedUserStatus: false
-  }
+    useCachedUserStatus: false,
   dropdownmenu: [ 
     { 
       "label": "Edit profile", 
@@ -39,7 +38,7 @@ $(function() {
       "url": "/logout",
       "handler": "onSignOutClicked"
     }
-  ]);
+  ]});
   $("#navbar").accountChooser();
 });
 </script>
