@@ -38,8 +38,9 @@ class EasyRpService {
     $request = array();
     $request['requestUri'] = $continueUrl;
     $request['postBody'] = $response;
-    
+    echo "test";
     $result = EasyRpService::post($request);
+    echo $result['result'];
     if (!empty($result['result'])) {
         return $result['result'];
     }
