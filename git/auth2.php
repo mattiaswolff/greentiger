@@ -11,7 +11,7 @@ if (isset($_SESSION['userId'])) {
   google.load("identitytoolkit", "1.0", {packages: ["ac"]});
 </script>
     <script type='text/javascript'>
-        var userData = { email: "<?php echo $objUser->getEmail(); ?>", displayName: 'User Name', photoUrl: 'http://website.com/img/user.png'}; window.google.identitytoolkit.updateSavedAccount(userData); 
+        var userData = { email: "<?php echo $objUser->getEmail(); ?>", displayName: "<?php echo $objUser->getName();?>", photoUrl: 'http://website.com/img/user.png'}; window.google.identitytoolkit.updateSavedAccount(userData); 
     </script>
     <?php
 }
