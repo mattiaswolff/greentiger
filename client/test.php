@@ -24,7 +24,22 @@ $(function() {
     idps: ["Gmail", "Yahoo", "AOL"],
     tryFederatedFirst: true,
     useCachedUserStatus: false
-  });
+  }
+  dropdownmenu: [ 
+    { 
+      "label": "Edit profile", 
+      "url": "/user/edit/5"
+    },
+    { 
+      "label": "Switch account",
+      "handler": "onSwitchAccountClicked"
+    },
+    { 
+      "label": "Log out",
+      "url": "/logout",
+      "handler": "onSignOutClicked"
+    }
+  ]);
   $("#navbar").accountChooser();
 });
 </script>
