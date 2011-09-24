@@ -1,8 +1,12 @@
 <?php
+  require "../classes/user.php";
   $url = EasyRpService::getCurrentUrl();
   $postData = @file_get_contents('php://input');
   $result = EasyRpService::verify($url, $postData);
-
+  if ($result == "OK") {
+    echo  "<script type='text/javascript' src='https://ajax.googleapis.com/jsapi'></script><script type='text/javascript'>google.load('identitytoolkit', '1.0', {packages: ['notify']});</script><script type='text/javascript'>window.google.identitytoolkit.notifyFederatedSuccess({'email': 'name@email.com', 'registered': true });</script>";
+  }
+  
 class EasyRpService {
   // Replace $YOUR_DEVELOPER_KEY
   private static $SERVER_URL =
@@ -39,7 +43,6 @@ class EasyRpService {
     $request['requestUri'] = $continueUrl;
     $request['postBody'] = $response;
     $result = EasyRpService::post($request);
-    echo $result['verifiedEmail'];
     if (!empty($result['verifiedEmail'])) {
         $m = new Mongo();
         $db = $m->projectcopperfield;   
@@ -53,6 +56,7 @@ class EasyRpService {
             $user->setEmail($arrRequestVars["verifiedEmail"]);
             $user->setName($arrRequestVars["displayName"]);
             $user->upsert();
+            return "OK";
         }
     }
         
