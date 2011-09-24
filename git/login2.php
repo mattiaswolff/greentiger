@@ -13,7 +13,7 @@ if ($arrResults != null) {
     $strId = $arrResults["_id"];
     $arrResults2 = $db->passwords->findOne(array("userId" => $strEmail, "password" => $strPassword));
     if ($arrResults2 != null) {
-        $array = array("status" => "tpasswordError");
+        $array = array("status" => "OK");
     }
     else {
         $array = array("status" => "passwordError");
