@@ -4,7 +4,8 @@ require "../classes/user.php";
 session_start();
 
 if (isset($_SESSION['userId'])) {
-    $objUser = new User($_SESSION['userId']); ?>
+    $objUser = new User($_SESSION['userId']); 
+    $strRedirectUri = "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=" . $objUser->getId();  ?>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
@@ -17,6 +18,8 @@ if (isset($_SESSION['userId'])) {
         window.google.identitytoolkit.updateSavedAccount(userData); 
     </script>
     <?php
+    header('Location: ' . $strRedirectUri);
+}
 }
 
 
