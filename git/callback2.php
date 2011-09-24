@@ -47,19 +47,18 @@ class EasyRpService {
         $m = new Mongo();
         $db = $m->projectcopperfield;   
         $arrResults = $db->users->findOne(array("email" => $result['verifiedEmail']));
-        if ($arrResults != null) {
-            return "OK";
-        }
-        else {
+        $strUserId = $arrResults["_id"];
+        if ($strUserId == null) {
             $user = new User();
             $user->setId();
             $user->setEmail($arrRequestVars["verifiedEmail"]);
             $user->setName($arrRequestVars["displayName"]);
-            $user->upsert();
-            return "OK";
+            $strUserId = $user->upsert();
         }
+        session_start();
+        $_SESSION["userId"] = $strUserId;
+        return "OK";
     }
-        
     return NULL;
   }
 }

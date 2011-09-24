@@ -10,10 +10,12 @@ $m = new Mongo();
 $db = $m->projectcopperfield;
 $arrResults = $db->users->findOne(array("email" => $strEmail));
 if ($arrResults != null) {
-    $strId = $arrResults["_id"];
-    $arrResults2 = $db->passwords->findOne(array("userId" => $strId, "password" => $strPassword));
+    $strUserId = $arrResults["_id"];
+    $arrResults2 = $db->passwords->findOne(array("userId" => $strUserId, "password" => $strPassword));
     if ($arrResults2 != null) {
         $array = array("status" => "OK");
+        session_start();
+        $_SESSION["userId"] = $strUserId;
     }
     else {
         $array = array("status" => "passwordError");
