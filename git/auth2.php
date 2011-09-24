@@ -4,9 +4,6 @@ session_start();
 echo "test: " . print_r($_SESSION);
 
 if (isset($_SESSION['userId'])) {?>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
 <script type="text/javascript">
   google.load("identitytoolkit", "1.0", {packages: ["ac"]});
