@@ -46,7 +46,7 @@ class User {
     public function getAccessTokens() { return $this->accessTokens; }
     public function getClientId() { return $this->client_id; }
     public function getRedirectUri() { return $this->redirect_uri; }
-    public function setId($x) { $this->_id = $x; } 
+    public function setId() { $this->_id = new MongoId(); }
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }}
     public function setDescription($x) {if ($x != null) { $this->description = $x; }}

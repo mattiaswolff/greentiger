@@ -39,10 +39,23 @@ class EasyRpService {
     $request['requestUri'] = $continueUrl;
     $request['postBody'] = $response;
     $result = EasyRpService::post($request);
-    echo "<br/> Result:" . $result['verifiedEmail'];
-    if (!empty($result['result'])) {
-        return $result['result'];
+    echo $result['verifiedEmail'];
+    if (!empty($result['verifiedEmail'])) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;   
+        $arrResults = $db->users->findOne(array("email" => $result['verifiedEmail']));
+        if ($arrResults != null) {
+            return "OK";
+        }
+        else {
+            $user = new User();
+            $user->setId();
+            $user->setEmail($arrRequestVars["verifiedEmail"]);
+            $user->setName($arrRequestVars["displayName"]);
+            $user->upsert();
+        }
     }
+        
     return NULL;
   }
 }
