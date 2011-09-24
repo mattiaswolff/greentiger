@@ -29,7 +29,7 @@ class EasyRpService {
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
     if ($http_code == '200' && !empty($response)) {
-        echo json_decode($response, true);
+        echo "<br/> Respons:" . print_r(json_decode($response, true));
         return json_decode($response, true);
     }
     return NULL;
