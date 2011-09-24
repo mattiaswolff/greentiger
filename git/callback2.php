@@ -20,8 +20,8 @@ class EasyRpService {
 
   private static function post($postData) {
     $ch = curl_init();
-    echo EasyRpService::$SERVER_URL;
-    echo json_encode($postData);
+    echo "<br/> URL:" . EasyRpService::$SERVER_URL;
+    echo "<br/> Data:" . json_encode($postData);
     curl_setopt_array($ch, array(
       CURLOPT_URL => EasyRpService::$SERVER_URL,
       CURLOPT_RETURNTRANSFER => 1,
@@ -30,6 +30,7 @@ class EasyRpService {
     $response = curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
+    echo "<br/> Response:" . $response;
     if ($http_code == '200' && !empty($response)) {
         return json_decode($response, true);
     }
