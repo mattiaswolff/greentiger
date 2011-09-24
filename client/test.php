@@ -41,7 +41,6 @@ $(function() {
   ]});
   
   $("#navbar").accountChooser();
-  window.google.identitytoolkit.showSavedAccount("mattias.wolff@medius.se");
 });
 </script>
 </head>
