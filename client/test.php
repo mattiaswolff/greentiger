@@ -39,8 +39,9 @@ $(function() {
       "handler": "onSignOutClicked"
     }
   ]});
-  window.google.identitytoolkit.showSavedAccount("mattias.wolff@medius.se");
+  
   $("#navbar").accountChooser();
+  window.google.identitytoolkit.showSavedAccount("mattias.wolff@medius.se");
 });
 </script>
 </head>
