@@ -5,7 +5,12 @@ session_start();
 
 if (isset($_SESSION['userId'])) {
     $objUser = new User($_SESSION['userId']); 
-    $strRedirectUri = "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=" . $objUser->getId();  ?>
+    $arrAccessTokens = $objUser->getAccessTokens(); 
+    $arrNewAccessToken = array("token" => md5(mt_rand()), "createdDate" => new MongoDate());
+    $arrAccessTokens[] = $arrNewAccessToken;
+    $objUser->setAccessTokens($arrAccessTokens);
+    $objUser->upsert();
+    $strRedirectUri = "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=" . $objUser->getId() . '#access_token=' . $arrNewAccessToken['token'] . "|" . $objUser->getId() . '&token_type=example&expires_in=4301';  ?>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
