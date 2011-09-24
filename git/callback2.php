@@ -42,7 +42,7 @@ class EasyRpService {
     $request['requestUri'] = $continueUrl;
     $request['postBody'] = $response;
     $result = EasyRpService::post($request);
-    echo "<br/> Response:" . $result;
+    echo "<br/> Response:" . print_r($result);
     if (!empty($result['result'])) {
         return $result['result'];
     }
