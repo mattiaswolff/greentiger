@@ -20,7 +20,6 @@ if (isset($_SESSION['userId'])) {
     <?php
     header('Location: ' . $strRedirectUri);
 }
-}
 
 
 ?>
