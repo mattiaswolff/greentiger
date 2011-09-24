@@ -20,6 +20,8 @@ class EasyRpService {
 
   private static function post($postData) {
     $ch = curl_init();
+    echo EasyRpService::$SERVER_URL;
+    echo json_encode($postData);
     curl_setopt_array($ch, array(
       CURLOPT_URL => EasyRpService::$SERVER_URL,
       CURLOPT_RETURNTRANSFER => 1,
