@@ -1,7 +1,7 @@
 <?php
 require "../classes/rest.php";
 require "../classes/user.php";
-RestUtils::sendResponse(400);
+
 $data = RestUtils::processRequest();  
 
 switch($data->getMethod()) {  
