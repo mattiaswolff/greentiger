@@ -1,13 +1,11 @@
 <script type="text/javascript">
         strUserId = getParameterByName("userId");
         strAccessToken = "";
-        if (strUserId == 'me') {
-            $.each(location.hash.substring(1).split('&'), function (key, value) { 
+        $.each(location.hash.substring(1).split('&'), function (key, value) { 
                 if (value.split('=')[0] == 'access_token') { 
                     strAccessToken = value.split('=')[1];  
                 }
-            });
-        }
+        });
         /*$.each(location.hash.substring(1).split('&'), function (key, value) { 
             if (value.split('=')[0] == 'access_token') { 
                 strAccessToken = value.split('=')[1];  

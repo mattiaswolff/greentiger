@@ -14,13 +14,11 @@
     <script type="text/javascript">
         strUserId = getParameterByName("userId");
         strAccessToken = "";
-        if (strUserId == 'me') {
-            $.each(location.hash.substring(1).split('&'), function (key, value) { 
-                if (value.split('=')[0] == 'access_token') { 
-                    strAccessToken = value.split('=')[1];  
-                }
-            });
-        }
+        $.each(location.hash.substring(1).split('&'), function (key, value) { 
+            if (value.split('=')[0] == 'access_token') { 
+                strAccessToken = value.split('=')[1];  
+            }
+        });
         
         $(document).ready(function(){
             if ((window.sessionStorage.getItem("userId") === null) &&  !(strAccessToken == '')) {
@@ -33,6 +31,7 @@
                         jsonUser = json;
                         window.sessionStorage.setItem("userId", json._id);
                         window.sessionStorage.setItem("userName", json.name);
+                        window.sessionStorage.setItem("userEmail", json.email);
                         window.sessionStorage.setItem("userDescription", json.description);
                         window.sessionStorage.setItem("access_token", strAccessToken);
                     }
@@ -67,28 +66,21 @@
                 dropdownmenu: [ 
                 { 
                     "label": "Edit profile", 
-      "url": "/user/edit/5"
-    },
-    { 
-      "label": "Switch account",
-      "handler": "onSwitchAccountClicked"
-    },
-    { 
-      "label": "Log out",
-      "url": "/logout",
-      "handler": "onSignOutClicked"
-    }
-  ]
+                    "url": "/user/edit/5"
+                },
+                { 
+                    "label": "Switch account",
+                    "handler": "onSwitchAccountClicked"
+                },
+                { 
+                    "label": "Log out",
+                    "url": "/logout",
+                    "handler": "onSignOutClicked"
+                }]
             });
-                    window.google.identitytoolkit.showSavedAccount("logged-in-user@domain.com");
-            $("#navbar").accountChooser();
-            
-            if (window.sessionStorage.getItem("userId") === null) {
-                $("#navbar").accountChooser();
-            }
-            else {
-                $(".top > nav").removeClass("invisible");
-                $("#navbar").append("Logged in as " + window.sessionStorage.getItem("userId") + "<span class='button red'>Log Out</span>");
+            $("#navbar").accountChooser(); 
+            if (!(window.sessionStorage.getItem("userId") === null)) {
+                $(".top > nav").removeClass("invisible"); window.google.identitytoolkit.showSavedAccount(window.sessionStorage.getItem("userEmail"));
                 $(".top > nav > #a_home").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=' + window.sessionStorage.getItem("userId"));
                 $(".top > nav > #a_definition").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?userId=' + window.sessionStorage.getItem("userId"));
                 $(".top > nav > #a_group").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/group.php?userId=' + window.sessionStorage.getItem("userId"));
