@@ -10,10 +10,10 @@ if (isset($_SESSION['userId'])) {
     $strId = $objUser->getId();
     $arrAccessTokens = $objUser->getAccessTokens(); 
     $arrNewAccessToken = array("token" => md5(mt_rand()), "createdDate" => new MongoDate());
-    $arrAccessTokens[] = $arrNewAccessToken;
-    
+    $arrAccessTokens[] = $arrNewAccessToken;  
     $objUser->setAccessTokens($arrAccessTokens);
     $objUser->upsert();
+    $strRedirectUri = (isset($_SESSION['redirectUri']) ? $_SESSION['redirectUri'] : "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=" . $strId . '#access_token=' . $arrNewAccessToken['token'] . "|" . $strId . '&token_type=example&expires_in=4301');  
 ?>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
