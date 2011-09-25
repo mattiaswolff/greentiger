@@ -3,14 +3,9 @@
   $url = EasyRpService::getCurrentUrl();
   $postData = @file_get_contents('php://input');
   $result = EasyRpService::verify($url, $postData);
-  if ($result == "OK") {
-    echo  "<script type='text/javascript' src='https://ajax.googleapis.com/jsapi'></script><script type='text/javascript'>google.load('identitytoolkit', '1.0', {packages: ['notify']});</script><script type='text/javascript'>window.google.identitytoolkit.notifyFederatedSuccess({'email': 'name@email.com', 'registered': true });</script>";
-  }
   
 class EasyRpService {
-  // Replace $YOUR_DEVELOPER_KEY
-  private static $SERVER_URL =
-    "https://www.googleapis.com/identitytoolkit/v1/relyingparty/verifyAssertion?key=AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY";
+  private static $SERVER_URL = "https://www.googleapis.com/identitytoolkit/v1/relyingparty/verifyAssertion?key=AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY";
 
   public static function getCurrentUrl() {
     $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
@@ -51,12 +46,14 @@ class EasyRpService {
         if ($strUserId == null) {
             $user = new User();
             $user->setId();
-            $user->setEmail($arrRequestVars["verifiedEmail"]);
-            $user->setName($arrRequestVars["displayName"]);
+            $user->setEmail($result["verifiedEmail"]);
+            $user->setName($result["displayName"]);
             $strUserId = $user->upsert();
         }
         session_start();
         $_SESSION["userId"] = $strUserId;
+        //print
+        echo  "<script type='text/javascript' src='https://ajax.googleapis.com/jsapi'></script><script type='text/javascript'>google.load('identitytoolkit', '1.0', {packages: ['notify']});</script><script type='text/javascript'>window.google.identitytoolkit.notifyFederatedSuccess({'email': '" . $result["verifiedEmail"] ."', 'registered': true });</script>";
         return "OK";
     }
     return NULL;
