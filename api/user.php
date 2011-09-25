@@ -41,7 +41,7 @@ switch($data->getMethod()) {
         $strPassword1 = (isset($arrRequestVars['password1']) ? $arrRequestVars['password1'] : '');
         $strPassword2 = (isset($arrRequestVars['password2']) ? $arrRequestVars['password2'] : '');
             if ($strPart == 'image') {  
-                $user = new User(new MongodId($strUserId));
+                $user = new User($strUserId);
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
                 $grid = $db->getGridFS();
