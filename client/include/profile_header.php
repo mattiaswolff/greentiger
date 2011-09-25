@@ -6,8 +6,8 @@
             $('#userInfo .fields').append(getHtmlTaskRow('description', 'description', 'description', 'textarea', '', true));
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
-                        $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
-                        $('input[name|="id"]').attr("disabled", true);
+                    $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
+            $('input[name|="id"]').attr("disabled", true);
             $('#userInfo .buttons').append('<input class="button green" type="submit" name="PUT" value="Post" />');
             $('#userInfo').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")));
             $('#userImage').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")+ "?part=image"));

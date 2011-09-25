@@ -37,6 +37,7 @@ switch($data->getMethod()) {
             $user->setClientId();
             $user->setRedirectUri($arrRequestVars["redirectUri"]);
             if ($strPart == 'image') {  
+                echo "test1";
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
                 $grid = $db->getGridFS();
