@@ -29,7 +29,7 @@ if (isset($_SESSION['userId'])) {
         window.google.identitytoolkit.updateSavedAccount(userData); 
     </script>
     <?php
-    echo $objUser;
+    echo get_object_vars($objUser);
     die();
     header('Location: ' . $strRedirectUri);
 }
