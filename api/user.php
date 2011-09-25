@@ -9,10 +9,21 @@ switch($data->getMethod()) {
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         if ($strUserId != '') {
             $objUser = new User($strUserId);
             if (isset($objUser)) {
+                if ($strPart == 'image') {
+                    $m = new Mongo();
+                    $db = $m->projectcopperfield;
+                    $grid = $db->getGridFS();
+                    $image = $grid->findOne("_id" => new MongodId("4e7f15e3212602111f000003"));
+                    header('Content-type: image/png;');
+                    echo $image->getBytes();
+                }
+                else {
                 RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
+                }
             }
             else {
                 RestUtils::sendResponse(400, array("error" => "User with id " . $strUserId . "not found."), 'application/json');
@@ -36,8 +47,6 @@ switch($data->getMethod()) {
             $user->setClientId();
             $user->setRedirectUri($arrRequestVars["redirectUri"]);
             if ($strPart == 'image') {  
-                echo 'Here is some more debugging info:';
-print_r($_FILES);
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
                 $grid = $db->getGridFS();
