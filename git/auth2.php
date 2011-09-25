@@ -18,8 +18,9 @@ if (isset($_SESSION['userId'])) {
     <script type="text/javascript">
         google.load("identitytoolkit", "1.0", {packages: ["ac"]});
     </script>
+    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type='text/javascript'>
-        var userData = { email: "<?php echo $objUser->getEmail(); ?>", displayName: "<?php echo $objUser->getName();?>", photoUrl: getUrlApi("users/" + "matwo01" + "?part=image"); };
+        var userData = { email: "<?php echo $objUser->getEmail(); ?>", displayName: "<?php echo $objUser->getName();?>", photoUrl: getUrlApi("users/" + "matwo01" + "?part=image");};
         window.google.identitytoolkit.updateSavedAccount(userData); 
     </script>
     <?php
