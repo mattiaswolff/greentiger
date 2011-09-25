@@ -57,7 +57,7 @@ switch($data->getMethod()) {
                 'upsert' => true,
                 'fields' => array( '_id' => 1 )));
             }
-            RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
+            RestUtils::sendResponse(400, (array)$user->getEmail(), 'application/json');
         }
         else {
             RestUtils::sendResponse(400);
