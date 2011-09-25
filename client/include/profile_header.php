@@ -7,7 +7,7 @@ $(function() {
         browse_button : 'pickfiles',
         container : 'container',
         max_file_size : '10mb',
-        url : getUrlApi('users/' + window.sessionStorage.getItem('userId')+ '?part=image',
+        url : getUrlApi('users/' + window.sessionStorage.getItem('userId')+ '?part=image'),
         filters : [
             {title : "Image files", extensions : "jpg,gif,png"},
             {title : "Zip files", extensions : "zip"}
