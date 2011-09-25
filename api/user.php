@@ -37,21 +37,24 @@ switch($data->getMethod()) {
     case 'post':
         $arrRequestVars = $data->getRequestVars();
         $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         $strPassword1 = (isset($arrRequestVars['password1']) ? $arrRequestVars['password1'] : '');
         $strPassword2 = (isset($arrRequestVars['password2']) ? $arrRequestVars['password2'] : '');
-        if (isset($arrRequestVars['userId'])) {
-            $user = new User();
-            $user->setId($arrRequestVars["userId"]);
-            $user->setEmail($arrRequestVars["email"]);
-            $user->setName($arrRequestVars["name"]);
-            $user->setClientId();
-            $user->setRedirectUri($arrRequestVars["redirectUri"]);
             if ($strPart == 'image') {  
+                $user = new User(new MongodId($strUserId));
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
                 $grid = $db->getGridFS();
                 $storedfile = $grid->storeFile($_FILES["file"]["tmp_name"], array("date" => new MongoDate()));
                 $user->setImageId($storedfile);
+            }
+            else { 
+            $user = new User();
+            $user->setId();
+            $user->setEmail($arrRequestVars["email"]);
+            $user->setName($arrRequestVars["name"]);
+            $user->setClientId();
+            $user->setRedirectUri($arrRequestVars["redirectUri"]);
             }
             $user->upsert();
             if ($strPassword1 != '') {
@@ -66,10 +69,6 @@ switch($data->getMethod()) {
                 'fields' => array( '_id' => 1 )));
             }
             RestUtils::sendResponse(200, (array)$user->getEmail(), 'application/json');
-        }
-        else {
-            RestUtils::sendResponse(400);
-        }
         break;
         
     case 'put':
