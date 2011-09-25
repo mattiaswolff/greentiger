@@ -36,6 +36,10 @@ switch($data->getMethod()) {
             $user->setClientId();
             $user->setRedirectUri($arrRequestVars["redirectUri"]);
             if ($strPart == 'image') {  
+                echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+  echo "Type: " . $_FILES["file"]["type"] . "<br />";
+  echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+  echo "Stored in: " . $_FILES["file"]["tmp_name"];
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
                 $grid = $db->getGridFS();
