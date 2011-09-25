@@ -50,19 +50,20 @@
             });
             
             window.google.identitytoolkit.setConfig({
-                developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
-                companyName: "Project Copperfield",
-                callbackUrl: getUrlGit("callback.php"),
-                realm: "",
-                userStatusUrl: getUrlGit("userstatus.php"),
-                loginUrl: getUrlGit("login.php"),
-                signupUrl: getUrlGit("signup.php"),
-                homeUrl:getUrlGit ("dashboard.php"),
-                logoutUrl: getUrlGit("signout.php"),
-                language: "en",
-                idps: ["Gmail", "Yahoo", "AOL"],
-                tryFederatedFirst: true,
-                useCachedUserStatus: false,
+                window.google.identitytoolkit.setConfig({
+    developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
+    companyName: "GreenTiger",
+    callbackUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/callback.php",
+    realm: "",
+    userStatusUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/userstatus.php",
+    loginUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/login.php",
+    signupUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/signup.php",
+    homeUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/git/index.php",
+    logoutUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/signout.php",
+    language: "en",
+    idps: ["Gmail", "Yahoo", "AOL"],
+    tryFederatedFirst: true,
+    useCachedUserStatus: false,
                 dropdownmenu: [ 
                 { 
                     "label": "Edit profile", 
