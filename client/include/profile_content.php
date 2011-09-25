@@ -9,3 +9,10 @@
     <br />
     <input type="submit" name="submit" value="Submit" />
 </form>
+
+<div id="container">
+    <div id="filelist">No runtime found.</div>
+    <br />
+    <a id="pickfiles" href="#">[Select files]</a>
+    <a id="uploadfiles" href="#">[Upload files]</a>
+</div>
