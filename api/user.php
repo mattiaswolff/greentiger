@@ -1,7 +1,7 @@
 <?php
 require "../classes/rest.php";
 require "../classes/user.php";
-
+RestUtils::sendResponse(400);
 $data = RestUtils::processRequest();  
 
 switch($data->getMethod()) {  
@@ -28,9 +28,7 @@ switch($data->getMethod()) {
         $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         $strPassword1 = (isset($arrRequestVars['password1']) ? $arrRequestVars['password1'] : '');
         $strPassword2 = (isset($arrRequestVars['password2']) ? $arrRequestVars['password2'] : '');
-        echo "test3";
         if (isset($arrRequestVars['userId'])) {
-            echo "test2";
             $user = new User();
             $user->setId($arrRequestVars["userId"]);
             $user->setEmail($arrRequestVars["email"]);
@@ -38,12 +36,10 @@ switch($data->getMethod()) {
             $user->setClientId();
             $user->setRedirectUri($arrRequestVars["redirectUri"]);
             if ($strPart == 'image') {  
-                echo "test1";
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
                 $grid = $db->getGridFS();
                 $storedfile = $grid->storeFile($_FILES["file"]["name"], array("date" => new MongoDate()));
-                echo $storedfile;
             }
             $user->upsert();
             if ($strPassword1 != '') {
