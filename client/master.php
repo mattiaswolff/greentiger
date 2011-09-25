@@ -21,7 +21,7 @@
         });
         
         $(document).ready(function(){
-            
+            $("userImage").attr('src', getUrlApi("users/" + strUserId + "?part=image");
             if ((window.sessionStorage.getItem("userId") === null) &&  !(strAccessToken == '')) {
                 $.ajax({  
                     url: getUrlApi("users/me"),  
@@ -47,7 +47,6 @@
                     success: function(json){  
                         $('.userName').append(json.name);
                         $('.userInfo .description').append(json.description);
-                        $("userImage").attr('src', getUrlApi('users/' + strUserId + '?part=image');
                     }
             });
             
