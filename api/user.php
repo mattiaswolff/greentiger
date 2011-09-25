@@ -17,7 +17,7 @@ switch($data->getMethod()) {
                     $m = new Mongo();
                     $db = $m->projectcopperfield;
                     $grid = $db->getGridFS();
-                    $image = $grid->findOne("_id" => new MongodId("4e7f15e3212602111f000003"));
+                    $image = $grid->findOne(array("_id" => new MongodId("4e7f15e3212602111f000003")));
                     header('Content-type: image/png;');
                     echo $image->getBytes();
                 }
