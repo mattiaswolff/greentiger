@@ -5,10 +5,13 @@ session_start();
 
 if (isset($_SESSION['userId'])) {
     $objUser = new User($_SESSION['userId']); 
+    $strEmail = $objUser->getEmail();
+    $strName = $objUser->getEmail();
+    $strId = $objUser->getId();
     $arrAccessTokens = $objUser->getAccessTokens(); 
     $arrNewAccessToken = array("token" => md5(mt_rand()), "createdDate" => new MongoDate());
     $arrAccessTokens[] = $arrNewAccessToken;
-    $strEmail = $objUser->getEmail();
+    
     $objUser->setAccessTokens($arrAccessTokens);
     $objUser->upsert();
 ?>
@@ -21,10 +24,10 @@ if (isset($_SESSION['userId'])) {
     </script>
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type='text/javascript'>
-        var strUrlImg = getUrlApi("users/" + "<?php echo $objUser->getId(); ?>" + "?part=image");
+        var strUrlImg = getUrlApi("users/" + "<?php echo $strId ?>" + "?part=image");
         var userData = { 
             email: "<?php echo $strEmail ?>", 
-            displayName: "<?php echo $objUser->getName();?>", 
+            displayName: "<?php echo $strName ?>", 
             photoUrl: strUrlImg,
         };
         window.google.identitytoolkit.updateSavedAccount(userData); 
