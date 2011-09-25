@@ -21,7 +21,7 @@
         });
         
         $(document).ready(function(){
-            $("userImage").attr('src', getUrlApi("users/" + strUserId + "?part=image"));
+            $("#userImage").attr('src', getUrlApi("users/" + strUserId + "?part=image"));
             if ((window.sessionStorage.getItem("userId") === null) &&  !(strAccessToken == '')) {
                 $.ajax({  
                     url: getUrlApi("users/me"),  
