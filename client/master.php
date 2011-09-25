@@ -79,7 +79,6 @@
                 $(".top > nav").removeClass("invisible"); window.google.identitytoolkit.showSavedAccount(window.sessionStorage.getItem("userEmail"));
                 $(".top > nav > #a_home").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=' + window.sessionStorage.getItem("userId"));
                 $(".top > nav > #a_definition").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?userId=' + window.sessionStorage.getItem("userId"));
-                $(".top > nav > #a_group").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/group.php?userId=' + window.sessionStorage.getItem("userId"));
                 $(".top > nav > #a_profile").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php?userId=' + window.sessionStorage.getItem("userId"));
             }
         
@@ -95,7 +94,9 @@
 <body id="home">
         <div class ="top">
             <nav class="pageNav invisible">
-                <a id="a_home">home</a> | <a id="a_definition">definitions</a> | <a id="a_group">groups</a> | <a id="a_profile">profile</a>
+                <a id="a_home">home</a> | 
+                <a id="a_definition">definitions</a> | 
+                <a id="a_profile">profile</a>
             </nav>
             <section id="navbar"></section>
         </div>
