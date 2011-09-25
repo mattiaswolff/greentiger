@@ -8,6 +8,7 @@ if (isset($_SESSION['userId'])) {
     $arrAccessTokens = $objUser->getAccessTokens(); 
     $arrNewAccessToken = array("token" => md5(mt_rand()), "createdDate" => new MongoDate());
     $arrAccessTokens[] = $arrNewAccessToken;
+    echo $objUser->getEmail();
     $objUser->setAccessTokens($arrAccessTokens);
     $objUser->upsert();
 ?>
