@@ -33,8 +33,6 @@ if (isset($_SESSION['userId'])) {
         window.google.identitytoolkit.updateSavedAccount(userData); 
     </script>
     <?php
-    echo $objUser->getEmail();
-    die();
     header('Location: ' . $strRedirectUri);
 }
 ?>
