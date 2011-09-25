@@ -9,7 +9,6 @@ if (isset($_SESSION['userId'])) {
     $arrNewAccessToken = array("token" => md5(mt_rand()), "createdDate" => new MongoDate());
     $arrAccessTokens[] = $arrNewAccessToken;
     $objUser->setAccessTokens($arrAccessTokens);
-    echo var_dump(get_object_vars($objUser));
     $objUser->upsert();
 ?>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -30,7 +29,7 @@ if (isset($_SESSION['userId'])) {
         window.google.identitytoolkit.updateSavedAccount(userData); 
     </script>
     <?php
-    echo var_dump(get_object_vars($objUser));
+    echo $objUser->getEmail();
     die();
     header('Location: ' . $strRedirectUri);
 }
