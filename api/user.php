@@ -41,7 +41,7 @@ print_r($_FILES);
                 $m = new Mongo();
                 $db = $m->projectcopperfield;
                 $grid = $db->getGridFS();
-                $storedfile = $grid->storeFile($_FILES["file"]["tmp_name"] . "/" . $_FILES["file"]["name"], array("date" => new MongoDate()));
+                $storedfile = $grid->storeFile($_FILES["file"]["tmp_name"], array("date" => new MongoDate()));
             }
             $user->upsert();
             if ($strPassword1 != '') {
