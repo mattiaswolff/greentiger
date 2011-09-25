@@ -65,10 +65,6 @@
     useCachedUserStatus: false,
                 dropdownmenu: [ 
                 { 
-                    "label": "Edit profile", 
-                    "url": "/user/edit/5"
-                },
-                { 
                     "label": "Switch account",
                     "handler": "onSwitchAccountClicked"
                 },
