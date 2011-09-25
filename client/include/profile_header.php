@@ -12,7 +12,7 @@ $(function() {
             {title : "Image files", extensions : "jpg,gif,png"},
             {title : "Zip files", extensions : "zip"}
         ],
-        resize : {width : 320, height : 240, quality : 90}
+        resize : {width : 320, height : 320, quality : 100}
     });
     uploader.bind('Init', function(up, params) {
         $('#filelist').html("<div>Current runtime: " + params.runtime + "</div>");
