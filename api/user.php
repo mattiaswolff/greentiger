@@ -17,7 +17,7 @@ switch($data->getMethod()) {
                     $m = new Mongo();
                     $db = $m->projectcopperfield;
                     $grid = $db->getGridFS();
-                    $image = $grid->findOne(array("_id" => new MongoId("4e7f15e3212602111f000003")));
+                    $image = $grid->findOne(array("_id" => new MongoId($objUser->getImageId())));
                     header('Content-type: image/png;');
                     echo $image->getBytes();
                 }
@@ -51,7 +51,7 @@ switch($data->getMethod()) {
                 $db = $m->projectcopperfield;
                 $grid = $db->getGridFS();
                 $storedfile = $grid->storeFile($_FILES["file"]["tmp_name"], array("date" => new MongoDate()));
-                echo $storedfile;
+                $user->setImageId($storedfile);
             }
             $user->upsert();
             if ($strPassword1 != '') {

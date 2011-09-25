@@ -10,6 +10,7 @@ class User {
     private $client_id;
     private $redirect_uri;
     private $accessTokens;
+    private $imageId;
     
     //Constructor
     public function __construct($strUserId = null){
@@ -25,6 +26,7 @@ class User {
             $this->client_id = $arrResults['client_id'];
             $this->redirect_uri = $arrResults['redirect_uri'];
             $this->accessTokens = $arrResults['accessTokens'];
+            $this->imageId = $arrResults['imageId'];
         }
         else {
             $this->email = '';
@@ -34,6 +36,7 @@ class User {
             $this->accessTokens = array();
             $this->client_id = '';
             $this->redirect_uri = '';
+            $this->imageId = '';
         }
     }
     
@@ -46,6 +49,7 @@ class User {
     public function getAccessTokens() { return $this->accessTokens; }
     public function getClientId() { return $this->client_id; }
     public function getRedirectUri() { return $this->redirect_uri; }
+    public function getImageId() { return $this->imageId; }
     public function setId() { $this->_id = new MongoId(); }
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }}
@@ -54,6 +58,7 @@ class User {
     public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
     public function setClientId() {if (!isset($this->client_id) || ((string)$this->client_id == '')) {$this->client_id = (string)new MongoId(); }}
     public function setRedirectUri($x) {if ($x != null) { $arrParsedUrl = parse_url($x); $strParsedUrl = $arrParsedUrl['scheme'] . '://' . $arrParsedUrl['host']; $this->redirect_uri = $strParsedUrl; }}
+    public function setImageId($x) {if ($x != null) { $this->imageId = $x; }}
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
