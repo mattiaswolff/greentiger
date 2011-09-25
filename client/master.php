@@ -21,6 +21,7 @@
         });
         
         $(document).ready(function(){
+            
             if ((window.sessionStorage.getItem("userId") === null) &&  !(strAccessToken == '')) {
                 $.ajax({  
                     url: getUrlApi("users/me"),  
@@ -46,6 +47,7 @@
                     success: function(json){  
                         $('.userName').append(json.name);
                         $('.userInfo .description').append(json.description);
+                        $("userImage").attr(src, getUrlApi('users/' + strUserId + '?part=image');
                     }
             });
             
@@ -102,7 +104,7 @@
         </div>
         <div class = "container">
             <aside class="userInfo">
-                <img class="user" src="http://v1.fein.de/fein-multimaster/media/images/fein-multimaster/fein_company_logo.jpg" alt="Företaget" title="Företaget" border="0" />
+                <img id="userImage" class="user" alt="Företaget" title="Företaget" border="0" />
                 <div class="description"></div>
             </aside>
         <div class="main">
