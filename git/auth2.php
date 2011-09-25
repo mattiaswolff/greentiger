@@ -20,7 +20,8 @@ if (isset($_SESSION['userId'])) {
     </script>
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type='text/javascript'>
-        var userData = { email: "<?php echo $objUser->getEmail(); ?>", displayName: "<?php echo $objUser->getName();?>"};
+    var strUrlImg = getUrlApi("users/" + "matwo01" + "?part=image");
+        var userData = { email: "<?php echo $objUser->getEmail(); ?>", displayName: "<?php echo $objUser->getName();?>" , photoUrl: "http://www.uploadurl.com"};
         window.google.identitytoolkit.updateSavedAccount(userData); 
     </script>
     <?php
