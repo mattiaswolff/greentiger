@@ -28,8 +28,9 @@ switch($data->getMethod()) {
         $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         $strPassword1 = (isset($arrRequestVars['password1']) ? $arrRequestVars['password1'] : '');
         $strPassword2 = (isset($arrRequestVars['password2']) ? $arrRequestVars['password2'] : '');
-        
+        echo "test3";
         if (isset($arrRequestVars['userId'])) {
+            echo "test2";
             $user = new User();
             $user->setId($arrRequestVars["userId"]);
             $user->setEmail($arrRequestVars["email"]);
@@ -43,7 +44,6 @@ switch($data->getMethod()) {
                 $grid = $db->getGridFS();
                 $storedfile = $grid->storeFile($_FILES["file"]["name"], array("date" => new MongoDate()));
                 echo $storedfile;
-                die();
             }
             $user->upsert();
             if ($strPassword1 != '') {
