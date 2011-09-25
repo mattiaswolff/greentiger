@@ -47,7 +47,7 @@
                     success: function(json){  
                         $('.userName').append(json.name);
                         $('.userInfo .description').append(json.description);
-                        $("userImage").attr(src, getUrlApi('users/' + strUserId + '?part=image');
+                        $("userImage").attr('src', getUrlApi('users/' + strUserId + '?part=image');
                     }
             });
             
