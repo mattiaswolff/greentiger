@@ -6,7 +6,7 @@ session_start();
 if (isset($_SESSION['userId'])) {
     $objUser = new User($_SESSION['userId']); 
     $strEmail = $objUser->getEmail();
-    $strName = $objUser->getEmail();
+    $strName = $objUser->getName();
     $strId = $objUser->getId();
     $arrAccessTokens = $objUser->getAccessTokens(); 
     $arrNewAccessToken = array("token" => md5(mt_rand()), "createdDate" => new MongoDate());
