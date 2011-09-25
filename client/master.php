@@ -50,7 +50,6 @@
             });
             
             window.google.identitytoolkit.setConfig({
-                window.google.identitytoolkit.setConfig({
     developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
     companyName: "GreenTiger",
     callbackUrl: "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/callback.php",
