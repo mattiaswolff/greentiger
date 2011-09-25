@@ -8,10 +8,9 @@ if (isset($_SESSION['userId'])) {
     $arrAccessTokens = $objUser->getAccessTokens(); 
     $arrNewAccessToken = array("token" => md5(mt_rand()), "createdDate" => new MongoDate());
     $arrAccessTokens[] = $arrNewAccessToken;
-    echo $objUser->getEmail();
+    $strEmail = $objUser->getEmail();
     $objUser->setAccessTokens($arrAccessTokens);
     $objUser->upsert();
-    echo " " . $objUser->getEmail();
 ?>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
@@ -24,7 +23,7 @@ if (isset($_SESSION['userId'])) {
     <script type='text/javascript'>
         var strUrlImg = getUrlApi("users/" + "<?php echo $objUser->getId(); ?>" + "?part=image");
         var userData = { 
-            email: "<?php echo $objUser->getEmail(); ?>", 
+            email: "<?php echo $strEmail ?>", 
             displayName: "<?php echo $objUser->getName();?>", 
             photoUrl: strUrlImg,
         };
