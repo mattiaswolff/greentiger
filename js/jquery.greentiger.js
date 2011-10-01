@@ -48,10 +48,10 @@ function parseISO8601(strDate) {
 }
 
 function formatDateOutput(date) {
-  var date = date.getDate();
+  var day = date.getDate();
   var month = date.getMonth() + 1; //months are zero based
   var year = date.getFullYear();
-  strDate = year + "-" + month + "-" + date;
+  strDate = year + "-" + month + "-" + day;
   return strDate;
 }
 
