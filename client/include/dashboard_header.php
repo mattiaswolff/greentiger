@@ -57,8 +57,8 @@
                 $.each(json.results[0].content, function(key, value) {
                     arrHtml.push(getHtmlTaskRow(value.name, "content." +value.name, value.description, value.type, '', value.config, value.required));
                 });
-                arrHtml.push('<input class="invisible" type="text" name="content.createUserId" value="' + window.sessionStorage.getItem("UserId") + '" />');
-                arrHtml.push('<input class="invisible" type="text" name="content.createUserName" value="' + window.sessionStorage.getItem("UserName") + '" />');
+                arrHtml.push('<input class="invisible" type="text" name="content.createUserId" value="' + window.sessionStorage.getItem("userId") + '" />');
+                arrHtml.push('<input class="invisible" type="text" name="content.createUserName" value="' + window.sessionStorage.getItem("userName") + '" />');
                 $('form.task section').empty();
                 $('form.task div.description').empty();
                 $('form.task div.description').append(json.results[0].description);
