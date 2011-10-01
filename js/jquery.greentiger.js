@@ -29,7 +29,7 @@ function parseISO8601(strDate) {
 
  var parts = strDate.split('T'),
  dateParts = parts[0].split('-'),
- timeParts = parts[1].split('Z'),
+ timeParts = parts[1].split('+'),
  timeSubParts = timeParts[0].split(':'),
  timeSecParts = timeSubParts[2].split('.'),
  timeHours = Number(timeSubParts[0]),
