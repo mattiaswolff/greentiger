@@ -3,7 +3,7 @@
 <head>
     <title>Project Copperfield</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="../css/main.css"></link>
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
 </head>
 
 <body id="home">
