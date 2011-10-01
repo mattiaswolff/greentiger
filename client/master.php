@@ -15,7 +15,7 @@
         </div>
         <div class = "container">
             <aside class="userInfo">
-                <img id="userImage" class="user" alt="Företaget" title="Företaget" border="0" />
+                <img id="userImage" class="user" alt="Företaget" title="Företaget" src="" />
                 <div class="description"></div>
             </aside>
         <div class="main">
