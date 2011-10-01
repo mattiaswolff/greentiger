@@ -82,7 +82,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
         var arrHtml = new Array();
         $.each(json.results[0], function(key, value) {    
             var d = new Date(value.updatedDate);
-            arrHtml.push('<article><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) +'"><img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") +'" width="50" height="50" /></a></div><div class="story"><div class="header">' + formatDateOutput(parseISO8601(value.updatedDate)) + ' <span class="link edit" id="' + value._id + '">edit</span> <span class="delete link" id="' + value._id + '">delete</span></div><div class="content">');
+            arrHtml.push('<article><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) +'"><img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") +'" width="50" height="50" /></a></div><div class="story"><div class="header vague">' + formatDateOutput(parseISO8601(value.updatedDate)) + ' <span class="link edit" id="' + value._id + '">edit</span> <span class="delete link" id="' + value._id + '">delete</span></div><div class="content">');
             $.each(value.content, function (key1, value1) {
                 arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
             });
