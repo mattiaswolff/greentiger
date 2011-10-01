@@ -73,3 +73,7 @@ li.horizontal {display: inline; margin: 0 5px;}
 .comments .comment {margin: 0 0 3px 0; border-bottom: 1px solid #ccc; padding: 0 0 3px 0;}
 .comments input[type="text"] {font: 13px arial;}
 .hide {position: absolute; left: -10000px}
+
+.vague {color: #636363;
+font-size: 11px;
+line-height: 1.28;}
