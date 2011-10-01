@@ -57,7 +57,7 @@ $(function() {
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
                     $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
-            $('input[name|="id"]').attr("hidden", true);
+            $('input[name|="id"]').parent().parent("article").addClass("invisible");
             $('#userInfo .buttons').append('<input class="button green" type="submit" name="PUT" value="Post" />');
             $('#userInfo').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")));
             $('#userImage').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")+ "?part=image"));
