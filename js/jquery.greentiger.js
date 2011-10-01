@@ -40,13 +40,13 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
         var arrHtml = new Array();
         $.each(json.results[0], function(key, value) {    
             var d = new Date(value.updatedDate);
-            arrHtml.push('<article><div class="left"><a href="'+ getUrlClient("dashboard.php?userId=" + value.createdBy.userId) +'"><img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") +'" width="50" height="50" /></a></div><div class="story"><div class="header">' + value.updatedDate + ' <span class="link edit" id="' + value._id + '">edit</span> <span class="delete link" id="' + value._id + '">delete</span></div><div class="content">');
+            arrHtml.push('<article><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) +'"><img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") +'" width="50" height="50" /></a></div><div class="story"><div class="header">' + value.updatedDate + ' <span class="link edit" id="' + value._id + '">edit</span> <span class="delete link" id="' + value._id + '">delete</span></div><div class="content">');
             $.each(value.content, function (key1, value1) {
                 arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
             });
             arrHtml.push('</div><div class="actions"></div><div class="comments">');
             $.each(value.comments, function (key1, value1) {
-                arrHtml.push('<div class="comment"><div><a href="http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=' + value1.userId + '">' + value1.userName + '</a> ' + value1.date +'</div><div>' + value1.text + '</div></div>');
+                arrHtml.push('<div class="comment"><div><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) + '">' + '<img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") + '" width="30" height="30" /></a> ' + value1.date +'</div><div>' + value1.text + '</div></div>');
             });
             if (!(window.sessionStorage.getItem("userId") === null)) {
             arrHtml.push('<form method="PUT" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input class="invisible" type="text" name="comments.userId" value="'+ window.sessionStorage.getItem("userId") +'" /><input type="text" name="comments.text" value="" placeholder="Write a comment..." /><input class="hide" type="submit"/></form>');
