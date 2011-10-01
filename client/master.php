@@ -59,7 +59,7 @@
     loginUrl: getUrlGit("login2.php"),
     signupUrl: getUrlClient("signup.php"),
     homeUrl: getUrlGit("auth2.php"),
-    logoutUrl: getUrlGit("logout.php"),
+    logoutUrl: getUrlClient("logout.php"),
     language: "en",
     idps: ["Gmail", "Yahoo", "AOL"],
     tryFederatedFirst: true,
