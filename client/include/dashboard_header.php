@@ -57,7 +57,7 @@
                 $.each(json.results[0].content, function(key, value) {
                     arrHtml.push(getHtmlTaskRow(value.name, "content." +value.name, value.description, value.type, '', value.config, value.required));
                 });
-                arrHtml.push('<input type="text" name="content.userId" value="' + window.sessionStorage.getItem("userId") + '" hidden />';
+                arrHtml.push('<input type="text" name="content.userId" value="' + window.sessionStorage.getItem("userId") + '" hidden />');
                 $('form.task section').empty();
                 $('form.task div.description').empty();
                 $('form.task div.description').append(json.results[0].description);
