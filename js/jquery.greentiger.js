@@ -53,6 +53,7 @@ function formatDateOutput(date) {
   var year = date.getFullYear();
   var hour = date.getHours();
   var min = date.getMinutes();
+  if (min < 10) { min = "0" + min;}
   strDate = year + "-" + month + "-" + day + " " + hour + ":" + min;
   return strDate;
 }
