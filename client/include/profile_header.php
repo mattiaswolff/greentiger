@@ -15,7 +15,7 @@ $(function() {
         resize : {width : 320, height : 320, quality : 100}
     });
     uploader.bind('Init', function(up, params) {
-        $('#filelist').html("<div>Current runtime: " + params.runtime + "</div>");
+        $('#filelist').html("<div></div>");
     });
 
     $('#uploadfiles').click(function(e) {
@@ -57,7 +57,7 @@ $(function() {
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
                     $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
-            $('input[name|="id"]').attr("disabled", true);
+            $('input[name|="id"]').attr("hidden", true);
             $('#userInfo .buttons').append('<input class="button green" type="submit" name="PUT" value="Post" />');
             $('#userInfo').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")));
             $('#userImage').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")+ "?part=image"));
