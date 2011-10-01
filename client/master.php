@@ -25,7 +25,7 @@
             <div class="content">
                 <?php include $page_content; ?>
             </div>
-            <aside>Test</aside>
+            <aside></aside>
         </div>
     </div>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
