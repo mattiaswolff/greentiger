@@ -51,7 +51,9 @@ function formatDateOutput(date) {
   var day = date.getDate();
   var month = date.getMonth() + 1; //months are zero based
   var year = date.getFullYear();
-  strDate = year + "-" + month + "-" + day;
+  var hour = date.getHours();
+  var min = date.getMinutes();
+  strDate = year + "-" + month + "-" + day + ;
   return strDate;
 }
 
