@@ -48,9 +48,9 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();    
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
-        $strCreateUserId = (isset($arrRequestVars['createUserId']) ? $arrRequestVars['createUserId'] : 'Unknown');
-        $strCreateUserName = (isset($arrRequestVars['createUserName']) ? $arrRequestVars['createUserName'] : 'Unknown');
-        
+        $strCreateUserId = (isset($arrRequestVars['createUserId']) ? $arrRequestVars['createUserId'] : 'unknown');
+        $strCreateUserName = (isset($arrRequestVars['createUserName']) ? $arrRequestVars['createUserName'] : 'unknown');
+        //tes
         if (($strDefinitionId != '') && ($strUserId != '')) {
             $objTask = new Task();
             $objUser = new User($strUserId); //check if user object is returned sucessfully
