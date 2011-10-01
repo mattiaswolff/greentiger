@@ -48,11 +48,14 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();    
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $strCreateUserId = (isset($arrRequestVars['createUserId']) ? $arrRequestVars['createUserId'] : 'Unknown');
+        $strCreateUserName = (isset($arrRequestVars['createUserName']) ? $arrRequestVars['createUserName'] : 'Unknown');
         
         if (($strDefinitionId != '') && ($strUserId != '')) {
             $objTask = new Task();
             $objUser = new User($strUserId); //check if user object is returned sucessfully
-            $arrUser = array("userId" => $strUserId, "userName" => $objUser->getName()); 
+            
+            $arrUser = array("userId" => $strCreateUserId, "userName" => $strCreateUserName); 
             $objTask->setId();
             $objTask->setCreatedBy($arrUser);
             //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled internally
