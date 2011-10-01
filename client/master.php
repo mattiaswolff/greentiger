@@ -2,7 +2,31 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
+
+<body id="home">
+        <div class ="top">
+            <nav class="pageNav invisible">
+                <a id="a_home">home</a> | 
+                <a id="a_definition">definitions</a> | 
+                <a id="a_profile">profile</a>
+            </nav>
+            <section id="navbar"></section>
+        </div>
+        <div class = "container">
+            <aside class="userInfo">
+                <img id="userImage" class="user" alt="Företaget" title="Företaget" border="0" />
+                <div class="description"></div>
+            </aside>
+        <div class="main">
+            <section class="userName"></section>
+            <div class="content">
+                <?php include $page_content; ?>
+            </div>
+            <aside>Test</aside>
+        </div>
+    </div>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
@@ -88,31 +112,7 @@
                 window.location.reload();
         });
         });  
-	</script>
+    </script>
     <?php include $page_header; ?>
-</head>
-
-<body id="home">
-        <div class ="top">
-            <nav class="pageNav invisible">
-                <a id="a_home">home</a> | 
-                <a id="a_definition">definitions</a> | 
-                <a id="a_profile">profile</a>
-            </nav>
-            <section id="navbar"></section>
-        </div>
-        <div class = "container">
-            <aside class="userInfo">
-                <img id="userImage" class="user" alt="Företaget" title="Företaget" border="0" />
-                <div class="description"></div>
-            </aside>
-        <div class="main">
-            <section class="userName"></section>
-            <div class="content">
-                <?php include $page_content; ?>
-            </div>
-            <aside>Test</aside>
-        </div>
-    </div>
 </body>
 </html>
