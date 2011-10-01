@@ -19,6 +19,35 @@ function getUrlGit(strUrlExtension) {
 }
 
 /*
+Purpose: Parse ISO date to date
+Created: 2011-10-01 (Mattias Wolff)
+Updated: -
+*/
+
+function parseISO8601(strDate) {
+ // we assume str is a UTC date ending in 'Z'
+
+ var parts = strDate.split('T'),
+ dateParts = parts[0].split('-'),
+ timeParts = parts[1].split('Z'),
+ timeSubParts = timeParts[0].split(':'),
+ timeSecParts = timeSubParts[2].split('.'),
+ timeHours = Number(timeSubParts[0]),
+ _date = new Date;
+
+ _date.setUTCFullYear(Number(dateParts[0]));
+ _date.setUTCMonth(Number(dateParts[1])-1);
+ _date.setUTCDate(Number(dateParts[2]));
+ _date.setUTCHours(Number(timeHours));
+ _date.setUTCMinutes(Number(timeSubParts[1]));
+ _date.setUTCSeconds(Number(timeSecParts[0]));
+ if (timeSecParts[1]) _date.setUTCMilliseconds(Number(timeSecParts[1]));
+
+ // by using setUTC methods the date has already been converted to local time(?)
+ return _date;
+}
+
+/*
 Purpose: Add tasks to task flow.
 Created: 2011-08-11 (Mattias Wolff)
 Updated: -
@@ -46,7 +75,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
             });
             arrHtml.push('</div><div class="actions"></div><div class="comments">');
             $.each(value.comments, function (key1, value1) {
-                arrHtml.push('<div class="comment"><div><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) + '">' + '<img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") + '" width="30" height="30" /></a> ' + value1.date +'</div><div>' + value1.text + '</div></div>');
+                arrHtml.push('<div class="comment"><div><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) + '">' + '<img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") + '" width="30" height="30" /></a> ' + parseISO8601(value1.date) +'</div><div>' + value1.text + '</div></div>');
             });
             if (!(window.sessionStorage.getItem("userId") === null)) {
             arrHtml.push('<form method="PUT" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input class="invisible" type="text" name="comments.userId" value="'+ window.sessionStorage.getItem("userId") +'" /><input type="text" name="comments.text" value="" placeholder="Write a comment..." /><input class="hide" type="submit"/></form>');
