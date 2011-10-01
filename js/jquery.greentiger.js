@@ -88,7 +88,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
             });
             arrHtml.push('</div><div class="actions"></div><div class="comments">');
             $.each(value.comments, function (key1, value1) {
-                arrHtml.push('<div class="comment"><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) + '">' + '<img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") + '" width="30" height="30" /></a></div><div> ' + formatDateOutput(parseISO8601(value1.date)) +'</div><div>' + value1.text + '</div></div>');
+                arrHtml.push('<div class="comment clear"><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) + '">' + '<img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") + '" width="30" height="30" /></a></div><div> ' + formatDateOutput(parseISO8601(value1.date)) +'</div><div>' + value1.text + '</div></div>');
             });
             if (!(window.sessionStorage.getItem("userId") === null)) {
             arrHtml.push('<form method="PUT" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input class="invisible" type="text" name="comments.userId" value="'+ window.sessionStorage.getItem("userId") +'" /><input type="text" name="comments.text" value="" placeholder="Write a comment..." /><input class="hide" type="submit"/></form>');
