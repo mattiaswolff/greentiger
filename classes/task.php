@@ -79,7 +79,7 @@ class Task {
         //Calulate offset and page size
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
-        
+        $arrSearch = explode(" ", $strSearch);
         //Get results from database
         if (!isset($arrObjectId[0])) {
             foreach($arrObjectId as $key => $var) {
@@ -87,7 +87,7 @@ class Task {
             }
         }
         elseif ($arrObjectId != null) {
-            $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array('$in' => array("test", "hej", "hoppa"))))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
+            $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array('$in' => $arrSearch)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
         }
         else {
             $objResults[0] = $db->tasks->find()->limit($intLimit)->skip($intSkip);
