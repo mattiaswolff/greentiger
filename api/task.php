@@ -13,6 +13,7 @@ switch($data->getMethod()) {
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         $strTaskId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
         $intOffset = (isset($arrRequestVars['offset']) ? $arrRequestVars['offset'] : 1);
+        $strSearch = (isset($arrRequestVars['search']) ? $arrRequestVars['search'] : '');
         
         $strGroup = (isset($arrRequestVars['group']) ? $arrRequestVars['group'] : '');
         
@@ -40,7 +41,7 @@ switch($data->getMethod()) {
         else {
             $arrId = null;
         }
-        $arrResults = Task::get(10, $intOffset, $arrId);
+        $arrResults = Task::get(10, $intOffset, $arrId, $strSearch);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
         break;
     
@@ -58,20 +59,6 @@ switch($data->getMethod()) {
             $arrUser = array("userId" => $strCreateUserId, "userName" => $strCreateUserName); 
             $objTask->setId();
             $objTask->setCreatedBy($arrUser);
-            
-            //Handle keywords
-            $arrKeywordsContent = array();
-            foreach ($arrRequestVars["content"] as $value) {
-                $arrKeywordsContent = array_merge($arrKeywordsContent,  explode(" ",$value));   
-            }
-            foreach ($arrRequestVars["comments"] as $value) {
-                $arrKeywordsContent = array_merge($arrKeywordsContent,  explode(" ",$value));   
-            }
-            $arrKeywordsContentSorted = array_count_values($arrKeywordsContent);
-            arsort($arrKeywordsContentSorted);
-            $arrKeywords = array_keys($arrKeywordsContentSorted);
-            
-            $objTask->setKeywords($arrKeywords);
             $objTask->setComments($arrRequestVars["comments"]);
             $objTask->setLikes($arrRequestVars["likes"]);
             $objTask->setRatings($arrRequestVars["ratings"]);

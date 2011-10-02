@@ -73,22 +73,27 @@ class Task {
     public function setContent($x) {if ($x != null) { $this->content = $x; }}
 
     //Get, Upsert and Delete functions
-    function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
+    function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null, $strSearch) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
+        //Calulate offset and page size
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
+        
+        //Get results from database
         if (!isset($arrObjectId[0])) {
             foreach($arrObjectId as $key => $var) {
                 $objResults[$key] = $db->tasks->find(array("_id" => array('$in' => $var), "definition" => $key))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
             }
         }
         elseif ($arrObjectId != null) {
-            $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
+            $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array("$in" => explode(" ", $strSearch))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
         }
         else {
             $objResults[0] = $db->tasks->find()->limit($intLimit)->skip($intSkip);
         }
+        
+        
         $arrResults['total'] = 0;
         $arrResults['page'] = $intPage;
         $arrResults['pagesize'] = $intObjectsPerPage;
