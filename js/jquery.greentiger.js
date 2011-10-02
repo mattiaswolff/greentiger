@@ -71,7 +71,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
     }
     else {
         if (($("section.taskFlow article").length /10 ).toString().indexOf('.') != -1) {
-            break;
+            return;
         }
         intOffset = $("section.taskFlow article").length / 10 + 1;
     }
