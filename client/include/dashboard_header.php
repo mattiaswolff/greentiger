@@ -93,7 +93,8 @@
         Updated: -
         */
         $(".createTask").delegate(".delete", "click", function(){
-            getTaskFlow (strUserId, strAccessToken, true, $("body input.search").val());
+            var strSearch = $("body input.search").val();
+            getTaskFlow (strUserId, strAccessToken, true, strSearch);
         });
         
         /*
