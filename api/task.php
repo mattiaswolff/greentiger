@@ -61,7 +61,7 @@ switch($data->getMethod()) {
             $arrKeywordsContent = array("test1");
             $arrKeywords = array("test2");
             foreach ($arrRequestVars["content"] as $value) {
-                $arrKeywordsContent = array_push($arrKeywordsContent,  str_split($value));   
+                $arrKeywordsContent = array_merge($arrKeywordsContent,  str_split($value));   
             }
             $arrKeywords = array_merge(array($arrRequestVars["tags"]), $arrKeywordsContent);
             
