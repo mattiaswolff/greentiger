@@ -4,11 +4,11 @@
     <title>Project Copperfield - Test</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript">
-        var _pc = _pc || {};
-        _pc["id"] = "matwo";
+        var _kundo = _kundo || {};
+        _kundo["id"] = "matwo";
         //var _pc["definitions"] = "matwo";
-        _pc["userName"] = "matwo";
-        _pc["userEmail"] = "matwo";
+        _kundo["userName"] = "matwo";
+        _kundo["userEmail"] = "matwo";
         (function() {
         function async_load(){
             var s = document.createElement('script');
