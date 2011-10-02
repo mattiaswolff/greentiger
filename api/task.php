@@ -58,8 +58,8 @@ switch($data->getMethod()) {
             $arrUser = array("userId" => $strCreateUserId, "userName" => $strCreateUserName); 
             $objTask->setId();
             $objTask->setCreatedBy($arrUser);
-            $arrKeywordsContent = array();
-            $arrKeywords = array();
+            $arrKeywordsContent = array("test1");
+            $arrKeywords = array("test2");
             foreach ($arrRequestVars["content"] as $value) {
                 $arrKeywordsContent = array_push($arrKeywordsContent,  str_split($value));   
             }
