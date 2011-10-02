@@ -112,16 +112,16 @@ class Task {
         $db = $m->projectcopperfield;
         $this->updatedDate = date("c");
         
-        $arrKeywordsContent = array();
+        $arrKeywords = array();
         foreach ($this->GetContent() as $value) {
-                $arrKeywordsContent = array_merge($arrKeywordsContent,  explode(" ",$value));   
+                $arrKeyword = array_merge($arrKeywords,  explode(" ",$value));   
             }
         foreach ($this->GetComments() as $value) {
-                $arrKeywordsContent = array_merge($arrKeywordsContent,  explode(" ",$value));   
+                $arrKeywords = array_merge($arrKeywords,  explode(" ",$value));   
             }
-        $arrKeywordsContentSorted = array_count_values($arrKeywordsContent);
-        arsort($arrKeywordsContentSorted);
-        $this->setKeywords(array_keys($arrKeywordsContentSorted));
+        $arrKeywordsSorted = array_count_values($arrKeywords);
+        arsort($arrKeywordsSorted);
+        $this->setKeywords(array_keys($arrKeywordsSorted));
         
         $array = get_object_vars($this);
         $result = $db->command(array('findAndModify' => 'tasks', 
