@@ -82,11 +82,11 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
         var arrHtml = new Array();
         $.each(json.results[0], function(key, value) {    
             var d = new Date(value.updatedDate);
-            arrHtml.push('<article><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) +'"><img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") +'" width="50" height="50" /></a></div><div class="story"><div class="header vague">' + formatDateOutput(parseISO8601(value.updatedDate)) + ' <span class="link edit" id="' + value._id + '">edit</span> <span class="delete link" id="' + value._id + '">delete</span></div><div class="content">');
+            arrHtml.push('<article><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) +'"><img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") +'" width="50" height="50" /></a></div><div class="story"><div class="header"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) + '">' + value.createdBy.userName + '</a></div><div class="content">');
             $.each(value.content, function (key1, value1) {
                 arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
             });
-            arrHtml.push('</div><div class="actions"></div><div class="comments">');
+            arrHtml.push('</div><div class="actions vague">' + formatDateOutput(parseISO8601(value.updatedDate)) + ' <span class="link edit" id="' + value._id + '">edit</span> <span class="delete link" id="' + value._id + '">delete</span></div><div class="comments">');
             $.each(value.comments, function (key1, value1) {
                 arrHtml.push('<div class="comment clear"><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value1.userId) + '">' + '<img src="' + getUrlApi("users/" + value1.userId +"?part=image") + '" width="32" height="32" /></a></div><div><a href="' + getUrlClient("dashboard.php?userId=" + value1.userId) + '">' + value1.userName + '</a> ' + value1.text + '</div><div class="vague"> ' + formatDateOutput(parseISO8601(value1.date)) + '</div></div>');
             });
