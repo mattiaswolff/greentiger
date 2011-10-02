@@ -1,7 +1,7 @@
 var projectCopperfield = {
     org_slug : null, 
-    base_url : "http://projectCopperfield.se", 
-    static_base_url : "http://static.projectCopperfield.se", 
+    base_url : "http://kundo.se", 
+    static_base_url : "http://static.kundo.se", 
     lang: "sv", 
     image_align: "right", 
     image_top: "200px", 
