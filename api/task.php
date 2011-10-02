@@ -41,7 +41,7 @@ switch($data->getMethod()) {
         else {
             $arrId = null;
         }
-        $arrResults = Task::get(10, $intOffset, $arrId, "test hoppa");
+        $arrResults = Task::get(10, $intOffset, $arrId, $strSearch);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
         break;
     
