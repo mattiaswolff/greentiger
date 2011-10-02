@@ -70,6 +70,9 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
         intOffset = 1;
     }
     else {
+        if ($("section.taskFlow article").length /10 ).toString().indexOf('.') != -1) {
+            break;
+        }
         intOffset = $("section.taskFlow article").length / 10 + 1;
     }
     $.ajax({
