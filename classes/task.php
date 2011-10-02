@@ -87,7 +87,7 @@ class Task {
             }
         }
         elseif ($arrObjectId != null) {
-            $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array("$in" => explode(" ", $strSearch))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
+            $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array("$in" => explode(" ", $strSearch))))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
         }
         else {
             $objResults[0] = $db->tasks->find()->limit($intLimit)->skip($intSkip);
