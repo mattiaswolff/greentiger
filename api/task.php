@@ -60,7 +60,7 @@ switch($data->getMethod()) {
             $objTask->setCreatedBy($arrUser);
             $arrKeywordsContent = array();
             foreach ($arrRequestVars["content"] as $value) {
-                $arrKeywordsContent = array_push($arrKeywordsContent,  str_split($value);   
+                $arrKeywordsContent = array_push($arrKeywordsContent,  str_split($value));   
             }
             $arrKeywords = array_merge($arrRequestVars["tags"], $array2);
             $objTask->setKeywords($arrKeywords);
