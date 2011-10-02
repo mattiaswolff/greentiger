@@ -64,13 +64,13 @@ switch($data->getMethod()) {
             foreach ($arrRequestVars["content"] as $value) {
                 $arrKeywordsContent = array_merge($arrKeywordsContent,  explode(" ",$value));   
             }
+            foreach ($arrRequestVars["comments"] as $value) {
+                $arrKeywordsContent = array_merge($arrKeywordsContent,  explode(" ",$value));   
+            }
             $arrKeywordsContentSorted = array_count_values($arrKeywordsContent);
             arsort($arrKeywordsContentSorted);
-            $arrKeywordsContent = array_keys($arrKeywordsContentSorted);
-            $arrKeywords = array_merge(array($arrRequestVars["tags"]), $arrKeywordsContent);
+            $arrKeywords = array_keys($arrKeywordsContentSorted);
             
-            print_r($arrKeywordsContent);
-            print_r($arrKeywords);
             $objTask->setKeywords($arrKeywords);
             $objTask->setComments($arrRequestVars["comments"]);
             $objTask->setLikes($arrRequestVars["likes"]);
