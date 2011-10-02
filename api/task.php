@@ -58,8 +58,12 @@ switch($data->getMethod()) {
             $arrUser = array("userId" => $strCreateUserId, "userName" => $strCreateUserName); 
             $objTask->setId();
             $objTask->setCreatedBy($arrUser);
-            //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled internally
-            //$objTask->setAttachments("attachment"); not implemented
+            $arrKeywordsContent = array();
+            foreach ($arrRequestVars["content"] as $value) {
+                $arrKeywordsContent = array_push($arrKeywordsContent,  str_split($value);   
+            }
+            $arrKeywords = array_merge($arrRequestVars["tags"], $array2);
+            $objTask->setKeywords($arrKeywords);
             $objTask->setComments($arrRequestVars["comments"]);
             $objTask->setLikes($arrRequestVars["likes"]);
             $objTask->setRatings($arrRequestVars["ratings"]);
