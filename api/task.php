@@ -58,10 +58,10 @@ switch($data->getMethod()) {
             $arrUser = array("userId" => $strCreateUserId, "userName" => $strCreateUserName); 
             $objTask->setId();
             $objTask->setCreatedBy($arrUser);
-            $arrKeywordsContent = array("test1");
+            $arrKeywordsContent = array();
             $arrKeywords = array("test2");
             foreach ($arrRequestVars["content"] as $value) {
-                $arrKeywordsContent = array_merge($arrKeywordsContent,  str_split($value));   
+                $arrKeywordsContent = array_merge($arrKeywordsContent,  explode(" ",$value));   
             }
             $arrKeywords = array_merge(array($arrRequestVars["tags"]), $arrKeywordsContent);
             
