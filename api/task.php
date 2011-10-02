@@ -60,9 +60,13 @@ switch($data->getMethod()) {
             $objTask->setCreatedBy($arrUser);
             $arrKeywordsContent = array();
             foreach ($arrRequestVars["content"] as $value) {
+                print_r($value);
                 $arrKeywordsContent = array_push($arrKeywordsContent,  str_split($value));   
             }
             $arrKeywords = array_merge($arrRequestVars["tags"], $arrKeywordsContent);
+            
+            print_r($arrKeywordsContent);
+            print_r($arrKeywords);
             $objTask->setKeywords($arrKeywords);
             $objTask->setComments($arrRequestVars["comments"]);
             $objTask->setLikes($arrRequestVars["likes"]);
