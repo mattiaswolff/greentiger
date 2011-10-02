@@ -28,32 +28,5 @@
 </head>
 
 <body id="home">
-        <div class ="top">
-            <nav class="pageNav invisible">
-                <a id="a_home">home</a> | 
-                <a id="a_definition">definitions</a> | 
-                <a id="a_profile">profile</a>
-            </nav>
-            <section id="navbar"></section>
-        </div>
-        <div class = "container">
-            <aside class="userInfo">
-                <img id="userImage" class="user" alt="Företaget" title="Företaget" src="" />
-                <div class="description"></div>
-            </aside>
-        <div class="main">
-            <section class="userName"></section>
-            <div class="content">
-                <?php include $page_content; ?>
-            </div>
-            <aside></aside>
-        </div>
-    </div>
-        
-    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
-    <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
-
 </body>
 </html>
