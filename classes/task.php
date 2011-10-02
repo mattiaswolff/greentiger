@@ -111,6 +111,18 @@ class Task {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $this->updatedDate = date("c");
+        
+        $arrKeywordsContent = array();
+        foreach ($this->GetContent() as $value) {
+                $arrKeywordsContent = array_merge($arrKeywordsContent,  explode(" ",$value));   
+            }
+        foreach ($this->GetComments() as $value) {
+                $arrKeywordsContent = array_merge($arrKeywordsContent,  explode(" ",$value));   
+            }
+        $arrKeywordsContentSorted = array_count_values($arrKeywordsContent);
+        arsort($arrKeywordsContentSorted);
+        $this->setKeywords(array_keys($arrKeywordsContentSorted));
+        
         $array = get_object_vars($this);
         $result = $db->command(array('findAndModify' => 'tasks', 
         'query' => array('_id' => $this->_id),
