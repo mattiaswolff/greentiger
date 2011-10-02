@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Project Copperfield</title>
+    <title>Project Copperfield - Test</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <script type="text/javascript">
         var _pc = _pc || {};
         var _pc["id"] = "matwo";
