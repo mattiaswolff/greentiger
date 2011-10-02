@@ -69,7 +69,10 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
     if (boolEmpty) {
         intOffset = 1;
     }
-    else {
+    else {        
+        if (($("section.taskFlow article").length /10 ).toString().indexOf('.') != -1) {
+            return;
+        }
         intOffset = $("section.taskFlow article").length / 10 + 1;
     }
     $.ajax({
