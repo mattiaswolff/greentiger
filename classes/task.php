@@ -114,7 +114,7 @@ class Task {
         
         $arrKeywords = array();
         foreach ($this->GetContent() as $value) {
-                $arrKeyword = array_merge($arrKeywords,  explode(" ",$value));   
+                $arrKeywords = array_merge($arrKeywords,  explode(" ",$value));   
             }
         foreach ($this->GetComments() as $value) {
                 $arrKeywords = array_merge($arrKeywords,  explode(" ",$value["text"]));   
