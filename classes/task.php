@@ -117,7 +117,7 @@ class Task {
                 $arrKeyword = array_merge($arrKeywords,  explode(" ",$value));   
             }
         foreach ($this->GetComments() as $value) {
-                $arrKeywords = array_merge($arrKeywords,  explode(" ",$value));   
+                $arrKeywords = array_merge($arrKeywords,  explode(" ",$value["text"]));   
             }
         $arrKeywordsSorted = array_count_values($arrKeywords);
         arsort($arrKeywordsSorted);
