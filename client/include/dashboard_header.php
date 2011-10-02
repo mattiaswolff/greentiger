@@ -93,6 +93,15 @@
         Updated: -
         */
         $(".createTask").delegate(".delete", "click", function(){
+            getTaskFlow (strUserId, strAccessToken, true, $("body input.search").val());
+        });
+        
+        /*
+        Purpose: Search the dashboard
+        Created: 2011-08-11 (Mattias Wolff)
+        Updated: -
+        */
+        $("body").delegate("#search", "click", function(){
             $('form.task').addClass('invisible');
         });
         

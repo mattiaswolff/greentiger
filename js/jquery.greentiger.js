@@ -65,7 +65,7 @@ Purpose: Add tasks to task flow.
 Created: 2011-08-11 (Mattias Wolff)
 Updated: -
 */
-function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
+function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
     if (boolEmpty) {
         intOffset = 1;
     }
@@ -74,7 +74,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty) {
     }
     $.ajax({
                 type: "GET",
-                data: {access_token: strAccessToken, offset: intOffset},
+                data: {access_token: strAccessToken, offset: intOffset, search: strSearch},
                 dataType: "json",
                 async: false,
                 url: getUrlApi("users/" + strUserId + "/tasks"),

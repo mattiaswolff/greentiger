@@ -8,6 +8,6 @@
     </form>
 </section>
 <div class="search">
-    <input type="text" name="search" class="search" /><span class="button grey search">Search</span>
+    <input type="text" name="search" class="search" /><span class="button grey search" id="search">Search</span>
 </div>
 <section class="taskFlow"></section>
