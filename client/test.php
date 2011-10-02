@@ -5,10 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript">
         var _pc = _pc || {};
-        var _pc["id"] = "matwo";
+        _pc["id"] = "matwo";
         //var _pc["definitions"] = "matwo";
-        var _pc["userName"] = "matwo";
-        var _pc["userEmail"] = "matwo";
+        _pc["userName"] = "matwo";
+        _pc["userEmail"] = "matwo";
         (function() {
         function async_load(){
             var s = document.createElement('script');
