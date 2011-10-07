@@ -3,8 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){
+        strUserId = getParameterByName("userId");
         $.getJSON(getUrlApi('users/' + strUserId), {access_token: strAccessToken},function(json) {
             $.each(json.definitions, function(key, value) {
                 //var counter = $('.definitions > article').length;
