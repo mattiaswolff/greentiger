@@ -19,6 +19,24 @@
             //$('article.definition:nth-child(odd)').addClass('left');
             //$('article.definition:nth-child(even)').addClass('right');
         });
+        
+         $("section.createTask > div").delegate(".blue", "click", function(){
+            $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
+                var arrHtml = new Array();
+                $.each(json.results[0].content, function(key, value) {
+                    arrHtml.push(getHtmlTaskRow(value.name, "content." +value.name, value.description, value.type, '', value.config, value.required));
+                });
+                arrHtml.push('<input class="invisible" type="text" name="createUserId" value="' + window.sessionStorage.getItem("userId") + '" />');
+                arrHtml.push('<input class="invisible" type="text" name="createUserName" value="' + window.sessionStorage.getItem("userName") + '" />');
+                $('form.task section').empty();
+                $('form.task div.description').empty();
+                $('form.task div.description').append(json.results[0].description);
+                $('form.task section').append(arrHtml.join(""));
+                $('form.task').attr('id', json.results[0]._id);
+                $('form.task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
+                $('form.task').removeClass('invisible');
+            });    
+        });
     });
     </script>    
 </head>
