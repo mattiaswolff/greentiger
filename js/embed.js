@@ -11,7 +11,7 @@ var projectCopperfield = {
         da: "Luk", 
         no: "Lukk"
     }, 
-    custom_image_url: 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/api/users/matwo01?part=image',
+    custom_image_url : null,
     embed_url : "/embed/landingpage/", 
     image_url : "/images/tycktill-1", 
     btn_close_url : "/static/images/projectCopperfield-close-", 
@@ -52,7 +52,7 @@ var projectCopperfield = {
         }
     }, 
     create_overlay: function(b) { 
-        var a="top: 0; bottom:0; min-height:600px; left: 0; background: #000;filter: alpha(opacity=65); opacity: 0.65; z-index: 1000; width: 100%;";
+        var a="top: 0; bottom:0; min-height:600px; left: 0; background: #000;filter: alpha(opacity=25); opacity: 0.25; z-index: 1000; width: 100%;";
         a += projectCopperfield.get_fixed_style();
         if (projectCopperfield.old_browser()) { 
             var c = Math.max (document.body.clientHeight, document.documentElement.clientHeight); 
@@ -62,11 +62,12 @@ var projectCopperfield = {
     },
     create_button : function() { 
         var b = projectCopperfield.get_or_create_div ("projectCopperfield_button_container");
-        var c = "top: " + projectCopperfield.image_top + "; " + projectCopperfield.image_align + ": 0; z-index: 99999; cursor: pointer; margin: 0;";
+        var c = "top: " + projectCopperfield.image_top + "; " + projectCopperfield.image_align + ": 0; z-index: 99999; cursor: pointer; margin: 0; -webkit-box-shadow: 0px 0px 20px #000; -webkit-border-radius: 5px 0 0 5px;";
         c += projectCopperfield.get_fixed_style();
         var a = projectCopperfield.custom_image_url || projectCopperfield.static_base_url + projectCopperfield.image_url + "-" + projectCopperfield.lang + "-" + projectCopperfield.image_align + ".png"; 
         b.innerHTML += '<img src="' + a + '" alt="" id="projectCopperfield_feedback" style="' + c + '" onclick= "projectCopperfield.toggle_box()">'
         },
+        
     create_frame : function(d) {
         var b = projectCopperfield.close_text[projectCopperfield.lang];
         var e = "cursor:pointer; height:26px; left:50%; margin-left:376px; top:9px; width:90px; z-index:100100;"; 
@@ -74,12 +75,12 @@ var projectCopperfield = {
         d.innerHTML += '<img title="' + b + '"src="' + projectCopperfield.base_url + projectCopperfield.btn_close_url + projectCopperfield.lang + '.gif" alt="" id="projectCopperfield_close" style="' + e + '" onclick="projectCopperfield.delete_frame()">'; 
         var c = projectCopperfield.base_url + projectCopperfield.embed_url + projectCopperfield.org_slug + "?lang=" + projectCopperfield.lang; 
         if (projectCopperfield.user_name && projectCopperfield.user_email) { 
-            c+= "&name=" + projectCopperfield.user_name + "&useremail=" + projectCopperfield.user_email; 
+            c += "&name=" + projectCopperfield.user_name + "&useremail=" + projectCopperfield.user_email; 
             c = encodeURI(c)
         } 
-            var a="background: white; border: none; height: 540px; left: 50%; margin-left: -470px; position: fixed; top: 40px; width: 940px; z-index: 100000;";
-            a += projectCopperfield.get_fixed_style();
-            d.innerHTML += '<iframe src="' + c + '" id="projectCopperfield_iframe" scrolling="no" frameborder="no" style="'+a+'"></iframe>'
+        var a= "background: white; border: none; height: 540px; left: 50%; margin-left: -470px; position: fixed; top: 40px; width: 940px; z-index: 100000; -webkit-box-shadow: 0px 0px 40px #000; -webkit-border-radius: 10px;";
+        a += projectCopperfield.get_fixed_style();
+        d.innerHTML += '<iframe src="' + c + '" id="projectCopperfield_iframe" scrolling="no" frameborder="no" style="' + a + '"></iframe>'
     },
     delete_frame : function() { 
         var a = projectCopperfield.get_or_create_div("projectCopperfield_container");
@@ -131,5 +132,4 @@ var projectCopperfield = {
         projectCopperfield.create_button()
     }
 };
-//test
 projectCopperfield.init();
