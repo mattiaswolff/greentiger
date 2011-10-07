@@ -76,7 +76,7 @@ var projectCopperfield = {
         var c = projectCopperfield.base_url + projectCopperfield.embed_url + projectCopperfield.org_slug + "?lang=" + projectCopperfield.lang; 
         if (projectCopperfield.user_name && projectCopperfield.user_email) { 
             c += "&name=" + projectCopperfield.user_name + "&useremail=" + projectCopperfield.user_email; 
-            c = encodeURI(c)
+            c = encodeURI("http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/embed.php")
         } 
         var a= "background: white; border: none; height: 540px; left: 50%; margin-left: -470px; position: fixed; top: 40px; width: 940px; z-index: 100000; -webkit-box-shadow: 0px 0px 40px #000; -webkit-border-radius: 10px;";
         a += projectCopperfield.get_fixed_style();
