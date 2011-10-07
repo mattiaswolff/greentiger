@@ -18,6 +18,7 @@
             //$('article.definition:nth-child(odd)').addClass('left');
             //$('article.definition:nth-child(even)').addClass('right');
         });
+    });
     </script>    
 </head>
 <body id="home">
