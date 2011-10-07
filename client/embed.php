@@ -38,6 +38,20 @@
                 $('form.task').removeClass('invisible');
             });    
         });
+        
+        $("body").delegate("form", "submit", function(event) {
+            if (event.preventDefault()) {
+                event.preventDefault();// cancels the form submission
+            }
+            else {
+                event.returnValue = false;
+            }
+            
+            submitFormJSON(this ,$(this).attr('url'), $(this).attr('method'), false);
+            getTaskFlow (strUserId, strAccessToken, true);
+            $('form.task').addClass('invisible');
+        });
+        
     });
     </script>    
 </head>
