@@ -2,7 +2,10 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.toObject.js"></script>
+    <script type="text/javascript" src="../js/form2object.js"></script>
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/embed.css" />
     <script type="text/javascript">
