@@ -11,7 +11,7 @@ var projectCopperfield = {
         da: "Luk", 
         no: "Lukk"
     }, 
-    custom_image_url : 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/api/users/matwo01?part=image',
+    custom_image_url: 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/api/users/matwo01?part=image',
     embed_url : "/embed/landingpage/", 
     image_url : "/images/tycktill-1", 
     btn_close_url : "/static/images/projectCopperfield-close-", 
