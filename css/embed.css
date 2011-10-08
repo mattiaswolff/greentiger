@@ -29,13 +29,13 @@ input[type="radio"], input[type="checkbox"]{margin: 0;width: 1; border:0}
 textarea{height:172px}
 
 .createTask form {  padding: 0;  width: 100%;}
-section.createTask .description { padding: 10px; width: 100%; margin-bottom: 10px; background: snow; border-top: solid 1px hsl(0, 0%, 80%); border-bottom: solid 1px hsl(0, 0%, 80%); background: hsl(100, 19%, 100%); font: 17px arial,sans-serif;}
+section.createTask .description { padding: 10px; width: 100%; background: snow; border-top: solid 1px hsl(0, 0%, 80%); border-bottom: solid 1px hsl(0, 0%, 80%); background: hsl(100, 19%, 100%); font: 17px arial,sans-serif; color: hsl(0, 0%, 10%); font-style: italic;}
 .clear{clear: both;}
 .invisible{display: none}
 form.task div.header {  padding: 3px; }
 form.task article {margin: 10px 0 0 0;}
 form.task > section {
-    padding: 0 15px;
+    padding: 5px 15px;
 }
 
 .button{cursor:pointer;border-bottom: 1px solid #999;border-top: 1px solid #CCC;border-left: 1px solid #BBB;border-right: 1px solid #BBB;padding: 5px; font-size: 13px; -webkit-border-radius: 0px; min-width: 80px; display: inline-block; text-align: center; margin: 0.9px;}
@@ -50,7 +50,7 @@ form.task > section {
 form .button {float: right; margin-top: 10px; margin-left: 10px;}
 input.search {float: left; width: 425px; -webkit-border-radius: 0px;}
 .button.search {width: auto; padding: 7px;}
-li > .button {margin: 5px 0;}
+li > .button {}
 div.search {margin: 20px 0px;}
 
 input:focus:invalid {
@@ -61,7 +61,7 @@ input:focus:invalid {
 input:focus:valid {
   background: green;
 }
-ul.horizontal {list-style: none;  margin: 0; padding: 10px; }
+ul.horizontal {list-style: none;  margin: 0; padding: 15px; }
 li.horizontal {display: inline; margin: 0 5px;}
 .form-field {vertical-align: text-bottom; width: 60px; display: inline-block; padding: 0; margin: 0;}
 
