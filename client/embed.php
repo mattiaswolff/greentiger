@@ -19,7 +19,7 @@
         });
         
          $("section.createTask > div").delegate(".blue", "click", function(){
-            if (("f" + $(this).attr('id')) != $('form.task').attr('id') {
+            if (("f" + $(this).attr('id')) != $('form.task').attr('id')) {
             $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
                 var arrHtml = new Array();
                 $.each(json.results[0].content, function(key, value) {
