@@ -35,7 +35,7 @@
                 $('form.task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
             }); 
             $('form.task').removeClass('invisible');
-            $('form.task').attr('id', ("f" + $(this).attr('id')))
+            $('form.task').attr('id', ("f" + $(this).attr('id')));
             $("section.createTask > div span.button").removeClass('darkBlue');
             $("section.createTask > div span.button").addClass('blue');
             $(this).removeClass('blue');
