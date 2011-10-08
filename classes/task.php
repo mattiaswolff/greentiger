@@ -88,7 +88,7 @@ class Task {
         }
         elseif ($arrObjectId != null) {
             if ($strSearch != '') {
-                $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array('$in' => $arrSearch)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
+                $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array('$in' => (strtolower($arrSearch)))))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
             }
             else {
                 $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
@@ -129,6 +129,7 @@ class Task {
         foreach ($this->GetComments() as $value) {
                 $arrKeywords = array_merge($arrKeywords,  explode(" ",$value["text"]));   
             }
+        $arrKeywords = unserialize(strtolower(serialize($arrKeywords))); 
         $arrKeywordsSorted = array_count_values($arrKeywords);
         arsort($arrKeywordsSorted);
         $this->setKeywords(array_keys($arrKeywordsSorted));
