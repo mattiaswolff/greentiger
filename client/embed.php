@@ -18,7 +18,7 @@
             });
         });
         
-         $("section.createTask > div span").delegate(".button", "click", function(){
+         $("section.createTask > div").delegate(".button", "click", function(){
             if (("f" + $(this).attr('id')) != $('form.task').attr('id')) {
             $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
                 var arrHtml = new Array();
