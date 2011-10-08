@@ -88,3 +88,8 @@ z-index: 100100;
 position: fixed;
 background-image: url('http://a.unbounce.com/s/images/fancybox/fancybox.png');
 background-position: -40px 0px;}
+
+.darkBlue {
+    background: hsl(194, 51%, 25%);  border: solid 1px hsl(210, 17%, 40%);
+    color: white;
+}
