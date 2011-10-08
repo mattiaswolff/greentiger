@@ -19,6 +19,7 @@
         });
         
          $("section.createTask > div").delegate(".blue", "click", function(){
+            if (("f" + $(this).attr('id')) != $('form.task').attr('id') {
             $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
                 var arrHtml = new Array();
                 $.each(json.results[0].content, function(key, value) {
@@ -32,12 +33,21 @@
                 $('form.task section').append(arrHtml.join(""));
                 $('form.task').attr('id', json.results[0]._id);
                 $('form.task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
-                $('form.task').removeClass('invisible');
             }); 
-            $("section.createTask > div span.button").removeClass('inUse');
+            $('form.task').removeClass('invisible');
+            $('form.task').attr('id', ("f" + $(this).attr('id')))
+            $("section.createTask > div span.button").removeClass('darkBlue');
             $("section.createTask > div span.button").addClass('blue');
             $(this).removeClass('blue');
-            $(this).addClass('inUse');
+            $(this).addClass('darkBlue');
+            }
+            else {
+                $('form.task').addClass('invisible');                
+                $(this).removeClass('darkblue');
+                $(this).addClass('blue');
+                $('form.task section').empty();
+                $('form.task div.description').empty();
+            }
         });
         
         $("body").delegate("form", "submit", function(event) {
