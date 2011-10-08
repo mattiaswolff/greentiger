@@ -67,7 +67,7 @@
     </script>    
 </head>
 <body id="home">
-<section class="createTask">
+<div id="main" class="createTask">
     <div><ul class="horizontal"></ul></div>
     <form class="task invisible" method="POST">
         <div class="description left"></div>
@@ -75,6 +75,8 @@
         <div class="buttons"><input class="button green" type="submit" name="POST" value="Post" /></div>
         <div class="clear"></div>
     </form>
-</section>
+</div>
+<aside>test1</aside>
+<footer>test2</footer>
 </body>
 </html>
