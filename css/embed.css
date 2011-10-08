@@ -4,21 +4,67 @@
 body {font-family: arial,sans-serif; font-size: 13px;line-height: 1.5; background-color: white; clear:both; margin: 0; padding: 0;}
 div,section,header,aside,article,footer,nav,input,textarea{display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
 input, textarea, select{font: 17px arial,sans-serif;border-bottom: 1px solid #999;border-top: 1px solid #CCC; border-left: 1px solid #BBB;border-right: 1px solid #BBB; padding: 5px;}
+    /** Buttons */
+.button {
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+border-bottom: 1px solid rgba(0,0,0,0.25);
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+}
+    /** Blue */
+.button.small {
+font-size: 11px;
+}
+.button.medium {
+font-size: 13px;
+}
+.button.large {
+font-size: 14px;
+padding: 8px 14px 9px;
+}
+ 
+/* Colors ---------- */
+.button.blue {
+background-color: #2daebf;
+}
+.button.red {
+background-color: #e33100;
+}
+.button.magenta {
+background-color: #a9014b;
+}
+.button.orange {
+background-color: #ff5c00;
+}
+.button.yellow {
+background-color: #ffb515;
+}
 
 /**
  * Layout
  */
 #main {
     width: 630px;
-    height: 100%;
-    background-color: hsl(100, 19%, 87%);
-    border-right: solid 1px hsl(194, 12%, 66%);
+    height: 540px;
     float: left;
 }
 
 aside {
-    width: 270px;
-    height: 100%;
+    width: 310px;
+    height: 480px;
+    float: right;
 }
 
 footer {
@@ -26,6 +72,21 @@ footer {
     border-top: 1px solid #CCC;
 }
 
+/**
+ * Modules
+ */
+
+/* Task Form Module */
+.tafo {
+    background-color: hsl(100, 19%, 87%);
+    border-right: solid 1px hsl(194, 12%, 66%);
+}
+    /* Choose definition */
+.tafo .chde { padding: 10px; }
+
+    /* Description */
+.tafo .desc { padding: 10px; width: 100%; background: snow; border-top: solid 1px hsl(0, 0%, 80%); border-bottom: solid 1px hsl(0, 0%, 80%); font: 17px arial,sans-serif; color: hsl(0, 0%, 10%); font-style: italic; }
+    
 #navbar {float: right;}
 .top {height: 34px;background-color: #000; color: white;   padding: 3px;}
 .container {width: 1000px;  margin:0 auto;  }

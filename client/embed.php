@@ -67,16 +67,16 @@
     </script>    
 </head>
 <body id="home">
-<div id="main" class="createTask">
-    <div><ul class="horizontal"></ul></div>
-    <form class="task invisible" method="POST">
-        <div class="description left"></div>
+<div id="main" class="tafo">
+    <div class="chde"><ul class="horizontal"></ul></div>
+    <div class="description left"></div>
+    <form class="task" method="POST">
         <section class="clear"></section>
         <div class="buttons"><input class="button green" type="submit" name="POST" value="Post" /></div>
         <div class="clear"></div>
     </form>
 </div>
-<aside>test1</aside>
-<footer>test2</footer>
+<aside><span class="button blue">test1</span></aside>
+<footer><span class="button">test2</span></footer>
 </body>
 </html>
