@@ -1,3 +1,9 @@
+//test
+
+
+
+
+
 var projectCopperfield = {
     org_slug : null, 
     base_url : "http://kundo.se", 
@@ -10,7 +16,7 @@ var projectCopperfield = {
         en : "Close", 
         da: "Luk", 
         no: "Lukk"
-    }, 
+    }, //test
     custom_image_url : null,
     embed_url : "/embed/landingpage/", 
     image_url : "/images/tycktill-1", 
@@ -72,11 +78,11 @@ var projectCopperfield = {
         var b = projectCopperfield.close_text[projectCopperfield.lang];
         var e = "cursor:pointer; height:26px; left:50%; margin-left:376px; top:9px; width:90px; z-index:100100;"; 
         e += projectCopperfield.get_fixed_style(); 
-        d.innerHTML += '<div style="cursor: pointer;height: 30px;left: 50%;margin-left: 453px;top: 30px;width: 30px;z-index: 100100; position: fixed; background-image: url(''http://a.unbounce.com/s/images/fancybox/fancybox.png''); background-position: -40px 0px;" onclick="projectCopperfield.delete_frame()">'; 
+        d.innerHTML += '<div style="cursor: pointer;height: 30px;left: 50%;margin-left: 453px;top: 30px;width: 30px;z-index: 100100; position: fixed; background-image: url(' + "'http://a.unbounce.com/s/images/fancybox/fancybox.png'" + '); background-position: -40px 0px;" onclick="projectCopperfield.delete_frame()">'; 
         var c = projectCopperfield.base_url + projectCopperfield.embed_url + projectCopperfield.org_slug + "?lang=" + projectCopperfield.lang; 
         if (projectCopperfield.user_name && projectCopperfield.user_email) { 
             c += "&name=" + projectCopperfield.user_name + "&useremail=" + projectCopperfield.user_email; 
-            c = encodeURI();
+            c = encodeURI();//test
         }
         c = "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/embed.php?userId=matwo";
         var a= "background: white; border: none; height: 540px; left: 50%; margin-left: -470px; position: fixed; top: 40px; width: 940px; z-index: 100000; -webkit-box-shadow: 0px 0px 40px #000; -webkit-border-radius: 10px;";
