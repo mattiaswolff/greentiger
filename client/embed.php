@@ -33,10 +33,9 @@
                 $('form.task').attr('id', json.results[0]._id);
                 $('form.task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
                 $('form.task').removeClass('invisible');
-                $("section.createTask > div .blue").removeClass('inUse');
-                $(this).addClass('inUse');
-                
-            });    
+            }); 
+            $("section.createTask > div .blue").removeClass('inUse');
+            $(this).addClass('inUse');
         });
         
         $("body").delegate("form", "submit", function(event) {
