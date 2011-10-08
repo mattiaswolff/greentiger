@@ -42,7 +42,8 @@
             $(this).addClass('darkBlue');
             }
             else {
-                $('form.task').addClass('invisible');                
+                $('form.task').addClass('invisible');  
+                $('form.task').attr('id', '');
                 $(this).removeClass('darkblue');
                 $(this).addClass('blue');
                 $('form.task section').empty();
