@@ -14,11 +14,8 @@
         $.getJSON(getUrlApi('users/' + strUserId),function(json) {
             $.each(json.definitions, function(key, value) {
                 var strHtml2 = '<li class="horizontal"><span class="button blue" id="' + value._id.$id + '">' + value.name + '</span></li>';
-                //$('.definitions').append(strHtml);
                 $('section.createTask > div > ul').append(strHtml2); 
             });
-            //$('article.definition:nth-child(odd)').addClass('left');
-            //$('article.definition:nth-child(even)').addClass('right');
         });
         
          $("section.createTask > div").delegate(".blue", "click", function(){
@@ -36,6 +33,9 @@
                 $('form.task').attr('id', json.results[0]._id);
                 $('form.task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
                 $('form.task').removeClass('invisible');
+                $("section.createTask > div .blue").removeClass('inUse');
+                $(this).addClass('inUse');
+                
             });    
         });
         
