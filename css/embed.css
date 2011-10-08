@@ -6,7 +6,7 @@ div,section,header,aside,article,footer,nav,input,textarea{display:block;-webkit
 input, textarea, select{font: 17px arial,sans-serif;border-bottom: 1px solid #999;border-top: 1px solid #CCC; border-left: 1px solid #BBB;border-right: 1px solid #BBB; padding: 5px;}
     /** Buttons */
 .button {
-background: hsl(0, 0%, 13%) url('http://www.zurb.com/images/alert-overlay.png') repeat-x:
+background: hsl(0, 0%, 13%) url('http://www.zurb.com/images/alert-overlay.png') repeat-x;
 display: inline-block;
 padding: 5px 10px 6px;
 color: #fff;
