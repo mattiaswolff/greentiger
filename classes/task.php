@@ -74,11 +74,13 @@ class Task {
 
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null, $strSearch) {
+        
         $m = new Mongo();
         $db = $m->projectcopperfield;
         //Calulate offset and page size
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
+        $strSearch = strtolower($strSearch);
         $arrSearch = explode(" ", $strSearch);
         //Get results from database
         if (!isset($arrObjectId[0])) {
@@ -88,7 +90,7 @@ class Task {
         }
         elseif ($arrObjectId != null) {
             if ($strSearch != '') {
-                $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array('$in' => (strtolower($arrSearch)))))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
+                $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array('$in' => $arrSearch)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
             }
             else {
                 $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
