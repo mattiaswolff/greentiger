@@ -1,9 +1,3 @@
-//test
-
-
-
-
-
 var projectCopperfield = {
     org_slug : null, 
     base_url : "http://kundo.se", 
