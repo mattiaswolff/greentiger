@@ -72,7 +72,7 @@ var projectCopperfield = {
         var b = projectCopperfield.close_text[projectCopperfield.lang];
         var e = "cursor:pointer; height:26px; left:50%; margin-left:376px; top:9px; width:90px; z-index:100100;"; 
         e += projectCopperfield.get_fixed_style(); 
-        d.innerHTML += '<div style="cursor: pointer;height: 30px;left: 50%;margin-left: 453px;top: 30px;width: 30px;z-index: 100100; position: fixed; background-image: url("' + 'http://a.unbounce.com/s/images/fancybox/fancybox.png' + '"); background-position: -40px 0px;" onclick="projectCopperfield.delete_frame()">'; 
+        d.innerHTML += '<div style="cursor: pointer;height: 30px;left: 50%;margin-left: 453px;top: 30px;width: 30px;z-index: 100100; position: fixed; background-image: url(''http://a.unbounce.com/s/images/fancybox/fancybox.png''); background-position: -40px 0px;" onclick="projectCopperfield.delete_frame()">'; 
         var c = projectCopperfield.base_url + projectCopperfield.embed_url + projectCopperfield.org_slug + "?lang=" + projectCopperfield.lang; 
         if (projectCopperfield.user_name && projectCopperfield.user_email) { 
             c += "&name=" + projectCopperfield.user_name + "&useremail=" + projectCopperfield.user_email; 
