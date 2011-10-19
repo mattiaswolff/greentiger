@@ -1,5 +1,6 @@
-Definition 1
-Definition 2
+Existing definitions
+Definition 1<br/>
+Definition 2<br/>
 New definition
 <form id="section">
     <div class="fields"></div>
