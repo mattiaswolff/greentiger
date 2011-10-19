@@ -1,4 +1,4 @@
-Existing definitions
+Existing definitions<br/>
 Definition 1<br/>
 Definition 2<br/>
 New definition
