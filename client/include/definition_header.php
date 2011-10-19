@@ -6,8 +6,6 @@
             $('form .fields').append(getHtmlTaskRow('description', 'description', 'description', 'textarea', '', true));
             if (getParameterByName("definitionId") != "" ) {
                 $.getJSON(getUrlApi("definitions"), { definitionId: strDefinitionId }, function(json) {
-                    $(".content").val(json.definitions[0].name);
-                    $(".content").val(json.definitions[0].description);
                     $.each(json.definitions[0].content, function(key, value) {
                         var newrow = document.createElement('article');
                         var counter = document.getElementsByClassName('formRow').length;
