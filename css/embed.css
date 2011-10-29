@@ -27,7 +27,7 @@ a {text-decoration: none; color: #39F; font-weight: bold;}
 }
 
 /*Layout*/
-.createTask {  background-color: #DDE5D9;    width: 630px;  border-right: solid 1px hsl(194, 12%, 66%);  height: 541px; float: left;}
+.crt {  background-color: #DDE5D9;    width: 630px;  border-right: solid 1px hsl(194, 12%, 66%);  height: 541px; float: left;}
 aside {float:right; width: 310px; height: 541px;}
 
 /*Module*/
@@ -40,7 +40,6 @@ aside {float:right; width: 310px; height: 541px;}
 .crt form.crt-task > section {
     padding: 5px 15px;
 }
-
 .crt div.crt-buttons {padding: 15px; float: right;}
 
 .close {cursor: pointer;

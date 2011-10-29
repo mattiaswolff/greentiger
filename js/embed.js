@@ -62,7 +62,7 @@ var projectCopperfield = {
     },
     create_button : function() { 
         var b = projectCopperfield.get_or_create_div ("projectCopperfield_button_container");
-        var c = "top: " + projectCopperfield.image_top + "; " + projectCopperfield.image_align + ": 0; z-index: 99999; cursor: pointer; margin: 0; -webkit-box-shadow: 0px 0px 20px #000; -webkit-border-radius: 5px 0 0 5px;";
+        var c = "top: " + projectCopperfield.image_top + "; " + projectCopperfield.image_align + ": 0; z-index: 99999; cursor: pointer; margin: 0; -webkit-box-shadow: 0px 0px 20px #000; -webkit-border-radius: 5px 0 0 5px; -moz-box-shadow: 0px 0px 20px #000; -moz-border-radius: 5px 0 0 5px; box-shadow: 0px 0px 20px #000; border-radius: 5px 0 0 5px;";
         c += projectCopperfield.get_fixed_style();
         var a = projectCopperfield.custom_image_url || projectCopperfield.static_base_url + projectCopperfield.image_url + "-" + projectCopperfield.lang + "-" + projectCopperfield.image_align + ".png"; 
         b.innerHTML += '<img src="' + a + '" alt="" id="projectCopperfield_feedback" style="' + c + '" onclick= "projectCopperfield.toggle_box()">'
