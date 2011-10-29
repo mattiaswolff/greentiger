@@ -68,7 +68,7 @@
 </head>
 <body id="home">
 <section class="createTask crt">
-    <div><ul class="horizontal"></ul></div>
+    <div class="crt-definitions"><ul></ul></div>
     <form class="task invisible" method="POST">
         <div class="crt-desc"></div>
         <section class="clear"></section>
