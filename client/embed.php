@@ -28,8 +28,8 @@
                 arrHtml.push('<input class="invisible" type="text" name="createUserId" value="' + window.sessionStorage.getItem("userId") + '" />');
                 arrHtml.push('<input class="invisible" type="text" name="createUserName" value="' + window.sessionStorage.getItem("userName") + '" />');
                 $('form.task section').empty();
-                $('form.task div.description').empty();
-                $('form.task div.description').append(json.results[0].description);
+                $('.crt div.crt-desc').empty();
+                $('.crt div.crt-desc').append(json.results[0].description);
                 $('form.task section').append(arrHtml.join(""));
                 //$('form.task').attr('id', json.results[0]._id);
                 $('form.task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
