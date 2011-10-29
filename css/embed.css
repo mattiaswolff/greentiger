@@ -3,7 +3,7 @@ div,section,header,aside,article,footer,nav,input,textarea{display:block;-webkit
 body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: white; clear:both; margin: 0; padding: 0;}
 
 input, textarea, select{margin:0;font: 17px arial,sans-serif;border-bottom: 1px solid #999;border-top: 1px solid #CCC; border-left: 1px solid #BBB;border-right: 1px solid #BBB; padding: 5px; -webkit-border-radius: 2px; width: 100%;}
-input[type="submit"] {width: initial; min-width:100px;width: 83px;}
+input[type="submit"] {min-width:100px;width: 83px;}
 input[type="radio"], input[type="checkbox"]{margin: 0;width: 1; border:0}
 textarea{height:172px}
 input:focus:invalid {background: red;}
@@ -17,7 +17,6 @@ a {text-decoration: none; color: #39F; font-weight: bold;}
 .clear{clear: both;}
 
 .button{cursor:pointer;border-bottom: 1px solid #999;border-top: 1px solid #CCC;border-left: 1px solid #BBB;border-right: 1px solid #BBB;padding: 5px; font-size: 13px; -webkit-border-radius: 0px; min-width: 80px; display: inline-block; text-align: center; margin: 0.9px;}
-.button.grey{color:#000;background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F9F9F9),to(#E3E3E3));}
 .button.blue{color:#fff;background: #63B4CD; border: solid 1px #556677;}
 .button.red{color:#fff;background: #EF6C6C; border: solid 1px #882211;}
 .button.green{color:#fff;background: #8AB459; border: solid 1px #226600;}
