@@ -69,7 +69,7 @@
 <body id="home">
 <section class="createTask crt">
     <div class="crt-definitions"><ul></ul></div>
-    <form class="task invisible" method="POST">
+    <form class="crt-task invisible" method="POST">
         <div class="crt-desc"></div>
         <section class="clear"></section>
         <div class="crt-buttons"><input class="button green" type="submit" name="POST" value="Post" /></div>
