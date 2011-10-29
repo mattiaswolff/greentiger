@@ -52,7 +52,7 @@ var projectCopperfield = {
         }
     }, 
     create_overlay: function(b) { 
-        var a="top: 0; bottom:0; min-height:600px; left: 0; background: #000;filter: alpha(opacity=25); opacity: 0.25; z-index: 1000; width: 100%;";
+        var a="top: 0; bottom:0; min-height:600px; left: 0; background: #000; opacity: 0.25; z-index: 1000; width: 100%;";
         a += projectCopperfield.get_fixed_style();
         if (projectCopperfield.old_browser()) { 
             var c = Math.max (document.body.clientHeight, document.documentElement.clientHeight); 
