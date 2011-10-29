@@ -19,7 +19,7 @@
         });
         
          $("section.createTask > div").delegate(".button", "click", function(){
-            if (("f" + $(this).attr('id')) != $('form.task').attr('id')) {
+            if (("f" + $(this).attr('id')) != $('form.crt-task').attr('id')) {
             $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
                 var arrHtml = new Array();
                 $.each(json.results[0].content, function(key, value) {
@@ -27,27 +27,27 @@
                 });
                 arrHtml.push('<input class="invisible" type="text" name="createUserId" value="' + window.sessionStorage.getItem("userId") + '" />');
                 arrHtml.push('<input class="invisible" type="text" name="createUserName" value="' + window.sessionStorage.getItem("userName") + '" />');
-                $('form.task section').empty();
+                $('.crt form.crt-task section').empty();
                 $('.crt div.crt-desc').empty();
                 $('.crt div.crt-desc').append(json.results[0].description);
-                $('form.task section').append(arrHtml.join(""));
+                $('.crt form.crt-task section').append(arrHtml.join(""));
                 //$('form.task').attr('id', json.results[0]._id);
-                $('form.task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
+                $('.crt form.crt-task').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
             }); 
-            $('form.task').removeClass('invisible');
-            $('form.task').attr('id', ("f" + $(this).attr('id')));
+            $('.crt form.crt-task').removeClass('invisible');
+            $('.crt form.crt-task').attr('id', ("f" + $(this).attr('id')));
             $("section.createTask > div span.button").removeClass('darkBlue');
             $("section.createTask > div span.button").addClass('blue');
             $(this).removeClass('blue');
             $(this).addClass('darkBlue');
             }
             else {
-                $('form.task').addClass('invisible');  
-                $('form.task').attr('id', '');
+                $('.crt form.crt-task').addClass('invisible');  
+                $('.crt form.crt-task').attr('id', '');
                 $(this).removeClass('darkblue');
                 $(this).addClass('blue');
-                $('form.task section').empty();
-                $('form.task div.description').empty();
+                $('.crt form.crt-task section').empty();
+                $('.crt div.crt-desc').empty();
             }
         });
         
@@ -60,7 +60,7 @@
             }
             
             submitFormJSON(this ,$(this).attr('url'), $(this).attr('method'), false);
-            $('form.task').addClass('invisible');
+            $('.crt form.crt-task').addClass('invisible');
         });
         
     });
