@@ -13,8 +13,8 @@
         strUserId = getParameterByName("userId");
         $.getJSON(getUrlApi('users/' + strUserId),function(json) {
             $.each(json.definitions, function(key, value) {
-                var strHtml2 = '<li class="horizontal"><span class="button blue" id="' + value._id.$id + '">' + value.name + '</span></li>';
-                $('section.createTask > div > ul').append(strHtml2); 
+                var strHtml2 = '<li><span class="button blue" id="' + value._id.$id + '">' + value.name + '</span></li>';
+                $('.crt div.crt-definitions ul').append(strHtml2); 
             });
         });
         
