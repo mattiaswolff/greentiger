@@ -33,7 +33,7 @@ input.search {float: left; width: 425px; -webkit-border-radius: 0px;}
 }
 
 /*Layout*/
-.createTask {  background-color: #DDE5D9;    width: 630px;  border-right: solid 1px hsl(194, 12%, 66%);  height: 541px;}
+.createTask {  background-color: #DDE5D9;    width: 630px;  border-right: solid 1px hsl(194, 12%, 66%);  height: 541px; float: left;}
 aside {float:right}
 
 /*Module*/
@@ -47,7 +47,6 @@ form.task > section {
 ul.horizontal {list-style: none;  margin: 0; padding: 15px; }
 li.horizontal {display: inline; margin: 0 5px;}
 
-
 .close {cursor: pointer;
 height: 30px;
 left: 50%;
@@ -58,4 +57,3 @@ z-index: 100100;
 position: fixed;
 background-image: url('http://a.unbounce.com/s/images/fancybox/fancybox.png');
 background-position: -40px 0px;}
-
