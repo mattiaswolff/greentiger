@@ -67,12 +67,12 @@
     </script>    
 </head>
 <body id="home">
-<section class="createTask">
+<section class="createTask crt">
     <div><ul class="horizontal"></ul></div>
     <form class="task invisible" method="POST">
         <div class="description left"></div>
         <section class="clear"></section>
-        <div class="buttons"><input class="button green" type="submit" name="POST" value="Post" /></div>
+        <div class="crt-buttons"><input class="button green" type="submit" name="POST" value="Post" /></div>
         <div class="clear"></div>
     </form>
 </section>
