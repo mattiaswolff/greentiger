@@ -4,17 +4,17 @@ Created: 2011-08-11 (Mattias Wolff)
 Updated: test
 */
 function getUrlApi(strUrlExtension) {
-    var arrUrl = ["http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/api/", strUrlExtension];
+    var arrUrl = ["http://www.zowgle.com/api/", strUrlExtension];
     return  arrUrl.join("");
 }
 
 function getUrlClient(strUrlExtension) {
-    var arrUrl = ["http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/", strUrlExtension];
+    var arrUrl = ["http://www.zowgle.com/client/", strUrlExtension];
     return  arrUrl.join("");
 }
-
+//test
 function getUrlGit(strUrlExtension) {
-    var arrUrl = ["http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/git/", strUrlExtension];
+    var arrUrl = ["http://www.zowgle.com/git/", strUrlExtension];
     return  arrUrl.join("");
 }
 
