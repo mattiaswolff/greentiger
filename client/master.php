@@ -77,7 +77,7 @@
             
             window.google.identitytoolkit.setConfig({
     developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
-    companyName: "Project Copperfield",
+    companyName: "Zowgle",
     callbackUrl: getUrlGit("callback2.php"),
     realm: "",
     userStatusUrl: getUrlGit("userstatus.php"),
