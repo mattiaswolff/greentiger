@@ -103,11 +103,10 @@
             $("#navbar").accountChooser(); 
             if (!(window.sessionStorage.getItem("userId") === null)) {
                 $(".top > nav").removeClass("invisible"); window.google.identitytoolkit.showSavedAccount(window.sessionStorage.getItem("userEmail"));
-                $(".top > nav > #a_home").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/dashboard.php?userId=' + window.sessionStorage.getItem("userId"));
-                $(".top > nav > #a_definition").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/definition.php?userId=' + window.sessionStorage.getItem("userId"));
-                $(".top > nav > #a_profile").attr('href', 'http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/client/profile.php?userId=' + window.sessionStorage.getItem("userId"));
+                $(".top > nav > #a_home").attr('href', getUrlClient('dashboard.php?userId=' + window.sessionStorage.getItem("userId")));
+                $(".top > nav > #a_definition").attr('href', getUrlClient('definition.php?userId=' + window.sessionStorage.getItem("userId")));
+                $(".top > nav > #a_profile").attr('href', getUrlClient('profile.php?userId=' + window.sessionStorage.getItem("userId")));
             }
-        
         $("#navbar").delegate(".red", "click", function(){
                 sessionStorage.clear();
                 window.location.reload();
