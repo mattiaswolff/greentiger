@@ -8,8 +8,8 @@
             if (getParameterByName("definitionId") != "" ) {
                 $.getJSON(getUrlApi("definitions"), { definitionId: strDefinitionId }, function(json) {
                     
-                    $("#name input").append(newrow);
-                    $("#description name").append(newrow);
+                    $("#name input").attr('value', json.name);
+                    $("#description name").attr('value', json.description);
                     
                     $.each(json.results[0].content, function(key, value) {
                         var newrow = document.createElement('article');
