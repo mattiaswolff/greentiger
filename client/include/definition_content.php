@@ -1,6 +1,5 @@
-Existing definitions<br/>
-Definition 1<br/>
-Definition 2<br/>
+<section class="odef">
+</section>
 New definition
 <form id="section">
     <div class="fields"></div>
