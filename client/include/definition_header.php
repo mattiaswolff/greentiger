@@ -24,12 +24,14 @@
             
             $('form .buttons').append('<input class="button green" type="submit" name="POST" value="Post" />');
             $('form .buttons').append('<span class="button blue" id="addRow">Add form row</span>');
-            $('form').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
+            
             if (strDefinitionId = "") {
                 $('.edef form').attr('method', 'POST');
+                $('form').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
             }
             else {
                 $('.edef form').attr('method', 'PUT');
+                $('form').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions/" + strDefinitionId));
             }
             $(".content").delegate("#addRow", "click", function(){
                 var counter = $('.edef-row').length;
