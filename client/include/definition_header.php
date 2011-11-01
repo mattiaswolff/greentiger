@@ -26,12 +26,12 @@
             $('form .buttons').append('<span class="button blue" id="addRow">Add form row</span>');
             
             if (strDefinitionId == "") {
-                $('.edef form').attr('method', 'POST');
-                $('form').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
+                $('form.edef').attr('method', 'POST');
+                $('form.edef').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
             }
             else {
-                $('.edef form').attr('method', 'PUT');
-                $('form').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions/" + strDefinitionId));
+                $('form.edef').attr('method', 'PUT');
+                $('form.edef').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions/" + strDefinitionId));
             }
             $(".content").delegate("#addRow", "click", function(){
                 var counter = $('.edef-row').length;
