@@ -31,7 +31,7 @@
             }
             else {
                 $('form.edef').attr('method', 'PUT');
-                $('form.edef').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions/" + strDefinitionId));
+                $('form.edef').attr('url', getUrlApi("definitions/" + strDefinitionId));
             }
             $(".content").delegate("#addRow", "click", function(){
                 var counter = $('.edef-row').length;
