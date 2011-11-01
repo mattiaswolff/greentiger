@@ -81,4 +81,4 @@ line-height: 1.28;}
 /*Modules*/
 
 /*edit definition*/
-.edef .edef-row {border-bottom: 1px solid #ccc}
+.edef .edef-row {border-top: 3px solid hsl(0, 0%, 80%); margin-top: 25px; padding-top: 15px;}
