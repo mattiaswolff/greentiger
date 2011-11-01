@@ -77,3 +77,8 @@ li.horizontal {display: inline; margin: 0 5px;}
 .vague {color: #636363;
 font-size: 11px;
 line-height: 1.28;}
+
+/*Modules*/
+
+/*edit definition*/
+.edef .edef-row {border-bottom: 1px solid #ccc}
