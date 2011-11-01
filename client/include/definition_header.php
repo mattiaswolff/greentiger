@@ -25,7 +25,7 @@
             $('form .buttons').append('<input class="button green" type="submit" name="POST" value="Post" />');
             $('form .buttons').append('<span class="button blue" id="addRow">Add form row</span>');
             
-            if (strDefinitionId = "") {
+            if (strDefinitionId == "") {
                 $('.edef form').attr('method', 'POST');
                 $('form').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId") + "/definitions"));
             }
