@@ -1,9 +1,13 @@
 <script type="text/javascript">
         $(document).ready(function(){
-            strUserId = getParameterByName("userId"); 
             strDefinitionId = getParameterByName("definitionId");
             $('form .fields').append(getHtmlTaskRow('name' , 'name', 'name', 'description', 'text', '', true));
             $('form .fields').append(getHtmlTaskRow('description' , 'description', 'description', 'description', 'textarea', '', true));
+            
+            $.each(jsonUser.definitions, function(key, value) {
+                strHtml = '<a href="https://ww"' + value.id + '">' + value.name + '</a>';
+                $('.odef').append(strHtml);
+            });
             
             if (getParameterByName("definitionId") != "" ) {
                 $.getJSON(getUrlApi("definitions"), { definitionId: strDefinitionId }, function(json) {
