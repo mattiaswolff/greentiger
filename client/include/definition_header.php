@@ -4,7 +4,7 @@
             $('form .fields').append(getHtmlTaskRow('name' , 'name', 'name', 'description', 'text', '', true));
             $('form .fields').append(getHtmlTaskRow('description' , 'description', 'description', 'description', 'textarea', '', true));
             
-            $.each(jsonUser.definitions, function(key, value) {
+            $.each(jsonPageUser.definitions, function(key, value) {
                 strHtml = '<a href="https://ww"' + value.id + '">' + value.name + '</a>';
                 $('.odef').append(strHtml);
             });

@@ -69,7 +69,8 @@
                     dataType: 'json',  
                     async: false,
                     data: {access_token: strAccessToken},
-                    success: function(json){  
+                    success: function(json){
+                        jsonPageUser = json;
                         $('.userName').append(json.name);
                         $('.userInfo .description').append(json.description);
                     }
