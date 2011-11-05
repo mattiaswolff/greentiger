@@ -5,7 +5,7 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .container {width: 1000px;  margin:0 auto;  }
 .pageNav {display: inline; margin-top: 5px; float: left;}
 .login {display: block; float: right;}
-.userInfo {float: left; background-color: white; width: 250px; min-height: 450px; }
+.userInfo {float: left; background-color: white; width: 250px; min-height: 450px; padding: 15px;}
 .main {float: right; width: 750px;}
 .main > .content {float: left; width: 540px;}
 .main > .aside {float: right; width: 225px;}
@@ -17,7 +17,7 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .definition {width: 250px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 200px; margin-top: 20px;}
 .left {float: left;  margin-right: 10px;}
 .right {float: right}
-.user {border: solid 1px #CCC; max-width: 230px; max-height: 230px; margin: 20px 0;}
+.user { max-width: 220px; max-height: 220px; margin: 20px 0;}
 a {text-decoration: none; color: #007599; font-weight: bold;}
 table {padding: 0; text-align: left;}
 td {padding: 0 3px; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
@@ -94,3 +94,11 @@ line-height: 1.28;}
 
 /*edit definition*/
 .edef .edef-row {border-top: 3px solid hsl(0, 0%, 80%); margin-top: 25px; padding-top: 15px;}
+
+/*user info*/
+.iusr-url {
+    margin: 5px 15px;
+}
+.description {
+    margin: 15px;
+}
