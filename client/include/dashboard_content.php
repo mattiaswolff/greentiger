@@ -1,6 +1,6 @@
 <section class="createTask ctsk">
     <div class="ctsk-definitions"><ul></ul></div>
-    <form class="task invisible" method="POST">
+    <form class="task ctsk-task invisible" method="POST">
         <div class="ctsk-desc"></div>
         <section class="clear"></section>
         <div class="buttons"><input class="button blue" type="submit" name="POST" value="Post" /></div>

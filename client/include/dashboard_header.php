@@ -52,21 +52,33 @@
         Updated: -
         */
         $("div.ctsk-definitions").delegate(".blue", "click", function(){
-            $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), {access_token: strAccessToken}, function(json) {
-                var arrHtml = new Array();
-                $.each(json.results[0].content, function(key, value) {
-                    arrHtml.push(getHtmlTaskRow(value.name, value.name, "content." +value.name, value.description, value.type, '', value.config, value.required));
+            if (("f" + $(this).attr('id')) != $('form.ctsk-task').attr('id')) {
+                $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), {access_token: strAccessToken}, function(json) {
+                    var arrHtml = new Array();
+                    $.each(json.results[0].content, function(key, value) {
+                        arrHtml.push(getHtmlTaskRow(value.name, value.name, "content." +value.name, value.description, value.type, '', value.config, value.required));
+                    });
+                    arrHtml.push('<input class="invisible" type="text" name="createUserId" value="' + window.sessionStorage.getItem("userId") + '" />');
+                    arrHtml.push('<input class="invisible" type="text" name="createUserName" value="' + window.sessionStorage.getItem("userName") + '" />');
+                    $('.ctsk form section').empty();
+                    $('.ctsk div.ctsk-desc').empty();
+                    $('.ctsk div.ctsk-desc').append(json.results[0].description);
+                    $('.ctsk form section').append(arrHtml.join(""));
+                    $('.ctsk form').attr('id', json.results[0]._id);
+                    $('.ctsk form').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
+                    $('.ctsk form').removeClass('invisible');
+                    $(this).removeClass('blue');
+                    $(this).addClass('darkBlue');
                 });
-                arrHtml.push('<input class="invisible" type="text" name="createUserId" value="' + window.sessionStorage.getItem("userId") + '" />');
-                arrHtml.push('<input class="invisible" type="text" name="createUserName" value="' + window.sessionStorage.getItem("userName") + '" />');
+            }
+            else {
+                $('.ctsk form').addClass('invisible');  
+                $('.ctsk form').attr('id', '');
+                $(this).removeClass('darkblue');
+                $(this).addClass('blue');
                 $('.ctsk form section').empty();
-                $('.ctsk div.ctsk-desc').empty();
-                $('.ctsk div.ctsk-desc').append(json.results[0].description);
-                $('.ctsk form section').append(arrHtml.join(""));
-                $('.ctsk form').attr('id', json.results[0]._id);
-                $('.ctsk form').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
-                $('.ctsk form').removeClass('invisible');
-            });    
+                $('.ctsk div.crt-desc').empty();
+            }
         });
         
         /*
