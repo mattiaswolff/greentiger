@@ -58,7 +58,7 @@
                         window.sessionStorage.setItem("userId", json._id);
                         window.sessionStorage.setItem("userName", json.name);
                         window.sessionStorage.setItem("userEmail", json.email);
-                        window.sessionStorage.setItem("userUrl", json.email);
+                        window.sessionStorage.setItem("userUrl", json.url);
                         window.sessionStorage.setItem("userDescription", json.description);
                         window.sessionStorage.setItem("access_token", strAccessToken);
                     }
