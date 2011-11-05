@@ -18,6 +18,7 @@
         <div class = "container">
             <aside class="userInfo">
                 <img id="userImage" class="user" alt="Företaget" title="Företaget" src="" />
+                <div class="iusr-url"></div>
                 <div class="description"></div>
             </aside>
         <div class="main">
@@ -73,6 +74,7 @@
                     success: function(json){
                         jsonPageUser = json;
                         $('.userName').append(json.name);
+                        $('.userInfo .iusr-url').append(json.url);
                         $('.userInfo .description').append(json.description);
                     }
             });
