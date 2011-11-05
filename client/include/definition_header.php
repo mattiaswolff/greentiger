@@ -45,7 +45,7 @@
             
             $(".odef").delegate("span.link", "click", function(){
                 $('.edef-row').remove();
-                $.getJSON(getUrlApi("definitions/" + $(this).id), function(json) {
+                $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
                     
                     $("#name input").attr('value', json.results[0].name);
                     $("#description name").attr('value', json.results[0].description);
