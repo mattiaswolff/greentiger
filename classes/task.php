@@ -15,7 +15,7 @@ class Task {
     private $definition;
     private $content;
   
-    //Constructor
+    //Constructorsd
     public function __construct($objId = null){
         if ($objId != null) {
             $m = new Mongo();
@@ -81,6 +81,7 @@ class Task {
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
         $strSearch = mb_strtolower($strSearch, 'UTF-8');
+        print $strSearch;
         $arrSearch = explode(" ", $strSearch);
         //Get results from database
         if (!isset($arrObjectId[0])) {
