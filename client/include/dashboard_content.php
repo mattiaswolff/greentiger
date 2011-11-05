@@ -3,7 +3,7 @@
     <form class="task invisible" method="POST">
         <div class="ctsk-desc"></div>
         <section class="clear"></section>
-        <div class="buttons"><input class="button green" type="submit" name="POST" value="Post" /><span class="button red right delete">Close</span></div>
+        <div class="buttons"><input class="button blue" type="submit" name="POST" value="Post" /></div>
         <div class="clear"></div>
     </form>
 </section>
