@@ -1,5 +1,5 @@
 <section class="createTask ctsk">
-    <div class="ctsk-definitions"><ul><li></li></ul></div>
+    <div class="ctsk-definitions"><ul></ul></div>
     <form class="task invisible" method="POST">
         <div class="description left"></div>
         <section class="clear"></section>
