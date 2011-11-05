@@ -80,7 +80,7 @@ class Task {
         //Calulate offset and page size
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
-        $strSearch = strtolower($strSearch);
+        $strSearch = mb_strtolower($strSearch, 'UTF-8');
         $arrSearch = explode(" ", $strSearch);
         //Get results from database
         if (!isset($arrObjectId[0])) {
