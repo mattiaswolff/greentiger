@@ -51,19 +51,19 @@ $(function() {
 <script type="text/javascript">
     //Create dashboard boxes (NOT IN USE) and Create titles.
         $(document).ready(function(){
-            $('#userInfo .fields').append(getHtmlTaskRow('id', 'id', 'description', 'text', '', true));
-            $('#userInfo .fields').append(getHtmlTaskRow('name', 'name', 'description', 'text', '', true));
-            $('#userInfo .fields').append(getHtmlTaskRow('description', 'description', 'description', 'textarea', '', true));
+            $('.eusr .fields').append(getHtmlTaskRow('id', 'id', 'description', 'text', '', true));
+            $('.eusr .fields').append(getHtmlTaskRow('name', 'name', 'description', 'text', '', true));
+            $('.eusr .fields').append(getHtmlTaskRow('description', 'description', 'description', 'textarea', '', true));
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
-                    $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
+            $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
             $('input[name|="id"]').parent().parent("article").addClass("invisible");
-            $('#userInfo .buttons').append('<input class="button green" type="submit" name="PUT" value="Post" />');
-            $('#userInfo').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")));
+            $('.eusr .buttons').append('<input class="button green" type="submit" name="PUT" value="Post" />');
+            $('.eusr').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")));
             $('#userImage').attr('url', getUrlApi("users/"+ window.sessionStorage.getItem("userId")+ "?part=image"));
             $('form').attr('method', 'PUT');
             $('#userImage').attr('method', 'POST');
-            $("body").delegate("#userInfo", "submit", function(event) {
+            $("body").delegate(".eusr", "submit", function(event) {
                 if (event.preventDefault()) {
                     event.preventDefault();// cancels the form submission
                 }
