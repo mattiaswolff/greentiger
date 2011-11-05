@@ -69,6 +69,8 @@
                     $('.ctsk form').removeClass('invisible');
                     
                 });
+                $("div.ctsk-definitions .button").removeClass('darkBlue');
+                $("div.ctsk-definitions .button").addClass('blue');
                 $(this).removeClass('blue');
                 $(this).addClass('darkBlue');
             }
