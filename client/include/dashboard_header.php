@@ -51,7 +51,7 @@
         Created: 2011-08-11 (Mattias Wolff)
         Updated: -
         */
-        $("div.ctsk-definitions").delegate(".blue", "click", function(){
+        $("div.ctsk-definitions").delegate(".button", "click", function(){
             if (("f" + $(this).attr('id')) != $('form.ctsk-task').attr('id')) {
                 $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), {access_token: strAccessToken}, function(json) {
                     var arrHtml = new Array();
