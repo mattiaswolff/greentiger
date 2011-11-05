@@ -126,10 +126,10 @@ class Task {
         
         $arrKeywords = array();
         foreach ($this->GetContent() as $value) {
-                $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäö \d]/i", "",$value)));   
+                $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value)));   
             }
         foreach ($this->GetComments() as $value) {
-                $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäö \d]/i", "",$value["text"])));   
+                $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value["text"])));   
             }
         $arrKeywords = unserialize(strtolower(serialize($arrKeywords))); 
         $arrKeywordsSorted = array_count_values($arrKeywords);
