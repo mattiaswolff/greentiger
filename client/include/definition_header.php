@@ -44,7 +44,7 @@
             });
             
             $(".odef").delegate("span.link", "click", function(){
-                $('edef-row').remove();
+                $('.edef-row').remove();
                 $.getJSON(getUrlApi("definitions"), { definitionId: $(this).id }, function(json) {
                     
                     $("#name input").attr('value', json.results[0].name);
