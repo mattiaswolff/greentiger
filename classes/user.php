@@ -5,6 +5,7 @@ class User {
     private $_id;
     private $email;
     private $name;
+    private $url;
     private $description;
     private $definitions;
     private $client_id;
@@ -20,6 +21,7 @@ class User {
             $arrResults = $db->users->findOne(array('_id' => $strUserId));
             $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
+            $this->url = $arrResults['url'];
             $this->email = $arrResults['email'];
             $this->description = $arrResults['description'];
             $this->definitions = $arrResults['definitions'];
@@ -31,6 +33,7 @@ class User {
         else {
             $this->email = '';
             $this->name = '';
+            $this->url = '';
             $this->description = '';
             $this->definitions = array();
             $this->accessTokens = array();
@@ -44,6 +47,7 @@ class User {
     public function getId() { return $this->_id; } 
     public function getEmail() { return $this->email; } 
     public function getName() { return $this->name; }
+    public function getUrl() { return $this->url; }
     public function getDescription() { return $this->description; }
     public function getDefinitions() { return $this->definitions; }
     public function getAccessTokens() { return $this->accessTokens; }
@@ -53,6 +57,7 @@ class User {
     public function setId() { $this->_id = new MongoId(); }
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }}
+    public function setUrl($x) {if ($x != null) { $this->url = $x; }}
     public function setDescription($x) {if ($x != null) { $this->description = $x; }}
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
     public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}

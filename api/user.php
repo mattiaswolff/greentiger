@@ -53,6 +53,7 @@ switch($data->getMethod()) {
             $user->setId();
             $user->setEmail($arrRequestVars["email"]);
             $user->setName($arrRequestVars["name"]);
+            $user->setUrl($arrRequestVars["name"]);
             $user->setClientId();
             $user->setRedirectUri($arrRequestVars["redirectUri"]);
             }
@@ -79,6 +80,7 @@ switch($data->getMethod()) {
             if ($strPart == '') {
             $objUser->setEmail($arrRequestVars["email"]);
             $objUser->setName($arrRequestVars["name"]);
+            $objUser->setUrl($arrRequestVars["url"]);
             $objUser->setDescription($arrRequestVars["description"]);
             $objUser->setDefinitions($arrRequestVars["definitions"]);
             $objUser->setClientId();
