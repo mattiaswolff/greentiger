@@ -57,6 +57,7 @@ $(function() {
             $('.eusr .fields').append(getHtmlTaskRow('description', 'description', 'description', 'description', 'textarea', '', true));
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
+            $('input[name|="url"]').attr('value', window.sessionStorage.getItem("userUrl"));
             $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
             $('input[name|="id"]').parent().parent("article").addClass("invisible");
             $('.eusr .buttons').append('<input class="button green" type="submit" name="PUT" value="Post" />');
@@ -74,6 +75,7 @@ $(function() {
                 submitFormJSON(this, $(this).attr('url'), $(this).attr('method'), false);
                 window.sessionStorage.setItem("userDescription", $('textarea[name|="description"]').val());
                 window.sessionStorage.setItem("userName", $('input[name|="name"]').val());
+                window.sessionStorage.setItem("userUrl", $('input[name|="url"]').val());
                 window.location.reload();
             });
         });
