@@ -67,9 +67,10 @@
                     $('.ctsk form').attr('id', 'f' +json.results[0]._id);
                     $('.ctsk form').attr('url', getUrlApi("users/" + strUserId + "/definitions/" + json.results[0]._id + "/tasks"));
                     $('.ctsk form').removeClass('invisible');
-                    $(this).removeClass('blue');
-                    $(this).addClass('darkBlue');
+                    
                 });
+                $(this).removeClass('blue');
+                $(this).addClass('darkBlue');
             }
             else {
                 $('.ctsk form').addClass('invisible');  
