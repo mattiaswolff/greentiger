@@ -18,7 +18,7 @@
             $.each(json.definitions, function(key, value) {
                 //var counter = $('.definitions > article').length;
                 //var strHtml = '<article class="definition" id="dashboard_' + value._id.$id +'"><span class="header">' + value.name + '(<span class="total"></span>)</span><table><thead><tr><th>Updated</th><th>Title</th><th>C</th><th>L</th></tr></thead><tbody></tbody></table><a href="">View all</a></article>';
-    	        var strHtml2 = '<li><span class="button blue" id="' + value._id.$id + '">' + value.name + '</span></li>';
+    	        var strHtml2 = '<li><span class="button blue" id="f' + value._id.$id + '">' + value.name + '</span></li>';
                 //$('.definitions').append(strHtml);
                 $('div.ctsk-definitions > ul').append(strHtml2); 
             });
