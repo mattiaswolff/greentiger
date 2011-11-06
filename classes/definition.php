@@ -86,7 +86,8 @@ class Definition {
         $arrQuery = array("_id" => array('$in' => $arrObjectId));
         $arrOptions = array("safe" => true);
         $arrResults = $db->tasks->remove($arrQuery, $arrOptions);
-        $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
+        echo var_dump($arrResults);
+        $intStatus = ($arrResults['n'] == 1 ? 200 : 401);
         return $intStatus; 
     }
     
