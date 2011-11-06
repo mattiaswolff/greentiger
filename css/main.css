@@ -26,7 +26,8 @@ th {padding: 0 3px;}
 input, textarea, select{margin:0;font: 17px arial,sans-serif;border-bottom: 1px solid #999;border-top: 1px solid #CCC; border-left: 1px solid #BBB;border-right: 1px solid #BBB; padding: 5px; -webkit-border-radius: 2px; width: 100%;}
 input[type="submit"] {min-width:100px;width: 83px;}
 input[type="radio"], input[type="checkbox"]{margin: 0; border:0}
-textarea{height:172px}
+textarea.large{height:172px}
+textarea.small{height:92px}
 input:focus:invalid {background: red;}
 input:focus:valid {background: green;}
 input.search {float: left; width: 425px; -webkit-border-radius: 0px;}
