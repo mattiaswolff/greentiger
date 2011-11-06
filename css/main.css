@@ -51,7 +51,7 @@ form.task > section {}
 .button.search {margin-left: -0.9px;border-left: none;}
 .button.margin {margin-left: 20px;}
 form .button {float: right; margin-top: 10px; margin-left: 10px;}
-input.search {float: left; width: 425px; -webkit-border-radius: 0px;}
+input.search {float: left; width: 445px; -webkit-border-radius: 0px;}
 .button.search {width: auto; padding: 7px;}
 li > .button {}
 div.search {margin: 20px 0px;}
@@ -68,9 +68,9 @@ ul.horizontal {list-style: none;  margin: 0; padding: 0; }
 li.horizontal {display: inline; margin: 0 5px;}
 .form-field {vertical-align: text-bottom; width: 60px; display: inline-block; padding: 0; margin: 0;}
 
-.taskFlow {width: 525px;}
+.taskFlow {width: 540px;}
 .taskFlow > article {margin: 15px 0; padding: 0 0 15px; border-bottom: solid 1px #ccc; width: 100%;}
-.story {display: table-cell; width: 466px;}
+.story {display: table-cell; width: 480px;}
 .link {color: #114488; cursor: pointer;}
 .title {font-weight: bold;}
 .taskFlow .content {  padding: 0px;   margin: 5px 0 5px; width: 465px;}
@@ -106,6 +106,7 @@ line-height: 1.28;}
 }
 .description {
     margin: 15px;
+    background: hsl(51, 96%, 90%);  padding: 10px;  border: 1px solid hsl(51, 94%, 80%);
 }
 
 /*comments*/
