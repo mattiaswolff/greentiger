@@ -94,7 +94,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
                 arrHtml.push('<div class="comment clear"><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value1.userId) + '">' + '<img src="' + getUrlApi("users/" + value1.userId +"?part=image") + '" width="32" height="32" /></a></div><div><a href="' + getUrlClient("dashboard.php?userId=" + value1.userId) + '">' + value1.userName + '</a> ' + value1.text + '</div><div class="vague"> ' + formatDateOutput(parseISO8601(value1.date)) + '</div></div>');
             });
             if (!(window.sessionStorage.getItem("userId") === null)) {
-            arrHtml.push('<form method="PUT" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input class="invisible" type="text" name="comments.userId" value="'+ window.sessionStorage.getItem("userId") +'" /><textarea name="comments.text" value="" placeholder="Write a comment..."></textarea><input class="button blue" type="submit"/></form>');
+            arrHtml.push('<form method="PUT" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input class="invisible" type="text" name="comments.userId" value="'+ window.sessionStorage.getItem("userId") +'" /><textarea name="comments.text" value="" placeholder="Write a comment..."></textarea><div class="com-buttons"><input class="button blue" type="submit"/></div><div class="clear"></div></form>');
             }
             arrHtml.push('</div></article>');
         });
