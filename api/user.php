@@ -102,15 +102,14 @@ switch($data->getMethod()) {
         if (isset($strUserId)) {
             if (isset($strDefinitionId)) {
                 $objUser = new User($strUserId);
-                echo var_dump($objUser->toArray());
                 $arrAllDefinitions = $objUser->getDefinitions();
-                echo var_dump($arrAllDefinitions);
                 echo $strDefinitionId;
                 foreach ($arrAllDefinitions as $var) {
                     if ($var["$id"] != $strDefinitionId) {
                         $arrDefinitions[] = $var;
                     }
                     else {
+                        echo $var["$id"];
                         $intStatus = 200;
                     }
                 }
