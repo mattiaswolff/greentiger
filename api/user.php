@@ -105,8 +105,7 @@ switch($data->getMethod()) {
                 $arrAllDefinitions = $objUser->getDefinitions();
                 echo $strDefinitionId;
                 foreach ($arrAllDefinitions as $var) {
-                    echo var_dump($var);
-                    if ($var["$id"] != $strDefinitionId) {
+                    if ($var["_id"] != new MongoId($strDefinitionId)) {
                         $arrDefinitions[] = $var;
                     }
                     else {
