@@ -24,8 +24,12 @@ td {padding: 0 3px; max-width: 90px; white-space: nowrap; overflow: hidden; text
 th {padding: 0 3px;}
 
 input, textarea, select{margin:0;font: 17px arial,sans-serif;border-bottom: 1px solid #999;border-top: 1px solid #CCC; border-left: 1px solid #BBB;border-right: 1px solid #BBB; padding: 5px; -webkit-border-radius: 2px; width: 100%;}
-input[type="submit"] {width: initial; min-width:100px;width: 83px;}
-input[type="radio"], input[type="checkbox"]{margin: 0;width: 1; border:0}
+input[type="submit"] {min-width:100px;width: 83px;}
+input[type="radio"], input[type="checkbox"]{margin: 0; border:0}
+textarea{height:172px}
+input:focus:invalid {background: red;}
+input:focus:valid {background: green;}
+input.search {float: left; width: 425px; -webkit-border-radius: 0px;}
 
 .createTask form {  padding: 5px;width: 500px;}
 section.createTask .description { padding: 5px; width: 100%; margin-bottom: 10px; text-decoration: underline;}
