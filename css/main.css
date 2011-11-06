@@ -94,7 +94,7 @@ line-height: 1.28;}
 .ctsk form.ctsk-task > section {
     padding: 5px 15px;
 }
-.ctsk div.ctsk-buttons {padding: 15px; float: right;}
+.ctsk div.ctsk-buttons {padding: 0 15px 10px 0; float: right;}
 
 /*edit definition*/
 .edef .edef-row {border-top: 3px solid hsl(0, 0%, 80%); margin-top: 25px; padding-top: 15px;}
