@@ -81,10 +81,11 @@ switch($data->getMethod()) {
         echo var_dump($arrRequestVars);
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
-        
+        echo $strDefinitionId;
         if ($strDefinitionId != '') {
             $arrDefinitionId[] = $strDefinitionId;
             $intStatus = Definition::delete($arrDefinitionId);
+            echo $intStatus;
             RestUtils::sendResponse($intStatus, $intStatus, 'application/json');
         }
         else {
