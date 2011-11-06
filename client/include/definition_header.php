@@ -69,7 +69,7 @@
                 $.ajax({
                     type: "DELETE",
                     async: false,
-                    url: getUrlApi("definitions/" + $(this).parent().attr('id'))
+                    url: getUrlApi("users/" + strUserId + "?definitionId=" + $(this).parent().attr('id'))
                 });
                  $(this).parent().remove();
             });
