@@ -61,7 +61,7 @@
                 });
                 
                 $('form.edef').attr('method', 'PUT');
-                $('form.edef').attr('url', getUrlApi("definitions/" + $(this).attr('id')));
+                $('form.edef').attr('url', getUrlApi("definitions/" + $(this).parent().attr('id')));
                 
             });
             
