@@ -107,3 +107,6 @@ line-height: 1.28;}
 .description {
     margin: 15px;
 }
+
+/*comments*/
+.com-text {display: inline-block}
