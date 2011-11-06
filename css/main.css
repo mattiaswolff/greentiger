@@ -23,7 +23,7 @@ table {padding: 0; text-align: left;}
 td {padding: 0 3px; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 th {padding: 0 3px;}
 
-input, textarea, select{margin:0;font: 17px arial,sans-serif;border-bottom: 1px solid #999;border-top: 1px solid #CCC; border-left: 1px solid #BBB;border-right: 1px solid #BBB; padding: 5px; -webkit-border-radius: 2px; width: 100%;}
+input, textarea, select{margin:0;font: 17px arial,sans-serif;  padding: 5px; -webkit-border-radius: 2px; width: 100%;border-top: 1px solid hsl(224, 100%, 85%);border-left: 1px solid hsl(224, 100%, 78%);border-right: 1px solid hsl(224, 100%, 78%);border-bottom: 1px solid hsl(224, 100%, 65%);}
 input[type="submit"] {min-width:100px;width: 83px;}
 input[type="radio"], input[type="checkbox"]{margin: 0; border:0}
 textarea.large{height:172px}
