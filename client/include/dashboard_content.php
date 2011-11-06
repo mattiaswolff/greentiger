@@ -3,7 +3,7 @@
     <form class="task ctsk-task invisible" method="POST">
         <div class="ctsk-desc"></div>
         <section class="clear"></section>
-        <div class="buttons"><input class="button blue" type="submit" name="POST" value="Post" /></div>
+        <div class="ctsk-buttons"><input class="button blue" type="submit" name="POST" value="Post" /></div>
         <div class="clear"></div>
     </form>
 </section>
