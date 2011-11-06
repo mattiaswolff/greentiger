@@ -169,3 +169,8 @@ function submitFormJSON(strSelector, strUrl, strType, strAsync) {
             else
             return decodeURIComponent(results[1].replace(/\+/g, " "));
         }
+        
+        function nl2br (str) {   
+            var breakTag = '<br />';    
+            return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+        }
