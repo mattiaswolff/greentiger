@@ -98,7 +98,7 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         $strUserId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
-        
+        $intStatus = 401;
         if (isset($strUserId)) {
             if (isset($strDefinitionId)) {
                 $objUser = new User($strUserId);
@@ -107,10 +107,13 @@ switch($data->getMethod()) {
                     if ($var["$id"] != $strDefinitionId) {
                         $arrDefinitions[] = $var;
                     }
+                    else {
+                        $intStatus = 200;
+                    }
                 }
                 $objUser->setDefinitions($arrDefinitions);
                 $objUser->upsert();
-                RestUtils::sendResponse(200, (array)$objUser->getId(), 'application/json');
+                RestUtils::sendResponse($intStatus, (array)$objUser->getId(), 'application/json');
             }
             else {
                 $intStatus = User::delete($strUserId);
