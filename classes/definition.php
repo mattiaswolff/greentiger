@@ -85,7 +85,7 @@ class Definition {
         $db = $m->projectcopperfield;
         $arrQuery = array("_id" => array('$in' => $arrObjectId));
         $arrOptions = array("safe" => true);
-        $arrResults = $db->tasks->remove($arrQuery, $arrOptions);
+        $arrResults = $db->definitions->remove($arrQuery, $arrOptions);
         echo var_dump($arrResults);
         $intStatus = ($arrResults['n'] == 1 ? 200 : 401);
         return $intStatus; 
