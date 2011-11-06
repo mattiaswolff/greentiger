@@ -103,6 +103,8 @@ switch($data->getMethod()) {
             if (isset($strDefinitionId)) {
                 $objUser = new User($strUserId);
                 $arrAllDefinitions = $objUser->getDefinitions();
+                echo var_dump($arrAllDefinitions);
+                echo $strDefinitionId;
                 foreach ($arrAllDefinitions as $var) {
                     if ($var["$id"] != $strDefinitionId) {
                         $arrDefinitions[] = $var;
