@@ -26,11 +26,7 @@ class RestUtils
                 }
                 break;
             case 'delete':
-                parse_str(file_get_contents('php://input'), $arrVars);  
-                $data = $arrVars;  
-                foreach ($_GET as $key => $var){
-                    $data[$key] = $var;
-                }
+                $data = $_GET;  
                 break;
         }  
 

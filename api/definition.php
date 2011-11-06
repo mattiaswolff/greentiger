@@ -78,7 +78,7 @@ switch($data->getMethod()) {
         break;
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
-        
+        echo var_dump($arrRequestVars);
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         
