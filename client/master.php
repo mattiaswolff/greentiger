@@ -85,7 +85,7 @@
                         jsonPageUser = json;
                         $('.userName').append(json.name);
                         $('.userInfo .iusr-url').append('<a href="' + json.url + '">' + json.url + '</a>');
-                        $('.userInfo .description').append(json.description);
+                        $('.userInfo .description').append(nl2br(json.description));
                     }
             });
             
