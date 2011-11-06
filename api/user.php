@@ -96,9 +96,26 @@ switch($data->getMethod()) {
     
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
-        if (isset($arrRequestVars['userId'])) {
-            $intStatus = User::delete($arrRequestVars['userId']);
-            RestUtils::sendResponse($intStatus, $arrRequestVars['userId'], 'application/json');
+        $strUserId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        
+        if (isset($strUserId)) {
+            if (isset($strDefinitionId)) {
+                $objUser = new User($strUserId);
+                $arrAllDefinitions = $objUser->getDefinitions();
+                foreach ($arrAllDefinitions as $var) {
+                    if ($var["$id"] != $strDefinitionId) {
+                        $arrDefinitions[] = $var
+                    }
+                }
+                $objUser->setDefinitions($arrDefinitions);
+                $objUser->upsert();
+                RestUtils::sendResponse(200, (array)$objUser->getId(), 'application/json');
+            }
+            else {
+                $intStatus = User::delete($strUserId);
+                RestUtils::sendResponse($intStatus, $strUserId, 'application/json');
+            }
         }
         else {
             RestUtils::sendResponse(400);
