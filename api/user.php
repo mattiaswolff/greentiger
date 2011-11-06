@@ -96,7 +96,7 @@ switch($data->getMethod()) {
     
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
-        $strUserId = (isset($arrRequestVars['taskId']) ? $arrRequestVars['taskId'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $intStatus = 401;
         if (isset($strUserId)) {
