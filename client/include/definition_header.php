@@ -65,6 +65,15 @@
                 
             });
             
+            $(".odef").delegate("span.odef-delete", "click", function(){
+                $.ajax({
+                    type: "DELETE",
+                    async: false,
+                    url: getUrlApi("definitions/" + $(this).parent().attr('id'))
+                });
+                 $(this).parent().remove();
+            });
+
             
         $("body").delegate("form", "submit", function(event) {
             if (event.preventDefault()) {
