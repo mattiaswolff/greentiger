@@ -81,6 +81,8 @@
                 $(this).addClass('blue');
                 $('.ctsk form section').empty();
                 $('.ctsk div.crt-desc').empty();
+                $("div.ctsk-definitions .button").removeClass('darkBlue');
+                $("div.ctsk-definitions .button").addClass('blue');
             }
         });
         
