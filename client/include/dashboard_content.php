@@ -10,4 +10,4 @@
 <div class="search">
     <input type="text" name="search" class="search" /><span class="button blue search" id="search">Search</span>
 </div>
-<section class="taskFlow"></s
+<section class="taskFlow"></section>

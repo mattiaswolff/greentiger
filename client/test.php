@@ -14,7 +14,7 @@
             var s = document.createElement('script');
             s.type = 'text/javascript';
             s.async = true;
-            s.src = "http://ec2-46-51-141-34.eu-west-1.compute.amazonaws.com/greentiger/js/embed.js";
+            s.src = "http://www.zowgle.com/js/embed.js";
             var x = document.getElementsByTagName('script')[0];
             x.parentNode.insertBefore(s, x);
         }
