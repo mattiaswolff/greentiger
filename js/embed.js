@@ -116,9 +116,7 @@ var projectCopperfield = {
         if (projectCopperfield.settings_value_exists("image")) {         projectCopperfield.custom_image_url = _projectCopperfield.image 
         }
         
-        if ("https:"==document.location.protocol) {     projectCopperfield.static_base_url = "https://static-ssl.projectCopperfield.se";
-            projectCopperfield.base_url = "https://projectCopperfield.se"
-        }
+
         
         if (projectCopperfield.settings_value_exists("base_url")) { projectCopperfield.base_url = _projectCopperfield.base_url
         }
