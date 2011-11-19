@@ -14,6 +14,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 </head>
 
 <body id="home">
@@ -36,7 +37,9 @@
             <div class="content">
                 <?php include $page_content; ?>
             </div>
-            <aside></aside>
+            <aside>
+                <g:plusone count="false"></g:plusone>
+            </aside>
         </div>
     </div>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
