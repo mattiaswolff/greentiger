@@ -43,7 +43,7 @@
         <div class="main">
             <section class="userName"></section>
             <section class="usr-soc">
-                <div class="fb-like" data-send="false" data-layout="button_count" data-width="40" data-show-faces="false" data-font="arial"></div>
+                <div class="fb-like" data-send="false" data-layout="button_count" data-width="40" data-show-faces="false" data-font="arial"></div><br/>
                 <g:plusone count="false"></g:plusone>
             </section>
             <div class="content">
