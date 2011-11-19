@@ -42,8 +42,10 @@
             </aside>
         <div class="main">
             <section class="userName"></section>
-            <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
-            <g:plusone count="false"></g:plusone>
+            <section class="usr-soc">
+                <div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div>
+                <g:plusone count="false"></g:plusone>
+            </section>
             <div class="content">
                 <?php include $page_content; ?>
             </div>
