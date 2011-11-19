@@ -66,6 +66,11 @@
                 
             });
             
+            $(".ndef").delegate("span.ndef-edit", "click", function(){
+                $('.edef-row').remove();
+                $('form.edef').removeClass('invisible');
+            });
+            
             $(".odef").delegate("span.odef-delete", "click", function(){
                 $.ajax({
                     type: "DELETE",

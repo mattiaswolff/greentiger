@@ -116,8 +116,6 @@ var projectCopperfield = {
         if (projectCopperfield.settings_value_exists("image")) {         projectCopperfield.custom_image_url = _projectCopperfield.image 
         }
         
-
-        
         if (projectCopperfield.settings_value_exists("base_url")) { projectCopperfield.base_url = _projectCopperfield.base_url
         }
         
