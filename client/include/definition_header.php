@@ -71,7 +71,7 @@
                 $('form.edef').removeClass('invisible');
             });
             
-            $(".odef").delegate("span.odef-delete", "click", function(){
+            $(".odef").delegate("td.odef-delete", "click", function(){
                 $.ajax({
                     type: "DELETE",
                     async: false,
