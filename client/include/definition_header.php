@@ -62,6 +62,7 @@
                 
                 $('form.edef').attr('method', 'PUT');
                 $('form.edef').attr('url', getUrlApi("definitions/" + $(this).parent().attr('id')));
+                $('form.edef').removeClass('invisible');
                 
             });
             
