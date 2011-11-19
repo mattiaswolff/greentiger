@@ -46,9 +46,9 @@
                 <?php include $page_content; ?>
             </div>
             <aside>
-                <g:plusone count="false"></g:plusone>
                 <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
-                <iframe src="//www.facebook.com/plugins/like.php?href&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=35&amp;appId=214551768609754" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
+                <g:plusone count="false"></g:plusone>
+                
             </aside>
         </div>
     </div>
