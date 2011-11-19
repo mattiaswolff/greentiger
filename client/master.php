@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Project Copperfield</title>
+<head> 
+    <?php
+        $data = $_POST;
+        foreach ($_GET as $key => $var){
+                $data[$key] = $var;
+        }
+        if ($data["userId"]) {
+            echo '<title>Zowgle - ' . $data["userId"] . '</title>';
+        }
+        else {
+            echo '<title>Zowgle</title>';
+        }
+    ?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <script type="text/javascript">
