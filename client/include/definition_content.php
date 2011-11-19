@@ -1,7 +1,7 @@
 <section class="odef">
 </section>
 <section class="ndef">
-    <span class="ndef-edit">New definition</span>
+    <article><span class="ndef-edit link">New definition</span></article>
 </section>
 <form class="edef invisible">
     <div class="fields"></div>
