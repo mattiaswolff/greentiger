@@ -47,7 +47,7 @@
                     <div class="fb-like" data-send="false" data-layout="button_count" data-width="40" data-show-faces="false" data-font="arial"></div>
                 </article>
                 <article>
-                    <g:plusone></g:plusone>
+                    <g:plusone size="medium"></g:plusone>
                 </article>
                 
             </section>
