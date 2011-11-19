@@ -43,7 +43,7 @@
 		        $(".edef .fields").append(strHtml);
             });
             
-            $(".odef").delegate("span.odef-edit", "click", function(){
+            $(".odef").delegate("td.odef-edit", "click", function(){
                 $('.edef-row').remove();
                 $.getJSON(getUrlApi("definitions/" + $(this).parent().attr('id')), function(json) {
                     
