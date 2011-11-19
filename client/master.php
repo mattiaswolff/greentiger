@@ -42,7 +42,7 @@
             </aside>
         <div class="main">
             <section class="userName"></section>
-            <section class="usr-soc">
+            <section class="iusr-soc">
                 <article>
                     <div class="fb-like" data-send="false" data-layout="button_count" data-width="40" data-show-faces="false" data-font="arial"></div>
                 </article>
