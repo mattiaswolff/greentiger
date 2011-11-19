@@ -5,7 +5,7 @@
             $('form .fields').append(getHtmlTaskRow('description' , 'description', 'description', 'description', 'textarea', '', true));
             
             $.each(jsonPageUser .definitions, function(key, value) {
-                strHtml = '<article id="' + value._id.$id + '"><span class="odef-edit link">' + value.name + '</span> <span class="odef-delete link">delete</span></article>';
+                strHtml = '<tr id="' + value._id.$id + '"><td class="odef-edit link">' + value.name + '</td> <td class="odef-delete link">delete</td></tr>';
                 $('.odef').append(strHtml);
             });
             

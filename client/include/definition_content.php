@@ -1,5 +1,5 @@
-<section class="odef">
-</section>
+<table class="odef">
+</table>
 <section class="ndef">
     <article><span class="ndef-edit link">New definition</span></article>
 </section>
