@@ -18,7 +18,14 @@
 </head>
 
 <body id="home">
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/sv_SE/all.js#xfbml=1&appId=214551768609754";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
         <div class ="top">
             <nav class="pageNav invisible">
                 <a id="a_home">home</a> | 
@@ -68,7 +75,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    
     <script type="text/javascript">google.load("identitytoolkit", "1.0", {packages: ["ac"]});</script>
     <script type="text/javascript">
         strUserId = getParameterByName("userId");
