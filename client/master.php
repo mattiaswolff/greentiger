@@ -13,6 +13,8 @@
             echo '<title>Zowgle</title>';
         }
     ?>
+    <meta name="description" content="This is a description that is used to describe the content of this web page">
+    <meta name="keyword" content="zowgle,test">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
 </head>
