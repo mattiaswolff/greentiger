@@ -7,7 +7,7 @@
                 $data[$key] = $var;
         }
         if ($data["userId"]) {
-            echo '<title>Zowgle - ' . $data["userId"] . '</title>';
+            echo '<title>' . $data["userId"] . ' | Zowgle</title>';
         }
         else {
             echo '<title>Zowgle</title>';
