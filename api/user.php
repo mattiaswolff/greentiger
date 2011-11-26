@@ -22,7 +22,7 @@ switch($data->getMethod()) {
                     echo $image->getBytes();
                 }
                 else {
-                $objUser->setId = (string)$objUser->getId();
+                $objUser->setId((string)$objUser->getId());
                 RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
                 }
             }
