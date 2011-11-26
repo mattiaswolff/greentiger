@@ -98,15 +98,14 @@ switch($data->getMethod()) {
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
         $strUserId = (isset($arrRequestVars['userId']) ? new MongoId($arrRequestVars['userId']) : '');
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? new MongoId($arrRequestVars['definitionId']) : '');
         $intStatus = 401;
         if (isset($strUserId)) {
             if (isset($strDefinitionId)) {
                 $objUser = new User($strUserId);
                 $arrAllDefinitions = $objUser->getDefinitions();
-                echo $strDefinitionId;
                 foreach ($arrAllDefinitions as $var) {
-                    if ($var["_id"] != new MongoId($strDefinitionId)) {
+                    if ($var["_id"] != $strDefinitionId) {
                         $arrDefinitions[] = $var;
                     }
                     else {
