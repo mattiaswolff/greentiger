@@ -94,7 +94,7 @@ switch($data->getMethod()) {
             //$objTask->setKeywords($arrRequestVars["keywords"]); should be handled automat..
             //$objTask->setAttachments("attachment"); not implemented
             if ($strPart == 'comments') {
-                $objUser = new User($arrRequestVars["comments"]["userId"]);
+                $objUser = new User(new MongoId($arrRequestVars["comments"]["userId"]));
                 $arrComment = array("text" => $arrRequestVars["comments"]["text"],"userId" => $arrRequestVars["comments"]["userId"], "userName" =>
                 $objUser->getName(), "date" => date("c"));
                 $objTask->setComments($arrComment);
