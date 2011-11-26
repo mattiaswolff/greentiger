@@ -18,7 +18,7 @@ class User {
         if ($strUserId != null) {
             $m = new Mongo();
             $db = $m->projectcopperfield;
-            $arrResults = $db->users->findOne(array('_id' => $strUserId));
+            $arrResults = $db->users->findOne(array('_id' => new MongoId($strUserId)));
             $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
             $this->url = $arrResults['url'];
@@ -67,11 +67,10 @@ class User {
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
-        echo $arrObjectId;
         $m = new Mongo();
         $db = $m->projectcopperfield;
         if ($arrObjectId != null) {
-            $objResults = $db->users->find(array("_id" => new MongoId($arrObjectId[0])));
+            $objResults = $db->users->find(array("_id" => $arrObjectId));
         }
         else {
             $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
