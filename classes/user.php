@@ -18,8 +18,8 @@ class User {
         if ($strUserId != null) {
             $m = new Mongo();
             $db = $m->projectcopperfield;
-            $arrResults = $db->users->findOne(array('_id' => new MongoId($strUserId)));
-            $this->_id = (string)$arrResults['_id'];
+            $arrResults = $db->users->findOne(array('_id' => $strUserId));
+            $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
             $this->url = $arrResults['url'];
             $this->email = $arrResults['email'];

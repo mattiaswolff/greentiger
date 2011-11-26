@@ -11,7 +11,7 @@ switch($data->getMethod()) {
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         if ($strUserId != '') {
-            $objUser = new User($strUserId);
+            $objUser = new User(new MongoId($strUserId));
             if (isset($objUser)) {
                 if ($strPart == 'image') {
                     $m = new Mongo();
@@ -22,6 +22,7 @@ switch($data->getMethod()) {
                     echo $image->getBytes();
                 }
                 else {
+                $objUser->setId = (string)$objUser->getId();
                 RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
                 }
             }
