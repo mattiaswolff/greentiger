@@ -77,7 +77,7 @@ switch($data->getMethod()) {
         
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['userId'])) {
-            $objUser = new User($arrRequestVars['userId']);
+            $objUser = new User(new MongoId($arrRequestVars['userId']));
             if ($strPart == '') {
             $objUser->setEmail($arrRequestVars["email"]);
             $objUser->setName($arrRequestVars["name"]);
