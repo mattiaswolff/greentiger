@@ -54,7 +54,7 @@ class User {
     public function getClientId() { return $this->client_id; }
     public function getRedirectUri() { return $this->redirect_uri; }
     public function getImageId() { return $this->imageId; }
-    public function setId($x) { if ($x != null) { $this->_id = $x; } else { $this->_id = new MongoId(); }}
+    public function setId($x) { if ($x) { $this->_id = $x; } else { $this->_id = new MongoId(); }}
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }}
     public function setUrl($x) {if ($x != null) { $this->url = $x; }}

@@ -38,7 +38,7 @@ switch($data->getMethod()) {
             $objDefinition->setDescription($arrRequestVars["description"]);
             $objDefinition->setContent($arrRequestVars['content']);
             $objDefinition->upsert();
-            $objUser = new User($strUserId);
+            $objUser = new User(new MongoId($strUserId));
             $arrDefinitions = $objUser->getDefinitions();
             $arrDefinition['_id'] = $objDefinition->getId();;
             $arrDefinition['name'] = $objDefinition->getName();
