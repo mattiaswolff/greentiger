@@ -3,7 +3,7 @@
   $url = EasyRpService::getCurrentUrl();
   $postData = @file_get_contents('php://input');
   $result = EasyRpService::verify($url, $postData);
-  
+  echo "tes";
 class EasyRpService {
   private static $SERVER_URL = "https://www.googleapis.com/identitytoolkit/v1/relyingparty/verifyAssertion?key=AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY";
 
@@ -34,11 +34,13 @@ class EasyRpService {
   }
   
   public static function verify($continueUrl, $response) {
+    echo "test0";
     $request = array();
     $request['requestUri'] = $continueUrl;
     $request['postBody'] = $response;
     $result = EasyRpService::post($request);
     if (!empty($result['verifiedEmail'])) {
+        echo "test1";
         $m = new Mongo();
         $db = $m->projectcopperfield;   
         $arrResults = $db->users->findOne(array("email" => $result['verifiedEmail']));
