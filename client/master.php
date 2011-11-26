@@ -89,8 +89,7 @@
         });
         
         $(document).ready(function(){
-            $("#userImage").attr('src', getUrlApi("users/" + strUserId + "?part=image"));
-            if ((window.sessionStorage.getItem("userId") === null) &&  !(strAccessToken == '')) {
+            if ((window.sessionStorage.getItem("userId") === null)) {
                 $.ajax({  
                     url: getUrlApi("users/me"),  
                     dataType: 'json',  
@@ -105,9 +104,9 @@
                         window.sessionStorage.setItem("userDescription", json.description);
                         window.sessionStorage.setItem("access_token", strAccessToken);
                     }
-                });
+                });    
             }
-            
+            $("#userImage").attr('src', getUrlApi("users/" + strUserId + "?part=image"));
             $.ajax({  
                     url: getUrlApi("users/" + strUserId),  
                     dataType: 'json',  
