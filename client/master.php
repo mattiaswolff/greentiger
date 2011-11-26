@@ -122,19 +122,19 @@
             });
             
             window.google.identitytoolkit.setConfig({
-    developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
-    companyName: "Zowgle",
-    callbackUrl: getUrlGit("callback2.php"),
-    realm: "",
-    userStatusUrl: getUrlGit("userstatus.php"),
-    loginUrl: getUrlGit("login2.php"),
-    signupUrl: getUrlClient("signup.php"),
-    homeUrl: getUrlGit("auth2.php"),
-    logoutUrl: getUrlClient("logout.php"),
-    language: "en",
-    idps: ["Gmail", "Yahoo", "AOL"],
-    tryFederatedFirst: true,
-    useCachedUserStatus: false,
+            developerKey: "AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY",
+            companyName: "Zowgle",
+            callbackUrl: getUrlGit("callback2.php"),
+            realm: "",
+            userStatusUrl: getUrlGit("userstatus.php"),
+            loginUrl: getUrlGit("login2.php"),
+            signupUrl: getUrlClient("signup.php"),
+            homeUrl: getUrlGit("auth2.php"),
+            logoutUrl: getUrlClient("logout.php"),
+            language: "en",
+            idps: ["Gmail", "Yahoo", "AOL", "Facebook"],
+            tryFederatedFirst: true,
+            useCachedUserStatus: false,
                 dropdownmenu: [ 
                 { 
                     "label": "Switch account",
