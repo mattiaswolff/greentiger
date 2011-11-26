@@ -97,7 +97,7 @@ class User {
         'new' => true,   
         'upsert' => true,
         'fields' => array( '_id' => 1 )));
-        $this->email = $result['value']['_id'];
+        return $result['value']['_id'];
     }
     
     function delete($strUserId) {
