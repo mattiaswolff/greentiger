@@ -97,7 +97,7 @@ switch($data->getMethod()) {
     
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $strUserId = (isset($arrRequestVars['userId']) ? new MongoId($arrRequestVars['userId']) : '');
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
         $intStatus = 401;
         if (isset($strUserId)) {
