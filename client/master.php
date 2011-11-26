@@ -132,7 +132,7 @@
             homeUrl: getUrlGit("auth2.php"),
             logoutUrl: getUrlClient("logout.php"),
             language: "en",
-            idps: ["Gmail", "Yahoo", "AOL", "Facebook"],
+            idps: ["Gmail", "Yahoo", "AOL"],
             tryFederatedFirst: true,
             useCachedUserStatus: false,
                 dropdownmenu: [ 
