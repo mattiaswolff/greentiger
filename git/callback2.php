@@ -39,10 +39,10 @@ class EasyRpService {
     $result = EasyRpService::post($request);
     echo var_dump($result);
     if ($result["verifiedEmail"]) {
-        $email = $result["verifiedEmail"]);
+        $email = $result["verifiedEmail"];
         }
     else {
-        $email = $result["email"]);
+        $email = $result["email"];
     }
     if (!empty($email)) {
         $m = new Mongo();
