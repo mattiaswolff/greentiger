@@ -40,6 +40,7 @@ class EasyRpService {
     $request['postBody'] = $response;
     $result = EasyRpService::post($request);
     echo var_dump($result);
+    die();
     if (!empty($result['verifiedEmail'])) {
         echo "test1";
         $m = new Mongo();
