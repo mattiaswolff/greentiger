@@ -19,7 +19,7 @@ class User {
             $m = new Mongo();
             $db = $m->projectcopperfield;
             $arrResults = $db->users->findOne(array('_id' => new MongoId($strUserId)));
-            $this->_id = $arrResults['_id'];
+            $this->_id = $arrResults['_id']['$id'];
             $this->name = $arrResults['name'];
             $this->url = $arrResults['url'];
             $this->email = $arrResults['email'];
