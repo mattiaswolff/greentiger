@@ -49,7 +49,6 @@ class EasyRpService {
         $arrResults = $db->users->findOne(array("email" => $result['verifiedEmail']));
         $strUserId = $arrResults["_id"];
         if ($strUserId == null) {
-            echo "test";
             $user = new User();
             $user->setId();
             $user->setName($result["displayName"]);
