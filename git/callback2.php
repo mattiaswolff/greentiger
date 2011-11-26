@@ -57,7 +57,6 @@ class EasyRpService {
         }
         session_start();
         $_SESSION["userId"] = $strUserId;
-        echo "test: " . $_SESSION["userId"];
         echo  "<script type='text/javascript' src='https://ajax.googleapis.com/jsapi'></script><script type='text/javascript'>google.load('identitytoolkit', '1.0', {packages: ['notify']});</script><script type='text/javascript'>window.google.identitytoolkit.notifyFederatedSuccess({'email': '" . $result["verifiedEmail"] ."', 'registered': true });</script>";
         return "OK";
     }

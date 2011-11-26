@@ -2,7 +2,6 @@
 
 require "../classes/user.php";
 session_start();
-echo $_SESSION['userId'];
 if (isset($_SESSION['userId'])) {
     $objUser = new User($_SESSION['userId']); 
     $strEmail = $objUser->getEmail();
