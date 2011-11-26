@@ -70,7 +70,7 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         if ($arrObjectId != null) {
-            $objResults = $db->users->find(array("_id" => $arrObjectId));
+            $objResults = $db->users->find(array("_id" => new MongoId($arrObjectId[0])));
         }
         else {
             $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
