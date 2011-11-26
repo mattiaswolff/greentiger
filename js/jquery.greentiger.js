@@ -163,7 +163,9 @@ function submitFormJSON(strSelector, strUrl, strType, strAsync) {
             name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
             var regexS = "[\\?&]" + name + "=([^&#]*)";
             var regex = new RegExp(regexS);
-            var results = regex.exec(window.location.href);
+            var server_url = <?php echo '"' . $_SERVER['QUERY_STRING'] . '"' ?>;
+            var results = regex.exec(server_url);
+            //var results = regex.exec(window.location.href);
             if(results == null)
                 return "";
             else
