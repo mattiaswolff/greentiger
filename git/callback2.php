@@ -37,7 +37,6 @@ class EasyRpService {
     $request['requestUri'] = $continueUrl;
     $request['postBody'] = $response;
     $result = EasyRpService::post($request);
-    echo var_dump($result);
     if ($result["verifiedEmail"]) {
         $email = $result["verifiedEmail"];
         }
