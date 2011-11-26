@@ -109,7 +109,7 @@ switch($data->getMethod()) {
                         $arrDefinitions[] = $var;
                     }
                     else {
-                        echo $var["$id"];
+                        echo $var["_id"];
                         $intStatus = 200;
                     }
                 }
