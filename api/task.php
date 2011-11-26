@@ -54,8 +54,7 @@ switch($data->getMethod()) {
         //tes
         if (($strDefinitionId != '') && ($strUserId != '')) {
             $objTask = new Task();
-            $objUser = new User($strUserId); //check if user object is returned sucessfully
-            
+            $objUser = new User(new MongoId($strUserId)); //check if user object is returned sucessfully
             $arrUser = array("userId" => $strCreateUserId, "userName" => $strCreateUserName); 
             $objTask->setId();
             $objTask->setCreatedBy($arrUser);
