@@ -102,10 +102,10 @@ line-height: 1.28;}
 
 /*user info*/
 .iusr-url {
-    margin: 5px 15px;
+    margin: 10px 0px;
 }
 .description {
-    margin: 15px;
+    margin: 84px 0 5px 0;
     background: hsl(51, 96%, 90%);  padding: 10px;  border: 1px solid hsl(51, 94%, 80%);
 }
 .iusr-soc {
