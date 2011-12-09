@@ -89,7 +89,7 @@
         });
         
         $(document).ready(function(){
-            if(!window.sessionStorage.getItem("userId") || window.sessionStorage.getItem("userId") == "null") {
+            if((!window.sessionStorage.getItem("userId") || window.sessionStorage.getItem("userId") == "null") && strAccessToken != "") {
                 $.ajax({  
                     url: getUrlApi("users/me"),  
                     dataType: 'json',  
