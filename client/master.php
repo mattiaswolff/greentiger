@@ -39,8 +39,8 @@
         </div>
         <div class = "container">
             <aside class="userInfo">
-                <div class="iusr-url"></div>
                 <div class="description"></div>
+                <div class="iusr-url"></div>
             </aside>
         <div class="main">
             <section class="userName"></section>
