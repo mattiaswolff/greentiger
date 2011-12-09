@@ -39,7 +39,6 @@
         </div>
         <div class = "container">
             <aside class="userInfo">
-                <img id="userImage" class="user" alt="Företaget" title="Företaget" src="" />
                 <div class="iusr-url"></div>
                 <div class="description"></div>
             </aside>
