@@ -9,7 +9,7 @@
         //var _pc["definitions"] = "matwo";
         _projectCopperfield["userName"] = "";
         _projectCopperfield["userEmail"] = "";
-        _projectCopperfield["org"] = "";
+        _projectCopperfield["image"] = "https://lh5.googleusercontent.com/-HKLSAuPUlsY/TuK4EVE9crI/AAAAAAAAAAg/oz_WDgQQmw4/s101/contact_us.png";
         (function() {
         function async_load(){
             var s = document.createElement('script');
