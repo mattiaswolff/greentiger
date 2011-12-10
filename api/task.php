@@ -55,13 +55,16 @@ switch($data->getMethod()) {
         $strCreateUserEmail = (isset($arrRequestVars['createUserEmail']) ? $arrRequestVars['createUserEmail'] : '');
         
         if ($strCreateUserId = '') {
+            echo "test";
             $strCreateUserId = user::validateEmail($strCreateUserEmail);
+            echo "strCreateUserId: " . $strCreateUserId;
             if (!$strCreateUserId) {
                 $user = new User();
                 $user->setId();
                 $user->setName($strCreateUserName);
                 $user->setEmail($strCreateUserEmail);
                 $strCreateUserId = $user->upsert();
+                echo "strCreateUserId: " . $strCreateUserId;
             }
         }
         
