@@ -46,7 +46,7 @@ class EasyRpService {
     if (!empty($email)) {
         $m = new Mongo();
         $db = $m->projectcopperfield;   
-        $arrResults = $db->users->findOne(array("email" => $result['verifiedEmail']));
+        $arrResults = $db->users->findOne(array("email" => $email));
         $strUserId = $arrResults["_id"];
         if ($strUserId == null) {
             $user = new User();
