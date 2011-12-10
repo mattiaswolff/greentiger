@@ -1,6 +1,7 @@
 var projectCopperfield = {
-    org_slug : null, 
-    base_url : "http://kundo.se", 
+    org_slug : null,
+    id: null,
+    base_url : "http://www.zowgle.com", 
     static_base_url : "http://static.kundo.se", 
     lang: "sv", 
     image_align: "right", 
@@ -12,7 +13,7 @@ var projectCopperfield = {
         no: "Lukk"
     }, //test
     custom_image_url : null,
-    embed_url : "/embed/landingpage/", 
+    embed_url : "/client/embed.php?userId=", 
     image_url : "/images/tycktill-1", 
     btn_close_url : "/static/images/projectCopperfield-close-", 
     user_name : null, 
@@ -73,12 +74,12 @@ var projectCopperfield = {
         var e = "cursor:pointer; height:26px; left:50%; margin-left:376px; top:9px; width:90px; z-index:100100;"; 
         e += projectCopperfield.get_fixed_style(); 
         d.innerHTML += '<div style="cursor: pointer;height: 30px;left: 50%;margin-left: 453px;top: 30px;width: 30px;z-index: 100100; position: fixed; background-image: url(' + "'http://a.unbounce.com/s/images/fancybox/fancybox.png'" + '); background-position: -40px 0px;" onclick="projectCopperfield.delete_frame()">'; 
-        var c = projectCopperfield.base_url + projectCopperfield.embed_url + projectCopperfield.org_slug + "?lang=" + projectCopperfield.lang; 
+        var c = projectCopperfield.base_url + projectCopperfield.embed_url + projectCopperfield.id + "&lang=" + projectCopperfield.lang; 
         if (projectCopperfield.user_name && projectCopperfield.user_email) { 
             c += "&name=" + projectCopperfield.user_name + "&useremail=" + projectCopperfield.user_email; 
             c = encodeURI();
         }
-        c = "http://www.zowgle.com/client/embed.php?userId=" + _projectCopperfield["id"];
+        //c = "http://www.zowgle.com/client/embed.php?userId=" + _projectCopperfield["id"];
         var a= "background: white; border: none; height: 540px; left: 50%; margin-left: -470px; position: fixed; top: 40px; width: 940px; z-index: 100000; -webkit-box-shadow: 0px 0px 40px #000; -webkit-border-radius: 10px; -moz-box-shadow: 0px 0px 40px #000; -moz-border-radius: 10px; box-shadow: 0px 0px 40px #000; border-radius: 10px;";
         a += projectCopperfield.get_fixed_style();
         d.innerHTML += '<iframe src="' + c + '" id="projectCopperfield_iframe" scrolling="no" frameborder="no" style="' + a + '"></iframe>'
@@ -124,6 +125,9 @@ var projectCopperfield = {
         }
         
         if (projectCopperfield.settings_value_exists("user_email")) {     projectCopperfield.user_email = _projectCopperfield.user_email
+        }
+        
+        if (projectCopperfield.settings_value_exists("id")) {     projectCopperfield.id = _projectCopperfield.id
         }
         
         projectCopperfield.create_button()
