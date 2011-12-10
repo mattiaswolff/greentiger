@@ -53,26 +53,22 @@ switch($data->getMethod()) {
         $strCreateUserId = (isset($arrRequestVars['createUserId']) ? $arrRequestVars['createUserId'] : '');
         $strCreateUserName = (isset($arrRequestVars['createUserName']) ? $arrRequestVars['createUserName'] : 'unknown');
         $strCreateUserEmail = (isset($arrRequestVars['createUserEmail']) ? $arrRequestVars['createUserEmail'] : '');
-        echo "test1: " . $strCreateUserId;
-        echo "test1: " . $strCreateUserName;
+
         if ($strCreateUserId == '') {
-            echo "test";
             $strCreateUserId = user::validateEmail($strCreateUserEmail);
-            echo "strCreateUserId: " . $strCreateUserId;
             if (!$strCreateUserId) {
                 $user = new User();
                 $user->setId();
                 $user->setName($strCreateUserName);
                 $user->setEmail($strCreateUserEmail);
                 $strCreateUserId = $user->upsert();
-                echo "strCreateUserId: " . $strCreateUserId;
             }
         }
         
         if (($strDefinitionId != '') && ($strUserId != '')) {
             $objTask = new Task();
             $objUser = new User(new MongoId($strUserId)); //check if user object is returned sucessfully
-            $arrUser = array("userId" => $strCreateUserId, "userName" => $strCreateUserName); 
+            $arrUser = array("_id" => $strCreateUserId, "name" => $strCreateUserName); 
             $objTask->setId();
             $objTask->setCreatedBy($arrUser);
             $objTask->setComments($arrRequestVars["comments"]);
