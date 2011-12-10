@@ -1,3 +1,4 @@
+<?php
 require "../AWSSDKforPHP/sdk.class.php";
 // Instantiate the class
 $email = new AmazonSES();
@@ -33,3 +34,5 @@ $response = $email->send_email(
  
 // Success?
 var_dump($response->isOK());
+
+?>
