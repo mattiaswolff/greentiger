@@ -80,7 +80,7 @@ var projectCopperfield = {
             c = encodeURI();
         }
         //c = "http://www.zowgle.com/client/embed.php?userId=" + _projectCopperfield["id"];
-        var a= "background: white; border: none; height: 540px; left: 50%; margin-left: -470px; position: fixed; top: 40px; width: 940px; z-index: 100000; -webkit-box-shadow: 0px 0px 40px #000; -webkit-border-radius: 10px; -moz-box-shadow: 0px 0px 40px #000; -moz-border-radius: 10px; box-shadow: 0px 0px 40px #000; border-radius: 10px;";
+        var a= "background: white; border: none; height: 540px; left: 50%; margin-left: -470px; position: fixed; top: 40px; width: 940px; z-index: 100000; -webkit-box-shadow: 0px 0px 40px #000; -webkit-border-radius: 10px; -moz-box-shadow: 0px 0px 40px #000; -moz-border-radius: 10px; box-shadow: 0px 0px 40px #000; border-radius: 10px; scrolling='yes'";
         a += projectCopperfield.get_fixed_style();
         d.innerHTML += '<iframe src="' + c + '" id="projectCopperfield_iframe" scrolling="no" frameborder="no" style="' + a + '"></iframe>'
     },
