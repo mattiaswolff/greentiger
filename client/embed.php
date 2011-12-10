@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../js/jquery.toObject.js"></script>
+    <script type="text/javascript" src="../js/jquery.toObject.js"></script>
     <script type="text/javascript" src="../js/form2object.js"></script>
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/embed.css" />
@@ -23,7 +23,7 @@
             $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
                 var arrHtml = new Array();
                 $.each(json.results[0].content, function(key, value) {
-                    arrHtml.push(getHtmlTaskRow(value.name, value.name, "content." +value.name, value.description, value.type, '', value.config, value.required));
+                    arrHtml.push(getHtmlTaskRow(value.name, value.name, "content." +value.name, value.description, value.type, _projectCopperfield["id"], value.config, value.required));
                 });
                 arrHtml.push('<input class="invisible" type="text" name="createUserId" value="' + window.sessionStorage.getItem("userId") + '" />');
                 arrHtml.push('<input class="invisible" type="text" name="createUserName" value="' + window.sessionStorage.getItem("userName") + '" />');
