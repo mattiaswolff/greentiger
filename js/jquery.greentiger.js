@@ -85,7 +85,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
         var arrHtml = new Array();
         $.each(json.results[0], function(key, value) {    
             var d = new Date(value.updatedDate);
-            arrHtml.push('<article><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) +'"><img src="' + getUrlApi("users/" + value.createdBy.userId +"?part=image") +'" width="50" height="50" /></a></div><div class="story"><div class="header"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy.userId) + '">' + value.createdBy.userName + '</a></div><div class="content">');
+            arrHtml.push('<article><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy._id.$id) +'"><img src="' + getUrlApi("users/" + value.createdBy._id.$id +"?part=image") +'" width="50" height="50" /></a></div><div class="story"><div class="header"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy._id.$id) + '">' + value.createdBy.name + '</a></div><div class="content">');
             $.each(value.content, function (key1, value1) {
                 arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
             });
