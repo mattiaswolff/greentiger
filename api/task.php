@@ -52,7 +52,7 @@ switch($data->getMethod()) {
         
         $strCreateUserId = (isset($arrRequestVars['createUserId']) ? $arrRequestVars['createUserId'] : '');
         $strCreateUserName = (isset($arrRequestVars['createUserName']) ? $arrRequestVars['createUserName'] : 'unknown');
-        $strCreateUserName = (isset($arrRequestVars['createUserEmail']) ? $arrRequestVars['createUserEmail'] : '');
+        $strCreateUserEmail = (isset($arrRequestVars['createUserEmail']) ? $arrRequestVars['createUserEmail'] : '');
         
         if ($strCreateUserId = '') {
             $strCreateUserId = user::validateEmail($strCreateUserEmail);
