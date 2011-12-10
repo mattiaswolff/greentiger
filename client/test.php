@@ -26,7 +26,6 @@
     })();
     </script>
 </head>
-
 <body id="home">
 </body>
 </html>
