@@ -1,5 +1,4 @@
 <?php
-//test12
 class User {
     //Properties
     private $_id;
