@@ -71,11 +71,11 @@
         <div class="crt-desc"></div>
         <section class="clear"></section>
         <div class="crt-buttons">
-            <ul>
-                <li><input type="text" name="createUserName" /></li>
-                <li><input type="email" name="createUserEmail" /></li>
-                <li><input class="button green" type="submit" name="POST" value="Post" /></li>
-            </ul>
+            <p>
+                <input type="text" name="createUserName" />
+                <input type="email" name="createUserEmail" />
+            </p>    
+                <input class="button green" type="submit" name="POST" value="Post" />
         </div>
         <div class="clear"></div>
     </form>
