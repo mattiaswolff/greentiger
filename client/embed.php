@@ -72,10 +72,13 @@
     <form class="crt-task invisible" method="POST">
         <div class="crt-desc"></div>
         <section class="clear"></section>
-        <div class="crt-buttons"><input class="button green" type="submit" name="POST" value="Post" /></div>
+        <div class="crt-buttons">
+        <input type="email" name="email" />
+        <input class="button green" type="submit" name="POST" value="Post" /></div>
         <div class="clear"></div>
     </form>
 </section>
-<aside>test</aside>
+<aside>
+</aside>
 </body>
 </html>
