@@ -147,5 +147,12 @@ class User {
         $this->upsert();
         return $booReturn;
     }
+    
+    function validateEmail($strEmail) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;   
+        $arrResults = $db->users->findOne(array("email" => $strEmail));
+        return $arrResults["_id"];
+    }
 }
 ?>
