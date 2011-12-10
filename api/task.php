@@ -56,7 +56,7 @@ switch($data->getMethod()) {
         
         if ($strCreateUserId = '') {
             $strCreateUserId = user::validateEmail($strCreateUserEmail);
-            if !($strCreateUserId) {
+            if (!$strCreateUserId) {
                 $user = new User();
                 $user->setId();
                 $user->setName($strCreateUserName);

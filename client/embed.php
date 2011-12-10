@@ -73,7 +73,7 @@
         <div class="crt-desc"></div>
         <section class="clear"></section>
         <div class="crt-buttons">
-        <input type="email" name="email" />
+        <input type="email" name="strCreateUserEmail" />
         <input class="button green" type="submit" name="POST" value="Post" /></div>
         <div class="clear"></div>
     </form>
