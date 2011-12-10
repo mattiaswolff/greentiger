@@ -70,12 +70,14 @@
     <form class="crt-task invisible" method="POST">
         <div class="crt-desc"></div>
         <section class="clear"></section>
-        <div class="crt-buttons">
-            <p>
+        <div class="crt-post">
+            <p class="crt-post-userinfo">
                 <input type="text" name="createUserName" />
                 <input type="email" name="createUserEmail" />
-            </p>    
+            </p>
+            <div class="crt-post-buttons">
                 <input class="button green" type="submit" name="POST" value="Post" />
+            </div>
         </div>
         <div class="clear"></div>
     </form>
