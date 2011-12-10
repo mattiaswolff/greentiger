@@ -23,7 +23,7 @@
             $.getJSON(getUrlApi("definitions/" + $(this).attr('id')), function(json) {
                 var arrHtml = new Array();
                 $.each(json.results[0].content, function(key, value) {
-                    arrHtml.push(getHtmlTaskRow(value.name, "content." +value.name, value.description, value.type, '', value.config, value.required));
+                    arrHtml.push(getHtmlTaskRow(value.name, value.name, "content." +value.name, value.description, value.type, '', value.config, value.required));
                 });
                 arrHtml.push('<input class="invisible" type="text" name="createUserId" value="' + window.sessionStorage.getItem("userId") + '" />');
                 arrHtml.push('<input class="invisible" type="text" name="createUserName" value="' + window.sessionStorage.getItem("userName") + '" />');
