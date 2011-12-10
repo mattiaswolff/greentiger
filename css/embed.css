@@ -26,7 +26,7 @@ a {text-decoration: none; color: #39F; font-weight: bold;}
 }
 
 /*Layout*/
-.crt {  background-color: #DDE5D9;    width: 630px;  border-right: solid 1px hsl(194, 12%, 66%);  height: 100%; float: left;}
+.crt {  background-color: #DDE5D9;    width: 630px;  border-right: solid 1px hsl(194, 12%, 66%); min-height:540px;  height: 100%; float: left;}
 aside {float:right; width: 290px; height: 100%;}
 
 /*Module*/
@@ -54,12 +54,12 @@ background-position: -40px 0px;}
 
 .crt-post {
     padding: 15px;
+    margin-bottom: 7px;
 }
 .crt-post-userinfo {
     float: left;
     width: 480px;
 }
-input[type="text"] {}
 .crt-post-userinfo input {
     width: 235px;
     display: inline;
