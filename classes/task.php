@@ -145,6 +145,24 @@ class Task {
         'upsert' => true,
         'fields' => array( '_id' => 1 )));
         $this->_id = $result['value']['_id'];
+        
+        require "../AWSSDKforPHP/sdk.class.php";
+        require "../classes/user.php";
+        $objUser = new User($this->createdBy['_id']);
+        // Instantiate the class
+        $email = new AmazonSES();
+        $email->setRegion(AmazonSES::REGION_US_E1);
+        $response = $email->send_email(
+            'no-replay@zowgle.com', // Source (aka From)
+            array('ToAddresses' => $objUser->getEmail()), // Destination (aka To)
+            array( // Message (short form)
+            'Subject.Data' => 'Email Test ' . time(),
+            'Body.Text.Data' => 'This is a simple test message ' . time()
+        )
+);
+ 
+// Success?
+var_dump($response->isOK());
     }
     
     function delete($arrObjectId) {
