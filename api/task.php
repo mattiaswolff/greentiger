@@ -64,6 +64,9 @@ switch($data->getMethod()) {
                 $strCreateUserId = $user->upsert();
             }
         }
+        else {
+            $strCreateUserId = new Mongo($strCreateUserId);
+        }
         
         if (($strDefinitionId != '') && ($strUserId != '')) {
             $objTask = new Task();
