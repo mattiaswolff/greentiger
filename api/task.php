@@ -65,7 +65,7 @@ switch($data->getMethod()) {
             }
         }
         else {
-            $strCreateUserId = new Mongo($strCreateUserId);
+            $strCreateUserId = new MongoId($strCreateUserId);
         }
         
         if (($strDefinitionId != '') && ($strUserId != '')) {
