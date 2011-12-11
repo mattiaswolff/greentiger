@@ -147,7 +147,6 @@ class Task {
         $this->_id = $result['value']['_id'];
         
         require "../AWSSDKforPHP/sdk.class.php";
-        include "../classes/user.php";
         $objUser = new User($this->createdBy['_id']);
         // Instantiate the class
         $email = new AmazonSES();
