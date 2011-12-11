@@ -154,14 +154,23 @@ class Task {
         $response = $email->send_email(
             'no-replay@zowgle.com', // Source (aka From)
             array('ToAddresses' => $objUser->getEmail()), // Destination (aka To)
-            array( // Message (short form)
-            'Subject.Data' => 'Email Test ' . time(),
-            'Body.Text.Data' => 'This is a simple test message ' . time()
-        )
-);
- 
-// Success?
-var_dump($response->isOK());
+            array( // Message (long form)
+                'Subject' => array(
+                    'Data' => 'Zowgle post has been updated',
+                    'Charset' => 'UTF-8'
+                ),
+                'Body' => array(
+                    'Text' => array(
+                        'Data' => 'Thîs îs å plåîn téxt, ünîcødé tést méssåge ' . time(),
+                        'Charset' => 'UTF-8'
+                    ),
+                    'Html' => array(
+                        'Data' => '<p><strong>Zowgle post has been updated</strong></p>',
+                        'Charset' => 'UTF-8'
+                    )
+                )
+            )
+        );    
     }
     
     function delete($arrObjectId) {
