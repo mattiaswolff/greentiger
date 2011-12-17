@@ -15,7 +15,7 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .createTask {}
 .definitions { width: 525px;}
 .definition {width: 250px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 200px; margin-top: 20px;}
-.left {float: left;  margin-right: 10px;}
+.left {float: left;  width: 65px;}
 .right {float: right}
 .user { max-width: 220px; max-height: 220px; margin: 20px 0;}
 a {text-decoration: none; color: #009ECE; font-weight: bold;}
@@ -27,7 +27,7 @@ input, textarea, select{margin:0;font: 17px arial,sans-serif;  padding: 5px; -we
 input[type="submit"] {min-width:100px;width: 83px;}
 input[type="radio"], input[type="checkbox"]{margin: 0; border:0}
 textarea.large{height:172px}
-textarea.small{height:92px}
+textarea.small{height: 5em;}
 input:focus:invalid {background: red;}
 input:focus:valid {background: green;}
 input.search {float: left;  -webkit-border-radius: 0px;}
@@ -68,14 +68,14 @@ ul.horizontal {list-style: none;  margin: 0; padding: 0; }
 li.horizontal {display: inline; margin: 0 5px;}
 .form-field {vertical-align: text-bottom; width: 60px; display: inline-block; padding: 0; margin: 0;}
 
-.taskFlow {width: 540px;}
-.taskFlow > article {margin: 15px 0; padding: 0 0 15px; border-bottom: solid 1px #ccc; width: 100%;}
-.story {display: table-cell; width: 480px;}
+.taskFlow {}
+.taskFlow > article {margin: 1em 0; padding: 0 0 1em; border-bottom: solid 1px #ccc; width: 100%;}
+.story {display: table-cell; width: 100%;}
 .link {color: #114488; cursor: pointer;}
 .title {font-weight: bold;}
-.taskFlow .content {  padding: 0px;   margin: 5px 0 5px; width: 465px;}
+.taskFlow .content {  padding: 0px;   margin: 0.5em 0 0.5em; }
 
-.comments {border: 1px solid hsl(224, 100%, 85%); padding: 3px; background: hsl(224, 100%, 90%);margin: 5px 0 0 0;}
+.comments {border: 1px solid hsl(224, 100%, 85%);  background: hsl(224, 100%, 90%);margin: 0.5em 0 0 0;}
 .comments .comment {margin: 0 0 5px 0; border-bottom: 1px solid #ccc; padding: 0 0 5px 0;}
 .comments input[type="text"] {font: 13px arial;}
 .hide {position: absolute; left: -10000px}
