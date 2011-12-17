@@ -2,12 +2,12 @@ div,section,header,aside,article,footer,nav,input,textarea{display:block;-webkit
 body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: #f4f4f4; clear:both; margin: 0; padding: 0;}
 #navbar {float: right;}
 .top {height: 34px;background-color: #333333; color: white;   padding: 3px;}
-.container {width: 80%;  margin:0 auto;  }
+.container {width: 95%;  margin:0 auto;  }
 .pageNav {display: inline; margin-top: 5px; float: left;}
 .login {display: block; float: right;}
-.userInfo {float: left;  width: 25%;  padding: 1em;}
-.main {float: right; width: 75%;padding: 1em;}
-.main > .content {float: left; width: 76%;}
+.userInfo {float: left;  width: 20%;  padding: 1em;}
+.main {float: right; width: 80%;padding: 1em;}
+.main > .content { max-width: 600px;}
 .main > .aside {float: right; width: 225px;}
 .userName {    font-size: 32px; }
 .userNav {display: block;     color: #4D90FE; border-bottom: solid 2px #4D90FF; text-decoration: none; font-size: 16px;}
