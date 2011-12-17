@@ -9,7 +9,7 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .main {float: right; width: 75%;padding: 1em;}
 .main > .content {float: left; width: 76%;}
 .main > .aside {float: right; width: 225px;}
-.userName {display: block;  padding: 25px 0; margin-top: 10px; font-size: 32px; width: 80%;float: left;}
+.userName {    font-size: 32px; }
 .userNav {display: block;     color: #4D90FE; border-bottom: solid 2px #4D90FF; text-decoration: none; font-size: 16px;}
 .footer {clear: both; background-color: #FFFFCC; margin-top: 10px; min-height: 300px; border: solid 1px #ccc;}
 .createTask {}
@@ -102,11 +102,9 @@ line-height: 1.28;}
 
 /*user info*/
 .iusr-url {
-    margin: 10px 0;
+    margin: 1em 0;
 }
-.description {
-    margin: 84px 0 5px 0;
-    background: hsl(51, 96%, 90%);  padding: 10px;  border: 1px solid hsl(51, 94%, 80%);
+.description {    
 }
 .iusr-soc {
     margin-top:27px
