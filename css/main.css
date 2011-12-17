@@ -30,7 +30,7 @@ textarea.large{height:172px}
 textarea.small{height: 5em;}
 input:focus:invalid {background: red;}
 input:focus:valid {background: green;}
-input.search {float: left;  -webkit-border-radius: 0px;}
+input.search {  -webkit-border-radius: 0px;}
 
 .createTask form {  padding: 5px;width: 500px;}
 section.createTask .description { padding: 5px; width: 100%; margin-bottom: 10px; text-decoration: underline;}
@@ -48,13 +48,13 @@ form.task > section {}
 .button.red{color:#fff;background: #CE0000; border: solid 1px #B30000;}
 .button.green{color:#fff;background: #009ECE; border: solid 1px #0089B3;}
 .button.rounded{border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;}
-.button.search {margin-left: -1px;border-left: none;width: 85px;height: 18px;padding: 6.5px;}
+.button.search {border-left: none;width: 87px;height: 18px;padding: 6.5px;margin-right: -100%;float: right;position: relative;left: 100px;display: block;}
 .button.margin {margin-left: 20px;}
 form .button {float: right;  }
-input.search {float: left; width: 300px; }
+input.search {float: right; width: 100%; }
 .button.search { }
 li > .button {}
-div.search {margin: 1em auto;}
+div.search {margin: 1em auto;padding-right: 100px;}
 
 input:focus:invalid {
   background: red;
