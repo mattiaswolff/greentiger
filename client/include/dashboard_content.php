@@ -9,5 +9,6 @@
 </section>
 <div class="search">
     <input type="text" name="search" class="search" /><span class="button blue search" id="search">Search</span>
+    <div class="clear"></div>
 </div>
 <section class="taskFlow"></section>
