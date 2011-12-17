@@ -40,8 +40,9 @@
         <div class = "container">
             <aside class="userInfo">
                 <section class="userName"></section>
-                <div class="description"></div>
                 <div class="iusr-url"></div>
+                <div class="description"></div>
+                
             </aside>
         <div class="main">
             
