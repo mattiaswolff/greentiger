@@ -39,11 +39,12 @@
         </div>
         <div class = "container">
             <aside class="userInfo">
+                <section class="userName"></section>
                 <div class="description"></div>
                 <div class="iusr-url"></div>
             </aside>
         <div class="main">
-            <section class="userName"></section>
+            
             <div class="content">
                 <?php include $page_content; ?>
             </div>
