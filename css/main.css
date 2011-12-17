@@ -7,12 +7,12 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .login {display: block; float: right;}
 .userInfo {float: left;  width: 25%;  padding: 1em;}
 .main {float: right; width: 75%;padding: 1em;}
-.main > .content {float: left; width: 75%;}
+.main > .content {float: left; width: 76%;}
 .main > .aside {float: right; width: 225px;}
 .userName {display: block;  padding: 25px 0; margin-top: 10px; font-size: 32px; width: 80%;float: left;}
 .userNav {display: block;     color: #4D90FE; border-bottom: solid 2px #4D90FF; text-decoration: none; font-size: 16px;}
 .footer {clear: both; background-color: #FFFFCC; margin-top: 10px; min-height: 300px; border: solid 1px #ccc;}
-.createTask {  background-color: hsl(224, 100%, 90%);  border: 1px solid hsl(224, 100%, 85%);}
+.createTask {}
 .definitions { width: 525px;}
 .definition {width: 250px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 200px; margin-top: 20px;}
 .left {float: left;  margin-right: 10px;}
@@ -88,8 +88,8 @@ line-height: 1.28;}
 /*create task*/
 .ctsk .ctsk-definitions ul {list-style: none;  margin: 0.2em; padding: 0em; }
 .ctsk .ctsk-definitions ul li {display: inline-block; margin: 0.3em;}
-.ctsk form {padding: 0; width: 100%;clear: both;}
-.ctsk div.ctsk-desc { padding: 0.7em; width: 100%; background: snow; border-top: solid 1px hsl(0, 0%, 80%); border-bottom: solid 1px hsl(0, 0%, 80%); background: hsl(100, 19%, 100%); font: 17px arial,sans-serif; color: hsl(0, 0%, 10%); font-style: italic;}
+.ctsk form {padding: 0; width: 100%;clear: both;background-color: #CCDAFF;border: 1px solid #B3C7FF;}
+.ctsk div.ctsk-desc { padding: 0.7em; width: 100%; background: snow; border-bottom: solid 1px hsl(0, 0%, 80%); background: hsl(100, 19%, 100%); font: 17px arial,sans-serif; color: hsl(0, 0%, 10%); font-style: italic;}
 .ctsk form.ctsk-task div.header {  padding: 3px; }
 .ctsk form.ctsk-task article {margin: 10px 0 0 0;}
 .ctsk form.ctsk-task > section {
