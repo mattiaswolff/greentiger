@@ -44,20 +44,9 @@
             </aside>
         <div class="main">
             <section class="userName"></section>
-            <section class="iusr-soc">
-                <article>
-                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="40" data-show-faces="false" data-font="arial"></div>
-                </article>
-                <article>
-                    <g:plusone size="medium"></g:plusone>
-                </article>
-                
-            </section>
             <div class="content">
                 <?php include $page_content; ?>
             </div>
-            <aside>
-            </aside>
         </div>
     </div>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
