@@ -51,10 +51,10 @@ form.task > section {}
 .button.search {margin-left: -1px;border-left: none;width: 85px;height: 18px;padding: 6.5px;}
 .button.margin {margin-left: 20px;}
 form .button {float: right;  }
-input.search {float: left; width: 325px; }
+input.search {float: left; width: 300px; }
 .button.search { }
 li > .button {}
-div.search {margin: 1em auto;width: 83%;}
+div.search {margin: 1em auto;}
 
 input:focus:invalid {
   background: red;
