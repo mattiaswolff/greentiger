@@ -1,11 +1,11 @@
 div,section,header,aside,article,footer,nav,input,textarea{display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;padding: 0px;margin: 0px;}
 body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: #f4f4f4; clear:both; margin: 0; padding: 0;}
 #navbar {float: right;}
-.top {height: 34px;background-color: #333333; color: white;   padding: 3px;}
+.top {height: 34px;background-color: #333333; color: white;   padding: 0.3em;}
 .container {width: 95%;  margin:0 auto;  }
-.pageNav {display: inline; margin-top: 5px; float: left;}
+.pageNav {display: inline-block; margin-top: 0.4em; }
 .login {display: block; float: right;}
-.userInfo {float: left;  width: 20%;  padding: 1em;}
+.userInfo {float: left;  width: 20%;  padding: 1em;min-width: 200px;}
 .main {float: right; width: 80%;padding: 1em;}
 .main > .content { max-width: 600px;}
 .main > .aside {float: right; width: 225px;}
@@ -32,7 +32,7 @@ input:focus:invalid {background: red;}
 input:focus:valid {background: green;}
 input.search {  -webkit-border-radius: 0px;}
 
-.createTask form {  padding: 5px;width: 500px;}
+.createTask form {}
 section.createTask .description { padding: 5px; width: 100%; margin-bottom: 10px; text-decoration: underline;}
 .clear{clear: both;}
 .invisible{display: none}
@@ -70,7 +70,7 @@ li.horizontal {display: inline; margin: 0 5px;}
 
 .taskFlow {}
 .taskFlow > article {margin: 1em 0; padding: 0 0 1em; border-bottom: solid 1px #ccc; width: 100%;}
-.story {display: table-cell; width: 100%;}
+.story { width: 100%;}
 .link {color: #114488; cursor: pointer;}
 .title {font-weight: bold;}
 .taskFlow .content {  padding: 0px;   margin: 0.5em 0 0.5em; }
@@ -88,7 +88,7 @@ line-height: 1.28;}
 /*create task*/
 .ctsk .ctsk-definitions ul {list-style: none;  margin: 0; padding: 0; }
 .ctsk .ctsk-definitions ul li {display: inline-block; margin: 0.3em 0.3em 0.3em 0;}
-.ctsk form {padding: 0; width: 100%;clear: both;background-color: #CCDAFF;border: 1px solid #B3C7FF;}
+.ctsk form {padding: 0; background-color: #CCDAFF;border: 1px solid #B3C7FF;}
 .ctsk div.ctsk-desc { padding: 0.7em; width: 100%; background: snow; border-bottom: solid 1px hsl(0, 0%, 80%); background: hsl(100, 19%, 100%); font: 17px arial,sans-serif; color: hsl(0, 0%, 10%); font-style: italic;}
 .ctsk form.ctsk-task div.header {  padding: 3px; }
 .ctsk form.ctsk-task article {margin: 10px 0 0 0;}
