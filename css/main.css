@@ -2,17 +2,17 @@ div,section,header,aside,article,footer,nav,input,textarea{display:block;-webkit
 body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: #f4f4f4; clear:both; margin: 0; padding: 0;}
 #navbar {float: right;}
 .top {height: 34px;background-color: #333333; color: white;   padding: 3px;}
-.container {width: 1000px;  margin:0 auto;  }
+.container {width: 80%;  margin:0 auto;  }
 .pageNav {display: inline; margin-top: 5px; float: left;}
 .login {display: block; float: right;}
-.userInfo {float: left;  width: 250px; min-height: 450px; padding: 15px;}
-.main {float: right; width: 750px;}
-.main > .content {float: left; width: 540px;}
+.userInfo {float: left;  width: 25%;  padding: 1em;}
+.main {float: right; width: 75%;padding: 1em;}
+.main > .content {float: left; width: 75%;}
 .main > .aside {float: right; width: 225px;}
-.userName {display: block;  padding: 25px 0; margin-top: 10px; font-size: 32px; width: 445px;float: left;}
+.userName {display: block;  padding: 25px 0; margin-top: 10px; font-size: 32px; width: 80%;float: left;}
 .userNav {display: block;     color: #4D90FE; border-bottom: solid 2px #4D90FF; text-decoration: none; font-size: 16px;}
 .footer {clear: both; background-color: #FFFFCC; margin-top: 10px; min-height: 300px; border: solid 1px #ccc;}
-.createTask {  background-color: hsl(224, 100%, 90%);    width: 540px;  border: 1px solid hsl(224, 100%, 85%);}
+.createTask {  background-color: hsl(224, 100%, 90%);  border: 1px solid hsl(224, 100%, 85%);}
 .definitions { width: 525px;}
 .definition {width: 250px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 200px; margin-top: 20px;}
 .left {float: left;  margin-right: 10px;}
@@ -30,7 +30,7 @@ textarea.large{height:172px}
 textarea.small{height:92px}
 input:focus:invalid {background: red;}
 input:focus:valid {background: green;}
-input.search {float: left; width: 425px; -webkit-border-radius: 0px;}
+input.search {float: left;  -webkit-border-radius: 0px;}
 
 .createTask form {  padding: 5px;width: 500px;}
 section.createTask .description { padding: 5px; width: 100%; margin-bottom: 10px; text-decoration: underline;}
@@ -48,13 +48,13 @@ form.task > section {}
 .button.red{color:#fff;background: #CE0000; border: solid 1px #B30000;}
 .button.green{color:#fff;background: #009ECE; border: solid 1px #0089B3;}
 .button.rounded{border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;}
-.button.search {margin-left: -0.9px;border-left: none;}
+.button.search {margin-left: -1px;border-left: none;width: 85px;height: 18px;padding: 6.5px;}
 .button.margin {margin-left: 20px;}
-form .button {float: right; margin-top: 10px; margin-left: 10px;}
-input.search {float: left; width: 445px; -webkit-border-radius: 0px;}
-.button.search {width: auto; padding: 7px;}
+form .button {float: right;  }
+input.search {float: left; width: 325px; }
+.button.search { }
 li > .button {}
-div.search {margin: 20px 0px;}
+div.search {margin: 1em auto;width: 83%;}
 
 input:focus:invalid {
   background: red;
@@ -86,16 +86,16 @@ line-height: 1.28;}
 
 /*Modules*/
 /*create task*/
-.ctsk .ctsk-definitions ul {list-style: none;  margin: 0; padding: 11px; }
-.ctsk .ctsk-definitions ul li {display: inline; margin-right: 11px;margin-top: 5px;}
+.ctsk .ctsk-definitions ul {list-style: none;  margin: 0.2em; padding: 0; }
+.ctsk .ctsk-definitions ul li {display: inline; margin: 0.3em;}
 .ctsk form {padding: 0; width: 100%;}
-.ctsk div.ctsk-desc { padding: 10px; width: 100%; background: snow; border-top: solid 1px hsl(0, 0%, 80%); border-bottom: solid 1px hsl(0, 0%, 80%); background: hsl(100, 19%, 100%); font: 17px arial,sans-serif; color: hsl(0, 0%, 10%); font-style: italic;}
+.ctsk div.ctsk-desc { padding: 0.7em; width: 100%; background: snow; border-top: solid 1px hsl(0, 0%, 80%); border-bottom: solid 1px hsl(0, 0%, 80%); background: hsl(100, 19%, 100%); font: 17px arial,sans-serif; color: hsl(0, 0%, 10%); font-style: italic;}
 .ctsk form.ctsk-task div.header {  padding: 3px; }
 .ctsk form.ctsk-task article {margin: 10px 0 0 0;}
 .ctsk form.ctsk-task > section {
-    padding: 5px 15px;
+    padding: 0.5em;
 }
-.ctsk div.ctsk-buttons {padding: 0 15px 10px 0; float: right;}
+.ctsk div.ctsk-buttons {padding: 0.5em; float: right;}
 
 /*edit definition*/
 .edef .edef-row {border-top: 3px solid hsl(0, 0%, 80%); margin-top: 25px; padding-top: 15px;}
