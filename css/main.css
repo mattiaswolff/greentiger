@@ -86,9 +86,9 @@ line-height: 1.28;}
 
 /*Modules*/
 /*create task*/
-.ctsk .ctsk-definitions ul {list-style: none;  margin: 0.2em; padding: 0; }
-.ctsk .ctsk-definitions ul li {display: inline; margin: 0.3em;}
-.ctsk form {padding: 0; width: 100%;}
+.ctsk .ctsk-definitions ul {list-style: none;  margin: 0.2em; padding: 0em; }
+.ctsk .ctsk-definitions ul li {display: inline-block; margin: 0.3em;}
+.ctsk form {padding: 0; width: 100%;clear: both;}
 .ctsk div.ctsk-desc { padding: 0.7em; width: 100%; background: snow; border-top: solid 1px hsl(0, 0%, 80%); border-bottom: solid 1px hsl(0, 0%, 80%); background: hsl(100, 19%, 100%); font: 17px arial,sans-serif; color: hsl(0, 0%, 10%); font-style: italic;}
 .ctsk form.ctsk-task div.header {  padding: 3px; }
 .ctsk form.ctsk-task article {margin: 10px 0 0 0;}
