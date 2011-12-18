@@ -1,7 +1,7 @@
 div,section,header,aside,article,footer,nav,input,textarea{display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;padding: 0px;margin: 0px;}
 body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: #f4f4f4; clear:both; margin: 0; padding: 0;color: #1A1A1A;}
 #navbar {float: right;}
-.top {height: 34px;background-color: #333333; color: white;   padding: 3px;}
+
 .container {width: 95%;  margin:0 auto;  padding-left: 200px;}
 .pageNav {display: inline; margin-top: 5px; float: left;}
 .login {display: block; float: right;}
@@ -76,6 +76,10 @@ font-size: 11px;
 line-height: 1.28;}
 
 /*Modules*/
+
+/*top*/
+.top {height: 34px;background-color: #1C1C1C; color: #C4302B;   padding: 3px;}
+.top .a {color:#ccc}
 /*create task*/
 .ctsk .ctsk-definitions ul {list-style: none;  margin: 0; padding: 0; }
 .ctsk .ctsk-definitions ul li {display: inline-block; margin: 0.3em 0.3em 0.3em 0;}
