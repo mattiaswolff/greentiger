@@ -29,7 +29,6 @@ input[type="radio"], input[type="checkbox"]{margin: 0; border:0}
 textarea.large{height:172px}
 textarea.small{height: 5em;}
 input:focus:invalid {background: red;}
-input:focus:valid {background: green;}
 input.search {  -webkit-border-radius: 0px;}
 
 .createTask form {}
