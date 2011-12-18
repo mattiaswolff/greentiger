@@ -15,7 +15,7 @@ body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 1
 .createTask {}
 .definitions { width: 525px;}
 .definition {width: 250px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 200px; margin-top: 20px;}
-.left {float: left;  width: 65px;margin-left: -65px;position: relative;right: 65px;}
+.left {float: left;  width: 65px;margin-left: -65px;}
 .right {float: right}
 .user { max-width: 220px; max-height: 220px; margin: 20px 0;}
 a {text-decoration: none; color: #009ECE; font-weight: bold;}
