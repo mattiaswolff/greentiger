@@ -54,7 +54,7 @@ form .button {float: right;  }
 input.search {float: right; width: 100%; }
 .button.search { }
 li > .button {}
-div.search {margin: 0.5em auto;padding-right: 100px;}
+div.search {margin: 1em auto;padding-right: 100px;}
 
 input:focus:invalid {
   background: red;
