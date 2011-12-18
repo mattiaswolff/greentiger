@@ -55,14 +55,6 @@ input.search {float: right; width: 100%; }
 li > .button {}
 div.search {margin: 1em auto;padding-right: 100px;}
 
-input:focus:invalid {
-  background: red;
-}
-
-
-input:focus:valid {
-  background: green;
-}
 ul.horizontal {list-style: none;  margin: 0; padding: 0; }
 li.horizontal {display: inline; margin: 0 5px;}
 .form-field {vertical-align: text-bottom; width: 60px; display: inline-block; padding: 0; margin: 0;}
