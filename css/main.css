@@ -1,116 +1,358 @@
-div,section,header,aside,article,footer,nav,input,textarea{display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;padding: 0px;margin: 0px;}
-body {font-family: "lucida grande",tahoma,verdana,arial,sans-serif; font-size: 13px; background-color: #f4f4f4; clear:both; margin: 0; padding: 0;color: #1A1A1A;}
-#navbar {float: right;}
-
-.container {width: 95%;  margin:0 auto;  padding-left: 200px;}
-.pageNav {display: inline; margin-top: 5px; float: left;}
-.login {display: block; float: right;}
-.userInfo {float: left;    padding: 1em;width: 200px;margin-left: -200px;}
-.main { width: 100%;padding: 1em;min-width: 320px;}
-.main > .content { max-width: 600px;}
-.main > .aside {float: right; width: 225px;}
-.userName {    font-size: 32px; }
-.userNav {display: block;     color: #4D90FE; border-bottom: solid 2px #4D90FF; text-decoration: none; font-size: 16px;}
-.footer {clear: both; background-color: #FFFFCC; margin-top: 10px; min-height: 300px; border: solid 1px #ccc;}
-.createTask {}
-.definitions { width: 525px;}
-.definition {width: 250px; background-color: #f4f4f4; border: solid 1px #ccc; display: inline-block; min-height: 200px; margin-top: 20px;}
-.left {float: left;  width: 65px;margin-left: -65px;}
-.right {float: right}
-.user { max-width: 220px; max-height: 220px; margin: 20px 0;}
-a {text-decoration: none; color: #009ECE; font-weight: bold;}
-table {padding: 0; text-align: left;}
-td {padding: 0 3px; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-th {padding: 0 3px;}
-
-input, textarea, select{margin:0;font: 17px arial,sans-serif;  padding: 5px; -webkit-border-radius: 2px; width: 100%;border-top: 1px solid hsl(224, 100%, 85%);border-left: 1px solid hsl(224, 100%, 78%);border-right: 1px solid hsl(224, 100%, 78%);border-bottom: 1px solid hsl(224, 100%, 65%);}
-input[type="submit"] {min-width:100px;width: 83px;}
-input[type="radio"], input[type="checkbox"]{margin: 0; border:0}
-textarea.large{height:172px}
-textarea.small{height: 5em;}
-input:focus:invalid {background: red;}
-input.search {  -webkit-border-radius: 0px;}
-
-.createTask form {}
-section.createTask .description { padding: 5px; width: 100%; margin-bottom: 10px; text-decoration: underline;}
-.clear{clear: right;}
-.invisible{display: none}
-form.task div.header { }
-form.task article {}
-form.task > section {}
-
-.button{cursor:pointer;border-bottom: 1px solid #999;border-top: 1px solid #CCC;border-left: 1px solid #BBB;border-right: 1px solid #BBB;padding: 5px; font-size: 13px; -webkit-border-radius: 0px; min-width: 80px; display: inline-block; text-align: center; margin: 0.9px;}
-.button.shiny{text-shadow:0 -1px 0 rgba(0,0,0,0.33);box-shadow:inset 0 1px 0 rgba(255,255,255,0.75),0 1px 0 rgba(255,255,255,0.75);-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.75),0 1px 0 rgba(255,255,255,0.75);-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.75),0 1px 0 rgba(255,255,255,0.75);background-image:-moz-linear-gradient(center top,rgba(255,255,255,0.66),rgba(255,255,255,0.45),rgba(255,255,255,0.2),rgba(255,255,255,0.001));background-image:-webkit-gradient(linear,center top,center bottom,from(rgba(255,255,255,0.66)),to(rgba(255,255,255,0.001)),color-stop(50%,rgba(255,255,255,0.45)),color-stop(50%,rgba(255,255,255,0.2)))}
-.button.grey{color:#000;background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F9F9F9),to(#E3E3E3));}
-.button.blue{color:#fff;background: #009ECE; border: solid 1px #0089B3;}
-.button.darkBlue{color:#fff;background: #006280; border: solid 1px #004E66;}
-.button.red{color:#fff;background: #CE0000; border: solid 1px #B30000;}
-.button.green{color:#fff;background: #009ECE; border: solid 1px #0089B3;}
-.button.rounded{border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;}
-.button.search {border-left: none;width: 87px;height: 18px;padding: 6.5px;margin-right: -100%;float: right;position: relative;left: 100px;display: block;}
-.button.margin {margin-left: 20px;}
-form .button {float: right;  }
-input.search {float: right; width: 100%; }
-.button.search { }
-li > .button {}
-div.search {margin: 1em auto;padding-right: 100px;}
-
-ul.horizontal {list-style: none;  margin: 0; padding: 0; }
-li.horizontal {display: inline; margin: 0 5px;}
-.form-field {vertical-align: text-bottom; width: 60px; display: inline-block; padding: 0; margin: 0;}
-
-.taskFlow {}
-.taskFlow > article {margin: 1em 0; padding: 0 0 1em 65px; border-bottom: solid 1px #ccc; width: 100%;}
-.story {display: block; width: 100%;}
-.link {color: #114488; cursor: pointer;}
-.title {font-weight: bold;}
-.taskFlow .content {  padding: 0px;   margin: 0.5em 0 0.5em; }
-
-.comments {border: 1px solid hsl(224, 100%, 85%);  background: hsl(224, 100%, 90%);margin: 0.5em 0 0 0;}
-.comments .comment {margin: 0 0 5px 0; border-bottom: 1px solid #ccc; padding: 0 0 5px 0;}
-.comments input[type="text"] {font: 13px arial;}
-.hide {position: absolute; left: -10000px}
-
-.vague {color: #636363;
-font-size: 11px;
-line-height: 1.28;}
-
-/*Modules*/
-
-/*top*/
-.top {height: 34px;background-color: #1C1C1C; color: #C4302B;   padding: 3px;}
-.top a {color:#ccc}
-/*create task*/
-.ctsk .ctsk-definitions ul {list-style: none;  margin: 0; padding: 0; }
-.ctsk .ctsk-definitions ul li {display: inline-block; margin: 0.3em 0.3em 0.3em 0;}
-.ctsk form {padding: 0; width: 100%;background-color: #CCDAFF;border: 1px solid #B3C7FF;}
-.ctsk div.ctsk-desc { padding: 0.7em; width: 100%; background: snow; border-bottom: solid 1px hsl(0, 0%, 80%); font: 17px arial,sans-serif; color: #1A1A1A; font-style: italic;}
+div, section, header, aside, article, footer, nav, input, textarea {
+    -moz-box-sizing: border-box;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #F4F4F4;
+    clear: both;
+    color: #1A1A1A;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+}
+#navbar {
+    float: right;
+}
+.container {
+    margin: 0 auto;
+    padding-left: 200px;
+    width: 95%;
+}
+.pageNav {
+    display: inline;
+    float: left;
+    margin-top: 5px;
+}
+.login {
+    display: block;
+    float: right;
+}
+.userInfo {
+    float: left;
+    margin-left: -200px;
+    padding: 1em;
+    width: 200px;
+}
+.main {
+    min-width: 320px;
+    padding: 1em;
+    width: 100%;
+}
+.main > .content {
+    max-width: 600px;
+}
+.main > .aside {
+    float: right;
+    width: 225px;
+}
+.userName {
+    font-size: 32px;
+}
+.userNav {
+    border-bottom: 2px solid #4D90FF;
+    color: #4D90FE;
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+}
+.footer {
+    background-color: #FFFFCC;
+    border: 1px solid #CCCCCC;
+    clear: both;
+    margin-top: 10px;
+    min-height: 300px;
+}
+.createTask {
+}
+.definitions {
+    width: 525px;
+}
+.definition {
+    background-color: #F4F4F4;
+    border: 1px solid #CCCCCC;
+    display: inline-block;
+    margin-top: 20px;
+    min-height: 200px;
+    width: 250px;
+}
+.left {
+    float: left;
+    margin-left: -65px;
+    width: 65px;
+}
+.right {
+    float: right;
+}
+.user {
+    margin: 20px 0;
+    max-height: 220px;
+    max-width: 220px;
+}
+a {
+    color: #009ECE;
+    font-weight: bold;
+    text-decoration: none;
+}
+table {
+    padding: 0;
+    text-align: left;
+}
+td {
+    max-width: 90px;
+    overflow: hidden;
+    padding: 0 3px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+th {
+    padding: 0 3px;
+}
+input, textarea, select {
+    border-color: #B2C6FF #8EACFF #4C7CFF;
+    border-style: solid;
+    border-width: 1px;
+    font: 17px arial,sans-serif;
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+}
+input[type="submit"] {
+    min-width: 100px;
+    width: 83px;
+}
+input[type="radio"], input[type="checkbox"] {
+    border: 0 none;
+    margin: 0;
+}
+textarea.large {
+    height: 172px;
+}
+textarea.small {
+    height: 5em;
+}
+input:focus:invalid {
+    background: none repeat scroll 0 0 red;
+}
+input.search {
+}
+.createTask form {
+}
+section.createTask .description {
+    margin-bottom: 10px;
+    padding: 5px;
+    text-decoration: underline;
+    width: 100%;
+}
+.clear {
+    clear: right;
+}
+.invisible {
+    display: none;
+}
+form.task div.header {
+}
+form.task article {
+}
+form.task > section {
+}
+.button {
+    border-color: #CCCCCC #BBBBBB #999999;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    margin: 0.9px;
+    min-width: 80px;
+    padding: 5px;
+    text-align: center;
+}
+.button.shiny {
+    background-image: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75) inset, 0 1px 0 rgba(255, 255, 255, 0.75);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+}
+.button.grey {
+    color: #000000;
+}
+.button.blue {
+    background: none repeat scroll 0 0 #009ECE;
+    border: 1px solid #0089B3;
+    color: #FFFFFF;
+}
+.button.darkBlue {
+    background: none repeat scroll 0 0 #006280;
+    border: 1px solid #004E66;
+    color: #FFFFFF;
+}
+.button.red {
+    background: none repeat scroll 0 0 #CE0000;
+    border: 1px solid #B30000;
+    color: #FFFFFF;
+}
+.button.green {
+    background: none repeat scroll 0 0 #009ECE;
+    border: 1px solid #0089B3;
+    color: #FFFFFF;
+}
+.button.rounded {
+    border-radius: 3px 3px 3px 3px;
+}
+.button.search {
+    border-left: medium none;
+    float: right;
+    left: 100px;
+    margin-right: -100%;
+    padding: 6.4px;
+    position: relative;
+    width: 87px;
+}
+.button.margin {
+    margin-left: 20px;
+}
+form .button {
+    float: right;
+}
+input.search {
+    float: right;
+    width: 100%;
+}
+.button.search {
+}
+li > .button {
+}
+div.search {
+    margin: 1em auto;
+    padding-right: 100px;
+}
+ul.horizontal {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+li.horizontal {
+    display: inline;
+    margin: 0 5px;
+}
+.form-field {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: text-bottom;
+    width: 60px;
+}
+.taskFlow {
+}
+.taskFlow > article {
+    border-bottom: 1px solid #CCCCCC;
+    margin: 1em 0;
+    padding: 0 0 1em 65px;
+    width: 100%;
+}
+.story {
+    display: block;
+    width: 100%;
+}
+.link {
+    color: #114488;
+    cursor: pointer;
+}
+.title {
+    font-weight: bold;
+}
+.taskFlow .content {
+    margin: 0.5em 0;
+    padding: 0;
+}
+.comments {
+    background: none repeat scroll 0 0 #CBD9FF;
+    border: 1px solid #B2C6FF;
+    margin: 0.5em 0 0;
+}
+.comments .comment {
+    border-bottom: 1px solid #CCCCCC;
+    margin: 0 0 5px;
+    padding: 0 0 5px;
+}
+.comments input[type="text"] {
+    font: 13px arial;
+}
+.hide {
+    left: -10000px;
+    position: absolute;
+}
+.vague {
+    color: #636363;
+    font-size: 11px;
+    line-height: 1.28;
+}
+.top {
+    background-color: #1C1C1C;
+    color: #C4302B;
+    height: 34px;
+    padding: 3px;
+}
+.top a {
+    color: #CCCCCC;
+}
+.ctsk .ctsk-definitions ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.ctsk .ctsk-definitions ul li {
+    display: inline-block;
+    margin: 0.3em 0.3em 0.3em 0;
+}
+.ctsk form {
+    background-color: #CCDAFF;
+    border: 1px solid #B3C7FF;
+    padding: 0;
+    width: 100%;
+}
+.ctsk div.ctsk-desc {
+    background: none repeat scroll 0 0 snow;
+    border-bottom: 1px solid #CCCCCC;
+    color: #1A1A1A;
+    font: italic 17px arial,sans-serif;
+    padding: 0.7em;
+    width: 100%;
+}
 .ctsk form.ctsk-task div.header {
     margin: 0.4em 0;
- 
 }
-.ctsk form.ctsk-task article {}
+.ctsk form.ctsk-task article {
+}
 .ctsk form.ctsk-task > section {
     padding: 0 0.5em;
 }
-.ctsk div.ctsk-buttons {padding: 0.5em; float: right;}
-
-/*edit definition*/
-.edef .edef-row {border-top: 3px solid hsl(0, 0%, 80%); margin-top: 25px; padding-top: 15px;}
-
-/*user info test*/
+.ctsk div.ctsk-buttons {
+    float: right;
+    padding: 0.5em;
+}
+.edef .edef-row {
+    border-top: 3px solid #CCCCCC;
+    margin-top: 25px;
+    padding-top: 15px;
+}
 .iusr-url {
     margin: 1em 0;
 }
-.description {    
+.description {
 }
 .iusr-soc {
-    margin-top:27px
+    margin-top: 27px;
 }
 .iusr-soc article {
-    margin-top:10px
+    margin-top: 10px;
 }
-
-/*comments*/
-.com-text {display: inline-block}
-.com-img {float: left; margin: 0.3em;}
+.com-text {
+    display: inline-block;
+}
+.com-img {
+    float: left;
+    margin: 0.3em;
+}
