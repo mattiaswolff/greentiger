@@ -48,7 +48,7 @@ body {
 }
 .main > .content {
     max-width: 600px;
-    padding: 1em 2em;
+    padding: 1em 0;
 }
 .main > .aside {
     float: right;
@@ -122,7 +122,7 @@ input, textarea, select {
     border-width: 1px;
     font: 17px arial,sans-serif;
     margin: 0;
-    padding: 0.3em 0;
+    padding: 0.3em;
     vertical-align: middle;
     width: 100%;
 }
@@ -210,13 +210,14 @@ form.task > section {
 }
 .button.search {
     float: right;
-    left: 105px;
+    left: 100px;
     margin-right: -100%;
     padding: 7px;
     position: relative;
     vertical-align: middle;
-    width: 87px;
+    width: 97px;
     display: block;
+    border-left: 0;
 }
 .button.margin {
     margin-left: 20px;
@@ -227,6 +228,7 @@ form .button {
 input.search {
     float: right;
     position: relative;
+    width: 100%;
 }
 .button.search {
 }
