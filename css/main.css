@@ -288,11 +288,12 @@ li.horizontal {
     background: none repeat scroll 0 0 #CBD9FF;
     border: 1px solid #B2C6FF;
     margin: 0.5em 0 0;
+    padding: 0.2em;
 }
 .comments .comment {
     border-bottom: 1px solid #CCCCCC;
-    margin: 0 0 5px;
-    padding: 0 0 5px;
+    margin: 0 0 0.5em;
+    padding: 0 0 0.9em;
 }
 .comments input[type="text"] {
     font: 13px arial;
