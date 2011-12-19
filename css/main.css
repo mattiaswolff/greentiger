@@ -157,7 +157,7 @@ section.createTask .description {
     width: 100%;
 }
 .clear {
-    clear: right;
+    clear: both;
 }
 .invisible {
     display: none;
