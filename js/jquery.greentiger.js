@@ -62,7 +62,7 @@ function formatDateOutput(date) {
 
 /*
 Purpose: Add tasks to task flow.
-Created: 2011-08-11 (Mattias Wolff)
+Created: 2011-12-19 (Mattias Wolff)
 Updated: -
 */
 function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
