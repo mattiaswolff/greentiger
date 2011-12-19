@@ -350,7 +350,11 @@ li.horizontal {
 .iusr-url {
     margin: 1em 0;
 }
-.description {
+.search-btn {
+    background-color: #1C1C1C;
+    color: #C4302B;
+    height: 34px;
+    padding: 3px;
 }
 .iusr-soc {
     margin-top: 27px;
