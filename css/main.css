@@ -255,6 +255,7 @@ li.horizontal {
     width: 60px;
 }
 .taskFlow {
+    clear: both;
 }
 .taskFlow > article {
     border-bottom: 1px solid #CCCCCC;
@@ -350,11 +351,14 @@ li.horizontal {
 .iusr-url {
     margin: 1em 0;
 }
-.search-btn {
-    background-color: #1C1C1C;
-    color: #C4302B;
-    height: 34px;
-    padding: 3px;
+div.search-btn {
+    float: right;
+    position: relative;
+    margin-right: -100%;
+    left: 100px;
+    width: 100px;
+    border-left: 0;
+    padding: 7px;
 }
 .iusr-soc {
     margin-top: 27px;
