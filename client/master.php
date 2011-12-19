@@ -38,18 +38,17 @@
             <section id="navbar"></section>
         </div>
         <div class = "container">
+            <div class="main">
+                <div class="content">
+                    <?php include $page_content; ?>
+                </div>
+            </div>
             <aside class="userInfo">
                 <section class="userName"></section>
                 <div class="iusr-url"></div>
                 <div class="description"></div>
-                
             </aside>
-        <div class="main">
-            
-            <div class="content">
-                <?php include $page_content; ?>
-            </div>
-        </div>
+        
     </div>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script type="text/javascript" src="../js/jquery.toObject.js"></script>
