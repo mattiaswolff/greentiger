@@ -21,6 +21,8 @@ body {
 }
 .container {
     padding-left: 200px;
+    width: 95%;
+    margin: 0 auto;
 }
 .pageNav {
     display: inline;
