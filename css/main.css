@@ -227,6 +227,7 @@ form.task > section {
 }
 form .button {
     float: right;
+    margin-top: 0.5em;
 }
 input.search {
     float: right;
