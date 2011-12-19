@@ -38,6 +38,7 @@ body {
     width: 200px;
     position: relative;
     right: 200px;
+    height: 500px;
 }
 .main {
     min-width: 320px;
@@ -86,8 +87,10 @@ body {
 }
 .left {
     float: left;
-    margin-left: -65px;
+    margin-left: -100%;
     width: 65px;
+    position: relative;
+    right: 65px;
 }
 .right {
     float: right;
@@ -266,6 +269,8 @@ li.horizontal {
 .story {
     display: block;
     width: 100%;
+    float: left;
+    position: relative;
 }
 .link {
     color: #114488;
