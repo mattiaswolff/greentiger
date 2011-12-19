@@ -85,7 +85,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
         var arrHtml = new Array();
         $.each(json.results[0], function(key, value) {    
             var d = new Date(value.updatedDate);
-            arrHtml.push('<article><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy._id.$id) +'"><img src="' + getUrlApi("users/" + value.createdBy._id.$id +"?part=image") +'" width="50" height="50" /></a></div><div class="story"><div class="header"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy._id.$id) + '">' + value.createdBy.name + '</a></div><div class="content">');
+            arrHtml.push('<article><div class="story"><div class="header"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy._id.$id) + '">' + value.createdBy.name + '</a></div><div class="content">');
             $.each(value.content, function (key1, value1) {
                 arrHtml.push('<span class="title">'+ key1 +':</span> '+ value1 +' / ');
             });
@@ -96,7 +96,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
             if (!(window.sessionStorage.getItem("userId") === null)) {
             arrHtml.push('<form method="PUT" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input class="invisible" type="text" name="comments.userId" value="'+ window.sessionStorage.getItem("userId") +'" /><textarea class="small" name="comments.text" value="" placeholder="Write a comment..."></textarea><div class="com-buttons"><input class="button blue" type="submit"/></div><div class="clear"></div></form>');
             }
-            arrHtml.push('</div></article>');
+            arrHtml.push('</div><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy._id.$id) +'"><img src="' + getUrlApi("users/" + value.createdBy._id.$id +"?part=image") +'" width="50" height="50" /></a></div><div class="clear" /></article>');
         });
         if (boolEmpty) {
             $('section.taskFlow').empty();
