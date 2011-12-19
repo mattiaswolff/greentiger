@@ -117,6 +117,7 @@ input, textarea, select {
     font: 17px arial,sans-serif;
     margin: 0;
     padding: 5px;
+    vertical-align: middle;
     width: 100%;
 }
 input[type="submit"] {
@@ -202,12 +203,12 @@ form.task > section {
     border-radius: 3px 3px 3px 3px;
 }
 .button.search {
-    border-left: medium none;
     float: right;
-    left: 100px;
+    left: 120px;
     margin-right: -100%;
-    padding: 6.4px;
+    padding: 6px;
     position: relative;
+    vertical-align: middle;
     width: 87px;
 }
 .button.margin {
@@ -226,7 +227,7 @@ li > .button {
 }
 div.search {
     margin: 1em auto;
-    padding-right: 100px;
+    padding-right: 120px;
 }
 ul.horizontal {
     list-style: none outside none;
