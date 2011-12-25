@@ -9,11 +9,17 @@ switch($data->getMethod()) {
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         if ($strUserId != '') {
             $objUser = new User(new MongoId($strUserId));
             if (isset($objUser)) {
-                $objUser->setId((string)$objUser->getId());
-                RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
+                if ($strPart == 'image') {
+                    echo '<img src="' . $objUser->getImgUrl(); . '"/>'; 
+                }
+                else {
+                    $objUser->setId((string)$objUser->getId());
+                    RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
+                }
             }
             else {
                 RestUtils::sendResponse(400, array("error" => "User with id " . $strUserId . "not found."), 'application/json');
