@@ -14,7 +14,7 @@ switch($data->getMethod()) {
             $objUser = new User(new MongoId($strUserId));
             if (isset($objUser)) {
                 if ($strPart == 'image') {
-                    echo '<img src="' . $objUser->getImgUrl() . '"/>'; 
+                    echo $objUser->getImgUrl(); 
                 }
                 else {
                     $objUser->setId((string)$objUser->getId());
