@@ -10,7 +10,7 @@ class User {
     private $client_id;
     private $redirect_uri;
     private $accessTokens;
-    private $imageId;
+    private $imgUrl;
     
     //Constructor
     public function __construct($strUserId = null){
@@ -27,7 +27,7 @@ class User {
             $this->client_id = $arrResults['client_id'];
             $this->redirect_uri = $arrResults['redirect_uri'];
             $this->accessTokens = $arrResults['accessTokens'];
-            $this->imageId = $arrResults['imageId'];
+            $this->imgUrl = $arrResults['imgUrl'];
         }
         else {
             $this->email = '';
@@ -38,7 +38,7 @@ class User {
             $this->accessTokens = array();
             $this->client_id = '';
             $this->redirect_uri = '';
-            $this->imageId = '';
+            $this->imgUrl = '';
         }
     }
     
@@ -52,7 +52,7 @@ class User {
     public function getAccessTokens() { return $this->accessTokens; }
     public function getClientId() { return $this->client_id; }
     public function getRedirectUri() { return $this->redirect_uri; }
-    public function getImageId() { return $this->imageId; }
+    public function getImgUrl() { return $this->imgUrl; }
     public function setId($x = null) { if ($x) { $this->_id = $x; } else { $this->_id = new MongoId(); }}
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }}
@@ -62,7 +62,7 @@ class User {
     public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
     public function setClientId() {if (!isset($this->client_id) || ((string)$this->client_id == '')) {$this->client_id = (string)new MongoId(); }}
     public function setRedirectUri($x) {if ($x != null) { $arrParsedUrl = parse_url($x); $strParsedUrl = $arrParsedUrl['scheme'] . '://' . $arrParsedUrl['host']; $this->redirect_uri = $strParsedUrl; }}
-    public function setImageId($x) {if ($x != null) { $this->imageId = $x; }}
+    public function setImgUrl($x) {if ($x != null) { $this->imgUrl = $x; }}
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {

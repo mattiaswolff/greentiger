@@ -9,22 +9,11 @@ switch($data->getMethod()) {
     case 'get':
         $arrRequestVars = $data->getRequestVars();
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
-        $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         if ($strUserId != '') {
             $objUser = new User(new MongoId($strUserId));
             if (isset($objUser)) {
-                if ($strPart == 'image') {
-                    $m = new Mongo();
-                    $db = $m->projectcopperfield;
-                    $grid = $db->getGridFS();
-                    $image = $grid->findOne(array("_id" => $objUser->getImageId()));
-                    header('Content-type: image/png;');
-                    echo $image->getBytes();
-                }
-                else {
                 $objUser->setId((string)$objUser->getId());
                 RestUtils::sendResponse(200, $objUser->toArray(), 'application/json');
-                }
             }
             else {
                 RestUtils::sendResponse(400, array("error" => "User with id " . $strUserId . "not found."), 'application/json');
@@ -37,27 +26,20 @@ switch($data->getMethod()) {
         
     case 'post':
         $arrRequestVars = $data->getRequestVars();
-        $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $strImgUrl = (isset($arrRequestVars['imgUrl']) ? $arrRequestVars['imgUrl'] : '');
         $strPassword1 = (isset($arrRequestVars['password1']) ? $arrRequestVars['password1'] : '');
         $strPassword2 = (isset($arrRequestVars['password2']) ? $arrRequestVars['password2'] : '');
-            if ($strPart == 'image') {  
-                $user = new User($strUserId);
-                $m = new Mongo();
-                $db = $m->projectcopperfield;
-                $grid = $db->getGridFS();
-                $storedfile = $grid->storeFile($_FILES["file"]["tmp_name"], array("date" => new MongoDate()));
-                $user->setImageId($storedfile);
-            }
-            else { 
-            $user = new User();
-            $user->setId();
-            $user->setEmail($arrRequestVars["email"]);
-            $user->setName($arrRequestVars["name"]);
-            $user->setUrl($arrRequestVars["name"]);
-            $user->setClientId();
-            $user->setRedirectUri($arrRequestVars["redirectUri"]);
-            }
+        
+        $user = new User();
+        $user->setId();
+        $user->setEmail($arrRequestVars["email"]);
+        $user->setName($arrRequestVars["name"]);
+        $user->setUrl($arrRequestVars["name"]);
+        $user->setClientId();
+        $user->setImgUrl($strImgUrl);
+        $user->setRedirectUri($arrRequestVars["redirectUri"]);
+        
             $user->upsert();
             if ($strPassword1 != '') {
                 $array = array("password" => $strPassword1, "userId" => $user->getId()); 
@@ -82,6 +64,7 @@ switch($data->getMethod()) {
             $objUser->setEmail($arrRequestVars["email"]);
             $objUser->setName($arrRequestVars["name"]);
             $objUser->setUrl($arrRequestVars["url"]);
+            $objUser->setImgUrl($arrRequestVars["imgUrl"]);
             $objUser->setDescription($arrRequestVars["description"]);
             $objUser->setDefinitions($arrRequestVars["definitions"]);
             $objUser->setClientId();

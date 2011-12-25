@@ -4,7 +4,7 @@
             $('.eusr .fields').append(getHtmlTaskRow('id', 'id', 'id', 'description', 'text', '', true));
             $('.eusr .fields').append(getHtmlTaskRow('name', 'name', 'name', 'description', 'text', '', true));
             $('.eusr .fields').append(getHtmlTaskRow('url', 'url', 'url', 'description', 'url', '', true));
-            $('.eusr .fields').append(getHtmlTaskRow('img-url', 'Image URL', 'img-url', 'description', 'url', '', true));
+            $('.eusr .fields').append(getHtmlTaskRow('imgUrl', 'Image URL', 'imgUrl', 'description', 'url', '', true));
             $('.eusr .fields').append(getHtmlTaskRow('description', 'description', 'description', 'description', 'textarea', '', true));
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
