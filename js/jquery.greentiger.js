@@ -96,7 +96,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
             if (!(window.sessionStorage.getItem("userId") === null)) {
             arrHtml.push('<form method="PUT" url="'+ getUrlApi("tasks/" + value._id + "?part=comments")+'"><input class="invisible" type="text" name="comments.userId" value="'+ window.sessionStorage.getItem("userId") +'" /><textarea class="small" name="comments.text" value="" placeholder="Write a comment..."></textarea><div class="com-buttons"><input class="button blue" type="submit"/></div><div class="clear"></div></form>');
             }
-            arrHtml.push('</div></div><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy._id.$id) +'"><img src="' + getUrlApi("users/" + value.userId + "?part=image") + '" width="50" height="50" /></a></div><div class="clear" /></article>');
+            arrHtml.push('</div></div><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy._id.$id) +'"><img src="' + getUrlApi("users/" + value.createdBy._id.$id + "?part=image") + '" width="50" height="50" /></a></div><div class="clear" /></article>');
         });
         if (boolEmpty) {
             $('section.taskFlow').empty();
