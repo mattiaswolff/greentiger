@@ -354,9 +354,9 @@ li.horizontal {
     padding: 0.5em;
 }
 .edef .edef-row {
-    border-top: 3px solid #CCCCCC;
-    margin-top: 25px;
-    padding-top: 15px;
+    border-top: 2px solid #B3C7FF;
+    margin-top: 1em;
+    padding-top: 1em;
 }
 
 .edef .edef-row .edef-row-title {
@@ -385,9 +385,9 @@ float: right;
     margin-top: 0.5em;}
 
 .edef > .buttons {clear: both;
-border-top: 3px solid #CCC;
-margin-top: 25px;
-padding-top: 15px;}
+border-top: 2px solid #B3C7FF;
+margin-top: 1em;
+padding-top: 0.5em;}
 .iusr-url {
     margin: 1em 0;
 }
