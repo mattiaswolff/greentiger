@@ -360,25 +360,29 @@ li.horizontal {
 }
 
 .edef .edef-row .edef-row-title {
-    width: 48%;
+    width: 49%;
 float: left;}
 
 .edef .edef-row .edef-row-type {
-    width: 48%;
+    width: 49%;
 float: right;
 padding: 0.25em;}
 
 .edef .edef-row .edef-row-desc {
     float: left;
-width: 48%;
+
+    width: 49%;
 clear: left;
-margin-top: 1em;}
+
+    margin-top: 0.5em;}
 
 .edef .edef-row .edef-row-config {
     clear: both;
-width: 48%;
+
+    width: 49%;
 float: right;
-margin-top: 1em;}
+
+    margin-top: 0.5em;}
 
 .edef > .buttons {clear: both;
 border-top: 3px solid #CCC;
