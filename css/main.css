@@ -358,6 +358,32 @@ li.horizontal {
     margin-top: 25px;
     padding-top: 15px;
 }
+
+.edef .edef-row .edef-row-title {
+    width: 48%;
+float: left;}
+
+.edef .edef-row .edef-row-type {
+    width: 48%;
+float: right;
+padding: 0.25em;}
+
+.edef .edef-row .edef-row-desc {
+    float: left;
+width: 48%;
+clear: left;
+margin-top: 1em;}
+
+.edef .edef-row .edef-row-config {
+    clear: both;
+width: 48%;
+float: right;
+margin-top: 1em;}
+
+.edef > .buttons {clear: both;
+border-top: 3px solid #CCC;
+margin-top: 25px;
+padding-top: 15px;}
 .iusr-url {
     margin: 1em 0;
 }
