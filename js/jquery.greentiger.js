@@ -174,3 +174,33 @@ function submitFormJSON(strSelector, strUrl, strType, strAsync) {
             var breakTag = '<br />';    
             return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
         }
+        
+        function getEditDefinitionRow (intCounter, strName, strConfig, strDescription, strType) {   
+            if (!strConfig) {
+                    strConfig = '';
+            }
+            var strHTML = '<article class="edef-row"><input class="edef-row-title" type="text" name="content[' + intCounter + '].name" value="' + strName + '" placeholder="Title" /><select class="edef-row-type" name="content[' + intCounter + '].type"><option value="text" '
+            if (strType == "text") { strHTML += 'selected' };
+            strHTML += '>Text</option><option value="textarea" ';
+            if (strType == "textarea") { strHTML += 'selected' };
+            strHTML += '>Textarea</option><option value="email" ';
+            if (strType == "email") { strHTML += 'selected' };
+            strHTML += '>Email</option><option value="checkbox" ';
+            if (strType == "checkbox") { strHTML += 'selected' };
+            strHTML += '>Checkbox</option><option value="radio" ';
+            if (strType == "radio") { strHTML += 'selected' };
+            strHTML += '>Radio button</option><option value="date" ';
+            if (strType == "date") { strHTML += 'selected' };
+            strHTML += '>Date</option><option value="range" ';
+            if (strType == "range") { strHTML += 'selected' };
+            strHTML += '>Range</option><option value="url" ';
+            if (strType == "url") { strHTML += 'selected' };
+            strHTML += '>URL</option><option value="number" ';
+            if (strType == "number") { strHTML += 'selected' };
+            strHTML += '>Number</option><option value="time" ';
+            if (strType == "time") { strHTML += 'selected' };
+            strHTML += '>Time</option><option value="dropdown" ';
+            if (strType == "dropdown") { strHTML += 'selected' };
+            strHTML += '>Drop Down</option></select><textarea class="edef-row-config" name="content[' + intCounter + '].config">' + strConfig + '</textarea><textarea class="edef-row-desc" name="content[' + intCounter + '].description">' + strDescription + '</textarea><div class="clear"></div></article>';
+            return strHTML;
+        }
