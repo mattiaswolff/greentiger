@@ -397,6 +397,12 @@ padding-top: 0.5em;}
 .iusr-url {
     margin: 1em 0;
 }
+.edef > .buttons input {
+margin-left: 1em;}
+
+.iusr-url {
+    margin: 1em 0;
+}
 div.search-btn {
     float: right;
     position: relative;
