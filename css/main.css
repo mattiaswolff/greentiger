@@ -353,6 +353,12 @@ li.horizontal {
     float: right;
     padding: 0.5em;
 }
+
+.edef {
+    background-color: #CCDAFF;
+border: 1px solid #B3C7FF;
+padding: 0.5em;
+width: 100%;}
 .edef .edef-row {
     border-top: 2px solid #B3C7FF;
     margin-top: 1em;
