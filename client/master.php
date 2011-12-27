@@ -68,7 +68,7 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    <script type="text/javascript">google.load("identitytoolkit", "1.0", {packages: ["ac"]});</script>
+    <script type="text/javascript">google.load("identitytoolkit", "1", {packages: ["ac"]});</script>
     <script type="text/javascript">
         strUserId = getParameterByName("userId");
         strAccessToken = "";
