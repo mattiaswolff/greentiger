@@ -90,8 +90,9 @@ class Task {
         }
         elseif ($arrObjectId != null) {
             if ($strSearch != '') {
+                print "test1";
                 $objResults[0] = $db->tasks->find(array("keywords" => array('$in' => $arrSearch)), array("_id" => array('$in' => $arrObjectId)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
-                
+                print "test2";
             }
             else {
                 $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
