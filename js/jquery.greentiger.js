@@ -179,7 +179,7 @@ function submitFormJSON(strSelector, strUrl, strType, strAsync) {
             if (!strConfig) {
                     strConfig = '';
             }
-            var strHTML = '<article class="edef-row"><input class="edef-row-title" type="text" name="content[' + intCounter + '].name" value="' + strName + '" placeholder="Title" /><select class="edef-row-type" name="content[' + intCounter + '].type"><option value="text" '
+            var strHTML = '<article class="edef-row"><input class="edef-row-title" type="text" name="content[' + intCounter + '].name" value="' + strName + '" placeholder="The title of this input row..." /><select class="edef-row-type" name="content[' + intCounter + '].type"><option value="text" '
             if (strType == "text") { strHTML += 'selected' };
             strHTML += '>Text</option><option value="textarea" ';
             if (strType == "textarea") { strHTML += 'selected' };
@@ -201,6 +201,6 @@ function submitFormJSON(strSelector, strUrl, strType, strAsync) {
             if (strType == "time") { strHTML += 'selected' };
             strHTML += '>Time</option><option value="dropdown" ';
             if (strType == "dropdown") { strHTML += 'selected' };
-            strHTML += '>Drop Down</option></select><textarea class="edef-row-config" name="content[' + intCounter + '].config">' + strConfig + '</textarea><textarea class="edef-row-desc" name="content[' + intCounter + '].description">' + strDescription + '</textarea><div class="clear"></div></article>';
+            strHTML += '>Drop Down</option></select><textarea class="edef-row-config" name="content[' + intCounter + '].config" placeholder= "Please provide a configuration for the selected type...">' + strConfig + '</textarea><textarea class="edef-row-desc" name="content[' + intCounter + '].description" placeholder= "A brief description of this input row...">' + strDescription + '</textarea><div class="clear"></div></article>';
             return strHTML;
         }

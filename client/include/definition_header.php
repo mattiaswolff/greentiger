@@ -16,14 +16,12 @@
                     $("#description name").attr('value', json.results[0].description);
                     
                     $.each(json.results[0].content, function(key, value) {
-                        var newrow = document.createElement('article');
                         var counter = document.getElementsByClassName('edef-row').length;
                         if (value.config) {
                             var strConfig = '';
                         }
-                        newrow.innerHTML = '<article class="edef-row"><input class="edef-row-title" type="text" name="content[' + counter + '].name" value="' + value.name + '" placeholder="Title" /><select class="edef-row-type" name="content[' + counter + '].type"><option value="text">Text</option><option value="textarea">Textarea</option><option value="email">Email</option><option value="checkbox">Checkbox</option><option value="radio">Radio button</option><option value="date">Date</option><option value="range">Range</option><option value="url">URL</option><option value="number">Number</option><option value="time">Time</option><option value="dropdown">Drop Down</option></select><textarea class="edef-row-config" name="content[' + counter + '].config">' + strConfig + '</textarea><textarea class="edef-row-desc" name="content[' + counter + '].description">' + value.description + '</textarea><div class="clear"></div></article>';
-		                newrow.className += 'edef-row';
-                        $(".edef .fields").append(newrow);
+                        var strHTML = getEditDefinitionRow (counter, value.name, value.config, value.description, value.type);
+                        $(".edef .fields").append(strHTML);
                     });
                     
                 });
@@ -42,7 +40,7 @@
             }
             $(".content").delegate("#addRow", "click", function(){
                 var counter = $('.edef-row').length;
-    	        var strHtml = '<article class="edef-row"><input class="edef-row-title" type="text" name="content[' + counter + '].name" value="" placeholder="Title" /><select class="edef-row-type" name="content[' + counter + '].type"><option value="text">Text</option><option value="textarea">Textarea</option><option value="email">Email</option><option value="checkbox">Checkbox</option><option value="radio">Radio button</option><option value="date">Date</option><option value="range">Range</option><option value="url">URL</option><option value="number">Number</option><option value="time">Time</option><option value="dropdown">Drop Down</option></select><textarea class="edef-row-config" name="content[' + counter + '].config"></textarea><textarea class="edef-row-desc" name="content[' + counter + '].description"></textarea><div class="clear"></div></article>';
+    	        var strHtml = getEditDefinitionRow (counter, "", "", "", "");
 		        $(".edef .fields").append(strHtml);
             });
             
@@ -54,14 +52,13 @@
                     $("#description name").attr('value', json.results[0].description);
                     
                     $.each(json.results[0].content, function(key, value) {
-                        var newrow = document.createElement('article');
                         var counter = document.getElementsByClassName('edef-row').length;
                         var strConfig = '';
                         if (value.config) {
                             strConfig = value.config;
                         }
-                        newrow.innerHTML = getEditDefinitionRow (counter, value.name, value.config, value.description, value.type)
-                        $(".edef .fields").append(newrow);
+                        var strHTML = getEditDefinitionRow (counter, value.name, value.config, value.description, value.type);
+                        $(".edef .fields").append(strHTML);
                     });
                     
                 });
