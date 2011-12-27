@@ -125,12 +125,17 @@ class Task {
         $this->updatedDate = date("c");
         
         $arrKeywords = array();
+        foreach ($this->GetCreatedBy() as $value) {
+                $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value["name"])));   
+            }
         foreach ($this->GetContent() as $value) {
                 $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value)));   
             }
         foreach ($this->GetComments() as $value) {
-                $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value["text"])));   
+                $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value["text"])));
+                $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value["userName"])));
             }
+        
         $arrKeywords = unserialize(strtolower(serialize($arrKeywords))); 
         $arrKeywordsSorted = array_count_values($arrKeywords);
         arsort($arrKeywordsSorted);
