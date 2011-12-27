@@ -132,6 +132,8 @@ input, textarea, select {
     vertical-align: middle;
     width: 100%;
 }
+textarea {overflow: auto;
+}
 input[type="submit"] {
     min-width: 100px;
     width: 83px;
