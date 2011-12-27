@@ -81,7 +81,6 @@ class Task {
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
         $strSearch = strtolower($strSearch);
-        print $strSearch;
         $arrSearch = explode(" ", $strSearch);
         //Get results from database
         if (!isset($arrObjectId[0])) {
@@ -90,6 +89,7 @@ class Task {
             }
         }
         elseif ($arrObjectId != null) {
+            print "test" . var_dump($arrSearch);
             if ($strSearch != '') {
                 $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId), "keywords" => array('$in' => $arrSearch)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
             }
