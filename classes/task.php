@@ -89,7 +89,6 @@ class Task {
             }
         }
         elseif ($arrObjectId != null) {
-            print "test" . var_dump($arrSearch);
             if ($strSearch != '') {
                 $objResults[0] = $db->tasks->find(array("$and" => array("_id" => array('$in' => $arrObjectId), "keywords" => array('$in' => $arrSearch))))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
                 
