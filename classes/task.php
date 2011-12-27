@@ -91,7 +91,7 @@ class Task {
         elseif ($arrObjectId != null) {
             if ($strSearch != '') {
                 print "test1";
-                $objResults[0] = $db->tasks->find(array("keywords" => array('$in' => $arrSearch)), array("_id" => array('$in' => $arrObjectId)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
+                $objResults[0] = $db->tasks->find(array("_id" => array('$in' => $arrObjectId)))->sort(array("_id" => -1))->limit($intLimit)->skip($intSkip);
                 print "test2";
             }
             else {
@@ -108,7 +108,6 @@ class Task {
         $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $key => $var) {
             $arrResult = array();
-            print var_dump($var);
             foreach($var as $key1 => $var1) {
                 $arrResults['total'] = $arrResults['total'] + 1;
                 $objId = new MongoId($var1['_id']);
