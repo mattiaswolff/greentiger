@@ -108,6 +108,7 @@ class Task {
         $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $key => $var) {
             $arrResult = array();
+            print var_dump($var);
             foreach($var as $key1 => $var1) {
                 $arrResults['total'] = $arrResults['total'] + 1;
                 $objId = new MongoId($var1['_id']);
