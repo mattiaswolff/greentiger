@@ -28,7 +28,8 @@ img {border:none}
 .pageNav {
     display: inline;
     float: left;
-    margin-top: 5px;
+    margin-top: 0.55em;
+    font-size: 1.1em;
 }
 .login {
     display: block;
@@ -313,13 +314,13 @@ li.horizontal {
     line-height: 1.28;
 }
 .top {
-    background-color: #1C1C1C;
+    background-color: hsl(0, 0%, 20%);
     color: #C4302B;
-    height: 34px;
+    height: 3em;
     padding: 3px;
 }
 .top a {
-    color: #CCCCCC;
+    color: hsl(0, 0%, 90%);
 }
 .ctsk .ctsk-definitions ul {
     list-style: none outside none;
