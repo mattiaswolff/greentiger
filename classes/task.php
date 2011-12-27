@@ -125,7 +125,7 @@ class Task {
         $this->updatedDate = date("c");
         
         $arrKeywords = array();
-        $value = this->GetCreatedBy();
+        $value = $this->GetCreatedBy();
                 $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value["name"])));   
         foreach ($this->GetContent() as $value) {
                 $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value)));   
