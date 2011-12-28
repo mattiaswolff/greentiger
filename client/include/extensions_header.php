@@ -1,6 +1,6 @@
 <script type="text/javascript">
-var strJS = '&lt;script type="text/javascript"&gt;';
-strJS += 'var _projectCopperfield = _projectCopperfield || {}; \n _projectCopperfield["id"] = "4ee2ab0f212602863100000f";_projectCopperfield["userName"] = "";_projectCopperfield["userEmail"] = "";_projectCopperfield["image"] = "https://lh5.googleusercontent.com/-HKLSAuPUlsY/TuK4EVE9crI/AAAAAAAAAAg/oz_WDgQQmw4/s101/contact_us.png";(function() {function async_load(){ var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = "http://www.zowgle.com/js/embed.js"; var x = document.getElementsByTagName("script")[0]; x.parentNode.insertBefore(s, x);} if (window.attachEvent)window.attachEvent("onload", async_load); else window.addEventListener("load", async_load, false); })();'
+var strJS = '&lt;script type="text/javascript"&gt; \n';
+strJS += 'var _projectCopperfield = _projectCopperfield || {}; \n _projectCopperfield["id"] = "4ee2ab0f212602863100000f"; \n _projectCopperfield["userName"] = ""; \n _projectCopperfield["userEmail"] = ""; \n _projectCopperfield["image"] = "https://lh5.googleusercontent.com/-HKLSAuPUlsY/TuK4EVE9crI/AAAAAAAAAAg/oz_WDgQQmw4/s101/contact_us.png"; \n (function() {function async_load(){ var s = document.createElement("script"); \n s.type = "text/javascript"; \n s.async = true; \n s.src = "http://www.zowgle.com/js/embed.js"; \n var x = document.getElementsByTagName("script")[0]; \n x.parentNode.insertBefore(s, x);} \n if (window.attachEvent)window.attachEvent("onload", async_load); \n else \n window.addEventListener("load", async_load, false); })(); \n'
 strJS += '&lt;/script&gt;'; 
 $('xmp').append(strJS);
 </script>
