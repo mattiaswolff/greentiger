@@ -20,6 +20,11 @@ img {border:none}
 #navbar {
     float: right;
 }
+xmp {border: solid 1px #CCC;
+padding: 1em;
+background: white;
+overflow: auto;
+}
 .container {
     padding-left: 200px;
     width: 95%;
