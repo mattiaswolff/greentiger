@@ -141,6 +141,7 @@
                 $(".top > nav > #a_home").attr('href', getUrlClient('dashboard.php?userId=' + window.sessionStorage.getItem("userId")));
                 $(".top > nav > #a_definition").attr('href', getUrlClient('definition.php?userId=' + window.sessionStorage.getItem("userId")));
                 $(".top > nav > #a_profile").attr('href', getUrlClient('profile.php?userId=' + window.sessionStorage.getItem("userId")));
+                $(".top > nav > #a_extensions").attr('href', getUrlClient('extensions.php?userId=' + window.sessionStorage.getItem("userId")));
             }
         $("#navbar").delegate(".red", "click", function(){
                 sessionStorage.clear();
