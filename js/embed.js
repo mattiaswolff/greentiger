@@ -1,4 +1,4 @@
-var projectCopperfield = {
+var zowgle = {
     org_slug : null,
     id: null,
     base_url : "http://www.zowgle.com", 
@@ -15,7 +15,7 @@ var projectCopperfield = {
     custom_image_url : null,
     embed_url : "/client/embed.php?userId=", 
     image_url : "/images/tycktill-1", 
-    btn_close_url : "/static/images/projectCopperfield-close-", 
+    btn_close_url : "/static/images/zowgle-close-", 
     user_name : null, 
     user_email : null, 
     old_browser : function(){
@@ -26,7 +26,7 @@ var projectCopperfield = {
         return c || ((b||a) && d)
     }, 
     get_fixed_style : function() {
-        if (projectCopperfield.old_browser()) {
+        if (zowgle.old_browser()) {
             return "position: absolute;"
         }
         return "position: fixed;"
@@ -42,95 +42,95 @@ var projectCopperfield = {
         return b
     },
     toggle_box : function() {
-        var a = document.getElementById("projectCopperfield_container"); 
+        var a = document.getElementById("zowgle_container"); 
         if (a) {
-            projectCopperfield.delete_frame()
+            zowgle.delete_frame()
         } 
         else { 
-            a = projectCopperfield.get_or_create_div("projectCopperfield_container"); 
-            projectCopperfield.create_overlay(a); 
-            projectCopperfield.create_frame(a)
+            a = zowgle.get_or_create_div("zowgle_container"); 
+            zowgle.create_overlay(a); 
+            zowgle.create_frame(a)
         }
     }, 
     create_overlay: function(b) { 
         var a="top: 0; bottom:0; min-height:600px; left: 0; background: #000; opacity: 0.25; z-index: 1000; width: 100%;";
-        a += projectCopperfield.get_fixed_style();
-        if (projectCopperfield.old_browser()) { 
+        a += zowgle.get_fixed_style();
+        if (zowgle.old_browser()) { 
             var c = Math.max (document.body.clientHeight, document.documentElement.clientHeight); 
             a += "height:" + c + "px;"
         }
-        b.innerHTML += '<div id="projectCopperfield_overlay" style="' + a + '"></div>'
+        b.innerHTML += '<div id="zowgle_overlay" style="' + a + '"></div>'
     },
     create_button : function() { 
-        var b = projectCopperfield.get_or_create_div ("projectCopperfield_button_container");
-        var c = "top: " + projectCopperfield.image_top + "; " + projectCopperfield.image_align + ": 0; z-index: 99999; cursor: pointer; margin: 0; -webkit-box-shadow: 0px 0px 20px #000; -webkit-border-radius: 5px 0 0 5px; -moz-box-shadow: 0px 0px 20px #000; -moz-border-radius: 5px 0 0 5px; box-shadow: 0px 0px 20px #000; border-radius: 5px 0 0 5px;";
-        c += projectCopperfield.get_fixed_style();
-        var a = projectCopperfield.custom_image_url || projectCopperfield.static_base_url + projectCopperfield.image_url + "-" + projectCopperfield.lang + "-" + projectCopperfield.image_align + ".png"; 
-        b.innerHTML += '<img src="' + a + '" alt="" id="projectCopperfield_feedback" style="' + c + '" onclick= "projectCopperfield.toggle_box()">'
+        var b = zowgle.get_or_create_div ("zowgle_button_container");
+        var c = "top: " + zowgle.image_top + "; " + zowgle.image_align + ": 0; z-index: 99999; cursor: pointer; margin: 0; -webkit-box-shadow: 0px 0px 20px #000; -webkit-border-radius: 5px 0 0 5px; -moz-box-shadow: 0px 0px 20px #000; -moz-border-radius: 5px 0 0 5px; box-shadow: 0px 0px 20px #000; border-radius: 5px 0 0 5px;";
+        c += zowgle.get_fixed_style();
+        var a = zowgle.custom_image_url || zowgle.static_base_url + zowgle.image_url + "-" + zowgle.lang + "-" + zowgle.image_align + ".png"; 
+        b.innerHTML += '<img src="' + a + '" alt="" id="zowgle_feedback" style="' + c + '" onclick= "zowgle.toggle_box()">'
         },
         
     create_frame : function(d) {
-        var b = projectCopperfield.close_text[projectCopperfield.lang];
+        var b = zowgle.close_text[zowgle.lang];
         var e = "cursor:pointer; height:26px; left:50%; margin-left:376px; top:9px; width:90px; z-index:100100;"; 
-        e += projectCopperfield.get_fixed_style(); 
-        d.innerHTML += '<div style="cursor: pointer;height: 30px;left: 50%;margin-left: -484px;top: 30px;width: 30px;z-index: 100100; position: fixed; background-image: url(' + "'http://a.unbounce.com/s/images/fancybox/fancybox.png'" + '); background-position: -40px 0px;" onclick="projectCopperfield.delete_frame()">'; 
-        var c = projectCopperfield.base_url + projectCopperfield.embed_url + projectCopperfield.id + "&lang=" + projectCopperfield.lang; 
-        if (projectCopperfield.user_name && projectCopperfield.user_email) { 
-            c += "&name=" + projectCopperfield.user_name + "&useremail=" + projectCopperfield.user_email; 
+        e += zowgle.get_fixed_style(); 
+        d.innerHTML += '<div style="cursor: pointer;height: 30px;left: 50%;margin-left: -484px;top: 30px;width: 30px;z-index: 100100; position: fixed; background-image: url(' + "'http://a.unbounce.com/s/images/fancybox/fancybox.png'" + '); background-position: -40px 0px;" onclick="zowgle.delete_frame()">'; 
+        var c = zowgle.base_url + zowgle.embed_url + zowgle.id + "&lang=" + zowgle.lang; 
+        if (zowgle.user_name && zowgle.user_email) { 
+            c += "&name=" + zowgle.user_name + "&useremail=" + zowgle.user_email; 
             c = encodeURI();
         }
-        //c = "http://www.zowgle.com/client/embed.php?userId=" + _projectCopperfield["id"];
+        //c = "http://www.zowgle.com/client/embed.php?userId=" + _zowgle["id"];
         var a= "background: white; border: none; height: 540px; left: 50%; margin-left: -470px; position: fixed; top: 40px; width: 940px; z-index: 100000; -webkit-box-shadow: 0px 0px 40px #000; -webkit-border-radius: 10px; -moz-box-shadow: 0px 0px 40px #000; -moz-border-radius: 10px; box-shadow: 0px 0px 40px #000; border-radius: 10px;";
-        a += projectCopperfield.get_fixed_style();
-        d.innerHTML += '<iframe src="' + c + '" id="projectCopperfield_iframe" scrolling="auto" frameborder="no" style="' + a + '"></iframe>'
+        a += zowgle.get_fixed_style();
+        d.innerHTML += '<iframe src="' + c + '" id="zowgle_iframe" scrolling="auto" frameborder="no" style="' + a + '"></iframe>'
     },
     delete_frame : function() { 
-        var a = projectCopperfield.get_or_create_div("projectCopperfield_container");
+        var a = zowgle.get_or_create_div("zowgle_container");
         a.parentNode.removeChild(a)
     }, 
     settings_value_exists : function(a) { 
-        return _projectCopperfield[a] && (typeof _projectCopperfield[a] === "string")
+        return _zowgle[a] && (typeof _zowgle[a] === "string")
     },
     is_valid_lang : function() { 
-        var a=_projectCopperfield.lang;
+        var a=_zowgle.lang;
         return a==="en" || a==="sv" || a==="da" || a==="no" || a==="de"
     },
     is_valid_align:function() {
-        var a=_projectCopperfield.align;
+        var a=_zowgle.align;
         return a==="right" || a==="left"
     }, 
     init : function() { 
         
-        projectCopperfield.org_slug = _projectCopperfield.org;
+        zowgle.org_slug = _zowgle.org;
         
-        if (projectCopperfield.settings_value_exists("align") && projectCopperfield.is_valid_align()) { 
-            projectCopperfield.image_align = _projectCopperfield.align
+        if (zowgle.settings_value_exists("align") && zowgle.is_valid_align()) { 
+            zowgle.image_align = _zowgle.align
         }
         
-        if (projectCopperfield.settings_value_exists("top")) {     projectCopperfield.image_top = _projectCopperfield.top
+        if (zowgle.settings_value_exists("top")) {     zowgle.image_top = _zowgle.top
         }
         
-        if (projectCopperfield.settings_value_exists("lang") && projectCopperfield.is_valid_lang()) { 
-            projectCopperfield.lang = _projectCopperfield.lang
+        if (zowgle.settings_value_exists("lang") && zowgle.is_valid_lang()) { 
+            zowgle.lang = _zowgle.lang
         }
         
-        if (projectCopperfield.settings_value_exists("image")) {         projectCopperfield.custom_image_url = _projectCopperfield.image 
+        if (zowgle.settings_value_exists("image")) {         zowgle.custom_image_url = _zowgle.image 
         }
         
-        if (projectCopperfield.settings_value_exists("base_url")) { projectCopperfield.base_url = _projectCopperfield.base_url
+        if (zowgle.settings_value_exists("base_url")) { zowgle.base_url = _zowgle.base_url
         }
         
-        if (projectCopperfield.settings_value_exists("user_name")) { 
-            projectCopperfield.user_name = _projectCopperfield.user_name 
+        if (zowgle.settings_value_exists("user_name")) { 
+            zowgle.user_name = _zowgle.user_name 
         }
         
-        if (projectCopperfield.settings_value_exists("user_email")) {     projectCopperfield.user_email = _projectCopperfield.user_email
+        if (zowgle.settings_value_exists("user_email")) {     zowgle.user_email = _zowgle.user_email
         }
         
-        if (projectCopperfield.settings_value_exists("id")) {     projectCopperfield.id = _projectCopperfield.id
+        if (zowgle.settings_value_exists("id")) {     zowgle.id = _zowgle.id
         }
         
-        projectCopperfield.create_button()
+        zowgle.create_button()
     }
 };
-projectCopperfield.init();
+zowgle.init();
