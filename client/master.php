@@ -59,11 +59,11 @@
     <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
     <script type="text/javascript" src="http://updateyourbrowser.net/uyb.js"> </script>
     <script type="text/javascript">
-        var _zowgle = _zowgle || {};
-        _zowgle["id"] = "4ee2ab0f212602863100000f";
-        _zowgle["userName"] = "";
-        _zowgle["userEmail"] = "";
-        _zowgle["image"] = "https://lh5.googleusercontent.com/-HKLSAuPUlsY/TuK4EVE9crI/AAAAAAAAAAg/oz_WDgQQmw4/s101/contact_us.png";
+        var _projectCopperfield = _projectCopperfield || {};
+        _projectCopperfield["id"] = "4ee2ab0f212602863100000f";
+        _projectCopperfield["userName"] = "";
+        _projectCopperfield["userEmail"] = "";
+        _projectCopperfield["image"] = "https://lh5.googleusercontent.com/-HKLSAuPUlsY/TuK4EVE9crI/AAAAAAAAAAg/oz_WDgQQmw4/s101/contact_us.png";
         (function() {
         function async_load(){
             var s = document.createElement('script');
