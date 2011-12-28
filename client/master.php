@@ -58,27 +58,22 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
     <script type="text/javascript" src="http://updateyourbrowser.net/uyb.js"> </script>
-    <script type="text/javascript">
-        var _projectCopperfield = _projectCopperfield || {};
-        _projectCopperfield["id"] = "4ee2ab0f212602863100000f";
-        _projectCopperfield["userName"] = "";
-        _projectCopperfield["userEmail"] = "";
-        _projectCopperfield["image"] = "https://lh5.googleusercontent.com/-HKLSAuPUlsY/TuK4EVE9crI/AAAAAAAAAAg/oz_WDgQQmw4/s101/contact_us.png";
-        (function() {
-        function async_load(){
-            var s = document.createElement('script');
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = "http://www.zowgle.com/js/embed.js";
-            var x = document.getElementsByTagName('script')[0];
-            x.parentNode.insertBefore(s, x);
-        }
-        if (window.attachEvent)
-            window.attachEvent('onload', async_load);
-        else
-            window.addEventListener('load', async_load, false);
-    })();
-    </script>
+    <script type="text/javascript"> 
+   var _zowgle = _zowgle || {}; 
+   _zowgle["id"] = "4eed1da92126029357000002"; 
+   _zowgle["userName"] = ""; 
+   _zowgle["userEmail"] = ""; 
+   _zowgle["image"] = "https://lh5.googleusercontent.com/-HKLSAuPUlsY/TuK4EVE9crI/AAAAAAAAAAg/oz_WDgQQmw4/s101/contact_us.png"; 
+   (function() {function async_load(){ 
+      var s = document.createElement("script"); 
+      s.type = "text/javascript"; 
+      s.async = true; 
+      s.src = "http://www.zowgle.com/js/embed.js"; 
+      var x = document.getElementsByTagName("script")[0]; 
+      x.parentNode.insertBefore(s, x);} 
+      if (window.attachEvent)window.attachEvent("onload", async_load); 
+      else window.addEventListener("load", async_load, false); })(); 
+</script>
     <script type="text/javascript">google.load("identitytoolkit", "1", {packages: ["ac"]});</script>
     <script type="text/javascript">
         strUserId = getParameterByName("userId");
