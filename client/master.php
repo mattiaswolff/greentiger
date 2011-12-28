@@ -33,7 +33,7 @@
                 <a id="a_home">home</a> | 
                 <a id="a_definition">definitions</a> | 
                 <a id="a_profile">profile</a> |
-                <a id="a_extension">extensions &amp; widgets</a>
+                <a id="a_extensions">extensions &amp; widgets</a>
             </nav>
             <section id="navbar"></section>
         </div>
