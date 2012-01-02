@@ -17,7 +17,7 @@ a {text-decoration: none; color: #39F; font-weight: bold;}
 .clear{clear: both;}
 
 .button{cursor:pointer;border-bottom: 1px solid #999;border-top: 1px solid #CCC;border-left: 1px solid #BBB;border-right: 1px solid #BBB;padding: 5px; font-size: 13px; -webkit-border-radius: 0px; min-width: 80px; display: inline-block; text-align: center; margin: 0.9px;}
-.button.blue{color:#fff;background: #63B4CD; border: solid 1px #556677;}
+.button.blue{color:#fff;background: #009ECE;border: 1px solid #0089B3;}
 .button.red{color:#fff;background: #EF6C6C; border: solid 1px #882211;}
 .button.green{color:#fff;background: #8AB459; border: solid 1px #226600;}
 .button.darkBlue {
