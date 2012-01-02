@@ -26,7 +26,7 @@ a {text-decoration: none; color: #39F; font-weight: bold;}
 }
 
 /*Layout*/
-.crt {  background-color: #DDE5D9;    width: 630px;  border-right: solid 1px hsl(194, 12%, 66%); min-height:540px;  height: 100%; float: left;}
+.crt {  background-color: #F4F4f4;    width: 630px;  border-right: solid 1px #CCC; min-height:540px;  height: 100%; float: left;}
 aside {float:right; width: 290px; height: 100%;}
 
 /*Module*/
