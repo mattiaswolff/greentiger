@@ -63,7 +63,7 @@ var zowgle = {
     },
     create_button : function() { 
         var b = zowgle.get_or_create_div ("zowgle_button_container");
-        var c = "top: " + zowgle.image_top + "; " + zowgle.image_align + ": 0; z-index: 99999; cursor: pointer; margin: 0; -webkit-box-shadow: 0px 0px 20px #000; -webkit-border-radius: 5px 0 0 5px; -moz-box-shadow: 0px 0px 20px #000; -moz-border-radius: 5px 0 0 5px; box-shadow: 0px 0px 20px #000; border-radius: 5px 0 0 5px;";
+        var c = "top: " + zowgle.image_top + ";right: -2em; z-index: 99999; cursor: pointer; margin: 0; -webkit-box-shadow: 0px 0px 20px #000; -webkit-border-radius: 5px; -moz-box-shadow: 0px 0px 20px #000; -moz-border-radius: 5px; box-shadow: 0px 0px 20px #000; border-radius: 5px;position: fixed;    -moz-transform: rotate(-90deg);  -webkit-transform: rotate(-90deg);  -o-transform: rotate(-90deg);  transform: rotate(-90deg);background: #333;color: #FFF;font-size: 1.5em;border: 2px solid white;padding: 0.5em;";
         c += zowgle.get_fixed_style();
         var a = zowgle.custom_image_url || zowgle.static_base_url + zowgle.image_url + "-" + zowgle.lang + "-" + zowgle.image_align + ".png"; 
         b.innerHTML += '<button alt="" id="zowgle_feedback" style="' + c + '" onclick= "zowgle.toggle_box()">Contact us!</button>'
