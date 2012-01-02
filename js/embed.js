@@ -66,7 +66,7 @@ var zowgle = {
         var c = "top: " + zowgle.image_top + "; " + zowgle.image_align + ": 0; z-index: 99999; cursor: pointer; margin: 0; -webkit-box-shadow: 0px 0px 20px #000; -webkit-border-radius: 5px 0 0 5px; -moz-box-shadow: 0px 0px 20px #000; -moz-border-radius: 5px 0 0 5px; box-shadow: 0px 0px 20px #000; border-radius: 5px 0 0 5px;";
         c += zowgle.get_fixed_style();
         var a = zowgle.custom_image_url || zowgle.static_base_url + zowgle.image_url + "-" + zowgle.lang + "-" + zowgle.image_align + ".png"; 
-        b.innerHTML += '<img src="' + a + '" alt="" id="zowgle_feedback" style="' + c + '" onclick= "zowgle.toggle_box()">'
+        b.innerHTML += '<button alt="" id="zowgle_feedback" style="' + c + '" onclick= "zowgle.toggle_box()">Contact us!</button>'
         },
         
     create_frame : function(d) {
