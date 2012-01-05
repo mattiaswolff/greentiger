@@ -54,7 +54,6 @@ class EasyRpService {
             $user->setName($result["displayName"]);
             $user->setEmail($email);
             $user->setGravatar();
-        }
             $strUserId = $user->upsert();
         }
         session_start();
