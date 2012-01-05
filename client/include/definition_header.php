@@ -28,7 +28,7 @@
             }
             
             $('form .buttons').append('<input class="button green" type="submit" name="POST" value="Post" />');
-            $('form .buttons').append('<span class="button blue" id="addRow">Add form row</span>');
+            $('form .buttons').append('<span class="button blue" title="Add another row to the form" id="addRow">Add form row</span>');
             
             if (strDefinitionId == "") {
                 $('form.edef').attr('method', 'POST');
