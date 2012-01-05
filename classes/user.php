@@ -160,5 +160,6 @@ class User {
     $url .= md5( strtolower( trim( $this->getEmail() ) ) );
     $url .= "?s=$s&d=$d&r=$r";
     $this->setImgUrl($url);
+    }
 }
 ?>
