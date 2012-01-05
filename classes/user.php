@@ -154,5 +154,11 @@ class User {
         $arrResults = $db->users->findOne(array("email" => $strEmail));
         return $arrResults["_id"];
     }
+    
+     function setGravatar($s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
+    $url = 'http://www.gravatar.com/avatar/';
+    $url .= md5( strtolower( trim( $this->getEmail() ) ) );
+    $url .= "?s=$s&d=$d&r=$r";
+    $this->setImgUrl($url);
 }
 ?>
