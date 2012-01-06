@@ -26,9 +26,14 @@
     $response = curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
+    echo "test1";
     if ($http_code == '200' && !empty($response)) {
+        echo "test2";
+        die();
         return json_decode($response, true);
+        
     }
+    die();
     return NULL;
   }
   
