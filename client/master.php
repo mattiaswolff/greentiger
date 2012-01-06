@@ -125,9 +125,10 @@
                     "handler": "onSignOutClicked"
                 }]
             });
+            window.google.identitytoolkit.showSavedAccount(window.sessionStorage.getItem("userEmail"));
             $("#navbar").accountChooser(); 
             if (!(window.sessionStorage.getItem("userId") === null)) {
-                $(".top > nav").removeClass("invisible"); #window.google.identitytoolkit.showSavedAccount(window.sessionStorage.getItem("userEmail"));
+                $(".top > nav").removeClass("invisible"); 
                 $(".top > nav > #a_home").attr('href', getUrlClient('dashboard.php?userId=' + window.sessionStorage.getItem("userId")));
                 $(".top > nav > #a_definition").attr('href', getUrlClient('definition.php?userId=' + window.sessionStorage.getItem("userId")));
                 $(".top > nav > #a_profile").attr('href', getUrlClient('profile.php?userId=' + window.sessionStorage.getItem("userId")));
