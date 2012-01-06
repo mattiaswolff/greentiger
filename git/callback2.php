@@ -26,10 +26,7 @@
     $response = curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-    echo "test1 " . $response;
     if ($http_code == '200' && !empty($response)) {
-        echo "test2";
-        die();
         return json_decode($response, true);
         
     }
@@ -63,7 +60,7 @@
         }
         session_start();
         $_SESSION["userId"] = $strUserId;
-        echo  "<script type='text/javascript' src='https://ajax.googleapis.com/jsapi'></script><script type='text/javascript'>google.load('identitytoolkit', '1.0', {packages: ['notify']});</script><script type='text/javascript'>window.google.identitytoolkit.notifyFederatedSuccess({'email': '" . $result["verifiedEmail"] ."', 'registered': true });</script>";
+        echo  "<script type='text/javascript' src='https://ajax.googleapis.com/jsapi'></script><script type='text/javascript'>google.load('identitytoolkit', '1', {packages: ['notify']});</script><script type='text/javascript'>window.google.identitytoolkit.notifyFederatedSuccess({'email': '" . $result["verifiedEmail"] ."', 'registered': true });</script>";
         return "OK";
     }
     return NULL;
