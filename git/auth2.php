@@ -34,4 +34,5 @@ if (isset($_SESSION['userId'])) {
     <?php
     header('Location: ' . $strRedirectUri);
 }
+else { header('Location: http://www.dif.se');}
 ?>
