@@ -26,7 +26,7 @@
     $response = curl_exec($ch);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-    echo "test1";
+    echo "test1 " . $response;
     if ($http_code == '200' && !empty($response)) {
         echo "test2";
         die();
