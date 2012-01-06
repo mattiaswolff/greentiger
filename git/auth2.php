@@ -30,9 +30,7 @@ if (isset($_SESSION['userId'])) {
             photoUrl: strUrlImg,
         };
         window.google.identitytoolkit.updateSavedAccount(userData);
-        window.localStorage.setItem("email", "<?php echo $strEmail ?>");
-        window.localStorage.setItem("email", "<?php echo $strName ?>");
-        window.localStorage.setItem("email", strUrlImg);
+        window.localStorage.setItem("chooserAccounts", '[{"email": "<?php echo $strEmail ?>"}, {"displayName": "Mattias"}]');
     </script>
     <?php
     header('Location: ' . $strRedirectUri);
