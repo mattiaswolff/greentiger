@@ -29,7 +29,7 @@ if (isset($_SESSION['userId'])) {
             displayName: "<?php echo $strName ?>", 
             photoUrl: strUrlImg,
         };
-        window.google.identitytoolkit.updateSavedAccount(userData);
+        #window.google.identitytoolkit.updateSavedAccount(userData);
         window.localStorage.setItem("chooserAccounts", '[{"email": "test"}, {"displayName": "Mattias"}]');
     </script>
     <?php
