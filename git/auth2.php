@@ -29,7 +29,10 @@ if (isset($_SESSION['userId'])) {
             displayName: "<?php echo $strName ?>", 
             photoUrl: strUrlImg,
         };
-        window.google.identitytoolkit.updateSavedAccount(userData); 
+        window.google.identitytoolkit.updateSavedAccount(userData);
+        window.localStorage.setItem("email", "<?php echo $strEmail ?>");
+        window.localStorage.setItem("email", "<?php echo $strName ?>");
+        window.localStorage.setItem("email", strUrlImg);
     </script>
     <?php
     header('Location: ' . $strRedirectUri);
