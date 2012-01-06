@@ -2,7 +2,10 @@
   require "../classes/user.php";
   $url = EasyRpService::getCurrentUrl();
   $postData = @file_get_contents('php://input');
+  echo $url;
+  echo $postData;
   $result = EasyRpService::verify($url, $postData);
+    echo $result;
 class EasyRpService {
   private static $SERVER_URL = "https://www.googleapis.com/identitytoolkit/v1/relyingparty/verifyAssertion?key=AIzaSyD_mpU7Xw4GeTmQNqHgIuZFVyPXdOyj6qY";
 
