@@ -89,6 +89,7 @@ class User {
     public function upsert() {
         $m = new Mongo();
         $db = $m->projectcopperfield;
+        if (!$this->getEmail()) {$this->setGravatar};
         $array = get_object_vars($this);
         $result = $db->command(array('findAndModify' => 'users', 
         'query' => array('_id' => $this->_id),
