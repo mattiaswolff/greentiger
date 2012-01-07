@@ -30,10 +30,8 @@ if (isset($_SESSION['userId'])) {
             photoUrl: strUrlImg,
         };
         window.google.identitytoolkit.updateSavedAccount(userData);
-        window.localStorage.setItem("hej", "test");
     </script>
     <?php
-    die();
     header('Location: ' . $strRedirectUri);
 }
 else { header('Location: http://www.dn.se');}
