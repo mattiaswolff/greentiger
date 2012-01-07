@@ -155,7 +155,7 @@ class User {
         return $arrResults["_id"];
     }
     
-     function setGravatar($s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
+     function setGravatar($s = 80, $d = 'mm', $r = 'pg', $img = false, $atts = array() ) {
     $url = 'http://www.gravatar.com/avatar/';
     $url .= md5( strtolower( trim( $this->getEmail() ) ) );
     $url .= "?s=$s&d=$d&r=$r";
