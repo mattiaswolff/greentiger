@@ -170,9 +170,11 @@ section.createTask .description {
 .clear {
     clear: both;
 }
+
 .invisible {
     display: none;
 }
+.crt-post-userinfo input.invisible {display:none;}
 form.task div.header {
 }
 form.task article {
