@@ -1,7 +1,6 @@
 <?php
 
 require "../classes/user.php";
-die();
 session_start();
 if (isset($_SESSION['userId'])) {
     $objUser = new User($_SESSION['userId']); 
@@ -15,8 +14,7 @@ if (isset($_SESSION['userId'])) {
     $objUser->upsert();
     $strRedirectUri = "http://www.zowgle.com/client/dashboard.php?userId=" . $strId . "#access_token=" . $arrNewAccessToken['token'] . "|" . $strId . "&token_type=example&expires_in=4301";  
 ?>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+    /*<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
     <script type="text/javascript">
@@ -30,7 +28,7 @@ if (isset($_SESSION['userId'])) {
             displayName: "<?php echo $strName ?>", 
             photoUrl: strUrlImg,
         };
-        #window.google.identitytoolkit.updateSavedAccount(userData);
+        #window.google.identitytoolkit.updateSavedAccount(userData);*/
         window.localStorage.setItem("hej", "test");
     </script>
     <?php
