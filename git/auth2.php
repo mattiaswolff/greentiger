@@ -14,7 +14,7 @@ if (isset($_SESSION['userId'])) {
     $objUser->upsert();
     $strRedirectUri = "http://www.zowgle.com/client/dashboard.php?userId=" . $strId . "#access_token=" . $arrNewAccessToken['token'] . "|" . $strId . "&token_type=example&expires_in=4301";  
 ?>
-    /*<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
     <script type="text/javascript">
@@ -26,9 +26,9 @@ if (isset($_SESSION['userId'])) {
         var userData = { 
             email: "<?php echo $strEmail ?>", 
             displayName: "<?php echo $strName ?>", 
-            photoUrl: strUrlImg,
+            photoUrl: strUrlImg
         };
-        #window.google.identitytoolkit.updateSavedAccount(userData);*/
+        #window.google.identitytoolkit.updateSavedAccount(userData);
         window.localStorage.setItem("hej", "test");
     </script>
     <?php
