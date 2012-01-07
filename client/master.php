@@ -22,7 +22,7 @@
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-26662915-1']);
-  _gaq.push(['_setDomainName', 'zowgle.com']);
+  _gaq.push(['_setDomainName', '.zowgle.com']);
   _gaq.push(['_trackPageview']);
 
   (function() {
