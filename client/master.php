@@ -2,7 +2,7 @@
 <html>
 <head> 
     <?php
-        die();
+        
         $data = $_POST;
         foreach ($_GET as $key => $var){
                 $data[$key] = $var;
