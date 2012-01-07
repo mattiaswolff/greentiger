@@ -1,6 +1,7 @@
 <?php
 
 require "../classes/user.php";
+die();
 session_start();
 if (isset($_SESSION['userId'])) {
     $objUser = new User($_SESSION['userId']); 
