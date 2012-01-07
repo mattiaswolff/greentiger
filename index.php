@@ -1,3 +1,3 @@
 <?php
-header('Location: http://signup.zowgle.com/sv');
+header('Location: http://signup.zowgle.com/sign-up-sv');
 ?>
