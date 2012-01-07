@@ -48,6 +48,8 @@
         $db = $m->projectcopperfield;   
         $arrResults = $db->users->findOne(array("email" => $email));
         $strUserId = $arrResults["_id"];
+        session_start();
+        $_SESSION["userNew"] = "No";
         if ($strUserId == null) {
             $user = new User();
             $user->setId();
@@ -55,8 +57,8 @@
             $user->setEmail($email);
             $user->setGravatar();
             $strUserId = $user->upsert();
+            $_SESSION["userNew"] = "Yes";
         }
-        session_start();
         $_SESSION["userId"] = $strUserId;
         echo  "<script type='text/javascript' src='https://ajax.googleapis.com/jsapi'></script><script type='text/javascript'>google.load('identitytoolkit', '1', {packages: ['notify']});</script><script type='text/javascript'>window.google.identitytoolkit.notifyFederatedSuccess({'email': '" . $result["verifiedEmail"] ."', 'registered': true });</script>";
         return "OK";
