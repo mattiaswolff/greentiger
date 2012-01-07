@@ -362,6 +362,24 @@ li.horizontal {
     padding: 0.5em;
 }
 
+.crt-post {
+    padding: 15px;
+    margin-bottom: 7px;
+}
+.crt-post-userinfo {
+    float: left;
+    width: 480px;
+    margin-bottom: 7px;
+}
+.crt-post-userinfo input {
+    width: 235px;
+    display: inline;
+}
+.crt-post-buttons {
+    padding-top: 5px;
+    float: right;
+}
+
 .edef {
     background-color: #CCDAFF;
 border: 1px solid #B3C7FF;
