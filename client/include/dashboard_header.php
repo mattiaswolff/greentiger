@@ -58,8 +58,9 @@
                     $.each(json.results[0].content, function(key, value) {
                         arrHtml.push(getHtmlTaskRow(value.name, value.name, "content." +value.name, value.description, value.type, '', value.config, value.required));
                     });
-                    arrHtml.push('<input class="invisible" type="text" name="createUserId" value="' + window.sessionStorage.getItem("userId") + '" />');
-                    arrHtml.push('<input class="invisible" type="text" name="createUserName" value="' + window.sessionStorage.getItem("userName") + '" />');
+                    $('input[name="createUserName"]').attr('value', window.sessionStorage.getItem("userName"));
+                    $('input[name="createUserEmail"]').attr('value', window.sessionStorage.getItem("userEmail"));
+                    $('input[name="createUserId"]').attr('value', window.sessionStorage.getItem("userId"));
                     $('.ctsk form section').empty();
                     $('.ctsk div.ctsk-desc').empty();
                     $('.ctsk div.ctsk-desc').append(json.results[0].description);
