@@ -1,50 +1,165 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<?php session_start(); ?>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
-    <script type="text/javascript" src="../js/jquery.toObject.js"></script>
-    <script type="text/javascript" src="../js/form2object.js"></script>
-    <script type="text/javascript">	
-        $(document).ready(function(){
-            var strAccessToken = '';
-            var strUserId = getParameterByName("userId"); 
-            $.each(location.hash.substring(1).split('&'), function (key, value) { 
-                if (value.split('=')[0] == 'access_token') { 
-                    strAccessToken = value.split('=')[1];  
-                } 
-            });
-            if (strUserId != '' ) {
-                var strUrl = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" + strUserId;
-                $.getJSON(strUrl, { access_token : strAccessToken}, function(json) {
-                    $("#name").val(json.name);
-                    $("#email").val(json.email);
-                    $("#userId").val(json._id);
-                    $("#redirect_uri").val(json.redirect_uri);
-                    $("#client_id").val(json.client_id);
-                });
-                //.error(function() { var uri="http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/client/user.php"; window.location.href = "http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/git/test.php?clientId=4e36a30fcdb4bf1d69000002&redirectUri=" + encodeURI(uri) + "&responseType=token"; });
-            }
-	    });
-    </script>
-</head>
-
-<body id="home">
+<?php
+class User {
+    //Properties
+    private $_id;
+    private $email;
+    private $name;
+    private $url;
+    private $description;
+    private $definitions;
+    private $client_id;
+    private $redirect_uri;
+    private $accessTokens;
+    private $imgUrl;
     
-    <section>
-        User
-			<form>
-                General<br/>
-   		 	    UserId: <input id="userId" type="text" name="userId" value="" readonly="readonly"/><br/>
-                Name: <input id="name" type="text" name="name" value="" /><br/>
-                Email: <input id="email" type="email" name="email" maxlength="30" value="" /><br/>
-                Developer<br/>
-                Redirect Uri: <input id="redirect_uri" type="url" name="redirect_uri" maxlength="200" value="" /><br/>
-			    Your developer id is: <input id="client_id" type="text" name="client_id" maxlength="200" value="" readonly="readonly" /><br/>
-            </form>
-            <span onClick=<?php echo (!isset($_GET['userId']) ? '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users', 'POST')" . '"' : '"' . "submitFormJSON('http://ec2-79-125-49-128.eu-west-1.compute.amazonaws.com/greentiger/api/users/" . $_GET['userId'] ."', 'PUT')" . '"' ); ?>>Save user</span>
-    <section>
-</body>
-</html>
+    //Constructor
+    public function __construct($strUserId = null){
+        if ($strUserId != null) {
+            $m = new Mongo();
+            $db = $m->projectcopperfield;
+            $arrResults = $db->users->findOne(array('_id' => $strUserId));
+            $this->_id = $arrResults['_id'];
+            $this->name = $arrResults['name'];
+            $this->url = $arrResults['url'];
+            $this->email = $arrResults['email'];
+            $this->description = $arrResults['description'];
+            $this->definitions = $arrResults['definitions'];
+            $this->client_id = $arrResults['client_id'];
+            $this->redirect_uri = $arrResults['redirect_uri'];
+            $this->accessTokens = $arrResults['accessTokens'];
+            $this->imgUrl = $arrResults['imgUrl'];
+        }
+        else {
+            $this->email = '';
+            $this->name = '';
+            $this->url = '';
+            $this->description = '';
+            $this->definitions = array();
+            $this->accessTokens = array();
+            $this->client_id = '';
+            $this->redirect_uri = '';
+            $this->imgUrl = '';
+        }
+    }
+    
+    //Accessors
+    public function getId() { return $this->_id; } 
+    public function getEmail() { return $this->email; } 
+    public function getName() { return $this->name; }
+    public function getUrl() { return $this->url; }
+    public function getDescription() { return $this->description; }
+    public function getDefinitions() { return $this->definitions; }
+    public function getAccessTokens() { return $this->accessTokens; }
+    public function getClientId() { return $this->client_id; }
+    public function getRedirectUri() { return $this->redirect_uri; }
+    public function getImgUrl() { return $this->imgUrl; }
+    public function setId($x = null) { if ($x) { $this->_id = $x; } else { $this->_id = new MongoId(); }}
+    public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
+    public function setName($x) {if ($x != null) { $this->name = $x; }}
+    public function setUrl($x) {if ($x != null) { $this->url = $x; }}
+    public function setDescription($x) {if ($x != null) { $this->description = $x; }}
+    public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
+    public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
+    public function setClientId() {if (!isset($this->client_id) || ((string)$this->client_id == '')) {$this->client_id = (string)new MongoId(); }}
+    public function setRedirectUri($x) {if ($x != null) { $arrParsedUrl = parse_url($x); $strParsedUrl = $arrParsedUrl['scheme'] . '://' . $arrParsedUrl['host']; $this->redirect_uri = $strParsedUrl; }}
+    public function setImgUrl($x) {if ($x != null) { $this->imgUrl = $x; }}
+    
+    //Get, Upsert and Delete functions
+    function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        if ($arrObjectId != null) {
+            $objResults = $db->users->find(array("_id" => $arrObjectId));
+        }
+        else {
+            $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
+            $intLimit = $intObjectsPerPage;
+            $objResults = $db->users->find()->skip($intSkip)->limit($intLimit);
+        }
+        $arrResults['total'] = 0;
+        $arrResults['page'] = $intPage;
+        $arrResults['pagesize'] = $intObjectsPerPage;
+        foreach ($objResults as $var) {
+            $arrResults['total'] = $arrResults['total'] + 1;
+            $arrResults['users'][] = $var;
+        }
+        return $arrResults; 
+    }
+    
+    public function upsert() {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $array = get_object_vars($this);
+        $result = $db->command(array('findAndModify' => 'users', 
+        'query' => array('_id' => $this->_id),
+        'update' => $array,
+        'new' => true,   
+        'upsert' => true,
+        'fields' => array( '_id' => 1 )));
+        return $result['value']['_id'];
+    }
+    
+    function delete($strUserId) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $arrQuery = array("_id" => $strUserId);
+        $arrOptions = array("safe" => true);
+	    $arrResults = $db->users->remove($arrQuery, $arrOptions);
+        $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
+        return $intStatus; 
+    }
+    
+    public function toArray() {
+        $array = get_object_vars($this);
+        return $array;
+    }
+    
+    function validateConsumer($strClientId, $strRedirectUri) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $arrParsedUrl = parse_url($strRedirectUri);
+        $strParsedUrl = $arrParsedUrl['scheme'] . '://' . $arrParsedUrl['host'];
+        $arrResults = $db->users->findOne(array("client_id" => $strClientId, "redirect_uri" => $strParsedUrl));
+        if ($arrResults != null) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
+    
+    function validateAccessToken($strAccessToken) {
+        date_default_timezone_set('Europe/London');
+        $date = new DateTime();
+        $intSec = $date->getTimestamp();
+        $booReturn = FALSE;
+        $arrAccessTokens = array();
+        foreach ($this->getAccessTokens() as $key => $value) {
+            $objMongoDate = $value['createdDate'];
+            if (($objMongoDate->sec + 5000) > $intSec) {
+                $arrAccessTokens[] = $value;
+                if ($value['token'] == $strAccessToken) {
+                    $booReturn = TRUE;
+                }
+            }
+        }
+        $this->setAccessTokens($arrAccessTokens);
+        $this->upsert();
+        return $booReturn;
+    }
+    
+    function validateEmail($strEmail) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;   
+        $arrResults = $db->users->findOne(array("email" => $strEmail));
+        return $arrResults["_id"];
+    }
+    
+     function setGravatar($s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
+    $url = 'http://www.gravatar.com/avatar/';
+    $url .= md5( strtolower( trim( $this->getEmail() ) ) );
+    $url .= "?s=$s&d=$d&r=$r";
+    $this->setImgUrl($url);
+    }
+}
+?>

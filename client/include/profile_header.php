@@ -9,6 +9,7 @@
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
             $('input[name|="url"]').attr('value', window.sessionStorage.getItem("userUrl"));
+            $('input[name|="imgUrl"]').attr('value', window.sessionStorage.getItem("userImgUrl"));
             $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
             $('input[name|="id"]').parent().parent("article").addClass("invisible");
             $('.eusr .buttons').append('<input class="button green" type="submit" name="PUT" value="Post" />');
