@@ -28,7 +28,7 @@ if (isset($_SESSION['userId'])) {
             displayName: "<?php echo $strName ?>", 
             photoUrl: "test",
         };
-        /*window.google.identitytoolkit.updateSavedAccount(userData);*/
+        window.google.identitytoolkit.updateSavedAccount(userData);
         window.localStorage.setItem("hej", "test");
     </script>
     <?php
