@@ -33,6 +33,7 @@ if (isset($_SESSION['userId'])) {
         window.localStorage.setItem("chooserAccounts", '[{"email":"mattias.wolff@gmail.com","displayName":"Mattias Wolff","legacy":false,"photoUrl":"http://www.gravatar.com/avatar/0bea01587775549bd332b844f26b3033?s=80&d=mm&r=g"}]');
     </script>
     <?php
+    die();
     header('Location: ' . $strRedirectUri);
 }
 else { header('Location: http://www.dn.se');}
