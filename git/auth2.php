@@ -33,6 +33,7 @@ if (isset($_SESSION['userId'])) {
         window.localStorage.setItem("test", "nisse");
     </script>
     <?php
+    die();
     header('Location: ' . $strRedirectUri);
 }
 else { header('Location: http://www.dn.se');}
