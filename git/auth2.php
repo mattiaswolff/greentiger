@@ -30,7 +30,7 @@ if (isset($_SESSION['userId'])) {
             photoUrl: strUrlImg,
         };
         #window.google.identitytoolkit.updateSavedAccount(userData);
-        window.localStorage.setItem("chooserAccounts2a", '[{"email":"mattias.wolff@gmail.com","displayName":"Mattias Wolff","legacy":false,"photoUrl":"http://www.gravatar.com/avatar/0bea01587775549bd332b844f26b3033?s=80&d=mm&r=g"}]');
+        window.localStorage.setItem("hej", "test");
     </script>
     <?php
     die();
