@@ -13,7 +13,7 @@ if (isset($_SESSION['userId'])) {
     $objUser->setAccessTokens($arrAccessTokens);
     $objUser->upsert();
     if ($_SESSION['userNew'] = "Yes") {
-        $strRedirectUri = "http://www.zowgle.com/client/registered.php?userId=" . $strId;
+        $strRedirectUri = "http://www.zowgle.com/client/thank-you-for-signing-up.php?userId=" . $strId . "#access_token=" . $arrNewAccessToken['token'] . "|" . $strId . "&token_type=example&expires_in=4301";
     } else {
         $strRedirectUri = "http://www.zowgle.com/client/dashboard.php?userId=" . $strId . "#access_token=" . $arrNewAccessToken['token'] . "|" . $strId . "&token_type=example&expires_in=4301";
     }
