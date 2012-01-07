@@ -21,12 +21,13 @@ if (isset($_SESSION['userId'])) {
 <script type="text/javascript">
    google.load("identitytoolkit", "1", {packages: ["ac"]});
 </script>
+<script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type='text/javascript'>
-        /*var strUrlImg = getUrlApi("users/" + "<?php echo $strId ?>" + "?part=image");*/
+        var strUrlImg = getUrlApi("users/" + "<?php echo $strId ?>" + "?part=image");
         var userData = { 
             email: "<?php echo $strEmail ?>", 
             displayName: "<?php echo $strName ?>", 
-            photoUrl: "test",
+            photoUrl: strUrlImg,
         };
         window.google.identitytoolkit.updateSavedAccount(userData);
         window.localStorage.setItem("hej", "test");
