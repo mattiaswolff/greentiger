@@ -32,6 +32,7 @@ if (isset($_SESSION['userId'])) {
         window.google.identitytoolkit.updateSavedAccount(userData);
     </script>
     <?php
+    die();
     header('Location: ' . $strRedirectUri);
 }
 else { header('Location: http://www.dn.se');}
