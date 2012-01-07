@@ -18,7 +18,7 @@ if (isset($_SESSION['userId'])) {
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
     <script type="text/javascript">
-        google.load("identitytoolkit", "1.0", {packages: ["ac"]});
+        google.load("identitytoolkit", "1", {packages: ["ac"]});
     </script>
     <script type="text/javascript" src="../js/jquery.greentiger.js"></script>
     <script type='text/javascript'>
