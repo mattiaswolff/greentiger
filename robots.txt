@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /classes/
+Disallow: /api/
+Disallow: /git/
+Disallow: /client/include/
+Disallow: /client/master.php
+Allow: /
