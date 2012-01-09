@@ -163,7 +163,7 @@ function submitFormJSON(strSelector, strUrl, strType, strAsync) {
             name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
             var regexS = "[\\?&]" + name + "=([^&#]*)";
             if (name == 'userId') 
-                regexS = "http:\/\/www\.zowgle\.com/([^\/]*)";
+                regexS = "www\.zowgle\.com/([^\/\.]*)";
             var regex = new RegExp(regexS);
             var results = regex.exec(window.location.href);
             if(results == null)
