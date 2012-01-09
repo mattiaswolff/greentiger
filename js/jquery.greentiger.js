@@ -162,12 +162,15 @@ function submitFormJSON(strSelector, strUrl, strType, strAsync) {
         function getParameterByName(name) {
             name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
             var regexS = "[\\?&]" + name + "=([^&#]*)";
+            if (name == 'userId') 
+                regexS = "http:\/\/www\.zowgle\.com/([\w]+)[^\/]";
             var regex = new RegExp(regexS);
             var results = regex.exec(window.location.href);
             if(results == null)
                 return "";
             else
             return decodeURIComponent(results[1].replace(/\+/g, " "));
+
         }
         
         function nl2br (str) {   
