@@ -137,10 +137,10 @@
             if (!(window.sessionStorage.getItem("userId") === null)) {
                 window.google.identitytoolkit.showSavedAccount(window.sessionStorage.getItem("userEmail"));
                 $(".top > nav").removeClass("invisible"); 
-                $(".top > nav > #a_home").attr('href', getUrlClient('dashboard.php?userId=' + window.sessionStorage.getItem("userId")));
-                $(".top > nav > #a_definition").attr('href', getUrlClient('definition.php?userId=' + window.sessionStorage.getItem("userId")));
-                $(".top > nav > #a_profile").attr('href', getUrlClient('profile.php?userId=' + window.sessionStorage.getItem("userId")));
-                $(".top > nav > #a_extensions").attr('href', getUrlClient('extensions.php?userId=' + window.sessionStorage.getItem("userId")));
+                $(".top > nav > #a_home").attr('href', getUrlBase(window.sessionStorage.getItem("userId")));
+                $(".top > nav > #a_definition").attr('href', getUrlBase(window.sessionStorage.getItem("userId") + "/definitions"));
+                $(".top > nav > #a_profile").attr('href', getUrlBase(window.sessionStorage.getItem("userId") + "/profile"));
+                $(".top > nav > #a_extensions").attr('href', getUrlBase(window.sessionStorage.getItem("userId") + "/extensions"));
             }
         $("#navbar").delegate(".red", "click", function(){
                 sessionStorage.clear();

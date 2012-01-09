@@ -3,6 +3,11 @@ Purpose: Generate API Url.
 Created: 2011-08-11 (Mattias Wolff)
 Updated: test
 */
+function getUrlBase(strUrlExtension) {
+    var arrUrl = ["http://www.zowgle.com/", strUrlExtension];
+    return  arrUrl.join("");
+}
+
 function getUrlApi(strUrlExtension) {
     var arrUrl = ["http://www.zowgle.com/api/", strUrlExtension];
     return  arrUrl.join("");
