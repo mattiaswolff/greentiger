@@ -11,7 +11,7 @@ switch($data->getMethod()) {
         $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         $strPart = (isset($arrRequestVars['part']) ? $arrRequestVars['part'] : '');
         if ($strUserId != '') {
-            $objUser = new User(new MongoId($strUserId));
+            $objUser = new User($strUserId);
             if (isset($objUser)) {
                 if ($strPart == 'image') {
                     header('Location: '. $objUser->getImgUrl()); 
@@ -45,8 +45,7 @@ switch($data->getMethod()) {
         $user->setClientId();
         $user->setImgUrl($strImgUrl);
         $user->setRedirectUri($arrRequestVars["redirectUri"]);
-        
-            $user->upsert();
+        $user->upsert();
             if ($strPassword1 != '') {
                 $array = array("password" => $strPassword1, "userId" => $user->getId()); 
                 $m = new Mongo();
@@ -65,7 +64,7 @@ switch($data->getMethod()) {
         
         $arrRequestVars = $data->getRequestVars();
         if (isset($arrRequestVars['userId'])) {
-            $objUser = new User(new MongoId($arrRequestVars['userId']));
+            $objUser = new User($arrRequestVars['userId']);
             if ($strPart == '') {
             $objUser->setEmail($arrRequestVars["email"]);
             $objUser->setName($arrRequestVars["name"]);

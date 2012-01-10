@@ -4,6 +4,7 @@ class User {
     private $_id;
     private $email;
     private $name;
+    private $urlName;
     private $url;
     private $description;
     private $definitions;
@@ -17,9 +18,10 @@ class User {
         if ($strUserId != null) {
             $m = new Mongo();
             $db = $m->projectcopperfield;
-            $arrResults = $db->users->findOne(array('_id' => $strUserId));
+            $arrResults = $db->users->findOne(array('$or' => array('_id' => new MongoId($strUserId), 'urlName' => $strUserId));
             $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
+            $this->urlName = $arrResults['urlName'];
             $this->url = $arrResults['url'];
             $this->email = $arrResults['email'];
             $this->description = $arrResults['description'];
@@ -32,6 +34,7 @@ class User {
         else {
             $this->email = '';
             $this->name = '';
+            $this->urlName = '';
             $this->url = '';
             $this->description = '';
             $this->definitions = array();
@@ -46,6 +49,7 @@ class User {
     public function getId() { return $this->_id; } 
     public function getEmail() { return $this->email; } 
     public function getName() { return $this->name; }
+    public function getUrlName() { return $this->urlName; }
     public function getUrl() { return $this->url; }
     public function getDescription() { return $this->description; }
     public function getDefinitions() { return $this->definitions; }
@@ -57,6 +61,7 @@ class User {
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }}
     public function setUrl($x) {if ($x != null) { $this->url = $x; }}
+    public function setUrlName($x) {if ($x != null) { $this->urlName = $x; }}
     public function setDescription($x) {if ($x != null) { $this->description = $x; }}
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }} 
     public function setAccessTokens($x) {if (!is_null($x)) { $this->accessTokens = $x; }}
@@ -69,7 +74,7 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         if ($arrObjectId != null) {
-            $objResults = $db->users->find(array("_id" => $arrObjectId));
+            $objResults = $db->users->find(array('$or' => array('_id' => new MongoId($strUserId), 'urlName' => $strUserId));
         }
         else {
             $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
