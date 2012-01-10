@@ -18,7 +18,7 @@ class User {
         if ($strUserId != null) {
             $m = new Mongo();
             $db = $m->projectcopperfield;
-            $arrResults = $db->users->findOne(array('$or' => array('_id' => new MongoId($strUserId), 'urlName' => $strUserId));
+            $arrResults = $db->users->findOne(array('$or' => array('_id' => new MongoId($strUserId), 'urlName' => $strUserId)));
             $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
             $this->urlName = $arrResults['urlName'];
@@ -74,7 +74,7 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         if ($arrObjectId != null) {
-            $objResults = $db->users->find(array('$or' => array('_id' => new MongoId($strUserId), 'urlName' => $strUserId));
+            $objResults = $db->users->find(array('$or' => array('_id' => new MongoId($strUserId), 'urlName' => $strUserId)));
         }
         else {
             $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
