@@ -41,6 +41,7 @@ switch($data->getMethod()) {
         $user->setId();
         $user->setEmail($arrRequestVars["email"]);
         $user->setName($arrRequestVars["name"]);
+        $user->setUrlName($arrRequestVars["urlName"]);
         $user->setUrl($arrRequestVars["name"]);
         $user->setClientId();
         $user->setImgUrl($strImgUrl);
@@ -68,6 +69,7 @@ switch($data->getMethod()) {
             if ($strPart == '') {
             $objUser->setEmail($arrRequestVars["email"]);
             $objUser->setName($arrRequestVars["name"]);
+            $objUser->setUrlName("test");
             $objUser->setUrl($arrRequestVars["url"]);
             $objUser->setImgUrl($arrRequestVars["imgUrl"]);
             $objUser->setDescription($arrRequestVars["description"]);
