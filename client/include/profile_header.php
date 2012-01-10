@@ -3,11 +3,13 @@
         $(document).ready(function(){
             $('.eusr .fields').append(getHtmlTaskRow('id', 'id', 'id', 'description', 'text', '', true));
             $('.eusr .fields').append(getHtmlTaskRow('name', 'name', 'name', 'description', 'text', '', true));
+            $('.eusr .fields').append(getHtmlTaskRow('urlName', 'urlName', 'urlName', 'description', 'text', '', true));
             $('.eusr .fields').append(getHtmlTaskRow('url', 'url', 'url', 'description', 'url', '', true));
             $('.eusr .fields').append(getHtmlTaskRow('imgUrl', 'Image URL', 'imgUrl', 'description', 'url', '', true));
             $('.eusr .fields').append(getHtmlTaskRow('description', 'description', 'description', 'description', 'textarea', '', true));
             $('input[name|="id"]').attr('value', window.sessionStorage.getItem("userId"));
             $('input[name|="name"]').attr('value', window.sessionStorage.getItem("userName"));
+            $('input[name|="urlName"]').attr('value', window.sessionStorage.getItem("urlName"));
             $('input[name|="url"]').attr('value', window.sessionStorage.getItem("userUrl"));
             $('input[name|="imgUrl"]').attr('value', window.sessionStorage.getItem("userImgUrl"));
             $('textarea[name|="description"]').append(window.sessionStorage.getItem("userDescription"));
