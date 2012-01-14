@@ -71,6 +71,7 @@
                     </ul>  
                 </div>
                 <div class="firstpagehead-functionality-description">
+                    <h3>Beskrivning</h3>
                     <p>Ditt företag kommunicerar med omvärlden på massor av olika sätt. Vi tror att en del av denna kommunikationen fungerar utmärkt men att det finns potential att förbättra andra delar.</p>
                     <p>Zowgle är en digital hub där ditt företag kan strukturera och effektivisera den kommunikation som idag inte når sin fulla potential.</p>   
                     <p>För att hjälpa dig att lyckas har vi skapat ett flexibelt verktyg för kommunikation. Hur du använder detta är givetvis upp till dig men vi har följande idéer:</p>
