@@ -55,6 +55,7 @@
                 <div class="firstpage-head-media">
                     <iframe width="426" height="254" src="https://www.youtube.com/embed/cfOa1a8hYP8" frameborder="0" allowfullscreen></iframe>
                 </div>
+                <div class="clear" />
             </div>
             <div class="firstpagehead-action">
                 <span class="button">Register now for 1 month free trial!</span>
