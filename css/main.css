@@ -477,5 +477,9 @@ div.search-btn {
     padding: 15px 25px;
 }
 .firstpagehead-functionality {}
-.firstpagehead-functionality-usp {}
+.firstpagehead-functionality-usp {
+    width: 50%;
+    float: left;
+    margin-right: 50px;
+}
 .firstpagehead-functionality-description {}
