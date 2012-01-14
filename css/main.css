@@ -482,6 +482,9 @@ div.search-btn {
     float: left;
     margin-right: 50px;
 }
+.firstpagehead-functionality-usp ul {
+    list-style-image: url('https://lh6.googleusercontent.com/-x2cURw-VKMg/TxIJ6U4WmwI/AAAAAAAAAIw/c5pj9Nc6of0/w353-h287-k/bullet-arrow-green.original.png');
+}
 .firstpagehead-functionality-description {}
 .firstpagehead-customers {
     clear: both;
