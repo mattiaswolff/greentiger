@@ -466,15 +466,13 @@ div.search-btn {
 }
 
 .firstpage{
-    margin: 5% 12%;
+    margin: 5% 18%;
 }
-.firstpage-head{}
+.firstpage-head{
+}
 .firstpage-head-text{
-    width: 50%;
-    padding: 0 4em;
 }
 .firstpage-head-media{
-    width: 50%;
     float: right;
-    padding: 1em 0;
+    padding: 15px 25px;
 }
