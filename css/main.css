@@ -485,5 +485,7 @@ div.search-btn {
 .firstpagehead-functionality-description {}
 .firstpagehead-customers {
     clear: both;
-    margin: 0 7%;
+}
+.firstpagehead-customers ul {
+    list-style: none;
 }
