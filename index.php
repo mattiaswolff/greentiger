@@ -65,6 +65,9 @@
                     <ul>
                         <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
                         <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
+                        <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
+                        <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
+                        <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
                     </ul>  
                 </div>
                 <div class="firstpagehead-functionality-description">
