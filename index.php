@@ -58,7 +58,7 @@
                 <div class="clear" />
             </div>
             <div class="firstpagehead-action">
-                <span class="button">Register now for 1 month free trial!</span>
+                <span class="button cta rounded blue">Register now for 1 month free trial!</span>
             </div>
             <div class="firstpagehead-functionality">
             </div>
