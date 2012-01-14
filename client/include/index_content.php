@@ -6,6 +6,8 @@
 <div class="firstpage-head-media">
 </div>
 </div>
+<div class="firstpagehead-action">
+</div>
 <div class="firstpagehead-functionality">
 </div>
 <div class="firstpagehead-customers">
