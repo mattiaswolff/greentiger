@@ -11,7 +11,7 @@
             require "../classes/user.php";
             $objUser = new User($data["userId"]);
             echo '<title>' . $objUser->getName() . ' | Zowgle - Engage your online business community!</title>';
-            echo '<meta name="description" content="' . $objUser->getDescription() . '">'
+            echo '<meta name="description" content="' . $objUser->getDescription() . '">';
         }
         else {
             echo '<title>Zowgle - Engage your online business community!</title>';
