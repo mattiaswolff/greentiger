@@ -69,7 +69,8 @@
                         <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
                         <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
                         <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
-                    </ul>  
+                    </ul>
+                    <p><a href="http://www.zowgle.com/features">Additional features</a></p>
                 </div>
                 <div class="firstpagehead-functionality-description">
                     <h3>Beskrivning</h3>
@@ -91,7 +92,6 @@
                         <li></li>
                         <li></li>
                     </ul>
-                    <p><a href="http://www.zowgle.com/features">Additional features</a></p>
             </div>
         </div>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
