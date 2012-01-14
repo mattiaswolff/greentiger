@@ -11,13 +11,13 @@
             require "../classes/user.php";
             $objUser = new User($data["userId"]);
             echo '<title>' . $objUser->getName() . ' | Zowgle - Engage your online business community!</title>';
-            echo '<meta name="description" content="' . $objUser->getDescription() . '">';
+            echo '<meta name="description" content="' . $objUser->getDescription() . '" />';
         }
         else {
             echo '<title>Zowgle - Engage your online business community!</title>';
         }
     ?>
-    <meta name="keyword" content="">
+    <meta name="keyword" content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <script type="text/javascript">
