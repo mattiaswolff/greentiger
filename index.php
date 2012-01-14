@@ -20,6 +20,7 @@
     <meta name="keyword" content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link href="https://lh3.googleusercontent.com/-6TJ8qDQCiZg/TxHlBLLbg2I/AAAAAAAAADc/iiCN_iePBIs/s47/zowgle_favicon.png" rel="icon" type="image/x-icon" /> 
     <script type="text/javascript">
 
     var _gaq = _gaq || [];
