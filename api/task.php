@@ -22,12 +22,12 @@ switch($data->getMethod()) {
             $arrId[] = new MongoId($strTaskId);
         }
         else if (($strDefinitionId != '') && ($strUserId != '')) {
-            $objUser = new User(new MongoId($strUserId));
+            $objUser = new User($strUserId);
             $arrDefinitions = $objUser->getDefinitions();
             $arrId = $arrDefinitions[$strDefinitionId]['tasks'];
         }
         else if (($strUserId != '')) {
-            $objUser = new User(new MongoId($strUserId));
+            $objUser = new User($strUserId);
             $arrDefinitions = $objUser->getDefinitions();
             foreach ($arrDefinitions as $key => $var) {
                 if ($strGroup == '' && isset($var['tasks'])) {
