@@ -57,6 +57,7 @@
                 </div>
             </div>
             <div class="firstpagehead-action">
+                <span class="button">Register now for 1 month free trial!</span>
             </div>
             <div class="firstpagehead-functionality">
             </div>
