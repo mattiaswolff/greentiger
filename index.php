@@ -81,10 +81,14 @@
                 </div>
             </div>
             <div class="firstpagehead-customers">
-                First 100 customers<br/>
-                <a href="http://www.zowgle.com/zowgle">Zowgle</a><br/>
-                <a href="http://www.zowgle.com/zowgle-developers">Zowgle Developers</a><br/>
-                <a href="http://www.zowgle.com/medius">Medius</a>
+                <h3>First 100 customers</h3>
+                <ul>
+                        <li><a href="http://www.zowgle.com/zowgle">Zowgle</a></li>
+                        <li><a href="http://www.zowgle.com/zowgle-developers">Zowgle Developers</a></li>
+                        <li><a href="http://www.zowgle.com/medius">Medius</a></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
             </div>
         </div>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>

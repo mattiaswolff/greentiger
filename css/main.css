@@ -483,4 +483,7 @@ div.search-btn {
     margin-right: 50px;
 }
 .firstpagehead-functionality-description {}
-.firstpagehead-customers {}
+.firstpagehead-customers {
+    clear: both;
+    margin: 0 7%;
+}
