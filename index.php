@@ -50,7 +50,7 @@
         <div class = "firstpage">
             <div class="firstpage-head">
                 <div class="firstpage-head-media">
-                    <iframe width="426" height="254" src="https://www.youtube.com/embed/cfOa1a8hYP8" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="426" height="254" src="https://www.youtube.com/embed/cfOa1a8hYP8?rel=0&border=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="firstpage-head-text">
                     <h1>Ta tillvara på det fulla värdet av Ert företags kommunikation. Har ditt företag råd att inte haka på?!</h1>
