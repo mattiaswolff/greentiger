@@ -79,6 +79,7 @@
                     <p>- Hur ser din kuntjänst ut idag? Vi tror att Zowgle passar utmärkt för att effektivisera arbetet och framförallt nå den fulla potentialen i kontakt med kunder.</p> 
                     <p>- Hur fungerar gränssnitten mot era affärssystem? Zowgle kan användas som en portal mot omvärlden där t ex fakturor eller order kan läggs upp. Allt som krävs är sedan att hämta denna information från vårt API till era system.</p>
                     <p>Givetvis finns också andra möjligheter. Tveka inte att kontakta oss om ni har idéer till egna tillämpningar.</p> 
+                    <p><a href="http://blog.zowgle.com/">Read more in our blog...</a></p>
                 </div>
             </div>
             <div class="firstpagehead-customers">
@@ -90,6 +91,7 @@
                         <li></li>
                         <li></li>
                     </ul>
+                    <p><a href="http://www.zowgle.com/features">Additional features</a></p>
             </div>
         </div>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
