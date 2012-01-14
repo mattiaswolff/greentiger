@@ -8,22 +8,24 @@
                 $data[$key] = $var;
         }
         if ($data["userId"]) {
-            echo '<title>' . $data["userName"] . ' | Zowgle - Engage your online business community!</title>';
+            require "../classes/user.php";
+            $objUser = new User($data["userId"]);
+            echo '<title>' . $objUser->getName() . ' | Zowgle - Engage your online business community!</title>';
+            echo '<meta name="description" content="' . $objUser->getDescription() . '">'
         }
         else {
             echo '<title>Zowgle - Engage your online business community!</title>';
         }
     ?>
-    <meta name="description" content="This is a description that is used to describe the content of this web page">
-    <meta name="keyword" content="zowgle,test">
+    <meta name="keyword" content="">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-26662915-1']);
-  _gaq.push(['_setDomainName', '.zowgle.com']);
-  _gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26662915-1']);
+    _gaq.push(['_setDomainName', '.zowgle.com']);
+    _gaq.push(['_trackPageview']);
 
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
