@@ -68,18 +68,12 @@
                     </ul>  
                 </div>
                 <div class="firstpagehead-functionality-description">
-                    Ditt företag kommunicerar med omvärlden på massor av olika sätt. Vi tror att en del av denna kommunikationen fungerar utmärkt men att det finns potential att förbättra andra delar. 
-
-Zowgle är en digital hub där ditt företag kan strukturera och effektivisera den kommunikation som idag inte når sin fulla potential.   
-
-För att hjälpa dig att lyckas har vi skapat ett flexibelt verktyg för kommunikation. Hur du använder detta är givetvis upp till dig men vi har följande idéer:
-
-- Hur ser din kuntjänst ut idag? Vi tror att Zowgle passar utmärkt för att effektivisera arbetet och framförallt nå den fulla potentialen i kontakt med kunder. 
-
-- Hur fungerar gränssnitten mot era affärssystem? Zowgle kan användas som en portal mot omvärlden där t ex fakturor eller order kan läggs upp. Allt som krävs är sedan att hämta denna information från vårt API till era system.
-
-Givetvis finns också andra möjligheter. Tveka inte att kontakta oss om ni har idéer till egna tillämpningar. 
-
+                    <p>Ditt företag kommunicerar med omvärlden på massor av olika sätt. Vi tror att en del av denna kommunikationen fungerar utmärkt men att det finns potential att förbättra andra delar.</p>
+                    <p>Zowgle är en digital hub där ditt företag kan strukturera och effektivisera den kommunikation som idag inte når sin fulla potential.</p>   
+                    <p>För att hjälpa dig att lyckas har vi skapat ett flexibelt verktyg för kommunikation. Hur du använder detta är givetvis upp till dig men vi har följande idéer:</p>
+                    <p>- Hur ser din kuntjänst ut idag? Vi tror att Zowgle passar utmärkt för att effektivisera arbetet och framförallt nå den fulla potentialen i kontakt med kunder.</p> 
+                    <p>- Hur fungerar gränssnitten mot era affärssystem? Zowgle kan användas som en portal mot omvärlden där t ex fakturor eller order kan läggs upp. Allt som krävs är sedan att hämta denna information från vårt API till era system.</p>
+                    <p>Givetvis finns också andra möjligheter. Tveka inte att kontakta oss om ni har idéer till egna tillämpningar.</p> 
                 </div>
             </div>
             <div class="firstpagehead-customers">
