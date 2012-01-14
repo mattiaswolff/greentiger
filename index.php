@@ -46,7 +46,7 @@
             </nav>
             <section id="navbar"></section>
         </div>
-        <div class = "container">
+        <div class = "firstpage">
             <div class="firstpage-head">
                 <div class="firstpage-head-text">
                     <h1>Ta tillvara på det fulla värdet av Ert företags kommunikation. Har ditt företag råd att inte haka på?!</h1>
@@ -159,6 +159,5 @@
         });
         });  
     </script>
-    <?php include $page_header; ?>
 </body>
 </html>
