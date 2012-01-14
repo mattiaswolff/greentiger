@@ -18,7 +18,8 @@ class User {
         if ($strUserId != null) {
             $m = new Mongo();
             $db = $m->projectcopperfield;
-            $arrResults = $db->users->findOne(array('$or' => array(array('_id' => new MongoId($strUserId)), array('urlName' => $strUserId))));
+            $objUserId = $this->getCorrectId($strUserId);
+            $arrResults = $db->users->findOne(array('_id' => $objUserId));
             $this->_id = $arrResults['_id'];
             $this->name = $arrResults['name'];
             $this->urlName = $arrResults['urlName'];
@@ -74,7 +75,10 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         if ($arrObjectId != null) {
-            $objResults = $db->users->find(array('$or' => array(array('_id' => new MongoId($strUserId)), array('urlName' => $strUserId))));
+            foreach ($arrObjectId as $var) {
+                $objUserId = $this->getCorrectId($var);    
+            }
+            $objResults = $db->users->find(array('_id' => $objUserId));
         }
         else {
             $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
@@ -159,6 +163,14 @@ class User {
         $db = $m->projectcopperfield;   
         $arrResults = $db->users->findOne(array("email" => $strEmail));
         return $arrResults["_id"];
+    }
+    
+    function getCorrectId($strUserId) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;   
+        $arrResults = $db->users->findOne(array('$or' => array(array('_id' => new MongoId($strUserId)), array('urlName' => $strUserId))));
+        $objResult = new MongoId($arrResults["_id"]);
+        return $objResult;
     }
     
      function setGravatar($s = 80, $d = 'mm', $r = 'pg', $img = false, $atts = array() ) {
