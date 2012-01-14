@@ -76,9 +76,9 @@ class User {
         $db = $m->projectcopperfield;
         if ($arrObjectId != null) {
             foreach ($arrObjectId as $var) {
-                $objUserId = $this->getCorrectId($var);    
+                $arrUserId[] = $this->getCorrectId($var);    
             }
-            $objResults = $db->users->find(array('_id' => $objUserId));
+            $objResults = $db->users->find(array('_id' => $arrUserId));
         }
         else {
             $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
