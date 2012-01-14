@@ -69,7 +69,7 @@ switch($data->getMethod()) {
             if ($strPart == '') {
             $objUser->setEmail($arrRequestVars["email"]);
             $objUser->setName($arrRequestVars["name"]);
-            $objUser->setUrlName("test");
+            $objUser->setUrlName($arrRequestVars["urlName"]);
             $objUser->setUrl($arrRequestVars["url"]);
             $objUser->setImgUrl($arrRequestVars["imgUrl"]);
             $objUser->setDescription($arrRequestVars["description"]);
