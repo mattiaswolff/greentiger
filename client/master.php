@@ -88,6 +88,7 @@
                         window.sessionStorage.setItem("userName", json.name);
                         window.sessionStorage.setItem("userEmail", json.email);
                         window.sessionStorage.setItem("userUrl", json.url);
+                        window.sessionStorage.setItem("urlName", json.urlName);
                         window.sessionStorage.setItem("userImgUrl", json.imgUrl);
                         window.sessionStorage.setItem("userDescription", json.description);
                         window.sessionStorage.setItem("access_token", strAccessToken);
@@ -137,10 +138,10 @@
             if (!(window.sessionStorage.getItem("userId") === null)) {
                 window.google.identitytoolkit.showSavedAccount(window.sessionStorage.getItem("userEmail"));
                 $(".top > nav").removeClass("invisible"); 
-                $(".top > nav > #a_home").attr('href', getUrlBase(window.sessionStorage.getItem("userId")));
-                $(".top > nav > #a_definition").attr('href', getUrlBase(window.sessionStorage.getItem("userId") + "/definitions"));
-                $(".top > nav > #a_profile").attr('href', getUrlBase(window.sessionStorage.getItem("userId") + "/profile"));
-                $(".top > nav > #a_extensions").attr('href', getUrlBase(window.sessionStorage.getItem("userId") + "/extensions"));
+                $(".top > nav > #a_home").attr('href', getUrlBase(window.sessionStorage.getItem("urlName")));
+                $(".top > nav > #a_definition").attr('href', getUrlBase(window.sessionStorage.getItem("urlName") + "/definitions"));
+                $(".top > nav > #a_profile").attr('href', getUrlBase(window.sessionStorage.getItem("urlName") + "/profile"));
+                $(".top > nav > #a_extensions").attr('href', getUrlBase(window.sessionStorage.getItem("urlName") + "/extensions"));
             }
         $("#navbar").delegate(".red", "click", function(){
                 sessionStorage.clear();
