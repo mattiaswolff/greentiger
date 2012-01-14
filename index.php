@@ -170,6 +170,7 @@
                 }]
             });
             $("#navbar").accountChooser(); 
+            $('span.button').click(function() {$('#navbar').accountChooser('showAccountChooser')});
             if (!(window.sessionStorage.getItem("userId") === null)) {
                 window.google.identitytoolkit.showSavedAccount(window.sessionStorage.getItem("userEmail"));
                 $(".top > nav").removeClass("invisible"); 
