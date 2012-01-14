@@ -8,10 +8,10 @@
                 $data[$key] = $var;
         }
         if ($data["userId"]) {
-            echo '<title>' . $data["userId"] . ' | Zowgle</title>';
+            echo '<title>' . $data["userName"] . ' | Zowgle - Engage your online business community!</title>';
         }
         else {
-            echo '<title>Zowgle</title>';
+            echo '<title>Zowgle - Engage your online business community!</title>';
         }
     ?>
     <meta name="description" content="This is a description that is used to describe the content of this web page">
