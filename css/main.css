@@ -490,10 +490,13 @@ div.search-btn {
 .firstpagehead-functionality-usp ul li {
     background-image: url('http://unbouncepages-com.s3.amazonaws.com/signup.zowgle.com/sign-up-sv/bullet-arrow-green.original.png');
     background-repeat: no-repeat;
-    background-position: 0 0.6em;
+    background-position: 0 1em;
     padding-left: 4em;
+    padding-top: 1px;
 }
-.firstpagehead-functionality-description {}
+.firstpagehead-functionality-description {
+    padding-top: 13px;
+}
 .firstpagehead-customers {
     clear: both;
 }
