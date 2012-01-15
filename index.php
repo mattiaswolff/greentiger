@@ -66,7 +66,7 @@
             <div class="firstpagehead-functionality">
                 <div class="firstpagehead-functionality-usp">
                     <ul>
-                        <li><h3>Easy to get started</h3><p>Zowgle is developed to be easy and intuitive to our users. 5 minutes is enough to be up and running!</p></li>
+                        <li><h3>Easy to get started</h3><p>Zowgle is easy and intuitive to use. 5 minutes is enough to be up and running! Look into <a href="http://www.youtube.com">Zowgle at youtube</a> for tips and tricks.</p></li>
                         <li><h3>Flexible to fit your needs</h3><p>We embrace the uniqueness of every business. Create your own definitions to manage your specific processes.</p></li>
                         <li><h3>Integrated with social media</h3><p>Zowgle can help you leverage the power of Social media. Connect communication with <a href="http://www.facebook.com">Facebook</a>, <a href="http://www.twitter.com">Twitter</a> and <a href="http://plus.google.com">Google+.</a></p></li>
                         <li><h3>Open source extensions and public API</h3><p>We want to enable our users to make the most out of Zowgle. Use our extensions, modify them yourself or develop something completly new.</p></li>
