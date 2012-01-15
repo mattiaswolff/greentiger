@@ -55,7 +55,7 @@
                 </div>
                 <div class="firstpage-head-text">
                     <h1>Engage your online business community! Use Zowgle to get the most out of each interaction.</h1>
-                    <h2>Zowgle streamline and organize your processes bringing you you closer to customers, suppliers, partners and other stakeholders.</h2>
+                    <h2>Zowgle is a web service that streamline and organize your processes. We want to bring you closer to your customers, suppliers, partners and other stakeholders.</h2>
                 </div>
                 <div class="clear"></div>
             </div>
