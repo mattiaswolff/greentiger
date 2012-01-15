@@ -10,7 +10,7 @@
         if ($data["userId"]) {
             require "../classes/user.php";
             $objUser = new User($data["userId"]);
-            echo '<title>' . $objUser->getName() . ' | Zowgle - Engage your online business community!</title>';
+            echo '<title>' . $objUser->getName() . ' - Zowgle</title>';
             echo '<meta name="description" content="' . $objUser->getDescription() . '" />';
         }
         else {
