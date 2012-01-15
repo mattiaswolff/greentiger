@@ -4,14 +4,10 @@
         <div class="ctsk-desc"></div>
         <section class="clear"></section>
         <div class="crt-post">
-            <div class="crt-post-userinfo">
-                <input type="text" class="invisible" name="createUserId" />
-                <input type="text" name="createUserName" required placeholder="Name" />
-                <input type="email" name="createUserEmail" required placeholder="Email" />
-            </div>
-            <div class="crt-post-buttons">
-                <input class="button green" type="submit" name="POST" value="Post" />
-            </div>
+            <input type="text" class="invisible" name="createUserId" />
+            <input type="text" name="createUserName" required placeholder="Name" />
+            <input type="email" name="createUserEmail" required placeholder="Email" />
+            <input class="button green" type="submit" name="POST" value="Post" />
         </div>
         <div class="clear"></div>
     </form>
