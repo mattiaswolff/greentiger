@@ -483,7 +483,15 @@ div.search-btn {
     margin-right: 40px;
 }
 .firstpagehead-functionality-usp ul {
-    list-style-image: url('https://lh6.googleusercontent.com/-x2cURw-VKMg/TxIJ6U4WmwI/AAAAAAAAAIw/c5pj9Nc6of0/w353-h287-k/bullet-arrow-green.original.png');
+    list-style-type: none;
+    padding: 0;
+    margin-left: 1em;
+}
+.firstpagehead-functionality-usp ul li {
+    background-image: url('http://unbouncepages-com.s3.amazonaws.com/signup.zowgle.com/sign-up-sv/bullet-arrow-green.original.png');
+    background-repeat: no-repeat;
+    background-position: 0 0.6em;
+    padding-left: 4em;
 }
 .firstpagehead-functionality-description {}
 .firstpagehead-customers {
