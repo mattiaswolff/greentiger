@@ -66,11 +66,11 @@
             <div class="firstpagehead-functionality">
                 <div class="firstpagehead-functionality-usp">
                     <ul>
-                        <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
-                        <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
-                        <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
-                        <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
-                        <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
+                        <li><h3>Easy to get started</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
+                        <li><h3>Flexible to fit your needs</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
+                        <li><h3>Integrated with social media</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
+                        <li><h3>Open source extensions and public API</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
+                        <li><h3></h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
                     </ul>
                     <p class="firstpage-moreInfo"><a href="http://www.zowgle.com/features">Additional features...</a></p>
                 </div>
