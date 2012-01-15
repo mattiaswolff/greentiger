@@ -505,3 +505,6 @@ div.search-btn {
 .firstpagehead-customers ul {
     list-style: none;
 }
+.firstpagehead-moreInfo {
+    text-align: right;
+}
