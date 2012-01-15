@@ -195,8 +195,8 @@ section.createTask .description {
     color: #000000;
 }
 .button.blue {
-    background: none repeat scroll 0 0 #FF9E00;
-    border: 1px solid #CC7E00;
+    background: #009ECE;
+    border: 1px solid #007599;
     color: #FFFFFF;
 }
 .button.darkBlue {
@@ -210,10 +210,16 @@ section.createTask .description {
     color: #FFFFFF;
 }
 .button.green {
-    background: none repeat scroll 0 0 #009ECE;
-    border: 1px solid #0089B3;
+    background: #9CCF31;
+    border: 1px solid #7DA527;
     color: #FFFFFF;
 }
+.button.orange {
+    background: #FF9E00;
+    border: 1px solid #CC7E00;
+    color: #FFFFFF;
+}
+
 .button.rounded {
     border-radius: 3px 3px 3px 3px;
 }
@@ -242,6 +248,7 @@ height: 60px;
 font-size: 24px;}
 form .button {
     float: right;
+    font-weight: bolder;
 }
 input.search {
     float: right;
