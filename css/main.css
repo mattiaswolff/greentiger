@@ -157,10 +157,7 @@ textarea.small {
 input:focus:invalid {
     background: none repeat scroll 0 0 red;
 }
-input.search {
-}
-.createTask form {
-}
+
 section.createTask .description {
     margin-bottom: 10px;
     padding: 5px;
@@ -175,12 +172,7 @@ section.createTask .description {
     display: none;
 }
 .crt-post-userinfo input.invisible {display:none;}
-form.task div.header {
-}
-form.task article {
-}
-form.task > section {
-}
+
 .button {
     border-color: #CCCCCC #BBBBBB #999999;
     border-style: solid;
@@ -346,7 +338,7 @@ li.horizontal {
     display: inline-block;
     margin: 0.3em 0.8em 0.3em 0;
 }
-.ctsk form {
+form {
     background-color: hsl(0, 0%, 85%);
     border: 1px solid hsl(0, 0%, 70%);
     padding: 0;
@@ -395,11 +387,6 @@ li.horizontal {
     padding-right: 0.5em;
 }
 
-.edef {
-    background-color: #CCDAFF;
-border: 1px solid #B3C7FF;
-padding: 0.5em;
-width: 100%;}
 .edef .edef-row {
     border-top: 2px solid #B3C7FF;
     margin-top: 1em;
