@@ -60,7 +60,7 @@
             </div>
             <div class="firstpagehead-action">
                 <span class="button cta rounded blue">Register now for 1 month free trial!</span>
-                <p class=".firstpage-moreInfo"><a href="http://www.zowgle.com/pricing">More on pricing...</a></p>
+                <p class="firstpage-moreInfo"><a href="http://www.zowgle.com/pricing">More on pricing...</a></p>
             </div>
             <div class="firstpagehead-functionality">
                 <div class="firstpagehead-functionality-usp">
@@ -71,7 +71,7 @@
                         <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
                         <li><h3>Enkelt att komma igång och använda</h3><p>Vi har byggt Zowgle för att vara enkelt och intuitivt att använda. Ge tjänsten 15 minuter och den är klar att användas!</p></li>
                     </ul>
-                    <p class=".firstpage-moreInfo"><a href="http://www.zowgle.com/features">Additional features...</a></p>
+                    <p class="firstpage-moreInfo"><a href="http://www.zowgle.com/features">Additional features...</a></p>
                 </div>
                 <div class="firstpagehead-functionality-description">
                     <h3>Beskrivning</h3>
@@ -81,7 +81,7 @@
                     <p>- Hur ser din kuntjänst ut idag? Vi tror att Zowgle passar utmärkt för att effektivisera arbetet och framförallt nå den fulla potentialen i kontakt med kunder.</p> 
                     <p>- Hur fungerar gränssnitten mot era affärssystem? Zowgle kan användas som en portal mot omvärlden där t ex fakturor eller order kan läggs upp. Allt som krävs är sedan att hämta denna information från vårt API till era system.</p>
                     <p>Givetvis finns också andra möjligheter. Tveka inte att kontakta oss om ni har idéer till egna tillämpningar.</p> 
-                    <p class=".firstpage-moreInfo"><a href="http://blog.zowgle.com/">Read more in our blog...</a></p>
+                    <p class="firstpage-moreInfo"><a href="http://blog.zowgle.com/">Read more in our blog...</a></p>
                 </div>
             </div>
             <div class="firstpagehead-customers">
