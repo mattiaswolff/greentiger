@@ -99,7 +99,7 @@ function getTaskFlow (strUserId, strAccessToken, boolEmpty, strSearch) {
                 arrHtml.push('<div class="comment clear"><div class="com-img"><a href="' + getUrlClient("dashboard.php?userId=" + value1.userId) + '">' + '<img src="' + getUrlApi("users/" + value1.userId + "?part=image") + '" width="32" height="32" /></a></div><div><a href="' + getUrlClient("dashboard.php?userId=" + value1.userId) + '">' + value1.userName + '</a> <span class="vague">' + formatDateOutput(parseISO8601(value1.date)) + '</span></div><div class="com-text"> ' + nl2br(value1.text) + '</div></div>');
             });
             if (!(window.sessionStorage.getItem("userId") === null)) {
-            arrHtml.push('<div><input class="invisible" type="text" name="comments.userId" value="'+ window.sessionStorage.getItem("userId") +'" /><textarea class="small" name="comments.text" value="" placeholder="Write a comment..."></textarea><div class="com-buttons"><input class="button blue" type="submit"/></div><div class="clear"></div></form>');
+            arrHtml.push('<div><input class="invisible" type="text" name="comments.userId" value="'+ window.sessionStorage.getItem("userId") +'" /><textarea class="small" name="comments.text" value="" placeholder="Write a comment..."></textarea><div class="com-buttons"><input class="orange blue" type="submit"/></div><div class="clear"></div></form>');
             }
             arrHtml.push('</div></div><div class="left"><a href="' + getUrlClient("dashboard.php?userId=" + value.createdBy._id.$id) +'"><img src="' + getUrlApi("users/" + value.createdBy._id.$id + "?part=image") + '" width="50" height="50" /></a></div><div class="clear" /></article>');
         });
