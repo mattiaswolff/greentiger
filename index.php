@@ -54,7 +54,7 @@
                     <iframe width="426" height="254" src="https://www.youtube.com/embed/cfOa1a8hYP8?wmode=opaque&rel=0&border=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="firstpage-head-text">
-                    <h1>Engage your online business community! Our goal is to help you get the most out of each interaction.</h1>
+                    <h1>Engage your online business community! Use Zowgle to get the most out of each interaction.</h1>
                     <h2>Zowgle streamline and organize your processes bringing you you closer to customers, suppliers, partners and other stakeholders.</h2>
                 </div>
                 <div class="clear"></div>
