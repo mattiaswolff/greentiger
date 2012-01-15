@@ -60,6 +60,7 @@
             </div>
             <div class="firstpagehead-action">
                 <span class="button cta rounded blue">Register now for 1 month free trial!</span>
+                <p><a href="http://www.zowgle.com/pricing">More about pricing...</a></p>
             </div>
             <div class="firstpagehead-functionality">
                 <div class="firstpagehead-functionality-usp">
