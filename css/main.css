@@ -183,7 +183,7 @@ section.createTask .description {
     font-size: 13px;
     margin: 0.9px;
     min-width: 80px;
-    padding: 5px;
+    padding: 7px;
     text-align: center;
 }
 .button.shiny {
@@ -242,7 +242,6 @@ height: 60px;
 font-size: 24px;}
 form .button {
     float: right;
-    margin-top: 0.5em;
 }
 input.search {
     float: right;
@@ -363,8 +362,8 @@ form {
 }
 
 .crt-post {
-    padding-right: 120px;
     width: 100%;
+    padding: 1.5em 0.5em;
 }
 .crt-post-userinfo {
     position: relative;
@@ -491,4 +490,10 @@ div.search-btn {
 }
 .firstpage-moreInfo {
     text-align: right;
+}
+
+.crt-post input[type="text"] {
+    width: 35%;
+float: left;
+margin-right: 1em;
 }
