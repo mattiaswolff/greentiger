@@ -129,7 +129,7 @@ th {
     padding: 0 3px;
 }
 input, textarea, select {
-    border-color: #BFBFBF hsl(0, 0%, 67%) #999;
+    border-color: #CCC #A6A6A6 hsl(0, 0%, 50%);
     border-style: solid;
     border-width: 1px;
     font: 17px arial,sans-serif;
