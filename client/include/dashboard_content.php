@@ -5,7 +5,7 @@
         <section class="clear"></section>
         <div class="crt-post">
             <input type="text" class="invisible" name="createUserId" />
-            <input class="button green" type="submit" name="POST" value="Post" />
+            <input class="button orange" type="submit" name="POST" value="Post" />
             <input type="text" name="createUserName" required placeholder="Name" />
             <input type="email" name="createUserEmail" required placeholder="Email" />
             
