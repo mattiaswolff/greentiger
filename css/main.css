@@ -347,8 +347,8 @@ li.horizontal {
     margin: 0.3em 0.8em 0.3em 0;
 }
 .ctsk form {
-    background-color: #CCDAFF;
-    border: 1px solid #B3C7FF;
+    background-color: hsl(0, 0%, 85%);
+    border: 1px solid hsl(0, 0%, 70%);
     padding: 0;
     width: 100%;
 }
