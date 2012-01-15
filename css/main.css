@@ -137,6 +137,7 @@ input, textarea, select {
     padding: 0.3em;
     vertical-align: middle;
     width: 100%;
+    background: hsl(0, 0%, 98%);
 }
 textarea {overflow: auto; height: 5em
 }
@@ -345,11 +346,12 @@ form {
     width: 100%;
 }
 .ctsk div.ctsk-desc {
-    background: none repeat scroll 0 0 snow;
-    border-bottom: 1px solid #CCCCCC;
+    background: none repeat scroll 0 0 hsl(0, 0%, 97%);
+    border: 1px solid gray;
     color: #1A1A1A;
     font: italic 17px arial,sans-serif;
     padding: 0.5em;
+    margin-bottom: 1em;
 }
 .ctsk form.ctsk-task div.header {
     margin: 0.4em 0;
@@ -365,7 +367,6 @@ form {
 }
 
 .crt-post {
-    padding: 0.5em;
     padding-right: 120px;
     width: 100%;
 }
