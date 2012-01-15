@@ -60,7 +60,7 @@
                 <div class="clear"></div>
             </div>
             <div class="firstpagehead-action">
-                <span class="button cta rounded orange">30 Days Free Trial on All Accounts!</span>
+                <span class="button cta rounded orange">Click <span>Now</span> for 30 Days Free Trial!</span>
                 <p class="firstpage-moreInfo"><a href="http://www.zowgle.com/pricing">More on pricing...</a></p>
             </div>
             <div class="firstpagehead-functionality">
