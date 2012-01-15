@@ -341,7 +341,7 @@ li.horizontal {
 form {
     background-color: hsl(0, 0%, 85%);
     border: 1px solid hsl(0, 0%, 70%);
-    padding: 0;
+    padding: 0.5em;
     width: 100%;
 }
 .ctsk div.ctsk-desc {
@@ -388,7 +388,7 @@ form {
 }
 
 .edef .edef-row {
-    border-top: 2px solid #B3C7FF;
+    border-top: 3px solid grey;
     margin-top: 1em;
     padding-top: 1em;
 }
@@ -419,7 +419,7 @@ float: right;
     margin-top: 0.5em;}
 
 .edef > .buttons {clear: both;
-border-top: 2px solid #B3C7FF;
+border-top: 3px solid hsl(0, 0%, 50%);
 margin-top: 1em;
 padding-top: 0.5em;}
 .iusr-url {
