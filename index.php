@@ -15,6 +15,7 @@
         }
         else {
             echo '<title>Zowgle - Engage your online business community!</title>';
+            echo '<meta name="description" content="Engage your online business community! Zowgle brings you closer to customers, suppliers, partners and other stakeholders in a structured and efficient way. Our goal is to help you get the most out of each interaction." />';
         }
     ?>
     <meta name="keyword" content="" />
