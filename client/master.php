@@ -139,7 +139,8 @@
             $("#navbar").accountChooser(); 
             if (!(window.sessionStorage.getItem("userId") === null)) {
                 window.google.identitytoolkit.showSavedAccount(window.sessionStorage.getItem("userEmail"));
-                $(".top > nav").removeClass("invisible"); 
+                $(".top > nav").removeClass("invisible");
+                
                 $(".top > nav > #a_home").attr('href', getUrlBase(window.sessionStorage.getItem("urlName")));
                 $(".top > nav > #a_definition").attr('href', getUrlBase(window.sessionStorage.getItem("urlName") + "/definitions"));
                 $(".top > nav > #a_profile").attr('href', getUrlBase(window.sessionStorage.getItem("urlName") + "/profile"));
