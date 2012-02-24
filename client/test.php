@@ -81,11 +81,6 @@
         </div><!--/span-->
         <div class="span7">
           <div class="well">
-            <div class="btn-group">
-              <a class="btn" href="#">Error Report</a>
-              <a class="btn" href="#">Suggestions</a>
-              <a class="btn" href="#">Other</a>
-            </div>
             <form class="form-horizontal">
               <legend>Legend text</legend>
               <fieldset>
