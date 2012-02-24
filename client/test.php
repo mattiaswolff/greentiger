@@ -81,6 +81,11 @@
         </div><!--/span-->
         <div class="span7">
           <div class="hero-unit">
+            <div class="btn-group">
+              <a class="btn" href="#">Error Report</a>
+              <a class="btn" href="#">Suggestions</a>
+              <a class="btn" href="#">Other</a>
+            </div>
             <form class="form-horizontal">
               <fieldset>
                 <legend>Error report</legend>
