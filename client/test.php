@@ -81,15 +81,20 @@
         </div><!--/span-->
         <div class="span7">
           <div class="hero-unit">
-            <h1>Hello, world!</h1>
             <form class="form-horizontal">
               <fieldset>
-                <legend>Legend text</legend>
+                <legend>Error report</legend>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
                   <div class="controls">
                     <input type="text" class="input-xlarge" id="input01">
                     <p class="help-block">Supporting help text</p>
+                  </div>
+                </div>
+                <div class="control-group warning">
+                  <label class="control-label" for="input02">Text input</label>
+                  <div class="controls">
+                    <textarea class="input-xlarge" id="input02"></textarea>
                   </div>
                 </div>
               </fieldset>
