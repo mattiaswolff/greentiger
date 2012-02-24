@@ -82,8 +82,18 @@
         <div class="span7">
           <div class="hero-unit">
             <h1>Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+            <form class="form-horizontal">
+              <fieldset>
+                <legend>Legend text</legend>
+                <div class="control-group">
+                  <label class="control-label" for="input01">Text input</label>
+                  <div class="controls">
+                    <input type="text" class="input-xlarge" id="input01">
+                    <p class="help-block">Supporting help text</p>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
           </div>
           <div class="row-fluid">
             <div class="span12">
