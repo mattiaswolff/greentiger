@@ -80,7 +80,7 @@
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span7">
-          <div class="hero-unit">
+          <div class="well">
             <div class="btn-group">
               <a class="btn" href="#">Error Report</a>
               <a class="btn" href="#">Suggestions</a>
