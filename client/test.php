@@ -88,7 +88,7 @@
                   <label class="control-label" for="input01">Text input</label>
                   <div class="controls">
                     <input type="text" class="input-xlarge" id="input01">
-                    <p class="help-block">Supporting help text</p>
+                    <p class="help-block">Please add information</p>
                   </div>
                 </div>
                 <div class="control-group warning">
