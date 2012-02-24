@@ -87,6 +87,7 @@
               <a class="btn" href="#">Other</a>
             </div>
             <form class="form-horizontal">
+              <legend>Legend text</legend>
               <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
