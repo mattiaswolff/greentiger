@@ -88,7 +88,6 @@
             </div>
             <form class="form-horizontal">
               <fieldset>
-                <legend>Error report</legend>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
                   <div class="controls">
