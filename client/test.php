@@ -62,6 +62,8 @@
             <a href="#" class="thumbnail">
               <img src="http://placehold.it/260x180" alt="">
             </a>
+            <h2>Mattias Wolff</h2>
+            <p>lsdfkj lasjf lasjf lajf lajsdf lakjsdf lajsd flajsd lfja dslfjal djsflaj sfljalsfjals fjlajs flajsd lfjalsdfj lkjs dflajsd lfajsd lfj alsf las flajs dflajsd lfjals f</p>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span7">
@@ -97,17 +99,28 @@
             </div><!--/span-->
           </div><!--/row-->
           <div class="row-fluid">
-            <div class="span4">
+            <div class="span12">
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn" href="#">View details &raquo;</a></p>
             </div><!--/span-->
-            <div class="span4">
+          </div><!--/row-->
+          <div class="row-fluid">
+            <div class="span12">
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn" href="#">View details &raquo;</a></p>
             </div><!--/span-->
-            <div class="span4">
+          </div><!--/row-->
+          <div class="row-fluid">
+            <div class="span12">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+          </div><!--/row-->
+          <div class="row-fluid">
+            <div class="span12">
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn" href="#">View details &raquo;</a></p>
