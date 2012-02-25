@@ -180,9 +180,12 @@
             </div>
             <div class="modal-body">
               <form class="well">
-                <label>Label name</label>
+                <label>Title</label>
                 <input type="text" class="span3" placeholder="Type something…">
-                <span class="help-inline">Associated help text!</span>
+                <span class="help-inline">This is the title of the element!</span>
+                <label>Type</label>
+                <input type="text" class="span3" placeholder="Type something…">
+                <span class="help-inline">Choose input type</span>
                 <label class="checkbox"><input type="checkbox">Check me out</label>
                 <button type="submit" class="btn">Submit</button>
             </form>
