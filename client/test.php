@@ -111,7 +111,7 @@
                                 <textarea class="input-xlarge" id="input02a"></textarea>
                             </div>
                         </div>
-                        <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>
+                        <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button> <button class="btn">Cancel</button></div></fieldset></form>
                     </div>
                 </div>
             </div>
