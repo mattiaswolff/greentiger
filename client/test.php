@@ -73,7 +73,7 @@
             <h4 class="alert-heading">Warning!</h4>Best check yo self, you're not...
           </div>
           <div class="well">
-          <ul class="nav nav-tabs">
+          <ul class="nav nav-pills">
   <li class="active">
     <a href="#">Fråga oss</a>
   </li>
