@@ -208,7 +208,12 @@
                 arrHTML.push('<form class="form-horizontal"><fieldset>');
                 /* GET FORM FOR DEFINITION
                 * ============ */
-                $.getJSON(getUrlApi('definitions/' + value._id.$id), {access_token: strAccessToken},function(json) {
+                $.ajax({
+                type: "GET",
+                dataType: "json",
+                async: false,
+                url: getUrlApi('definitions/' + value._id.$id),
+                success: function(json) {
                     $.each(json.results[0].content, function(key, value) {
                         arrHTML.push('<label class="control-label" for="' + value.name + '">' + value.name + '</label>');
                         switch (value.type) {
