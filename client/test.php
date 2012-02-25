@@ -217,11 +217,38 @@
       $(document).ready(function(){
         $(".alert").alert();
         var strAccessToken = 'test';
+        
+         /* GET DEFINITIONS
+        * ============ */
         $.getJSON(getUrlApi('users/4f0c1ab5212602cc79000006'), {access_token: strAccessToken},function(json) {
             $.each(json.definitions, function(key, value) {
-                $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>'); 
+                $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
+                var strDefinitionId = value._id.$id;
+                $.getJSON(getUrlApi('defintions/' + value._id.$id), {access_token: strAccessToken},function(json) {
+                    $.each(json.results[0].content, function(key, value) {
+                        var arrHtml = new Array();
+                        arrHTML.push('<div class="tab-pane" id="' + strDefinitionId + '">');
+                        arrHTML.push('<label class="control-label" for="' + value.name + '">' + value.name + '</label>');
+                        switch (value.type) {
+                            case "text": case "email": case "url": case "date": case "time":
+                                arrHTML.push('<div class="controls"><input type="' value.type '" class="input-xlarge" id="' + value.name + '"><p class="help-block">' + value.description + '</p></div>'); 
+                                break;
+                            case "textarea":
+                                arrHTML.push('<div class="controls"><textarea class="input-xlarge" id="' + value.name + '"></textarea><p class="help-block">' + value.description + '</p></div>');
+                                break;
+                            case "dropdown":
+                                break;
+                            case "checkbox": case "radio":
+                                break;
+                            case "number": case "range":
+                                break;
+                        }
+                        $('.tab-content').append(arrHtml.join(""));
+                    });
+                }); 
             });
         });
+        
       });
     </script>
 
