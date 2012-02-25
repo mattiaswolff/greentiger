@@ -216,7 +216,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $(".alert").alert();
-        
+        var strAccessToken = 'test';
         $.getJSON(getUrlApi('users/4f0c1ab5212602cc79000006'), {access_token: strAccessToken},function(json) {
             $.each(json.definitions, function(key, value) {
                 $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>'); 
