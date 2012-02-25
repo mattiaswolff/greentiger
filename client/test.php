@@ -73,14 +73,15 @@
             <h4 class="alert-heading">Warning!</h4>Best check yo self, you're not...
           </div>
           <div class="well">
-            <div class="btn-group" data-toggle="buttons-radio">
-              <button class="btn">Fråga</button>
-              <button class="btn">Förslag</button>
-              <button class="btn">Problem</button>
-              <button class="btn">Beröm</button>
-            </div>
             <form class="form-horizontal">
-              <legend>Praise</legend>
+              <legend>
+                <div class="btn-group" data-toggle="buttons-radio">
+                  <button class="btn">Fråga</button>
+                  <button class="btn">Förslag</button>
+                  <button class="btn">Problem</button>
+                  <button class="btn">Beröm</button>
+                </div>
+              </legend>
               <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
