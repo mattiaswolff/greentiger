@@ -91,7 +91,7 @@
                                     <p class="help-block">Please add information</p>
                                 </div>
                             </div>
-                            <div class="control-group warning">
+                            <div class="control-group">
                                 <label class="control-label" for="input02">Text input</label>
                                 <div class="controls">
                                     <textarea class="input-xlarge" id="input02"></textarea>
@@ -106,7 +106,7 @@
                                     <p class="help-block">Please add information</p>
                                 </div>
                             </div>
-                            <div class="control-group warning">
+                            <div class="control-group">
                                 <label class="control-label" for="input02">Text input2</label>
                                 <div class="controls">
                                     <textarea class="input-xlarge" id="input02"></textarea>
