@@ -75,7 +75,7 @@
           <div>
             <div class="tabbable">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#1" data-toggle="tab">Fråga oss</a></li>
+                    <li class="active"><a href="#1" data-toggle="tab">Fråga oss</a><i class="icon-edit"></i></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="1">
