@@ -183,6 +183,9 @@
                 <label>Title</label>
                 <input type="text" class="span3" placeholder="Type something…">
                 <span class="help-inline">This is the title of the element!</span>
+                <label>Help text</label>
+                <textarea id="select01"></textarea>
+                <span class="help-inline">Add help text to the element</span>
                 <label>Type</label>
                 <select id="select01">
                     <option>Text</option>
@@ -190,9 +193,8 @@
                     <option>Date</option>
                     <option>Other</option>
                 </select>
-                <label>Type</label>
-                <textarea id="select01"></textarea>
                 <span class="help-inline">Choose input type</span>
+                
                 <label class="checkbox"><input type="checkbox">Check me out</label>
                 <button type="submit" class="btn">Submit</button>
             </form>
