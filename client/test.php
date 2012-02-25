@@ -85,21 +85,33 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="1">
                             <div class="control-group">
-                  <label class="control-label" for="input01">Text input</label>
-                  <div class="controls">
-                    <input type="text" class="input-xlarge" id="input01">
-                    <p class="help-block">Please add information</p>
-                  </div>
-                </div>
-                <div class="control-group warning">
-                  <label class="control-label" for="input02">Text input</label>
-                  <div class="controls">
-                    <textarea class="input-xlarge" id="input02"></textarea>
-                  </div>
-                </div>
+                                <label class="control-label" for="input01">Text input</label>
+                                <div class="controls">
+                                    <input type="text" class="input-xlarge" id="input01">
+                                    <p class="help-block">Please add information</p>
+                                </div>
+                            </div>
+                            <div class="control-group warning">
+                                <label class="control-label" for="input02">Text input</label>
+                                <div class="controls">
+                                    <textarea class="input-xlarge" id="input02"></textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-pane" id="2">
-                            <p>Howdy, I'm in Section 2.</p>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">Text input2</label>
+                                <div class="controls">
+                                    <input type="text" class="input-xlarge" id="input01">
+                                    <p class="help-block">Please add information</p>
+                                </div>
+                            </div>
+                            <div class="control-group warning">
+                                <label class="control-label" for="input02">Text input2</label>
+                                <div class="controls">
+                                    <textarea class="input-xlarge" id="input02"></textarea>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
