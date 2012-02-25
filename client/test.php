@@ -74,10 +74,10 @@
           </div>
           <div class="well">
             <form class="form-horizontal">
-                  <button class="btn-info" data-toggle="button">Fråga</button>
-                  <button class="btn-info" data-toggle="button">Förslag</button>
-                  <button class="btn-info" data-toggle="button">Beröm</button>
-                  <button class="btn-info" data-toggle="button">Förslag</button>
+                  <button class="btn btn-info" data-toggle="button">Fråga</button>
+                  <button class="btn btn-info" data-toggle="button">Förslag</button>
+                  <button class="btn btn-info" data-toggle="button">Beröm</button>
+                  <button class="btn btn-info" data-toggle="button">Förslag</button>
               <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
