@@ -202,6 +202,7 @@
       $(document).ready(function(){
         $(".alert").alert();
         $('.tabs').button();
+        $().button('toggle')
       });
     </script>
 
