@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="input02">Text area</label>
+                            <label class="control-label" for="input02"><i class="icon-edit" data-toggle="modal" href="#myModal"></i>   Text area</label>
                             <div class="controls">
                                 <textarea class="input-xlarge" id="input02"></textarea>
                             </div>
@@ -248,7 +248,7 @@
                 url: getUrlApi('definitions/' + value._id.$id),
                 success: function(json) {
                     $.each(json.results[0].content, function(key, value) {
-                        arrHTML.push('<label class="control-label" for="' + value.name + '">' + value.name + '</label>');
+                        arrHTML.push('<label class="control-label" for="' + value.name + '"><i class="icon-edit" data-toggle="modal" href="#myModal"></i>   ' + value.name + '</label>');
                         switch (value.type) {
                             case "text": case "email": case "url": case "date": case "time":
                                 arrHTML.push('<div class="controls"><input type="' + value.type + '" class="input-xlarge" id="' + value.name + '"><p class="help-block">' + value.description + '</p></div>'); 
