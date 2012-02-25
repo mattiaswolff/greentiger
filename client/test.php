@@ -166,13 +166,7 @@
           </div><!--/row-->
         </div><!--/span-->
         <div class="span2">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Definitions</li>
-              <li class="active"><a href="#">Praise</a></li>
-              <li><a href="#">Problem</a></li>
-              <li><a href="#">Other</a></li>
-            </ul>
+          <div class="well">
           </div><!--/.well -->
         </div>
       </div><!--/row-->
