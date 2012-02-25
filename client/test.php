@@ -74,6 +74,8 @@
           </div>
           <div class="well">
             <form class="form-horizontal">
+              <button class="btn" data-toggle="button">Single Toggle</button>
+              <button class="btn" data-toggle="button">Single Toggle</button>    
                 <div class="btn-group" data-toggle="buttons-radio">
                   <button class="btn">Fråga</button>
                   <button class="btn">Förslag</button>
