@@ -275,8 +275,8 @@
         * ============ */
         $("body").delegate(".icon-edit", "click", function(event) {
           $("#title").attr("value", "Test");
-          $("#description").attr("value", "Textarea");
-          $("#type").attr("value", "Test");
+          $("#description").attr("value", "Helptext");
+          $("#type").attr("value", "Textarea");
           $("#config").attr("value", "Test");
         });
       });
