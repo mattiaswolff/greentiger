@@ -75,7 +75,7 @@
           <div>
             <div class="tabbable">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#1" data-toggle="tab"></li>
+                    <li class="active"><a href="#1" data-toggle="tab">Mall</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="1">
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="input02">Text input</label>
+                            <label class="control-label" for="input02">Text area</label>
                             <div class="controls">
                                 <textarea class="input-xlarge" id="input02"></textarea>
                             </div>
