@@ -99,7 +99,7 @@
                     <div class="tab-pane active" id="2">
                         <form class="form-horizontal"><fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="input02">(edit) Text input</label>
+                            <label class="control-label" for="input02">(<a class="btn" data-toggle="modal" href="#myModal" >edit</a>) Text input</label>
                             <div class="controls">
                                 <input type="text" class="input-xlarge" id="input02">
                                 <p class="help-block">Please add information</p>
@@ -190,6 +190,20 @@
       </footer>
 
     </div><!--/.fluid-container-->
+    
+    <div class="modal" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary">Save changes</a>
+    <a href="#" class="btn">Close</a>
+  </div>
+</div>
     
     <!-- Le javascript
     ================================================== -->
