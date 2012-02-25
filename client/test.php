@@ -68,6 +68,10 @@
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span7">
+          <div class="alert alert-block">
+            <a class="close" data-dismiss="alert">×</a>
+            <h4 class="alert-heading">Warning!</h4>Best check yo self, you're not...
+          </div>
           <div class="well">
             <form class="form-horizontal">
               <legend>Praise</legend>
