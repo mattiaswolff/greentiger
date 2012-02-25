@@ -73,13 +73,11 @@
             <h4 class="alert-heading">Warning!</h4>Best check yo self, you're not...
           </div>
           <div>
-            <form class="form-horizontal">
-              <fieldset>
-                <div class="tabbable">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#1" data-toggle="tab">Fråga oss</a></li>
-                    </ul>
-                    <div class="tab-content">
+            <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#1" data-toggle="tab">Fråga oss</a></li>
+                </ul>
+                <div class="tab-content">
                         <div class="tab-pane active" id="1">
                             <div class="control-group">
                                 <label class="control-label" for="input01">Text input</label>
@@ -112,12 +110,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-actions">
-                  <button type="submit" class="btn btn-primary">Save changes</button>
-                  <button class="btn">Cancel</button>
-                </div>
-              </fieldset>
-            </form>
           </div>
           <div class="row-fluid">
             <div class="span2">
@@ -224,9 +216,13 @@
             $.each(json.definitions, function(key, value) {
                 $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
                 var strDefinitionId = value._id.$id;
+                
+                /* GET FORM FOR DEFINITION
+                * ============ */
                 $.getJSON(getUrlApi('definitions/' + value._id.$id), {access_token: strAccessToken},function(json) {
                     $.each(json.results[0].content, function(key, value) {
                         var arrHTML = new Array();
+                        arrHTML.push('<form class="form-horizontal"><fieldset>');
                         arrHTML.push('<div class="tab-pane" id="' + strDefinitionId + '">');
                         arrHTML.push('<label class="control-label" for="' + value.name + '">' + value.name + '</label>');
                         switch (value.type) {
@@ -243,6 +239,7 @@
                             case "number": case "range":
                                 break;
                         }
+                        arrHTML.push('<div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
                         $('.tab-content').append(arrHTML.join(""));
                     });
                 }); 
