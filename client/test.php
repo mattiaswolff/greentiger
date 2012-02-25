@@ -181,13 +181,13 @@
             <div class="modal-body">
               <form>
                 <label>Title</label>
-                <input type="text" placeholder="Type something…">
+                <input type="text" id="title" placeholder="Type something…">
                 <span class="help-inline">This is the title of the element!</span>
                 <label>Help text</label>
-                <textarea id="select01"></textarea>
+                <textarea id="description"></textarea>
                 <span class="help-inline">Add help text to the element</span>
                 <label>Type</label>
-                <select id="select01">
+                <select id="type">
                     <option>Text</option>
                     <option>Textarea</option>
                     <option>Date</option>
@@ -195,7 +195,7 @@
                 </select>
                 <span class="help-inline">Choose input type</span>
                 <label>Configuration</label>
-                <textarea id="select01"></textarea>
+                <textarea id="config"></textarea>
                 <span class="help-inline">Add configuration to the element</span>
                 <label class="checkbox"><input type="checkbox">Required?</label>
             </form>
@@ -271,6 +271,14 @@
             });
         });
         
+        /* EDIT DEFINITION FORM ROWS
+        * ============ */
+        $("body").delegate(".icon-edit", "click", function(event) {
+          $("#title").attr("value", "Test");
+          $("#description").attr("value", "Textarea");
+          $("#type").attr("value", "Test");
+          $("#config").attr("value", "Test");
+        });
       });
     </script>
 
