@@ -205,8 +205,8 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $(".alert").alert();
-        $('.tabs').button();
-        $().button('toggle')
+        $('#1').tab('show');
+        $('#2').tab('show');
       });
     </script>
 
