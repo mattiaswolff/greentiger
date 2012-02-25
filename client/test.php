@@ -191,7 +191,7 @@
 
     </div><!--/.fluid-container-->
     
-    <div id="myModal" class="modal hide fade in" style="display: block; ">
+    <div id="myModal" class="modal hide fade in">
             <div class="modal-header">
               <a class="close" data-dismiss="modal">×</a>
               <h3>Modal Heading</h3>
@@ -210,7 +210,7 @@
               <a href="#" class="btn btn-primary">Save changes</a>
               <a href="#" class="btn" data-dismiss="modal">Close</a>
             </div>
-          </div>
+    </div>
     
     <!-- Le javascript
     ================================================== -->
