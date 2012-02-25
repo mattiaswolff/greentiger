@@ -190,6 +190,8 @@
                     <option>Date</option>
                     <option>Other</option>
                 </select>
+                <label>Type</label>
+                <textarea id="select01"></textarea>
                 <span class="help-inline">Choose input type</span>
                 <label class="checkbox"><input type="checkbox">Check me out</label>
                 <button type="submit" class="btn">Submit</button>
