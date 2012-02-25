@@ -79,6 +79,7 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="1">
+                        <form><fieldset>
                         <div class="control-group">
                             <label class="control-label" for="input01">Text input</label>
                             <div class="controls">
@@ -92,6 +93,7 @@
                                 <textarea class="input-xlarge" id="input02"></textarea>
                             </div>
                         </div>
+                        <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>
                     </div>
                 </div>
             </div>
