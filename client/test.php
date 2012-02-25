@@ -77,10 +77,10 @@
               <fieldset>
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#1">Fråga oss</a></li>
-                        <li><a href="#2">Ge förslag</a></li>
-                        <li><a href="#3">Rapportera problem</a></li>
-                        <li><a href="#4">Ge beröm</a></li>
+                        <li class="active"><a href="#1" data-toggle="tab">Fråga oss</a></li>
+                        <li><a href="#2" data-toggle="tab">Ge förslag</a></li>
+                        <li><a href="#3" data-toggle="tab">Rapportera problem</a></li>
+                        <li><a href="#4" data-toggle="tab">Ge beröm</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="1">
