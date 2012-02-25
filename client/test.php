@@ -73,11 +73,15 @@
             <h4 class="alert-heading">Warning!</h4>Best check yo self, you're not...
           </div>
           <div class="well">
+          <ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#">Home</a>
+  </li>
+  <li><a href="#">...</a></li>
+  <li><a href="#">...</a></li>
+</ul>
             <form class="form-horizontal">
-                  <button class="btn btn-info" data-toggle="button">Fråga</button>
-                  <button class="btn btn-info" data-toggle="button">Förslag</button>
-                  <button class="btn btn-info" data-toggle="button">Beröm</button>
-                  <button class="btn btn-info" data-toggle="button">Förslag</button>
+              
               <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
