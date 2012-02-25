@@ -179,7 +179,7 @@
               <h3>Modal Heading</h3>
             </div>
             <div class="modal-body">
-              <form class="well">
+              <form>
                 <label>Title</label>
                 <input type="text" class="span3" placeholder="Type something…">
                 <span class="help-inline">This is the title of the element!</span>
@@ -198,7 +198,6 @@
                 <textarea id="select01"></textarea>
                 <span class="help-inline">Add configuration to the element</span>
                 <label class="checkbox"><input type="checkbox">Required?</label>
-                <button type="submit" class="btn">Submit</button>
             </form>
             </div>
             <div class="modal-footer">
