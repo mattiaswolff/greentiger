@@ -181,7 +181,7 @@
             <div class="modal-body">
               <form>
                 <label>Title</label>
-                <input type="text" class="span3" placeholder="Type something…">
+                <input type="text" placeholder="Type something…">
                 <span class="help-inline">This is the title of the element!</span>
                 <label>Help text</label>
                 <textarea id="select01"></textarea>
