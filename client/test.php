@@ -231,7 +231,7 @@
                         arrHTML.push('<label class="control-label" for="' + value.name + '">' + value.name + '</label>');
                         switch (value.type) {
                             case "text": case "email": case "url": case "date": case "time":
-                                arrHTML.push('<div class="controls"><input type="' value.type '" class="input-xlarge" id="' + value.name + '"><p class="help-block">' + value.description + '</p></div>'); 
+                                arrHTML.push('<div class="controls"><input type="' + value.type + '" class="input-xlarge" id="' + value.name + '"><p class="help-block">' + value.description + '</p></div>'); 
                                 break;
                             case "textarea":
                                 arrHTML.push('<div class="controls"><textarea class="input-xlarge" id="' + value.name + '"></textarea><p class="help-block">' + value.description + '</p></div>');
