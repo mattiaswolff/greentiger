@@ -226,7 +226,7 @@
                 var strDefinitionId = value._id.$id;
                 $.getJSON(getUrlApi('definitions/' + value._id.$id), {access_token: strAccessToken},function(json) {
                     $.each(json.results[0].content, function(key, value) {
-                        var arrHtml = new Array();
+                        var arrHTML = new Array();
                         arrHTML.push('<div class="tab-pane" id="' + strDefinitionId + '">');
                         arrHTML.push('<label class="control-label" for="' + value.name + '">' + value.name + '</label>');
                         switch (value.type) {
@@ -243,7 +243,7 @@
                             case "number": case "range":
                                 break;
                         }
-                        $('.tab-content').append(arrHtml.join(""));
+                        $('.tab-content').append(arrHTML.join(""));
                     });
                 }); 
             });
