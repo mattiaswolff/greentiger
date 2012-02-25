@@ -58,7 +58,7 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <div>
+          <div class="well">
             <a href="#" class="thumbnail">
               <img src="http://placehold.it/260x180" alt="">
             </a>
@@ -72,7 +72,7 @@
             <a class="close" data-dismiss="alert">×</a>
             <h4 class="alert-heading">Warning!</h4>Best check yo self, you're not...
           </div>
-          <div class="well">
+          <div>
           <ul class="nav nav-tabs">
   <li class="active">
     <a href="#">Fråga oss</a>
