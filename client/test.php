@@ -75,10 +75,11 @@
           <div class="well">
           <ul class="nav nav-tabs">
   <li class="active">
-    <a href="#">Home</a>
+    <a href="#">Fråga oss</a>
   </li>
-  <li><a href="#">...</a></li>
-  <li><a href="#">...</a></li>
+  <li><a href="#">Ge förslag</a></li>
+  <li><a href="#">Rapportera problem</a></li>
+  <li><a href="#">Ge beröm</a></li>
 </ul>
             <form class="form-horizontal">
               
