@@ -73,16 +73,22 @@
             <h4 class="alert-heading">Warning!</h4>Best check yo self, you're not...
           </div>
           <div>
-          <ul class="nav nav-tabs">
-  <li class="active">
-    <a href="#">Fråga oss</a>
-  </li>
-  <li><a href="#">Ge förslag</a></li>
-  <li><a href="#">Rapportera problem</a></li>
-  <li><a href="#">Ge beröm</a></li>
-</ul>
             <form class="form-horizontal">
-              
+              <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#1">Fråga oss</a></li>
+                    <li><a href="#2">Ge förslag</a></li>
+                    <li><a href="#3">Rapportera problem</a></li>
+                    <li><a href="#4">Ge beröm</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="1">
+                        <p>I'm in Section 1.</p>
+                    </div>
+                <div class="tab-pane" id="2">
+                    <p>Howdy, I'm in Section 2.</p>
+                </div>
+            </div>
               <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
