@@ -79,7 +79,7 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="1">
-                        <form><fieldset>
+                        <form class="form-horizontal"><fieldset>
                         <div class="control-group">
                             <label class="control-label" for="input01">Text input</label>
                             <div class="controls">
