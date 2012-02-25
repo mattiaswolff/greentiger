@@ -99,7 +99,7 @@
                     <div class="tab-pane active" id="2">
                         <form class="form-horizontal"><fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="input02">(<a class="btn" data-toggle="modal" href="#myModal" >edit</a>) Text input</label>
+                            <label class="control-label" for="input02">(<a data-toggle="modal" href="#myModal" >edit</a>) Text input</label>
                             <div class="controls">
                                 <input type="text" class="input-xlarge" id="input02">
                                 <p class="help-block">Please add information</p>
