@@ -81,7 +81,7 @@
                     <div class="tab-pane active" id="1">
                         <form class="form-horizontal"><fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="input01"><i class="icon-edit" data-toggle="modal" href="#myModal"></i>   Text input</label>
+                            <label class="control-label" for="input01"><i class="icon-edit" data-toggle="modal" href="#myModal"></i>   <span>Text input</span></label>
                             <div class="controls">
                                 <input type="text" class="input-xlarge" id="input01">
                                 <p class="help-block">Please add information</p>
@@ -274,8 +274,8 @@
         /* EDIT DEFINITION FORM ROWS
         * ============ */
         $("body").delegate(".icon-edit", "click", function(event) {
-          $("#title").attr("value", $(this).parents(".control-group").children(".controls").children("input").attr("value"));
-          $("#description").attr("value", $(this).parents(".control-group").children(".controls").children(".help-block").attr("value"));
+          $("#title").attr("value", $(this).parents(".control-label").children("span").text());
+          $("#description").attr("value", $(this).parents(".control-group").children(".controls").children(".help-block").text());
           if ($(this).parents(".control-group").children(".controls").children("input").size() == 1) {    
             $("#type").attr("value", $(this).parents(".control-group").children(".controls").children("input").attr("type"));
           }
