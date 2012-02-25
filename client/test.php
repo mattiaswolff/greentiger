@@ -78,9 +78,6 @@
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#1" data-toggle="tab">Fråga oss</a></li>
-                        <li><a href="#2" data-toggle="tab">Ge förslag</a></li>
-                        <li><a href="#3" data-toggle="tab">Rapportera problem</a></li>
-                        <li><a href="#4" data-toggle="tab">Ge beröm</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="1">
@@ -214,9 +211,17 @@
     <script src="../js/bootstrap-carousel.js"></script>
     <script src="../js/bootstrap-typeahead.js"></script>
     
+    <script src="../js/jquery.greentiger.js"></script>
+    
     <script type="text/javascript">
       $(document).ready(function(){
         $(".alert").alert();
+        
+        $.getJSON(getUrlApi('users/4f0c1ab5212602cc79000006'), {access_token: strAccessToken},function(json) {
+            $.each(json.definitions, function(key, value) {
+                $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>'); 
+            });
+        }
       });
     </script>
 
