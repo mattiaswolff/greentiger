@@ -75,13 +75,31 @@
           <div>
             <div class="tabbable">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#1" data-toggle="tab">Fråga oss</a></li>
+                    <li class="active"><a href="#1" data-toggle="tab"></li>
+                    <li class="active"><a href="#2" data-toggle="tab"></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="1">
                         <form class="form-horizontal"><fieldset>
                         <div class="control-group">
                             <label class="control-label" for="input01">Text input</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="input01">
+                                <p class="help-block">Please add information</p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="input02">Text input</label>
+                            <div class="controls">
+                                <textarea class="input-xlarge" id="input02"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>
+                    </div>
+                    <div class="tab-pane active" id="1">
+                        <form class="form-horizontal"><fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="input01"><input type="text" class="input-medium" id="input01-title"</label>
                             <div class="controls">
                                 <input type="text" class="input-xlarge" id="input01">
                                 <p class="help-block">Please add information</p>
