@@ -218,6 +218,7 @@
       $(document).ready(function(){
         $(".alert").alert();
         $('#1').tab('show');
+        $('#2').tab('show');
       });
     </script>
 
