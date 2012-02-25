@@ -180,9 +180,6 @@
             </div>
             <div class="modal-body">
               <form>
-                <label>Title</label>
-                <input type="text" id="title" placeholder="Type something…">
-                <span class="help-inline">This is the title of the element!</span>
                 <label>Help text</label>
                 <textarea id="description"></textarea>
                 <span class="help-inline">Add help text to the element</span>
@@ -274,7 +271,7 @@
         /* EDIT DEFINITION FORM ROWS
         * ============ */
         $("body").delegate(".icon-edit", "click", function(event) {
-          $("#title").attr("value", $(this).parents(".control-label").children("span").text());
+          $(".modal-header").children("h3").text("Edit " + $(this).parents(".control-label").children("span").text());
           $("#description").attr("value", $(this).parents(".control-group").children(".controls").children(".help-block").text());
           if ($(this).parents(".control-group").children(".controls").children("input").size() == 1) {    
             $("#type").attr("value", $(this).parents(".control-group").children(".controls").children("input").attr("type"));
