@@ -96,7 +96,7 @@
                         </div>
                         <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>
                     </div>
-                    <div class="tab-pane active" id="2">
+                    <div class="tab-pane" id="2">
                         <form class="form-horizontal"><fieldset>
                         <div class="control-group">
                             <label class="control-label" for="input01"><input type="text" class="input-medium" id="input01-title"</label>
