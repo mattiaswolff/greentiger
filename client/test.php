@@ -73,6 +73,11 @@
             <h4 class="alert-heading">Warning!</h4>Best check yo self, you're not...
           </div>
           <div class="well">
+            <div class="btn-group" data-toggle="buttons-radio">
+              <button class="btn">Left</button>
+              <button class="btn">Middle</button>
+              <button class="btn">Right</button>
+            </div>
             <form class="form-horizontal">
               <legend>Praise</legend>
               <fieldset>
@@ -197,6 +202,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $(".alert").alert();
+        $('.tabs').button();
       });
     </script>
 
