@@ -74,14 +74,10 @@
           </div>
           <div class="well">
             <form class="form-horizontal">
-              <button class="btn" data-toggle="button">Single Toggle</button>
-              <button class="btn" data-toggle="button">Single Toggle</button>    
-                <div class="btn-group" data-toggle="buttons-radio">
-                  <button class="btn">Fråga</button>
-                  <button class="btn">Förslag</button>
-                  <button class="btn">Problem</button>
-                  <button class="btn">Beröm</button>
-                </div>
+              <button class="btn" data-toggle="button">Fråga</button>
+              <button class="btn" data-toggle="button">Förslag</button>
+              <button class="btn" data-toggle="button">Beröm</button>
+              <button class="btn" data-toggle="button">Förslag</button>
                 <br/>
               <fieldset>
                 <div class="control-group">
