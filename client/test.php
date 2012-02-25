@@ -81,7 +81,7 @@
                     <div class="tab-pane active" id="1">
                         <form class="form-horizontal"><fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="input01">(<i class="icon-edit" data-toggle="modal" href="#myModal" />) Text input</label>
+                            <label class="control-label" for="input01">() Text input</label>
                             <div class="controls">
                                 <input type="text" class="input-xlarge" id="input01">
                                 <p class="help-block">Please add information</p>
