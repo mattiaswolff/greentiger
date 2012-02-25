@@ -74,14 +74,13 @@
           </div>
           <div class="well">
             <form class="form-horizontal">
-              <legend>
                 <div class="btn-group" data-toggle="buttons-radio">
                   <button class="btn">Fråga</button>
                   <button class="btn">Förslag</button>
                   <button class="btn">Problem</button>
                   <button class="btn">Beröm</button>
                 </div>
-              </legend>
+                <br/>
               <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
