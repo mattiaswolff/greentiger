@@ -221,7 +221,7 @@
             $.each(json.definitions, function(key, value) {
                 $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>'); 
             });
-        }
+        });
       });
     </script>
 
