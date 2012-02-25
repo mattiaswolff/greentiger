@@ -176,7 +176,7 @@
     <div id="myModal" class="modal hide fade in">
             <div class="modal-header">
               <a class="close" data-dismiss="modal">×</a>
-              <h3>Modal Heading</h3>
+              <h3>Edit form element</h3>
             </div>
             <div class="modal-body">
               <form>
