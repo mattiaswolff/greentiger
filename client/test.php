@@ -74,9 +74,10 @@
           </div>
           <div class="well">
             <div class="btn-group" data-toggle="buttons-radio">
-              <button class="btn">Left</button>
-              <button class="btn">Middle</button>
-              <button class="btn">Right</button>
+              <button class="btn">Fråga</button>
+              <button class="btn">Förslag</button>
+              <button class="btn">Problem</button>
+              <button class="btn">Beröm</button>
             </div>
             <form class="form-horizontal">
               <legend>Praise</legend>
