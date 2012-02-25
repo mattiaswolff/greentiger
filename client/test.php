@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="input02"><i class="icon-edit" data-toggle="modal" href="#myModal"></i>   Text area</label>
+                            <label class="control-label" for="input02"><i class="icon-edit" data-toggle="modal" href="#myModal"></i>   <span>Text area</span></label>
                             <div class="controls">
                                 <textarea class="input-xlarge" id="input02"></textarea>
                             </div>
