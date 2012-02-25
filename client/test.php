@@ -76,7 +76,7 @@
             <div class="tabbable">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#1" data-toggle="tab">Mall</a></li>
-                    <li class="active"><a href="#2" data-toggle="tab">Edit</a></li>
+                    <li><a href="#2" data-toggle="tab">Edit</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="1">
