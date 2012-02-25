@@ -58,7 +58,7 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
-          <div class="well">
+          <div>
             <a href="#" class="thumbnail">
               <img src="http://placehold.it/260x180" alt="">
             </a>
