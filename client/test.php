@@ -191,7 +191,7 @@
 
     </div><!--/.fluid-container-->
     
-    <div class="modal" id="myModal">
+    <div class="modal fade" id="myModal">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
     <h3>Modal header</h3>
