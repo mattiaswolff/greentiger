@@ -224,7 +224,7 @@
             $.each(json.definitions, function(key, value) {
                 $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
                 var strDefinitionId = value._id.$id;
-                $.getJSON(getUrlApi('defintions/' + value._id.$id), {access_token: strAccessToken},function(json) {
+                $.getJSON(getUrlApi('definitions/' + value._id.$id), {access_token: strAccessToken},function(json) {
                     $.each(json.results[0].content, function(key, value) {
                         var arrHtml = new Array();
                         arrHTML.push('<div class="tab-pane" id="' + strDefinitionId + '">');
