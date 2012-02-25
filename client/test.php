@@ -195,7 +195,9 @@
     <script src="../js/bootstrap-typeahead.js"></script>
     
     <script type="text/javascript">
+      $(document).ready(function(){
         $(".alert").alert();
+      });
     </script>
 
   </body>
