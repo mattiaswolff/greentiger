@@ -217,9 +217,6 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $(".alert").alert();
-        $(function () {
-            $('.tabs a:last').tab('show')
-        })
       });
     </script>
 
