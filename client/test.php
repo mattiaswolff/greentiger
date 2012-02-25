@@ -274,7 +274,7 @@
         /* EDIT DEFINITION FORM ROWS
         * ============ */
         $("body").delegate(".icon-edit", "click", function(event) {
-          $("#title").attr("value", "Test");
+          $("#title").attr("value", $(this).parents(".control-group").children(".controls").children("input").attr("value"));
           $("#description").attr("value", "Helptext");
           $("#type").attr("value", "Textarea");
           $("#config").attr("value", "Test");
