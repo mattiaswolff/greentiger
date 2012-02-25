@@ -174,19 +174,37 @@
     </div><!--/.fluid-container-->
     
     <div id="myModal" class="modal hide fade in">
-            <form class="form-horizontal">
-  <fieldset>
-    <a class="close" data-dismiss="modal">×</a>
-    <legend>Legend text</legend>
-    <div class="control-group">
-      <label class="control-label" for="input01">Text input</label>
-      <div class="controls">
-        <input type="text" class="input-xlarge" id="input01">
-        <p class="help-block">Supporting help text</p>
-      </div>
-    </div>
-  </fieldset>
-</form>
+            <div class="modal-header">
+              <a class="close" data-dismiss="modal">×</a>
+              <h3>Modal Heading</h3>
+            </div>
+            <div class="modal-body">
+              <form class="well">
+                <label>Title</label>
+                <input type="text" class="span3" placeholder="Type something…">
+                <span class="help-inline">This is the title of the element!</span>
+                <label>Help text</label>
+                <textarea id="select01"></textarea>
+                <span class="help-inline">Add help text to the element</span>
+                <label>Type</label>
+                <select id="select01">
+                    <option>Text</option>
+                    <option>Textarea</option>
+                    <option>Date</option>
+                    <option>Other</option>
+                </select>
+                <span class="help-inline">Choose input type</span>
+                <label>Configuration</label>
+                <textarea id="select01"></textarea>
+                <span class="help-inline">Add configuration to the element</span>
+                <label class="checkbox"><input type="checkbox">Required?</label>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn btn-primary">Save changes</a>
+              <a href="#" class="btn" data-dismiss="modal">Close</a>
+            </div>
     </div>
     
     <!-- Le javascript
