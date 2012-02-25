@@ -99,16 +99,16 @@
                     <div class="tab-pane" id="2">
                         <form class="form-horizontal"><fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="input01"><input type="text" class="input-medium" id="input01-title"></label>
+                            <label class="control-label" for="input01a"><input type="text" class="input-medium" id="input01-title" /></label>
                             <div class="controls">
-                                <input type="text" class="input-xlarge" id="input01">
+                                <input type="text" class="input-xlarge" id="input01a">
                                 <p class="help-block">Please add information</p>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="input02">Text input</label>
+                            <label class="control-label" for="input02a">Text input</label>
                             <div class="controls">
-                                <textarea class="input-xlarge" id="input02"></textarea>
+                                <textarea class="input-xlarge" id="input02a"></textarea>
                             </div>
                         </div>
                         <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>
