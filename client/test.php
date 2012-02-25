@@ -78,38 +78,23 @@
                     <li class="active"><a href="#1" data-toggle="tab">Fråga oss</a></li>
                 </ul>
                 <div class="tab-content">
-                        <div class="tab-pane active" id="1">
-                            <div class="control-group">
-                                <label class="control-label" for="input01">Text input</label>
-                                <div class="controls">
-                                    <input type="text" class="input-xlarge" id="input01">
-                                    <p class="help-block">Please add information</p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="input02">Text input</label>
-                                <div class="controls">
-                                    <textarea class="input-xlarge" id="input02"></textarea>
-                                </div>
+                    <div class="tab-pane active" id="1">
+                        <div class="control-group">
+                            <label class="control-label" for="input01">Text input</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" id="input01">
+                                <p class="help-block">Please add information</p>
                             </div>
                         </div>
-                        <div class="tab-pane" id="2">
-                            <div class="control-group">
-                                <label class="control-label" for="input01">Text input2</label>
-                                <div class="controls">
-                                    <input type="text" class="input-xlarge" id="input01">
-                                    <p class="help-block">Please add information</p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="input02">Text input2</label>
-                                <div class="controls">
-                                    <textarea class="input-xlarge" id="input02"></textarea>
-                                </div>
+                        <div class="control-group">
+                            <label class="control-label" for="input02">Text input</label>
+                            <div class="controls">
+                                <textarea class="input-xlarge" id="input02"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
           </div>
           <div class="row-fluid">
             <div class="span2">
@@ -216,14 +201,13 @@
             $.each(json.definitions, function(key, value) {
                 $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
                 var strDefinitionId = value._id.$id;
-                
+                var arrHTML = new Array();
+                arrHTML.push('<div class="tab-pane" id="' + strDefinitionId + '">');
+                arrHTML.push('<form class="form-horizontal"><fieldset>');
                 /* GET FORM FOR DEFINITION
                 * ============ */
                 $.getJSON(getUrlApi('definitions/' + value._id.$id), {access_token: strAccessToken},function(json) {
                     $.each(json.results[0].content, function(key, value) {
-                        var arrHTML = new Array();
-                        arrHTML.push('<form class="form-horizontal"><fieldset>');
-                        arrHTML.push('<div class="tab-pane" id="' + strDefinitionId + '">');
                         arrHTML.push('<label class="control-label" for="' + value.name + '">' + value.name + '</label>');
                         switch (value.type) {
                             case "text": case "email": case "url": case "date": case "time":
@@ -239,10 +223,10 @@
                             case "number": case "range":
                                 break;
                         }
-                        arrHTML.push('<div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
-                        $('.tab-content').append(arrHTML.join(""));
                     });
-                }); 
+                });
+                arrHTML.push('<div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
+                $('.tab-content').append(arrHTML.join(""));
             });
         });
         
