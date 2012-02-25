@@ -75,13 +75,11 @@
           <div class="well">
             <form class="form-horizontal">
               <div class="form-actions">
-                  <button class="btn" data-toggle="button">Fråga</button>
-              <button class="btn" data-toggle="button">Förslag</button>
-              <button class="btn" data-toggle="button">Beröm</button>
-              <button class="btn" data-toggle="button">Förslag</button>
+                  <button class="btn-info" data-toggle="button">Fråga</button>
+                  <button class="btn-info" data-toggle="button">Förslag</button>
+                  <button class="btn-info" data-toggle="button">Beröm</button>
+                  <button class="btn-info" data-toggle="button">Förslag</button>
               </div>
-              <br/>
-              <br/>
               <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
