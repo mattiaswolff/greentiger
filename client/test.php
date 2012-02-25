@@ -99,7 +99,7 @@
                     <div class="tab-pane active" id="2">
                         <form class="form-horizontal"><fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="input02"><input type="text" class="input-medium" id="input02-title"></label>
+                            <label class="control-label" for="input02">Text input</label>
                             <div class="controls">
                                 <input type="text" class="input-xlarge" id="input02">
                                 <p class="help-block">Please add information</p>
