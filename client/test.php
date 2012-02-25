@@ -275,8 +275,13 @@
         * ============ */
         $("body").delegate(".icon-edit", "click", function(event) {
           $("#title").attr("value", $(this).parents(".control-group").children(".controls").children("input").attr("value"));
-          $("#description").attr("value", "Helptext");
-          $("#type").attr("value", "Textarea");
+          $("#description").attr("value", $(this).parents(".control-group").children(".controls").children(".help-block").attr("value"));
+          if ($(this).parents(".control-group").children(".controls").children("input").size() == 1) {    
+            $("#type").attr("value", $(this).parents(".control-group").children(".controls").children("input").attr("type"));
+          }
+          else if ($(this).parents(".control-group").children(".controls").children("textarea").size() == 1) {    
+            $("#type").attr("value", "Textarea");
+          }
           $("#config").attr("value", "Test");
         });
       });
