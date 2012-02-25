@@ -184,7 +184,12 @@
                 <input type="text" class="span3" placeholder="Type something…">
                 <span class="help-inline">This is the title of the element!</span>
                 <label>Type</label>
-                <input type="text" class="span3" placeholder="Type something…">
+                <select id="select01">
+                    <option>Text</option>
+                    <option>Textarea</option>
+                    <option>Date</option>
+                    <option>Other</option>
+                </select>
                 <span class="help-inline">Choose input type</span>
                 <label class="checkbox"><input type="checkbox">Check me out</label>
                 <button type="submit" class="btn">Submit</button>
