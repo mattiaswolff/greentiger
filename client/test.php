@@ -78,7 +78,8 @@
               <button class="btn" data-toggle="button">Förslag</button>
               <button class="btn" data-toggle="button">Beröm</button>
               <button class="btn" data-toggle="button">Förslag</button>
-                <br/>
+              <br/>
+              <br/>
               <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
