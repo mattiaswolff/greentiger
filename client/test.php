@@ -63,8 +63,8 @@
               <img src="http://placehold.it/260x180" alt="">
             </a>
             <h2>Mattias Wolff</h2>
-            <p>lsdfkj lasjf lasjf lajf lajsdf lakjsdf lajsd flajsd lfja dslfjal djsflaj sfljalsfjals fjlajs flajsd lfjalsdfj lkjs dflajsd lfajsd lfj alsf las flajs dflajsd lfjals f</p>
             <p><a href="http://www.dif.se">www.dif.se</a></p>
+            <p>lsdfkj lasjf lasjf lajf lajsdf lakjsdf lajsd flajsd lfja dslfjal djsflaj sfljalsfjals fjlajs flajsd lfjalsdfj lkjs dflajsd lfajsd lfj alsf las flajs dflajsd lfjals f</p>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span7">
