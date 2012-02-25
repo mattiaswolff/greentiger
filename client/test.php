@@ -70,7 +70,7 @@
         <div class="span7">
           <div class="well">
             <form class="form-horizontal">
-              <legend>Legend text</legend>
+              <legend>Praise</legend>
               <fieldset>
                 <div class="control-group">
                   <label class="control-label" for="input01">Text input</label>
