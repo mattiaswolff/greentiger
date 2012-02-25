@@ -278,11 +278,14 @@
           $("#description").attr("value", $(this).parents(".control-group").children(".controls").children(".help-block").text());
           if ($(this).parents(".control-group").children(".controls").children("input").size() == 1) {    
             $("#type").attr("value", $(this).parents(".control-group").children(".controls").children("input").attr("type"));
+            $("#config").attr("value", "");
+            $("#config").attr("disabled", "true");
           }
           else if ($(this).parents(".control-group").children(".controls").children("textarea").size() == 1) {    
             $("#type").attr("value", "Textarea");
+            $("#config").attr("value", "");
+            $("#config").attr("disabled", "true");
           }
-          $("#config").attr("value", "Test");
         });
       });
     </script>
