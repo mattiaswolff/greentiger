@@ -45,6 +45,7 @@ class Element {
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
         $objResults = $db->definitions->findOne(array("_id" => $strDefinitionId));
+        echo var_dump($objResults);
         //report error if not found.        
         $arrResults['page'] = $intPage;
         $arrResults['page_size'] = $intObjectsPerPage;        
