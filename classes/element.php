@@ -65,7 +65,6 @@ class Element {
                 $arrResults['total'] = $arrResults['total'] + 1;
                 $arrResults['elements'][] = $var;
             }
-            echo var_dump($arrResults);
         }
         return $arrResults; 
     }
