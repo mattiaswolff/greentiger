@@ -20,8 +20,7 @@ switch($data->getMethod()) {
             break;
         }
         $arrResults = Element::get(10, 1, $strDefinitionId);
-        if ($arrResults['type'] = 'error') {
-            echo "1";
+        if ($arrResults['type'] == 'error') {
             RestUtils::sendResponse($arrResults['code'], $arrResults['description'], 'application/json');
         }
         else {
