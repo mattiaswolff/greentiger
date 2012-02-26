@@ -39,7 +39,7 @@ class Element {
     public function setConfig($x = null) {if ($x != null) { $this->config = $x; }} 
     
     //Get, Upsert and Delete functions
-    function get($intObjectsPerPage = 10, $intPage = 1, $arrDefinitionId = null, $arrElementId = null,) {
+    function get($intObjectsPerPage = 10, $intPage = 1, $arrDefinitionId = null, $arrElementId = null) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
