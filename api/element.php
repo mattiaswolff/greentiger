@@ -9,7 +9,7 @@ switch($data->getMethod()) {
     case 'get':
         
         $arrRequestVars = $data->getRequestVars();
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
+        $strDefinitionId = (isset($arrRequestVars['definition_id']) ? $arrRequestVars['definition_id'] : '');
         
         if ($strDefinitionId != '') {
             $arrId[] = new MongoId($strDefinitionId);
