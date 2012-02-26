@@ -244,7 +244,7 @@
                 async: false,
                 url: getUrlApi('definitions/' + value._id.$id),
                 success: function(json) {
-                    $.each(json.results[0].content, function(key, value) {
+                    $.each(json.results[0].elements, function(key, value) {
                         arrHTML.push('<label class="control-label" for="' + value.id + '"><i name="' + value.id + '" class="icon-edit" data-toggle="modal" href="#myModal"></i>   ' + value.id + '</label>');
                         switch (value.type) {
                             case "text": case "email": case "url": case "date": case "time":
