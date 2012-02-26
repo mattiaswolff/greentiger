@@ -268,8 +268,21 @@
             });
         });
         
-        $("#myModal").delegate("button.btn-primary", "click", function(event) {
-            submitFormJSON("#myModal form", getUrlApi('definitions/4f089f522126029455000004/elements/mattiasw'), "PUT", false);
+        $("#myModal form").delegate("button.btn-primary", "click", function(event) {
+          var values = {};
+          $.each($('#myForm').serializeArray(), function(i, field) {
+            values[field.name] = field.value;
+          });
+          $.ajax({
+                type: "PUT",
+                url: getUrlApi('definitions/4f089f522126029455000004/elements/mattiasw'),
+                dataType: 'json',
+                data: values,
+                async: true,
+                success: function(msg) {
+                    alert( "Data Saved!");
+                }
+            });
         });
         
         /* EDIT DEFINITION FORM ROWS
