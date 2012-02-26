@@ -46,6 +46,11 @@ class Element {
         $intLimit = $intObjectsPerPage;
         $objResults = $db->definitions->findOne(array("_id" => $strDefinitionId));
         echo var_dump($objResults);
+        if (is_null($objResults)) {
+            echo 'error!';
+            $arrResults = array("type" => "error", "code"=> 404);
+            return $arrResults;
+        }
         //report error if not found.        
         $arrResults['page'] = $intPage;
         $arrResults['page_size'] = $intObjectsPerPage;        
