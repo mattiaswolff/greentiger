@@ -185,10 +185,10 @@
                 <span class="help-inline">Add help text to the element</span>
                 <label>Type</label>
                 <select id="type" name="type">
-                    <option>Text</option>
-                    <option>Textarea</option>
-                    <option>Date</option>
-                    <option>Other</option>
+                    <option>text</option>
+                    <option>textarea</option>
+                    <option>date</option>
+                    <option>other</option>
                 </select>
                 <span class="help-inline">Choose input type</span>
                 <label>Configuration</label>
@@ -231,7 +231,7 @@
         * ============ */
         $.getJSON(getUrlApi('users/4f0c1ab5212602cc79000006'), {access_token: strAccessToken},function(json) {
             $.each(json.definitions, function(key, value) {
-                $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
+                $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" name="' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
                 var strDefinitionId = value._id.$id;
                 var arrHTML = new Array();
                 arrHTML.push('<div class="tab-pane" id="' + strDefinitionId + '">');
@@ -275,7 +275,7 @@
           });
           $.ajax({
                 type: "PUT",
-                url: getUrlApi('definitions/4f089f522126029455000004/elements/' + sessionStorage.getItem("element_id")),
+                url: getUrlApi('definitions/' + sessionStorage.getItem("definition_id") + '/elements/' + sessionStorage.getItem("element_id")),
                 dataType: 'json',
                 data: values,
                 async: true,
@@ -288,6 +288,10 @@
         $("body").delegate("i", "click", function(event) {
           window.sessionStorage.setItem("element_id", $(this).attr('name'));
         });  
+        
+        $("nav-tabs").delegate("a", "click", function(event) {
+          window.sessionStorage.setItem("definition_id", $(this).attr('name'));
+        });
         
         /* EDIT DEFINITION FORM ROWS
         * ============ 
