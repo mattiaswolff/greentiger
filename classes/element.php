@@ -51,7 +51,7 @@ class Element {
         //report error if not found.        
         $arrResults['page'] = $intPage;
         $arrResults['page_size'] = $intObjectsPerPage;        
-        if (!is_null($arrElementId)) {
+        if (!is_null($strElementId)) {
             $arrResults['total'] = 1;
             foreach ($objResults['elements'] as $key => $var) {
                 if ($var['id'] == $strElementId) {
