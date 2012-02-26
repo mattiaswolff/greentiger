@@ -235,7 +235,7 @@
                 var strDefinitionId = value._id.$id;
                 var arrHTML = new Array();
                 arrHTML.push('<div class="tab-pane" id="' + strDefinitionId + '">');
-                arrHTML.push('<form class="form-horizontal"><fieldset>');
+                arrHTML.push('<form class="form-horizontal" id="'+ + '><fieldset>');
                 /* GET FORM FOR DEFINITION
                 * ============ */
                 $.ajax({
@@ -280,8 +280,8 @@
                 data: values,
                 async: true,
                 success: function(msg) {
-                    alert( "Data Saved!");
-                }
+                  $('#4f24696721260273190000ca p.help-block').text(values['description']);
+                  }
             });
         });
         
