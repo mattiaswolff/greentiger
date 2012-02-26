@@ -52,7 +52,7 @@ class Element {
         //report error if not found.        
         $arrResults['page'] = $intPage;
         $arrResults['page_size'] = $intObjectsPerPage;        
-        if !(is_null($arrElementId)) {
+        if (!is_null($arrElementId)) {
             $arrResults['total'] = 1;
             $arrResults['elements'][] = $objResults['elements'][$arrElementId];
             //report error if element is not found.
