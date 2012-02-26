@@ -24,7 +24,6 @@ switch($data->getMethod()) {
             RestUtils::sendResponse($arrResults['code'], $arrResults['description'], 'application/json');
         }
         else {
-            echo "2";
             RestUtils::sendResponse(200, $arrResults, 'application/json');    
         }
         break;
