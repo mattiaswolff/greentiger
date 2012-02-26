@@ -85,7 +85,7 @@ class Element {
     public function insert($intDefinitionId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $db->definitions->update(array('_id' => $intDefinitionId,
+        $result = $db->definitions->update(array('_id' => $intDefinitionId,
                                     'elements.id' => $this->getId()),
                                 array('$push' =>
                                     array( 'elements' =>
@@ -93,10 +93,6 @@ class Element {
                                                 'description' => $this->getDescription(),
                                                 'type' => $this->getType(),
                                                 'config' => $this->getConfig()))));
-        
-        $result =
-            $db->runCommand(array('getlasterror' => 1));
-        
         echo $result;
     }
     
