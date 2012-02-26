@@ -287,7 +287,7 @@
       });
       
       $('#myModal').on('show', function () {
-        $.getJSON(getUrlApi('definitions/4f089f522126029455000004/elements/mattiasw'), {access_token: strAccessToken},function(json) {
+        $.getJSON(getUrlApi('definitions/4f089f522126029455000004/elements/mattiasw'), function(json) {
           $(".modal-header").children("h3").text("Edit " + json.elements[0].id);
           $("#description").attr("value", json.elements[0].description);
           $("#description").attr("value", json.elements[0].type);
