@@ -185,6 +185,9 @@
             </div>
             <div class="modal-body">
               <form>
+                <label>Id</label>
+                <input name="id"></textarea>
+                <span class="help-inline">Set element id</span>                
                 <label>Help text</label>
                 <textarea id="description" name="description"></textarea>
                 <span class="help-inline">Add help text to the element</span>
