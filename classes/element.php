@@ -9,22 +9,19 @@ class Element {
     private $config;
   
     //Constructor
-    public function __construct($objId = null){  
-        if ($objId != null) {
-            $m = new Mongo();
-            $db = $m->projectcopperfield;
-            $arrResults = $db->definitions->findOne(array("_id" => $objId));
-            $this->id = $arrResults['id'];
-            $this->description = $arrResults['description'];
-            $this->type = $arrResults['type'];            
-            $this->config = $arrResults['config'];
+    public function __construct($strDefinitionId = null, $strElementId = null){  
+        if (!is_null($strDefinitionId) and !is_null($strElementId)) {
+            $arrResults = $this->get(10,1,$strDefinitionId,$strElementId);
+            $this->id = $arrResults['elements']['id'];
+            $this->description = $arrResults['elements']['description'];
+            $this->type = $arrResults['elements']['type'];            
+            $this->config = $arrResults['elements']['config'];
         }
         else {
             $this->id = '';
-            $this->name = '';  
-            $this->description = '';  
-            $this->content = array();
-            $this->updatedDate = '';
+            $this->description = '';
+            $this->type = '';            
+            $this->config = '';
         }
     }
     
@@ -69,15 +66,33 @@ class Element {
         return $arrResults; 
     }
     
-    public function upsert($intDefinitionId) {
+    public function update($intDefinitionId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $db->definitions->update(array('id' => $intDefinitionId,
+        $db->definitions->update(array('_id' => $intDefinitionId,
                                         'elements.id' => $this->getId()),
                                 array('$set' =>
                                         array('elements.$.description' => $this->getDescription(),
                                             'elements.$.type' => $this->getType(),
                                             'elements.$.config' => $this->getConfig())));
+        
+        $result =
+            $db->runCommand(array('getlasterror' => 1));
+        
+        echo $result;
+    }
+    
+    public function insert($intDefinitionId) {
+        $m = new Mongo();
+        $db = $m->projectcopperfield;
+        $db->definitions->update(array('_id' => $intDefinitionId,
+                                    'elements.id' => $this->getId()),
+                                array('$push' =>
+                                    array( 'elements' =>
+                                        array('id' => $this->getId(),
+                                                'description' => $this->getDescription(),
+                                                'type' => $this->getType(),
+                                                'config' => $this->getConfig()))));
         
         $result =
             $db->runCommand(array('getlasterror' => 1));

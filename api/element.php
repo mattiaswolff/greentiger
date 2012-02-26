@@ -5,13 +5,13 @@ require "../classes/user.php";
 require "../classes/element.php";
 
 $data = RestUtils::processRequest();  
+$arrResults = array();
 
 switch($data->getMethod()) {  
     case 'get':
-        
         $arrRequestVars = $data->getRequestVars();
         $strDefinitionId = (isset($arrRequestVars['definition_id']) ? $arrRequestVars['definition_id'] : '');
-        $arrResults = array();
+        
         if ($strDefinitionId != '') {
             $strDefinitionId = new MongoId($strDefinitionId);
         }
@@ -29,52 +29,49 @@ switch($data->getMethod()) {
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
-        
-        if ($strUserId != '') {
-            $objDefinition = new Definition();
-            $objDefinition->setId();
-            $objDefinition->setName($arrRequestVars["name"]);
-            $objDefinition->setDescription($arrRequestVars["description"]);
-            $objDefinition->setContent($arrRequestVars['content']);
-            $objDefinition->upsert();
-            $objUser = new User(new MongoId($strUserId));
-            $arrDefinitions = $objUser->getDefinitions();
-            $arrDefinition['_id'] = $objDefinition->getId();;
-            $arrDefinition['name'] = $objDefinition->getName();
-            $arrDefinition['description'] = $objDefinition->getDescription();
-            $arrDefinitions[] = $arrDefinition;
-            $objUser->setDefinitions($arrDefinitions);
-            $objUser->upsert();
-            RestUtils::sendResponse(200, (array)$objDefinition->getId(), 'application/json');
+        $strDefinitionId = (isset($arrRequestVars['definition_id']) ? $arrRequestVars['definition_id'] : '');
+        if ($strDefinitionId != '') {
+            $strDefinitionId = new MongoId($strDefinitionId);
         }
         else {
-            $objDefinition = new Definition();
-            $objDefinition->setId();
-            $objDefinition->setName($arrRequestVars["name"]);
-            $objDefinition->setDescription($arrRequestVars["description"]);
-            $objDefinition->setContent($arrRequestVars['content']);
-            $objDefinition->upsert();
-            RestUtils::sendResponse(200, (array)$objDefinition->getId(), 'application/json');
+            RestUtils::sendResponse(400, 'error', 'application/json');
+            break;
         }
+        $objElement = new Element();
+        $objElement->setId($arrRequestVars["id"]);
+        $objElement->setDescription($arrRequestVars["description"]);        
+        $objElement->setType($arrRequestVars["type"]);        
+        $objElement->setConfig($arrRequestVars['config']);
+        $arrResults = $objElement->insert($strDefinitionId);
+        if ($arrResults['type'] == 'error') {
+            RestUtils::sendResponse($arrResults['code'], $arrResults['description'], 'application/json');
+        }
+        else {
+            RestUtils::sendResponse(200, (array)$objElement->getId(), 'application/json');    
+        }
+        
         break;
     case 'put':
         $arrRequestVars = $data->getRequestVars();
-        
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
-        
+        $strDefinitionId = (isset($arrRequestVars['definition_id']) ? $arrRequestVars['definition_id'] : '');
+        $strElementId = (isset($arrRequestVars['element_id']) ? $arrRequestVars['element_id'] : '');
         if ($strDefinitionId != '') {
-            $objDefinition = new Definition(new MongoId($strDefinitionId));
-            $objDefinition->setName($arrRequestVars['name']);
-            $objDefinition->setDescription($arrRequestVars['description']);
-            $objDefinition->setContent($arrRequestVars['content']);
-            $objDefinition->upsert();
-            RestUtils::sendResponse(200, (array)$objDefinition->getId(), 'application/json');
+            $strDefinitionId = new MongoId($strDefinitionId);
         }
         else {
-            RestUtils::sendResponse(400);
+            RestUtils::sendResponse(400, 'error', 'application/json');
+            break;
+        }
+        $objElement = new Element($strDefinitionId, $strElementId);
+        $objElement->setDescription($arrRequestVars["description"]);        
+        $objElement->setType($arrRequestVars["type"]);        
+        $objElement->setConfig($arrRequestVars['config']);
+        $arrResults = $objElement->update($strDefinitionId);
+        if ($arrResults['type'] == 'error') {
+            RestUtils::sendResponse($arrResults['code'], $arrResults['description'], 'application/json');
+        }
+        else {
+            RestUtils::sendResponse(200, (array)$objElement->getId(), 'application/json');    
         }
         break;
     case 'delete':
