@@ -283,8 +283,11 @@
                     alert( "Data Saved!");
                 }
             });
-          
         });
+        
+        $("body").delegate("i", "click", function(event) {
+          console.log($this);
+        });  
         
         /* EDIT DEFINITION FORM ROWS
         * ============ 
