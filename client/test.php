@@ -94,10 +94,9 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            
-                            <div class="controls">
-                                <button class="btn" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button>
-                            </div>
+                          <div class="controls">
+                            <button class="btn" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button>
+                          </div>
                         </div>
                         <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button> <button class="btn">Cancel</button></div></fieldset></form>
                     </div>
@@ -269,7 +268,7 @@
                     });
                 }
                 });
-                arrHTML.push('<div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
+                arrHTML.push('<div class="control-group"><div class="controls"><button class="btn" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
                 $('.tab-content').append(arrHTML.join(""));
             });
         });
@@ -286,7 +285,7 @@
                 data: values,
                 async: false,
                 success: function(data) {
-                  $('#4f24696721260273190000ca p.help-block').text(values['description']);
+                  $(window.sessionStorage.getItem("definition_id") + ' p.help-block').text(values['description']);
                   }
             });
         });
