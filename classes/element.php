@@ -56,7 +56,7 @@ class Element {
             foreach ($objResults['elements'] as $key => $var) {
                 if ($var['id'] == $strElementId) {
                     $arrResults['elements'][] = $var;
-                    break();
+                    break;
                 }
             }
             //report error if element is not found.
