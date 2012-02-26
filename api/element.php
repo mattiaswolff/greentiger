@@ -20,7 +20,12 @@ switch($data->getMethod()) {
             break;
         }
         $arrResults = Element::get(10, 1, $strDefinitionId);
-        RestUtils::sendResponse(200, $arrResults, 'application/json');
+        if ($arrResults['type'] = 'error') {
+            RestUtils::sendResponse($arrResults['code'], $arrResults['description'], 'application/json');
+        }
+        else {
+            RestUtils::sendResponse(200, $arrResults, 'application/json');    
+        }
         break;
     case 'post':
         $arrRequestVars = $data->getRequestVars();

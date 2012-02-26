@@ -47,8 +47,7 @@ class Element {
         $objResults = $db->definitions->findOne(array("_id" => $strDefinitionId));
         echo var_dump($objResults);
         if (is_null($objResults)) {
-            echo 'error!';
-            $arrResults = array("type" => "error", "code"=> 404);
+            $arrResults = array("type" => "error", "code"=> 404, "description" => "problem");
             return $arrResults;
         }
         //report error if not found.        
