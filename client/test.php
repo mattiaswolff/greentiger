@@ -269,7 +269,7 @@
         });
         
         /* EDIT DEFINITION FORM ROWS
-        * ============ */
+        * ============ 
         $("body").delegate(".icon-edit", "click", function(event) {
           $(".modal-header").children("h3").text("Edit " + $(this).parents(".control-label").children("span").text());
           $("#description").attr("value", $(this).parents(".control-group").children(".controls").children(".help-block").text());
@@ -283,6 +283,15 @@
             $("#config").attr("value", "");
             $("#config").attr("disabled", "true");
           }
+        });*/
+      });
+      
+      $('#myModal').on('show', function () {
+        $.getJSON(getUrlApi('definitions/4f089f522126029455000004/elements/mattiasw'), {access_token: strAccessToken},function(json) {
+          $(".modal-header").children("h3").text("Edit " + json.elements[0].id);
+          $("#description").attr("value", json.elements[0].description);
+          $("#description").attr("value", json.elements[0].type);
+          $("#description").attr("value", json.elements[0].config);
         });
       });
     </script>
