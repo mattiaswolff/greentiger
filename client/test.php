@@ -278,7 +278,7 @@
                 url: getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id")),
                 dataType: 'json',
                 data: values,
-                async: true,
+                async: false,
                 success: function(data) {
                   $('#4f24696721260273190000ca p.help-block').text(values['description']);
                   }
