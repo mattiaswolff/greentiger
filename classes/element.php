@@ -39,12 +39,12 @@ class Element {
     public function setConfig($x = null) {if ($x != null) { $this->config = $x; }} 
     
     //Get, Upsert and Delete functions
-    function get($intObjectsPerPage = 10, $intPage = 1, $arrDefinitionId = null, $arrElementId = null) {
+    function get($intObjectsPerPage = 10, $intPage = 1, $strDefinitionId = null, $arrElementId = null) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
-        $objResults = $db->definitions->findOne(array("_id" => array('$in' => $arrObjectId)));
+        $objResults = $db->definitions->findOne(array("_id" => $strDefinitionId));
         //report error if not found.        
         $arrResults['page'] = $intPage;
         $arrResults['page_size'] = $intObjectsPerPage;        

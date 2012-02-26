@@ -13,13 +13,13 @@ switch($data->getMethod()) {
         $strDefinitionId = (isset($arrRequestVars['definition_id']) ? $arrRequestVars['definition_id'] : '');
         
         if ($strDefinitionId != '') {
-            $arrId[] = new MongoId($strDefinitionId);
+            $strDefinitionId = new MongoId($strDefinitionId);
         }
         else {
             RestUtils::sendResponse(400, 'error', 'application/json');
             break;
         }
-        $arrResults = Element::get(10, 1, $arrId);
+        $arrResults = Element::get(10, 1, $strDefinitionId);
         RestUtils::sendResponse(200, $arrResults, 'application/json');
         break;
     case 'post':
