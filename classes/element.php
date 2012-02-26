@@ -85,8 +85,8 @@ class Element {
     public function insert($intDefinitionId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $db->definitions->update(array('_id' => $intDefinitionId,
-                                    'elements.id' => $this->getId()),
+        echo var_dump($this);
+        $db->definitions->update(array('_id' => $intDefinitionId),
                                 array('$push' =>
                                     array( 'elements' =>
                                         array('id' => $this->getId(),
