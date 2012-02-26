@@ -278,9 +278,17 @@
           $.each($('#myModal form').serializeArray(), function(i, field) {
             values[field.name] = field.value;
           });
+          if (window.sessionStorage.getItem("element_id") == '') {
+            var strType = "POST";
+            var strUrl = getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements');
+          }
+          else {
+            var strType = "PUT";
+            var strUrl = getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id"));  
+          }
           $.ajax({
-                type: "PUT",
-                url: getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id")),
+                type: strType,
+                url: strUrl,
                 dataType: 'json',
                 data: values,
                 async: false,
