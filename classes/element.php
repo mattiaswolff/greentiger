@@ -69,23 +69,18 @@ class Element {
     public function update($intDefinitionId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
+        echo var_dump($this);
         $db->definitions->update(array('_id' => $intDefinitionId,
                                         'elements.id' => $this->getId()),
                                 array('$set' =>
                                         array('elements.$.description' => $this->getDescription(),
                                             'elements.$.type' => $this->getType(),
                                             'elements.$.config' => $this->getConfig())));
-        
-        $result =
-            $db->runCommand(array('getlasterror' => 1));
-        
-        echo $result;
     }
     
     public function insert($intDefinitionId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        echo var_dump($this);
         $db->definitions->update(array('_id' => $intDefinitionId),
                                 array('$push' =>
                                     array( 'elements' =>
