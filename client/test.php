@@ -286,7 +286,7 @@
         });
         
         $("body").delegate("i", "click", function(event) {
-          console.log($this);
+          console.log(this);
         });  
         
         /* EDIT DEFINITION FORM ROWS
