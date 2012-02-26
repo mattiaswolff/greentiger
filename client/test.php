@@ -275,7 +275,7 @@
           });
           $.ajax({
                 type: "PUT",
-                url: getUrlApi('definitions/' + sessionStorage.getItem("definition_id") + '/elements/' + sessionStorage.getItem("element_id")),
+                url: getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id")),
                 dataType: 'json',
                 data: values,
                 async: true,
@@ -312,7 +312,7 @@
       });
       
       $('#myModal').on('show', function () {
-        $.getJSON(getUrlApi('definitions/4f089f522126029455000004/elements/mattiasw'), function(json) {
+        $.getJSON(getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id")), function(json) {
           $(".modal-header").children("h3").text("Edit " + json.elements[0].id);
           $("#description").attr("value", json.elements[0].description);
           $("#type").attr("value", json.elements[0].type);
