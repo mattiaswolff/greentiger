@@ -268,9 +268,9 @@
             });
         });
         
-        $("#myModal form").delegate("button.btn-primary", "click", function(event) {
+        $("#myModal").delegate("button.btn-primary", "click", function(event) {
           var values = {};
-          $.each($('#myForm').serializeArray(), function(i, field) {
+          $.each($('#myModal form').serializeArray(), function(i, field) {
             values[field.name] = field.value;
           });
           $.ajax({
