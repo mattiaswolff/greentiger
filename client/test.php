@@ -96,7 +96,7 @@
                         <div class="control-group">
                             
                             <div class="controls">
-                                <button class="btn"><i class="icon-plus" data-toggle="modal" href="#myModal"></i> Add element</button>
+                                <button class="btn" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button>
                             </div>
                         </div>
                         <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button> <button class="btn">Cancel</button></div></fieldset></form>
