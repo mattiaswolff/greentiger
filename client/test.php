@@ -198,8 +198,8 @@
             </form>
             </div>
             <div class="modal-footer">
-              <a href="#" class="btn btn-primary">Save changes</a>
-              <a href="#" class="btn" data-dismiss="modal">Close</a>
+              <button class="btn btn-primary">Save changes</a>
+              <button class="btn" data-dismiss="modal">Close</a>
             </div>
     </div>
     
