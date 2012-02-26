@@ -289,7 +289,7 @@
           window.sessionStorage.setItem("element_id", $(this).attr('name'));
         });  
         
-        $("nav-tabs").delegate("a", "click", function(event) {
+        $(".nav-tabs").delegate("a", "click", function(event) {
           window.sessionStorage.setItem("definition_id", $(this).attr('name'));
         });
         
