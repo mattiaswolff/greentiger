@@ -44,6 +44,7 @@ class Element {
         $db = $m->projectcopperfield;
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
+        $arrResults = array();    
         $objResults = $db->definitions->findOne(array("_id" => $strDefinitionId));
         if (is_null($objResults)) {
             $arrResults = array("type" => "error", "code"=> 404, "description" => "problem");
@@ -58,14 +59,13 @@ class Element {
             //report error if element is not found.
         }
         else {
-            echo "multiple";
             $arrResults['total'] = 0;
             foreach ($objResults['elements'] as $key => $var) {
                 //This loop should needs to be limited by page_size
-                echo var_dump($var);
                 $arrResults['total'] = $arrResults['total'] + 1;
                 $arrResults['elements'][] = $var;
             }
+            echo var_dump($arrResults);
         }
         return $arrResults; 
     }
