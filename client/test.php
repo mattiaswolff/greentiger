@@ -81,7 +81,7 @@
                     <div class="tab-pane active" id="1">
                         <form class="form-horizontal"><fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="input01"><i class="icon-edit" data-toggle="modal" href="#myModal"></i>   <span>Text input</span></label>
+                            <label class="control-label" for="input01"><i name="mattiasw" class="icon-edit" data-toggle="modal" href="#myModal"></i>   <span>Text input</span></label>
                             <div class="controls">
                                 <input type="text" class="input-xlarge" id="input01">
                                 <p class="help-block">Please add information</p>
@@ -275,7 +275,7 @@
           });
           $.ajax({
                 type: "PUT",
-                url: getUrlApi('definitions/4f089f522126029455000004/elements/mattiasw'),
+                url: getUrlApi('definitions/4f089f522126029455000004/elements/' + sessionStorage.getItem("element_id")),
                 dataType: 'json',
                 data: values,
                 async: true,
@@ -286,7 +286,7 @@
         });
         
         $("body").delegate("i", "click", function(event) {
-          console.log(this);
+          window.sessionStorage.setItem("element_id", $(this).attr('name'));
         });  
         
         /* EDIT DEFINITION FORM ROWS
