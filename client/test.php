@@ -279,7 +279,7 @@
                 dataType: 'json',
                 data: values,
                 async: true,
-                success: function(msg) {
+                success: function(data) {
                   $('#4f24696721260273190000ca p.help-block').text(values['description']);
                   }
             });
