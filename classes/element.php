@@ -1,6 +1,6 @@
 <?php
 
-class Definition {
+class Element {
 
     //Properties
     private $id;

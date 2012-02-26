@@ -2,6 +2,7 @@
 require "../classes/rest.php";
 require "../classes/definition.php";
 require "../classes/user.php";
+require "../classes/element.php";
 
 $data = RestUtils::processRequest();  
 
