@@ -306,6 +306,10 @@
           window.sessionStorage.setItem("element_id", $(this).attr('name'));
         });  
         
+        $(".controls").delegate("button", "click", function(event) {
+          window.sessionStorage.setItem("element_id", "");
+        });        
+        
         $(".nav-tabs").delegate("a", "click", function(event) {
           window.sessionStorage.setItem("definition_id", $(this).attr('name'));
         });
@@ -330,15 +334,17 @@
       
       $('#myModal').on('show', function () {
         $("#id").attr("value", "");
-          $("#description").attr("value", "");
-          $("#type").attr("value", "");
-          $("#config").attr("value", "");
-        $.getJSON(getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id")), function(json) {
-          $("#id").attr("value", json.elements[0].id);
-          $("#description").attr("value", json.elements[0].description);
-          $("#type").attr("value", json.elements[0].type);
-          $("#config").attr("value", json.elements[0].config);
-        });
+        $("#description").attr("value", "");
+        $("#type").attr("value", "");
+        $("#config").attr("value", "");
+        if (window.sessionStorage.getItem("element_id") != '') {
+          $.getJSON(getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id")), function(json) {
+            $("#id").attr("value", json.elements[0].id);
+            $("#description").attr("value", json.elements[0].description);
+            $("#type").attr("value", json.elements[0].type);
+            $("#config").attr("value", json.elements[0].config);
+          });  
+        } 
       });
     </script>
 
