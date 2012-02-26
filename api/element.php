@@ -11,7 +11,7 @@ switch($data->getMethod()) {
         
         $arrRequestVars = $data->getRequestVars();
         $strDefinitionId = (isset($arrRequestVars['definition_id']) ? $arrRequestVars['definition_id'] : '');
-        
+        $arrResults = array();
         if ($strDefinitionId != '') {
             $strDefinitionId = new MongoId($strDefinitionId);
         }
@@ -20,6 +20,7 @@ switch($data->getMethod()) {
             break;
         }
         $arrResults = Element::get(10, 1, $strDefinitionId);
+        echo var_dump($arrResults);
         if ($arrResults['type'] = 'error') {
             RestUtils::sendResponse($arrResults['code'], $arrResults['description'], 'application/json');
         }
