@@ -13,10 +13,10 @@ class Element {
         if (!is_null($strDefinitionId) and !is_null($strElementId)) {
             $arrResults = $this->get(10,1,$strDefinitionId,$strElementId);
             echo var_dump($arrResults);
-            $this->id = $arrResults['elements']['id'];
-            $this->description = $arrResults['elements']['description'];
-            $this->type = $arrResults['elements']['type'];            
-            $this->config = $arrResults['elements']['config'];
+            $this->id = $arrResults['elements'][0]['id'];
+            $this->description = $arrResults['elements'][0]['description'];
+            $this->type = $arrResults['elements'][0]['type'];            
+            $this->config = $arrResults['elements'][0]['config'];
         }
         else {
             $this->id = '';
