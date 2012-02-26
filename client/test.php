@@ -269,7 +269,7 @@
         });
         
         $("#myModal").delegate("button.btn-primary", "click", function(event) {
-            submitFormJSON(this, getUrlApi('definitions/4f089f522126029455000004/elements/mattiasw'), "PUT", false);
+            submitFormJSON("#myModal form", getUrlApi('definitions/4f089f522126029455000004/elements/mattiasw'), "PUT", false);
         });
         
         /* EDIT DEFINITION FORM ROWS
