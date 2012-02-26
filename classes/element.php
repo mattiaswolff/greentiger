@@ -72,7 +72,7 @@ class Element {
                                 array('$set' =>
                                         array('elements.$.description' => $this->getDescription(),
                                             'elements.$.type' => $this->getType(),
-                                            'elements.$.config' => $this->getConfig()))));
+                                            'elements.$.config' => $this->getConfig())));
         
         $result =
             $db->runCommand(array('getlasterror' => 1));
