@@ -50,7 +50,7 @@ class Element {
         $arrResults['page_size'] = $intObjectsPerPage;        
         if ($arrElementId != null) {
             $arrResults['total'] = 1;
-            $arrResults['elements'][] = $objResults['elements'][$arrElementId]
+            $arrResults['elements'][] = $objResults['elements'][$arrElementId];
             //report error if element is not found.
         }
         else {
