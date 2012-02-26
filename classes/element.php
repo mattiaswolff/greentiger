@@ -12,6 +12,7 @@ class Element {
     public function __construct($strDefinitionId = null, $strElementId = null){  
         if (!is_null($strDefinitionId) and !is_null($strElementId)) {
             $arrResults = $this->get(10,1,$strDefinitionId,$strElementId);
+            echo var_dump($arrResults);
             $this->id = $arrResults['elements']['id'];
             $this->description = $arrResults['elements']['description'];
             $this->type = $arrResults['elements']['type'];            
