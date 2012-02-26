@@ -181,10 +181,10 @@
             <div class="modal-body">
               <form>
                 <label>Help text</label>
-                <textarea id="description"></textarea>
+                <textarea id="description" name="description"></textarea>
                 <span class="help-inline">Add help text to the element</span>
                 <label>Type</label>
-                <select id="type">
+                <select id="type" name="type">
                     <option>Text</option>
                     <option>Textarea</option>
                     <option>Date</option>
@@ -192,7 +192,7 @@
                 </select>
                 <span class="help-inline">Choose input type</span>
                 <label>Configuration</label>
-                <textarea id="config"></textarea>
+                <textarea id="config" name="config"></textarea>
                 <span class="help-inline">Add configuration to the element</span>
                 <label class="checkbox"><input type="checkbox">Required?</label>
             </form>
