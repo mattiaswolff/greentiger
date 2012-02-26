@@ -85,7 +85,7 @@ class Element {
     public function insert($intDefinitionId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $result = $db->definitions->update(array('_id' => $intDefinitionId,
+        $db->definitions->update(array('_id' => $intDefinitionId,
                                     'elements.id' => $this->getId()),
                                 array('$push' =>
                                     array( 'elements' =>
@@ -93,7 +93,6 @@ class Element {
                                                 'description' => $this->getDescription(),
                                                 'type' => $this->getType(),
                                                 'config' => $this->getConfig()))));
-        echo $result;
     }
     
     function delete($arrObjectId) {
