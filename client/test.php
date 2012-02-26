@@ -186,7 +186,7 @@
             <div class="modal-body">
               <form>
                 <label>Id</label>
-                <input name="id"></textarea>
+                <input id="id" name="id"></textarea>
                 <span class="help-inline">Set element id</span>                
                 <label>Help text</label>
                 <textarea id="description" name="description"></textarea>
@@ -288,6 +288,7 @@
           else {
             var strType = "PUT";
             var strUrl = getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id"));  
+            $("#id").attr("disabled", "true");  
           }
           $.ajax({
                 type: strType,
@@ -329,7 +330,7 @@
       
       $('#myModal').on('show', function () {
         $.getJSON(getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id")), function(json) {
-          $(".modal-header").children("h3").text("Edit " + json.elements[0].id);
+          $("#id").attr("value", json.elements[0].id);
           $("#description").attr("value", json.elements[0].description);
           $("#type").attr("value", json.elements[0].type);
           $("#config").attr("value", json.elements[0].config);
