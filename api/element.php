@@ -20,11 +20,12 @@ switch($data->getMethod()) {
             break;
         }
         $arrResults = Element::get(10, 1, $strDefinitionId);
-        echo var_dump($arrResults);
         if ($arrResults['type'] = 'error') {
+            echo "1";
             RestUtils::sendResponse($arrResults['code'], $arrResults['description'], 'application/json');
         }
         else {
+            echo "2";
             RestUtils::sendResponse(200, $arrResults, 'application/json');    
         }
         break;
