@@ -198,7 +198,7 @@
             </form>
             </div>
             <div class="modal-footer">
-              <button class="btn btn-primary">Save changes</a>
+              <button class="btn btn-primary" data-dismiss="modal">Save changes</a>
               <button class="btn" data-dismiss="modal">Close</a>
             </div>
     </div>
@@ -283,6 +283,7 @@
                     alert( "Data Saved!");
                 }
             });
+          
         });
         
         /* EDIT DEFINITION FORM ROWS
