@@ -45,7 +45,6 @@ class Element {
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
         $objResults = $db->definitions->findOne(array("_id" => $strDefinitionId));
-        echo var_dump($objResults);
         if (is_null($objResults)) {
             $arrResults = array("type" => "error", "code"=> 404, "description" => "problem");
             return $arrResults;
@@ -53,15 +52,17 @@ class Element {
         //report error if not found.        
         $arrResults['page'] = $intPage;
         $arrResults['page_size'] = $intObjectsPerPage;        
-        if ($arrElementId != null) {
+        if !(is_null($arrElementId)) {
             $arrResults['total'] = 1;
             $arrResults['elements'][] = $objResults['elements'][$arrElementId];
             //report error if element is not found.
         }
         else {
+            echo "multiple";
             $arrResults['total'] = 0;
             foreach ($objResults['elements'] as $key => $var) {
                 //This loop should needs to be limited by page_size
+                echo var_dump($var);
                 $arrResults['total'] = $arrResults['total'] + 1;
                 $arrResults['elements'][] = $var;
             }
