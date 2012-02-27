@@ -274,7 +274,7 @@
                                 arrHTML.push('<input type="' + value.type + '" class="input-xlarge" id="' + value.id + '">'); 
                                 break;
                         }
-                        arrHTML.push('<a class="close" data-dismiss="alert">×</a><p class="help-block">' + value.description + '</p></div></div>');
+                        arrHTML.push('<a class="close delete-element" name="' + value.id + '" data-dismiss="alert">×</a><p class="help-block">' + value.description + '</p></div></div>');
                     });
                 }
                 });
@@ -313,8 +313,23 @@
         });   
         
         $(".nav-tabs").delegate("a", "click", function(event) {
-          
           window.sessionStorage.setItem("definition_id", $(this).attr('name'));
+        });
+        
+        $("body").delegate("a.delete-element", "click", function(event) {
+          var strUrl = getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + $(this).attr("name"));
+          $.ajax({
+                type: 'DELETE',
+                url: strUrl,
+                dataType: 'json',
+                async: false,
+                success: function(data) {
+                  $('#' + window.sessionStorage.getItem("element_id")).parents(".controls").children("p.help-block").text(values["description"]);
+                  },
+                error: function(data) {
+                  $('div.main').append('<div class="alert alert-block"><a class="close" data-dismiss="alert">×</a><h4 class="alert-heading">Warning!</h4>Best check yo self, youre not...</div>')
+                  }
+            });
         });
         
         /* EDIT DEFINITION FORM ROWS
