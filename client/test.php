@@ -253,13 +253,13 @@
                 url: getUrlApi('definitions/' + value._id.$id),
                 success: function(json) {
                     $.each(json.results[0].elements, function(key, value) {
-                        arrHTML.push('<label class="control-label" for="' + value.id + '"><i name="' + value.id + '" class="icon-edit" data-toggle="modal" href="#myModal"></i>   ' + value.id + '</label>');
+                        arrHTML.push('<div class="control-group"><label class="control-label" for="' + value.id + '"><i name="' + value.id + '" class="icon-edit" data-toggle="modal" href="#myModal"></i>   ' + value.id + '</label>');
                         switch (value.type) {
                             case "text": case "email": case "url": case "date": case "time":
-                                arrHTML.push('<div class="controls"><input type="' + value.type + '" class="input-xlarge" id="' + value.id + '"><p class="help-block">' + value.description + '</p></div>'); 
+                                arrHTML.push('<div class="controls"><input type="' + value.type + '" class="input-xlarge" id="' + value.id + '"><p class="help-block">' + value.description + '</p></div></div>'); 
                                 break;
                             case "textarea":
-                                arrHTML.push('<div class="controls"><textarea class="input-xlarge" id="' + value.id + '"></textarea><p class="help-block">' + value.description + '</p></div>');
+                                arrHTML.push('<div class="controls"><textarea class="input-xlarge" id="' + value.id + '"></textarea><p class="help-block">' + value.description + '</p></div></div>');
                                 break;
                             case "dropdown":
                                 break;
