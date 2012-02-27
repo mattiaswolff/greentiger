@@ -67,11 +67,7 @@
             <p>lsdfkj lasjf lasjf lajf lajsdf lakjsdf lajsd flajsd lfja dslfjal djsflaj sfljalsfjals fjlajs flajsd lfjalsdfj lkjs dflajsd lfajsd lfj alsf las flajs dflajsd lfjals f</p>
           </div><!--/.well -->
         </div><!--/span-->
-        <div class="span7">
-          <div class="alert alert-block">
-            <a class="close" data-dismiss="alert">×</a>
-            <h4 class="alert-heading">Warning!</h4>Best check yo self, you're not...
-          </div>
+        <div class="span7 main">
           <div>
             <div class="tabbable">
                 <ul class="nav nav-tabs">
@@ -271,7 +267,7 @@
                     });
                 }
                 });
-                arrHTML.push('<div class="control-group"><div class="controls"><button class="btn btn-small add-element" name="" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
+                arrHTML.push('<div class="control-group"><div class="controls"><button class="btn btn-small add-element" name="" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes   </button><button class="btn">Cancel</button></div></fieldset></form>');
                 $('.tab-content').append(arrHTML.join(""));
             });
         });
@@ -298,6 +294,9 @@
                 async: false,
                 success: function(data) {
                   $('#' + window.sessionStorage.getItem("element_id")).parents(".controls").children("p.help-block").text(values["description"]);
+                  },
+                error: function(data) {
+                  $('div.main').append('<div class="alert alert-block"><a class="close" data-dismiss="alert">×</a><h4 class="alert-heading">Warning!</h4>Best check yo self, youre not...</div>')
                   }
             });
         });   
