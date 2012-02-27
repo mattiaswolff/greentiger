@@ -259,10 +259,10 @@
                         arrHTML.push('<div class="control-group"><label class="control-label" for="' + value.id + '"><i name="' + value.id + '" class="icon-edit" data-toggle="modal" href="#myModal"></i> <a class="close" data-dismiss="alert">×</a>   ' + value.id + '</label>');
                         switch (value.type) {
                             case "Text": case "Email": case "URL": case "Date": case "Time":
-                                arrHTML.push('<div class="controls"><input type="' + value.type + '" class="input-xlarge" id="' + value.id + '"><p class="help-block">' + value.description + '</p></div></div>'); 
+                                arrHTML.push('<div class="controls"><input type="' + value.type + '" class="input-xlarge" id="' + value.id + '"><p class="help-block">' + value.description + '</p></div></div></div>'); 
                                 break;
                             case "Textarea":
-                                arrHTML.push('<div class="controls"><textarea class="input-xlarge" id="' + value.id + '"></textarea><p class="help-block">' + value.description + '</p></div></div>');
+                                arrHTML.push('<div class="controls"><textarea class="input-xlarge" id="' + value.id + '"></textarea><p class="help-block">' + value.description + '</p></div></div></div>');
                                 break;
                             case "Drop down":
                                 break;
