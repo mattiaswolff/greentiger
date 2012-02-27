@@ -326,7 +326,7 @@
       });
       
       $('#myModal').on('show', function () {
-        $("#id").attr("disabled", "false");
+        $("#id").removeAttr("disabled");
         $("#id").attr("value", "");
         $("#description").attr("value", "");
         $("#type").attr("value", "");
