@@ -189,10 +189,17 @@
                 <span class="help-inline">Add help text to the element</span>
                 <label>Type</label>
                 <select id="type" name="type">
-                    <option>text</option>
-                    <option>textarea</option>
-                    <option>date</option>
-                    <option>other</option>
+                    <option>Text</option>
+                    <option>Textarea</option>
+                    <option>Drop down</option>
+                    <option>Checkbox</option>
+                    <option>Radio button</option>
+                    <option>Range</option>
+                    <option>Number</option>  
+                    <option>Email</option>
+                    <option>URL</option>
+                    <option>Date</option>
+                    <option>Time</option>
                 </select>
                 <span class="help-inline">Choose input type</span>
                 <label>Configuration</label>
@@ -251,17 +258,17 @@
                     $.each(json.results[0].elements, function(key, value) {
                         arrHTML.push('<div class="control-group"><label class="control-label" for="' + value.id + '"><i name="' + value.id + '" class="icon-edit" data-toggle="modal" href="#myModal"></i>   ' + value.id + '</label>');
                         switch (value.type) {
-                            case "text": case "email": case "url": case "date": case "time":
+                            case "Text": case "Email": case "URL": case "Date": case "Time":
                                 arrHTML.push('<div class="controls"><input type="' + value.type + '" class="input-xlarge" id="' + value.id + '"><p class="help-block">' + value.description + '</p></div></div>'); 
                                 break;
-                            case "textarea":
+                            case "Textarea":
                                 arrHTML.push('<div class="controls"><textarea class="input-xlarge" id="' + value.id + '"></textarea><p class="help-block">' + value.description + '</p></div></div>');
                                 break;
-                            case "dropdown":
+                            case "Drop down":
                                 break;
-                            case "checkbox": case "radio":
+                            case "Checkbox": case "Radio button":
                                 break;
-                            case "number": case "range":
+                            case "Number": case "Range":
                                 break;
                         }
                     });
