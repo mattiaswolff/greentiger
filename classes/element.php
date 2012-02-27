@@ -65,7 +65,9 @@ class Element {
             foreach ($objResults['elements'] as $key => $var) {
                 //This loop should needs to be limited by page_size
                 $arrResults['total'] = $arrResults['total'] + 1;
-                $arrResults['elements'][] = $var;
+                if (!is_null($var)) {                
+                    $arrResults['elements'][] = $var;
+                }
             }
         }
         return $arrResults; 
