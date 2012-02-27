@@ -343,7 +343,8 @@
             $("#description").attr("value", json.elements[0].description);
             $("#type").attr("value", json.elements[0].type);
             $("#config").attr("value", json.elements[0].config);
-          } 
+          });
+        }
       });
     </script>
 
