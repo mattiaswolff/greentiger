@@ -307,7 +307,7 @@
         });  
         
         $(".controls").delegate("button", "click", function(event) {
-          window.sessionStorage.setItem("element_id", "");
+          window.sessionStorage.setItem("element_id", '');
         });        
         
         $(".nav-tabs").delegate("a", "click", function(event) {
@@ -343,8 +343,7 @@
             $("#description").attr("value", json.elements[0].description);
             $("#type").attr("value", json.elements[0].type);
             $("#config").attr("value", json.elements[0].config);
-          });  
-        } 
+          } 
       });
     </script>
 
