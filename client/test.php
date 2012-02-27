@@ -295,7 +295,7 @@
                 url: strUrl,
                 dataType: 'json',
                 data: values,
-                async: true,
+                async: false,
                 success: function(data) {
                   $('#' + window.sessionStorage.getItem("element_id")).parents(".controls").children("p.help-block").text(values["description"]);
                   }
