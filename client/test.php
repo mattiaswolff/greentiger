@@ -193,7 +193,7 @@
                     <option>Textarea</option>
                     <option>Drop down</option>
                     <option>Checkbox</option>
-                    <option>Radio button</option>
+                    <option>Radio</option>
                     <option>Range</option>
                     <option>Number</option>  
                     <option>Email</option>
@@ -265,10 +265,13 @@
                                 arrHTML.push('<textarea class="input-xlarge" id="' + value.id + '"></textarea>');
                                 break;
                             case "Drop down":
+                                arrHTML.push('<select class="input-xlarge" id="' + value.id + '"><option>1</option><option>2</option><option>3</option></select>');
                                 break;
-                            case "Checkbox": case "Radio button":
+                            case "Checkbox": case "Radio":
+                                arrHTML.push('<input type="' + value.type + '" class="input-xlarge" id="' + value.id + '">');
                                 break;
                             case "Number": case "Range":
+                                arrHTML.push('<input type="' + value.type + '" class="input-xlarge" id="' + value.id + '">'); 
                                 break;
                         }
                         arrHTML.push('<a class="close" data-dismiss="alert">×</a><p class="help-block">' + value.description + '</p></div></div>');
