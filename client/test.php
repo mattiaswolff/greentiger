@@ -300,17 +300,7 @@
                   $(window.sessionStorage.getItem("definition_id") + ' p.help-block').text(values['description']);
                   }
             });
-        });
-        
-        $("body").delegate("i", "click", function(event) {
-          window.sessionStorage.removeItem("element_id");
-          window.sessionStorage.setItem("element_id", $(this).attr('name'));
-        });  
-        
-        $("body").delegate("button.add-element", "click", function(event) {
-          window.sessionStorage.removeItem("element_id");
-          window.sessionStorage.setItem("element_id", '');
-        });        
+        });   
         
         $(".nav-tabs").delegate("a", "click", function(event) {
           
@@ -349,6 +339,7 @@
           });
         }
       });
+      
       $('#myModal').on('hidden', function () {
         window.sessionStorage.removeItem("element_id");
       });
