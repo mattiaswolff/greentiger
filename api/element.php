@@ -80,8 +80,8 @@ switch($data->getMethod()) {
         $strDefinitionId = (isset($arrRequestVars['definition_id']) ? $arrRequestVars['definition_id'] : '');
         $strElementId = (isset($arrRequestVars['element_id']) ? $arrRequestVars['element_id'] : '');
         if ($strDefinitionId != '') {
-            $strDefinitionId = new MongoId($strDefinitionId);
-            $intStatus = Definition::delete($strDefinitionId, $strElementId);
+            $objDefinitionId = new MongoId($strDefinitionId);
+            $intStatus = Element::delete($objDefinitionId, $strElementId);
             RestUtils::sendResponse($intStatus, $intStatus, 'application/json');
         }
         else {
