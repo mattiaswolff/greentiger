@@ -297,7 +297,7 @@
                 data: values,
                 async: true,
                 success: function(data) {
-                  $('#' + window.sessionStorage.getItem("element_id")).parent("controls"),child("p.help-block").text(values["description"]);
+                  $('#' + window.sessionStorage.getItem("element_id")).parents(".controls").children("p.help-block").text(values["description"]);
                   }
             });
         });   
