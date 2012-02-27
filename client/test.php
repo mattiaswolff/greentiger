@@ -331,7 +331,7 @@
         $("#description").attr("value", "");
         $("#type").attr("value", "");
         $("#config").attr("value", "");
-        if (window.sessionStorage.getItem("element_id") != '') {
+        if (window.sessionStorage.getItem("element_id") != "") {
           $("#id").attr("disabled", "true");
           $.getJSON(getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + window.sessionStorage.getItem("element_id")), function(json) {
             $("#id").attr("value", json.elements[0].id);
