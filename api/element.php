@@ -77,11 +77,11 @@ switch($data->getMethod()) {
         break;
     case 'delete':
         $arrRequestVars = $data->getRequestVars();
-        $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $strDefinitionId = (isset($arrRequestVars['definition_id']) ? $arrRequestVars['definition_id'] : '');
+        $strElementId = (isset($arrRequestVars['element_id']) ? $arrRequestVars['element_id'] : '');
         if ($strDefinitionId != '') {
-            $arrObjectId[] = new MongoId($strDefinitionId);
-            $intStatus = Definition::delete($arrObjectId);
+            $strDefinitionId = new MongoId($strDefinitionId);
+            $intStatus = Definition::delete($strDefinitionId, $strElementId);
             RestUtils::sendResponse($intStatus, $intStatus, 'application/json');
         }
         else {

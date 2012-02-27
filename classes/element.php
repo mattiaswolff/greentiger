@@ -94,14 +94,13 @@ class Element {
                                                 'config' => $this->getConfig()))));
     }
     
-    function delete($arrObjectId) {
+    function delete($objDefinitionId, $strElementId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $arrQuery = array("_id" => array('$in' => $arrObjectId));
-        $arrOptions = array("safe" => true);
-        $arrResults = $db->definitions->remove($arrQuery, $arrOptions);
-        $intStatus = ($arrResults['n'] == 1 ? 200 : 400);
-        return $intStatus; 
+        $db->definitions->update(array('_id' => $objDefinitionId,
+                                        'elements.id' => $strElementId),
+                                array('$unset' =>
+                                    array( 'elements.$' => 1)));
     }
     
     //Other functions
