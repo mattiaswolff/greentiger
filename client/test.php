@@ -271,7 +271,7 @@
                             case "Number": case "Range":
                                 break;
                         }
-                        arrHTML.push('<a class="close" data-dismiss="alert">×</a><p class="help-block">' + value.description + '</p></div></div>');
+                        arrHTML.push('<p class="help-block">' + value.description + '</p></div><a class="close" data-dismiss="alert">×</a></div>');
                     });
                 }
                 });
