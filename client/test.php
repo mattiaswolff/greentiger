@@ -95,7 +95,7 @@
                         </div>
                         <div class="control-group">
                           <div class="controls">
-                            <button class="btn" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button>
+                            <button class="btn add-element" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button>
                           </div>
                         </div>
                         <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button> <button class="btn">Cancel</button></div></fieldset></form>
@@ -271,7 +271,7 @@
                     });
                 }
                 });
-                arrHTML.push('<div class="control-group"><div class="controls"><button class="btn" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
+                arrHTML.push('<div class="control-group"><div class="controls"><button class="btn add-element" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
                 $('.tab-content').append(arrHTML.join(""));
             });
         });
@@ -306,7 +306,7 @@
           window.sessionStorage.setItem("element_id", $(this).attr('name'));
         });  
         
-        $(".controls").delegate("button", "click", function(event) {
+        $("body").delegate("button.add-element", "click", function(event) {
           window.sessionStorage.setItem("element_id", '');
         });        
         
