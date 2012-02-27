@@ -271,7 +271,7 @@
                     });
                 }
                 });
-                arrHTML.push('<div class="control-group"><div class="controls"><button class="btn add-element" name="" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
+                arrHTML.push('<div class="control-group"><div class="controls"><button class="btn btn-small add-element" name="" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button><button class="btn">Cancel</button></div></fieldset></form>');
                 $('.tab-content').append(arrHTML.join(""));
             });
         });
@@ -297,7 +297,7 @@
                 data: values,
                 async: true,
                 success: function(data) {
-                  $('#' + window.sessionStorage.getItem("definition_id") + ' p.help-block').text(values['description']);
+                  $('#' + window.sessionStorage.getItem("element_id")).parent("controls"),child("p.help-block").text(values["description"]);
                   }
             });
         });   
