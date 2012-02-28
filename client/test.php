@@ -245,13 +245,20 @@
                                 arrHTML.push('<textarea class="input-xlarge" id="' + value.id + '"></textarea>');
                                 break;
                             case "Drop down":
-                                arrHTML.push('<select class="input-xlarge" id="' + value.id + '"><option>1</option><option>2</option><option>3</option></select>');
+                                arrHTML.push('<select class="input-xlarge" id="' + value.id + '">');
+                                $.each(config.split(";"), function (key1, value1) {
+                                  arrHTML.push('<option value="' + value1 + '">' + value1 + '</option>');
+                                });
+                                arrHTML.push('</select>');
                                 break;
                             case "Checkbox": case "Radio":
-                                arrHTML.push('<input type="' + value.type + '" class="input-xlarge" id="' + value.id + '">');
+                                $.each(config.split(";"), function (key1, value1) {
+                                  arrHTML.push('<input type="' + value.type + '" class="input-xlarge" id="' + value1 + '" value="' + value1 + '" name="' + value.id + '" ><label for="' +value1 + '">' + value1 + '</label>');
+                                });
                                 break;
                             case "Number": case "Range":
-                                arrHTML.push('<input type="' + value.type + '" class="input-xlarge" id="' + value.id + '">'); 
+                                var arrConfig = config.split(";");
+                                arrHTML.push('<input type="' + value.type + '" class="input-xlarge" id="' + value.id + '" name="' + name + '" min="' + arrConfig[0] + '" max="' + arrConfig[1] + '" step="' + arrConfig[2] + '">'); 
                                 break;
                         }
                         arrHTML.push('<a class="close delete-element" name="' + value.id + '" data-dismiss="alert">×</a><p class="help-block">' + value.description + '</p></div></div>');
