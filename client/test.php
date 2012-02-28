@@ -253,7 +253,7 @@
                                 break;
                             case "Checkbox": case "Radio":
                                 $.each(value.config.split(";"), function (key1, value1) {
-                                  arrHTML.push('<input type="' + value.type + '" class="input-xlarge" id="' + value1 + '" value="' + value1 + '" name="' + value.id + '" ><label for="' +value1 + '">' + value1 + '</label>');
+                                  arrHTML.push('<label class="' + value.type + '"><input type="' + value.type + '" class="input-xlarge" id="' + value1 + '" value="' + value1 + '" name="' + value.id + '" >' + value1 + '</label>');
                                 });
                                 break;
                             case "Number": case "Range":
