@@ -72,7 +72,6 @@
             <div class="tabbable">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#1" data-toggle="tab">Mall</a></li>
-                    <li><a href="#2" data-toggle="tab"><i class="icon-plus"></i></a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="1">
@@ -282,8 +281,9 @@
                     });
                 }
                 });
-                arrHTML.push('<div class="control-group"><div class="controls"><button class="btn btn-small add-element" name="" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button>   <button class="btn">Cancel</button></div></fieldset></form>');
+                arrHTML.push('<div class="control-group"><div class="controls"><button class="btn btn-small add-element" name="" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button>   <button class="btn">Cancel</button></div></fieldset></form>');  
                 $('.tab-content').append(arrHTML.join(""));
+                $('.nav-tabs').append('<li class="active"><a href="#1" data-toggle="tab"><i class="icon-plus"></i></a></li>');
             });
         });
         
@@ -315,7 +315,6 @@
                   }
             });
         });   
-        
         $(".nav-tabs").delegate("a", "click", function(event) {
           window.sessionStorage.setItem("definition_id", $(this).attr('name'));
         });
