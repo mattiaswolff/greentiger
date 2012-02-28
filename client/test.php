@@ -71,31 +71,8 @@
           <div>
             <div class="tabbable">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#1" data-toggle="tab">Mall</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="1">
-                        <form class="form-horizontal"><fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="input01"><i name="mattiasw" class="icon-edit" data-toggle="modal" href="#myModal"></i>   <span>Text input</span></label>
-                            <div class="controls">
-                                <input type="text" class="input-xlarge" id="input01">
-                                <p class="help-block">Please add information</p>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="input02"><i class="icon-edit" data-toggle="modal" href="#myModal"></i>   <span>Text area</span></label>
-                            <div class="controls">
-                                <textarea class="input-xlarge" id="input02"></textarea>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                          <div class="controls">
-                            <button class="btn add-element" name="" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button>
-                          </div>
-                        </div>
-                        <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button> <button class="btn">Cancel</button></div></fieldset></form>
-                    </div>
                 </div>
             </div>
           </div>
@@ -283,8 +260,10 @@
                 });
                 arrHTML.push('<div class="control-group"><div class="controls"><button class="btn btn-small add-element" name="" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button>   <button class="btn">Cancel</button></div></fieldset></form>');  
                 $('.tab-content').append(arrHTML.join(""));
-                $('.nav-tabs').append('<li><a href="" data-toggle="tab"><i class="icon-plus"></i></a></li>');
+                
             });
+            $('.nav-tabs').append('<li><a href="" data-toggle="tab"><i class="icon-plus"></i></a></li>');
+            $('.tab-content').append('<div class="tab-pane active" id="1"><form class="form-horizontal"><fieldset><div class="control-group"><div class="controls"><button class="btn add-element" name="" data-toggle="modal" href="#myModal"><i class="icon-plus"></i> Add element</button></div></div><div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button> <button class="btn">Cancel</button></div></fieldset></form></div>');
         });
         
         $("#myModal").delegate("button.btn-primary", "click", function(event) {
