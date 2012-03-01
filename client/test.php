@@ -76,66 +76,6 @@
                 </div>
             </div>
           </div>
-          <div class="row-fluid">
-            <div class="span2">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/260x180" alt="">
-              </a>
-            </div><!--/span-->
-            <div class="span10">
-              <h3>Heading</h3>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
-          <div class="row-fluid">
-            <div class="span2">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/260x180" alt="">
-              </a>
-            </div><!--/span-->
-            <div class="span10">
-              <h3>Heading</h3>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
-          <div class="row-fluid">
-            <div class="span2">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/260x180" alt="">
-              </a>
-            </div><!--/span-->
-            <div class="span10">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
-          <div class="row-fluid">
-            <div class="span2">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/260x180" alt="">
-              </a>
-            </div><!--/span-->
-            <div class="span10">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
-          <div class="row-fluid">
-            <div class="span2">
-              <a href="#" class="thumbnail">
-                <img src="http://placehold.it/260x180" alt="">
-              </a>
-            </div><!--/span-->
-            <div class="span10">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
         </div><!--/span-->
         <div class="span2">
           <div class="well">
@@ -218,9 +158,9 @@
         /* GET TASKS
         * ============ */
         $.getJSON(getUrlApi('users/4f0c1ab5212602cc79000006/tasks'), {access_token: strAccessToken},function(json) {
-          $.each(json.tasks, function(key, value) {
+          $.each(json.results, function(key, value) {
             $('.main').append('<div class="row-fluid"><div class="span2"><a href="#" class="thumbnail"><img src="http://placehold.it/260x180" alt=""></a></div><div class="span10"><h3><span class="label">Heading</span></h3><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p><p><a class="btn" href="#">View details »</a></p></div></div>');  
-          }
+          });
         });
         
          /* GET DEFINITIONS
