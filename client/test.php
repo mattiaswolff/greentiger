@@ -308,7 +308,7 @@
           window.sessionStorage.setItem("definition_id", $(this).attr('name'));
         });
         
-        $(".nav-tabs").delegate("button.btn-primary", "click", function(event) {
+        $(".tab-content").delegate("button.btn-primary", "click", function(event) {
           if (event.preventDefault()) {
                 event.preventDefault();// cancels the form submission
             }
