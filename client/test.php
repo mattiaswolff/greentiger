@@ -221,7 +221,7 @@
             $.each(json.definitions, function(key, value) {
                 
                 var strDefinitionId = value._id.$id;  
-                $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" name="' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
+                $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
                 
                 var arrHTML = new Array();
                 arrHTML.push('<div class="tab-pane fade" id="' + strDefinitionId + '">');
