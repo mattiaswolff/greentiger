@@ -221,7 +221,7 @@
             $.each(json.definitions, function(key, value) {
                 
                 var strDefinitionId = value._id.$id;  
-                $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
+                $('.nav-tabs').append('<li><a href="#' + value._id.$id + '" name="' + value._id.$id + '" data-toggle="tab">' + value.name + '</a></li>');
                 
                 var arrHTML = new Array();
                 arrHTML.push('<div class="tab-pane fade" id="' + strDefinitionId + '">');
@@ -303,9 +303,39 @@
                   }
             });
         });   
+        
         $(".nav-tabs").delegate("a", "click", function(event) {
           window.sessionStorage.setItem("definition_id", $(this).attr('name'));
         });
+        
+        $(".nav-tabs").delegate("button.btn-primary", "submit", function(event) {
+          if (event.preventDefault()) {
+                event.preventDefault();// cancels the form submission
+            }
+            else {
+                event.returnValue = false;
+            }
+            
+            $.each($(this).parents('form').serializeArray(), function(i, field) {
+              values[field.name] = field.value;
+            });
+            
+            var strUrl = getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id"));    
+            
+            $.ajax({
+                type: 'POST',
+                url: strUrl,
+                dataType: 'json',
+                data: values,
+                async: false,
+                success: function(data) {
+                  $('#' + window.sessionStorage.getItem("element_id")).parents(".controls").children("p.help-block").text(values["description"]);
+                  },
+                error: function(data) {
+                  $('div.main').append('<div class="alert alert-block"><a class="close" data-dismiss="alert">×</a><h4 class="alert-heading">Warning!</h4>Best check yo self, youre not...</div>')
+                  }
+            });
+        });  
         
         $("body").delegate("a.delete-element", "click", function(event) {
           var strUrl = getUrlApi('definitions/' + window.sessionStorage.getItem("definition_id") + '/elements/' + $(this).attr("name"));
