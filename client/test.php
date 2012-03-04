@@ -159,7 +159,7 @@
         * ============ */
         $.getJSON(getUrlApi('users/4f0c1ab5212602cc79000006/tasks'), {access_token: strAccessToken},function(json) {
           $.each(json.results, function(key, value) {
-            $('.main').append('<div class="row-fluid"><div class="span2"><a href="#" class="thumbnail"><img src="http://placehold.it/260x180" alt=""></a></div><div class="span10"><h3><span class="label">Heading</span></h3><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p><p><a class="btn" href="#">View details »</a></p></div></div>');  
+            $('.main').append('<div class="row-fluid"><div class="span2"><a href="#" class="thumbnail"><img src="http://placehold.it/260x180" alt=""></a></div><div class="span10"><p><span class="label info">Heading</span></p><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p><p><a class="btn" href="#">View details »</a></p></div></div>');  
           });
         });
         
