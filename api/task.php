@@ -79,7 +79,7 @@ switch($data->getMethod()) {
             $objTask->setRatings($arrRequestVars["ratings"]);
             $objTask->setTags($arrRequestVars["tags"]);
             $objTask->setDefinition($arrRequestVars["definitionId"]);
-            $objTask->setContent($arrRequestVars["content"]);
+            $objTask->setElements($arrRequestVars["elements"]);
             $objTask->upsert();
             $arrDefinitions = $objUser->getDefinitions();
             foreach ($arrDefinitions as $key => $var) {
@@ -125,8 +125,8 @@ switch($data->getMethod()) {
                 $objTask->setTags($arrRequestVars["tags"]);
             }
             //$objTask->setDefinition($arrRequestVars["definitionId"]); should not be updated
-            if (($strPart == '') or ($strPart == 'content')) {
-                $objTask->setContent($arrRequestVars["content"]);
+            if (($strPart == '') or ($strPart == 'elements')) {
+                $objTask->Elements($arrRequestVars["elements"]);
             }
             $objTask->upsert();
             RestUtils::sendResponse(200, (array)$objTask->getId(), 'application/json');

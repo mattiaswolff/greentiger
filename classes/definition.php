@@ -7,7 +7,7 @@ class Definition {
     private $name;
     private $description;
     private $updatedDate;
-    private $content;
+    private $elements;
   
     //Constructor
     public function __construct($objId = null){  
@@ -19,13 +19,13 @@ class Definition {
             $this->name = $arrResults['name'];
             $this->description = $arrResults['description'];
             $this->updatedDate = $arrResults['updatedDate'];
-            $this->content = $arrResults['content'];
+            $this->elements = $arrResults['elements'];
         }
         else {
             $this->_id = '';
             $this->name = '';  
             $this->description = '';  
-            $this->content = array();
+            $this->elements = array();
             $this->updatedDate = '';
         }
     }
@@ -35,11 +35,11 @@ class Definition {
     public function getName() { return $this->name; } 
     public function getDescription() { return $this->description; } 
     public function getUpdatedDate() { return $this->updatedDate; } 
-    public function getContent() { return $this->content; }  
+    public function getElements() { return $this->elements; }  
     public function setId() { $this->_id = new MongoId(); } 
     public function setName($x = null) {if ($x != null) {$this->name = $x; }} 
     public function setDescription($x = null) {if ($x != null) { $this->description = $x; }}     
-    public function setContent($x = null) {if ($x != null) { $this->content = $x; }} 
+    public function setElements($x = null) {if ($x != null) { $this->elements = $x; }} 
     
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null) {

@@ -13,7 +13,7 @@ class Task {
     private $ratings;
     private $tags;
     private $definition;
-    private $content;
+    private $elements;
   
     //Constructorsd
     public function __construct($objId = null){
@@ -31,7 +31,7 @@ class Task {
             $this->ratings = $arrResults['ratings'];  
             $this->tags = $arrResults['tags'];
             $this->definition = $arrResults['definition'];  
-            $this->content = $arrResults['content'];
+            $this->elements = $arrResults['elements'];
         }
         else {
             $this->_id = '';  
@@ -44,7 +44,7 @@ class Task {
             $this->ratings = array();  
             $this->tags = array();
             $this->definition = '';  
-            $this->content = array();
+            $this->elements = array();
         }
     }
     
@@ -59,7 +59,7 @@ class Task {
     public function getRatings() { return $this->ratings; } 
     public function getTags() { return $this->tags; } 
     public function getDefinition() { return $this->definition; } 
-    public function getContent() { return $this->content; } 
+    public function getElements() { return $this->elements; } 
     public function setId() { $this->_id = new MongoId(); } 
     public function setCreatedBy($x) {if ($x != null) { $this->createdBy = $x; }} 
     public function setUpdatedDate($x) {if ($x != null) { $this->updatedDate = $x; }} 
@@ -70,7 +70,7 @@ class Task {
     public function setRatings($x) {if ($x != null) { $this->ratings = $x; }} 
     public function setTags($x) {if ($x != null) { $this->tags = $x; }} 
     public function setDefinition($x) {if ($x != null) { $this->definition = $x; }} 
-    public function setContent($x) {if ($x != null) { $this->content = $x; }}
+    public function setElements($x) {if ($x != null) { $this->elements = $x; }}
 
     //Get, Upsert and Delete functions
     function get($intObjectsPerPage = 10, $intPage = 1, $arrObjectId = null, $strSearch) {
@@ -127,7 +127,7 @@ class Task {
         $arrKeywords = array();
         $value = $this->GetCreatedBy();
                 $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value["name"])));   
-        foreach ($this->GetContent() as $value) {
+        foreach ($this->GetElements() as $value) {
                 $arrKeywords = array_merge($arrKeywords,  explode(" ",preg_replace("/[^a-zåäöÅÄÖ \d]/i", "",$value)));   
             }
         foreach ($this->GetComments() as $value) {
