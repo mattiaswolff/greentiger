@@ -36,7 +36,7 @@
     
         <!-- Todo App Interface -->
 
-    <div id="todoapp">
+    <div id="definitionapp">
 
       <div class="title">
         <h1>Todos</h1>
