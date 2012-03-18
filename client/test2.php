@@ -86,11 +86,16 @@
     // Models
 $(function(){
   
-window.Definition = Backbone.Model.extend();
+window.Definition = Backbone.Model.extend({                                     
+    defaults: function() {
+      return {
+        done:  false,
+      };
+    }
+});
  
 window.DefinitionList = Backbone.Collection.extend({
     model:Definition,
-    url:"../api/definitions"
 });
  
 window.Definitions = new DefinitionList;
@@ -111,7 +116,7 @@ window.DefinitionView = Backbone.View.extend({
 
     // Re-render the contents of the definition item.
     render: function() {
-      $(this.el).html(this.template(this.Definition.toJSON()));
+      $(this.el).html(this.template(this.model.toJSON()));
       this.setText();
       return this;
     },
