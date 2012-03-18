@@ -57,7 +57,7 @@
     <!-- Templates -->
     <script type="text/template" id="definition-template">
       <div class="definition">
-        Test
+        <div class="definition-text"></div>
       </div>
     </script>
     
@@ -129,8 +129,8 @@ window.DefinitionView = Backbone.View.extend({
     setText: function() {
       var text = this.model.get('text');
       this.$('.todo-text').text(text);
-      this.input = this.$('.todo-input');
-      this.input.bind('blur', _.bind(this.close, this)).val(text);
+      //this.input = this.$('.todo-input');
+      //this.input.bind('blur', _.bind(this.close, this)).val(text);
     },
   });
  
