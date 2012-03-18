@@ -111,7 +111,7 @@ window.DefinitionView = Backbone.View.extend({
 
     // Re-render the contents of the definition item.
     render: function() {
-      $(this.el).html(this.template(this.model.toJSON()));
+      $(this.el).html(this.template(this.Definition.toJSON()));
       this.setText();
       return this;
     },
@@ -184,18 +184,6 @@ window.DefinitionView = Backbone.View.extend({
       _.each(Todos.done(), function(todo){ todo.destroy(); });
       return false;
     },
-
-    // Lazily show the tooltip that tells you to press `enter` to save
-    // a new todo item, after one second.
-    showTooltip: function(e) {
-      var tooltip = this.$(".ui-tooltip-top");
-      var val = this.input.val();
-      tooltip.fadeOut();
-      if (this.tooltipTimeout) clearTimeout(this.tooltipTimeout);
-      if (val == '' || val == this.input.attr('placeholder')) return;
-      var show = function(){ tooltip.show().fadeIn(); };
-      this.tooltipTimeout = _.delay(show, 1000);
-    }
 
   });
 
