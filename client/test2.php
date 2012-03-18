@@ -69,6 +69,7 @@
     <script src="../js/json2.js"></script>
     <script src="../js/underscore.js"></script>
     <script src="../js/backbone.js"></script>
+    <script src="../js/backbone-localstorage.js"></script>
     <script src="../js/bootstrap-transition.js"></script>
     <script src="../js/bootstrap-alert.js"></script>
     <script src="../js/bootstrap-modal.js"></script>
@@ -96,6 +97,8 @@ window.Definition = Backbone.Model.extend({
  
 window.DefinitionList = Backbone.Collection.extend({
     model: Definition,
+    // Save all of the todo items under the `"todos"` namespace.
+    localStorage: new Store("definitions")
 });
  
 window.Definitions = new DefinitionList;
