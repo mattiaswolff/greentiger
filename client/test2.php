@@ -95,7 +95,7 @@ window.Definition = Backbone.Model.extend({
 });
  
 window.DefinitionList = Backbone.Collection.extend({
-    model:Definition,
+    model: Definition,
 });
  
 window.Definitions = new DefinitionList;
