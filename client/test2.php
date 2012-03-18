@@ -39,36 +39,25 @@
     <div id="definitionapp">
 
       <div class="title">
-        <h1>Todos</h1>
+        <h1>Definitions</h1>
       </div>
 
       <div class="content">
 
-        <div id="create-todo">
-          <input id="new-todo" placeholder="What needs to be done?" type="text" />
-          <span class="ui-tooltip-top" style="display:none;">Press Enter to save this task</span>
+        <div id="create-definition">
+          <input id="new-definition" placeholder="What needs to be done?" type="text" />
         </div>
 
-        <div id="todos">
-          <ul id="todo-list"></ul>
+        <div id="definitions">
+          <ul id="definition-list"></ul>
         </div>
-
-        <div id="todo-stats"></div>
-
       </div>
 
     </div>
     <!-- Templates -->
     <script type="text/template" id="definition-template">
       <div class="definition">
-        <div class="display">
-          <input class="check" type="checkbox"/>
-          <div class="todo-text"></div>
-          <span class="todo-destroy"></span>
-        </div>
-        <div class="edit">
-          <input class="todo-input" type="text" value="" />
-        </div>
+        Test
       </div>
     </script>
     
@@ -154,40 +143,39 @@ window.DefinitionView = Backbone.View.extend({
     // Instead of generating a new element, bind to the existing skeleton of
     // the App already present in the HTML.
     el: $("#definitionapp"),
+    
+    events: {
+      "keypress #new-definition":  "createOnEnter",
+    },
 
     // At initialization we bind to the relevant events on the `Todos`
     // collection, when items are added or changed. Kick things off by
     // loading any preexisting todos that might be saved in *localStorage*.
     initialize: function() {
-      this.input    = this.$("#new-todo");
+      this.input    = this.$("#new-definition");
 
-      Definitions.bind('add',   this.addOne, this);
-      Definitions.bind('reset', this.addAll, this);
-      Definitions.bind('all',   this.render, this);
-
-      Todos.fetch();
+      Definitions.on('add',   this.addOne, this);
+      Definitions.on('reset', this.addAll, this);
+      Definitions.on('all',   this.render, this);
     },
+    
+    
 
     // Re-rendering the App just means refreshing the statistics -- the rest
     // of the app doesn't change.
     render: function() {
-      this.$('#todo-stats').html(this.statsTemplate({
-        total:      Todos.length,
-        done:       Todos.done().length,
-        remaining:  Todos.remaining().length
-      }));
     },
 
     // Add a single todo item to the list by creating a view for it, and
     // appending its element to the `<ul>`.
     addOne: function(todo) {
-      var view = new TodoView({model: todo});
-      $("#todo-list").append(view.render().el);
+      var view = new DefinitionView({model: definition});
+      $("#definition-list").append(view.render().el);
     },
 
     // Add all items in the **Todos** collection at once.
     addAll: function() {
-      Todos.each(this.addOne);
+      Definitions.each(this.addOne);
     },
 
     // If you hit return in the main input field, and there is text to save,
@@ -195,7 +183,7 @@ window.DefinitionView = Backbone.View.extend({
     createOnEnter: function(e) {
       var text = this.input.val();
       if (!text || e.keyCode != 13) return;
-      Todos.create({text: text});
+      Definitions.create({text: text});
       this.input.val('');
     },
 
