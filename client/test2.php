@@ -103,14 +103,6 @@ window.DefinitionView = Backbone.View.extend({
     // Cache the template function for a single item.
     template: _.template($('#definition-template').html()),
 
-    // The DOM events specific to an item.
-    events: {
-      "click .check"              : "toggleDone",
-      "dblclick div.todo-text"    : "edit",
-      "click span.todo-destroy"   : "clear",
-      "keypress .todo-input"      : "updateOnEnter"
-    },
-
     // The DefinitionView listens for changes to its model, re-rendering.
     initialize: function() {
       this.model.bind('change', this.render, this);
