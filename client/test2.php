@@ -168,8 +168,8 @@ window.DefinitionView = Backbone.View.extend({
 
     // Add a single todo item to the list by creating a view for it, and
     // appending its element to the `<ul>`.
-    addOne: function(todo) {
-      var view = new DefinitionView({model: Definition});
+    addOne: function(definition) {
+      var view = new DefinitionView({model: definition});
       $("#definition-list").append(view.render().el);
     },
 
