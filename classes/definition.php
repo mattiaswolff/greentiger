@@ -53,15 +53,11 @@ class Definition {
         else {
             $objResults = $db->definitions->find()->limit($intLimit)->skip($intSkip);
         }
-        $arrResults['total'] = 0;
-        $arrResults['page'] = $intPage;
-        $arrResults['pagesize'] = $intObjectsPerPage;
         foreach ($objResults as $key => $var) {
-            $arrResults['total'] = $arrResults['total'] + 1;
             $objId = new MongoId($var['_id']);
             $var['createdDate'] = $objId->getTimestamp();
             $var['_id'] = (string)$var['_id'];
-            $arrResults['results'][] = $var;
+            $arrResults[] = $var;
         }
         return $arrResults; 
     }
