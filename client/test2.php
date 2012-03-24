@@ -34,26 +34,62 @@
 
   <body>
     
-        <!-- Todo App Interface -->
-
-    <div id="definitionapp">
-
-      <div class="title">
-        <h1>Definitions</h1>
-      </div>
-
-      <div class="content">
-
-        <div id="create-definition">
-          <input id="new-definition" placeholder="What needs to be done?" type="text" />
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Zowgle.com</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#profile">Profile</a></li>
+              <li><a href="#profile">Definitions</a></li>
+              <li><a href="#plugins">Plugins</a></li>
+            </ul>
+            <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
+          </div><!--/.nav-collapse -->
         </div>
-
-        <div id="definitions">
-          <ul id="definition-list"></ul>
-        </div>
       </div>
+    </div>
+    
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span7 main">
+          <div id="definitionapp">
+            <div class="tabbable">
+                <ul class="nav nav-tabs"></ul>
+                <div class="tab-content"></div>
+            </div>
+          </div>        
+          <div>
+            
+          </div>
+        </div><!--/span-->
+        <div class="span3">
+          <div class="well">
+            <a href="#" class="thumbnail">
+              <img src="http://placehold.it/260x180" alt="">
+            </a>
+            <h2>Mattias Wolff</h2>
+            <p><a href="http://www.dif.se">www.dif.se</a></p>
+            <p>lsdfkj lasjf lasjf lajf lajsdf lakjsdf lajsd flajsd lfja dslfjal djsflaj sfljalsfjals fjlajs flajsd lfjalsdfj lkjs dflajsd lfajsd lfj alsf las flajs dflajsd lfjals f</p>
+          </div><!--/.well -->
+        </div>
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
 
     </div>
+    
+    
+    
     <!-- Templates -->
     <script type="text/template" id="definition-template">
       <div class="definition">
@@ -69,7 +105,6 @@
     <script src="../js/json2.js"></script>
     <script src="../js/underscore.js"></script>
     <script src="../js/backbone.js"></script>
-    <script src="../js/backbone-localstorage.js"></script>
     <script src="../js/bootstrap-transition.js"></script>
     <script src="../js/bootstrap-alert.js"></script>
     <script src="../js/bootstrap-modal.js"></script>
@@ -90,15 +125,14 @@ $(function(){
 window.Definition = Backbone.Model.extend({                                     
     defaults: function() {
       return {
-        done:  false,
+        description:  "Please enter a description"
       };
     }
 });
  
 window.DefinitionList = Backbone.Collection.extend({
     model: Definition,
-    // Save all of the todo items under the `"todos"` namespace.
-    localStorage: new Store("definitions")
+    url: '/api/users/4f0c1ab5212602cc79000006/definitions/'
 });
  
 window.Definitions = new DefinitionList;
@@ -139,7 +173,6 @@ window.DefinitionView = Backbone.View.extend({
 
   // Our overall **AppView** is the top-level piece of UI.
   window.AppView = Backbone.View.extend({
-
     // Instead of generating a new element, bind to the existing skeleton of
     // the App already present in the HTML.
     el: $("#definitionapp"),
@@ -147,37 +180,32 @@ window.DefinitionView = Backbone.View.extend({
     events: {
       "keypress #new-definition":  "createOnEnter",
     },
-
     // At initialization we bind to the relevant events on the `Todos`
     // collection, when items are added or changed. Kick things off by
     // loading any preexisting todos that might be saved in *localStorage*.
     initialize: function() {
       this.input    = this.$("#new-definition");
-
       Definitions.on('add',   this.addOne, this);
       Definitions.on('reset', this.addAll, this);
       Definitions.on('all',   this.render, this);
+      
+      Definitions.fetch();
     },
-    
-    
-
     // Re-rendering the App just means refreshing the statistics -- the rest
     // of the app doesn't change.
     render: function() {
+      $("#definitionapp ul.nav").append('<li><a href="#test" name="TEST" data-toggle="tab">testing</a></li>');
     },
-
     // Add a single todo item to the list by creating a view for it, and
     // appending its element to the `<ul>`.
     addOne: function(definition) {
       var view = new DefinitionView({model: definition});
       $("#definition-list").append(view.render().el);
     },
-
     // Add all items in the **Todos** collection at once.
     addAll: function() {
       Definitions.each(this.addOne);
     },
-
     // If you hit return in the main input field, and there is text to save,
     // create new **Todo** model persisting it to *localStorage*.
     createOnEnter: function(e) {
@@ -186,15 +214,12 @@ window.DefinitionView = Backbone.View.extend({
       Definitions.create({text: text});
       this.input.val('');
     },
-
     // Clear all done todo items, destroying their models.
     clearCompleted: function() {
       _.each(Todos.done(), function(todo){ todo.destroy(); });
       return false;
     },
-
   });
-
   // Finally, we kick things off by creating the **App**.
   window.App = new AppView;
   });
