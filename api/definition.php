@@ -18,7 +18,7 @@ switch($data->getMethod()) {
         }
         else if ($strUserId != '') {
             $objUser = new User($strUserId);
-            $arrId = $objUser->getDefinitions();
+            $arrId[] = $objUser->getDefinitions();
         }
         else {
             $arrId = null;
