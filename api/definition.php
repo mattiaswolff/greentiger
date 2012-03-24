@@ -11,13 +11,13 @@ switch($data->getMethod()) {
         $arrRequestVars = $data->getRequestVars();
         
         $strDefinitionId = (isset($arrRequestVars['definitionId']) ? $arrRequestVars['definitionId'] : '');
-        $strUserId = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
+        $arrUserId[] = (isset($arrRequestVars['userId']) ? $arrRequestVars['userId'] : '');
         
         if ($strDefinitionId != '') {
             $arrId[] = new MongoId($strDefinitionId);
         }
-        else if ($strUserId != '') {
-            $arrResults = User::get(1000, 1, $strUserId);
+        else if ($arrUserId[0] != '') {
+            $arrResults = User::get(1000, 1, $arrUserId);
             $arrId = $arrResults['users'][0]['definitions'];
         }
         else {
