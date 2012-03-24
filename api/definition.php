@@ -19,7 +19,7 @@ switch($data->getMethod()) {
         else if ($strUserId != '') {
             $objUser = new User($strUserId);
             $arrId[] = $objUser->getDefinitions();
-            echo var_dump($arrId[]);
+            echo var_dump($arrId);
         }
         else {
             $arrId = null;
