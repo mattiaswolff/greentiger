@@ -7,7 +7,7 @@ class User {
     public $definitions;
     
     //Constructor
-    public function __construct($id, $name, $email, $definitions){
+    public function __construct($id = NULL, $name = NULL, $email = NULL, $definitions = NULL){
             $this->setId($id);
             $this->setName($name);
             $this->setEmail($email);
