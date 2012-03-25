@@ -44,8 +44,8 @@ class User {
         $db = $m->projectcopperfield;
         $users = array();
         $arrResults = $db->users->findOne(array('_id' => $id));
-        $objUser = new User ($arrResults['_id'], $arrResults['name'], $arrResults['email'], $arrResults['definitions']);
-        return $objUser; 
+        $users[] = new User ($arrResults['_id'], $arrResults['name'], $arrResults['email'], $arrResults['definitions']);
+        return $users; 
     }
     
     public function upsert() {
