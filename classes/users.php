@@ -28,6 +28,7 @@ class User {
     public static function findAll($intObjectsPerPage = 10, $intPage = 1) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
+        $users = array();        
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
         $intLimit = $intObjectsPerPage;
         $objResults = $db->users->find()->skip($intSkip)->limit($intLimit);
@@ -40,6 +41,7 @@ class User {
     public static function find($id) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
+        $users = array();
         $objResults = $db->users->find(array('id' => $id));
         foreach ($objResults as $var) {
             $users[] = new User ($var['id'], $var['name'], $var['email'], $var['definitions']);
