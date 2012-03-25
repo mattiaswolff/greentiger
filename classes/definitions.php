@@ -14,7 +14,6 @@ class Definition {
         $this->setName($name);  
         $this->setDescription($description);  
         $this->setElements($elements);
-        }
     }
     
     //Accessors
@@ -62,7 +61,7 @@ class Definition {
         'fields' => array( '_id' => 1 )));
         $this->_id = $result['value']['_id'];
     }
-    
+    /*
     function delete($arrObjectId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
@@ -77,6 +76,6 @@ class Definition {
     public function toArray() {
         $array = get_object_vars($this);
         return $array;
-    }
+    }*/
 }
 ?>
