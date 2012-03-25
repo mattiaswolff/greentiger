@@ -34,7 +34,7 @@ class Definition {
         $intLimit = $intObjectsPerPage;
         $objResults = $db->definitions->find()->limit($intLimit)->skip($intSkip);
         foreach ($objResults as $key => $var) {
-            $definitions[] = new Definition($var['_id'], $var['name'], $var['description'], $var['elements'];
+            $definitions[] = new Definition($var['_id'], $var['name'], $var['description'], $var['elements']);
         }
         return $definitions; 
     }
@@ -43,7 +43,7 @@ class Definition {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $arrResults = $db->definitions->findOne(array('_id' => $_id));
-        $definitions[] = new Definition($arrResults['_id'], $arrResults['name'], $arrResults['description'], $arrResults['elements'];
+        $definitions[] = new Definition($arrResults['_id'], $arrResults['name'], $arrResults['description'], $arrResults['elements']);
         return $definitions; 
     }
     
