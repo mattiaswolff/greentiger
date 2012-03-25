@@ -64,7 +64,7 @@ $app->post('/users', function () use ($app) {
 //PUT route
 $app->put('/users/:_id', function ($_id) use ($app) {
     $arrUsers = User::find($_id);
-    $objUser = new User($arrUsers[0]['_id'], $arrUsers[0]['name'], $arrUsers[0]['email'], $arrUsers[0]['definitions']);
+    $objUser = $arrUsers[0];
     $objUser->setName($app->request()->put('name'));
     $objUser->setEmail($app->request()->put('email'));
     $result = $objUser->upsert();
