@@ -42,8 +42,9 @@ $app = new Slim();
  */
 
 //GET route
-$app->get('/users/:user_id', function ($user_id = '') {
-    echo json(User::find($user_id));
+    //Users
+$app->get('/users/:_id', function ($_id = '') {
+    echo json(User::find($_id));
 });
 
 $app->get('/users', function () {
@@ -51,15 +52,23 @@ $app->get('/users', function () {
 });
 
 //POST route
+    //Users
 $app->post('/users', function () use ($app) {
     $objUser = new User($app->request()->post('_id'), $app->request()->post('name'), $app->request()->post('email'), NULL);
     $result = $objUser->upsert();
     echo json($objUser);
 });
-
+    //Definitions
+    
+    
 //PUT route
-$app->put('/person/:id', function ($id) {
-    //Update Person identified by $id
+$app->put('/users/:_id', function ($_id) use ($app) {
+    $objUser = new User();
+    $objUser->find($_id);
+    $objUser->setName($app->request()->post('name'));
+    $objUser->setEmail($app->request()->post('email'));
+    $result = $objUser->upsert();
+    echo json($objUser);
 });
 
 //DELETE route
