@@ -52,12 +52,9 @@ $app->get('/users', function () {
 
 //POST route
 $app->post('/users', function () use ($app) {
-    //echo var_dump($app);
-    echo $app->request()->post();
-    echo $app->request()->post('name');
     $objUser = new User($app->request()->post('_id'), $app->request()->post('name'), $app->request()->post('email'), NULL);
     $result = $objUser->upsert();
-    echo $result;
+    echo json($objUser);
 });
 
 //PUT route
