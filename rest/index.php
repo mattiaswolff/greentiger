@@ -59,6 +59,7 @@ $app->get('/users/:user_id/definitions', function ($user_id) {
     foreach ($objUser->getDefinitions() as $key => $var) {
         $arrId[] = $var['_id'];
     }
+    echo var_dump($arrId);
     echo json(User::find($arrId));
 });    
     
