@@ -1,10 +1,10 @@
 <?php
 class User {
     //Properties
-    private $_id;
-    private $name;
-    private $email;
-    private $definitions;
+    public $_id;
+    public $name;
+    public $email;
+    public $definitions;
     
     //Constructor
     public function __construct($id, $name, $email, $definitions){

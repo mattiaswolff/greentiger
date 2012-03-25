@@ -50,18 +50,11 @@ $app->get('/users', function () {
     echo json(User::findAll());
 });
 
-$app->get('/users/:user_id/definitions(/:definition_id)', function ($user_id, $definition_id = 'def') {
-    echo "Hello, $user_id";
-    echo "Hello, $definition_id";
-});
-
-$app->get('/definitions(/:definition_id)', function ($definition_id = '') {
-    echo "Hello, $definition_id";
-});
-
 //POST route
-$app->post('/person', function () {
-    //Create new Person
+$app->post('/users', function () use ($app) {
+    echo var_dump($app);
+    $objUser = new User($id, $name, $email, $definitions);
+    $objUser->upsert();
 });
 
 //PUT route
