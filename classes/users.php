@@ -43,11 +43,9 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $users = array();
-        $objResults = $db->users->find(array('_id' => $id));
-        foreach ($objResults as $var) {
-            $users[] = new User ($var['_id'], $var['name'], $var['email'], $var['definitions']);
-        }
-        return $users; 
+        $arrResults = $db->users->findOne(array('_id' => $id));
+        $objUser = new User ($arrResults['_id'], $arrResults['name'], $arrResults['email'], $arrResults['definitions']);
+        return $objUser; 
     }
     
     public function upsert() {
