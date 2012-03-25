@@ -35,6 +35,7 @@ class User {
         foreach ($objResults as $var) {
             $users[] = new User ($var['_id'], $var['name'], $var['email'], $var['definitions']);
         }
+        echo var_dump($users);
         return $users; 
     }
     
