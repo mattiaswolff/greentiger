@@ -42,7 +42,7 @@ class Definition {
     public static function find($arrId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $arrResults = $db->definitions->find(array("_id" => array('$in' => $arrId)));
+        $objResults = $db->definitions->find(array("_id" => array('$in' => $arrId)));
         foreach ($objResults as $key => $var) {
             $definitions[] = new Definition($var['_id'], $var['name'], $var['description'], $var['elements']);
         }
