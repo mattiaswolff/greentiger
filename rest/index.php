@@ -55,7 +55,7 @@ $app->post('/users', function () use ($app) {
     //echo var_dump($app);
     echo $app->request()->post();
     echo $app->request()->post('name');
-    $objUser = new User($name = $app->request()->post('name'), $email = $app->request()->post('email'));
+    $objUser = new User(NULL, $app->request()->post('name'), $app->request()->post('email'), NULL);
     $result = $objUser->upsert();
     echo $result;
 });
