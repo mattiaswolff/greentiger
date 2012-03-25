@@ -43,12 +43,12 @@ class Definition {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $objResults = $db->definitions->find(array("_id" => array('$in' => $arrId)));
+        echo var_dump($objResults)
         foreach ($objResults as $key => $var) {
             $definitions[] = new Definition($var['_id'], $var['name'], $var['description'], $var['elements']);
         }
         return $definitions; 
     }
-    
     
     public function upsert() {
         $m = new Mongo();
