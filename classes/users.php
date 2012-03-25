@@ -1,10 +1,10 @@
 <?php
 class User {
     //Properties
-    public $id;
-    public $name;
-    public $email;
-    public $definitions;
+    private $_id;
+    private $name;
+    private $email;
+    private $definitions;
     
     //Constructor
     public function __construct($id, $name, $email, $definitions){
@@ -15,11 +15,11 @@ class User {
     }
     
     //Accessors
-    public function getId() { return $this->id; } 
+    public function getId() { return $this->_id; } 
     public function getEmail() { return $this->email; } 
     public function getName() { return $this->name; }
     public function getDefinitions() { return $this->definitions; }
-    public function setId($x) {if ($x != null) { $this->id = $x; }}
+    public function setId($x) {if ($x != null) { $this->_id = $x; }}
     public function setEmail($x) {if ($x != null) { $this->email = $x; }} 
     public function setName($x) {if ($x != null) { $this->name = $x; }}
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }}
@@ -42,17 +42,16 @@ class User {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $users = array();
-        $objResults = $db->users->find(array('id' => $id));
+        $objResults = $db->users->find(array('_id' => $id));
         foreach ($objResults as $var) {
-            $users[] = new User ($var['id'], $var['name'], $var['email'], $var['definitions']);
+            $users[] = new User ($var['_id'], $var['name'], $var['email'], $var['definitions']);
         }
         return $users; 
     }
-    /*
+    
     public function upsert() {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        if ($this->getEmail()) {$this->setGravatar();}
         $array = get_object_vars($this);
         $result = $db->command(array('findAndModify' => 'users', 
         'query' => array('_id' => $this->_id),
@@ -62,7 +61,7 @@ class User {
         'fields' => array( '_id' => 1 )));
         return $result['value']['_id'];
     }
-    
+    /*
     function delete($strUserId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
