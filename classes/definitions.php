@@ -27,7 +27,7 @@ class Definition {
     public function setElements($x = null) {if ($x != null) { $this->elements = $x; }} 
     
     //Get, Upsert and Delete functions
-    function findAll($intObjectsPerPage = 10, $intPage = 1) {
+    public static function findAll($intObjectsPerPage = 10, $intPage = 1) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
@@ -39,7 +39,7 @@ class Definition {
         return $definitions; 
     }
     
-    function find($_id) {
+    public static function find($_id) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $arrResults = $db->definitions->findOne(array('_id' => $_id));
