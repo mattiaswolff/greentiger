@@ -25,7 +25,7 @@ class User {
     public function setDefinitions($x) {if ($x != null) { $this->definitions = $x; }}
     
     //Get, Upsert and Delete functions
-    function findAll($intObjectsPerPage = 10, $intPage = 1) {
+    public static function findAll($intObjectsPerPage = 10, $intPage = 1) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $intSkip = (int)($intObjectsPerPage * ($intPage - 1));
@@ -37,7 +37,7 @@ class User {
         return $users; 
     }
     
-    function find($id) {
+    public static function find($id) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $objResults = $db->users->find(array('id' => $id));
