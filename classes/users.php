@@ -8,10 +8,10 @@ class User {
     
     //Constructor
     public function __construct($id, $name, $email, $definitions){
-            $this->id = $id;
-            $this->name = $name;
-            $this->email = $email;
-            $this->definitions = $definitions;
+            $this->setId($id);
+            $this->setName($name);
+            $this->setEmail($email);
+            $this->setDefinitions($definitions);
     }
     
     //Accessors
@@ -33,10 +33,8 @@ class User {
         $intLimit = $intObjectsPerPage;
         $objResults = $db->users->find()->skip($intSkip)->limit($intLimit);
         foreach ($objResults as $var) {
-            
             $users[] = new User ($var['_id'], $var['name'], $var['email'], $var['definitions']);
         }
-        echo var_dump($users);
         return $users; 
     }
     
