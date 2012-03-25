@@ -10,6 +10,7 @@
  */
 require 'Slim/Slim.php';
 require "../classes/users.php";
+require "../classes/definitions.php";
 
 function json ($obj) {
     header('Content-Type', 'application/json');
@@ -59,7 +60,17 @@ $app->post('/users', function () use ($app) {
     echo json($objUser);
 });
     //Definitions
-    
+$app->post('/users/:user_id/definitions', function ($user_id) use ($app) {
+    $objDefinition = new Definition(new MongoId(), $app->request()->post('name'), $app->request()->post('description'), $app->request()->post('elements'));
+    $result = $objDefinition->upsert();
+    $arrUser = User::find($user_id);
+    $objUser = $arrUser[0];
+    $arrDefinitions = $objUser->getDefinitions();
+    $arrDefinitions[] = $objDefinition->getId();
+    $objUser->setDefinitions($arrDefinitions);
+    $result = $objUser->upsert();
+    echo json($objUser);
+});    
     
 //PUT route
 $app->put('/users/:_id', function ($_id) use ($app) {

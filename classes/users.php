@@ -39,11 +39,11 @@ class User {
         return $users; 
     }
     
-    public static function find($id) {
+    public static function find($_id) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
         $users = array();
-        $arrResults = $db->users->findOne(array('_id' => $id));
+        $arrResults = $db->users->findOne(array('_id' => $_id));
         $users[] = new User ($arrResults['_id'], $arrResults['name'], $arrResults['email'], $arrResults['definitions']);
         return $users; 
     }
