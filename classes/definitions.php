@@ -39,11 +39,13 @@ class Definition {
         return $definitions; 
     }
     
-    public static function find($_id) {
+    public static function find($arrId) {
         $m = new Mongo();
         $db = $m->projectcopperfield;
-        $arrResults = $db->definitions->findOne(array('_id' => $_id));
-        $definitions[] = new Definition($arrResults['_id'], $arrResults['name'], $arrResults['description'], $arrResults['elements']);
+        $arrResults = $db->definitions->find(array("_id" => array('$in' => $arrId)));
+        foreach ($objResults as $key => $var) {
+            $definitions[] = new Definition($var['_id'], $var['name'], $var['description'], $var['elements']);
+        }
         return $definitions; 
     }
     

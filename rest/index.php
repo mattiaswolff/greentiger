@@ -53,6 +53,15 @@ $app->get('/users', function () {
 });
 
     //Definitions
+$app->get('/users/:user_id/definitions', function ($user_id) {
+    $arrUser = User::find($user_id);
+    $objUser = $arrUser[0];
+    foreach ($objUser->getDefinitions() as $key => $var) {
+        $arrId[] = $var['_id'];
+    }
+    echo json(User::find($arrId));
+});    
+    
 $app->get('/definitions', function () {
     echo json(Definition::findAll());
 });
@@ -71,7 +80,7 @@ $app->post('/users/:user_id/definitions', function ($user_id) use ($app) {
     $arrUser = User::find($user_id);
     $objUser = $arrUser[0];
     $arrDefinitions = $objUser->getDefinitions();
-    $arrDefinitions[] = $objDefinition->getId();
+    $arrDefinitions[] = array("_id" => $objDefinition->getId(), "name" => $objDefinition->getName());
     $objUser->setDefinitions($arrDefinitions);
     $result = $objUser->upsert();
     echo json($objUser);
