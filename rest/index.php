@@ -141,8 +141,8 @@ EOT;
 });
 
 //GET route
-$app->get('/users/:user_id(/definitions/(/:definition_id))', function ($user_id, $definition_id) {
-    echo "Hello, $user_id  , $definition_id";
+$app->get('/users/:user_id', function ($user_id) {
+    echo "Hello, $user_id";
 });
 
 //POST route
