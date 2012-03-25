@@ -52,6 +52,11 @@ $app->get('/users', function () {
     echo json(User::findAll());
 });
 
+    //Definitions
+$app->get('/definitions', function () {
+    echo json(Definition::findAll());
+});
+
 //POST route
     //Users
 $app->post('/users', function () use ($app) {
