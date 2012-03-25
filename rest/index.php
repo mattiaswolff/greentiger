@@ -53,6 +53,8 @@ $app->get('/users', function () {
 //POST route
 $app->post('/users', function () use ($app) {
     echo var_dump($app);
+    echo $app->request()->post();
+    echo $app->request()->post('name');
     //$objUser = new User($id, $name, $email, $definitions);
     //$objUser->upsert();
 });
