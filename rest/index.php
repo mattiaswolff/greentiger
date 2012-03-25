@@ -9,7 +9,12 @@
  * or update this file path as needed.
  */
 require 'Slim/Slim.php';
+require "../classes/users.php";
 
+function json ($obj) {
+    header('Content-Type', 'application/json');
+    return json_encode($obj);
+}
 /**
  * Step 2: Instantiate the Slim application
  *
@@ -37,8 +42,12 @@ $app = new Slim();
  */
 
 //GET route
-$app->get('/users/:user_id', function ($user_id) {
-    echo "Hello, $user_id";
+$app->get('/users/:user_id', function ($user_id = '') {
+    echo json(Users::find($user_id));
+});
+
+$app->get('/users', function () {
+    echo json(Users::findAll());
 });
 
 $app->get('/users/:user_id/definitions(/:definition_id)', function ($user_id, $definition_id = 'def') {
