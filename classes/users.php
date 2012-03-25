@@ -33,7 +33,7 @@ class User {
         $intLimit = $intObjectsPerPage;
         $objResults = $db->users->find()->skip($intSkip)->limit($intLimit);
         foreach ($objResults as $var) {
-            $users[] = new User ($var['id'], $var['name'], $var['email'], $var['definitions']);
+            $users[] = new User ($var['_id'], $var['name'], $var['email'], $var['definitions']);
         }
         return $users; 
     }
