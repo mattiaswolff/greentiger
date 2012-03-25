@@ -43,11 +43,11 @@ $app = new Slim();
 
 //GET route
 $app->get('/users/:user_id', function ($user_id = '') {
-    echo json(Users::find($user_id));
+    echo json(User::find($user_id));
 });
 
 $app->get('/users', function () {
-    echo json(Users::findAll());
+    echo json(User::findAll());
 });
 
 $app->get('/users/:user_id/definitions(/:definition_id)', function ($user_id, $definition_id = 'def') {
