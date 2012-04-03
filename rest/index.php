@@ -60,7 +60,7 @@ $app->get('/users/:user_id/definitions', function ($user_id) {
         $arrId[] = $var['_id'];
     }
     echo var_dump($arrId);
-    echo json(User::find($arrId));
+    echo json(Definition::find($arrId));
 });    
     
 $app->get('/definitions', function () {
