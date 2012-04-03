@@ -132,7 +132,7 @@ window.Definition = Backbone.Model.extend({
  
 window.DefinitionList = Backbone.Collection.extend({
     model: Definition,
-    url: 'http://www.zowgle.com/rest/index.php/users/matwo065/definitions/'
+    url: 'http://www.zowgle.com/rest/index.php/users/matwo065/definitions'
 });
  
 window.Definitions = new DefinitionList;
