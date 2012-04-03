@@ -92,7 +92,7 @@
     
     <!-- Templates -->
     <script type="text/template" id="definition-template">
-      <li><a href="#test" name="TEST" data-toggle="tab">testing2</a></li>
+      <a href="#test" name="TEST" data-toggle="tab">testing2</a>
     </script>
     
     
@@ -198,7 +198,7 @@ window.DefinitionView = Backbone.View.extend({
     // appending its element to the `<ul>`.
     addOne: function(definition) {
       var view = new DefinitionView({model: definition});
-      $("#definition-list").append(view.render().el);
+      $("#definitionapp ul.nav").append(view.render().el);
     },
     // Add all items in the **Todos** collection at once.
     addAll: function() {
