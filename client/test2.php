@@ -92,7 +92,7 @@
     
     <!-- Templates -->
     <script type="text/template" id="definition-template">
-      <a href="#test" name="TEST" data-toggle="tab">testing2</a>
+      <a href="#test" name="TEST" data-toggle="tab"><%= description %></a>
     </script>
     
     
