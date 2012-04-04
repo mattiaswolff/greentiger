@@ -93,6 +93,33 @@
     <!-- Templates -->
     <script type="text/template" id="definition-template">
       <a href="#test" name="TEST" data-toggle="tab"><%= description %></a>
+        <form class="form-horizontal">
+            <fieldset>
+                <legend>Legend text</legend>
+                <div class="control-group">
+                    <label class="control-label" for="input01">Text input</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="input01">
+                        <p class="help-block">Supporting help text</p>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </script>
+    
+    <script type="text/template" id="definition-template-form">
+        <form class="form-horizontal">
+            <fieldset>
+                <legend>Legend text</legend>
+                <div class="control-group">
+                    <label class="control-label" for="input01">Text input</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="input01">
+                        <p class="help-block">Supporting help text</p>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </script>
     
     
@@ -138,10 +165,10 @@ window.Definitions = new DefinitionList;
 window.DefinitionView = Backbone.View.extend({
 
     //... is a list tag.
-    tagName:  "li",
+    tagName:  "div",
 
     // Cache the template function for a single item.
-    template: _.template($('#definition-template').html()),
+    template: _.template($('#definition-template-form').html()),
 
     // The DefinitionView listens for changes to its model, re-rendering.
     initialize: function() {
@@ -161,6 +188,7 @@ window.DefinitionView = Backbone.View.extend({
     setText: function() {
       var text = this.model.get('text');
       this.$('.definition-text').text(text);
+      this.$('div').addClass('tab-pane');
       //this.input = this.$('.todo-input');
       //this.input.bind('blur', _.bind(this.close, this)).val(text);
     },
@@ -192,13 +220,13 @@ window.DefinitionView = Backbone.View.extend({
     // Re-rendering the App just means refreshing the statistics -- the rest
     // of the app doesn't change.
     render: function() {
-      $("#definitionapp ul.nav").append('<li><a href="#test" name="TEST" data-toggle="tab">testing</a></li>');
+      $("#definitionapp ul.nav").append('<li class="active"><a href="#test" name="TEST" data-toggle="tab">testing</a></li>');
     },
     // Add a single todo item to the list by creating a view for it, and
     // appending its element to the `<ul>`.
     addOne: function(definition) {
       var view = new DefinitionView({model: definition});
-      $("#definitionapp ul.nav").append(view.render().el);
+      $("#definitionapp div.tab-content").append(view.render().el);
     },
     // Add all items in the **Todos** collection at once.
     addAll: function() {
