@@ -61,7 +61,7 @@
           <div id="definitionapp">
             <div class="tabbable">
                 <ul class="nav nav-tabs">
-                  <li><a href="#ber" name="TEST" data-toggle="tab">Beröm</a></li>
+                  <li><a href="#ber" name="TEST" data-toggle="tab">Berom</a></li>
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane" id="ber">
@@ -108,18 +108,7 @@
     
     <!-- Templates -->
     <script type="text/template" id="definition-template">
-      <a href="#test" name="TEST" data-toggle="tab"><%= description %></a>
-        <form class="form-horizontal">
-            <fieldset>
-                <div class="control-group">
-                    <label class="control-label" for="input01">Text input</label>
-                    <div class="controls">
-                        <input type="text" class="input-xlarge" id="input01">
-                        <p class="help-block">Supporting help text</p>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+      
     </script>
     
     <script type="text/template" id="definition-template-form">
@@ -203,6 +192,7 @@ window.DefinitionView = Backbone.View.extend({
       var text = this.model.get('text');
       this.$('.definition-text').text(text);
       this.$('div').addClass('tab-pane');
+      this.$('div').attr("id", 'tab-pane');
       //this.input = this.$('.todo-input');
       //this.input.bind('blur', _.bind(this.close, this)).val(text);
     },
