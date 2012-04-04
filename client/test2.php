@@ -95,7 +95,6 @@
       <a href="#test" name="TEST" data-toggle="tab"><%= description %></a>
         <form class="form-horizontal">
             <fieldset>
-                <legend>Legend text</legend>
                 <div class="control-group">
                     <label class="control-label" for="input01">Text input</label>
                     <div class="controls">
