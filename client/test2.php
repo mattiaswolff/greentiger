@@ -74,6 +74,10 @@
                         <p class="help-block">Supporting help text</p>
                     </div>
                 </div>
+                <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button class="btn">Cancel</button>
+          </div>
             </fieldset>
         </form>
                   </div>
@@ -121,7 +125,12 @@
                         <p class="help-block">Supporting help text, TESTING!</p>
                     </div>
                 </div>
+                <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button class="btn">Cancel</button>
+          </div>
             </fieldset>
+            
         </form>
     </script>
     
