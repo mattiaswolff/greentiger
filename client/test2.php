@@ -60,8 +60,24 @@
         <div class="span7 main">
           <div id="definitionapp">
             <div class="tabbable">
-                <ul class="nav nav-tabs"></ul>
-                <div class="tab-content"></div>
+                <ul class="nav nav-tabs">
+                  <li><a href="#ber" name="TEST" data-toggle="tab">Beröm</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane" id="ber">
+                    <form class="form-horizontal">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="input01">Text input</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="input01">
+                        <p class="help-block">Supporting help text</p>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+                  </div>
+                </div>
             </div>
           </div>        
           <div>
