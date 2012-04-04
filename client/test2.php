@@ -191,8 +191,8 @@ window.DefinitionView = Backbone.View.extend({
     setText: function() {
       var text = this.model.get('text');
       this.$('.definition-text').text(text);
-      this.$('div').addClass('tab-pane');
-      this.$('div').attr("id", 'tab-pane');
+      $(this.el).addClass('tab-pane');
+      $(this.el).attr("id", 'tab-pane');
       //this.input = this.$('.todo-input');
       //this.input.bind('blur', _.bind(this.close, this)).val(text);
     },
