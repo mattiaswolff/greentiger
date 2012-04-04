@@ -118,7 +118,7 @@
                     <label class="control-label" for="input01">Text input</label>
                     <div class="controls">
                         <input type="text" class="input-xlarge" id="input01">
-                        <p class="help-block">Supporting help text</p>
+                        <p class="help-block">Supporting help text, TESTING!</p>
                     </div>
                 </div>
             </fieldset>
@@ -192,7 +192,7 @@ window.DefinitionView = Backbone.View.extend({
       var text = this.model.get('text');
       this.$('.definition-text').text(text);
       $(this.el).addClass('tab-pane');
-      $(this.el).attr("id", 'tab-pane');
+      $(this.el).attr("id", 'test');
       //this.input = this.$('.todo-input');
       //this.input.bind('blur', _.bind(this.close, this)).val(text);
     },
